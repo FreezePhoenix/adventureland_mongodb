@@ -846,5 +846,6 @@
 	"update.04_10_26.mail.promises": "Os resultados de melhoria e combinação em CODE já não esperam pelo redesenho do ecrã.",
 	"update.04_10_26.mail.spawns": "A documentação de monstros explica agora ambos os formatos de limites de aparecimento.",
 	"update.04_10_26.mail.slots": "As posições de inventário inválidas já não atuam sobre o primeiro objeto.",
-	"update.04_10_26.mail.capacity": "As verificações de espaço para saque e recompensas contam agora as pilhas corretamente."
+	"update.04_10_26.mail.capacity": "As verificações de espaço para saque e recompensas contam agora as pilhas corretamente.",
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE pode agora ler os indicadores sazonais através de server.status.event_flags."
 }

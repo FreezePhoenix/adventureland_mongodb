@@ -16,6 +16,8 @@ Tavern dealer: Venn's 21 table lines (drafted in ChatGPT Chat, Medium) and the g
 
 Trade offers: all 46 new or revised stand, message, trade-history, CODE reference, guide, tutorial and release phrases are translated and proofread in all 32 supported languages. The guide reuses each language's own OFFER FOR TRADE, WANTS, TITLE, ANY and TRADE labels; placeholders, markup and locked CODE were checked on 2026-09-26.
 
+Seasonal flags (October 7): the CODE reference paragraph and release note are translated and proofread in all 32 languages. Boolean values, CODE identifiers and HTML tags are preserved. The documented status example runs in Mainframe.
+
 ## Runtime
 
 The server reads and caches the requested language with English fallback. The browser receives only phrases needed by client JavaScript through `/phrases/<language>.js?v=<version>`.

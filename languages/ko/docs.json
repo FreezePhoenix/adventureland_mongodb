@@ -2710,5 +2710,6 @@
 	"docs.items.stunned_use": "기절 중에는 소모품 사용, 아이템 활성화와 투척, HP/MP 회복 요청이 차단돼요. 해당 CODE 동작은 reason: \"disabled\"로 거부돼요.",
 	"docs.articles.data-monster.spawn_boundaries": "생성 그룹은 자기 맵의 직사각형 하나를 지정하는 boundary 또는 각 직사각형에 맵 이름이 포함된 boundaries를 사용할 수 있습니다. 몬스터 생성 구역을 찾을 때는 모든 맵을 확인하세요. 한 그룹이 여러 맵에 걸쳐 있을 수 있습니다. 이는 생성 가능한 구역이며 현재 몬스터가 있다는 뜻은 아닙니다.",
 	"docs.functions.enter.missing_key": "입장에 열쇠가 필요하면 오류 메시지에 부족한 열쇠 이름이 표시됩니다. CODE에서 transport_cant_item 거부 응답에는 필요한 각 아이템 ID와 수량을 연결하는 items가 포함됩니다.",
-	"docs.upgrading.grace_only": "강화 신단에서 두루마리 없이 Primling 같은 제물을 사용하면 은총이 0.5 추가됩니다. 제물은 소모되며 아이템 레벨은 그대로입니다. CODE에서는 두루마리 인수에 null을 전달하세요. 계산 모드는 아무것도 소모하지 않고 grace_added를 반환합니다."
+	"docs.upgrading.grace_only": "강화 신단에서 두루마리 없이 Primling 같은 제물을 사용하면 은총이 0.5 추가됩니다. 제물은 소모되며 아이템 레벨은 그대로입니다. CODE에서는 두루마리 인수에 null을 전달하세요. 계산 모드는 아무것도 소모하지 않고 grace_added를 반환합니다.",
+	"docs.articles.data-server-status.event-flags": "<code>G.event_flags</code>는 불러온 게임 데이터의 시즌 이벤트 목록을 담고 있습니다. 현재 서버에서 어떤 이벤트가 활성화되어 있는지 확인하려면 <code>server.status.event_flags</code>를 사용하세요. 각 플래그의 값은 true 또는 false입니다. <code>server.status.holidayseason</code> 같은 기존 필드도 계속 사용할 수 있습니다."
 }

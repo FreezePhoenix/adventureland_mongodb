@@ -846,5 +846,6 @@
 	"update.04_10_26.mail.promises": "Rezultatele îmbunătățirilor și combinărilor din CODE nu mai așteaptă redesenarea ecranului.",
 	"update.04_10_26.mail.spawns": "Documentația monștrilor explică acum ambele formate ale limitelor de apariție.",
 	"update.04_10_26.mail.slots": "Pozițiile de inventar nevalide nu mai aplică acțiunea asupra primului obiect.",
-	"update.04_10_26.mail.capacity": "Verificările spațiului pentru pradă și recompense numără acum corect teancurile."
+	"update.04_10_26.mail.capacity": "Verificările spațiului pentru pradă și recompense numără acum corect teancurile.",
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE poate acum citi indicatorii sezonieri prin server.status.event_flags."
 }

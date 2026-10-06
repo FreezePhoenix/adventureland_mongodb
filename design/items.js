@@ -6497,7 +6497,6 @@ var gems={
 		"a":true,
 		"s":true,
 		//"event":true,
-		//"quest":"mistletoe", #xmas
 	},
 	"candycane":{
 		"type":"gem",
@@ -6509,7 +6508,6 @@ var gems={
 		"s":true,
 		"a":true,
 		//"event":true,
-		//"quest":"candycane", #xmas
 	},
 	"marketparcel":{
 		"type":"gem",
@@ -6861,7 +6859,6 @@ var quest={
 		"g":3000,
 		"e":20,
 		"s":true,
-		//"quest":"ornament", #xmas
 	},
 	"lostearring":{
 		"type":"earring",

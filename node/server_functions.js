@@ -39,7 +39,8 @@ var edges = {
 };
 var NPC_prefix = "NPC0000000000000000NPC";
 
-function sprocess_game_data() {
+function sprocess_game_data(apply_events) {
+	Object.assign(events, G.event_flags);
 	for (var name in G.items) {
 		var def = G.items[name];
 		def.igrade = calculate_item_grade(def);
@@ -144,7 +145,6 @@ function sprocess_game_data() {
 		D.monster_gold.bat *= 50;
 		D.monster_gold.bbpompom *= 75;
 		D.monster_gold.ghost *= 50;
-		events.egghunt = 0.1;
 	}
 	D.craftmap = {};
 	for (var name in G.craft) {
@@ -264,33 +264,8 @@ function sprocess_game_data() {
 		D.drops.maps.global_static.push([1.0 / ((gameplay == "hardcore" && 1000) || 100000), "pvptoken"]);
 	}
 
-	if (events.halloween) {
-		G.monsters.jr.respawn = 480;
-		G.monsters.greenjr.respawn = 480;
-		D.drops.maps.global.push([0.00005, "candy0"]);
-		D.drops.maps.global.push([0.00125, "candy1"]);
-	}
-
-	if (events.holidayseason) {
-		events.snowman = 60;
-		D.drops.maps.global.push([0.0006, "ornament"]);
-		D.drops.maps.global.push([0.0018, "mistletoe"]);
-		D.drops.maps.global.push([0.0005, "candycane"]);
-		D.drops.maps.global.push([0.0001, "open", "xN"]);
-		D.drops.maps.global.push([0.00000001, "orbofsc"]);
-	}
-
-	if (events.lunarnewyear) {
-		D.drops.maps.global.push([0.00005, "brownenvelope"]);
-		D.drops.maps.global.push([0.000000005, "5bucks"]);
-	}
-	if (events.valentines) {
-		D.drops.maps.global.push([0.001, "candypop"]);
-	}
-	if (events.egghunt) {
-		D.drops.maps.global.push([0.000005, "goldenegg"]);
-		D.drops.maps.global.push([0.009, "open", "eastereggs"]);
-	}
+	// Hardcore clears global drops and changes respawns above; apply its seasons afterwards, as before.
+	if (gameplay == "hardcore") apply_events({ drops: D.drops, monsters: G.monsters }, G.event_flags, gameplay);
 }
 
 function calculate_xvalue(arr, rec, divide, mult) {
@@ -3031,6 +3006,7 @@ function event_loop() {
 }
 
 function broadcast_e(dont_send) {
+	E.event_flags = Object.assign({}, G.event_flags);
 	if (!dont_send) {
 		broadcast("server_info", E);
 	}
@@ -4737,6 +4713,7 @@ var hiding_places = [];
 function server_bfs(map) {
 	if (
 		precomputed_bfs &&
+		(!G.event_flags || precomputed_bfs.map_keys?.[map] === G.maps[map].key) &&
 		(!G.maps[map].collision_key || precomputed_bfs.collision?.[map] === G.maps[map].collision_key) &&
 		precomputed_bfs.smap_data &&
 		precomputed_bfs.smap_data[map] !== undefined &&

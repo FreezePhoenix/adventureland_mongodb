@@ -890,12 +890,14 @@ function release_sources(item) {
 			G.drops[box].forEach(function (row) {
 				if (row[1] == item) add("item:" + box);
 			});
-	if (recipe)
+	if (recipe) {
+		var crafter = crafting_npc(recipe, G.event_flags);
 		for (var npc in G.npcs)
-			if ((recipe.quest && G.npcs[npc].quest == recipe.quest) || (!recipe.quest && G.npcs[npc].role == "craftsman")) {
+			if (npc == crafter || G.npcs[npc].quest == crafter) {
 				add("npc:" + npc);
 				break;
 			}
+	}
 	for (var seller in G.npcs) if (in_arr(item, G.npcs[seller].items || [])) add("npc:" + seller);
 	for (var token in G.tokens) if (G.tokens[token][item] !== undefined && G.items[token]) add("item:" + token);
 	return sources;

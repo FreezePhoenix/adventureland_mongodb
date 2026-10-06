@@ -846,5 +846,6 @@
 	"update.04_10_26.mail.promises": "Výsledky vylepšování a slučování v CODE už nečekají na překreslení obrazovky.",
 	"update.04_10_26.mail.spawns": "Dokumentace příšer nyní vysvětluje oba formáty hranic výskytu.",
 	"update.04_10_26.mail.slots": "Neplatné pozice inventáře už neprovedou akci s prvním předmětem.",
-	"update.04_10_26.mail.capacity": "Kontroly místa pro kořist a odměny nyní správně počítají stohy."
+	"update.04_10_26.mail.capacity": "Kontroly místa pro kořist a odměny nyní správně počítají stohy.",
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE nyní může číst příznaky sezónních událostí přes server.status.event_flags."
 }

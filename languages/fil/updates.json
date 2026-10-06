@@ -846,5 +846,6 @@
 	"update.04_10_26.mail.promises": "Hindi na hinihintay ng mga resulta ng pagpapahusay at pagsasanib sa CODE ang muling pagguhit ng screen.",
 	"update.04_10_26.mail.spawns": "Ipinapaliwanag na ng dokumentasyon ng mga halimaw ang parehong format ng hangganan ng paglitaw.",
 	"update.04_10_26.mail.slots": "Hindi na inilalapat sa unang item ang aksiyon kapag hindi wasto ang posisyon sa imbentaryo.",
-	"update.04_10_26.mail.capacity": "Tama na ang pagbilang ng mga salansan sa pagsusuri ng espasyo para sa samsam at gantimpala."
+	"update.04_10_26.mail.capacity": "Tama na ang pagbilang ng mga salansan sa pagsusuri ng espasyo para sa samsam at gantimpala.",
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "Mababasa na ng CODE ang mga flag ng pana-panahong event sa pamamagitan ng server.status.event_flags."
 }

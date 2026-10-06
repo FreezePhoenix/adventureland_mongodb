@@ -846,5 +846,6 @@
 	"update.04_10_26.mail.promises": "Hasil peningkatan dan penggabungan dalam CODE tidak lagi menunggu layar digambar ulang.",
 	"update.04_10_26.mail.spawns": "Dokumentasi monster kini menjelaskan kedua format batas kemunculan.",
 	"update.04_10_26.mail.slots": "Posisi inventaris yang tidak valid tidak lagi menjalankan tindakan pada item pertama.",
-	"update.04_10_26.mail.capacity": "Pemeriksaan ruang untuk jarahan dan hadiah kini menghitung tumpukan dengan benar."
+	"update.04_10_26.mail.capacity": "Pemeriksaan ruang untuk jarahan dan hadiah kini menghitung tumpukan dengan benar.",
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE kini dapat membaca flag event musiman melalui server.status.event_flags."
 }

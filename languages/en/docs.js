@@ -1,5 +1,7 @@
 // English documentation catalog. IDs identify source meaning and usage.
 module.exports = {
+	// CODE server status: loaded definition flags versus the connected server's current boolean flags. Keep executable identifiers unchanged.
+	"docs.articles.data-server-status.event-flags": "<code>G.event_flags</code> lists the seasons in your loaded game data. Use <code>server.status.event_flags</code> to check which seasons are enabled on your current server. Each flag is true or false. Existing fields such as <code>server.status.holidayseason</code> still work.",
 	// Items guide and upgrade CODE reference. Preserve Primling, CODE, null and grace_added. A preview consumes nothing.
 	"docs.upgrading.grace_only": "At the upgrade shrine, use an offering such as Primling without a scroll to add 0.5 grace. The offering is consumed; the item keeps its level. In CODE, pass null for the scroll. Calculation mode consumes nothing and returns grace_added.",
 	// Entry CODE reference. Preserve CODE, transport_cant_item and items; the keys in items are executable item IDs.

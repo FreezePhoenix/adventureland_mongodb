@@ -846,5 +846,6 @@
 	"update.04_10_26.mail.promises": "CODEでの強化・合成の結果が、画面の再描画を待たずに返るようになりました。",
 	"update.04_10_26.mail.spawns": "モンスターのドキュメントで、2種類の出現範囲の形式を説明するようになりました。",
 	"update.04_10_26.mail.slots": "無効なインベントリ位置を指定しても、最初のアイテムに操作が適用されなくなりました。",
-	"update.04_10_26.mail.capacity": "戦利品や報酬の空き確認で、スタックを正しく数えるようになりました。"
+	"update.04_10_26.mail.capacity": "戦利品や報酬の空き確認で、スタックを正しく数えるようになりました。",
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE から server.status.event_flags で季節イベントのフラグを読み取れるようになりました。"
 }

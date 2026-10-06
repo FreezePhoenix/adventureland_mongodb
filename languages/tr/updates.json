@@ -846,5 +846,6 @@
 	"update.04_10_26.mail.promises": "Yükseltme ve birleştirme CODE sonuçları artık ekranın yeniden çizilmesini beklemiyor.",
 	"update.04_10_26.mail.spawns": "Canavar belgeleri artık her iki doğma sınırı biçimini de açıklıyor.",
 	"update.04_10_26.mail.slots": "Geçersiz envanter konumları artık ilk eşyada işlem yapmıyor.",
-	"update.04_10_26.mail.capacity": "Ganimet ve ödül için yer kontrolleri artık yığınları doğru sayıyor."
+	"update.04_10_26.mail.capacity": "Ganimet ve ödül için yer kontrolleri artık yığınları doğru sayıyor.",
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE artık sezonluk etkinlik bayraklarını server.status.event_flags üzerinden okuyabilir."
 }

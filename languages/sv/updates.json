@@ -846,5 +846,6 @@
 	"update.04_10_26.mail.promises": "Resultat från uppgradering och kombinering i CODE väntar inte längre på att skärmen ritas om.",
 	"update.04_10_26.mail.spawns": "Monsterdokumentationen förklarar nu båda formaten för spawn-gränser.",
 	"update.04_10_26.mail.slots": "Ogiltiga inventarieplatser påverkar inte längre det första föremålet.",
-	"update.04_10_26.mail.capacity": "Platskontroller för byte och belöningar räknar nu staplar korrekt."
+	"update.04_10_26.mail.capacity": "Platskontroller för byte och belöningar räknar nu staplar korrekt.",
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE kan nu läsa säsongsflaggor via server.status.event_flags."
 }

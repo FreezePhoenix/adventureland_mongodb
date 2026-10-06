@@ -846,5 +846,6 @@
 	"update.04_10_26.mail.promises": "Hasil naik taraf dan penggabungan dalam CODE tidak lagi menunggu skrin dilukis semula.",
 	"update.04_10_26.mail.spawns": "Dokumentasi raksasa kini menerangkan kedua-dua format sempadan kemunculan.",
 	"update.04_10_26.mail.slots": "Kedudukan inventori yang tidak sah tidak lagi melaksanakan tindakan pada item pertama.",
-	"update.04_10_26.mail.capacity": "Semakan ruang untuk rampasan dan ganjaran kini mengira tindanan dengan betul."
+	"update.04_10_26.mail.capacity": "Semakan ruang untuk rampasan dan ganjaran kini mengira tindanan dengan betul.",
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE kini boleh membaca penanda acara bermusim melalui server.status.event_flags."
 }

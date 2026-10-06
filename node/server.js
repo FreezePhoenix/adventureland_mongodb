@@ -299,33 +299,31 @@ var mode = {
 	fear_affects_heal: 0, // when feared heal output is lowered
 	implicit_targets: 0, // Do skills that don't have an explicit target, such as self-buffing skills, trigger mana restoring effects with increased chances?
 };
-var events = {
-	anniversary: false, // Ended 06/10/26.
-	// SEASONS
-	holidayseason: false,
-	lunarnewyear: false,
-	valentines: false,
-	pinkgoo: 0, // every N minutes - 60
-	snowman: 20 * 60, // 1200 normally - 60 - at sprocess_game_data
-	egghunt: 0, // every N minutes - 60
-	halloween: false,
-	// RANDOM
-	goblin: false,
-	goldenbat: 160000,
-	cutebee: 960000,
-	goldenbot: 200000,
-	manyeye: 30000,
-	mimic: 24000,
-	paledino: 60000,
-	hide_and_seek: 0,
-	// DAILIES
-	goobrawl: false,
-	crabxx: false,
-	abtesting: false,
-	// NIGHTLIES
-	icegolem: false,
-	franky: false,
-};
+eval("" + fs.readFileSync(path.resolve(__dirname, "../design/event_flags.js")));
+var events = Object.assign(
+	{
+		// SEASONS
+		pinkgoo: 0, // every N minutes - 60
+		snowman: 20 * 60, // 1200 normally - 60 - at sprocess_game_data
+		// RANDOM
+		goblin: false,
+		goldenbat: 160000,
+		cutebee: 960000,
+		goldenbot: 200000,
+		manyeye: 30000,
+		mimic: 24000,
+		paledino: 60000,
+		hide_and_seek: 0,
+		// DAILIES
+		goobrawl: false,
+		crabxx: false,
+		abtesting: false,
+		// NIGHTLIES
+		icegolem: false,
+		franky: false,
+	},
+	get_event_flags(gameplay),
+);
 var dailies = ["crabxx", "goobrawl", "abtesting"];
 shuffle(dailies);
 var nightlies = ["icegolem", "franky"];
@@ -467,6 +465,7 @@ async function init_game() {
 		Server.info.data = S;
 
 		// Load all design files (local to init_game to avoid name collisions with server.js/server_functions.js globals like events, npcs)
+		eval("" + fs.readFileSync(path.resolve(__dirname, "../design/event_flags.js")));
 		eval("" + fs.readFileSync(path.resolve(__dirname, "../design/projectiles.js")));
 		eval("" + fs.readFileSync(path.resolve(__dirname, "../design/animations.js")));
 		eval("" + fs.readFileSync(path.resolve(__dirname, "../design/achievements.js")));
@@ -493,6 +492,8 @@ async function init_game() {
 		eval("" + fs.readFileSync(path.resolve(__dirname, "../design/precomputed_images.js")));
 
 		// Load geometry from MongoDB (parallel fetch, following qwazy pattern)
+		var active_event_flags = get_event_flags(gameplay);
+		apply_event_flags({ maps: maps, items: items, monsters: monsters, drops: drops }, active_event_flags);
 		var geometry = {};
 		var rpc = {};
 		for (var id in maps) {
@@ -534,6 +535,7 @@ async function init_game() {
 			skills: skills,
 			games: games,
 			events: events,
+			event_flags: active_event_flags,
 			images: precomputed.images,
 			multipliers: multipliers,
 		};
@@ -553,7 +555,7 @@ async function init_game() {
 		}
 		if (G) {
 			restore_generated_maps();
-			sprocess_game_data();
+			sprocess_game_data(apply_event_flags);
 		}
 		try {
 			http_server.listen(server_def.local_port, server_def.local_ip);
@@ -651,6 +653,7 @@ init_game();
 async function reload_server(to_broadcast, change) {
 	try {
 		// Re-eval all design files (same scope trick as init_game)
+		eval("" + fs.readFileSync(path.resolve(__dirname, "../design/event_flags.js")));
 		eval("" + fs.readFileSync(path.resolve(__dirname, "../design/projectiles.js")));
 		eval("" + fs.readFileSync(path.resolve(__dirname, "../design/animations.js")));
 		eval("" + fs.readFileSync(path.resolve(__dirname, "../design/achievements.js")));
@@ -677,6 +680,10 @@ async function reload_server(to_broadcast, change) {
 		eval("" + fs.readFileSync(path.resolve(__dirname, "../design/precomputed_images.js")));
 
 		// Reload geometry from MongoDB
+		var active_event_flags = get_event_flags(gameplay);
+		if (JSON.stringify(active_event_flags) !== JSON.stringify(G.event_flags))
+			throw new Error("Event flags changed: restart the game server to replace seasonal maps and NPCs together.");
+		apply_event_flags({ maps: maps, items: items, monsters: monsters, drops: drops }, active_event_flags);
 		var geometry = {};
 		var rpc = {};
 		for (var id in maps) {
@@ -716,6 +723,7 @@ async function reload_server(to_broadcast, change) {
 			skills: skills,
 			games: games,
 			events: events,
+			event_flags: active_event_flags,
 			images: precomputed.images,
 			multipliers: multipliers,
 		};
@@ -727,7 +735,7 @@ async function reload_server(to_broadcast, change) {
 			odds: typeof odds !== "undefined" && odds,
 		};
 		restore_generated_maps();
-		sprocess_game_data();
+		sprocess_game_data(apply_event_flags);
 		prop_cache = {};
 		if (to_broadcast) {
 			broadcast("reloaded", { change: change || "" });

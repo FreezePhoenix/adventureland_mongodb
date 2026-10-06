@@ -1,3 +1,76 @@
+// Seasonal selections are applied to fresh definitions before loading map geometry.
+// All switches live in event_flags.js. Exchange pools and recipes stay available year round.
+var event_rules = {
+	anniversary: {
+		drops: [
+			[1 / 1500, "anniversarygift"],
+			[1 / 50000, "slice_strawberry"],
+			[1 / 50000, "slice_citrus"],
+			[1 / 50000, "slice_honey"],
+			[1 / 50000, "slice_mint"],
+			[1 / 50000, "slice_blueberry"],
+			[1 / 50000, "slice_nightberry"],
+		],
+		// Hardcore clears the ordinary global drop table.
+		hardcore_drops: [],
+	},
+	holidayseason: {
+		maps: { main: { key: "jayson_ALMap2_v2_xmas" }, bank: { key: "jayson_bank0.Xmas" } },
+		npcs: {
+			main: [{ id: "newyear_tree", position: [64, -88] }],
+			winter_inn: [{ id: "mistletoe", position: [94, -181, 2] }],
+			winterland: [{ id: "santa", position: [1242, -1631] }, { id: "ornaments", position: [-137, -193, 1] }],
+		},
+		spawns: { winterland: [{ type: "rudolph", boundary: [1065, -1598, 1418, -1449], count: 1 }] },
+		quests: { mistletoe: "mistletoe", candycane: "candycane", ornament: "ornament" },
+		drops: [[0.0006, "ornament"], [0.0018, "mistletoe"], [0.0005, "candycane"], [0.0001, "open", "xN"], [0.00000001, "orbofsc"]],
+	},
+	lunarnewyear: {
+		maps: { main: { key: "jayson_ALMap2_v2.lunarNewYear" } },
+		drops: [[0.00005, "brownenvelope"], [0.000000005, "5bucks"]],
+	},
+	valentines: { drops: [[0.001, "candypop"]] },
+	egghunt: { drops: [[0.000005, "goldenegg"], [0.009, "open", "eastereggs"]] },
+	halloween: {
+		monsters: { jr: { respawn: 480 }, greenjr: { respawn: 480 } },
+		drops: [[0.00005, "candy0"], [0.00125, "candy1"]],
+	},
+};
+
+function apply_event_flags(data, flags, gameplay) {
+	data.event_flags = Object.assign({}, flags);
+	var selected_maps = {};
+	for (var name in flags) {
+		if (typeof flags[name] !== "boolean" || !event_rules[name]) throw new Error("Invalid event flag: " + name);
+		if (!flags[name]) continue;
+		var rule = event_rules[name];
+		for (var map in data.maps && rule.maps || {}) {
+			if (selected_maps[map]) throw new Error("Conflicting event maps: " + selected_maps[map] + " and " + name + " select " + map);
+			selected_maps[map] = name;
+			Object.assign(data.maps[map], rule.maps[map]);
+		}
+		for (var map in data.maps && rule.npcs || {}) data.maps[map].npcs = (data.maps[map].npcs || []).concat(JSON.parse(JSON.stringify(rule.npcs[map])));
+		for (var map in data.maps && rule.spawns || {}) data.maps[map].monsters = (data.maps[map].monsters || []).concat(JSON.parse(JSON.stringify(rule.spawns[map])));
+		for (var item in data.items && rule.quests || {}) data.items[item].quest = rule.quests[item];
+		for (var monster in data.monsters && rule.monsters || {}) Object.assign(data.monsters[monster], rule.monsters[monster]);
+		if (data.drops) {
+			var entries = gameplay == "hardcore" && rule.hardcore_drops ? rule.hardcore_drops : rule.drops || [];
+			entries.forEach(function (entry) { data.drops.maps.global.push(entry.slice()); });
+		}
+	}
+	for (var map in data.maps) {
+		var occupied = {};
+		var npcs = (data.maps[map].npcs || []).concat((data.maps[map].seasonal_npcs || []).filter(function (npc) { return flags[npc.event]; }));
+		npcs.forEach(function (npc) {
+			if (!npc.position) return;
+			var position = npc.position.slice(0, 2).join(",");
+			if (occupied[position] && (npc.event || occupied[position].event)) throw new Error("Conflicting seasonal NPCs on " + map + ": " + occupied[position].id + " and " + npc.id);
+			occupied[position] = npc;
+		});
+	}
+	return data;
+}
+
 var events={
 	"anniversary":{
 		"name":"Ten Years of Adventure Land",

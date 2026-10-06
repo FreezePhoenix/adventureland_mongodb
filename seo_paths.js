@@ -126,6 +126,7 @@ const DOCS_PATHS = [
 ];
 
 const DOCS_DATA_KEYS = [
+	"event_flags",
 	"achievements",
 	"animations",
 	"classes",

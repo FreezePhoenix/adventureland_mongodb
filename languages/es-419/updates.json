@@ -846,5 +846,6 @@
 	"update.04_10_26.mail.promises": "Los resultados de mejora y combinación en CODE ya no esperan a que se vuelva a dibujar la pantalla.",
 	"update.04_10_26.mail.spawns": "La documentación de monstruos ahora explica ambos formatos de límites de aparición.",
 	"update.04_10_26.mail.slots": "Las posiciones de inventario inválidas ya no actúan sobre el primer objeto.",
-	"update.04_10_26.mail.capacity": "Las revisiones de espacio para botín y recompensas ahora cuentan las pilas correctamente."
+	"update.04_10_26.mail.capacity": "Las revisiones de espacio para botín y recompensas ahora cuentan las pilas correctamente.",
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE ahora puede leer los indicadores de temporada mediante server.status.event_flags."
 }

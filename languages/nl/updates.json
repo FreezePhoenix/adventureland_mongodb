@@ -846,5 +846,6 @@
 	"update.04_10_26.mail.promises": "Resultaten van verbeteren en combineren in CODE wachten niet meer tot het scherm opnieuw is getekend.",
 	"update.04_10_26.mail.spawns": "De monsterdocumentatie legt nu beide formaten voor spawn-grenzen uit.",
 	"update.04_10_26.mail.slots": "Ongeldige inventarisposities voeren de handeling niet meer uit op het eerste voorwerp.",
-	"update.04_10_26.mail.capacity": "Ruimtecontroles voor buit en beloningen tellen stapels nu correct."
+	"update.04_10_26.mail.capacity": "Ruimtecontroles voor buit en beloningen tellen stapels nu correct.",
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE kan nu seizoensvlaggen uitlezen via server.status.event_flags."
 }

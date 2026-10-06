@@ -2710,5 +2710,6 @@
 	"docs.items.stunned_use": "眩晕时，消耗品使用、物品激活、物品投掷和HP/MP恢复请求均会被阻止。这些CODE操作会被拒绝，返回 reason: \"disabled\"。",
 	"docs.articles.data-monster.spawn_boundaries": "生成组可以用boundary表示所在地图上的一个矩形，也可以用boundaries表示各自带有地图名的多个矩形。查找某种怪物的生成区域时，请遍历所有地图：一个生成组可能跨越多张地图。这些只是可能的生成区域，不代表怪物当前就在其中。",
 	"docs.functions.enter.missing_key": "如果入口需要钥匙，错误提示会说明缺少哪把钥匙。在CODE中，transport_cant_item拒绝结果包含items，其中列出所需物品ID及对应数量。",
-	"docs.upgrading.grace_only": "在强化神坛不放卷轴，使用Primling等供品可添加0.5恩泽。供品会被消耗，物品等级保持不变。在CODE中，将卷轴参数设为null。计算模式不会消耗任何物品，并会返回grace_added。"
+	"docs.upgrading.grace_only": "在强化神坛不放卷轴，使用Primling等供品可添加0.5恩泽。供品会被消耗，物品等级保持不变。在CODE中，将卷轴参数设为null。计算模式不会消耗任何物品，并会返回grace_added。",
+	"docs.articles.data-server-status.event-flags": "<code>G.event_flags</code> 列出已加载的游戏数据中的季节活动。使用 <code>server.status.event_flags</code> 查看当前服务器启用了哪些活动。每个标志的值都是 true 或 false。<code>server.status.holidayseason</code> 等现有字段仍然可用。"
 }

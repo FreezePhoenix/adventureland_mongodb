@@ -846,5 +846,6 @@
 	"update.04_10_26.mail.promises": "Wyniki ulepszania i łączenia w CODE nie czekają już na odrysowanie ekranu.",
 	"update.04_10_26.mail.spawns": "Dokumentacja potworów wyjaśnia teraz oba formaty granic odradzania.",
 	"update.04_10_26.mail.slots": "Nieprawidłowe pozycje ekwipunku nie wykonują już operacji na pierwszym przedmiocie.",
-	"update.04_10_26.mail.capacity": "Sprawdzanie miejsca na łupy i nagrody poprawnie liczy teraz stosy."
+	"update.04_10_26.mail.capacity": "Sprawdzanie miejsca na łupy i nagrody poprawnie liczy teraz stosy.",
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE może teraz odczytywać flagi wydarzeń sezonowych przez server.status.event_flags."
 }

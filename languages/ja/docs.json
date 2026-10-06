@@ -2710,5 +2710,6 @@
 	"docs.items.stunned_use": "スタン中は消耗品の使用、アイテムの発動や投擲、HP/MP回復のリクエストがブロックされます。これらのCODE操作は reason: \"disabled\" で拒否されます。",
 	"docs.articles.data-monster.spawn_boundaries": "出現グループは、自分のマップ上の長方形をboundaryで指定するか、マップ名を含む長方形の一覧をboundariesで指定します。モンスターの出現エリアを調べるときは、すべてのマップを確認してください。1つのグループが複数のマップにまたがることもあります。これは出現可能なエリアであり、現在そこにいることを示す情報ではありません。",
 	"docs.functions.enter.missing_key": "入口で鍵が必要な場合、エラーに不足している鍵の名前が表示されます。CODEでは、transport_cant_itemによる拒否にitemsが含まれ、必要な各アイテムIDと数量を確認できます。",
-	"docs.upgrading.grace_only": "強化の祭壇で、巻物を使わずにPrimlingなどの供物を使うと、恩恵が0.5増えます。供物は消費され、アイテムのレベルは変わりません。CODEでは巻物の引数にnullを渡してください。計算モードでは何も消費せず、grace_addedを返します。"
+	"docs.upgrading.grace_only": "強化の祭壇で、巻物を使わずにPrimlingなどの供物を使うと、恩恵が0.5増えます。供物は消費され、アイテムのレベルは変わりません。CODEでは巻物の引数にnullを渡してください。計算モードでは何も消費せず、grace_addedを返します。",
+	"docs.articles.data-server-status.event-flags": "<code>G.event_flags</code> は、読み込んだゲームデータ内の季節イベントを一覧で示します。現在のサーバーでどのイベントが有効かを確認するには、<code>server.status.event_flags</code> を使ってください。各フラグの値は true または false です。<code>server.status.holidayseason</code> などの既存のフィールドも引き続き使えます。"
 }

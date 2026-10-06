@@ -846,5 +846,6 @@
 	"update.04_10_26.mail.promises": "Resultater fra oppgradering og kombinering i CODE venter ikke lenger på at skjermen tegnes på nytt.",
 	"update.04_10_26.mail.spawns": "Monsterdokumentasjonen forklarer nå begge formatene for spawn-grenser.",
 	"update.04_10_26.mail.slots": "Ugyldige inventarplasser utfører ikke lenger handlingen på den første gjenstanden.",
-	"update.04_10_26.mail.capacity": "Plasskontroller for bytte og belønninger teller nå stabler riktig."
+	"update.04_10_26.mail.capacity": "Plasskontroller for bytte og belønninger teller nå stabler riktig.",
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE kan nå lese sesongflagg gjennom server.status.event_flags."
 }

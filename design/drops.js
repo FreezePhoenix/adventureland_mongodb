@@ -20,14 +20,6 @@ var drops = {
 	maps: {
 		global_static: [],
 		global: [
-			// Anniversary only. A credited account rolls only its own slice flavor.
-			[1.0 / 1500, "anniversarygift"],
-			[1.0 / 50000, "slice_strawberry"],
-			[1.0 / 50000, "slice_citrus"],
-			[1.0 / 50000, "slice_honey"],
-			[1.0 / 50000, "slice_mint"],
-			[1.0 / 50000, "slice_blueberry"],
-			[1.0 / 50000, "slice_nightberry"],
 			//[0.000015,"goldenegg"], //originally 0.000005
 			//[0.0000001,"5bucks"],
 			//[0.0002,"gift0"],

@@ -2710,5 +2710,6 @@
 	"docs.items.stunned_use": "暈眩時，消耗品使用、物品啟用、物品投擲和HP/MP恢復請求都會被阻擋。這些CODE操作會遭到拒絕，回傳 reason: \"disabled\"。",
 	"docs.articles.data-monster.spawn_boundaries": "生成群組可以用boundary表示所在地圖上的一個矩形，也可以用boundaries表示各自包含地圖名稱的多個矩形。尋找某種怪物的生成區域時，請檢查所有地圖：一個群組可能橫跨多張地圖。這些只是可能的生成區域，不表示怪物目前就在其中。",
 	"docs.functions.enter.missing_key": "如果入口需要鑰匙，錯誤訊息會指出缺少哪把鑰匙。在CODE中，transport_cant_item的拒絕結果包含items，其中列出所需物品ID及對應數量。",
-	"docs.upgrading.grace_only": "在強化神壇不放卷軸，使用Primling等供品可增加0.5恩澤。供品會被消耗，物品等級維持不變。在CODE中，將卷軸參數設為null。計算模式不會消耗任何物品，並會回傳grace_added。"
+	"docs.upgrading.grace_only": "在強化神壇不放卷軸，使用Primling等供品可增加0.5恩澤。供品會被消耗，物品等級維持不變。在CODE中，將卷軸參數設為null。計算模式不會消耗任何物品，並會回傳grace_added。",
+	"docs.articles.data-server-status.event-flags": "<code>G.event_flags</code> 列出已載入遊戲資料中的季節活動。使用 <code>server.status.event_flags</code> 查看目前伺服器啟用了哪些活動。每個旗標的值都是 true 或 false。<code>server.status.holidayseason</code> 等現有欄位仍可使用。"
 }
