@@ -9,13 +9,14 @@ var event_flags = {
 	halloween: true,
 };
 
-// Hardcore has always included the Egg Hunt, independently of the normal season.
-var event_flag_overrides = { hardcore: { egghunt: true } };
+// Preserve the game modes: Hardcore includes the Egg Hunt; Dungeon disables all seasons.
+var event_flag_overrides = { hardcore: { egghunt: true }, dungeon: false };
 
 function get_event_flags(gameplay) {
 	var flags = Object.assign({}, event_flags, event_flag_overrides[gameplay]);
 	for (var name in flags) {
 		if (typeof flags[name] !== "boolean") throw new Error("Event flag must be boolean: " + name);
+		if (event_flag_overrides[gameplay] === false) flags[name] = false;
 	}
 	return flags;
 }

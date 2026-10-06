@@ -278,7 +278,7 @@ test("account flavor is deterministic, bounded and independent of character or r
 test("anniversary defaults off and has no automatic date cutoff or reactivation", () => {
 	const start = source.indexOf("var events = Object.assign(");
 	assert(start >= 0);
-	const context = { is_pvp: false, gameplay: "normal" };
+	const context = { is_pvp: false }; // The server selects its gameplay mode after initializing events.
 	localize(vm.createContext(context));
 	vm.runInContext(fs.readFileSync(path.join(root, "design/event_flags.js"), "utf8"), context);
 	vm.runInContext(source.slice(start, source.indexOf("var dailies =", start)), context);

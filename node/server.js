@@ -322,7 +322,7 @@ var events = Object.assign(
 		icegolem: false,
 		franky: false,
 	},
-	get_event_flags(gameplay),
+	get_event_flags(),
 );
 var dailies = ["crabxx", "goobrawl", "abtesting"];
 shuffle(dailies);

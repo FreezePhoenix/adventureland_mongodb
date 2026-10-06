@@ -113,6 +113,9 @@ test("each seasonal switch keeps its own drops, maps and respawns", async () => 
 		if (name === "halloween") assert.equal(c.G.monsters.jr.respawn, 480);
 	}
 	assert.equal((await browser(off)).c.G.drops.maps.global.length, 0);
+	const { c: mode } = await browser();
+	assert.deepEqual(plain(mode.get_event_flags("dungeon")), off);
+	assert.equal(mode.get_event_flags("hardcore").egghunt, true);
 	await assert.rejects(browser({ holidayseason: true, lunarnewyear: true }), /Conflicting event maps/);
 	await assert.rejects(browser({ holidayseason: true, anniversary: true }), /Conflicting seasonal NPCs/);
 	await assert.rejects(browser({ holidayseason: "false" }), /must be boolean/);
