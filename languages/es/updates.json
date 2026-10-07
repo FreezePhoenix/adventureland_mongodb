@@ -847,5 +847,6 @@
 	"update.04_10_26.mail.spawns": "La documentación de monstruos ya explica ambos formatos de límites de aparición.",
 	"update.04_10_26.mail.slots": "Las posiciones de inventario no válidas ya no actúan sobre el primer objeto.",
 	"update.04_10_26.mail.capacity": "Las comprobaciones de espacio para botín y recompensas ya cuentan las pilas correctamente.",
-	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE ahora puede leer los indicadores de temporada mediante server.status.event_flags."
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE ahora puede leer los indicadores de temporada mediante server.status.event_flags.",
+	"update.06_10_26.anniversary_crafting.update_button_image": "Se corrigió la imagen que faltaba en el botón NOVEDAD."
 }

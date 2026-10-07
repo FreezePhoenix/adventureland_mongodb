@@ -847,5 +847,6 @@
 	"update.04_10_26.mail.spawns": "モンスターのドキュメントで、2種類の出現範囲の形式を説明するようになりました。",
 	"update.04_10_26.mail.slots": "無効なインベントリ位置を指定しても、最初のアイテムに操作が適用されなくなりました。",
 	"update.04_10_26.mail.capacity": "戦利品や報酬の空き確認で、スタックを正しく数えるようになりました。",
-	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE から server.status.event_flags で季節イベントのフラグを読み取れるようになりました。"
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE から server.status.event_flags で季節イベントのフラグを読み取れるようになりました。",
+	"update.06_10_26.anniversary_crafting.update_button_image": "更新ボタンに画像が表示されない不具合を修正しました。"
 }

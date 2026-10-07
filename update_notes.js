@@ -28,6 +28,7 @@ module.exports = [
 			},
 		],
 		changes: [
+			{ fixed: "update_button_image", phrase: "update.06_10_26.anniversary_crafting.update_button_image", note: "Fixed the missing image on the UPDATE button." },
 			{ fixed: "mail_ownership", phrase: "update.04_10_26.mail.mail_ownership", note: "Mail attachments can now be collected only by the receiving account. Deleting mail removes only your copy." },
 			{ fixed: "server_menu", phrase: "update.04_10_26.mail.server_menu", note: "Event cards no longer cover the server menu." },
 			{ fixed: "merchant_bonuses", phrase: "update.04_10_26.mail.merchant_bonuses", note: "Switching servers on a merchant no longer interrupts other characters’ encouragement bonuses." },

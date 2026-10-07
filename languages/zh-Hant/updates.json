@@ -847,5 +847,6 @@
 	"update.04_10_26.mail.spawns": "怪物文件現在會說明兩種生成邊界格式。",
 	"update.04_10_26.mail.slots": "無效的背包位置不再對第一個物品執行操作。",
 	"update.04_10_26.mail.capacity": "戰利品與獎勵的空間檢查現在會正確計算堆疊。",
-	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE 現在可以透過 server.status.event_flags 讀取季節活動旗標。"
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE 現在可以透過 server.status.event_flags 讀取季節活動旗標。",
+	"update.06_10_26.anniversary_crafting.update_button_image": "修正了新動態按鈕上圖片遺失的問題。"
 }

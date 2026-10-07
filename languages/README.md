@@ -18,6 +18,8 @@ Trade offers: all 46 new or revised stand, message, trade-history, CODE referenc
 
 Seasonal flags (October 7): the CODE reference paragraph and release note are translated and proofread in all 32 languages. Boolean values, CODE identifiers and HTML tags are preserved. The documented status example runs in Mainframe.
 
+UPDATE button image (October 7): the fix note is translated and proofread in all 32 languages, using each language's existing button label.
+
 ## Runtime
 
 The server reads and caches the requested language with English fallback. The browser receives only phrases needed by client JavaScript through `/phrases/<language>.js?v=<version>`.

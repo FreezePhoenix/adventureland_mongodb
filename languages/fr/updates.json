@@ -847,5 +847,6 @@
 	"update.04_10_26.mail.spawns": "La documentation des monstres explique désormais les deux formats de limites d’apparition.",
 	"update.04_10_26.mail.slots": "Les emplacements d’inventaire invalides n’agissent plus sur le premier objet.",
 	"update.04_10_26.mail.capacity": "Les vérifications de place pour le butin et les récompenses comptent désormais correctement les piles.",
-	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE peut désormais lire les indicateurs saisonniers via server.status.event_flags."
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE peut désormais lire les indicateurs saisonniers via server.status.event_flags.",
+	"update.06_10_26.anniversary_crafting.update_button_image": "L’image manquante sur le bouton NOUVEAUTÉ a été rétablie."
 }

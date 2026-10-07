@@ -1,5 +1,7 @@
 // Release highlights. Dates, item/character names and CODE identifiers stay unchanged.
 module.exports = {
+	// Fixed bug listed in the [06/10/26] update post "Anniversary Crafting". Keep names from the game and CODE identifiers unchanged.
+	"update.06_10_26.anniversary_crafting.update_button_image": "Fixed the missing image on the UPDATE button.",
 	// Improvement listed in the [06/10/26] update post "Anniversary Crafting". Keep names from the game and CODE identifiers unchanged.
 	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE can now read seasonal flags through server.status.event_flags.",
 	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.

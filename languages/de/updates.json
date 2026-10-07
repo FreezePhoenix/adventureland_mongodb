@@ -847,5 +847,6 @@
 	"update.04_10_26.mail.spawns": "Die Monsterdokumentation erklärt jetzt beide Formate für Spawn-Grenzen.",
 	"update.04_10_26.mail.slots": "Ungültige Inventarpositionen wirken sich nicht mehr auf den ersten Gegenstand aus.",
 	"update.04_10_26.mail.capacity": "Platzprüfungen für Beute und Belohnungen zählen Stapel jetzt korrekt.",
-	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE kann saisonale Flags jetzt über server.status.event_flags auslesen."
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE kann saisonale Flags jetzt über server.status.event_flags auslesen.",
+	"update.06_10_26.anniversary_crafting.update_button_image": "Das fehlende Bild auf der Schaltfläche NEUES wurde wiederhergestellt."
 }

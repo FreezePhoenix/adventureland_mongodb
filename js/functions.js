@@ -1212,8 +1212,23 @@ function mark_release_seen(release) {
 	if (!$("#event-announcements").children().length) $("#event-announcements").hide();
 }
 
+function release_cover_ref(release) {
+	if (release.cover) return release.cover;
+	// Older posts may only name their image in a highlight.
+	var highlights = release.highlights || [];
+	for (var i = 0; i < highlights.length; i++) {
+		var shown = highlights[i].show || [];
+		for (var j = 0; j < shown.length; j++) {
+			var ref = typeof shown[j] == "string" ? shown[j] : shown[j].spawn,
+				r = release_parse(ref || "");
+			if (r.def && in_arr(r.type, ["item", "monster", "npc"])) return ref;
+		}
+	}
+	return "";
+}
+
 function release_cover_html(release) {
-	var r = release_parse(release.cover || "");
+	var r = release_parse(release_cover_ref(release));
 	if (!r.def) return "";
 	if (r.type == "monster" || r.type == "npc") return sprite(r.type == "npc" ? r.def.skin : r.id, { overflow: true, cx: r.type == "npc" ? clone(r.def.cx || {}) : undefined });
 	var skin = r.type == "item" || r.type == "craft" ? G.items[r.id].skin : r.def.skin;
@@ -1237,7 +1252,7 @@ function release_card_html() {
 	var index = release_unseen();
 	if (index == -1 || window.character || (typeof inside != "undefined" && inside == "game")) return "";
 	var release = update_notes[index],
-		r = release_parse(release.cover || "");
+		r = release_parse(release_cover_ref(release));
 	return event_announcement_html({
 		open: "show_release(" + index + ")",
 		sprite: r.def ? (r.type == "npc" ? r.def.skin : r.id) : "",

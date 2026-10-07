@@ -847,5 +847,6 @@
 	"update.04_10_26.mail.spawns": "Tài liệu quái vật giờ giải thích cả hai định dạng ranh giới xuất hiện.",
 	"update.04_10_26.mail.slots": "Vị trí hành trang không hợp lệ không còn tác động lên vật phẩm đầu tiên.",
 	"update.04_10_26.mail.capacity": "Việc kiểm tra chỗ trống cho chiến lợi phẩm và phần thưởng giờ tính đúng các chồng vật phẩm.",
-	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE hiện có thể đọc các cờ sự kiện theo mùa qua server.status.event_flags."
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE hiện có thể đọc các cờ sự kiện theo mùa qua server.status.event_flags.",
+	"update.06_10_26.anniversary_crafting.update_button_image": "Đã khắc phục lỗi thiếu hình ảnh trên nút TIN MỚI."
 }

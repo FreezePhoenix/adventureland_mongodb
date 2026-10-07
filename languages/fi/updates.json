@@ -847,5 +847,6 @@
 	"update.04_10_26.mail.spawns": "Hirviödokumentaatio selittää nyt molemmat ilmestymisrajojen muodot.",
 	"update.04_10_26.mail.slots": "Virheelliset tavaraluettelon paikat eivät enää kohdista toimintoa ensimmäiseen esineeseen.",
 	"update.04_10_26.mail.capacity": "Saaliin ja palkintojen tilantarkistukset laskevat pinot nyt oikein.",
-	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE voi nyt lukea kausitapahtumien liput kentästä server.status.event_flags."
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE voi nyt lukea kausitapahtumien liput kentästä server.status.event_flags.",
+	"update.06_10_26.anniversary_crafting.update_button_image": "UUTISET-painikkeesta puuttunut kuva on palautettu."
 }

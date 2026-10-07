@@ -847,5 +847,6 @@
 	"update.04_10_26.mail.spawns": "Monsterdokumentasjonen forklarer nå begge formatene for spawn-grenser.",
 	"update.04_10_26.mail.slots": "Ugyldige inventarplasser utfører ikke lenger handlingen på den første gjenstanden.",
 	"update.04_10_26.mail.capacity": "Plasskontroller for bytte og belønninger teller nå stabler riktig.",
-	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE kan nå lese sesongflagg gjennom server.status.event_flags."
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE kan nå lese sesongflagg gjennom server.status.event_flags.",
+	"update.06_10_26.anniversary_crafting.update_button_image": "Det manglende bildet på NYHETER-knappen er gjenopprettet."
 }

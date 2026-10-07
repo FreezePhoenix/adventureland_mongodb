@@ -847,5 +847,6 @@
 	"update.04_10_26.mail.spawns": "Η τεκμηρίωση τεράτων εξηγεί πλέον και τις δύο μορφές ορίων εμφάνισης.",
 	"update.04_10_26.mail.slots": "Οι μη έγκυρες θέσεις αποθέματος δεν εφαρμόζουν πλέον την ενέργεια στο πρώτο αντικείμενο.",
 	"update.04_10_26.mail.capacity": "Οι έλεγχοι χώρου για λάφυρα και ανταμοιβές μετρούν πλέον σωστά τις στοίβες.",
-	"update.06_10_26.anniversary_crafting.seasonal_flags": "Το CODE μπορεί πλέον να διαβάζει τις ενδείξεις εποχικών συμβάντων μέσω του server.status.event_flags."
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "Το CODE μπορεί πλέον να διαβάζει τις ενδείξεις εποχικών συμβάντων μέσω του server.status.event_flags.",
+	"update.06_10_26.anniversary_crafting.update_button_image": "Αποκαταστάθηκε η εικόνα που έλειπε από το κουμπί ΝΕΑ."
 }

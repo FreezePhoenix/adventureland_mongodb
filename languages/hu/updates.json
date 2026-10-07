@@ -847,5 +847,6 @@
 	"update.04_10_26.mail.spawns": "A szörnyek dokumentációja már mindkét megjelenési határformátumot elmagyarázza.",
 	"update.04_10_26.mail.slots": "Az érvénytelen leltárhelyek már nem az első tárgyon hajtják végre a műveletet.",
 	"update.04_10_26.mail.capacity": "A zsákmány és a jutalmak helyellenőrzése már helyesen számolja a halmokat.",
-	"update.06_10_26.anniversary_crafting.seasonal_flags": "A CODE mostantól a server.status.event_flags segítségével is kiolvashatja a szezonális események jelzőit."
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "A CODE mostantól a server.status.event_flags segítségével is kiolvashatja a szezonális események jelzőit.",
+	"update.06_10_26.anniversary_crafting.update_button_image": "Visszaállítottuk a hiányzó képet a FRISSÍTÉS gombon."
 }

@@ -414,6 +414,7 @@ function validate(notes, G) {
 		if (!/^\[\d\d\/\d\d\/\d\d\]$/.test(note.date || "")) problem(note, "date must be [DD/MM/YY]");
 		if (note.title !== undefined && (typeof note.title !== "string" || !note.title.trim())) problem(note, "title must be text");
 		if (note.priority !== undefined && ![0, 1, 2].includes(note.priority)) problem(note, "priority must be 0 (minor), 1 or 2 (big)");
+		if (note.deployed === null && note.title !== undefined && !note.cover) problem(note, "a titled release needs a cover for the UPDATE button");
 		if (note.cover !== undefined) check_ref(note, note.cover, "cover");
 		const keys = new Set();
 		(note.highlights || []).forEach((highlight, h) => {

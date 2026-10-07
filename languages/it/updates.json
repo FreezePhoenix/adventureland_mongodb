@@ -847,5 +847,6 @@
 	"update.04_10_26.mail.spawns": "La documentazione sui mostri ora spiega entrambi i formati dei confini di comparsa.",
 	"update.04_10_26.mail.slots": "Le posizioni di inventario non valide non agiscono più sul primo oggetto.",
 	"update.04_10_26.mail.capacity": "I controlli dello spazio per bottino e ricompense ora contano correttamente le pile.",
-	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE può ora leggere gli indicatori stagionali tramite server.status.event_flags."
+	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE può ora leggere gli indicatori stagionali tramite server.status.event_flags.",
+	"update.06_10_26.anniversary_crafting.update_button_image": "Ripristinata l’immagine mancante sul pulsante NOVITÀ."
 }
