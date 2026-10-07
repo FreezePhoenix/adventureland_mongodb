@@ -4711,9 +4711,10 @@ var smap_edge = 60; // for smap_step 24, the edge was 40 - also check out access
 // if(Dev) smap_step=24; // 10 takes toooo long [22/06/18]
 var hiding_places = [];
 function server_bfs(map) {
+	// Older precomputed files have no map keys; keep using them until the next precompute.
 	if (
 		precomputed_bfs &&
-		(!G.event_flags || precomputed_bfs.map_keys?.[map] === G.maps[map].key) &&
+		(!precomputed_bfs.map_keys || precomputed_bfs.map_keys[map] === G.maps[map].key) &&
 		(!G.maps[map].collision_key || precomputed_bfs.collision?.[map] === G.maps[map].collision_key) &&
 		precomputed_bfs.smap_data &&
 		precomputed_bfs.smap_data[map] !== undefined &&

@@ -182,7 +182,26 @@ test("the real exchange handler accepts Christmas ingredients at seasonal NPCs o
 	}
 });
 
-test("status packets carry boolean flags and navigation rejects a different map variant", async () => {
+test("startup reuses legacy precomputed maps with event flags present", async () => {
+	const { c } = await browser();
+	load(c, "node/server_functions.js", ["server_bfs"]);
+	vm.runInContext(read("node/precomputed_map_data.js"), c);
+	// Existing releases have grids but no map_keys metadata.
+	delete c.precomputed_bfs.map_keys;
+	c.smap_data = {};
+	c.amap_data = {};
+	c.Dev = false;
+	c.server_bfs2 = (map) => assert.fail("Unexpected startup rebuild: " + map);
+	assert(Object.keys(c.G.event_flags).length);
+	for (const map of ["main", "bank", "mforest"]) {
+		assert(Object.keys(c.precomputed_bfs.smap_data[map]).length, map + " has a saved movement grid");
+		c.server_bfs(map);
+		assert.equal(c.smap_data[map], c.precomputed_bfs.smap_data[map], map);
+		assert.equal(c.amap_data[map], c.precomputed_bfs.amap_data[map], map);
+	}
+});
+
+test("status packets carry boolean flags and navigation rejects a different map variant or collision key", async () => {
 	const { c } = await browser();
 	c.E = { halloween: true };
 	c.broadcast = (name, data) => {
@@ -206,6 +225,17 @@ test("status packets carry boolean flags and navigation rejects a different map 
 	c.precomputed_bfs.map_keys.main = "christmas";
 	c.server_bfs("main");
 	assert.equal(c.smap_data.main.stale, true, "a matching grid is reused");
+	c.G.maps.main.collision_key = "new";
+	c.precomputed_bfs.collision = { main: "old" };
+	for (const stamped of [true, false]) {
+		if (!stamped) delete c.precomputed_bfs.map_keys;
+		c.precomputed_bfs.collision.main = "old";
+		c.server_bfs("main");
+		assert.equal(c.smap_data.main, -1, "changed collision geometry is rejected, including in legacy caches");
+		c.precomputed_bfs.collision.main = "new";
+		c.server_bfs("main");
+		assert.equal(c.smap_data.main.stale, true, "matching collision geometry is reused");
+	}
 });
 
 test("hardcore preserves its Egg Hunt and seasonal respawn and drop overrides", async () => {
