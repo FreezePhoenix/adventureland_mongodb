@@ -513,6 +513,47 @@ function reset_topleft() {
 	ctarget = otarget;
 }
 
+// #performance spree [02/10/26]: entity deltas - with entity_delta=1 in the handshake the server sends only the fields that changed
+// since the packet this client already holds; they are rebuilt here into the exact full packet before any handler or CODE listener runs
+var entity_packets = {}; // id -> private copy of the last full packet, the base for the next delta
+function clone_packet(packet) {
+	return JSON.parse(JSON.stringify(packet));
+}
+function decode_entities(data) {
+	if (!data || typeof data != "object") return;
+	if (data.type == "all") entity_packets = {};
+	var lists = [data.players, data.monsters],
+		lost = false;
+	for (var l = 0; l < lists.length; l++) {
+		var list = lists[l];
+		if (!list) continue;
+		for (var i = 0; i < list.length; i++) {
+			var entry = list[i];
+			if (entry["~"]) {
+				var held = entity_packets[entry.id];
+				if (!held) {
+					list.splice(i--, 1);
+					lost = true;
+					continue;
+				}
+				var full = clone_packet(held);
+				for (var key in entry) if (key != "~") full[key] = entry[key];
+				for (var r = 0; r < entry["~"].length; r++) delete full[entry["~"][r]];
+				list[i] = entry = full;
+			}
+			entity_packets[entry.id] = clone_packet(entry);
+		}
+	}
+	if (lost) socket.emit("send_updates", {}); // a delta without its base: ask for the complete view
+}
+function receive_entity_deltas(packet) {
+	var event = packet && packet.data && packet.data[0],
+		data = packet && packet.data && packet.data[1];
+	if (event == "entities") decode_entities(data);
+	else if ((event == "new_map" || event == "start") && data) decode_entities(data.entities);
+	else if ((event == "disappear" || event == "death") && data) delete entity_packets[data.id];
+}
+
 function handle_entities(data, args) {
 	window.last_entities_received = data;
 	// if(data.type!="all" && pulling_all) return console.log("discarded 'entities' - pulling_all");
@@ -1522,7 +1563,7 @@ function init_socket(args) {
 		if (window.location.origin == "http://127.0.0.1/") server_address = "127.0.0.1";
 		// else server_address = "0.0.0.0";
 	}
-	var query = "map_protocol=1&no_graphics=" + (no_graphics ? "1" : "0") +
+	var query = "map_protocol=1&entity_delta=1&no_graphics=" + (no_graphics ? "1" : "0") +
 		((args.secret && "&desktop=" + ((!is_comm && 1) || "") + "&secret=" + args.secret) || "");
 	if (location.protocol == "https:")
 		window.socket = io(server_address, {
@@ -1572,6 +1613,7 @@ function init_socket(args) {
 	};
 	socket.onevent = function (packet) {
 		if (mode.log_incoming) console.log("INCOMING", JSON.stringify(arguments) + " " + new Date());
+		receive_entity_deltas(packet);
 		original_onevent.apply(socket, arguments);
 	};
 	socket.on("map_chunk", receive_generated_map_chunk);
@@ -1891,6 +1933,7 @@ function init_socket(args) {
 		});
 	});
 	socket.on("game_log", function (data) {
+		if (data.phrase === "server.game_log.invited_to_party" || data.phrase === "server.game_log.requested_to_join_s_party") tut("com");
 		var start_error = (data && data.message) || data;
 		if (
 			no_html &&
@@ -3510,6 +3553,7 @@ function init_socket(args) {
 		}
 	});
 	socket.on("party_update", function (data) {
+		if (data.list && data.list.length) tut("com");
 		draw_trigger(function () {
 			if (data.message || data.phrase) {
 				if (data.leave) add_log(phrase.message(data, true), "#875045");

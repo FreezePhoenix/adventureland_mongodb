@@ -841,6 +841,8 @@ function player_to_server(player, place) {
 				"xy_resync",
 				"monster_stats_cache",
 				"monster_stats_dirty",
+				"wire_fields", // entity_wire's record of the last update sent [02/10/26]
+				"wire_revision",
 				"width",
 				"height",
 				"u",
@@ -4892,6 +4894,7 @@ function init_socket_io(socket_server, server_index) {
 		socket.fs = {}; // function list
 		socket.generated_protocol = Number(socket.handshake.query.map_protocol) || 0;
 		socket.generated_headless = socket.handshake.query.no_graphics === "1";
+		socket.entity_delta = socket.handshake.query.entity_delta === "1"; // the client rebuilds full entity packets from deltas [02/10/26]
 
 		if (!is_socket_allowed(socket)) {
 			disconnect_old_sockets(socket);
@@ -9976,10 +9979,12 @@ function init_socket_io(socket_server, server_index) {
 					target = instances[player.in].monsters[data.id];
 				} else {
 					// TODO: Consider adding game_response, too
+					if (player.seen) delete player.seen[data.id]; // the client forgets it, so the next update must be complete [02/10/26]
 					return socket.emit("disappear", { id: data.id, place: data.name, reason: "not_there" });
 				}
 				if (is_invis(target) || (!gSkill.global && distance(target, player) > B.max_vision)) {
 					// TODO: Consider adding game_response, too
+					if (player.seen) delete player.seen[data.id];
 					return socket.emit("disappear", { id: data.id, place: data.name, reason: "not_there" });
 				}
 			}
@@ -13732,6 +13737,37 @@ function start_moving_element(monster) {
 	calculate_vxy(monster);
 }
 
+// #performance spree [02/10/26]: entity deltas, done right this time - a client that asks for them (handshake entity_delta=1) gets
+// only the fields that changed since the update it already holds, and rebuilds the exact full packet before any handler sees it (js/game.js decode_entities)
+// ~75% fewer entity bytes at EU I's population - what permessage-deflate saved, without zlib's CPU; other clients keep getting full packets
+// each serialised update gets a revision; a viewer gets the delta only when seen[id] is exactly the previous one, anything else (new in view, skipped tick, refresh) gets the full entity
+var entity_revision = 1;
+function entity_wire(entry) {
+	var data = typeof entry.data.toJSON === "function" ? entry.data.toJSON() : entry.data, // what JSON.stringify(entry.data) would encode
+		entity = entry.entity,
+		previous = entity.wire_fields,
+		fields = Object.create(null),
+		full = "",
+		delta = "",
+		removed = [];
+	for (var key in data) {
+		var value = JSON.stringify(data[key]);
+		if (value === undefined) continue; // JSON.stringify skips these too, so full stays byte-identical to JSON.stringify(data)
+		var pair = JSON.stringify(key) + ":" + value;
+		fields[key] = value;
+		full += (full && ",") + pair;
+		if (key !== "id" && (!previous || previous[key] !== value)) delta += "," + pair;
+	}
+	if (previous) for (var old in previous) if (!(old in fields)) removed.push(old);
+	entry.json = "{" + full + "}";
+	entry.delta = previous
+		? '{"id":' + JSON.stringify(entity.id) + ',"~":' + JSON.stringify(removed) + delta + "}"
+		: null;
+	entry.base = entity.wire_revision;
+	entry.revision = entity.wire_revision = ++entity_revision;
+	entity.wire_fields = fields;
+}
+
 function send_xy_updates(player, list) {
 	// third version, very refined - deleted older versions after the "instances" commit
 	// #NOTE: this routine is the bottlenck, unclear whether anything can be done about it, test with mode.nopush [31/07/18]
@@ -13740,6 +13776,7 @@ function send_xy_updates(player, list) {
 	// player.seen records what each client was sent, removals follow it (remove_entity_emit) - the phantom entities fix
 	if (mode.noxy || player.is_npc) return;
 	var seen = player.seen || (player.seen = Object.create(null));
+	var deltas = player.socket.entity_delta;
 	var shed = socket_backlog(player.socket, B.xy_backlog_limit) > B.xy_backlog_limit;
 	// a skipped tick can lose an entity's last update for good - resync the whole view once the socket drains
 	if (!shed && player.xy_resync) {
@@ -13762,11 +13799,11 @@ function send_xy_updates(player, list) {
 			continue;
 		}
 		if (shed) continue;
-		// complete payloads only - the client replaces pending packets between draws and reads x/y/going_x/going_y straight off each one, deltas broke both
-		if (entry.json === undefined) entry.json = JSON.stringify(entry.data);
-		seen[entity.id] = 1;
-		if (entity.is_monster) monsters_json += (monsters_json && ",") + entry.json;
-		else players_json += (players_json && ",") + entry.json;
+		if (entry.json === undefined) entity_wire(entry);
+		var wire = deltas && entry.delta && seen[entity.id] === entry.base ? entry.delta : entry.json;
+		seen[entity.id] = entry.revision;
+		if (entity.is_monster) monsters_json += (monsters_json && ",") + wire;
+		else players_json += (players_json && ",") + wire;
 	}
 	perfc.sxyu += list.length;
 	if (shed) {
