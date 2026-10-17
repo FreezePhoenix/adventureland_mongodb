@@ -1149,7 +1149,7 @@ var positions={
 	"djinncrown":["rawitems",2,4],
 	"covemantle":["rawitems",3,4],
 	"stillwaterlens":["rawitems",4,4],
-	"patronsgrace":["custom",5,0],
+	"patronsgrace":["rawitems",19,3],
 	"schedule_clock":["rawitems",18,4],
 };
 

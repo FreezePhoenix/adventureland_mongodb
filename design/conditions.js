@@ -6,7 +6,7 @@ var conditions = {
 		"buff": true,
 		"persistent": true,
 		"duration": 3000,
-		"explanation": "Deal damage equal to 5% of the Djinn’s maximum HP within 3 seconds, or stun it, to break the shell. Ordinary freezing does not interrupt it. Purify cannot dispel the shell."
+		"explanation": "Deal damage equal to 5% of the Djinn’s maximum HP within 3 seconds, or stun it, to break the shell. Ordinary freezing won't interrupt it, and Purify can't dispel it."
 	},
 	"rimeexposed":{
 		"name": "Cracked Shell",
@@ -276,7 +276,7 @@ var conditions = {
 		name: "Welcome Back",
 		ui: true,
 		encouragement: true,
-		explanation: "Welcome back. There is more to discover. 3× Gold, XP and Luck below level 80; 2× from level 80. Extra rewards follow your contribution.",
+		explanation: "Welcome back. There's more to discover. 3× Gold, XP and Luck below level 80; 2× from level 80. Extra rewards follow your contribution.",
 	},
 	newcomersblessing: {
 		skin: "newcomersblessing",
@@ -466,7 +466,7 @@ var conditions = {
 	realmfatigue: {
 		skin: "condition_bad",
 		name: "Realm Fatigue",
-		explanation: "Another non-merchant character on your account was recently on a different server. Home bonuses and kiss rewards are blocked for 30 minutes; activity elsewhere extends the timer. Returning home does not clear it. Keep your non-merchant characters on one server.",
+		explanation: "Another non-merchant character on your account was recently on a different server. Home bonuses and kiss rewards are blocked for 30 minutes; activity elsewhere extends the timer. Returning home won't clear it. Keep your non-merchant characters on one server.",
 		ui: true,
 		persistent: true,
 		duration: 1000 * 60 * 30,

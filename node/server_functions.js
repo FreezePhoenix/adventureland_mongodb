@@ -882,6 +882,7 @@ async function persist_tauri_steam_install(owner, entity, auth, steam_id) {
 			R.entity = await tx_get(A.entity);
 			if (!R.owner || !R.owner.info.auths.includes(A.auth)) ex("password_issue");
 			if (!R.entity || R.entity.owner !== get_id(R.owner)) ex("no_character");
+			await register_steam_referral_link(R.owner, A.steam_id, tx_get, tx_save, session);
 			R.owner.platform = "steam";
 			R.owner.pid = A.steam_id;
 			R.entity.platform = "steam";

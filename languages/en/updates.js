@@ -1,81 +1,119 @@
 // Release highlights. Dates, item/character names and CODE identifiers stay unchanged.
 module.exports = {
+	// Fixed bug listed in the [08/10/26] update post "Steam Broadcast". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.broadcast.mainframe_spookytown": "Fixed MAINFRAME smart_move() getting stuck when leaving Spooky Town.",
+	// Title of the [08/10/26] update post "Steam Broadcast". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.broadcast.title": "Steam Broadcast",
+	// Improvement listed in the [08/10/26] update post "Steam Broadcast". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.broadcast.broadcast_info": "The Steam broadcast now shows monster INFO, drops, items and current events.",
 	// Fixed bug listed in the [06/10/26] update post "Anniversary Crafting". Keep names from the game and CODE identifiers unchanged.
 	"update.06_10_26.anniversary_crafting.update_button_image": "Fixed the missing image on the UPDATE button.",
 	// Improvement listed in the [06/10/26] update post "Anniversary Crafting". Keep names from the game and CODE identifiers unchanged.
 	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE can now read seasonal flags through server.status.event_flags.",
-	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
-	"update.04_10_26.mail.capacity": "Loot and reward space checks now count stacks correctly.",
-	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
-	"update.04_10_26.mail.slots": "Invalid inventory slots no longer act on the first item.",
-	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
-	"update.04_10_26.mail.spawns": "Monster documentation now explains both spawn-boundary formats.",
-	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
-	"update.04_10_26.mail.promises": "Upgrade and compound CODE results no longer wait for a redraw.",
-	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
-	"update.04_10_26.mail.exchange": "Exchanges now work with a full inventory when they consume the whole stack.",
-	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
-	"update.04_10_26.mail.split": "Splitting a stack in an overflowing inventory no longer loses items.",
-	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
-	"update.04_10_26.mail.grace": "Offerings used without a scroll now show the grace they add instead of an upgrade chance.",
+	// Anniversary crafting release text. Preserve Cole.
+	"update.06_10_26.anniversary_crafting.title": "Anniversary Crafting",
+	// Anniversary crafting release text. Preserve Cole.
+	"update.06_10_26.anniversary_crafting.anniversary_crafting": "Anniversary recipes are available at Cole after the event ends.",
+	// Release note announcing that the anniversary event has ended.
+	"update.04_10_26.mail.anniversary_end": "The anniversary event has ended.",
+	// Fixed bug listed in the [04/10/26] update post "Invite Friends and Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.mail.bank_gold_operation": "Bank gold responses now identify deposits and withdrawals.",
+	// Fixed bug listed in the [04/10/26] update post "Invite Friends and Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.mail.cooperative_online": "Offline characters no longer inflate cooperative monster drops.",
+	// Fixed bug listed in the [04/10/26] update post "Invite Friends and Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.mail.stun_refresh": "Short stun refreshes no longer shorten a longer stun.",
+	// Fixed bug listed in the [04/10/26] update post "Invite Friends and Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.mail.poisoned_monster_healing": "Poisoned monsters now receive 25% of normal healing, as the condition describes.",
+	// Fixed bug listed in the [04/10/26] update post "Invite Friends and Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.mail.browser_connections": "Updated browser and payment-page connections to match the game servers.",
+	// Fixed bug listed in the [04/10/26] update post "Invite Friends and Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.mail.gilded_horse_cape": "The golden Horse Leather Cape is now named Gilded Horse Leather Cape.",
+	// Section text in the [04/10/26] update post "Invite Friends and Fixes", under sprites of: item:friendtoken. Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.mail.friends": "Eligible Steam friends can connect once from the character screen. Both receive a Friend Token when the invited player enters the game, and the inviter receives 200 SHELLS.",
+	// Section heading in the [04/10/26] update post "Invite Friends and Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.mail.friends.title": "Invite Friends",
+	// Improvement listed in the [04/10/26] update post "Invite Friends and Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.mail.steam_friends": "First-time Steam links can now connect to an earlier Adventure Land friend. When several friends qualify, you choose one.",
 	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
 	"update.04_10_26.mail.throw": "Failed throws no longer consume items.",
 	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.mail.split": "Splitting a stack in an overflowing inventory no longer loses items.",
+	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.mail.exchange": "Exchanges now work with a full inventory when they consume the whole stack.",
+	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.mail.slots": "Invalid inventory slots no longer act on the first item.",
+	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
 	"update.04_10_26.mail.send": "Sending items now checks space using their titles, markings, and contents.",
+	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.mail.capacity": "Loot and reward space checks now count stacks correctly.",
+	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.mail.grace": "Offerings used without a scroll now show the grace they add instead of an upgrade chance.",
 	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
 	"update.04_10_26.mail.entry": "Entrances now name the missing key.",
 	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.mail.promises": "Upgrade and compound CODE results no longer wait for a redraw.",
+	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.mail.spawns": "Monster documentation now explains both spawn-boundary formats.",
+	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
 	"update.04_10_26.mail.stunned_items": "Items and potions can no longer be used while stunned.",
 	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
-	"update.04_10_26.mail.alchemy_tooltip": "Alchemy now shows the percentage of an item’s gold value returned.",
+	"update.04_10_26.mail.account_bans": "Banned accounts can no longer sign in or connect to the game.",
 	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
-	"update.04_10_26.mail.numeric_names": "Player-only skills now work on characters with all-numeric names, even when a monster has the same ID.",
+	"update.04_10_26.mail.trade_prices": "Invalid stand prices are now rejected instead of becoming 1-gold listings. Price fields now accept plain text only.",
 	// Fixed bug listed in the [04/10/26] update post "Invite Friends and Fixes". Keep names from the game and CODE identifiers unchanged.
 	"update.04_10_26.mail.cavalry_computer": "Super Computer menus now use the selected inventory item. The Network menu now includes Cavalry when opened from the Super Computer.",
 	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
 	"update.04_10_26.mail.movement_buttons": "Direction buttons now move one 50-pixel step per click. Held arrow keys release correctly when focus changes.",
 	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
 	"update.04_10_26.mail.docs_links": "Character Objects links now open in the game’s documentation panel.",
+	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.mail.numeric_names": "Player-only skills now work on characters with all-numeric names, even when a monster has the same ID.",
+	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.mail.alchemy_tooltip": "Alchemy now shows the percentage of an item’s gold value returned.",
 	// Improvement listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
 	"update.04_10_26.mail.scroll_consumption": "Upgrade and compound scrolls now say they are consumed on every attempt, whether it succeeds or fails.",
-	// Fixed bug listed in the [04/10/26] update post "Bug Fixes". Keep names from the game and CODE identifiers unchanged.
-	"update.04_10_26.mail.trade_prices": "Invalid stand prices are now rejected instead of becoming 1-gold listings. Price fields now accept plain text only.",
 	// Fixed bug listed in the [04/10/26] update post "Mail, Bank, Cave and Combat Fixes". Keep names from the game and CODE identifiers unchanged.
 	"update.04_10_26.mail.self_splash": "Self-inflicted splash damage no longer prevents XP loss when a monster kills you or gives you loot from your own death.",
 	// Fixed bug listed in the [04/10/26] update post "Mail, Bank and Cave Fixes". Keep names from the game and CODE identifiers unchanged.
 	"update.04_10_26.mail.cave_walls": "Cave votes no longer leave characters stuck in walls. Logging out from a blocked position no longer prevents returning to the run.",
 	// Fixed bug listed in the [04/10/26] update post "Mail, Bank and Bonus Fixes". Keep names from the game and CODE identifiers unchanged.
-	"update.04_10_26.mail.bank_keys": "Using either bank floor key now makes its first item pack available immediately, without leaving and re-entering.",
-	// Fixed bug listed in the [04/10/26] update post "Mail, Bank and Bonus Fixes". Keep names from the game and CODE identifiers unchanged.
 	"update.04_10_26.mail.bank_overflow": "Items in extra inventory rows can now be banked without moving the wrong item.",
+	// Fixed bug listed in the [04/10/26] update post "Mail, Bank and Bonus Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.mail.bank_keys": "Using either bank floor key now makes its first item pack available immediately, without leaving and re-entering.",
 	// Fixed bug listed in the [04/10/26] update post "Mail and Bonus Fixes". Keep names from the game and CODE identifiers unchanged.
 	"update.04_10_26.mail.merchant_bonuses": "Switching servers on a merchant no longer interrupts other characters’ encouragement bonuses.",
-	// Fixed bug listed in the [04/10/26] update post "Mail Fixes". Keep names from the game and CODE identifiers unchanged.
-	"update.04_10_26.mail.mail_ownership": "Mail attachments can now be collected only by the receiving account. Deleting mail removes only your copy.",
 	// Fixed bug listed in the [04/10/26] update post "Mail and Server Menu Fixes". Keep names from the game and CODE identifiers unchanged.
 	"update.04_10_26.mail.server_menu": "Event cards no longer cover the server menu.",
-	// Anniversary crafting release text. Preserve Cole.
-	"update.06_10_26.anniversary_crafting.anniversary_crafting": "Anniversary recipes are available at Cole after the event ends.",
-	// Release note announcing that the anniversary event has ended.
-	"update.04_10_26.mail.anniversary_end": "The anniversary event has ended.",
-	// Release fix note. Preserve game item names, CODE identifiers and the healing percentage.
-	"update.04_10_26.mail.bank_gold_operation": "Bank gold responses now identify deposits and withdrawals.",
-	// Release fix note. Preserve game item names, CODE identifiers and the healing percentage.
-	"update.04_10_26.mail.cooperative_online": "Offline characters no longer inflate cooperative monster drops.",
-	// Release fix note. Preserve game item names, CODE identifiers and the healing percentage.
-	"update.04_10_26.mail.stun_refresh": "Short stun refreshes no longer shorten a longer stun.",
-	// Release fix note. Preserve game item names, CODE identifiers and the healing percentage.
-	"update.04_10_26.mail.poisoned_monster_healing": "Poisoned monsters now receive 25% of normal healing, as the condition describes.",
-	// Release fix note. Preserve game item names, CODE identifiers and the healing percentage.
-	"update.04_10_26.mail.browser_connections": "Updated browser and payment-page connections to match the game servers.",
-	// Release fix note. Preserve game item names, CODE identifiers and the healing percentage.
-	"update.04_10_26.mail.gilded_horse_cape": "The golden Horse Leather Cape is now named Gilded Horse Leather Cape.",
+	// Title of the [04/10/26] update post "Invite Friends and Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.mail.title": "Invite Friends and Fixes",
+	// Fixed bug listed in the [04/10/26] update post "Mail Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.mail.mail_ownership": "Mail attachments can now be collected only by the receiving account. Deleting mail removes only your copy.",
+	// Improvement listed in the [04/10/26] update post "Halloween and Cave Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.release.halloween": "Halloween has started!",
+	// Fixed bug listed in the [04/10/26] update post "Halloween and Cave Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.release.cave_progress": "Fixed Cave progress getting stuck after dragging enemies away or leaving a completed encounter.",
+	// Fixed bug listed in the [04/10/26] update post "Halloween and Cave Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.release.cave_loot": "Fixed Cave loot showing ERROR and Amber counters not updating after leaving a completed encounter.",
+	// Title of the [04/10/26] update post "Halloween and Cave Fixes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.release.title": "Halloween and Cave Fixes",
+	// Fixed bug listed in the [04/10/26] update post "Flaming Eyes". Keep names from the game and CODE identifiers unchanged.
+	"update.04_10_26.release.flaming_eyes": "The flaming-eye head now animates, even while standing still.",
 	// Fixed bug listed in the [29/09/26] update post "Cave Fixes and Orb Compounding". Keep names from the game and CODE identifiers unchanged.
 	"update.29_09_26.character_shells": "Included character slots no longer cost shells. Character changes can no longer overdraw your shell balance.",
+	// Improvement listed in the [29/09/26] update post "Cave Fixes and Orb Compounding". Keep names from the game and CODE identifiers unchanged.
+	"update.29_09_26.server_cpu": "Game servers use about 20% less CPU, so busy events lag less.",
 	// Fixed bug listed in the [29/09/26] update post "Cave Fixes and Orb Compounding". Keep names from the game and CODE identifiers unchanged.
 	"update.29_09_26.encouragement_loot": "Encouragement drops now appear in CODE’s loot event.",
 	// Fixed bug listed in the [29/09/26] update post "Cave Fixes and Orb Compounding". Keep names from the game and CODE identifiers unchanged.
 	"update.29_09_26.chat_spam": "Repeated public messages are now filtered out of Discord and saved chat history.",
+	// Summary of the [29/09/26] update post "Cave Fixes and Orb Compounding", shown under its title and in the game log. Keep names from the game and CODE identifiers unchanged.
+	"update.29_09_26.release": "Loaded Die and Stillwater Lens can now be compounded.",
+	// Title of the [29/09/26] update post "Cave Fixes and Orb Compounding". Keep names from the game and CODE identifiers unchanged.
+	"update.29_09_26.release.title": "Cave Fixes and Orb Compounding",
+	// Fixed bug listed in the [29/09/26] update post "Cave Fixes and Orb Compounding". Keep names from the game and CODE identifiers unchanged.
+	"update.29_09_26.release.cave_targets": "Cave monsters now report their target to CODE.",
+	// Note under title:cavefound (changed) in the change list of the [29/09/26] update post "Cave Fixes and Orb Compounding". Keep names from the game and CODE identifiers unchanged.
+	"update.29_09_26.release.title_cavefound": "Cave-found is now called Cave. Each equipped item with this title gives +5 magic resistance.",
 	// Fixed bug listed in the [24/09/26] update post "Rare Monsters, 15 Accessories and Trade Offers". Keep names from the game and CODE identifiers unchanged.
 	"update.24_09_26.rare_drops.false_jail": "Walking by the Tavern poker table and a few other spots no longer sends you to jail.",
 	// Section text in the [24/09/26] update post "Rare Monsters, 15 Accessories and Trade Offers", under sprites of: item:stand0. Keep names from the game and CODE identifiers unchanged.

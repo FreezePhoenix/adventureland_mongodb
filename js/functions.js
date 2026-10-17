@@ -61,6 +61,90 @@ function api_call(method, args, r_args) {
 	return P.promise;
 }
 
+var steam_referral_later = false;
+var steam_referral_generation = 0;
+var steam_referral_ticket = "";
+
+function load_steam_referral_choices() {
+	var panel = $(".steam-friend-picker");
+	panel.hide();
+	if (!panel.length || steam_referral_later || !window.tauri_invoke || !window.tauri_prepare_auth) return;
+	var generation = ++steam_referral_generation;
+	tauri_prepare_auth().then(function (auth) {
+		return tauri_invoke("get_steam_friends").then(function (friends) { return [auth, friends]; });
+	})
+		.then(function (results) {
+			if (!results[0].ticket || !Array.isArray(results[1])) return;
+			steam_referral_ticket = results[0].ticket;
+			var friends = results[1];
+			return api_call("steam_referral_candidates", { ticket: steam_referral_ticket, friends: friends.map(function (friend) { return friend.id; }) })
+				.then(function (result) {
+					if (generation !== steam_referral_generation || !document.body.contains(panel[0]) || result.state !== "choose") return;
+					var names = {};
+					friends.forEach(function (friend) { names[friend.id] = friend.name; });
+					var list = panel.find(".steam-friend-list").empty();
+					result.candidates.forEach(function (candidate) {
+						var name = names[candidate.steamid] || candidate.account;
+						var button = $("<div class='gamebutton steam-friend-choice' tabindex='0'></div>");
+						var identity = $("<div class='steam-friend-identity'></div>");
+						if (!no_graphics && candidate.character && candidate.character.skin)
+							identity.append(sprite(candidate.character.skin, { cx: candidate.character.cx || {}, rip: candidate.character.rip || "", width: 44, height: 52, scale: 2, overflow: true }));
+						var labels = $("<div class='steam-friend-labels'></div>");
+						labels.append($("<div class='steam-friend-name'></div>").text(name));
+						if (candidate.character) labels.append($("<div class='steam-friend-character'></div>").text(phrase("client.steam_referral.character", { name: candidate.character.name })));
+						identity.append(labels);
+						button.append(identity);
+						button.append($("<div class='steam-friend-action'></div>").text(phrase("client.steam_referral.choose")));
+						button.on("click keydown", function (event) {
+							if (event.type === "keydown" && event.key !== "Enter" && event.key !== " ") return;
+							event.preventDefault();
+							show_confirm(
+								phrase.html("client.steam_referral.confirm_title", { name: name }) + "<br><br>" +
+								phrase.html("client.steam_referral.confirm_reward") + "<br><br>" + phrase.html("client.steam_referral.confirm_once"),
+								phrase.html("client.steam_referral.connect"), phrase.html("interface.close.cancel"),
+								function () {
+									api_call("steam_referral_connect", { ticket: steam_referral_ticket, inviter: candidate.id })
+										.then(function () { hide_modal(); panel.hide(); steam_referral_later = true; })
+										.catch(function () { hide_modal(); ui_error(phrase.html("client.steam_referral.unavailable")); });
+								},
+							);
+						});
+						list.append(button);
+					});
+					panel.show();
+					resize();
+				});
+		})
+		.catch(function (error) { console.warn("Steam friend connection unavailable", error && error.reason || error); });
+}
+
+function copy_referral_link(button) {
+	var link = button.dataset.link;
+	function copied() { button.textContent = phrase("client.steam_referral.copied"); }
+	if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(link).then(copied).catch(function () { ui_error(phrase.html("client.steam_referral.copy_failed")); });
+	var input = $("<textarea></textarea>").val(link).appendTo("body");
+	input[0].select();
+	var okay = document.execCommand("copy");
+	input.remove();
+	if (okay) copied();
+	else ui_error(phrase.html("client.steam_referral.copy_failed"));
+}
+
+function show_referral_reward() {
+	var content = "";
+	if (!no_graphics) content += cx_sprite("xgravestone2", { width: 80, height: 80, scale: 3 });
+	content += "<div>" + phrase.html("client.steam_referral.reward_preview") + "</div>";
+	show_modal("<div class='largeborder' style='background:black;text-align:center;padding:16px;font-size:24px'>" + content + "</div>");
+}
+
+function render_referral_panel() {
+	if (no_graphics || !window.G || !G.items || !G.items.friendtoken) return;
+	$(".recruit-shells").html(item_container({ skin: "shells", size: 40, draggable: false }));
+	$(".recruit-friendtoken").html(item_container({ skin: G.items.friendtoken.skin, size: 40, draggable: false }, { name: "friendtoken" }));
+	if (G.npcs && G.npcs.friendtokens) $(".recruit-fvona").html(sprite(G.npcs.friendtokens.skin, { width: 56, height: 72, scale: 2, overflow: true }));
+	$(".recruit-gravestone").html(cx_sprite("xgravestone2", { width: 56, height: 72, scale: 2 }));
+}
+
 function server_to_ui(key) {
 	if (!key) return "";
 	if (X && X.servers) {
@@ -601,13 +685,10 @@ function add_magiport(name) {
 	);
 }
 
-function add_invite(name) {
-	add_chat(
-		"^",
-		phrase.html("client.add_invite.received", { name: name }) + " \t\t" + "<span class='clickable' style='color:green' onclick='push_deferred(\"party\"); socket.emit(\"party\",{event:\"accept\",name:\"" + (name) + "\"}); remove_chat(\"pin" + (name) + "\")'>" + phrase.html("client.add_invite.accept") + "</span>",
-		undefined,
-		"pin" + name,
-	);
+function add_invite(name, return_html) {
+	var html = phrase.html("client.add_invite.received", { name: name }) + " \t\t" + "<span class='clickable' style='color:green' onclick='push_deferred(\"party\"); socket.emit(\"party\",{event:\"accept\",name:\"" + (name) + "\"}); remove_chat(\"pin" + (name) + "\")'>" + phrase.html("client.add_invite.accept") + "</span>";
+	if (return_html) return html;
+	add_chat("^", html, undefined, "pin" + name);
 }
 
 function add_challenge(name) {

@@ -1,18 +1,18 @@
 module.exports = {
-	// Upgrade-shrine chance tooltip for grace-only offerings. {amount} is the added grace (currently 0.5), not a percentage.
-	"interface.upgrade_shrine.grace_hint": "Adds {amount} grace. Does not raise the item level.",
-	// Alchemy tooltip label for the percentage of the item's gold value returned. This is not damage.
-	"interface.skill.gold_output": "Gold return",
-	// Upgrade/compound scroll tooltips, Items guide and CODE references. Each actual attempt consumes its scroll on success or failure; a chance preview is not an attempt.
-	"interface.item.scroll_consumed": "The scroll is consumed whether the attempt succeeds or fails.",
 	// Shared anniversary guide paragraph. Seasonal crafting moves to Cole; Xyn exchanges remain available. Preserve Mira, Cole, Xyn and Anniversary Gifts.
 	"interface.anniversary.offseason_crafting": "Mira crafts anniversary recipes during the event. After she leaves, Cole crafts them instead. Cakes and Anniversary Gifts can still be opened at Xyn.",
 	// Crafting hint. {name} is Mira or Cole. Computer access permits remote crafting; keep Computer unchanged.
 	"interface.anniversary.crafter_distance": "Stay near {name} to craft, unless you have Computer access.",
 	// Travel button. {name} is the active crafter, Mira during the event or Cole afterward; keep the name unchanged.
 	"interface.anniversary.visit_crafter": "Visit {name}",
+	// Upgrade-shrine chance tooltip for grace-only offerings. {amount} is the added grace (currently 0.5), not a percentage.
+	"interface.upgrade_shrine.grace_hint": "Adds {amount} grace. Does not raise the item level.",
 	// Uppercase upgrade-shrine action for an offering without a scroll. Match RESET and UPGRADE casing; adds grace, not an item level.
 	"interface.upgrade_shrine.add_grace": "ADD GRACE",
+	// Upgrade/compound scroll tooltips, Items guide and CODE references. Each actual attempt consumes its scroll on success or failure; a chance preview is not an attempt.
+	"interface.item.scroll_consumed": "The scroll is consumed whether the attempt succeeds or fails.",
+	// Alchemy tooltip label for the percentage of the item's gold value returned. This is not damage.
+	"interface.skill.gold_output": "Gold return",
 	// Short uppercase tag under a monster's picture in a guide: the monster seen from the front.
 	"interface.monster_views.front": "FRONT",
 	// Short uppercase tag under a monster's picture in a guide: the monster facing left.
@@ -27,22 +27,6 @@ module.exports = {
 	"interface.cavalry.not_threatened": "Your account's highest level is {level}. Cavalry only fights monsters already attacking you or your party.",
 	// Offensive assistance refuses monsters near any living connected level-80+ player, regardless of party.
 	"interface.cavalry.guarded": "A level-80+ player is within 150 pixels of these monsters.",
-	// Generated private adventures reject Cavalry calls; fixed team name.
-	"interface.cavalry.location": "Cavalry cannot enter this place.",
-	// Call refusal for a disconnected/dead character, an in-flight request or unavailable persistence. Keep Cavalry.
-	"interface.cavalry.unavailable": "Cavalry cannot answer right now.",
-	// Account cooldown refusal. minutes is the remaining time rounded up, formatted as a string; use a compact minute unit, not count pluralization. Keep Cavalry.
-	"interface.cavalry.cooldown": "Cavalry can answer again in {minutes} min.",
-	// No ordinary monsters meet the rescue rules. The monster level, not the player level, must be at least 3.
-	"interface.cavalry.no_monsters": "No eligible level 3+ monsters nearby.",
-	// Missing required inventory item. Tracktrix and Cavalry are fixed names.
-	"interface.cavalry.tracker": "Carry Tracktrix or Super Computer to call the Cavalry.",
-	// Call accepted but no sentry is assigned yet.
-	"interface.cavalry.queued": "Cavalry is busy. Your call is waiting.",
-	// Successful call feedback; keep Cavalry unchanged.
-	"interface.cavalry.coming": "Cavalry is on the way!",
-	// Tracktrix action and guide references. Uppercase action label with an exclamation mark, including the team name CAVALRY; use the locale’s punctuation.
-	"interface.cavalry.call": "CALL IN CAVALRY!",
 	// Character selection destination and own-condition tooltip. server is the full realm name, e.g. Americas II. Short label.
 	"interface.selection.destination": "Server: {server}",
 	// Character hover, condition tooltip and log. server is the saved home, e.g. Americas II.
@@ -59,6 +43,22 @@ module.exports = {
 	"interface.hub.pack": "Pack {number}",
 	// HUB bank viewer. The HTTP view reads saved account data, which may lag behind changes made in game.
 	"interface.hub.saved_bank": "Saved bank contents. Recent changes may not appear yet.",
+	// Generated private adventures reject Cavalry calls; fixed team name.
+	"interface.cavalry.location": "Cavalry cannot enter this place.",
+	// Call refusal for a disconnected/dead character, an in-flight request or unavailable persistence. Keep Cavalry.
+	"interface.cavalry.unavailable": "Cavalry cannot answer right now.",
+	// Account cooldown refusal. minutes is the remaining time rounded up, formatted as a string; use a compact minute unit, not count pluralization. Keep Cavalry.
+	"interface.cavalry.cooldown": "Cavalry can answer again in {minutes} min.",
+	// No ordinary monsters meet the rescue rules. The monster level, not the player level, must be at least 3.
+	"interface.cavalry.no_monsters": "No eligible level 3+ monsters nearby.",
+	// Missing required inventory item. Tracktrix and Cavalry are fixed names.
+	"interface.cavalry.tracker": "Carry Tracktrix or Super Computer to call the Cavalry.",
+	// Call accepted but no sentry is assigned yet.
+	"interface.cavalry.queued": "Cavalry is busy. Your call is waiting.",
+	// Successful call feedback; keep Cavalry unchanged.
+	"interface.cavalry.coming": "Cavalry is on the way!",
+	// Tracktrix action and guide references. Uppercase action label with an exclamation mark, including the team name CAVALRY; use the locale’s punctuation.
+	"interface.cavalry.call": "CALL IN CAVALRY!",
 	// Compact selected-monster line. seconds is a formatted remaining duration; damage is the exact remaining damage needed to break its shell, not monster HP. Preserve both placeholders.
 	"interface.monster.rime_shell_progress": "{seconds}s · {damage} damage left",
 	// Anniversary reward feedback in the existing log/INFO or guide. Keep character.anniversary, rewarded and reason as CODE identifiers; preserve names and placeholders.
@@ -518,7 +518,7 @@ module.exports = {
 	// js/tavern_poker.js; table info line. min and max are formatted gold amounts of the allowed buy-in.
 	"interface.poker.buyin": "Buy-in {min} – {max}",
 	// js/tavern_poker.js; table info line. rake is a percentage number without the % sign; cap is formatted gold.
-	"interface.poker.rake": "Rake {rake}% of each pot, at most {cap}",
+	"interface.poker.rake": "Rake {rake}% of each pot, capped at {cap}",
 	// js/tavern_poker.js; label of an unoccupied seat.
 	"interface.poker.empty_seat": "Empty seat",
 	// js/tavern_poker.js; button on an empty seat that opens the buy-in entry. Compact uppercase label.
@@ -1278,7 +1278,7 @@ module.exports = {
 	"interface.interaction.sign_me_up": "SIGN ME UP!",
 	// js/html.js render_interaction; authored interface text.
 	"interface.interaction.tavern_a_place_for_adventurers_to_relax_drink_unwind_play":
-		"Tavern. A place for adventurers to relax, drink, unwind, play games, wager, challenge each other in friendly games. Currently under construction.",
+		"Tavern. A place for adventurers to relax, have a drink, unwind, play games, wager, and challenge each other to friendly contests. Currently under construction.",
 	// js/html.js render_interaction; authored interface text.
 	"interface.interaction.greetings_looking_for_a_good_deal_on_weapons_and_armor":
 		"Greetings! Looking for a good deal on weapons and armor? Then you came to the right place! No one sells better gear than me!",
@@ -1719,7 +1719,7 @@ module.exports = {
 	"interface.load_coming_soon.planned_along_with_achievements_character_statistics_weekly_monthly_leaderboards": "Planned, along with achievements, character statistics, weekly, monthly leaderboards",
 	// js/html.js render_merrit_interaction; authored display label or status.
 	"interface.merrit_interaction.keep_a_stocked_shop_here_for_two_minutes_and_leave_the_neighbors_room_i_bring_parcels_once_an_hour":
-		"Keep a stocked shop here for two minutes and leave the neighbors room. I bring parcels once an hour.",
+		"Keep a stocked shop here for two minutes and leave the neighbors some room. I bring parcels once an hour.",
 	// js/html.js render_merrit_interaction; authored display label or status.
 	"interface.merrit_interaction.back": "BACK",
 	// js/html.js render_merrit_interaction; authored display label or status.
@@ -1867,7 +1867,7 @@ module.exports = {
 	"interface.encouragement.away": "Return after more than 60 days away to receive Welcome Back.",
 	// Authored interface sentence or label; names and CODE identifiers remain unchanged.
 	"interface.recipes.crafting_and_collecting": "Crafting and Collecting",
-	// Confirm deleting a mail message.
+	// Confirm removing only this account's copy of a mail message; the other account's copy remains.
 	"interface.mail.confirm_delete": "Delete your copy of this mail?",
 	// Authored interface sentence or label; names and CODE identifiers remain unchanged.
 	"interface.cosmetics.default_position": " default position",

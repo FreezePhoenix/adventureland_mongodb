@@ -11674,7 +11674,10 @@ function init_socket_io(socket_server, server_index) {
 					R.entity = await tx_get(A[0].character);
 					if (!R.entity) ex("no_character");
 					if (!R.owner || !R.owner.info.auths.includes(A[0].auth)) ex("password_issue");
+					if (is_account_blocked(R.owner)) ex("banned");
 					if (R.entity.owner !== get_id(R.owner)) ex("no_character");
+					if (!is_safe_character_name(R.entity.name) || !is_safe_character_name(R.entity.info && R.entity.info.name))
+						ex("invalid_name");
 					if (A[0].mainframe_session !== undefined) {
 						var assignment = await tx_get("MK_mainframe_assignment-" + get_id(R.entity));
 						if (!is_valid_mainframe_session(assignment, A[0].mainframe_session)) ex("mainframe_issue");
@@ -12006,6 +12009,15 @@ function init_socket_io(socket_server, server_index) {
 					cdata.entities = send_all_xy(player, { raw: true });
 					if (players[socket.id] !== player || player.dc || !socket.connected) return;
 					socket.emit("start", cdata);
+					if (!player.mainframe && !data.no_html) {
+						get(player.owner)
+							.then(function (current_owner) {
+								if (current_owner && current_owner.platform === "steam") return reward_referrer_logic(current_owner);
+							})
+							.catch(function (error) {
+								console.error("reward_referrer entry error", error);
+							});
+					}
 					if (!gf(owner, "tracktrix_mail_sent", false))
 						send_tracktrix_mail(owner, player.name)
 							.then(function (count) {
@@ -16912,7 +16924,7 @@ function sync_loop() {
 			});
 			try {
 				var user = await get(player.owner);
-				if (user)
+				if (user && user.platform === "mas")
 					reward_referrer_logic(user).catch(function (e) {
 						console.error("reward_referrer error", e);
 					});

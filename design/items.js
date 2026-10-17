@@ -10,7 +10,7 @@ var items={
 		"s": 9999,
 		"g": 160,
 		"exclusive": true,
-		"explanation": "Cold to the touch. Warmth will not melt it."
+		"explanation": "Cold to the touch. Warmth won't melt it."
 	},
 	"covemantle":{
 		"type": "cape",
@@ -52,6 +52,8 @@ var items={
 		"int": 9,
 		"mp": 400,
 		"resistance": 60,
+		"compound": { "int": 1, "mp": 40, "resistance": 6 },
+		"grades": [0, 0, 6, 7],
 		"g": 240000,
 		"exclusive": true,
 		"cx": {
@@ -4689,7 +4691,7 @@ var weapons={
 		"g":48000,
 		"cx":{"accent":"#CBAE69","scale":0.5,"extension":true},
 		"name":"Locktooth",
-		"explanation":"It opens locks. Their owners usually object.",
+		"explanation":"It opens locks. Their owners tend to object.",
 		"exclusive":true
 	},
 	"cave_tunnelaxe":{
@@ -4704,7 +4706,7 @@ var weapons={
 			"apiercing": 2
 		},
 		"name": "Tunnel Axe",
-		"explanation": "A stout axe for roots, ribs and stubborn doors.",
+		"explanation": "A stout axe for roots, ribs, and stubborn doors.",
 		"g": 48000,
 		"exclusive": true,
 		"cx": {
@@ -9127,7 +9129,7 @@ Object.assign(items, {
       "accent": "#8B809F"
     },
     "name": "Counterweight",
-    "explanation": "A heavy stone shield with thick leather straps.",
+    "explanation": "A heavy stone shield held by thick leather straps.",
     "exclusive": true,
     "hp": 120
   },
@@ -9136,13 +9138,14 @@ Object.assign(items, {
     "skin": "cave_loaded_die",
     "crit": 8,
     "critdamage": 10,
-    "grade": 1,
+    "compound": { "crit": 0.5, "critdamage": 2 },
+    "grades": [0, 0, 6, 7],
     "g": 72000,
     "cx": {
       "accent": "#E5BC83"
     },
     "name": "Loaded Die",
-    "explanation": "Someone put a little extra weight under the six.",
+    "explanation": "Someone added a little extra weight beneath the six.",
     "exclusive": true
   },
   "cave_amber": {
@@ -9191,7 +9194,7 @@ Object.assign(items, {
       "scale": 0.5,
       "extension": true
     },
-    "explanation": "The last spell it cast came back."
+    "explanation": "The last spell it cast came straight back."
   },
   "cave_backstabber": {
     "type": "weapon",

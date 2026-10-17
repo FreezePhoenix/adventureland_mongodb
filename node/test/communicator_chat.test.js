@@ -105,6 +105,7 @@ function fixture(options = {}) {
 			return game.output;
 		},
 	});
+	load(context, "adventure_functions.js", ["is_safe_character_name"]);
 	load(context, "api.js", ["is_name_xallowed", "communicator_chat_status", "communicator_say", "send_message_api"]);
 	const send = (extra = {}) =>
 		context.send_message_api({
@@ -348,6 +349,7 @@ test("history isolates private accounts, matches both directions and pages tied 
 			}),
 		},
 	});
+	load(context, "adventure_functions.js", ["is_safe_character_name"]);
 	load(context, "api.js", [
 		"is_name_xallowed",
 		"chat_cursor_query",

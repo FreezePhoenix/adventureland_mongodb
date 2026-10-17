@@ -262,7 +262,9 @@ function render_party_old(list) {
 	else $("#partylist").css("display", "inline-block");
 }
 
-function render_party() {
+function render_party(args) {
+	args = args || {};
+	var party = args.party || window.party;
 	var html = "";
 	for (var name in party) {
 		var member = party[name];
@@ -272,6 +274,7 @@ function render_party() {
 		else html += "<div style='margin-top: 1px'>" + name.substr(0, 3).toUpperCase() + "</div>";
 		html += "</div>";
 	}
+	if (args.return_html) return html;
 	$("#newparty").html(html);
 	if (!party_list.length) $("#newparty").hide();
 	else $("#newparty").show();
@@ -898,7 +901,9 @@ function render_server() {
 	}
 }
 
-function render_character_sheet() {
+function render_character_sheet(args) {
+	args = args || {};
+	var character = args.character || window.character, party = args.party || window.party;
 	var html = "<div style='background-color: black; border: 5px solid gray; padding: 20px; font-size: 24px; display: inline-block; vertical-align: top; text-align: left' class='disableclicks'>";
 	html +=
 		"<div><span style='color:gray'>" +
@@ -910,7 +915,7 @@ function render_character_sheet() {
 	html += "<div><span style='color:gray'>" + phrase.html("interface.character_sheet.xp") + "</span> " + to_pretty_num(character.xp) + " / " + to_pretty_num(character.max_xp) + "</div>";
 	var divider = 1,
 		disclaimer = "";
-	if (pvp && !(!is_pvp && G.maps[character.map].safe_pvp)) ((divider = 10), (disclaimer = "<span style='color:#605B85'>" + phrase.html("interface.character_sheet.pvp") + "</span>"));
+	if (!args.return_html && pvp && !(!is_pvp && G.maps[character.map].safe_pvp)) ((divider = 10), (disclaimer = "<span style='color:#605B85'>" + phrase.html("interface.character_sheet.pvp") + "</span>"));
 	var lost_xp = floor(min(max((character.max_xp * 0.01) / divider, (character.xp * 0.02) / divider), character.xp));
 	if (character.ctype != "merchant")
 		html += "<div><span style='color:gray'>" + phrase.html("interface.character_sheet.max_xp_loss") + "</span> " + to_pretty_num(lost_xp) + " " + disclaimer + "</div>";
@@ -1024,6 +1029,7 @@ function render_character_sheet() {
 		else html += "<div><span style='color:gray'>" + phrase.html("interface.character_sheet.luck") + "</span> " + round(character.luckm * 100) + "%</div>";
 	}
 	html += "</div>";
+	if (args.return_html) return html;
 	render_ui_panel("#rightcornerui", html, "stats", { label: "X", corner: true, classes: "ui-close-corner" });
 	topright_npc = "character";
 }
@@ -1273,15 +1279,17 @@ function render_monster(monster) {
 }
 
 var cache_bid = -1;
-function render_character(player) {
+function render_character(player, args) {
+	args = args || {};
+	var character = args.character || window.character, party_list = args.party_list || window.party_list;
 	var html =
 			"<div style='background-color: black; border: 5px solid gray; padding: 20px; font-size: 24px; display: inline-block; vertical-align: top;' class='renderedinfo' data-id='" + player.id + "'>",
-		cccx = $(".cccx").length,
+		cccx = !args.return_html && $(".cccx").length,
 		ihtml = "",
 		bhtml = "",
 		xhtml = "",
 		already = false;
-	if ($(".renderedinfo").length && $(".renderedinfo").data("id") == player.id) already = true;
+	if (!args.return_html && $(".renderedinfo").length && $(".renderedinfo").data("id") == player.id) already = true;
 	html += info_line({
 		name: (player.role && phrase.definition("role", player.role, "name", player.role.toTitleCase()).toLocaleUpperCase(phrase.language)) || phrase.html("interface.character.name"),
 		color: (player.role && "#E14F8B") || "gray",
@@ -1316,7 +1324,7 @@ function render_character(player) {
 	if (player.npc && G.npcs[player.npc].cavalry)
 		html += button_line({name: phrase.html("interface.item.info"), onclick: "open_guide('cavalry', get_guide_url('cavalry'))", color: "#C6AA62"});
 	html += "</div>";
-	var bid = player.party + "|" + player.stand + "|" + (character.slots.trade1 !== undefined);
+	var bid = player.party + "|" + player.stand + "|" + (character && character.slots.trade1 !== undefined);
 	html += "<div class='bhtml'>";
 	if (!player.npc && !player.party && character && !player.me && !player.stand)
 		bhtml += button_line({
@@ -1354,6 +1362,7 @@ function render_character(player) {
 	html += bhtml;
 	html += "</div>";
 	html += "</div>";
+	if (args.return_html) return html;
 	if (already) {
 		$(".ihtml").html(ihtml);
 		if (bid != cache_bid) $(".bhtml").html(bhtml);
@@ -3569,6 +3578,82 @@ function get_tutorial_view(track) {
 	};
 }
 
+function render_party_examples() {
+	if (window.no_graphics) return;
+	// These examples use the live HTML renderers, but never the live character,
+	// roster or socket. Remove live handlers before placing a preview in the DOM.
+	function inert(html) {
+		var element = $(html);
+		element.find("*").addBack().each(function () {
+			var node = this;
+			if (node.nodeType !== 1) return;
+			Array.prototype.slice.call(node.attributes).forEach(function (attr) {
+				if (/^on/i.test(attr.name)) node.removeAttribute(attr.name);
+			});
+		}).removeClass("renderedinfo ihtml bhtml xhtml");
+		return element;
+	}
+	function example_character(name, type) {
+		var definition = G.classes[type], look = definition.looks[0];
+		return Object.assign({}, definition.stats, {
+			id: name, name: name, ctype: type, level: 1, xp: 0, max_xp: G.levels[1], map: "main",
+			hp: definition.hp, max_hp: definition.hp, mp: definition.mp, max_mp: definition.mp,
+			attack: definition.attack, frequency: definition.frequency, range: definition.range, speed: definition.speed,
+			armor: definition.armor, resistance: definition.resistance, mp_cost: definition.mp_cost,
+			courage: definition.courage, mcourage: definition.mcourage, pcourage: definition.pcourage,
+			skin: look[0], cx: Object.assign({}, look[1]), s: {}, slots: {}, goldm: 1, xpm: 1, luckm: 1,
+		});
+	}
+	$(".party-practice").each(function () {
+		var root = $(this);
+		if (root.data("ready")) return;
+		root.data("ready", true);
+		var mira = example_character("Mira", "mage"), finn = example_character("Finn", "warrior"), roster = { Mira: mira, Finn: finn };
+		mira.me = true;
+		function select(member) {
+			var html = render_character(member, { character: mira, party_list: [], return_html: true });
+			var panel = $(html), invite = panel.find("[onclick]").filter(function () { return this.getAttribute("onclick").indexOf("event:'invite'") !== -1; });
+			panel = inert(panel);
+			invite.on("click", function (event) {
+				event.stopPropagation();
+				if (window.character) tut("com");
+				root.find(".party-practice-status").text(root.attr("data-sent"));
+				var invitation = inert("<div class='chatentry' style='color:gray'>" + add_invite("Mira", true) + "</div>");
+				invitation.find(".clickable").on("click", function (event) {
+					event.stopPropagation();
+					mira.party = finn.party = "Mira";
+					var portraits = inert(render_party({ party: roster, return_html: true }));
+					portraits.filter(".gamebutton").each(function (index) {
+						$(this).on("click", function (event) { event.stopPropagation(); select(index ? finn : mira); });
+					});
+					root.find(".party-practice-roster").empty().append(portraits);
+					root.find(".party-practice-status").text(root.attr("data-joined"));
+					root.find(".party-practice-chat").empty();
+					select(finn);
+				});
+				root.find(".party-practice-chat").empty().append(invitation);
+			});
+			root.find(".party-practice-panel").empty().append(panel);
+		}
+		[mira, finn].forEach(function (member) {
+			var actor = $("<div class='clickable' style='text-align:center'></div>");
+			actor.html(sprite(member.skin, { cx: Object.assign({}, member.cx), scale: 3, width: 90, height: 110, overflow: true }) + "<div>" + member.name + "</div>");
+			actor.on("click", function (event) { event.stopPropagation(); select(member); });
+			root.find(".party-practice-actors").append(actor);
+		});
+		select(finn);
+		if (window.character && character.party) tut("com");
+	});
+	$(".party-share-example").each(function () {
+		var member = example_character("Mira", "mage");
+		member.party = "Mira";
+		var panel = inert(render_character_sheet({ character: member, party: { Mira: { share: 0.4 } }, return_html: true }));
+		// Show the top of the actual sheet, through its PARTY row, at native size.
+		panel.children().slice(5).remove();
+		$(this).empty().append(panel);
+	});
+}
+
 function render_tutorial_items() {
 	if (window.no_graphics) return;
 	render_tutorial_travel();
@@ -4780,7 +4865,7 @@ function render_item(selector, args) {
 		else if (item.type == "tarot") html += "<img style='display: inline-block; margin: -8px 2px -6px -8px;' src='/images/cards/tarot/major_arcana/tarot__" + item.major + ".png' />";
 		color = "#E4E4E4"; // previously gray [16/08/16]
 		if (item.grade == "mid") color = "blue"; // lol - must be old [13/04/20]
-		if (actual && actual.p && G.titles[actual.p]) item_name = G.titles[actual.p].title + " " + item_name;
+		if (actual && actual.p && G.titles[actual.p]) item_name = phrase.definition("title", actual.p, "title", G.titles[actual.p].title) + " " + item_name;
 		else if (actual && actual.p) item_name = actual.p.toTitleCase() + " " + item_name;
 		if (prop.level) {
 			if (item.upgrade && prop.level == 12) item_name += " +Z";

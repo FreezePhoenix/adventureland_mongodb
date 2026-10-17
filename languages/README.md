@@ -16,6 +16,18 @@ Tavern dealer: Venn's 21 table lines (drafted in ChatGPT Chat, Medium) and the g
 
 Trade offers: all 46 new or revised stand, message, trade-history, CODE reference, guide, tutorial and release phrases are translated and proofread in all 32 supported languages. The guide reuses each language's own OFFER FOR TRADE, WANTS, TITLE, ANY and TRADE labels; placeholders, markup and locked CODE were checked on 2026-09-26.
 
+Stand removal (2026-09-29): the revised unequip description and four shared instructions are translated and proofread in all 32 languages. CODE identifiers and empty-slot requirements were checked. The shared example renders in the merchant lesson, guides and references without a character and is available through MCP. It passes regular CODE and Mainframe tests against the server's unequip handler.
+
+Cave feedback: the shortened Cave title, its +5 magic resistance, map and target guidance, orb compounding instructions and release notes are translated and proofread in all 32 languages. All 10 changed phrases, title delivery, guide parameters and CODE identifiers were checked on 2026-09-29. Existing dialogue and comic translations are preserved.
+
+October 5 bug fixes: 15 phrases covering Super Computer cavalry access, movement buttons, documentation links, numeric character names, Alchemy gold output, stunned item use, scroll consumption and merchant price validation are translated and proofread in all 32 languages. Fixed names, CODE identifiers, placeholders and the existing release entries are preserved.
+
+Steam friend connections: 40 menu, confirmation, reward mail, guide and release phrases are translated in all 32 languages. The Friend Token and SHELLS amounts, permanent choice, first Steam link rule, two-week support window, placeholders and fixed names were checked on 2026-10-05.
+
+Stunned item use (October 5): the revised condition tooltip, replacement fix note and shared Items/CODE paragraph are translated and proofread in all 32 languages. The existing disabled response, passive recovery and ordinary equipment swaps remain unchanged.
+
+Super Computer menus (October 5): the revised release note is translated and proofread in all 32 languages. Both Network entry paths reuse existing translated controls; the selected item, Tracker and Cavalry actions were checked in every language.
+
 Seasonal flags (October 7): the CODE reference paragraph and release note are translated and proofread in all 32 languages. Boolean values, CODE identifiers and HTML tags are preserved. The documented status example runs in Mainframe.
 
 UPDATE button image (October 7): the fix note is translated and proofread in all 32 languages, using each language's existing button label.
@@ -102,7 +114,27 @@ Tauri reads the selected Steam game language once off the UI thread, with a 750 
 
 ## Catalog status
 
+MAINFRAME pathfinding (October 16): the Spooky Town fix note is translated and proofread in all 32 languages. MAINFRAME, Spooky Town and smart_move() are preserved.
+
 Anniversary event shutdown (October 6): ten UI, guide and release phrases are translated and proofread in all 32 languages. Cole's fallback, Computer access, NPC names, placeholders and CODE markup were checked.
+
+October 5 inventory and CODE fixes: 16 new phrases are translated and proofread in all 32 languages. This covers grace-only offerings, missing entrance keys, both monster spawn-boundary formats and ten release entries. Item names, CODE fields, amounts and placeholders are preserved.
+
+Account bans: the release note is translated and proofread in all 32 supported languages. The new password-login and game-authentication checks honor active bans and expired timed bans. The owner-supplied moderation reason remains verbatim account data.
+
+Self-inflicted splash damage: the Items guide paragraph, release title and fix note are translated and proofread in all 32 languages. Self-damage, monster XP loss, PvP credit and loot ownership were checked on 2026-10-05.
+
+Cave wall recovery: the return-position guide paragraph, release title and fix note are translated and proofread in all 32 languages. Same-floor recovery, preserved health and progress, and fallen characters staying fallen were checked on 2026-10-04.
+
+Banking fixes: the overflow recovery and floor-key guide paragraphs, release title and two fix notes are translated and proofread in all 32 languages. Item retention, unchanged capacity, immediate pack access and the bank_store() identifier were checked on 2026-10-04.
+
+Merchant realm changes: the guide clarification, release title and fix note are translated and proofread in all 32 languages. Merchant roles, other characters' bonuses and unchanged eligibility rules were checked on 2026-10-04.
+
+Mail and server menu fixes: the mail collection and deletion rules, delete confirmation, release title and two fix notes are translated and proofread in all 32 languages. Receiving-account ownership, self-mail, per-account deletion and the server menu's visibility were checked on 2026-10-04.
+
+Halloween and Cave fixes: the release title and three event and bug-fix notes are translated and proofread in all 32 languages. Completed encounters, loot errors, Amber counters and fixed names were checked on 2026-10-04.
+
+Flaming eyes: the animation repair's release title and note are translated and proofread in all 32 languages. The note covers animation while standing still; no cosmetic names or unlock rules change.
 
 Character slots: the slot notice and shell-charge release note are translated and proofread in all 32 languages. Slot entitlements, existing prices and negative-balance wording were checked on 2026-10-02.
 
@@ -126,62 +158,40 @@ Public chat filtering: the release note and `say()` documentation are translated
 | Korean | ko | Complete |
 | Simplified Chinese | zh-Hans | Complete |
 | Traditional Chinese | zh-Hant | Complete |
-| Thai | th | Core complete |
-| Spanish — Latin America | es-419 | Core complete |
-| Ukrainian | uk | Core complete |
-| Italian | it | Core complete |
-| Czech | cs | Core complete |
-| Hungarian | hu | Core complete |
-| Portuguese — Portugal | pt-PT | Core complete |
-| Vietnamese | vi | Core complete |
-| Swedish | sv | Core complete |
-| Dutch | nl | Core complete |
-| Danish | da | Core complete |
-| Indonesian | id | Core complete |
-| Finnish | fi | Core complete |
-| Norwegian | no | Core complete |
-| Romanian | ro | Core complete |
-| Greek | el | Core complete |
-| Bulgarian | bg | Core complete |
-| Malay | ms | Core complete |
-| Arabic — Modern Standard Arabic | ar | Core complete |
-| Filipino | fil | Core complete |
+| Thai | th | Complete |
+| Spanish — Latin America | es-419 | Complete |
+| Ukrainian | uk | Complete |
+| Italian | it | Complete |
+| Czech | cs | Complete |
+| Hungarian | hu | Complete |
+| Portuguese — Portugal | pt-PT | Complete |
+| Vietnamese | vi | Complete |
+| Swedish | sv | Complete |
+| Dutch | nl | Complete |
+| Danish | da | Complete |
+| Indonesian | id | Complete |
+| Finnish | fi | Complete |
+| Norwegian | no | Complete |
+| Romanian | ro | Complete |
+| Greek | el | Complete |
+| Bulgarian | bg | Complete |
+| Malay | ms | Complete |
+| Arabic — Modern Standard Arabic | ar | Complete |
+| Filipino | fil | Complete |
 
 ## Historical backlog
 
-All 32 languages include the required current-game phrases. The remaining historical entries below deliberately use English fallback. Existing translations remain intact. These counts cover missing archive translations, not current gameplay text.
+All 32 languages include the required current-game phrases, and the two deferred historical sections are now translated in every one of them. Nothing in this scope falls back to English any more.
 
-| Language | Old update notes | Development archive |
-| --- | ---: | ---: |
-| Thai | 701 | 200 |
-| Spanish — Latin America | 0 | 0 |
-| Ukrainian | 701 | 687 |
-| Italian | 701 | 498 |
-| Czech | 701 | 663 |
-| Hungarian | 701 | 687 |
-| Portuguese — Portugal | 0 | 527 |
-| Vietnamese | 701 | 200 |
-| Swedish | 660 | 0 |
-| Dutch | 660 | 0 |
-| Danish | 701 | 687 |
-| Indonesian | 701 | 0 |
-| Finnish | 701 | 687 |
-| Norwegian | 701 | 0 |
-| Romanian | 701 | 687 |
-| Greek | 566 | 663 |
-| Bulgarian | 701 | 498 |
-| Malay | 701 | 687 |
-| Arabic — Modern Standard Arabic | 566 | 498 |
-| Filipino | 701 | 386 |
+Every supported language now has 0 missing entries in both deferred sections, so the table below is retained only as a record of what the backlog contained.
 
-The earlier twelve languages have no missing archive translations. Historical translation can resume by language and section without changing the current-game completion status.
+| Section | Entries | Languages still missing them |
+| --- | ---: | --- |
+| Old update notes | 701 | none |
+| Development archive | 687 | none |
+
+The deferred scope in `scope.js` stays in place: it defines which historical prose may fall back to English if new entries are ever added there.
 
 October 6 PR fixes: six release notes and the shared bank-result paragraph are translated and proofread in all 32 languages. Deposit and withdrawal fields, the 25% healing value, stun terminology and fixed cape names were checked. Both bank examples pass native CODE and Mainframe checks.
 
 Button casing (October 6): the grace action uses uppercase in every language with letter case, including ADD GRACE and Turkish LÜTUF EKLE. Existing translations and uncased scripts are preserved. The Cavalry action is CALL IN CAVALRY! in English; other translations retain their meaning.
-
-October 5 bug fixes: 15 phrases covering Super Computer cavalry access, movement buttons, documentation links, numeric character names, Alchemy gold output, stunned item use, scroll consumption and merchant price validation are translated and proofread in all 32 languages. Fixed names, CODE identifiers, placeholders and the existing release entries are preserved.
-
-Stunned item use (October 5): the revised condition tooltip, replacement fix note and shared Items/CODE paragraph are translated and proofread in all 32 languages. The existing disabled response, passive recovery and ordinary equipment swaps remain unchanged.
-
-Super Computer menus (October 5): the revised release note is translated and proofread in all 32 languages. Both Network entry paths reuse existing translated controls; the selected item, Tracker and Cavalry actions were checked in every language.

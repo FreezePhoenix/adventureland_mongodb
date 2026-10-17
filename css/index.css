@@ -1312,6 +1312,44 @@ html:lang(ar) .release-archive-title{
 	z-index:205;
 	display: inline-block;
 }
+.steam-friend-picker{
+	border-top: 3px solid gray;
+	margin-top: 7px;
+	padding-top: 10px;
+	text-align: left;
+	font-size: 24px;
+	line-height: 1.15;
+}
+.steam-friend-heading{color: #fff}
+.steam-friend-intro{font-size: 16px;color: #c3c3c3;margin: 8px 0 10px}
+.steam-friend-list{display: grid;grid-template-columns: repeat(2,minmax(0,1fr));gap: 6px;max-height: 230px;overflow-y: auto}
+.steam-friend-choice{box-sizing: border-box;width: 100%;min-height: 94px;padding: 7px!important;text-align: left;font-size: 20px}
+.steam-friend-identity{display: flex;align-items: flex-start;gap: 4px}
+.steam-friend-labels{min-width: 0;flex: 1}
+.steam-friend-name{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;color: #fff}
+.steam-friend-character{font-size: 16px;color: #bbb;overflow-wrap: anywhere}
+.steam-friend-action{text-align: right;color: #93d56a;margin-top: 4px}
+.steam-friend-later{font-size: 18px;color: #bbb;text-align: right;margin-top: 8px}
+.recruitui{margin-left: -10px;margin-right: -10px;text-align: left;font-size: 24px;line-height: 1.15}
+.recruit-block{padding: 13px 10px}
+.recruit-block p{margin: 10px 0 16px}
+.recruit-title{color: #fff;font-size: 27px;margin-bottom: 8px}
+.recruit-label{color: #bbb;margin-top: 14px;margin-bottom: 5px}
+.recruit-reward,.recruit-shop-row{display: flex;align-items: center;gap: 10px}
+.recruit-reward .recruit-shells,.recruit-reward .recruit-friendtoken{flex: none;width: 48px;min-height: 42px}
+.recruit-green{color: #a4fa64;font-size: 18px;line-height: 1.3;margin-top: 8px}
+.recruit-small{color: #c4c4c4;font-size: 18px;line-height: 1.3}
+.recruit-divider{width: 100%;border-top: 4px solid gray}
+.recruit-shop-row{font-size: 18px;align-items: center}
+.recruit-fvona,.recruit-gravestone{flex: none}
+.recruit-shop-row>span:last-child{min-width: 0}
+.recruit-view-reward{display: table;margin: 12px auto 0}
+.recruit-primary-link{text-align: center;color: #80adcc;font-size: 18px;overflow-wrap: anywhere}
+.recruit-primary-link .gamebutton{display: table;margin: 9px auto 0}
+.recruit-secondary-links{font-size: 18px;overflow-wrap: anywhere}
+.recruit-secondary-links .recruit-label{font-size: 16px;margin: 13px 0 3px}
+.recruit-secondary-links a{display: inline-block;color: #7cd06c;margin-right: 8px}
+.recruit-secondary-links p{margin-top: 15px}
 .loginorselection{
 	text-align: center;
 	-webkit-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
