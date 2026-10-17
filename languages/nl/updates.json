@@ -865,7 +865,17 @@
 	"update.06_10_26.anniversary_crafting.title": "Jubileumrecepten",
 	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE kan nu seizoensvlaggen uitlezen via server.status.event_flags.",
 	"update.06_10_26.anniversary_crafting.update_button_image": "De ontbrekende afbeelding op de knop NIEUWS is hersteld.",
-	"update.08_10_26.broadcast.title": "Steam-uitzending",
-	"update.08_10_26.broadcast.broadcast_info": "De Steam-uitzending toont nu monster-INFO, buit, voorwerpen en actuele evenementen.",
-	"update.08_10_26.broadcast.mainframe_spookytown": "Opgelost dat smart_move() in MAINFRAME vastliep bij het verlaten van Spooky Town."
+	"update.08_10_26.halloween.mainframe_spookytown": "Opgelost dat smart_move() in MAINFRAME vastliep bij het verlaten van Spooky Town.",
+	"update.08_10_26.halloween.broadcast_info": "De Steam-uitzending toont nu monster-INFO, buit, voorwerpen en actuele evenementen.",
+	"update.08_10_26.halloween": "Los elke dag Het Heksenraadsel op voor nieuwe items en recepten. Halloween brengt de Headless Horseman, Opstand op het Kerkhof en Snoep of Je Leven. Het nieuwe venster Evenementen toont wat eraan komt.",
+	"update.08_10_26.halloween.title": "Het Heksenraadsel, Halloween en Evenementen",
+	"update.08_10_26.halloween.witchcipher": "Elke dag om 18:00 uur volgens de wereldklok vergeet de Witch in Spooky Forest haar recept. Doe mee aan het evenement, verzamel vier ingrediënten van monsters en brouw ze bij de Witch, of met brew(), om hun volgorde te testen. Elke mix geeft twee aanwijzingen die met de hele wereld worden gedeeld. Verdien Witch's Parcels om te openen of het hele jaar door voor de recepten van de Witch te gebruiken.",
+	"update.08_10_26.halloween.witchcipher.title": "Nieuw dagelijks evenement: Het Heksenraadsel!",
+	"update.08_10_26.halloween.halloween": "De Headless Horseman rijdt elke nacht om 00:00 uur volgens de wereldklok het kerkhof van Spooky Forest uit. Elke twee uur verrijzen Zombies en Ghouls uit het kerkhof van Spooky Town, gevolgd door een Gargoyle. Klop op zeven deuren voor snoep, grappen en beloningen voor elke 10 stempels. De laatste dag van Halloween is 2 november, maar Xyn wisselt daarna nog steeds Candy en Pumpkin Stems in en Halloween-recepten blijven bruikbaar.",
+	"update.08_10_26.halloween.halloween.title": "Headless Horseman, Opstand op het Kerkhof en Snoep of Je Leven!",
+	"update.08_10_26.halloween.events": "Klik op EVENEMENTEN boven de chat om actieve seizoenen, aankomende bazen, de activiteiten van vandaag en de evenementen van de komende zeven dagen te bekijken. Wissel tussen je eigen tijd en de wereldklok. Kies HERINNER om 10 minuten voor een evenement een bericht in het spellogboek te krijgen. Evenementen die binnen een uur beginnen, verschijnen ook boven de chat en je personagescherm toont het volgende evenement.",
+	"update.08_10_26.halloween.events.title": "Nieuw venster Evenementen!",
+	"update.08_10_26.halloween.event_schedule": "Evenementtijden worden nu zeven dagen vooruit vastgelegd en blijven hetzelfde na het opnieuw opstarten van de server.",
+	"update.08_10_26.halloween.map_halloween": "Bij twee deuren in Spooky Forest kun je nu aankloppen voor Snoep of Je Leven.",
+	"update.08_10_26.halloween.map_spookytown": "Bij vijf deuren in Spooky Town kun je nu aankloppen voor Snoep of Je Leven."
 }

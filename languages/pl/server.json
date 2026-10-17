@@ -405,5 +405,21 @@
   "server.game_log.offered_for": "Wystawiono {item} w zamian za {want}",
   "server.game_log.offered_for_or_higher": "Wystawiono {item} w zamian za {want} lub wyższy",
   "server.game_log.traded_for": "Wymieniono {item} z graczem {player} na {received}",
-	"server.mail.friend_token_welcome": "Za połączenie z {name} w Adventure Land!"
+	"server.mail.friend_token_welcome": "Za połączenie z {name} w Adventure Land!",
+  "server.server_message.season_ended.halloween": "Halloween dobiegło końca! Xyn nadal wymienia Candy i Pumpkin Stems, receptury Halloween wciąż działają, a Szyfr Witch odbywa się codziennie.",
+  "server.witchcipher.started": "Szyfr Witch się rozpoczął! Dołącz teraz i zbieraj składniki z potworów w czterech regionach.",
+  "server.witchcipher.gathering_over": "Składniki przestały wypadać! Pozostało 8 minut na warzenie u Witch.",
+  "server.witchcipher.cracked": "{player} rozszyfrował(a) recepturę Witch! Rozwiązanie jest na tablicy wskazówek dla wszystkich.",
+  "server.witchcipher.over": "Szyfr Witch dobiegł końca! Kocioł milknie do jutra.",
+  "server.witchcipher.over_uncracked": "Nikt nie rozszyfrował receptury Witch! Prawidłowa kombinacja to {recipe}.",
+  "server.witchcipher.claimed_by": "{name} już dzisiaj dołączył(a) do Szyfru Witch.",
+  "server.witchcipher.claimed_elsewhere": "Twoje konto już dzisiaj dołączyło do Szyfru Witch na {server}.",
+  "server.graveyard.started": "Powstanie z grobów! Zombies i Ghouls wychodzą z grobów w Spooky Town!",
+  "server.graveyard.wave": "Fala {wave} z {waves} powstaje z grobów!",
+  "server.graveyard.gargoyle": "Gargoyle budzi się przy pomniku na cmentarzu!",
+  "server.graveyard.defeated": "Gargoyle rozpada się w gruzy! Na cmentarzu znów panuje cisza.",
+  "server.graveyard.over": "Umarli wracają do swoich grobów.",
+  "server.floating.treat": "Cukierek!",
+  "server.floating.boo": "Buu!",
+  "server.trickortreat.laugh": "40 pieczątek! Witch daje ci CX Jar z emotką Złowieszczy śmiech!"
 }

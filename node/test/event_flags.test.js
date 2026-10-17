@@ -19,8 +19,9 @@ function context(flags = {}, gameplay = "normal") {
 		fs: {
 			readFileSync(filename) {
 				let source = fs.readFileSync(filename, "utf8");
+				// Fixed flags for the test, whatever today's date; season end times have their own test.
 				if (filename.endsWith("design/event_flags.js"))
-					source += "\nObject.assign(event_flags," + JSON.stringify(flags) + ");";
+					source += "\nObject.assign(event_flags," + JSON.stringify(flags) + ");\nevent_ends = {};";
 				return source;
 			},
 		},
@@ -203,13 +204,25 @@ test("startup reuses legacy precomputed maps with event flags present", async ()
 
 test("status packets carry boolean flags and navigation rejects a different map variant or collision key", async () => {
 	const { c } = await browser();
-	c.E = { halloween: true };
+	c.E = { halloween: true, schedule: { time_offset: 1 } };
 	c.broadcast = (name, data) => {
 		c.sent = { name, data };
 	};
+	c.event_schedule_state = () => ({ publish: () => ({ realm: "fixture", events: [] }) });
 	load(c, "node/server_functions.js", ["broadcast_e", "server_bfs"]);
 	c.broadcast_e(true);
 	assert.deepEqual(plain(c.E.event_flags), plain(c.G.event_flags));
+	assert.deepEqual(
+		plain(c.E.schedule),
+		{ time_offset: 1, realm: "fixture", events: [] },
+		"the published lineup joins the existing schedule fields",
+	);
+	for (const season in c.event_ends)
+		assert.equal(
+			c.E.event_ends[season],
+			c.G.event_flags[season] ? Date.parse(c.event_ends[season]) : undefined,
+			season,
+		);
 	c.broadcast_e();
 	assert.equal(c.sent.name, "server_info");
 	c.smap_data = {};

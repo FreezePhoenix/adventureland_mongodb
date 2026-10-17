@@ -865,7 +865,17 @@
 	"update.06_10_26.anniversary_crafting.title": "Rocznicowe wytwarzanie",
 	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE może teraz odczytywać flagi wydarzeń sezonowych przez server.status.event_flags.",
 	"update.06_10_26.anniversary_crafting.update_button_image": "Przywrócono brakujący obrazek na przycisku NOWOŚĆ.",
-	"update.08_10_26.broadcast.title": "Transmisja na Steam",
-	"update.08_10_26.broadcast.broadcast_info": "Transmisja na Steam pokazuje teraz INFO o potworach, ich łupy, przedmioty i bieżące wydarzenia.",
-	"update.08_10_26.broadcast.mainframe_spookytown": "Naprawiono blokowanie się smart_move() w MAINFRAME podczas opuszczania Spooky Town."
+	"update.08_10_26.halloween.mainframe_spookytown": "Naprawiono blokowanie się smart_move() w MAINFRAME podczas opuszczania Spooky Town.",
+	"update.08_10_26.halloween.broadcast_info": "Transmisja na Steam pokazuje teraz INFO o potworach, ich łupy, przedmioty i bieżące wydarzenia.",
+	"update.08_10_26.halloween": "Codziennie rozwiązuj Szyfr Witch, aby zdobywać nowe przedmioty i receptury. Halloween przynosi Headless Horseman, Powstanie z grobów i Cukierek albo psikus. Nowe okno wydarzeń pokazuje, co nadchodzi.",
+	"update.08_10_26.halloween.title": "Szyfr Witch, Halloween i wydarzenia",
+	"update.08_10_26.halloween.witchcipher": "Codziennie o 18:00 czasu realmu Witch w Spooky Forest zapomina swoją recepturę. Dołącz do wydarzenia, zbierz cztery składniki z potworów i uwarz je u Witch lub za pomocą brew(), aby sprawdzić ich kolejność. Każda mieszanka daje dwie wskazówki, które widzą wszyscy w realmie. Zdobywaj Witch's Parcels, aby je otwierać lub wykorzystywać w recepturach Witch przez cały rok.",
+	"update.08_10_26.halloween.witchcipher.title": "Nowe codzienne wydarzenie: Szyfr Witch!",
+	"update.08_10_26.halloween.halloween": "Headless Horseman wyjeżdża z cmentarza w Spooky Forest każdej nocy o 00:00 czasu realmu. Zombies i Ghouls powstają z grobów w Spooky Town co dwie godziny, a po nich pojawia się Gargoyle. Zapukaj do siedmiu drzwi, aby zdobywać cukierki, trafiać na psikusy i otrzymywać nagrody za każde 10 pieczątek. Ostatnim dniem Halloween jest 2 listopada, ale Xyn nadal potem wymienia Candy i Pumpkin Stems, a receptury Halloween pozostają dostępne.",
+	"update.08_10_26.halloween.halloween.title": "Headless Horseman, Powstanie z grobów i Cukierek albo psikus!",
+	"update.08_10_26.halloween.events": "Kliknij WYDARZENIA nad czatem, aby zobaczyć trwające sezony, nadchodzących bossów, dzisiejsze aktywności i wydarzenia z następnych siedmiu dni. Przełączaj się między swoim czasem a czasem realmu. Wybierz PRZYPOMNIJ, aby otrzymać wiadomość w dzienniku gry 10 minut przed wydarzeniem. Wydarzenia rozpoczynające się w ciągu godziny pojawiają się również nad czatem, a ekran postaci pokazuje następne wydarzenie.",
+	"update.08_10_26.halloween.events.title": "Nowe okno wydarzeń!",
+	"update.08_10_26.halloween.event_schedule": "Godziny wydarzeń są teraz ustalane na siedem dni naprzód i nie zmieniają się po ponownym uruchomieniu serwera.",
+	"update.08_10_26.halloween.map_halloween": "Do dwóch drzwi w Spooky Forest można teraz zapukać w ramach wydarzenia Cukierek albo psikus.",
+	"update.08_10_26.halloween.map_spookytown": "Do pięciu drzwi w Spooky Town można teraz zapukać w ramach wydarzenia Cukierek albo psikus."
 }

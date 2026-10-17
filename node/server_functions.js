@@ -2063,6 +2063,15 @@ function spawn_special_monster(type) {
 			y: G.maps[map].monsters[0].boundary[1],
 		});
 	}
+	if (type == "horseman") {
+		// Rides out of the north graveyard and roams Spooky Forest like the Ice Golem.
+		var map = "halloween";
+		var pack = { type: "horseman", boundary: [-460, -1700, -350, -1580], count: 1, i: map, roam: true };
+		pack.gold = D.monster_gold.horseman;
+		server_log("Headless Horseman: " + JSON.stringify(pack));
+		new_monster(pack.i, pack);
+		broadcast("game_event", { name: "horseman", map: pack.i, x: -405, y: -1640 });
+	}
 	if (type == "icegolem") {
 		var map = "winterland";
 		var pack = { type: "icegolem", boundary: [782.25, 395.96, 888.71, 450.28], count: 1, i: map, roam: true };
@@ -2221,7 +2230,75 @@ function collect_signups(event) {
 	});
 }
 
-var last_daily = null;
+var event_schedule = null;
+function event_schedule_state() {
+	if (!event_schedule) {
+		event_schedule = event_schedule_rules.create_schedule({
+			saved: S.schedule,
+			offset: E.schedule.time_offset,
+			pools: { dailies: dailies, nightlies: nightlies },
+			realm: region + server_name,
+			season_open: function (season, at) {
+				return !!events[season] && !(event_ends[season] && at >= Date.parse(event_ends[season]));
+			},
+		});
+		S.schedule = event_schedule.state();
+	}
+	return event_schedule;
+}
+
+// Starts each published occurrence once, after the two-minute startup grace, and marks it
+// finished when its event ends. The lineup is saved right away so a restart cannot repeat it.
+function event_schedule_tick(now) {
+	var schedule = event_schedule_state(),
+		change = false,
+		due = schedule.tick(now, { can_start: msince(server_start) > 2 });
+	if (due.length) {
+		// Save the lineup with these marked live before starting them, so a crash cannot start them twice.
+		due.forEach((occurrence) => (occurrence.starting = true));
+		save(Server).then(
+			function () {
+				var at = Date.now();
+				due.forEach(function (occurrence) {
+					delete occurrence.starting;
+					// The season may have closed, or the server begun stopping, while the save was running.
+					if (!server.live || (occurrence.season && !events[occurrence.season]))
+						return schedule.finish(occurrence.event, at, "missed");
+					if (occurrence.event == "witchcipher") witch_cipher_start(occurrence);
+					else if (occurrence.event == "graveyard") graveyard_start(occurrence);
+					else events[occurrence.event] = true;
+				});
+				Server.updated = new Date(0); // the round's own state follows on the next server loop
+				broadcast_e();
+			},
+			function (error) {
+				// Not saved, so not started: the next tick tries again inside the occurrence's window.
+				log_trace("event schedule save", error);
+				due.forEach(function (occurrence) {
+					delete occurrence.starting;
+					delete occurrence.started;
+					occurrence.status = "scheduled";
+				});
+			},
+		);
+	}
+	schedule.state().occurrences.forEach(function (occurrence) {
+		if (
+			occurrence.status == "live" &&
+			!occurrence.starting &&
+			!events[occurrence.event] &&
+			now - occurrence.started > 5000
+		) {
+			schedule.finish(occurrence.event, now);
+			change = true;
+		}
+	});
+	if (change) {
+		Server.updated = new Date(0); // saved on the next server loop
+		broadcast_e();
+	}
+}
+
 var anniversary_controller = null;
 function anniversary_is_active() {
 	return events.anniversary === true;
@@ -2352,9 +2429,31 @@ function anniversary_tick() {
 	}
 }
 
+// A season with an end time in design/event_flags.js ends here, without a restart.
+function season_end_logic(now) {
+	if (!season_controls) return;
+	for (var name in event_ends) {
+		if (!events[name] || (now || Date.now()) < Date.parse(event_ends[name])) continue;
+		var restart = season_controls.end(
+			{ event_flags: G.event_flags, drops: D.drops, monsters: G.monsters },
+			name,
+			season_controls.restore,
+		);
+		events[name] = false;
+		if (name == "halloween") halloween_season_end();
+		if (restart) server_log("Season " + name + " ended; a restart removes its maps and NPCs", 1);
+		broadcast(
+			"server_message",
+			localization.message("server.server_message.season_ended." + name, {}, { color: "#E6AE3F" }),
+		);
+		broadcast_e();
+	}
+}
+
 function event_loop() {
 	try {
 		anniversary_tick();
+		season_end_logic();
 		var c = new Date();
 		var ch = (c.getUTCHours() + 24 + E.schedule.time_offset) % 24;
 		var change = false;
@@ -2364,23 +2463,7 @@ function event_loop() {
 			E.schedule.night = false;
 		}
 
-		E.schedule.dailies.forEach(function (h) {
-			if (ch == h && last_daily != h && msince(server_start) > 2) {
-				last_daily = h;
-				var event = dailies.shift();
-				dailies.push(event);
-				events[event] = true;
-			}
-		});
-
-		E.schedule.nightlies.forEach(function (h) {
-			if (ch == h && last_daily != h && msince(server_start) > 2) {
-				last_daily = h;
-				var event = nightlies.shift();
-				nightlies.push(event);
-				events[event] = true;
-			}
-		});
+		event_schedule_tick(c.getTime());
 
 		if (events.halloween) {
 			var s = get_monster("slenderman");
@@ -2464,7 +2547,11 @@ function event_loop() {
 				}
 			}
 		}
-		["crabxx", "franky", "icegolem"].forEach(function (name) {
+		witch_cipher_tick();
+		graveyard_tick();
+		trick_or_treat_tick();
+
+		["crabxx", "franky", "icegolem", "horseman"].forEach(function (name) {
 			if (events[name]) {
 				var monster = get_monster(name);
 				if (!monster && monster_c[name]) {
@@ -3007,7 +3094,10 @@ function event_loop() {
 }
 
 function broadcast_e(dont_send) {
+	Object.assign(E.schedule, event_schedule_state().publish());
 	E.event_flags = Object.assign({}, G.event_flags);
+	E.event_ends = {};
+	for (var season in event_ends) if (G.event_flags[season]) E.event_ends[season] = Date.parse(event_ends[season]);
 	if (!dont_send) {
 		broadcast("server_info", E);
 	}

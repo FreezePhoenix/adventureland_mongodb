@@ -865,7 +865,17 @@
 	"update.06_10_26.anniversary_crafting.title": "Fabricación del aniversario",
 	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE ahora puede leer los indicadores de temporada mediante server.status.event_flags.",
 	"update.06_10_26.anniversary_crafting.update_button_image": "Se corrigió la imagen que faltaba en el botón NOVEDAD.",
-	"update.08_10_26.broadcast.title": "Transmisión en Steam",
-	"update.08_10_26.broadcast.broadcast_info": "La transmisión en Steam ahora muestra la INFO de los monstruos, su botín, objetos y eventos actuales.",
-	"update.08_10_26.broadcast.mainframe_spookytown": "Se corrigió un error que hacía que smart_move() se quedara atascado en MAINFRAME al salir de Spooky Town."
+	"update.08_10_26.halloween.mainframe_spookytown": "Se corrigió un error que hacía que smart_move() se quedara atascado en MAINFRAME al salir de Spooky Town.",
+	"update.08_10_26.halloween.broadcast_info": "La transmisión en Steam ahora muestra la INFO de los monstruos, su botín, objetos y eventos actuales.",
+	"update.08_10_26.halloween": "Resuelve El código de la bruja todos los días para conseguir nuevos objetos y recetas. Halloween trae al Headless Horseman, Los muertos se levantan y Dulce o truco. La nueva ventana de Eventos muestra lo que viene.",
+	"update.08_10_26.halloween.title": "El código de la bruja, Halloween y Eventos",
+	"update.08_10_26.halloween.witchcipher": "Todos los días a las 18:00, hora del mundo, la Witch de Spooky Forest olvida su receta. Únete al evento, consigue cuatro ingredientes de los monstruos y prepáralos con la Witch, o con brew(), para probar su orden. Cada mezcla da dos pistas compartidas con todo el mundo. Gana Witch's Parcels para abrirlos o usarlos en las recetas de la Witch durante todo el año.",
+	"update.08_10_26.halloween.witchcipher.title": "¡Nuevo evento diario: El código de la bruja!",
+	"update.08_10_26.halloween.halloween": "El Headless Horseman sale cabalgando del cementerio de Spooky Forest todas las noches a las 00:00, hora del mundo. Zombies y Ghouls salen del cementerio de Spooky Town cada dos horas, seguidos por un Gargoyle. Toca siete puertas para conseguir dulces, trucos y recompensas por cada 10 sellos. El último día de Halloween es el 2 de noviembre, pero Xyn seguirá intercambiando Candy y Pumpkin Stems después, y las recetas de Halloween seguirán disponibles.",
+	"update.08_10_26.halloween.halloween.title": "¡Headless Horseman, Los muertos se levantan y Dulce o truco!",
+	"update.08_10_26.halloween.events": "Haz clic en EVENTOS encima del chat para ver las temporadas activas, los próximos jefes, las actividades de hoy y los eventos de los próximos siete días. Alterna entre tu hora y la hora del mundo. Elige RECORDAR para recibir un mensaje en el registro del juego 10 minutos antes de un evento. Los eventos que comienzan dentro de la próxima hora también aparecen encima del chat, y la pantalla de tu personaje muestra el próximo evento.",
+	"update.08_10_26.halloween.events.title": "¡Nueva ventana de Eventos!",
+	"update.08_10_26.halloween.event_schedule": "Las horas de los eventos ahora se programan con siete días de anticipación y no cambian cuando se reinician los servidores.",
+	"update.08_10_26.halloween.map_halloween": "Ahora puedes tocar dos puertas de Spooky Forest para participar en Dulce o truco.",
+	"update.08_10_26.halloween.map_spookytown": "Ahora puedes tocar cinco puertas de Spooky Town para participar en Dulce o truco."
 }

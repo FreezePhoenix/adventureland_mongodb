@@ -401,5 +401,21 @@
   "server.game_log.offered_for": "Tilbød {item} i bytte mot {want}",
   "server.game_log.offered_for_or_higher": "Tilbød {item} i bytte mot {want} eller høyere",
   "server.game_log.traded_for": "Byttet {item} med {player} mot {received}",
-	"server.mail.friend_token_welcome": "For koblingen med {name} i Adventure Land!"
+	"server.mail.friend_token_welcome": "For koblingen med {name} i Adventure Land!",
+  "server.server_message.season_ended.halloween": "Halloween er over! Xyn veksler fortsatt inn Candy og Pumpkin Stems, Halloween-oppskriftene kan fortsatt brukes, og Witchs gåte fortsetter hver dag.",
+  "server.witchcipher.started": "Witchs gåte har startet! Bli med nå og samle ingredienser fra monstre i fire regioner.",
+  "server.witchcipher.gathering_over": "Ingrediensene slutter å falle! 8 minutter igjen til å brygge hos Witch.",
+  "server.witchcipher.cracked": "{player} løste oppskriften til Witch! Svaret vises på ledetrådtavlen for alle.",
+  "server.witchcipher.over": "Witchs gåte er over! Gryten blir stille til i morgen.",
+  "server.witchcipher.over_uncracked": "Ingen løste oppskriften til Witch! Den var {recipe}.",
+  "server.witchcipher.claimed_by": "{name} har allerede blitt med i Witchs gåte i dag.",
+  "server.witchcipher.claimed_elsewhere": "Kontoen din har allerede blitt med i Witchs gåte på {server} i dag.",
+  "server.graveyard.started": "De døde våkner! Zombies og Ghouls klatrer opp fra gravene i Spooky Town!",
+  "server.graveyard.wave": "Bølge {wave} av {waves} stiger opp fra gravene!",
+  "server.graveyard.gargoyle": "Gargoyle våkner ved kirkegårdsmonumentet!",
+  "server.graveyard.defeated": "Gargoyle smuldrer opp! Kirkegården er stille igjen.",
+  "server.graveyard.over": "De døde synker tilbake i gravene sine.",
+  "server.floating.treat": "Knask!",
+  "server.floating.boo": "Bø!",
+  "server.trickortreat.laugh": "40 stempler! Witch gir deg en CX Jar som inneholder emote-en Ondskapsfull latter!"
 }

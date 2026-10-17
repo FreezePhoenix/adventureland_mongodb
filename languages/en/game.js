@@ -883,6 +883,8 @@ module.exports = {
 	"game.map.unknown": "Unknown",
 	// Short comic onomatopoeia for a cosmetic emote.
 	"combat.emote.pfft": "PFFT",
+	// Short comic onomatopoeia for the Sinister Laugh emote: an evil cackle rising over the character. Keep it short and uppercase.
+	"combat.emote.hehehe": "HEHEHE",
 	// Short comic onomatopoeia for a cosmetic emote.
 	"combat.emote.prrt": "PRRT",
 	// Short comic onomatopoeia for a cosmetic emote.

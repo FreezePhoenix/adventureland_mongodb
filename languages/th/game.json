@@ -456,5 +456,6 @@
 	"response.trade_swap_match": "ไอเทมนี้ไม่ตรงกับข้อเสนอ",
 	"response.trade_swap_space": "พ่อค้าไม่มีที่ว่าง",
 	"game.trade_history.traded": "- แลก '{item}' กับ {player} ได้ '{received}'",
-	"response.transport_need_items": "ต้องมี: {items}"
+	"response.transport_need_items": "ต้องมี: {items}",
+	"combat.emote.hehehe": "ฮิฮิฮิ"
 }

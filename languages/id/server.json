@@ -399,5 +399,21 @@
   "server.game_log.offered_for": "Memasang {item} untuk ditukar dengan {want}",
   "server.game_log.offered_for_or_higher": "Memasang {item} untuk ditukar dengan {want} atau lebih tinggi",
   "server.game_log.traded_for": "Menukar {item} dengan {player} untuk {received}",
-	"server.mail.friend_token_welcome": "Karena terhubung dengan {name} di Adventure Land!"
+	"server.mail.friend_token_welcome": "Karena terhubung dengan {name} di Adventure Land!",
+  "server.server_message.season_ended.halloween": "Halloween berakhir! Xyn masih menukarkan Candy dan Pumpkin Stems, resep Halloween tetap bisa digunakan, dan Sandi Witch terus berlangsung setiap hari.",
+  "server.witchcipher.started": "Sandi Witch dimulai! Bergabunglah sekarang dan kumpulkan bahan dari monster di empat wilayah.",
+  "server.witchcipher.gathering_over": "Bahan tidak lagi dijatuhkan! Tersisa 8 menit untuk meracik di Witch.",
+  "server.witchcipher.cracked": "{player} berhasil memecahkan resep Witch! Jawabannya ada di papan petunjuk untuk semua pemain.",
+  "server.witchcipher.over": "Sandi Witch berakhir! Kuali kembali tenang hingga besok.",
+  "server.witchcipher.over_uncracked": "Tidak ada yang berhasil memecahkan resep Witch! Resepnya adalah {recipe}.",
+  "server.witchcipher.claimed_by": "{name} sudah bergabung dengan Sandi Witch hari ini.",
+  "server.witchcipher.claimed_elsewhere": "Akunmu sudah bergabung dengan Sandi Witch di {server} hari ini.",
+  "server.graveyard.started": "Kebangkitan Kuburan! Zombies dan Ghouls merangkak keluar dari kuburan Spooky Town!",
+  "server.graveyard.wave": "Gelombang {wave} dari {waves} bangkit dari kuburan!",
+  "server.graveyard.gargoyle": "Gargoyle terbangun di monumen pemakaman!",
+  "server.graveyard.defeated": "Gargoyle hancur berkeping-keping! Pemakaman kembali sunyi.",
+  "server.graveyard.over": "Para mayat kembali berbaring di kuburan mereka.",
+  "server.floating.treat": "Hadiah!",
+  "server.floating.boo": "Buu!",
+  "server.trickortreat.laugh": "40 stempel! Witch memberimu CX Jar berisi emote Tawa Menyeramkan!"
 }

@@ -456,5 +456,6 @@
 	"response.trade_swap_match": "Този предмет не отговаря на офертата",
 	"response.trade_swap_space": "Търговецът няма място",
 	"game.trade_history.traded": "- Размени '{item}' с {player} срещу '{received}'",
-	"response.transport_need_items": "Нужно е: {items}"
+	"response.transport_need_items": "Нужно е: {items}",
+	"combat.emote.hehehe": "ХЕХЕХЕ"
 }

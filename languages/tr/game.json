@@ -456,5 +456,6 @@
 	"response.trade_swap_match": "Bu eşya teklife uymuyor",
 	"response.trade_swap_space": "Tüccarda yer yok",
 	"game.trade_history.traded": "- '{item}', {player} adlı oyuncuyla '{received}' karşılığında takas edildi",
-	"response.transport_need_items": "Gereken: {items}"
+	"response.transport_need_items": "Gereken: {items}",
+	"combat.emote.hehehe": "HEHEHE"
 }

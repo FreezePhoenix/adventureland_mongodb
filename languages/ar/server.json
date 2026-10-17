@@ -405,5 +405,21 @@
   "server.game_log.offered_for": "تم عرض {item} للمقايضة مقابل {want}",
   "server.game_log.offered_for_or_higher": "تم عرض {item} للمقايضة مقابل {want} أو أعلى",
   "server.game_log.traded_for": "قايضت {item} مع {player} مقابل {received}",
-	"server.mail.friend_token_welcome": "مكافأة على ربط حسابك بحساب {name} في Adventure Land!"
+	"server.mail.friend_token_welcome": "مكافأة على ربط حسابك بحساب {name} في Adventure Land!",
+  "server.server_message.season_ended.halloween": "انتهى الهالوين! لا يزال Xyn يستبدل Candy وPumpkin Stems، وتظل وصفات الهالوين قابلة للاستخدام، وتستمر شفرة الساحرة يوميًا.",
+  "server.witchcipher.started": "بدأت شفرة الساحرة! انضم الآن واجمع المكونات من الوحوش في أربع مناطق.",
+  "server.witchcipher.gathering_over": "توقفت المكونات عن السقوط! بقيت 8 دقائق لتحضير الجرعات عند Witch.",
+  "server.witchcipher.cracked": "كشف {player} وصفة Witch! الإجابة موجودة على لوحة الأدلة للجميع.",
+  "server.witchcipher.over": "انتهت شفرة الساحرة! سيهدأ المرجل حتى الغد.",
+  "server.witchcipher.over_uncracked": "لم يكشف أحد وصفة Witch! كانت {recipe}.",
+  "server.witchcipher.claimed_by": "انضمت {name} بالفعل إلى شفرة الساحرة اليوم.",
+  "server.witchcipher.claimed_elsewhere": "انضم حسابك بالفعل إلى شفرة الساحرة على {server} اليوم.",
+  "server.graveyard.started": "نهوض الموتى من المقبرة! يخرج Zombies وGhouls من قبور Spooky Town!",
+  "server.graveyard.wave": "تنهض الموجة {wave} من {waves} من القبور!",
+  "server.graveyard.gargoyle": "استيقظ Gargoyle عند النصب التذكاري في المقبرة!",
+  "server.graveyard.defeated": "تحطم Gargoyle! عادت المقبرة هادئة مجددًا.",
+  "server.graveyard.over": "يعود الموتى إلى قبورهم.",
+  "server.floating.treat": "حلوى!",
+  "server.floating.boo": "بوو!",
+  "server.trickortreat.laugh": "40 ختمًا! تمنحك Witch وعاء CX Jar يحتوي على حركة ضحكة شريرة!"
 }

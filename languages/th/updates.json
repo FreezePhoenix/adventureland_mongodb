@@ -865,7 +865,17 @@
 	"update.06_10_26.anniversary_crafting.title": "การคราฟต์ฉลองครบรอบ",
 	"update.06_10_26.anniversary_crafting.seasonal_flags": "ตอนนี้ CODE อ่านแฟล็กอีเวนต์ตามฤดูกาลผ่าน server.status.event_flags ได้แล้ว",
 	"update.06_10_26.anniversary_crafting.update_button_image": "แก้ไขรูปภาพที่หายไปบนปุ่มอัปเดตแล้ว",
-	"update.08_10_26.broadcast.title": "การถ่ายทอดสดบน Steam",
-	"update.08_10_26.broadcast.broadcast_info": "การถ่ายทอดสดบน Steam จะแสดง INFO ของมอนสเตอร์ ของดรอป ไอเทม และกิจกรรมปัจจุบันแล้ว",
-	"update.08_10_26.broadcast.mainframe_spookytown": "แก้ไขปัญหา smart_move() ใน MAINFRAME ค้างขณะออกจาก Spooky Town"
+	"update.08_10_26.halloween.mainframe_spookytown": "แก้ไขปัญหา smart_move() ใน MAINFRAME ค้างขณะออกจาก Spooky Town",
+	"update.08_10_26.halloween.broadcast_info": "การถ่ายทอดสดบน Steam จะแสดง INFO ของมอนสเตอร์ ของดรอป ไอเทม และกิจกรรมปัจจุบันแล้ว",
+	"update.08_10_26.halloween": "ไขปริศนาของ Witch ทุกวันเพื่อรับไอเทมและสูตรใหม่ ๆ ฮาโลวีนพา Headless Horseman สุสานคืนชีพ และหลอกหรือเลี้ยงมาให้เล่น หน้าต่างกิจกรรมใหม่จะแสดงสิ่งที่กำลังจะมาถึง",
+	"update.08_10_26.halloween.title": "ปริศนาของ Witch ฮาโลวีน และกิจกรรม",
+	"update.08_10_26.halloween.witchcipher": "ทุกวันเวลา 18:00 ตามเวลาโลก Witch ใน Spooky Forest จะลืมสูตรของเธอ เข้าร่วมกิจกรรม เก็บวัตถุดิบสี่อย่างจากมอนสเตอร์ แล้วปรุงกับ Witch หรือใช้ brew() เพื่อทดสอบลำดับ การผสมแต่ละครั้งให้เบาะแสสองค่าที่ทุกคนในโลกใช้ร่วมกัน รับ Witch's Parcels มาเปิดหรือใช้กับสูตรของ Witch ได้ตลอดทั้งปี",
+	"update.08_10_26.halloween.witchcipher.title": "กิจกรรมรายวันใหม่: ปริศนาของ Witch!",
+	"update.08_10_26.halloween.halloween": "Headless Horseman ควบม้าออกจากสุสานใน Spooky Forest ทุกคืนเวลา 00:00 ตามเวลาโลก Zombies และ Ghouls ฟื้นขึ้นจากสุสานใน Spooky Town ทุกสองชั่วโมง ตามด้วย Gargoyle เคาะประตูเจ็ดบานเพื่อลุ้นรับของ โดนหลอก และรับรางวัลทุก 10 แสตมป์ วันสุดท้ายของฮาโลวีนคือ 2 พฤศจิกายน แต่หลังจากนั้น Xyn ยังคงรับแลก Candy และ Pumpkin Stems และสูตรฮาโลวีนยังใช้ได้",
+	"update.08_10_26.halloween.halloween.title": "Headless Horseman สุสานคืนชีพ และหลอกหรือเลี้ยง!",
+	"update.08_10_26.halloween.events": "คลิก กิจกรรม เหนือแชตเพื่อดูเทศกาลที่กำลังดำเนินอยู่ บอสที่กำลังจะมา กิจกรรมวันนี้ และตารางกิจกรรมเจ็ดวันข้างหน้า สลับระหว่างเวลาของคุณกับเวลาโลก เลือก เตือน เพื่อรับข้อความในบันทึกเกม 10 นาทีก่อนกิจกรรมเริ่ม กิจกรรมที่จะเริ่มภายในหนึ่งชั่วโมงจะแสดงเหนือแชตด้วย และหน้าจอตัวละครจะแสดงกิจกรรมถัดไป",
+	"update.08_10_26.halloween.events.title": "หน้าต่างกิจกรรมใหม่!",
+	"update.08_10_26.halloween.event_schedule": "ตอนนี้กำหนดเวลากิจกรรมล่วงหน้าเจ็ดวัน และเวลาจะไม่เปลี่ยนเมื่อเซิร์ฟเวอร์เริ่มใหม่",
+	"update.08_10_26.halloween.map_halloween": "ประตูสองบานใน Spooky Forest เปิดให้เคาะเล่นหลอกหรือเลี้ยงแล้ว",
+	"update.08_10_26.halloween.map_spookytown": "ประตูห้าบานใน Spooky Town เปิดให้เคาะเล่นหลอกหรือเลี้ยงแล้ว"
 }

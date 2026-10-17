@@ -456,5 +456,6 @@
 	"response.trade_swap_match": "Item itu tidak sepadan dengan tawaran",
 	"response.trade_swap_space": "Pedagang tiada ruang",
 	"game.trade_history.traded": "- Menukar '{item}' dengan {player} untuk '{received}'",
-	"response.transport_need_items": "Perlu: {items}"
+	"response.transport_need_items": "Perlu: {items}",
+	"combat.emote.hehehe": "HEHEHE"
 }

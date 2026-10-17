@@ -865,7 +865,17 @@
 	"update.06_10_26.anniversary_crafting.title": "Pembuatan Item Ulang Tahun",
 	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE kini boleh membaca penanda acara bermusim melalui server.status.event_flags.",
 	"update.06_10_26.anniversary_crafting.update_button_image": "Imej yang hilang pada butang BERITA telah dipulihkan.",
-	"update.08_10_26.broadcast.title": "Siaran Steam",
-	"update.08_10_26.broadcast.broadcast_info": "Siaran Steam kini memaparkan INFO raksasa, item yang digugurkan, maklumat item dan acara semasa.",
-	"update.08_10_26.broadcast.mainframe_spookytown": "Masalah smart_move() dalam MAINFRAME tersekat ketika meninggalkan Spooky Town telah dibetulkan."
+	"update.08_10_26.halloween.mainframe_spookytown": "Masalah smart_move() dalam MAINFRAME tersekat ketika meninggalkan Spooky Town telah dibetulkan.",
+	"update.08_10_26.halloween.broadcast_info": "Siaran Steam kini memaparkan INFO raksasa, item yang digugurkan, maklumat item dan acara semasa.",
+	"update.08_10_26.halloween": "Selesaikan Sandi Witch setiap hari untuk mendapat item dan resipi baharu. Halloween membawa Headless Horseman, Kebangkitan Kubur dan Gula-gula atau Kenakan. Tetingkap Acara baharu menunjukkan acara yang akan datang.",
+	"update.08_10_26.halloween.title": "Sandi Witch, Halloween dan Acara",
+	"update.08_10_26.halloween.witchcipher": "Setiap hari pada pukul 18:00 waktu alam, Witch di Spooky Forest terlupa resipinya. Sertai acara, kumpulkan empat bahan daripada raksasa dan bancuhkannya di Witch, atau dengan brew(), untuk menguji turutannya. Setiap bancuhan memberikan dua petunjuk yang dikongsi dengan seluruh alam. Dapatkan Witch's Parcels untuk dibuka atau digunakan dalam resipi Witch, sepanjang tahun.",
+	"update.08_10_26.halloween.witchcipher.title": "Acara Harian Baharu: Sandi Witch!",
+	"update.08_10_26.halloween.halloween": "Headless Horseman menunggang keluar dari tanah perkuburan Spooky Forest setiap malam pada pukul 00:00 waktu alam. Zombies dan Ghouls bangkit dari tanah perkuburan Spooky Town setiap dua jam, diikuti oleh Gargoyle. Ketuk tujuh pintu untuk mendapat hadiah, kenakan dan ganjaran bagi setiap 10 cop. Hari terakhir Halloween ialah 2 November, tetapi Xyn masih menukar Candy dan Pumpkin Stems selepas itu, dan resipi Halloween masih boleh digunakan.",
+	"update.08_10_26.halloween.halloween.title": "Headless Horseman, Kebangkitan Kubur dan Gula-gula atau Kenakan!",
+	"update.08_10_26.halloween.events": "Klik ACARA di atas sembang untuk melihat musim yang sedang berlangsung, bos yang akan muncul, aktiviti hari ini dan acara tujuh hari akan datang. Tukar antara waktu anda dan waktu alam. Pilih INGATKAN untuk menerima mesej dalam log permainan 10 minit sebelum acara bermula. Acara yang akan bermula dalam masa sejam juga muncul di atas sembang, dan skrin watak anda menunjukkan acara seterusnya.",
+	"update.08_10_26.halloween.events.title": "Tetingkap Acara Baharu!",
+	"update.08_10_26.halloween.event_schedule": "Waktu acara kini ditetapkan tujuh hari lebih awal dan kekal sama selepas server dimulakan semula.",
+	"update.08_10_26.halloween.map_halloween": "Dua pintu di Spooky Forest kini boleh diketuk untuk Gula-gula atau Kenakan.",
+	"update.08_10_26.halloween.map_spookytown": "Lima pintu di Spooky Town kini boleh diketuk untuk Gula-gula atau Kenakan."
 }

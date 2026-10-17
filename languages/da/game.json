@@ -456,5 +456,6 @@
 	"response.trade_swap_match": "Genstanden passer ikke til tilbuddet",
 	"response.trade_swap_space": "Købmanden har ikke plads",
 	"game.trade_history.traded": "- Byttede '{item}' med {player} for '{received}'",
-	"response.transport_need_items": "Kræver: {items}"
+	"response.transport_need_items": "Kræver: {items}",
+	"combat.emote.hehehe": "HEHEHE"
 }

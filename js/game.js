@@ -1070,9 +1070,10 @@ function update_overlays() {
 		m = c.getUTCMinutes();
 	if (S.schedule && S.schedule.time_offset) h = (24 + S.schedule.time_offset + h) % 24;
 	if (!cached("time", ("0" + h).slice(-2) + ":" + ("0" + m).slice(-2))) {
-		$(".timeui").html(("0" + h).slice(-2) + ":" + ("0" + m).slice(-2));
+		$(".timeui").html(phrase.html("interface.events.clock", { time: ("0" + h).slice(-2) + ":" + ("0" + m).slice(-2) }));
 		light_logic();
 	}
+	if (!cached("events_clock", Math.floor(Date.now() / 1000))) events_clock_tick();
 
 	if (S.abtesting && window.abtesting) {
 		$(".scoreA").html(S.abtesting.A);
@@ -1162,6 +1163,7 @@ function consider_interaction_context(key, id, c_distance, range, context, prior
 	var definition = G.docs && G.docs.interactions && G.docs.interactions[key];
 	range = interaction_context_range(definition, source, range || 190);
 	if (!definition || definition.status || !definition.proximity || c_distance >= (range || 190)) return;
+	if (definition.season && !(typeof S != "undefined" && S && S[definition.season])) return; // a seasonal guide stays hidden off-season
 	priority = priority || 1;
 	var candidate = context || { key: key, definition: definition };
 	candidate.npc_id = id;
@@ -1761,6 +1763,7 @@ function init_socket(args) {
 		$("#observeui").hide();
 		// show_json(data);
 		S = data.s_info;
+		schedule_sync();
 		var code = data.code,
 			code_version = data.code_version,
 			scode_slot = data.code_slot;
@@ -3158,7 +3161,10 @@ function init_socket(args) {
 	});
 	socket.on("server_info", function (data) {
 		S = data;
+		schedule_sync();
 		render_server();
+		witch_cipher_refresh();
+		events_window_refresh();
 	});
 	socket.on("hardcore_info", function (data) {
 		S = data.E;
@@ -3725,10 +3731,9 @@ function npc_right_click(event) {
 		return;
 	}
 	if (this.role == "witch") {
-		render_recipes("witch");
-		$("#recipe-item").html(
-			render_interaction({ auto: true, skin: "brewingwitch", message: phrase.html("npc.witch.greeting") }, "return_html"),
-		);
+		render_witch();
+		if (event) event.stopPropagation();
+		return;
 	}
 	if (this.role == "shrine") {
 		render_upgrade_shrine(1);
@@ -4084,6 +4089,7 @@ var cosmetic_emote_durations = {
 	mirrordance: 2400,
 	makeawish: 2800,
 	ikissyou: 1200,
+	sinisterlaugh: 1500,
 };
 var cosmetic_targeted_emotes = { highfive: 1, boop: 1, spotlight: 1, pocketstorm: 1, mirrordance: 1 };
 var cosmetic_emote_fart_variants = [
@@ -4208,6 +4214,12 @@ function play_cosmetic_emote_sound(name, variation) {
 			cosmetic_emote_tone(context, output, start + 0.36, 0.1, 500, 900, "sine", 0.05);
 			cosmetic_emote_noise(context, output, start + 0.48, 0.028, 2600, 0.23);
 			cosmetic_emote_tone(context, output, start + 0.48, 0.075, 1100, 280, "sine", 0.08);
+		} else if (name == "sinisterlaugh") {
+			// Three cackles, each falling a little lower.
+			[392, 349.23, 311.13].forEach(function (frequency, i) {
+				cosmetic_emote_tone(context, output, start + i * 0.17, 0.13, frequency * pitch, frequency * 0.86 * pitch, "triangle", 0.06);
+			});
+			cosmetic_emote_tone(context, output, start + 0.52, 0.3, 233.08 * pitch, 174.61 * pitch, "sawtooth", 0.025);
 		} else if (name == "jump") {
 			cosmetic_emote_tone(context, output, start, 0.14, 270 * pitch, 700 * pitch, "square", 0.055);
 		} else if (name == "superjump") {
@@ -4406,6 +4418,51 @@ function cosmetic_emote_fart_cloud(player, variation) {
 		cloud.x += drift;
 		cloud.y -= 0.18 + variation * 0.04;
 		cloud.alpha = 1 - step / steps;
+		draw_timeout(function () {
+			fade(step + 1);
+		}, 75);
+	}
+	draw_timeout(function () {
+		fade(1);
+	}, 75);
+}
+
+// Sinister Laugh: green cackle marks either side of the head and a rising HEHEHE.
+function cosmetic_emote_laugh_marks(player, variation) {
+	if (no_graphics) return;
+	var marks = new PIXI.Container();
+	marks.x = player.real_x;
+	marks.y = player.real_y - (player.height || 32) + 4;
+	marks.real_y = player.real_y + 1;
+	var layer = use_layers && typeof above_layer != "undefined" ? above_layer : text_layer;
+	if (use_layers) marks.parentGroup = layer;
+	else marks.displayGroup = layer;
+	[[-9, -2, -1], [-11, 2, -1], [9, -2, 1], [11, 2, 1]].forEach(function (tick) {
+		var line = new PIXI.Graphics();
+		line.beginFill(0x7fd45a, 1);
+		line.drawRect(0, 0, 3, 1);
+		line.drawRect(tick[2] > 0 ? 2 : 0, -1, 1, 1);
+		line.endFill();
+		line.x = tick[0] - 1;
+		line.y = tick[1];
+		marks.addChild(line);
+	});
+	var label = new PIXI.Text(phrase("combat.emote.hehehe"), { fontFamily: SZ.font, fontSize: 5 * text_quality, fill: "#9BE36F", stroke: "#17121D", strokeThickness: text_quality });
+	if (text_quality > 1) label.scale.set(1 / text_quality);
+	label.anchor.set(0.5, 1);
+	label.y = -5;
+	marks.addChild(label);
+	map.addChild(marks);
+	var a_map = current_map,
+		steps = 20;
+	function fade(step) {
+		if (step >= steps || a_map != current_map) {
+			destroy_sprite(marks, "children");
+			return;
+		}
+		marks.x = player.real_x + (step % 2 ? 0.5 : -0.5);
+		marks.y -= 0.25 + variation * 0.03;
+		marks.alpha = step < steps - 6 ? 1 : (steps - step) / 6;
 		draw_timeout(function () {
 			fade(step + 1);
 		}, 75);
@@ -5087,6 +5144,8 @@ function play_cosmetic_emote(player, name, target, data) {
 		cosmetic_emote_fart_cloud(player, variation);
 	} else if (name == "joy") {
 		cosmetic_emote_joy_rainbow(player, variation);
+	} else if (name == "sinisterlaugh") {
+		cosmetic_emote_laugh_marks(player, variation);
 	}
 	if (!(data && data.silent)) play_cosmetic_emote_sound(name, variation);
 }
@@ -5138,6 +5197,9 @@ function cosmetic_emote_logic(player) {
 	} else if (emote.name == "joy") {
 		player.y -= Math.abs(Math.sin(progress * Math.PI * 4)) * 4.5;
 		player.rotation = Math.sin(progress * Math.PI * 6) * 0.04;
+	} else if (emote.name == "sinisterlaugh") {
+		player.y -= Math.abs(Math.sin(progress * Math.PI * 6)) * 1.5;
+		player.x += Math.sin(progress * Math.PI * 12) * 0.5;
 	}
 }
 
@@ -5245,7 +5307,14 @@ function update_sprite(sprite) {
 			restore_dimensions(sprite);
 		}
 
-		if (!sprite.rip) {
+		if (sprite.rising_until && Date.now() >= sprite.rising_until) ((sprite.rising_until = 0), (sprite.cskin = null));
+		if (!sprite.rip && sprite.rising_until) {
+			// Graveyard Rising: the grave churns, then a hand breaks out, then the monster stands.
+			var rise_stage = min(7, floor(((Date.now() - sprite.rising_start) * 8) / (sprite.rising_until - sprite.rising_start))),
+				rise_skin = rise_stage < 4 ? "grave_mound" : "grave_hand";
+			if (!textures[rise_skin]) generate_textures(rise_skin, "full");
+			sprite.texture = textures[rise_skin][floor(Date.now() / 120) % 3][rise_stage % 4];
+		} else if (!sprite.rip) {
 			//if(sprite.standed) i=1,j=0;
 			set_texture(sprite, i, j);
 		}
@@ -5526,6 +5595,7 @@ function add_monster(data) {
 	if (def.slots) sprite.slots = def.slots;
 	sprite.level = data.cave ? data.level : 1;
 	if (sprite.s.young) sprite.real_alpha = 0.4;
+	if (sprite.s.rising && sprite.s.rising.ms > 0) ((sprite.rising_start = Date.now()), (sprite.rising_until = Date.now() + sprite.s.rising.ms));
 	if (def.charge_skin) {
 		sprite.normal_skin = sprite.skin;
 		sprite.charge_skin = def.charge_skin;
@@ -6795,6 +6865,12 @@ function add_quirk(quirk) {
 		else if (quirk[4] == "mainframe") render_mainframe();
 		else if (quirk[4] == "the_lever") the_lever();
 		else if (quirk[4] == "log") add_log(quirk_text, "gray");
+		else if (quirk[4] == "knock") {
+			// Trick or Treat doors: knock during Halloween, otherwise read the door.
+			if (!S.halloween) add_log(quirk_text, "gray");
+			else if (point_distance(character.real_x, character.real_y, quirk[0], quirk[1]) > 80) add_log(phrase.html("interface.trickortreat.closer"), "gray");
+			else knock_click();
+		}
 		else if (quirk[4] == "upgrade") render_upgrade_shrine(1);
 		else if (quirk[4] == "compound") render_compound_shrine(1);
 		else if (quirk[4] == "list_pvp") socket.emit("list_pvp");

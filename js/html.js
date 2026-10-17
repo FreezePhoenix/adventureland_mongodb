@@ -703,17 +703,18 @@ function render_event_announcements() {
 			})
 			.slice(0, 2),
 		release = release_card_html(),
+		next_card = character ? "" : events_selection_card_html(),
 		signature = JSON.stringify(
 			keys
 				.map(function (key) {
 					return [key, G.events[key]];
 				})
-				.concat([!!no_graphics, release]),
+				.concat([!!no_graphics, release, next_card]),
 		);
 	if (banner.data("events") === signature) return;
 	banner.data("events", signature);
-	// An unread update post comes first, then live events.
-	var html = release;
+	// An unread update post comes first, then the next event and live events.
+	var html = release + next_card;
 	keys.forEach(function (key) {
 		var event = G.events[key],
 			theme = event.announcement;
@@ -810,13 +811,15 @@ function render_server() {
 		else if (minutes < 10) minutes = "0" + minutes;
 		$(".minutesui").html(hours + ":" + minutes);
 	}
-	["crabxx", "goobrawl", "abtesting", "franky", "icegolem"].forEach(function (type) {
-		if (S[type]) {
+	["crabxx", "goobrawl", "abtesting", "franky", "icegolem", "horseman", "graveyard", "witchcipher"].forEach(function (type) {
+		if (S[type] && S[type].live !== false) {
 			var scolor = "#ECECEC",
 				lcolor = "#ECECEC",
 				lphrase = phrase.html("interface.server.event"),
 				s = type;
 			if (type == "goobrawl") ((lcolor = "#FF5D34"), (s = "rgoo"));
+			if (type == "witchcipher") ((lcolor = "#AF6AE2"), (s = "brewingwitch"));
+			if (type == "graveyard") ((lcolor = "#9FA3A8"), (s = "gargoyle"));
 			if (type == "abtesting") ((lcolor = "#E10029"), (s = "thehelmet"));
 			else if (G.monsters[type] && G.monsters[type].announce) lcolor = G.monsters[type].announce;
 			html += " <div class='gamebutton' style='padding: 6px 8px 6px 8px; font-size: 24px; line-height: 18px' onclick='pcs(event); open_guide(\"event-" + type + '","/docs/ref/event-' + type + "\")'>";
@@ -2233,6 +2236,7 @@ function render_exchange_shrine(type) {
 	if (type == "ornament") ((shade = "ornament"), (button = phrase.html("interface.exchange_shrine.give")));
 	if (type == "seashell") ((shade = "seashell"), (button = phrase.html("interface.exchange_shrine.give")));
 	if (type == "gemfragment") ((shade = "gemfragment"), (button = phrase.html("interface.exchange_shrine.provide")));
+	if (type == "witchparcel") ((shade = "witchparcel"), (button = phrase.html("interface.exchange_shrine.open")));
 	if (type == "cx") ((shade = "cosmo0"), (button = phrase.html("interface.exchange_shrine.shazam")));
 	e_item = null;
 	var html = "<div style='background-color: black; border: 5px solid gray; padding: 20px; font-size: 24px; display: inline-block; vertical-align: top; text-align: center'>";
@@ -3555,6 +3559,7 @@ function docs_link_click(event) {
 		match = url && url.match(/^\/docs\/(?:code\/functions|guide(?:\/[\w-]+)*)\/([\w-]+)$/);
 	if (url == "/docs/code/character/reference") open_article("data-character", url);
 	else if (url == "/docs/code/monster/reference") open_article("data-monster", url);
+	else if (url == "/docs/code/server/status") open_article("data-server-status", url);
 	else if (match && url.indexOf("/docs/code/functions/") == 0) load_documentation(match[1]);
 	else if (match && get_guide_url(match[1]) == url) open_guide(match[1], url);
 	else return;
@@ -6039,6 +6044,9 @@ function on_rclick(current) {
 				$("#critem" + cr_last).html(html);
 				cr_last++;
 			}
+		} else if (topleft_npc == "witchcipher") {
+			// The cauldron takes one ingredient per click; the stack stays in the inventory.
+			if (character.items[inum]) witch_mix_add(character.items[inum].name);
 		} else if (topleft_npc == "dismantler") {
 			if (ds_item !== null) return;
 			ds_item = inum;

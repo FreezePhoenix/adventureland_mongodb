@@ -402,5 +402,21 @@
   "server.game_log.offered_for": "{item} aangeboden in ruil voor {want}",
   "server.game_log.offered_for_or_higher": "{item} aangeboden in ruil voor {want} of hoger",
   "server.game_log.traded_for": "{item} geruild met {player} voor {received}",
-	"server.mail.friend_token_welcome": "Voor je verbinding met {name} in Adventure Land!"
+	"server.mail.friend_token_welcome": "Voor je verbinding met {name} in Adventure Land!",
+  "server.server_message.season_ended.halloween": "Halloween is voorbij! Xyn wisselt nog steeds Candy en Pumpkin Stems in, Halloween-recepten blijven bruikbaar en Het Heksenraadsel gaat dagelijks door.",
+  "server.witchcipher.started": "Het Heksenraadsel is begonnen! Doe nu mee en verzamel ingrediënten van monsters in vier gebieden.",
+  "server.witchcipher.gathering_over": "Er vallen geen ingrediënten meer! Nog 8 minuten om bij de Witch te brouwen.",
+  "server.witchcipher.cracked": "{player} heeft het recept van de Witch ontdekt! De oplossing staat voor iedereen op het aanwijzingenbord.",
+  "server.witchcipher.over": "Het Heksenraadsel is voorbij! De ketel wordt stil tot morgen.",
+  "server.witchcipher.over_uncracked": "Niemand heeft het recept van de Witch ontdekt! Het was {recipe}.",
+  "server.witchcipher.claimed_by": "{name} heeft vandaag al meegedaan aan Het Heksenraadsel.",
+  "server.witchcipher.claimed_elsewhere": "Je account heeft vandaag al meegedaan aan Het Heksenraadsel op {server}.",
+  "server.graveyard.started": "Opstand op het Kerkhof! Zombies en Ghouls kruipen uit de graven van Spooky Town!",
+  "server.graveyard.wave": "Golf {wave} van {waves} verrijst uit de graven!",
+  "server.graveyard.gargoyle": "De Gargoyle ontwaakt bij het kerkhofmonument!",
+  "server.graveyard.defeated": "De Gargoyle brokkelt af! Het kerkhof is weer stil.",
+  "server.graveyard.over": "De doden zakken terug in hun graven.",
+  "server.floating.treat": "Snoep!",
+  "server.floating.boo": "Boe!",
+  "server.trickortreat.laugh": "40 stempels! De Witch geeft je een CX Jar met de emote Sinistere Lach!"
 }

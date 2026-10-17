@@ -865,7 +865,17 @@
 	"update.06_10_26.anniversary_crafting.title": "Creazioni dell’anniversario",
 	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE può ora leggere gli indicatori stagionali tramite server.status.event_flags.",
 	"update.06_10_26.anniversary_crafting.update_button_image": "Ripristinata l’immagine mancante sul pulsante NOVITÀ.",
-	"update.08_10_26.broadcast.title": "Trasmissione su Steam",
-	"update.08_10_26.broadcast.broadcast_info": "La trasmissione su Steam ora mostra le INFO dei mostri, il loro bottino, gli oggetti e gli eventi in corso.",
-	"update.08_10_26.broadcast.mainframe_spookytown": "Risolto un problema per cui smart_move() in MAINFRAME si bloccava uscendo da Spooky Town."
+	"update.08_10_26.halloween.mainframe_spookytown": "Risolto un problema per cui smart_move() in MAINFRAME si bloccava uscendo da Spooky Town.",
+	"update.08_10_26.halloween.broadcast_info": "La trasmissione su Steam ora mostra le INFO dei mostri, il loro bottino, gli oggetti e gli eventi in corso.",
+	"update.08_10_26.halloween": "Decifra ogni giorno il Cifrario della Witch per ottenere nuovi oggetti e ricette. Halloween porta il Headless Horseman, il Risveglio del cimitero e Dolcetto o scherzetto. La nuova finestra Eventi mostra cosa ti aspetta.",
+	"update.08_10_26.halloween.title": "Il cifrario della Witch, Halloween ed Eventi",
+	"update.08_10_26.halloween.witchcipher": "Ogni giorno alle 18:00, ora del reame, la Witch in Spooky Forest dimentica la sua ricetta. Partecipa all'evento, raccogli quattro ingredienti dai mostri e combinali dalla Witch, oppure con brew(), per verificare il loro ordine. Ogni combinazione fornisce due indizi condivisi con il reame. Guadagna Witch's Parcels da aprire o usare nelle ricette della Witch, tutto l'anno.",
+	"update.08_10_26.halloween.witchcipher.title": "Nuovo evento giornaliero: Il cifrario della Witch!",
+	"update.08_10_26.halloween.halloween": "Il Headless Horseman cavalca fuori dal cimitero di Spooky Forest ogni notte alle 00:00, ora del reame. Zombies e Ghouls emergono dal cimitero di Spooky Town ogni due ore, seguiti da un Gargoyle. Bussa a sette porte per ottenere dolcetti, scherzetti e ricompense ogni 10 timbri. L'ultimo giorno di Halloween è il 2 novembre, ma Xyn continuerà a scambiare Candy e Pumpkin Stems anche dopo, e le ricette di Halloween resteranno utilizzabili.",
+	"update.08_10_26.halloween.halloween.title": "Headless Horseman, Risveglio del cimitero e Dolcetto o scherzetto!",
+	"update.08_10_26.halloween.events": "Clicca su EVENTI sopra la chat per vedere le stagioni in corso, i prossimi boss, le attività di oggi e gli eventi dei prossimi sette giorni. Passa dalla tua ora a quella del reame. Seleziona RICORDA per ricevere un messaggio nel registro di gioco 10 minuti prima di un evento. Gli eventi che iniziano entro un'ora appaiono anche sopra la chat, mentre la schermata del personaggio mostra il prossimo evento.",
+	"update.08_10_26.halloween.events.title": "Nuova finestra Eventi!",
+	"update.08_10_26.halloween.event_schedule": "Gli orari degli eventi vengono ora stabiliti con sette giorni di anticipo e non cambiano dopo il riavvio dei server.",
+	"update.08_10_26.halloween.map_halloween": "Ora puoi bussare a due porte in Spooky Forest per Dolcetto o scherzetto.",
+	"update.08_10_26.halloween.map_spookytown": "Ora puoi bussare a cinque porte in Spooky Town per Dolcetto o scherzetto."
 }

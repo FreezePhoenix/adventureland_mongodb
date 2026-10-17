@@ -43,6 +43,8 @@
 		<script src="/js/old_common_functions.js?v={{domain.v}}"></script>
 		<script src="/js/functions.js?v={{domain.v}}"></script>
 		<script src="/js/generated_zones.js?v={{domain.v}}"></script>
+		<script src="/js/event_schedule.js?v={{domain.v}}"></script>
+		<script src="/js/witch_cipher.js?v={{domain.v}}"></script>
 		<link href="/css/cave.css?v={{domain.v}}" rel="stylesheet" type="text/css"/>
 		<script src="/js/entity_animations.js?v={{domain.v}}"></script>
 		<script src="/js/game.js?v={{domain.v}}"></script>
@@ -133,7 +135,8 @@
 					<span class='servername'>{{ phrase("pages.index.europas-i") }}</span> | <span class="mapname">{{ phrase("pages.index.town") }}</span>
 				</div>
 				<div style='position: relative'>
-					<div style='border: 4px solid gray; background: black; position: absolute; top: 1px; right: -9px; font-size: 24px; line-height: 24px; padding-left: 6px; padding-right: 4px' class='timeui clickable' onclick="show_json(S,{name:'parent.S'})">12:24</div>
+					<div style='border: 4px solid gray; background: black; position: absolute; top: 1px; right: -9px; font-size: 24px; line-height: 24px; padding-left: 6px; padding-right: 4px' class='timeui clickable' onclick="btc(event); render_events_window()">12:24</div>
+					<div id="next-event-line" class="clickable" style="display: none" onclick="btc(event); render_events_window()"></div>
 					<div id="chatlog" class="noscroll cbold"></div>
 				</div>
 			</div>

@@ -399,5 +399,21 @@
   "server.game_log.offered_for": "Đã rao đổi {item} lấy {want}",
   "server.game_log.offered_for_or_higher": "Đã rao đổi {item} lấy {want} hoặc cao hơn",
   "server.game_log.traded_for": "Đã đổi {item} với {player} lấy {received}",
-	"server.mail.friend_token_welcome": "Vì đã liên kết với {name} trong Adventure Land!"
+	"server.mail.friend_token_welcome": "Vì đã liên kết với {name} trong Adventure Land!",
+  "server.server_message.season_ended.halloween": "Halloween đã kết thúc! Xyn vẫn đổi Candy và Pumpkin Stems, các công thức Halloween vẫn dùng được, và Mật Mã Phù Thủy tiếp tục diễn ra hằng ngày.",
+  "server.witchcipher.started": "Mật Mã Phù Thủy đã bắt đầu! Hãy tham gia ngay và thu thập nguyên liệu từ quái vật ở bốn khu vực.",
+  "server.witchcipher.gathering_over": "Nguyên liệu đã ngừng rơi! Còn 8 phút để pha chế tại Witch.",
+  "server.witchcipher.cracked": "{player} đã giải mã công thức của Witch! Đáp án đã có trên bảng manh mối cho mọi người.",
+  "server.witchcipher.over": "Mật Mã Phù Thủy đã kết thúc! Chiếc vạc sẽ yên lặng đến ngày mai.",
+  "server.witchcipher.over_uncracked": "Không ai giải được công thức của Witch! Đáp án là {recipe}.",
+  "server.witchcipher.claimed_by": "{name} đã tham gia Mật Mã Phù Thủy hôm nay.",
+  "server.witchcipher.claimed_elsewhere": "Tài khoản của bạn đã tham gia Mật Mã Phù Thủy trên {server} hôm nay.",
+  "server.graveyard.started": "Nghĩa Địa Trỗi Dậy! Zombies và Ghouls đang chui lên từ những ngôi mộ ở Spooky Town!",
+  "server.graveyard.wave": "Đợt {wave}/{waves} trỗi dậy từ những ngôi mộ!",
+  "server.graveyard.gargoyle": "Gargoyle thức tỉnh tại đài tưởng niệm trong nghĩa địa!",
+  "server.graveyard.defeated": "Gargoyle vỡ vụn! Nghĩa địa lại yên tĩnh.",
+  "server.graveyard.over": "Những kẻ đã chết trở về yên nghỉ trong mộ.",
+  "server.floating.treat": "Có quà!",
+  "server.floating.boo": "Hù!",
+  "server.trickortreat.laugh": "40 con dấu! Witch tặng bạn một CX Jar chứa biểu cảm Tiếng Cười Hiểm Ác!"
 }

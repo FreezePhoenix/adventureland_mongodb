@@ -865,7 +865,17 @@
 	"update.06_10_26.anniversary_crafting.title": "Výroční výroba",
 	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE nyní může číst příznaky sezónních událostí přes server.status.event_flags.",
 	"update.06_10_26.anniversary_crafting.update_button_image": "Obnoven chybějící obrázek na tlačítku NOVINKY.",
-	"update.08_10_26.broadcast.title": "Vysílání na Steamu",
-	"update.08_10_26.broadcast.broadcast_info": "Vysílání na Steamu nyní ukazuje INFO o příšerách, jejich kořist, předměty a aktuální události.",
-	"update.08_10_26.broadcast.mainframe_spookytown": "Opraveno zasekávání smart_move() v MAINFRAME při odchodu ze Spooky Town."
+	"update.08_10_26.halloween.mainframe_spookytown": "Opraveno zasekávání smart_move() v MAINFRAME při odchodu ze Spooky Town.",
+	"update.08_10_26.halloween.broadcast_info": "Vysílání na Steamu nyní ukazuje INFO o příšerách, jejich kořist, předměty a aktuální události.",
+	"update.08_10_26.halloween": "Každý den luštěte Šifru čarodějnice a získávejte nové předměty a recepty. Halloween přináší Headless Horseman, Povstání z hrobů a Koledu, nebo zlobu. Nové okno událostí ukazuje, co vás čeká.",
+	"update.08_10_26.halloween.title": "Šifra čarodějnice, Halloween a události",
+	"update.08_10_26.halloween.witchcipher": "Každý den v 18:00 času světa zapomene Witch ve Spooky Forest svůj recept. Připojte se k události, nasbírejte čtyři přísady z monster a uvařte je u Witch nebo pomocí brew(), abyste vyzkoušeli jejich pořadí. Každá kombinace dá dvě vodítka sdílená s celým světem. Získávejte Witch's Parcels, které můžete otevírat nebo používat v receptech Witch po celý rok.",
+	"update.08_10_26.halloween.witchcipher.title": "Nová denní událost: Šifra čarodějnice!",
+	"update.08_10_26.halloween.halloween": "Headless Horseman vyjíždí ze hřbitova ve Spooky Forest každou noc v 00:00 času světa. Zombies a Ghouls povstávají ze hřbitova ve Spooky Town každé dvě hodiny a po nich přichází Gargoyle. Zaklepejte na sedm dveří pro sladkosti, žerty a odměny za každých 10 razítek. Posledním dnem Halloween je 2. listopad, ale Xyn i poté směňuje Candy a Pumpkin Stems a halloweenské recepty zůstávají použitelné.",
+	"update.08_10_26.halloween.halloween.title": "Headless Horseman, Povstání z hrobů a Koledu, nebo zlobu!",
+	"update.08_10_26.halloween.events": "Kliknutím na UDÁLOSTI nad chatem zobrazíte probíhající sezóny, nadcházející bossy, dnešní aktivity a události na příštích sedm dní. Přepínejte mezi svým časem a časem světa. Zvolte PŘIPOMENOUT a 10 minut před událostí dostanete zprávu do herního záznamu. Události začínající během příští hodiny se zobrazují také nad chatem a obrazovka postav ukazuje nejbližší událost.",
+	"update.08_10_26.halloween.events.title": "Nové okno událostí!",
+	"update.08_10_26.halloween.event_schedule": "Časy událostí se nyní plánují na sedm dní dopředu a po restartu serveru se nemění.",
+	"update.08_10_26.halloween.map_halloween": "Na dvoje dveře ve Spooky Forest nyní můžete zaklepat v rámci události Koledu, nebo zlobu.",
+	"update.08_10_26.halloween.map_spookytown": "Na patery dveře ve Spooky Town nyní můžete zaklepat v rámci události Koledu, nebo zlobu."
 }

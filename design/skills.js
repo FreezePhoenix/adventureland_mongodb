@@ -238,6 +238,15 @@ var skills={
 		"cooldown":240000,
 		"emote":"makeawish",
 	},
+	"sinisterlaugh":{
+		"type":"skill",
+		"skin":"emote_sinisterlaugh",
+		"name":"Sinister Laugh",
+		"explanation":"A wicked laugh to scare your friends.",
+		"mp":20,
+		"cooldown":12000,
+		"emote":"sinisterlaugh",
+	},
 	"ikissyou":{
 		"type":"skill",
 		"skin":"emote_ikissyou",

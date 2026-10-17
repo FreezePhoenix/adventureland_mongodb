@@ -402,5 +402,21 @@
   "server.game_log.offered_for": "Προσφορά ανταλλαγής: {item} για {want}",
   "server.game_log.offered_for_or_higher": "Προσφορά ανταλλαγής: {item} για {want} ή υψηλότερο",
   "server.game_log.traded_for": "Αντάλλαξες {item} με {player} για {received}",
-	"server.mail.friend_token_welcome": "Για τη σύνδεσή σου με τον/την {name} στο Adventure Land!"
+	"server.mail.friend_token_welcome": "Για τη σύνδεσή σου με τον/την {name} στο Adventure Land!",
+  "server.server_message.season_ended.halloween": "Το Halloween τελείωσε! Ο Xyn συνεχίζει να ανταλλάσσει Candy και Pumpkin Stems, οι συνταγές του Halloween παραμένουν διαθέσιμες και ο Γρίφος της Witch συνεχίζεται καθημερινά.",
+  "server.witchcipher.started": "Ο Γρίφος της Witch ξεκίνησε! Δήλωσε συμμετοχή τώρα και μάζεψε υλικά από τέρατα σε τέσσερις περιοχές.",
+  "server.witchcipher.gathering_over": "Τα υλικά σταμάτησαν να πέφτουν! Απομένουν 8 λεπτά για παρασκευή στο καζάνι της Witch.",
+  "server.witchcipher.cracked": "Ο {player} έλυσε τη συνταγή της Witch! Η απάντηση βρίσκεται στον πίνακα ενδείξεων για όλους.",
+  "server.witchcipher.over": "Ο Γρίφος της Witch τελείωσε! Το καζάνι σωπαίνει μέχρι αύριο.",
+  "server.witchcipher.over_uncracked": "Κανείς δεν έλυσε τη συνταγή της Witch! Ήταν {recipe}.",
+  "server.witchcipher.claimed_by": "Ο {name} έχει ήδη δηλώσει συμμετοχή στον Γρίφο της Witch σήμερα.",
+  "server.witchcipher.claimed_elsewhere": "Ο λογαριασμός σου έχει ήδη συμμετάσχει στον Γρίφο της Witch στον Κόσμο {server} σήμερα.",
+  "server.graveyard.started": "Η Εξέγερση των Νεκρών! Zombies και Ghouls βγαίνουν από τους τάφους του Spooky Town!",
+  "server.graveyard.wave": "Το κύμα {wave} από {waves} αναδύεται από τους τάφους!",
+  "server.graveyard.gargoyle": "Το Gargoyle ξυπνά στο μνημείο του νεκροταφείου!",
+  "server.graveyard.defeated": "Το Gargoyle θρυμματίζεται! Το νεκροταφείο ησυχάζει ξανά.",
+  "server.graveyard.over": "Οι νεκροί επιστρέφουν στους τάφους τους.",
+  "server.floating.treat": "Κέρασμα!",
+  "server.floating.boo": "Μπου!",
+  "server.trickortreat.laugh": "40 σφραγίδες! Η Witch σου δίνει ένα CX Jar που περιέχει το emote Μοχθηρό Γέλιο!"
 }

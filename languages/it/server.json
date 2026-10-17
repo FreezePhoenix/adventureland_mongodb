@@ -404,5 +404,21 @@
   "server.game_log.offered_for": "Hai offerto {item} in cambio di {want}",
   "server.game_log.offered_for_or_higher": "Hai offerto {item} in cambio di {want} o superiore",
   "server.game_log.traded_for": "Hai scambiato {item} con {player} per {received}",
-	"server.mail.friend_token_welcome": "Per esserti collegato con {name} in Adventure Land!"
+	"server.mail.friend_token_welcome": "Per esserti collegato con {name} in Adventure Land!",
+  "server.server_message.season_ended.halloween": "Halloween è finito! Xyn scambia ancora Candy e Pumpkin Stems, le ricette di Halloween restano utilizzabili e il Cifrario della Witch continua ogni giorno.",
+  "server.witchcipher.started": "Il cifrario della Witch è iniziato! Partecipa ora e raccogli ingredienti dai mostri di quattro regioni.",
+  "server.witchcipher.gathering_over": "I mostri non rilasciano più ingredienti! Restano 8 minuti per preparare combinazioni dalla Witch.",
+  "server.witchcipher.cracked": "{player} ha decifrato la ricetta della Witch! La soluzione è sulla bacheca degli indizi per tutti.",
+  "server.witchcipher.over": "Il cifrario della Witch è finito! Il calderone tace fino a domani.",
+  "server.witchcipher.over_uncracked": "Nessuno ha decifrato la ricetta della Witch! Era {recipe}.",
+  "server.witchcipher.claimed_by": "{name} ha già partecipato al Cifrario della Witch oggi.",
+  "server.witchcipher.claimed_elsewhere": "Il tuo account ha già partecipato al Cifrario della Witch su {server} oggi.",
+  "server.graveyard.started": "Risveglio del cimitero! Zombies e Ghouls emergono dalle tombe di Spooky Town!",
+  "server.graveyard.wave": "L'ondata {wave} di {waves} emerge dalle tombe!",
+  "server.graveyard.gargoyle": "Il Gargoyle si risveglia presso il monumento del cimitero!",
+  "server.graveyard.defeated": "Il Gargoyle si sgretola! Il cimitero torna silenzioso.",
+  "server.graveyard.over": "I morti tornano a riposare nelle loro tombe.",
+  "server.floating.treat": "Dolcetto!",
+  "server.floating.boo": "Buu!",
+  "server.trickortreat.laugh": "40 timbri! La Witch ti dà un CX Jar contenente l'emote Risata sinistra!"
 }

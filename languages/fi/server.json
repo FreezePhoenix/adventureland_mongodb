@@ -402,5 +402,21 @@
   "server.game_log.offered_for": "Tarjottu vaihtoon: {item}, pyydetty: {want}",
   "server.game_log.offered_for_or_higher": "Tarjottu vaihtoon: {item}, pyydetty: {want} tai korkeampi",
   "server.game_log.traded_for": "Vaihdettu: {item}, vaihtaja: {player}, saatu: {received}",
-	"server.mail.friend_token_welcome": "Yhteydestä käyttäjään {name} Adventure Landissa!"
+	"server.mail.friend_token_welcome": "Yhteydestä käyttäjään {name} Adventure Landissa!",
+  "server.server_message.season_ended.halloween": "Halloween on ohi! Xyn vaihtaa edelleen Candy- ja Pumpkin Stems -esineitä, Halloween-reseptejä voi yhä käyttää ja Witchin salakirjoitus jatkuu päivittäin.",
+  "server.witchcipher.started": "Witchin salakirjoitus on alkanut! Liity nyt ja kerää aineksia neljän alueen hirviöiltä.",
+  "server.witchcipher.gathering_over": "Aineksia ei enää putoa! Vielä 8 minuuttia aikaa valmistaa keitoksia Witchin luona.",
+  "server.witchcipher.cracked": "{player} ratkaisi Witchin reseptin! Vastaus näkyy vihjetaululla kaikille.",
+  "server.witchcipher.over": "Witchin salakirjoitus on päättynyt! Pata hiljenee huomiseen asti.",
+  "server.witchcipher.over_uncracked": "Kukaan ei ratkaissut Witchin reseptiä! Se oli {recipe}.",
+  "server.witchcipher.claimed_by": "{name} on jo liittynyt Witchin salakirjoitukseen tänään.",
+  "server.witchcipher.claimed_elsewhere": "Tilisi on jo liittynyt Witchin salakirjoitukseen tänään maailmassa {server}.",
+  "server.graveyard.started": "Vainajien nousu! Zombies ja Ghouls kiipeävät esiin Spooky Townin haudoista!",
+  "server.graveyard.wave": "Aalto {wave}/{waves} nousee haudoista!",
+  "server.graveyard.gargoyle": "Gargoyle herää hautausmaan muistomerkillä!",
+  "server.graveyard.defeated": "Gargoyle murenee! Hautausmaalla on taas hiljaista.",
+  "server.graveyard.over": "Kuolleet palaavat lepäämään hautoihinsa.",
+  "server.floating.treat": "Herkku!",
+  "server.floating.boo": "Pöö!",
+  "server.trickortreat.laugh": "40 leimaa! Witch antaa sinulle CX Jar -esineen, joka sisältää Pahaenteinen nauru -eleen!"
 }

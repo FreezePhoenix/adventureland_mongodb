@@ -85,6 +85,7 @@ function fixture(beforeCommit) {
 		encouragement_login: async () => true,
 		encouragement_identity: (p) => ({ key: p.owner }),
 		encouragement_update() {},
+		event_player_status() {},
 		resume_instance() {},
 		pmap_add() {},
 		cache_player_items() {},
@@ -216,7 +217,10 @@ test("unsafe stored or display names cannot claim or publish a character session
 				if (mainframe) f.data.mainframe_session = "a".repeat(32);
 				await f.auth(f.data);
 				await flush();
-				assert.ok(f.events.some((event) => event.event === "game_error" && event.data.reason === "invalid_name"), field + ": " + name);
+				assert.ok(
+					f.events.some((event) => event.event === "game_error" && event.data.reason === "invalid_name"),
+					field + ": " + name,
+				);
 				assert.ok(!f.events.some((event) => event.event === "start"));
 				assert.equal(f.stats.writes, 0);
 				assert.deepEqual(f.character(), before);

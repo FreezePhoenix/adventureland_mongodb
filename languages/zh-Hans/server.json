@@ -399,5 +399,21 @@
   "server.game_log.offered_for": "已上架{item}，换取{want}",
   "server.game_log.offered_for_or_higher": "已上架{item}，换取{want}或更高",
   "server.game_log.traded_for": "与{player}交换，以{item}换得{received}",
-	"server.mail.friend_token_welcome": "感谢你在 Adventure Land 中与 {name} 建立关联！"
+	"server.mail.friend_token_welcome": "感谢你在 Adventure Land 中与 {name} 建立关联！",
+  "server.server_message.season_ended.halloween": "万圣节结束了！Xyn 仍可兑换 Candy 和 Pumpkin Stems，万圣节配方仍可使用，女巫的密方也会每天继续举行。",
+  "server.witchcipher.started": "女巫的密方开始了！立即加入，从四个地区的怪物身上收集材料。",
+  "server.witchcipher.gathering_over": "材料不再掉落！还有8分钟可以在 Witch 处调制。",
+  "server.witchcipher.cracked": "{player}破解了 Witch 的配方！所有人都能在线索板上看到答案。",
+  "server.witchcipher.over": "女巫的密方结束了！坩埚将沉寂到明天。",
+  "server.witchcipher.over_uncracked": "没人破解 Witch 的配方！正确答案是{recipe}。",
+  "server.witchcipher.claimed_by": "{name}今天已经加入女巫的密方。",
+  "server.witchcipher.claimed_elsewhere": "你的账号今天已经在{server}参加女巫的密方。",
+  "server.graveyard.started": "墓地复苏！Zombies 和 Ghouls 正从 Spooky Town 的坟墓里爬出来！",
+  "server.graveyard.wave": "第{wave}/{waves}波怪物破土而出！",
+  "server.graveyard.gargoyle": "墓地纪念碑处的 Gargoyle 苏醒了！",
+  "server.graveyard.defeated": "Gargoyle 碎裂了！墓地再次恢复平静。",
+  "server.graveyard.over": "死者重新沉入坟墓。",
+  "server.floating.treat": "有糖！",
+  "server.floating.boo": "哇！",
+  "server.trickortreat.laugh": "40枚印章！Witch 送给你一个 CX Jar，里面装着阴森狂笑表情动作！"
 }

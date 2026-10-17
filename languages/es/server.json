@@ -402,5 +402,21 @@
   "server.game_log.offered_for": "Has ofrecido {item} a cambio de {want}",
   "server.game_log.offered_for_or_higher": "Has ofrecido {item} a cambio de {want} o superior",
   "server.game_log.traded_for": "Has intercambiado {item} con {player} por {received}",
-	"server.mail.friend_token_welcome": "¡Por conectar con {name} en Adventure Land!"
+	"server.mail.friend_token_welcome": "¡Por conectar con {name} en Adventure Land!",
+  "server.server_message.season_ended.halloween": "¡Halloween ha terminado! Xyn sigue intercambiando Candy y Pumpkin Stems, y las recetas de Halloween siguen siendo utilizables. El enigma de la Witch continúa cada día.",
+  "server.witchcipher.started": "¡Ha comenzado el enigma de la Witch! Únete ya y reúne ingredientes de monstruos de cuatro regiones.",
+  "server.witchcipher.gathering_over": "¡Ya no caen ingredientes! Quedan 8 minutos para preparar brebajes con la Witch.",
+  "server.witchcipher.cracked": "¡{player} ha descifrado la receta de la Witch! La solución está en el tablero de pistas para todos.",
+  "server.witchcipher.over": "¡El enigma de la Witch ha terminado! El caldero guardará silencio hasta mañana.",
+  "server.witchcipher.over_uncracked": "¡Nadie ha descifrado la receta de la Witch! Era {recipe}.",
+  "server.witchcipher.claimed_by": "{name} ya se ha unido hoy al enigma de la Witch.",
+  "server.witchcipher.claimed_elsewhere": "Tu cuenta ya se ha unido hoy al enigma de la Witch en {server}.",
+  "server.graveyard.started": "¡El despertar del cementerio! ¡Los Zombies y Ghouls están saliendo de las tumbas de Spooky Town!",
+  "server.graveyard.wave": "¡La oleada {wave} de {waves} sale de las tumbas!",
+  "server.graveyard.gargoyle": "¡El Gargoyle despierta junto al monumento del cementerio!",
+  "server.graveyard.defeated": "¡El Gargoyle se desmorona! El cementerio vuelve a estar en calma.",
+  "server.graveyard.over": "Los muertos vuelven a descansar en sus tumbas.",
+  "server.floating.treat": "¡Premio!",
+  "server.floating.boo": "¡Bu!",
+  "server.trickortreat.laugh": "¡40 sellos! ¡La Witch te entrega un CX Jar que contiene el gesto Risa siniestra!"
 }

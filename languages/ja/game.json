@@ -456,5 +456,6 @@
 	"response.trade_swap_match": "そのアイテムは交換条件に合いません",
 	"response.trade_swap_space": "商人の持ち物に空きがありません",
 	"game.trade_history.traded": "- {player}と'{item}'を'{received}'に交換",
-	"response.transport_need_items": "必要なアイテム：{items}"
+	"response.transport_need_items": "必要なアイテム：{items}",
+	"combat.emote.hehehe": "ヒヒヒ"
 }

@@ -4572,3 +4572,111 @@ module.exports["event.dreams.traveler.Lena.says.1"] = "I heard shouting up ahead
 
 // Ambient cave traveler Lena speaks this line on click. Preserve Amber and Dorr.
 module.exports["event.dreams.traveler.Lena.says.2"] = "If you find a blue scarf, it’s mine.";
+
+// Item tooltip flavor line for Verdant Spore, an ingredient of the Witch's Cipher (drops in one region during its gathering). Short and mysterious; the item name stays unchanged.
+module.exports["item.verdantspore.explanation"] = "A strange little spore. The Witch needs it for her cauldron.";
+
+// Item tooltip flavor line for Frost Scale, an ingredient of the Witch's Cipher (drops in one region during its gathering). Short and mysterious; the item name stays unchanged.
+module.exports["item.frostscale.explanation"] = "Cold to the touch. The Witch can brew with it.";
+
+// Item tooltip flavor line for Ember Coal, an ingredient of the Witch's Cipher (drops in one region during its gathering). Short and mysterious; the item name stays unchanged.
+module.exports["item.embercoal.explanation"] = "Still warm! Toss it into the Witch's cauldron.";
+
+// Item tooltip flavor line for Gloom Feather, an ingredient of the Witch's Cipher (drops in one region during its gathering). Short and mysterious; the item name stays unchanged.
+module.exports["item.gloomfeather.explanation"] = "A spooky feather. Just what the Witch needs.";
+
+// Item tooltip for the Witch's Parcel: opened (exchanged) at the Witch in Spooky Forest, or kept for her gear recipes. Keep the Witch and Witch's Parcel unchanged.
+module.exports["item.witchparcel.explanation"] = "What's inside? Open it at the Witch, or save it for her recipes.";
+
+// Item tooltip flavor line for Cipher Draught, a two-hour elixir (luck, gold, XP and a little speed). Short.
+module.exports["item.cipherdraught.explanation"] = "A lucky brew for two hours of better adventures.";
+
+// Item tooltip flavor line for a Witching Season gear piece (crookedkey). Short and playful; no stats or comparisons.
+module.exports["item.crookedkey.explanation"] = "A crooked key. It might open something!";
+
+// Item tooltip flavor line for a Witching Season gear piece (patchbuckler). Short and playful; no stats or comparisons.
+module.exports["item.patchbuckler.explanation"] = "Four scraps. One stubborn shield.";
+
+// Item tooltip flavor line for a Witching Season gear piece (blackcatbell). Short and playful; no stats or comparisons.
+module.exports["item.blackcatbell.explanation"] = "A little bell that rings when no cat is near.";
+
+// Item tooltip flavor line for a Witching Season gear piece (nightmarketsash). Short and playful; no stats or comparisons.
+module.exports["item.nightmarketsash.explanation"] = "Extra pockets for whatever you find.";
+
+// Item tooltip flavor line for a Witching Season gear piece (hexweavegloves). Short and playful; no stats or comparisons.
+module.exports["item.hexweavegloves.explanation"] = "A pair of gloves stitched with a little witchcraft.";
+
+// Item tooltip flavor line for a Witching Season gear piece (candleboots). Short and playful; no stats or comparisons.
+module.exports["item.candleboots.explanation"] = "Boots with a little candlelight for dark paths.";
+
+// Item tooltip flavor line for a Witching Season gear piece (witchlightmantle). Short and playful; no stats or comparisons.
+module.exports["item.witchlightmantle.explanation"] = "A mantle with a little moonlight tucked inside.";
+
+// Item tooltip flavor line for a Witching Season gear piece (laughingbook). Short and playful; no stats or comparisons.
+module.exports["item.laughingbook.explanation"] = "A book that laughs at its own jokes.";
+
+// Item tooltip flavor line for a Witching Season gear piece (horsemanpumpkin). Short and playful; no stats or comparisons.
+module.exports["item.horsemanpumpkin.explanation"] = "The Headless Horseman's rare helmet. Still grinning!";
+
+// Condition name shown on a character after a Trick or Treat door played a trick. Exclamation is part of the name.
+module.exports["condition.spooked.name"] = "Spooked!";
+
+// Condition tooltip: the trick half of a Trick or Treat knock. +40 speed for 3 seconds.
+module.exports["condition.spooked.explanation"] = "Boo! Speed increased by 40 for 3 seconds.";
+
+// Condition name (not shown in the condition bar) of a Zombie or Ghoul climbing out of its grave in Graveyard Rising.
+module.exports["condition.rising.name"] = "Rising";
+
+// Emote name: an evil cackle with green laugh marks. Translate as a skill label.
+module.exports["skill.sinisterlaugh.name"] = "Sinister Laugh";
+
+// Emote tooltip flavor line for Sinister Laugh.
+module.exports["skill.sinisterlaugh.explanation"] = "A wicked laugh to scare your friends.";
+
+// Event name in guides, the Events window and announcements. Descriptive event name; translate.
+module.exports["event.witchcipher.name"] = "Witch's Cipher";
+
+// Event announcement card text for Witch's Cipher on character selection.
+module.exports["event.witchcipher.announcement.text"] = "Gather ingredients and crack the Witch's lost recipe.";
+
+// Event name in guides, the Events window and announcements. Headless Horseman is a monster name; keep it unchanged.
+module.exports["event.horseman.name"] = "Headless Horseman";
+
+// Event announcement card text for Headless Horseman on character selection.
+module.exports["event.horseman.announcement.text"] = "The Headless Horseman rides out of Spooky Forest's graveyard.";
+
+// Event name in guides, the Events window and announcements. Descriptive event name; translate.
+module.exports["event.graveyard.name"] = "Graveyard Rising";
+
+// Event announcement card text for Graveyard Rising on character selection.
+module.exports["event.graveyard.announcement.text"] = "Zombies and Ghouls are rising in Spooky Town's graveyard.";
+
+// Event name in guides, the Events window and announcements. Descriptive event name; translate.
+module.exports["event.trickortreat.name"] = "Trick or Treat";
+
+// Spooky Town door 1 (a Trick or Treat door during Halloween); shown when the door is clicked outside Halloween. Same meaning as map.halloween.quirks.1.5.
+module.exports["map.spookytown.quirks.1.5"] = "Locked";
+
+// Spooky Town door 2 (a Trick or Treat door during Halloween); shown when the door is clicked outside Halloween. Same meaning as map.halloween.quirks.1.5.
+module.exports["map.spookytown.quirks.2.5"] = "Locked";
+
+// Spooky Town door 3 (a Trick or Treat door during Halloween); shown when the door is clicked outside Halloween. Same meaning as map.halloween.quirks.1.5.
+module.exports["map.spookytown.quirks.3.5"] = "Locked";
+
+// Spooky Town door 4 (a Trick or Treat door during Halloween); shown when the door is clicked outside Halloween. Same meaning as map.halloween.quirks.1.5.
+module.exports["map.spookytown.quirks.4.5"] = "Locked";
+
+// Spooky Town door 5 (a Trick or Treat door during Halloween); shown when the door is clicked outside Halloween. Same meaning as map.halloween.quirks.1.5.
+module.exports["map.spookytown.quirks.5.5"] = "Locked";
+
+// Title of the INFO button near the Witch in Spooky Forest; opens the Witch's Cipher guide. Descriptive event name; translate.
+module.exports["interaction.witchcipher.title"] = "Witch's Cipher";
+
+// Tooltip of the INFO button near the Witch; opens the Witch's Cipher guide. 18:00 is on the realm clock.
+module.exports["interaction.witchcipher.summary"] = "Every day at 18:00 realm time, gather ingredients and brew the Witch's lost recipe.";
+
+// Title of the INFO button near a Trick or Treat door during Halloween; opens the Trick or Treat guide.
+module.exports["interaction.trickortreat.title"] = "Trick or Treat";
+
+// Tooltip of the INFO button near a Trick or Treat door during Halloween.
+module.exports["interaction.trickortreat.summary"] = "Knock on this door during Halloween for a treat or a fright.";

@@ -401,5 +401,21 @@
   "server.game_log.offered_for": "Erbjöd {item} i byte mot {want}",
   "server.game_log.offered_for_or_higher": "Erbjöd {item} i byte mot {want} eller högre",
   "server.game_log.traded_for": "Bytte {item} med {player} mot {received}",
-	"server.mail.friend_token_welcome": "För att du kopplade ihop dig med {name} i Adventure Land!"
+	"server.mail.friend_token_welcome": "För att du kopplade ihop dig med {name} i Adventure Land!",
+  "server.server_message.season_ended.halloween": "Halloween är över! Xyn byter fortfarande in Candy och Pumpkin Stems, Halloween-recept kan fortfarande användas och Witchs chiffer fortsätter varje dag.",
+  "server.witchcipher.started": "Witchs chiffer har börjat! Delta nu och samla ingredienser från monster i fyra regioner.",
+  "server.witchcipher.gathering_over": "Ingredienser släpps inte längre! Du har 8 minuter kvar att brygga hos Witch.",
+  "server.witchcipher.cracked": "{player} knäckte Witchs recept! Svaret finns på ledtrådstavlan för alla.",
+  "server.witchcipher.over": "Witchs chiffer är över! Kitteln tystnar till imorgon.",
+  "server.witchcipher.over_uncracked": "Ingen knäckte Witchs recept! Det var {recipe}.",
+  "server.witchcipher.claimed_by": "{name} deltar redan i dagens Witchs chiffer.",
+  "server.witchcipher.claimed_elsewhere": "Ditt konto deltar redan i dagens Witchs chiffer på {server}.",
+  "server.graveyard.started": "De dödas uppvaknande! Zombies och Ghouls klättrar upp ur gravarna i Spooky Town!",
+  "server.graveyard.wave": "Våg {wave} av {waves} reser sig ur gravarna!",
+  "server.graveyard.gargoyle": "Gargoyle vaknar vid kyrkogårdens monument!",
+  "server.graveyard.defeated": "Gargoyle faller sönder! Kyrkogården är tyst igen.",
+  "server.graveyard.over": "De döda återvänder till sina gravar.",
+  "server.floating.treat": "Godis!",
+  "server.floating.boo": "Bu!",
+  "server.trickortreat.laugh": "40 stämplar! Witch ger dig en CX Jar som innehåller emotesymbolen Ondskefullt skratt!"
 }

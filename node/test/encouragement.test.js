@@ -207,6 +207,8 @@ function harness() {
 		killed_message: () => "killed a monster",
 		calculate_monster_score: () => 1,
 		monster_hunt_logic() {},
+		witch_cipher_kill() {},
+		graveyard_fallen() {},
 		stats: { kills: { goo: 0 } },
 		W: { chest: {} },
 		log_trace(name, e) {
@@ -1020,17 +1022,23 @@ test("ordinary drop paths keep seasonal, home, dynamic, global and bundle semant
 
 test("merchant realm changes preserve verified sibling bonuses without extending the cache", async () => {
 	for (const returning of [false, true]) {
-		const a = harness(), b = harness();
+		const a = harness(),
+			b = harness();
 		const created = a.now() - (returning ? 100 : 1) * day;
 		const hero = a.player("Hero", { pid: "shared", created });
 		const merchant = b.player("Shop", { pid: "shared", type: "merchant", created });
 		b.c.server_id = "SR_US1";
 		a.eligible(hero, a.now() - created, returning ? a.now() + 10 * day : 0);
 		const group = a.c.encouragement_groups.get("pid:shared");
-		const records = [a.record(hero, { server: "SR_EU1", info: { p: { encouragement: plain(hero.p.encouragement) } } }), b.record(merchant)];
+		const records = [
+			a.record(hero, { server: "SR_EU1", info: { p: { encouragement: plain(hero.p.encouragement) } } }),
+			b.record(merchant),
+		];
 		group.characters = structuredClone(records);
 		b.setRecords(records.toReversed());
-		const before = plain(hero.s), until = group.until, next = group.next;
+		const before = plain(hero.s),
+			until = group.until,
+			next = group.next;
 		let notices = 0;
 		b.c.server_eval = async (_server, _code, data) => {
 			notices++;
@@ -1053,14 +1061,28 @@ test("merchant realm changes preserve verified sibling bonuses without extending
 		assert.equal(a.queries.length, 0, "unchanged merchant moves do not force another realm's character query");
 		assert.equal(merchant.s.encouragement_lonewolf, undefined);
 		b.c.server_eval = async () => false;
-		assert.equal(await b.c.encouragement_login(merchant, new Date(b.now())), false, "merchant logins still need acknowledgement");
+		assert.equal(
+			await b.c.encouragement_login(merchant, new Date(b.now())),
+			false,
+			"merchant logins still need acknowledgement",
+		);
 	}
 });
 
 test("merchant logins still invalidate changed membership, age, return windows and character limits", async () => {
-	for (const change of ["new_merchant", "linked_owner", "older_character", "return_window", "character_limit", "combat_class", "combat_activity"]) {
-		const a = harness(), b = harness();
-		const hero = a.player("Hero", { pid: "shared" }), merchant = b.player("Shop", { pid: "shared", type: "merchant" });
+	for (const change of [
+		"new_merchant",
+		"linked_owner",
+		"older_character",
+		"return_window",
+		"character_limit",
+		"combat_class",
+		"combat_activity",
+	]) {
+		const a = harness(),
+			b = harness();
+		const hero = a.player("Hero", { pid: "shared" }),
+			merchant = b.player("Shop", { pid: "shared", type: "merchant" });
 		b.c.server_id = "SR_US1";
 		a.eligible(hero);
 		const group = a.c.encouragement_groups.get("pid:shared");
@@ -1068,10 +1090,17 @@ test("merchant logins still invalidate changed membership, age, return windows a
 		if (change === "combat_activity") original.push(a.record(hero, { _id: "CH_other", type: "mage" }));
 		group.characters = structuredClone(change === "new_merchant" ? original.slice(0, 1) : original);
 		const fresh = structuredClone(original);
-		if (change === "linked_owner") fresh.push(a.record(hero, { _id: "CH_linked", owner: "US_linked", type: "merchant" }));
+		if (change === "linked_owner")
+			fresh.push(a.record(hero, { _id: "CH_linked", owner: "US_linked", type: "merchant" }));
 		if (change === "older_character") fresh[0].created = new Date(a.now() - 100 * day);
-		if (change === "return_window") b.histories.set("MK_encouragement-pid:shared", { oldest: hero.created, last_online: b.now(), return_until: b.now() + 10 * day });
-		if (change === "character_limit") while (fresh.length < 25) fresh.push(a.record(hero, { _id: "CH_" + fresh.length, type: "merchant" }));
+		if (change === "return_window")
+			b.histories.set("MK_encouragement-pid:shared", {
+				oldest: hero.created,
+				last_online: b.now(),
+				return_until: b.now() + 10 * day,
+			});
+		if (change === "character_limit")
+			while (fresh.length < 25) fresh.push(a.record(hero, { _id: "CH_" + fresh.length, type: "merchant" }));
 		if (change === "combat_class") fresh[1].type = "mage";
 		if (change === "combat_activity") fresh[2].server = "SR_ASIA1";
 		b.setRecords(fresh);
@@ -1085,15 +1114,19 @@ test("merchant logins still invalidate changed membership, age, return windows a
 		assert.equal(hero.s.encouragement_lonewolf, undefined, change);
 		await a.c.encouragement_load(hero);
 		a.c.encouragement_update(hero, true);
-		if (change === "character_limit") assert.equal(hero.encouragement.blocked, true, "merchants still count toward the 25-character cutoff");
-		if (change === "older_character") assert.equal(hero.s.encouragement_new, undefined, "an older linked history must revoke New Player");
+		if (change === "character_limit")
+			assert.equal(hero.encouragement.blocked, true, "merchants still count toward the 25-character cutoff");
+		if (change === "older_character")
+			assert.equal(hero.s.encouragement_new, undefined, "an older linked history must revoke New Player");
 	}
 });
 
 test("merchant notices cannot preserve expired, missing or invalidated eligibility", async () => {
 	for (const state of ["expired", "pending", "legacy"]) {
-		const a = harness(), b = harness();
-		const hero = a.player("Hero", { pid: "shared" }), merchant = b.player("Shop", { pid: "shared", type: "merchant" });
+		const a = harness(),
+			b = harness();
+		const hero = a.player("Hero", { pid: "shared" }),
+			merchant = b.player("Shop", { pid: "shared", type: "merchant" });
 		b.c.server_id = "SR_US1";
 		a.eligible(hero);
 		const group = a.c.encouragement_groups.get("pid:shared");

@@ -1997,4 +1997,198 @@ module.exports = {
 	"interface.item.empty_description": "Nothing, nada, zilch.",
 	// js/html.js render_server; compact label below an active boss/event icon, opening that event's guide. This is an event label, not a proper event name. Keep brief and emphatic.
 	"interface.server.event": "EVENT!",
+	// Label of the realm clock above chat; clicking it opens the Events window. {time} is the realm clock, e.g. 19:42. Keep EVENTS short and uppercase.
+	"interface.events.clock": "EVENTS {time}",
+	// Title of the Events window (js/event_schedule.js). Short uppercase heading.
+	"interface.events.title": "EVENTS",
+	// Events window header, after the realm name (e.g. Europas I · Your realm): the schedule shown belongs to the realm you are connected to.
+	"interface.events.your_realm": "Your realm",
+	// Events window when the game is disconnected or has no schedule yet; no times are shown.
+	"interface.events.unavailable": "Not connected. Event times will appear when the realm responds.",
+	// Events window footer button; opens the list of event guides. Uppercase button.
+	"interface.events.guides": "EVENT GUIDES",
+	// Events window footer button; shows the raw server status data (server.status) as JSON. Uppercase button.
+	"interface.events.data": "DATA",
+	// Events window: label before the two time choices (your local time or the realm clock).
+	"interface.events.times": "Times:",
+	// Events window time choice: show times in the player's own time zone. {offset} is like UTC+3.
+	"interface.events.your_time": "Your time · {offset}",
+	// Events window time choice: show times on the realm clock. {offset} is the realm's fixed offset, like UTC+1.
+	"interface.events.realm_time": "Realm time · {offset}",
+	// Events window tab: only the next few events. Uppercase button.
+	"interface.events.up_next": "UP NEXT",
+	// Events window tab: the whole published week. Uppercase button.
+	"interface.events.next_7_days": "NEXT 7 DAYS",
+	// Events window section heading for running seasons such as Halloween, their bosses and repeating events. Uppercase.
+	"interface.events.seasonal": "SEASONAL",
+	// Events window section heading for things each account can do once per day: the Witch's Cipher, the Cave of Many Dreams and Trick or Treat doors. Uppercase.
+	"interface.events.today_attractions": "TODAY'S ACTIVITIES",
+	// Events window day heading for today. {date} is a short local date like Sat 17 Oct.
+	"interface.events.today": "TODAY · {date}",
+	// Events window footer: some rare monsters appear without a schedule, so they are not listed.
+	"interface.events.no_fixed_time": "Some encounters have no fixed start time.",
+	// Countdown to a start, minutes only, compact. Example: in 18m. Keep m as a short unit.
+	"interface.events.in_minutes": "in {m}m",
+	// Countdown to a start in hours and minutes, compact. Example: in 3h 5m.
+	"interface.events.in_hours": "in {h}h {m}m",
+	// Countdown in days and hours, compact. Example: in 15d 4h.
+	"interface.events.in_days": "in {d}d {h}h",
+	// Events window: a season with no set end date is active.
+	"interface.events.season_running": "Running now",
+	// Events window: the season's last day. {date} is a localized date like Mon, November 2; {left} is a countdown like in 15d 4h. This line must make the end date obvious.
+	"interface.events.season_ends": "Last day: {date} · ends {left}",
+	// Small uppercase tag under the season's end date in the Events window.
+	"interface.events.ends": "ENDS",
+	// Events window: Graveyard Rising is running; which wave of Zombies and Ghouls is up. Numbers only.
+	"interface.events.graveyard_live": "Wave {wave} of {waves}",
+	// Events window: a repeating event (Graveyard Rising) and the countdown to its next start, like Every 2 hours · next in 34m.
+	"interface.events.every_hours": "Every {hours} hours · next {left}",
+	// Small uppercase tag: the event is running right now.
+	"interface.events.live": "LIVE",
+	// Small uppercase tag: a seasonal boss's announced respawn time; it can move after a restart.
+	"interface.events.expected": "EXPECTED",
+	// Events window: a seasonal boss such as Mr. Pumpkin is alive now.
+	"interface.events.boss_live": "Live now",
+	// Events window: when a seasonal boss is expected back. {left} is a countdown like in 21m.
+	"interface.events.respawn": "Expected {left}",
+	// Events window button: join the live event (same as join() in CODE). Uppercase button.
+	"interface.events.join": "JOIN",
+	// Events window: the account used all of today's Witch's Cipher mixes; {count} Witch's Parcels earned today.
+	"interface.events.cipher_done": "Done today · {count} Parcels earned",
+	// Events window: which of the account's characters takes part in today's Witch's Cipher, and its mixes left. {name} is a character name.
+	"interface.events.cipher_joined": "{name} joined · {count} mixes left",
+	// Singular form of the phrase above.
+	"interface.events.cipher_joined.one": "{name} joined · {count} mix left",
+	// Events window: the account hasn't joined today's Witch's Cipher yet; it can brew {count} mixes.
+	"interface.events.cipher_ready": "{count} mixes available today",
+	// Events window: the player has an unfinished Cave of Many Dreams run to return to.
+	"interface.events.cave_resume": "Your run is still open",
+	// Events window: today's Cave of Many Dreams visit is still available.
+	"interface.events.cave_ready": "Ready today",
+	// Events window: today's Cave of Many Dreams visit is used. {left} is a countdown like in 5h 12m.
+	"interface.events.cave_done": "Visited · resets {left}",
+	// Events window, Trick or Treat during Halloween: doors this character can still knock on today, and the account's stamps.
+	"interface.events.doors_left": "{count} of {total} doors left today · {stamps} stamps",
+	// Events window: a running event and the time it ends, like Live until 20:09.
+	"interface.events.live_until": "Live until {time}",
+	// Events window: a running event without a known end time.
+	"interface.events.live_now": "Live now",
+	// Events window: this scheduled event already took place.
+	"interface.events.finished": "Finished",
+	// Events window: the realm was down when this event should have started, so it did not run.
+	"interface.events.missed": "Missed",
+	// Small uppercase tag: the player set a reminder for this event.
+	"interface.events.reminder": "REMINDER",
+	// Events window button: get a game log reminder 10 minutes before this event, while the game is open. Uppercase button.
+	"interface.events.remind": "REMIND",
+	// Events window button: remove the reminder set for this event. Uppercase button.
+	"interface.events.remind_off": "FORGET",
+	// Game log line 10 minutes before an event the player asked to be reminded about. {name} is the event; {left} is like in 9m. Clicking it opens the Events window.
+	"interface.events.reminder_log": "{name} starts {left}. Open EVENTS.",
+	// Line above chat and on character selection: this event is running now.
+	"interface.events.next_live": "{name} is live",
+	// Line above chat and on character selection: the next event and its countdown, like Goo Brawl · in 18m.
+	"interface.events.next_in": "{name} · {left}",
+	// Character selection card heading, after the realm name. Uppercase.
+	"interface.events.next_event": "NEXT EVENT",
+	// Character selection card: a season's last day, like Halloween ends November 2.
+	"interface.events.selection_season_ends": "{name} ends {date}",
+	// Character selection card: the next event's start in the player's time; clicking opens the Events window.
+	"interface.events.selection_time": "{time} your time · SCHEDULE >",
+	// Events window: what Giga Crab is.
+	"interface.events.about.crabxx": "Cooperative boss",
+	// Events window: what Goo Brawl is.
+	"interface.events.about.goobrawl": "Goo fight for Fun Tokens",
+	// Events window: what A/B Testing is.
+	"interface.events.about.abtesting": "Team battle",
+	// Events window: what Franky is.
+	"interface.events.about.franky": "Cooperative boss",
+	// Events window: what the Ice Golem is.
+	"interface.events.about.icegolem": "Cooperative boss",
+	// Events window: what the Witch's Cipher is. Witch's Parcel is an item name.
+	"interface.events.about.witchcipher": "Brew for Witch's Parcels",
+	// Events window: what the Headless Horseman is.
+	"interface.events.about.horseman": "Halloween boss",
+	// Events window: what Graveyard Rising is.
+	"interface.events.about.graveyard": "Halloween monster waves",
+	// The Witch's greeting while today's Witch's Cipher is running and this account hasn't joined. Choices follow: JOIN, RECIPES, PARCELS, INFO.
+	"interface.witch.greeting_live": "Oh dearie, I've forgotten my recipe again! Will you help me brew it?",
+	// The Witch's greeting while the Witch's Cipher runs and this character has joined. Choices follow: BREW, RECIPES, PARCELS, INFO.
+	"interface.witch.greeting_joined": "Four ingredients, in the right order. Stir carefully, dearie.",
+	// The Witch's greeting outside the event. {time} is the next start on the realm clock (the clock above chat), like 18:00.
+	"interface.witch.greeting_closed": "My cauldron boils again at {time} realm time. Come back then, dearie.",
+	// The Witch's greeting when no Witch's Cipher is scheduled.
+	"interface.witch.greeting_idle": "My cauldron is cold today, dearie.",
+	// Button: open the Witch's cauldron, or brew the four ingredients in it. Uppercase.
+	"interface.witch.brew": "BREW",
+	// Button: take part in today's Witch's Cipher with this character. Uppercase.
+	"interface.witch.join": "JOIN",
+	// Button: open the Witch's recipe window. Uppercase.
+	"interface.witch.recipes": "RECIPES",
+	// Button: open the window where Witch's Parcels are opened. Uppercase.
+	"interface.witch.parcels": "PARCELS",
+	// Cauldron window status when the Witch's Cipher isn't running.
+	"interface.witch.closed": "The cauldron is cold.",
+	// Cauldron status: mixes this account can still brew today.
+	"interface.witch.mixes_left": "{count} mixes left",
+	// Singular form of the phrase above.
+	"interface.witch.mixes_left.one": "{count} mix left",
+	// Cauldron status: ingredients still drop for {time} (m:ss).
+	"interface.witch.gathering": "Gathering · {time}",
+	// Cauldron status: ingredients no longer drop; brewing stays open for {time} (m:ss).
+	"interface.witch.brewing": "Brewing only · {time}",
+	// Heading of the realm's clue board beside the cauldron: the last mixes and their results. Uppercase.
+	"interface.witch.board": "CLUES",
+	// Clue board: {name} found the Witch's recipe; the recipe follows.
+	"interface.witch.cracked_by": "Cracked by {name}",
+	// Clue board: how many recipes still match every clue so far.
+	"interface.witch.possible": "{count} recipes still fit",
+	// Singular form of the phrase above.
+	"interface.witch.possible.one": "{count} recipe still fits",
+	// Clue board before anyone has brewed today.
+	"interface.witch.board_empty": "No mixes yet.",
+	// Clue: ingredients in the right place. Compact.
+	"interface.witch.right": "{count} right",
+	// Clue: right ingredients in the wrong place. Compact.
+	"interface.witch.moved": "{count} moved",
+	// After a mix: Witch's Parcels received.
+	"interface.witch.parcels_paid": "+{count} Parcels",
+	// Singular form of the phrase above.
+	"interface.witch.parcels_paid.one": "+{count} Parcel",
+	// Game log when BREW is pressed with an empty slot.
+	"interface.witch.fill_slots": "Fill all four ingredient slots first.",
+	// Game log: join or brew outside the event.
+	"interface.witch.fail.witchcipher_not_live": "The Witch's Cipher isn't running right now.",
+	// Game log: brewing before this character joined.
+	"interface.witch.fail.witchcipher_join": "Join today's Witch's Cipher first.",
+	// Game log: the account used all of today's mixes.
+	"interface.witch.fail.witchcipher_no_mixes": "No mixes left today.",
+	// Game log: not enough of an ingredient for the mix. {item} is an ingredient name.
+	"interface.witch.fail.witchcipher_ingredients": "You need more {item}.",
+	// Game log fallback: the account already took part with a different character today.
+	"interface.witch.fail.witchcipher_claimed": "Another of your characters already joined today.",
+	// Game log fallback: the account's claim for today is on another realm.
+	"interface.witch.fail.witchcipher_elsewhere": "Your account already joined on another realm today.",
+	// Game log: too far from the Witch to brew.
+	"interface.witch.fail.distance": "Get closer to the Witch.",
+	// Game log: merchants can't join the Witch's Cipher.
+	"interface.witch.fail.no_merchants": "Merchants can't join events.",
+	// Game log: Hop Sickness blocks joining.
+	"interface.witch.fail.cant_when_sick": "Wait for Hop Sickness to wear off.",
+	// Game log: can't join or brew from the bank.
+	"interface.witch.fail.cant_in_bank": "Leave the bank first.",
+	// Game log: the player clicked a Trick or Treat door from too far away.
+	"interface.trickortreat.closer": "Get closer to the door to knock.",
+	// Game log: knocking outside Halloween.
+	"interface.trickortreat.fail.trickortreat_season": "The doors stay shut until next Halloween.",
+	// Game log: knock with no Trick or Treat door nearby.
+	"interface.trickortreat.fail.trickortreat_door": "There's no Trick or Treat door nearby.",
+	// Game log: this character already knocked on this door today.
+	"interface.trickortreat.fail.trickortreat_knocked": "You already knocked on this door today.",
+	// Game log: the account's daily knock limit (14) is reached.
+	"interface.trickortreat.fail.trickortreat_limit": "Your account has used all 14 knocks today. Come back tomorrow.",
+	// Game log: can't knock from the bank.
+	"interface.trickortreat.fail.cant_in_bank": "Leave the bank first.",
+	// Button in the exchange window when opening a Witch's Parcel at the Witch. Uppercase.
+	"interface.exchange_shrine.open": "OPEN",
 };

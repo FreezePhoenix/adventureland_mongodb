@@ -405,5 +405,21 @@
   "server.game_log.offered_for": "Запропоновано обмін: {item} на {want}",
   "server.game_log.offered_for_or_higher": "Запропоновано обмін: {item} на {want} або вище",
   "server.game_log.traded_for": "Обмін з {player}: {item} на {received}",
-	"server.mail.friend_token_welcome": "За зв'язок із {name} в Adventure Land!"
+	"server.mail.friend_token_welcome": "За зв'язок із {name} в Adventure Land!",
+  "server.server_message.season_ended.halloween": "Гелловін завершився! Xyn досі обмінює Candy і Pumpkin Stems, рецепти Гелловіну залишаються доступними, а Шифр відьми триває щодня.",
+  "server.witchcipher.started": "Шифр відьми почався! Приєднуйтеся й збирайте інгредієнти з монстрів у чотирьох регіонах.",
+  "server.witchcipher.gathering_over": "Інгредієнти більше не випадають! Залишилося 8 хвилин на варіння в Witch.",
+  "server.witchcipher.cracked": "{player} розгадав рецепт Witch! Відповідь доступна всім на дошці підказок.",
+  "server.witchcipher.over": "Шифр відьми завершився! Казан затихає до завтра.",
+  "server.witchcipher.over_uncracked": "Ніхто не розгадав рецепт Witch! Це був {recipe}.",
+  "server.witchcipher.claimed_by": "{name} уже приєднався до Шифру відьми сьогодні.",
+  "server.witchcipher.claimed_elsewhere": "Ваш обліковий запис уже приєднався до Шифру відьми сьогодні на {server}.",
+  "server.graveyard.started": "Повстання мерців! Zombies і Ghouls вилазять із могил у Spooky Town!",
+  "server.graveyard.wave": "Хвиля {wave} із {waves} піднімається з могил!",
+  "server.graveyard.gargoyle": "Gargoyle прокидається біля пам'ятника на кладовищі!",
+  "server.graveyard.defeated": "Gargoyle розсипається! На кладовищі знову тихо.",
+  "server.graveyard.over": "Мерці повертаються до своїх могил.",
+  "server.floating.treat": "Ласощі!",
+  "server.floating.boo": "Бу!",
+  "server.trickortreat.laugh": "40 печаток! Witch дарує вам CX Jar з емоцією «Зловісний сміх»!"
 }

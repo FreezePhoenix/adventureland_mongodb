@@ -402,5 +402,21 @@
   "server.game_log.offered_for": "Você ofereceu {item} em troca de {want}",
   "server.game_log.offered_for_or_higher": "Você ofereceu {item} em troca de {want} ou superior",
   "server.game_log.traded_for": "Você trocou {item} com {player} por {received}",
-	"server.mail.friend_token_welcome": "Por se conectar com {name} no Adventure Land!"
+	"server.mail.friend_token_welcome": "Por se conectar com {name} no Adventure Land!",
+  "server.server_message.season_ended.halloween": "O Halloween acabou! Xyn ainda troca Candy e Pumpkin Stems, as receitas de Halloween continuam disponíveis e o Enigma da Bruxa continua diariamente.",
+  "server.witchcipher.started": "O Enigma da Bruxa começou! Participe agora e reúna ingredientes de monstros em quatro regiões.",
+  "server.witchcipher.gathering_over": "Os ingredientes pararam de cair! Restam 8 minutos para preparar misturas com a Witch.",
+  "server.witchcipher.cracked": "{player} decifrou a receita da Witch! A resposta está no painel de pistas para todos.",
+  "server.witchcipher.over": "O Enigma da Bruxa terminou! O caldeirão fica quieto até amanhã.",
+  "server.witchcipher.over_uncracked": "Ninguém decifrou a receita da Witch! Era {recipe}.",
+  "server.witchcipher.claimed_by": "{name} já participou do Enigma da Bruxa hoje.",
+  "server.witchcipher.claimed_elsewhere": "Sua conta já participou do Enigma da Bruxa em {server} hoje.",
+  "server.graveyard.started": "Levante do Cemitério! Zombies e Ghouls estão saindo das covas de Spooky Town!",
+  "server.graveyard.wave": "A onda {wave} de {waves} emerge das covas!",
+  "server.graveyard.gargoyle": "O Gargoyle desperta no monumento do cemitério!",
+  "server.graveyard.defeated": "O Gargoyle desmorona! O cemitério fica silencioso novamente.",
+  "server.graveyard.over": "Os mortos voltam a repousar em suas covas.",
+  "server.floating.treat": "Doce!",
+  "server.floating.boo": "Buu!",
+  "server.trickortreat.laugh": "40 carimbos! A Witch dá a você um CX Jar contendo o emote Risada Sinistra!"
 }

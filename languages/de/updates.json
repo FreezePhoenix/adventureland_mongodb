@@ -865,7 +865,17 @@
 	"update.06_10_26.anniversary_crafting.title": "Jubiläumsrezepte",
 	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE kann saisonale Flags jetzt über server.status.event_flags auslesen.",
 	"update.06_10_26.anniversary_crafting.update_button_image": "Das fehlende Bild auf der Schaltfläche NEUES wurde wiederhergestellt.",
-	"update.08_10_26.broadcast.title": "Steam-Übertragung",
-	"update.08_10_26.broadcast.broadcast_info": "Die Steam-Übertragung zeigt jetzt Monster-INFO, Beute, Gegenstände und aktuelle Events.",
-	"update.08_10_26.broadcast.mainframe_spookytown": "Es wurde behoben, dass smart_move() in MAINFRAME beim Verlassen von Spooky Town stecken blieb."
+	"update.08_10_26.halloween.mainframe_spookytown": "Es wurde behoben, dass smart_move() in MAINFRAME beim Verlassen von Spooky Town stecken blieb.",
+	"update.08_10_26.halloween.broadcast_info": "Die Steam-Übertragung zeigt jetzt Monster-INFO, Beute, Gegenstände und aktuelle Events.",
+	"update.08_10_26.halloween": "Löse jeden Tag das Hexenrätsel, um neue Gegenstände und Rezepte zu erhalten. Zu Halloween kommen der Headless Horseman, der Friedhofsaufstand und Süßes oder Saures. Das neue Ereignisfenster zeigt, was als Nächstes ansteht.",
+	"update.08_10_26.halloween.title": "Hexenrätsel, Halloween und Events",
+	"update.08_10_26.halloween.witchcipher": "Jeden Tag um 18:00 Uhr nach der Weltuhr vergisst die Witch in Spooky Forest ihr Rezept. Nimm am Event teil, sammle vier Zutaten von Monstern und mische sie bei der Witch oder mit brew(), um ihre Reihenfolge zu testen. Jede Mischung liefert zwei Hinweise, die mit der ganzen Welt geteilt werden. Verdiene Witch's Parcels, die du das ganze Jahr über öffnen oder für die Rezepte der Witch verwenden kannst.",
+	"update.08_10_26.halloween.witchcipher.title": "Neues tägliches Event: Hexenrätsel!",
+	"update.08_10_26.halloween.halloween": "Der Headless Horseman reitet jede Nacht um 00:00 Uhr nach der Weltuhr vom Friedhof in Spooky Forest los. Alle zwei Stunden erheben sich Zombies und Ghouls auf dem Friedhof in Spooky Town, gefolgt von einer Gargoyle. Klopfe an sieben Türen, um Süßigkeiten, Streiche und Belohnungen für jeweils 10 Stempel zu bekommen. Halloween endet am 2. November, aber Xyn tauscht auch danach noch Candy und Pumpkin Stems ein, und Halloween-Rezepte bleiben weiterhin nutzbar.",
+	"update.08_10_26.halloween.halloween.title": "Headless Horseman, Friedhofsaufstand und Süßes oder Saures!",
+	"update.08_10_26.halloween.events": "Klicke über dem Chat auf EVENTS, um aktive Saisons, kommende Bosse, heutige Aktivitäten und die Events der nächsten sieben Tage zu sehen. Wechsle zwischen deiner Uhrzeit und der Weltuhr. Wähle ERINNERN, um 10 Minuten vor einem Event eine Nachricht im Spiellog zu erhalten. Events, die innerhalb der nächsten Stunde beginnen, erscheinen auch über dem Chat. Auf deinem Charakterbildschirm siehst du das nächste Event.",
+	"update.08_10_26.halloween.events.title": "Neues Ereignisfenster!",
+	"update.08_10_26.halloween.event_schedule": "Eventzeiten werden jetzt sieben Tage im Voraus festgelegt und ändern sich auch nach Serverneustarts nicht.",
+	"update.08_10_26.halloween.map_halloween": "An zwei Türen in Spooky Forest kannst du jetzt für Süßes oder Saures klopfen.",
+	"update.08_10_26.halloween.map_spookytown": "An fünf Türen in Spooky Town kannst du jetzt für Süßes oder Saures klopfen."
 }

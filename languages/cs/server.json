@@ -405,5 +405,21 @@
   "server.game_log.offered_for": "{item} nabídnuto k výměně za {want}",
   "server.game_log.offered_for_or_higher": "{item} nabídnuto k výměně za {want} nebo vyšší",
   "server.game_log.traded_for": "{item} vyměněno s hráčem {player} za {received}",
-	"server.mail.friend_token_welcome": "Za propojení s {name} v Adventure Land!"
+	"server.mail.friend_token_welcome": "Za propojení s {name} v Adventure Land!",
+  "server.server_message.season_ended.halloween": "Halloween skončil! Xyn stále směňuje Candy a Pumpkin Stems, halloweenské recepty lze dál používat a Šifra čarodějnice pokračuje každý den.",
+  "server.witchcipher.started": "Šifra čarodějnice začala! Připojte se a sbírejte přísady z monster ve čtyřech oblastech.",
+  "server.witchcipher.gathering_over": "Přísady už nepadají! Na vaření u Witch zbývá 8 minut.",
+  "server.witchcipher.cracked": "{player} rozluštil(a) recept Witch! Řešení najdou všichni na tabuli s vodítky.",
+  "server.witchcipher.over": "Šifra čarodějnice skončila! Kotlík utichá až do zítřka.",
+  "server.witchcipher.over_uncracked": "Nikdo nerozluštil recept Witch! Byl to {recipe}.",
+  "server.witchcipher.claimed_by": "{name} se dnes už připojil(a) k Šifře čarodějnice.",
+  "server.witchcipher.claimed_elsewhere": "Váš účet se dnes už připojil k Šifře čarodějnice na {server}.",
+  "server.graveyard.started": "Povstání z hrobů! Zombies a Ghouls vylézají z hrobů ve Spooky Town!",
+  "server.graveyard.wave": "Z hrobů povstává vlna {wave} z {waves}!",
+  "server.graveyard.gargoyle": "Gargoyle se probouzí u hřbitovního památníku!",
+  "server.graveyard.defeated": "Gargoyle se rozpadá! Na hřbitově je opět klid.",
+  "server.graveyard.over": "Mrtví se vracejí do svých hrobů.",
+  "server.floating.treat": "Koledu!",
+  "server.floating.boo": "Baf!",
+  "server.trickortreat.laugh": "40 razítek! Witch vám dává CX Jar s emocí Zlověstný smích!"
 }

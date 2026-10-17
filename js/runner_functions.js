@@ -2895,3 +2895,10 @@ function cave_buy(room) { return parent.cave_request("buy", { room: room }); }
 function cave_exit() { return parent.cave_request("exit"); }
 
 function cave_talk(room, actor) { return parent.cave_request("talk", {room:room,actor:actor}); }
+
+// The Witch's Cipher: join("witchcipher") first, then brew four ingredient names in order at the Witch.
+function brew(ingredients) { return parent.witch_request("brew", { items: ingredients }); }
+// Your account's Witch's Cipher today: { mixes, mixes_left, joined, name, server, parcels, live }
+function witch_cipher_info() { return parent.witch_request("info"); }
+// Trick or Treat during Halloween: knock on the door you are standing at (or a door index).
+function knock(door) { return parent.knock_request(door); }

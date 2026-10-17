@@ -1,11 +1,31 @@
 // Release highlights. Dates, item/character names and CODE identifiers stay unchanged.
 module.exports = {
-	// Fixed bug listed in the [08/10/26] update post "Steam Broadcast". Keep names from the game and CODE identifiers unchanged.
-	"update.08_10_26.broadcast.mainframe_spookytown": "Fixed MAINFRAME smart_move() getting stuck when leaving Spooky Town.",
-	// Title of the [08/10/26] update post "Steam Broadcast". Keep names from the game and CODE identifiers unchanged.
-	"update.08_10_26.broadcast.title": "Steam Broadcast",
-	// Improvement listed in the [08/10/26] update post "Steam Broadcast". Keep names from the game and CODE identifiers unchanged.
-	"update.08_10_26.broadcast.broadcast_info": "The Steam broadcast now shows monster INFO, drops, items and current events.",
+	// Summary of the [08/10/26] update post "Witch's Cipher, Halloween and Events", shown under its title and in the game log. Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween": "Solve the Witch's Cipher every day for new items and recipes. Halloween brings the Headless Horseman, Graveyard Rising and Trick or Treat. The new Events window shows what's coming up.",
+	// Title of the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.title": "Witch's Cipher, Halloween and Events",
+	// Section text in the [08/10/26] update post "Witch's Cipher, Halloween and Events", under sprites of: item:witchparcel, item:cipherdraught, item:crookedkey, item:patchbuckler, item:blackcatbell, item:nightmarketsash, item:hexweavegloves, item:candleboots, item:witchlightmantle, item:laughingbook. Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.witchcipher": "Every day at 18:00 realm time, the Witch in Spooky Forest forgets her recipe. Join the event, collect four ingredients from monsters and brew them at the Witch, or with brew(), to test their order. Each mix gives two clues shared with the realm. Earn Witch's Parcels to open or use in the Witch's recipes, all year.",
+	// Section heading in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.witchcipher.title": "New Daily Event: Witch's Cipher!",
+	// Section text in the [08/10/26] update post "Witch's Cipher, Halloween and Events", under sprites of: monster:horseman, monster:gargoyle, item:horsemanpumpkin, skill:sinisterlaugh. Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.halloween": "The Headless Horseman rides out of Spooky Forest's graveyard every night at 00:00 realm time. Zombies and Ghouls rise from Spooky Town's graveyard every two hours, followed by a Gargoyle. Knock on seven doors for treats, tricks and rewards for every 10 stamps. Halloween's last day is November 2, but Xyn still exchanges Candy and Pumpkin Stems afterward, and Halloween recipes remain usable.",
+	// Section heading in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.halloween.title": "Headless Horseman, Graveyard Rising and Trick or Treat!",
+	// Section text in the [08/10/26] update post "Witch's Cipher, Halloween and Events", under sprites of: article:events-and-home. Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.events": "Click EVENTS above chat to see active seasons, upcoming bosses, today's activities and the next seven days of events. Switch between your time and realm time. Choose REMIND to get a game-log message 10 minutes before an event. Events starting within the hour also appear above chat, and your character screen shows the next event.",
+	// Section heading in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.events.title": "New Events Window!",
+	// Improvement listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.event_schedule": "Event times are now set seven days ahead and stay the same after server restarts.",
+	// Improvement listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.broadcast_info": "The Steam broadcast now shows monster INFO, drops, items and current events.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.mainframe_spookytown": "Fixed MAINFRAME smart_move() getting stuck when leaving Spooky Town.",
+	// Note under map:halloween (changed) in the change list of the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.map_halloween": "Two doors in Spooky Forest now let you knock for Trick or Treat.",
+	// Note under map:spookytown (changed) in the change list of the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.map_spookytown": "Five doors in Spooky Town now let you knock for Trick or Treat.",
 	// Fixed bug listed in the [06/10/26] update post "Anniversary Crafting". Keep names from the game and CODE identifiers unchanged.
 	"update.06_10_26.anniversary_crafting.update_button_image": "Fixed the missing image on the UPDATE button.",
 	// Improvement listed in the [06/10/26] update post "Anniversary Crafting". Keep names from the game and CODE identifiers unchanged.

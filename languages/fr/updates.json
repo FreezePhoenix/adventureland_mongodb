@@ -865,7 +865,17 @@
 	"update.06_10_26.anniversary_crafting.title": "Fabrication d’anniversaire",
 	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE peut désormais lire les indicateurs saisonniers via server.status.event_flags.",
 	"update.06_10_26.anniversary_crafting.update_button_image": "L’image manquante sur le bouton NOUVEAUTÉ a été rétablie.",
-	"update.08_10_26.broadcast.title": "Diffusion sur Steam",
-	"update.08_10_26.broadcast.broadcast_info": "La diffusion sur Steam affiche désormais les panneaux INFO des monstres, leur butin, des objets et les événements en cours.",
-	"update.08_10_26.broadcast.mainframe_spookytown": "Correction d’un blocage de smart_move() dans MAINFRAME en quittant Spooky Town."
+	"update.08_10_26.halloween.mainframe_spookytown": "Correction d’un blocage de smart_move() dans MAINFRAME en quittant Spooky Town.",
+	"update.08_10_26.halloween.broadcast_info": "La diffusion sur Steam affiche désormais les panneaux INFO des monstres, leur butin, des objets et les événements en cours.",
+	"update.08_10_26.halloween": "Résolvez l'Énigme de la Witch chaque jour pour obtenir de nouveaux objets et recettes. Halloween apporte le Headless Horseman, le Réveil du cimetière et « Des bonbons ou un sort ». La nouvelle fenêtre Événements affiche les activités à venir.",
+	"update.08_10_26.halloween.title": "L'Énigme de la Witch, Halloween et Événements",
+	"update.08_10_26.halloween.witchcipher": "Chaque jour à 18 h, heure du monde, la Witch de Spooky Forest oublie sa recette. Rejoignez l'événement, récupérez quatre ingrédients sur les monstres et préparez-les auprès de la Witch, ou avec brew(), pour tester leur ordre. Chaque mélange donne deux indices partagés avec tout le monde. Gagnez des Witch's Parcels à ouvrir ou à utiliser dans les recettes de la Witch, toute l'année.",
+	"update.08_10_26.halloween.witchcipher.title": "Nouvel événement quotidien : l'Énigme de la Witch !",
+	"update.08_10_26.halloween.halloween": "Le Headless Horseman surgit du cimetière de Spooky Forest chaque nuit à 00 h 00, heure du monde. Des Zombies et des Ghouls sortent du cimetière de Spooky Town toutes les deux heures, suivis d'un Gargoyle. Frappez à sept portes pour recevoir des friandises, des sorts et des récompenses tous les 10 tampons. Le dernier jour d'Halloween est le 2 novembre, mais Xyn continue ensuite d'échanger Candy et Pumpkin Stems, et les recettes d'Halloween restent utilisables.",
+	"update.08_10_26.halloween.halloween.title": "Headless Horseman, le Réveil du cimetière et « Des bonbons ou un sort » !",
+	"update.08_10_26.halloween.events": "Cliquez sur ÉVÉNEMENTS au-dessus du chat pour voir les saisons en cours, les prochains boss, les activités du jour et les événements des sept prochains jours. Basculez entre votre heure locale et l'heure du monde. Choisissez RAPPELER pour recevoir un message dans le journal de jeu 10 minutes avant un événement. Les événements qui commencent dans l'heure apparaissent aussi au-dessus du chat, et l'écran de vos personnages affiche le prochain événement.",
+	"update.08_10_26.halloween.events.title": "Nouvelle fenêtre Événements !",
+	"update.08_10_26.halloween.event_schedule": "Les horaires des événements sont désormais fixés sept jours à l'avance et ne changent plus après les redémarrages du serveur.",
+	"update.08_10_26.halloween.map_halloween": "Deux portes de Spooky Forest permettent désormais de frapper pour jouer à « Des bonbons ou un sort ».",
+	"update.08_10_26.halloween.map_spookytown": "Cinq portes de Spooky Town permettent désormais de frapper pour jouer à « Des bonbons ou un sort »."
 }

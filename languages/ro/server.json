@@ -405,5 +405,21 @@
   "server.game_log.offered_for": "Ai oferit {item} la schimb pentru {want}",
   "server.game_log.offered_for_or_higher": "Ai oferit {item} la schimb pentru {want} sau mai mare",
   "server.game_log.traded_for": "Ai schimbat {item} cu {player} pe {received}",
-	"server.mail.friend_token_welcome": "Pentru conectarea cu {name} în Adventure Land!"
+	"server.mail.friend_token_welcome": "Pentru conectarea cu {name} în Adventure Land!",
+  "server.server_message.season_ended.halloween": "Halloween s-a încheiat! Xyn încă schimbă Candy și Pumpkin Stems, rețetele de Halloween pot fi folosite în continuare, iar Cifrul vrăjitoarei continuă zilnic.",
+  "server.witchcipher.started": "Cifrul vrăjitoarei a început! Alătură-te acum și adună ingrediente de la monștri din patru regiuni.",
+  "server.witchcipher.gathering_over": "Ingredientele nu mai cad! Mai ai 8 minute să prepari amestecuri la Witch.",
+  "server.witchcipher.cracked": "{player} a descifrat rețeta lui Witch! Răspunsul este pe panoul cu indicii, la vedere pentru toți.",
+  "server.witchcipher.over": "Cifrul vrăjitoarei s-a încheiat! Cazanul tace până mâine.",
+  "server.witchcipher.over_uncracked": "Nimeni nu a descifrat rețeta lui Witch! Era {recipe}.",
+  "server.witchcipher.claimed_by": "{name} s-a alăturat deja astăzi evenimentului Cifrul vrăjitoarei.",
+  "server.witchcipher.claimed_elsewhere": "Contul tău s-a alăturat deja astăzi evenimentului Cifrul vrăjitoarei pe {server}.",
+  "server.graveyard.started": "Morții se ridică! Zombies și Ghouls ies din mormintele din Spooky Town!",
+  "server.graveyard.wave": "Valul {wave} din {waves} se ridică din morminte!",
+  "server.graveyard.gargoyle": "Gargoyle se trezește la monumentul din cimitir!",
+  "server.graveyard.defeated": "Gargoyle se sfărâmă! Cimitirul e din nou liniștit.",
+  "server.graveyard.over": "Morții se întorc în mormintele lor.",
+  "server.floating.treat": "Un dar!",
+  "server.floating.boo": "Bau!",
+  "server.trickortreat.laugh": "40 de ștampile! Witch îți dă un CX Jar care conține emote-ul Râs sinistru!"
 }

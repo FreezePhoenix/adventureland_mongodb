@@ -44,6 +44,7 @@ const discord_relay = require("./logic/discord")({
 	enabled: !Dev,
 });
 const anniversary_rules = require("./logic/anniversary_event");
+const event_schedule_rules = require("./logic/event_schedule");
 const market_patron_rules = require("./logic/market_patron")((a, b) => simple_distance(a, b));
 const monster_hunt_rules = require("./logic/monster_hunts");
 const server_information = require("./logic/server_information")("SR_" + region + server_name);
@@ -126,6 +127,8 @@ eval("" + fs.readFileSync(path.resolve(__dirname, "logic/chat.js")));
 eval("" + fs.readFileSync(path.resolve(__dirname, "logic/generated_maps.js")));
 eval("" + fs.readFileSync(path.resolve(__dirname, "logic/instance_pause.js")));
 eval("" + fs.readFileSync(path.resolve(__dirname, "logic/cave_of_many_dreams.js")));
+eval("" + fs.readFileSync(path.resolve(__dirname, "logic/witch_cipher.js")));
+eval("" + fs.readFileSync(path.resolve(__dirname, "logic/halloween_events.js")));
 eval("" + fs.readFileSync(path.resolve(__dirname, "logic/tavern.js")));
 eval("" + fs.readFileSync(path.resolve(__dirname, "logic/tavern_wheel.js")));
 eval("" + fs.readFileSync(path.resolve(__dirname, "logic/tavern_slots.js")));
@@ -208,6 +211,7 @@ var E = {
 		night: false,
 	},
 }; // server event data
+var season_controls = null; // ends a season with a set end time on the running server, see design/events.js
 var TX = [];
 var TXX = {}; // all inter account transactions [07/02/22]
 var B = {
@@ -321,6 +325,10 @@ var events = Object.assign(
 		// NIGHTLIES
 		icegolem: false,
 		franky: false,
+		// SCHEDULED: the Witch's Cipher daily, the Headless Horseman and Graveyard Rising in Halloween
+		witchcipher: false,
+		horseman: false,
+		graveyard: false,
 	},
 	get_event_flags(),
 );
@@ -493,7 +501,9 @@ async function init_game() {
 
 		// Load geometry from MongoDB (parallel fetch, following qwazy pattern)
 		var active_event_flags = get_event_flags(gameplay);
-		apply_event_flags({ maps: maps, items: items, monsters: monsters, drops: drops }, active_event_flags);
+		var season_data = { maps: maps, items: items, monsters: monsters, drops: drops };
+		apply_event_flags(season_data, active_event_flags);
+		season_controls = { restore: season_data.event_restore || {}, end: end_event_flag };
 		var geometry = {};
 		var rpc = {};
 		for (var id in maps) {
@@ -556,6 +566,7 @@ async function init_game() {
 		if (G) {
 			restore_generated_maps();
 			sprocess_game_data(apply_event_flags);
+			witch_cipher_restore();
 		}
 		try {
 			http_server.listen(server_def.local_port, server_def.local_ip);
@@ -683,7 +694,9 @@ async function reload_server(to_broadcast, change) {
 		var active_event_flags = get_event_flags(gameplay);
 		if (JSON.stringify(active_event_flags) !== JSON.stringify(G.event_flags))
 			throw new Error("Event flags changed: restart the game server to replace seasonal maps and NPCs together.");
-		apply_event_flags({ maps: maps, items: items, monsters: monsters, drops: drops }, active_event_flags);
+		var season_data = { maps: maps, items: items, monsters: monsters, drops: drops };
+		apply_event_flags(season_data, active_event_flags);
+		season_controls = { restore: season_data.event_restore || {}, end: end_event_flag };
 		var geometry = {};
 		var rpc = {};
 		for (var id in maps) {
@@ -959,6 +972,8 @@ function player_to_client(player, stranger) {
 			"luckm",
 			"encouragement",
 			"anniversary",
+			"witchcipher",
+			"trickortreat",
 			"map",
 			"in",
 			"isize",
@@ -2787,6 +2802,7 @@ function issue_monster_awards(monster) {
 }
 
 function issue_monster_award(monster, award) {
+	graveyard_fallen(monster);
 	if (monster.cooperative) {
 		return issue_monster_awards(monster);
 	}
@@ -2797,6 +2813,7 @@ function issue_monster_award(monster, award) {
 	// if(gameplay=="test" && player.level<80) player.level+=1;
 	stats.kills[monster.type]++;
 	if (!award || award.drop !== false) drop_something(player, monster);
+	witch_cipher_kill(player, monster);
 	if (!player.party && !award?.members) {
 		player.socket.emit("kill_credit", {
 			mtype: monster.type,
@@ -11113,6 +11130,31 @@ function init_socket_io(socket_server, server_index) {
 				return;
 			}
 			if (data.type === "cavalry") return cavalry_interaction(player, data, socket);
+			if (data.type === "witchcipher" || data.type === "knock") {
+				var interaction = data.type;
+				Promise.resolve()
+					.then(() =>
+						interaction === "knock" ? trick_or_treat_knock(player, data) : witch_cipher_interaction(player, data),
+					)
+					.then((result) =>
+						socket.emit(
+							"game_response",
+							Object.assign({ response: "data", place: "interaction", interaction, request_id }, result),
+						),
+					)
+					.catch((error) => {
+						log_trace(interaction, error);
+						socket.emit("game_response", {
+							response: "data",
+							place: "interaction",
+							interaction,
+							request_id,
+							failed: true,
+							reason: "invalid",
+						});
+					});
+				return;
+			}
 			if (data.type == "merrit_info") {
 				market_patron_info(player);
 				return;
@@ -11983,6 +12025,7 @@ function init_socket_io(socket_server, server_index) {
 					socket.disconnect();
 				} else {
 					server_information.remember(player);
+					event_player_status(player);
 					var cdata = player_to_client(player);
 					player.ipass = cdata.ipass = randomStr(12);
 					player.last_ipass = new Date();
@@ -12697,6 +12740,34 @@ function init_socket_io(socket_server, server_index) {
 				if (simple_distance(player, { map: "winterland", x: 820, y: 425 }) > 100) {
 					transport_player_to(player, "winterland", [820, 425, 0, 10]);
 				}
+			} else if (data.name == "horseman" && events.horseman) {
+				if (simple_distance(player, { map: "halloween", x: -405, y: -1560 }) > 200) {
+					transport_player_to(player, "halloween", [-405, -1560, 0, 40]);
+				}
+			} else if (data.name == "graveyard" && events.graveyard) {
+				if (simple_distance(player, { map: "spookytown", x: 255, y: -1240 }) > 200) {
+					transport_player_to(player, "spookytown", [255, -1240, 0, 40]);
+				}
+			} else if (data.name == "witchcipher") {
+				// Joining takes part without moving: ingredients drop in four regions.
+				witch_cipher_join(player)
+					.then((result) =>
+						socket.emit(
+							"game_response",
+							Object.assign({ response: "data", place: "join", name: "witchcipher" }, result),
+						),
+					)
+					.catch((error) => {
+						log_trace("witchcipher join", error);
+						socket.emit("game_response", {
+							response: "data",
+							place: "join",
+							name: "witchcipher",
+							failed: true,
+							reason: "invalid",
+						});
+					});
+				return;
 			} else if (data.name == "abtesting" && E.abtesting) {
 				if (player.map != "abtesting" || !player.team) {
 					if (
@@ -16869,7 +16940,15 @@ function sync_loop() {
 	}
 	// stop_call: Character logout using tx() (following qwazy pattern)
 	async function stop_call(player) {
-		if (player.stop_call || player.sync_call || player.mount_call || player.unmount_call || player.merrit_grant) return;
+		if (
+			player.stop_call ||
+			player.sync_call ||
+			player.mount_call ||
+			player.unmount_call ||
+			player.merrit_grant ||
+			player.knocking // a Trick or Treat knock is settling its rewards
+		)
+			return;
 		var bank = (player.user && true) || false;
 		player.stopping = new Date();
 		init_player_exit(player);

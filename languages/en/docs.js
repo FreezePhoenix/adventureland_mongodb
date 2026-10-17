@@ -4730,7 +4730,7 @@ module.exports = {
 		"If another non-merchant character on your account recently visited a different server, you receive Realm Fatigue. It is checked when you enter and while you play; activity on another realm can take about a minute to reach you. Normal rewards continue, but the home contribution bonus and home-only drops wait until the condition ends. Reconnecting does not clear it. Merchants are ignored.",
 	// docs/guide/events-and-home.html:4; Documentation p prose block. Keep Adventure Land, CODE symbols, and item/NPC/map/monster names unchanged.
 	"docs.guide.events-and-home.in-the-menu-active-events-appear-in-colored":
-		"In the menu, active events appear as colored cards above the game log. Click a card to open its guide. The cards follow your connected server and disappear when you enter the game. In-game, use the INFO row.",
+		"In the menu, the next event and any live events appear above the game log. Click the next-event card to open EVENTS, or a live event's card to read its guide. These cards show events on your connected realm and disappear when you enter the game. In-game, use the INFO row.",
 	// docs/guide/events-and-home.html:18; Documentation div prose block. Keep Adventure Land, CODE symbols, and item/NPC/map/monster names unchanged. Fixed HTML: preserve every tag, attribute, handler and URL exactly; translate visible prose only.
 	"docs.guide.events-and-home.join-or-travel": '<span class="guide-flow-icon events-route">↗</span><span class="guide-flow-label">Join or Travel</span>',
 	// docs/guide/events-and-home.html:24; Documentation div prose block. Keep Adventure Land, CODE symbols, and item/NPC/map/monster names unchanged. Fixed HTML: preserve every tag, attribute, handler and URL exactly; translate visible prose only. Locked inline code: ["join(name)"].
@@ -4756,10 +4756,10 @@ module.exports = {
 		'References: <span class="rlabel" onclick="render_function_reference($(this).html())">join</span>, <span class="rlabel" onclick="render_function_reference($(this).html())">smart_move</span>, <span class="rlabel" onclick="render_function_reference($(this).html())">set_home</span>, <span class="rlabel" onclick="render_function_reference($(this).html())">bless_server</span>.',
 	// docs/guide/events-and-home.html:7; Documentation div prose block. Keep Adventure Land, CODE symbols, and item/NPC/map/monster names unchanged. Fixed HTML: preserve every tag, attribute, handler and URL exactly; translate visible prose only.
 	"docs.guide.events-and-home.schedule-open-the-clock-to-inspect-planned-events":
-		'<span class="guide-card-icon events-tracker"></span><b>Schedule</b>Open the clock to inspect planned events and their current realm timing.',
+		"<span class=\"guide-card-icon events-tracker\"></span><b>Schedule</b>Click EVENTS above chat to see the next seven days of events, when each season ends and what you can still do today.",
 	// docs/guide/events-and-home.html:27; Documentation div prose block. Keep Adventure Land, CODE symbols, and item/NPC/map/monster names unchanged. Fixed HTML: preserve every tag, attribute, handler and URL exactly; translate visible prose only.
 	"docs.guide.events-and-home.scheduled-window-the-clock-can-announce-an-event":
-		"<b>Scheduled window</b>The clock can announce an event before it becomes available. Read its guide and live state before acting.",
+		"<b>Scheduled window</b>The Events window can show an event before it starts. Check its guide and current status before joining.",
 	// docs/guide/events-and-home.html:80; Documentation div prose block. Keep Adventure Land, CODE symbols, and item/NPC/map/monster names unchanged. Fixed HTML: preserve every tag, attribute, handler and URL exactly; translate visible prose only.
 	"docs.guide.events-and-home.see-also-travel-and-instances":
 		"See also: <span onclick=\"hide_modal(); open_guide('travel-and-instances',get_guide_url('travel-and-instances'))\">Travel and Instances</span>.",
@@ -6401,3 +6401,126 @@ module.exports["docs.guide.parties.steam_connections"] = "To invite a friend, op
 
 // Geometry article: recognized monster types use server combat rectangles, not sprite or skin dimensions. Default dimensions are 24 by 24; apply size only when set, then round. Keep distance, is_in_range() and can_attack() unchanged.
 module.exports["docs.articles.4.g-geometry.monster-combat-bounds"] = "For recognized monsters, distance uses the server combat bounds: the monster type's dimensions (24 by 24 when unspecified), multiplied by its size when set and rounded. Sprite dimensions and skin aliases do not determine monster attack range. This also applies to is_in_range() and can_attack(); visual sizing and movement collision bounds are unchanged.";
+
+// brew() reference. The Witch's Cipher is a daily event at the Witch in Spooky Forest. Keep brew, join("witchcipher"), the Witch, Spooky Forest and Witch's Cipher unchanged; ingredient names are CODE item names.
+module.exports["docs.functions.brew.about"] = "Brews four ingredients in order in the Witch's cauldron during the Witch's Cipher. First, join with join(\"witchcipher\") and stand near the Witch in Spooky Forest. Pass four item names in order: verdantspore, frostscale, embercoal or gloomfeather. Ingredients may repeat.";
+
+// brew() result. Keep the CODE field names (right, moved, parcels, informative, cracked, mixes_left) and failure reasons unchanged.
+module.exports["docs.functions.brew.returns"] = "Returns a Promise with the mix's clue: right (correct ingredient in the correct position) and moved (correct ingredient in another position), plus parcels received, informative, cracked and mixes_left. Rejects with a reason such as witchcipher_join, witchcipher_no_mixes, witchcipher_ingredients or distance.";
+
+// witch_cipher_info() reference. Keep the CODE field names (joined, name, server, mixes_left, parcels, live) unchanged.
+module.exports["docs.functions.witch_cipher_info.about"] = "Returns a Promise with your account's Witch's Cipher status for today: joined, the name and server of the character that joined, mixes_left, parcels and live. Works all day, from anywhere.";
+
+// knock() reference. Trick or Treat is a Halloween event with seven doors in Spooky Forest and Spooky Town. Keep knock and the field names unchanged.
+module.exports["docs.functions.knock.about"] = "Knocks on a nearby Trick or Treat door during Halloween. You must stand at the door. Pass a door number to choose which nearby door, or omit it for the nearest one. Each character can knock on each door once per UTC day, with a limit of 14 knocks per account per UTC day.";
+
+// knock() result. Keep the CODE field names (treat, trick, stamps, parcel, laugh) and failure reasons unchanged; "spooked" is a CODE value.
+module.exports["docs.functions.knock.returns"] = "Returns a Promise with treat (the item and quantity) or trick (\"spooked\"), plus your account's stamps. parcel and laugh are true when a knock awards a Witch's Parcel or Sinister Laugh. Rejects with trickortreat_season, trickortreat_door, trickortreat_knocked or trickortreat_limit.";
+
+// Witch's Cipher guide intro. 18:00 is on the realm clock. Keep the Witch, Spooky Forest, Witch's Cipher and Witch's Parcel unchanged.
+module.exports["docs.guide.event-witchcipher.intro"] = "Every day at 18:00 on the realm clock, the Witch in Spooky Forest forgets her recipe. Join with one character per account, gather ingredients for 20 minutes, then spend the last 8 minutes brewing. Each mix uses four ingredients in order and earns Witch's Parcels. Everyone on the realm shares the clues.";
+
+// Witch's Cipher guide section title above the ingredient rows (monsters that drop each ingredient).
+module.exports["docs.guide.event-witchcipher.ingredients"] = "Ingredients";
+
+// Witch's Cipher guide: how ingredients drop. 65% and 20 seconds are exact. Only the account's joined character receives them.
+module.exports["docs.guide.event-witchcipher.gathering"] = "Only your joined character gets these drops. During the first 20 minutes, each kill of the listed monsters has a 65% chance to drop an ingredient, at most once every 20 seconds. Luck and party size make no difference. You can trade, bank and keep the ingredients.";
+
+// Witch's Cipher guide section title above a sample clue board.
+module.exports["docs.guide.event-witchcipher.cauldron"] = "The cauldron";
+
+// Witch's Cipher guide: how clues work. right and moved are the clue labels shown in the cauldron.
+module.exports["docs.guide.event-witchcipher.clues"] = "Each mix gives two clues: right counts ingredients in the correct position, and moved counts correct ingredients in another position. Ingredients can repeat, making 256 possible recipes. The board shows the realm's last 12 mixes and how many recipes still match every clue.";
+
+// Witch's Cipher guide section title above the payout rows (Witch's Parcel icons with amounts).
+module.exports["docs.guide.event-witchcipher.payout"] = "Witch's Parcel rewards";
+
+// Payout row: before anyone cracks it, a mix the board hasn't seen that fits every clue so far (the server checks it).
+module.exports["docs.guide.event-witchcipher.pay_informative"] = "Before the crack: a new mix that fits every clue so far";
+
+// Payout row: a repeat, or a mix the clues already rule out; also any wrong mix after the crack.
+module.exports["docs.guide.event-witchcipher.pay_other"] = "Any other mix";
+
+// Payout row: the first exact recipe; everyone in the realm gets a message.
+module.exports["docs.guide.event-witchcipher.pay_crack"] = "First to crack the recipe (2 Parcels + 2 bonus)";
+
+// Payout row: after the crack, brewing the exact recipe.
+module.exports["docs.guide.event-witchcipher.pay_exact"] = "After the crack: the exact recipe";
+
+// Witch's Cipher guide: the daily limit. 5 mixes and 12 Parcels are exact.
+module.exports["docs.guide.event-witchcipher.pay_limit"] = "5 mixes per account per UTC day, on one realm. Up to 12 Witch's Parcels a day.";
+
+// Witch's Cipher guide: what to do with Witch's Parcels. PARCELS is the Witch's button label.
+module.exports["docs.guide.event-witchcipher.parcels"] = "Open Witch's Parcels at the Witch (PARCELS), or save them for her recipes. Her recipes are available all year.";
+
+// Witch's Cipher guide section title above the Witch's recipe rows.
+module.exports["docs.guide.event-witchcipher.recipes"] = "The Witch's recipes";
+
+// Witch's Cipher guide CODE intro. Keep join, brew, character.witchcipher and server.status.witchcipher unchanged.
+module.exports["docs.guide.event-witchcipher.code"] = "Join, go to the Witch and brew a mix that fits the clues. character.witchcipher shows your mixes left; server.status.witchcipher shows the shared clue board.";
+
+// Headless Horseman guide intro. 00:00 is on the realm clock; 40 minutes is his longest ride. Keep Headless Horseman, Halloween and Spooky Forest unchanged.
+module.exports["docs.guide.event-horseman.intro"] = "Every night at 00:00 realm time during Halloween, the Headless Horseman rides out of Spooky Forest's north graveyard. He stays for up to 40 minutes. Everyone who fights him shares the reward.";
+
+// Headless Horseman guide: minions. Jack-o Walker is a monster name; 75% and 25% are his health.
+module.exports["docs.guide.event-horseman.walkers"] = "At 75% health, four Jack-o Walkers join him. Four more arrive at 25%.";
+
+// Headless Horseman guide: his rare helmet. Keep Horseman's Pumpkin unchanged.
+module.exports["docs.guide.event-horseman.helmet"] = "His Horseman's Pumpkin is a rare drop. The more you help, the better your chance.";
+
+// Headless Horseman guide CODE intro. Keep join("horseman") and server.status.horseman unchanged.
+module.exports["docs.guide.event-horseman.code"] = "join(\"horseman\") takes you to Spooky Forest while he rides. server.status.horseman shows where he is.";
+
+// Graveyard Rising guide intro. The times are on the realm clock. Keep Graveyard Rising, Spooky Town, Zombie, Ghoul and Gargoyle unchanged.
+module.exports["docs.guide.event-graveyard.intro"] = "During Halloween, Graveyard Rising begins every two hours at 1:30, 3:30, 5:30 and so on, on the realm clock. Three waves of Zombies and Ghouls rise from Spooky Town's graveyard, three minutes apart. After the waves, the Gargoyle wakes at the monument.";
+
+// Graveyard Rising guide: shared rewards. Points earned on the waves carry over to the Gargoyle's reward.
+module.exports["docs.guide.event-graveyard.shared"] = "Everyone who fights shares the rewards. Your contribution against the waves also counts toward the Gargoyle's reward.";
+
+// Graveyard Rising guide CODE intro. Keep join("graveyard") and server.status.graveyard unchanged.
+module.exports["docs.guide.event-graveyard.code"] = "join(\"graveyard\") takes you to the graveyard. server.status.graveyard shows the current wave.";
+
+// Trick or Treat guide intro. 14 is the account's daily knock limit. Keep Trick or Treat, Halloween, Spooky Forest and Spooky Town unchanged.
+module.exports["docs.guide.event-trickortreat.intro"] = "During Halloween, knock on seven Trick or Treat doors: two in Spooky Forest and five in Spooky Town. Each character can knock on each door once per UTC day, up to 14 knocks per account per UTC day.";
+
+// Trick or Treat guide: what a knock gives and the pumpkin helmet bonus. The icons above show treats, the Spooked! condition and the helmets.
+module.exports["docs.guide.event-trickortreat.odds"] = "Each knock has a 70% chance of a treat and a 30% chance of a trick. A trick gives Spooked! (+40 speed for 3 seconds). Wear Pumpkin Head, Gold Pumpkin Head or Horseman's Pumpkin to raise your treat chance to 85%.";
+
+// Trick or Treat guide: stamps. Every knock counts for the whole account. Keep Witch's Parcel and Sinister Laugh unchanged.
+module.exports["docs.guide.event-trickortreat.stamps"] = "Every knock earns one stamp for your account. Every 10th stamp gives a Witch's Parcel. Your 40th stamp also gives a CX Jar containing the Sinister Laugh emote.";
+
+// Trick or Treat guide CODE intro. Keep knock and character.trickortreat unchanged.
+module.exports["docs.guide.event-trickortreat.code"] = "Walk up to a door and use knock(). character.trickortreat shows today's doors and your account's stamps.";
+
+// Events & Home guide: section title for the Events window opened from the EVENTS clock above chat.
+module.exports["docs.guide.events-and-home.events-window-title"] = "The Events Window";
+
+// Events & Home guide: what the Events window shows. EVENTS is the clock label. Keep Witch's Cipher, Cave of Many Dreams, Trick or Treat and Graveyard Rising as their translated event names.
+module.exports["docs.guide.events-and-home.events-window"] = "Click EVENTS above chat, or the next-event card in the menu. The Events window shows running seasons and their last days, the next Graveyard Rising, expected seasonal boss respawns, today's activities (Witch's Cipher, Cave of Many Dreams and Trick or Treat doors) and the next seven days of scheduled events. Switch between your time and the realm clock.";
+
+// Events & Home guide: reminders. REMIND is the Events window button. Reminders stay in this browser and only fire while the game is open on that realm.
+module.exports["docs.guide.events-and-home.events-window-remind"] = "Click REMIND to get a game log message 10 minutes before an event starts. Reminders are saved in this browser and only work while the game is open on that realm.";
+
+// Events & Home guide CODE paragraph. Keep server.status.schedule, events, repeats, event, at, status and server.status.event_ends unchanged.
+module.exports["docs.guide.events-and-home.events-window-code"] = "In CODE, server.status.schedule contains the published lineup: events, each with event, at (a timestamp) and status, plus repeats for events such as Graveyard Rising. server.status.event_ends contains the end times of running seasons.";
+
+// Halloween guide: the four new Halloween activities shown as sprites above. Keep Headless Horseman, Spooky Town and Trick or Treat unchanged.
+module.exports["docs.guide.event-halloween.new-events"] = "The Headless Horseman rides every night, Graveyard Rising brings the dead out of Spooky Town's graveyard every two hours, and seven doors offer Trick or Treat. The Witch's Cipher runs every day, all year.";
+
+// Halloween guide: after the season ends. The end date itself is shown above this line.
+module.exports["docs.guide.event-halloween.after"] = "After Halloween, Candy and Pumpkin Stems can still be exchanged and used in recipes. Witch's Parcels and the Witch's recipes also remain available.";
+
+// server.status reference: the published lineup. Keep events, event, at, status, scheduled, live, done, missed, repeats, every, server_time and G.events unchanged.
+module.exports["docs.articles.data-server-status.schedule-lineup"] = "<b>events</b> contains the published lineup for the next seven days on this realm. <b>event</b> is the G.events key, <b>at</b> is the start time in Unix milliseconds, and <b>status</b> is scheduled, live, done or missed. <b>repeats</b> lists frequent events such as Graveyard Rising once, with <b>every</b> giving the interval in milliseconds. <b>server_time</b> is the server clock when the list was sent.";
+
+// server.status reference: the Witch's Cipher entry. Keep server.status.witchcipher unchanged.
+module.exports["docs.articles.data-server-status.witchcipher"] = "<b>Witch's Cipher</b>: server.status.witchcipher shows today's event on this realm, including the shared clue board.";
+
+// server.status reference: the Graveyard Rising entry. Keep server.status.graveyard unchanged.
+module.exports["docs.articles.data-server-status.graveyard"] = "<b>Graveyard Rising</b>: server.status.graveyard shows the current wave, how many risen monsters remain and the Gargoyle's health once it awakens.";
+
+// server.status reference: season end times. Keep server.status.event_ends unchanged. The last day is the UTC day before the end time.
+module.exports["docs.articles.data-server-status.event-ends"] = "<b>Season ends</b>: server.status.event_ends gives each running season's end time, when set, in Unix milliseconds. Its last day is the UTC day before that time.";
+
+// character reference: the two event fields. Keep character.witchcipher, character.trickortreat and the field names unchanged.
+module.exports["docs.articles.data-character.witchcipher"] = "<b>character.witchcipher</b> appears after this character joins today's Witch's Cipher. It shows mixes used, mixes_left and parcels earned. <b>character.trickortreat</b> lists the Trick or Treat doors this character has knocked on today, doors_left and the account's stamps.";

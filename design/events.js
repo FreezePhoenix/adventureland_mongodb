@@ -52,7 +52,13 @@ function apply_event_flags(data, flags, gameplay) {
 		for (var map in data.maps && rule.npcs || {}) data.maps[map].npcs = (data.maps[map].npcs || []).concat(JSON.parse(JSON.stringify(rule.npcs[map])));
 		for (var map in data.maps && rule.spawns || {}) data.maps[map].monsters = (data.maps[map].monsters || []).concat(JSON.parse(JSON.stringify(rule.spawns[map])));
 		for (var item in data.items && rule.quests || {}) data.items[item].quest = rule.quests[item];
-		for (var monster in data.monsters && rule.monsters || {}) Object.assign(data.monsters[monster], rule.monsters[monster]);
+		for (var monster in data.monsters && rule.monsters || {}) {
+			// Keep the ordinary values so a season can end on a running server.
+			var restore = (data.event_restore = data.event_restore || {})[name] = data.event_restore[name] || { monsters: {} };
+			restore.monsters[monster] = {};
+			for (var field in rule.monsters[monster]) restore.monsters[monster][field] = data.monsters[monster][field];
+			Object.assign(data.monsters[monster], rule.monsters[monster]);
+		}
 		if (data.drops) {
 			var entries = gameplay == "hardcore" && rule.hardcore_drops ? rule.hardcore_drops : rule.drops || [];
 			entries.forEach(function (entry) { data.drops.maps.global.push(entry.slice()); });
@@ -69,6 +75,22 @@ function apply_event_flags(data, flags, gameplay) {
 		});
 	}
 	return data;
+}
+
+// Ends a season on a running server: its drops stop and monster changes return to normal.
+// Seasons that change maps, NPCs or spawns still need a restart for those parts.
+function end_event_flag(data, name, restore) {
+	var rule = event_rules[name];
+	if (!rule) throw new Error("Invalid event flag: " + name);
+	data.event_flags[name] = false;
+	var rows = (rule.drops || []).concat(rule.hardcore_drops || []);
+	if (data.drops && data.drops.maps.global)
+		data.drops.maps.global = data.drops.maps.global.filter(function (row) {
+			return !rows.some(function (entry) { return entry[0] === row[0] && entry[1] === row[1]; });
+		});
+	var original = (restore && restore[name] && restore[name].monsters) || {};
+	for (var monster in data.monsters && original) Object.assign(data.monsters[monster], original[monster]);
+	return !!(rule.maps || rule.npcs || rule.spawns || rule.quests);
 }
 
 var events={
@@ -159,6 +181,69 @@ var events={
 		"duration":60*60*24*15,
 		//"join":true,
 		"type":"seasonal",
+	},
+	// A daily event at the Witch in Spooky Forest, all year. Ingredient drops are a fixed roll,
+	// unaffected by Luck or party size; only the account's joined character receives them.
+	"witchcipher":{
+		"name":"Witch's Cipher",
+		"modal":"event-witchcipher",
+		"sprite":"brewingwitch",
+		"announcement":{"color":"#AF6AE2","accent":"#F59A3C","effect":"sparks","text":"Gather ingredients and crack the Witch's lost recipe."},
+		"duration":28*60,
+		"gathering":20*60,
+		"ingredients":[
+			["verdantspore",["goo","bee","spider","croc"]],
+			["frostscale",["arcticbee","boar","wolfie","iceroamer"]],
+			["embercoal",["plantoid","porcupine","fireroamer","gscorpion"]],
+			["gloomfeather",["snake","osnake","minimush","ghost"]],
+		],
+		"drop":0.65,
+		"drop_cooldown":20,
+		"mixes":5,
+		"board":12,
+		"payout":{"informative":2,"other":1,"crack":2,"exact":2},
+		"join":true,
+		"type":"daily",
+	},
+	"horseman":{
+		"name":"Headless Horseman",
+		"modal":"event-horseman",
+		"sprite":"horseman",
+		"announcement":{"color":"#E8742A","accent":"#AD91DC","effect":"embers","text":"The Headless Horseman rides out of Spooky Forest's graveyard."},
+		"duration":40*60,
+		"join":true,
+		"type":"nightly",
+		"season":"halloween",
+	},
+	"graveyard":{
+		"name":"Graveyard Rising",
+		"modal":"event-graveyard",
+		"sprite":"gargoyle",
+		"announcement":{"color":"#9FA3A8","accent":"#9FCF6D","effect":"embers","text":"Zombies and Ghouls are rising in Spooky Town's graveyard."},
+		"duration":10*60,
+		"waves":[[0,{"zombie":12}],[180,{"zombie":16,"ghoul":3}],[360,{"zombie":20,"ghoul":6}]],
+		"gargoyle":[255,-1545],
+		// The 24 grave plots (the dirt in front of each headstone): the dead rise from these.
+		"graves":[[65,-1550],[127,-1550],[190,-1550],[320,-1550],[382,-1550],[447,-1550],[65,-1482],[127,-1482],[190,-1482],[320,-1482],[382,-1482],[447,-1482],[65,-1372],[127,-1372],[190,-1372],[320,-1372],[382,-1372],[447,-1372],[65,-1312],[127,-1312],[190,-1312],[320,-1312],[382,-1312],[447,-1312]],
+		"join":true,
+		"type":"seasonal",
+		"season":"halloween",
+	},
+	"trickortreat":{
+		"name":"Trick or Treat",
+		"modal":"event-trickortreat",
+		"sprite":"phelmet",
+		"announcement":false,
+		"doors":[["halloween",331,-210],["halloween",-228,-178],["spookytown",-130,-60],["spookytown",70,-103],["spookytown",217,-27],["spookytown",-170,180],["spookytown",117,133]],
+		"knocks":14,
+		"treat":70,
+		"costume_treat":85,
+		"costumes":["phelmet","gphelmet","horsemanpumpkin"],
+		"treats":[[60,"candy1",1],[18,"hpot1",4],[18,"mpot1",4],[4,"candy0",1]],
+		// Account-wide stamps: every 10th knock pays a Witch's Parcel, the 40th a Sinister Laugh jar.
+		"stamps":{"parcel":10,"laugh":40},
+		"type":"seasonal",
+		"season":"halloween",
 	},
 	"halloween":{
 		"name":"Halloween",

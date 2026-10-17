@@ -865,7 +865,17 @@
 	"update.06_10_26.anniversary_crafting.title": "週年製作",
 	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE 現在可以透過 server.status.event_flags 讀取季節活動旗標。",
 	"update.06_10_26.anniversary_crafting.update_button_image": "修正了新動態按鈕上圖片遺失的問題。",
-	"update.08_10_26.broadcast.title": "Steam 直播",
-	"update.08_10_26.broadcast.broadcast_info": "Steam 直播現在會展示怪物 INFO、掉落、物品和目前的活動。",
-	"update.08_10_26.broadcast.mainframe_spookytown": "修正了 MAINFRAME 中 smart_move() 在離開 Spooky Town 時卡住的問題。"
+	"update.08_10_26.halloween.mainframe_spookytown": "修正了 MAINFRAME 中 smart_move() 在離開 Spooky Town 時卡住的問題。",
+	"update.08_10_26.halloween.broadcast_info": "Steam 直播現在會展示怪物 INFO、掉落、物品和目前的活動。",
+	"update.08_10_26.halloween": "每天破解女巫密碼，獲得新物品和配方。萬聖節帶來 Headless Horseman、墓地復甦和不給糖就搗蛋。新的活動視窗會顯示接下來的活動。",
+	"update.08_10_26.halloween.title": "女巫密碼、萬聖節與活動",
+	"update.08_10_26.halloween.witchcipher": "每天世界時間18:00，Spooky Forest 的 Witch 都會忘記自己的配方。加入活動，從怪物身上收集四種材料，再到 Witch 處或使用 brew() 調製，測試材料的順序。每次調製都會提供兩個全世界共用的提示。獲得 Witch's Parcels 後，可以打開它們，或全年用於 Witch 的配方。",
+	"update.08_10_26.halloween.witchcipher.title": "全新每日活動：女巫密碼！",
+	"update.08_10_26.halloween.halloween": "Headless Horseman 每晚世界時間00:00從 Spooky Forest 的墓地騎出。Zombies 和 Ghouls 每兩小時從 Spooky Town 的墓地爬出，隨後還會出現 Gargoyle。敲響七扇門，可獲得糖果、遇上惡作劇，並且每累積10枚印章就能獲得獎勵。萬聖節最後一天是11月2日，但結束後 Xyn 仍可兌換 Candy 和 Pumpkin Stems，萬聖節配方也仍可使用。",
+	"update.08_10_26.halloween.halloween.title": "Headless Horseman、墓地復甦與不給糖就搗蛋！",
+	"update.08_10_26.halloween.events": "點擊聊天視窗上方的「活動」，查看進行中的季節、即將出現的首領、今日活動及未來七天的活動。你可以切換自己的時間和世界時間。選擇「提醒」，即可在活動開始前10分鐘收到遊戲日誌訊息。一小時內即將開始的活動也會顯示在聊天視窗上方，角色畫面則會顯示下一場活動。",
+	"update.08_10_26.halloween.events.title": "全新活動視窗！",
+	"update.08_10_26.halloween.event_schedule": "現在會提前七天排定活動時間，伺服器重新啟動後也不會改變。",
+	"update.08_10_26.halloween.map_halloween": "Spooky Forest 現在有兩扇門可以敲響，參加不給糖就搗蛋。",
+	"update.08_10_26.halloween.map_spookytown": "Spooky Town 現在有五扇門可以敲響，參加不給糖就搗蛋。"
 }

@@ -399,5 +399,21 @@
   "server.game_log.offered_for": "{item}, {want} karşılığında takasa çıkarıldı",
   "server.game_log.offered_for_or_higher": "{item}, {want} veya üstü karşılığında takasa çıkarıldı",
   "server.game_log.traded_for": "{item}, {player} adlı oyuncuyla {received} karşılığında takas edildi",
-	"server.mail.friend_token_welcome": "Adventure Land'de {name} ile bağlandığın için!"
+	"server.mail.friend_token_welcome": "Adventure Land'de {name} ile bağlandığın için!",
+  "server.server_message.season_ended.halloween": "Cadılar Bayramı bitti! Xyn hâlâ Candy ve Pumpkin Stems takas ediyor, Cadılar Bayramı tarifleri kullanılabiliyor ve Cadının Şifresi her gün devam ediyor.",
+  "server.witchcipher.started": "Cadının Şifresi başladı! Hemen katıl ve dört bölgedeki canavarlardan malzeme topla.",
+  "server.witchcipher.gathering_over": "Malzemeler artık düşmüyor! Witch'in yanında karışım hazırlamak için 8 dakika kaldı.",
+  "server.witchcipher.cracked": "{player}, Witch'in tarifinin şifresini çözdü! Cevap herkes için ipucu tahtasında.",
+  "server.witchcipher.over": "Cadının Şifresi sona erdi! Kazan yarına kadar sessiz.",
+  "server.witchcipher.over_uncracked": "Kimse Witch'in tarifinin şifresini çözemedi! Tarif: {recipe}.",
+  "server.witchcipher.claimed_by": "{name} bugün zaten Cadının Şifresi'ne katıldı.",
+  "server.witchcipher.claimed_elsewhere": "Hesabın bugün {server} diyarında Cadının Şifresi'ne zaten katıldı.",
+  "server.graveyard.started": "Mezarlıktan Diriliş! Zombies ve Ghouls, Spooky Town mezarlarından çıkıyor!",
+  "server.graveyard.wave": "{waves} dalgadan {wave}. dalga mezarlardan yükseliyor!",
+  "server.graveyard.gargoyle": "Gargoyle, mezarlık anıtında uyanıyor!",
+  "server.graveyard.defeated": "Gargoyle parçalanıyor! Mezarlık yeniden sessizliğe büründü.",
+  "server.graveyard.over": "Ölüler mezarlarına geri dönüyor.",
+  "server.floating.treat": "Ödül!",
+  "server.floating.boo": "Böö!",
+  "server.trickortreat.laugh": "40 damga! Witch sana Uğursuz Kahkaha ifadesini içeren bir CX Jar veriyor!"
 }

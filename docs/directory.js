@@ -1,6 +1,7 @@
 docs = {
 	functions: [
 		"cave_info", "cave_enter", "cave_reply", "cave_buy", "cave_exit", "cave_talk",
+		"brew", "witch_cipher_info", "knock",
 		//runner_functions
 		"get_progression",
 		"mode_resolve_all",
@@ -379,6 +380,23 @@ docs = {
 	interactions: {
 		cavalry: {title:"Cavalry",article:"cavalry",icon:"tracker",summary:"Call four sentries to help with nearby level 3+ monsters.",functions:["interact"],proximity:false},
 		dreams: {title:"Cave of Many Dreams",article:"cave-of-many-dreams",icon:"cave_info",summary:"Enter with your party. Vote, fight, and find your way down in 24 minutes.",functions:["cave_info","cave_enter","cave_reply","cave_buy","cave_exit","cave_talk"],proximity:true},
+		witchcipher: {
+			title: "Witch's Cipher",
+			article: "event-witchcipher",
+			skin: "brewingwitch",
+			summary: "Every day at 18:00 realm time, gather ingredients and brew the Witch's lost recipe.",
+			functions: ["join", "brew", "witch_cipher_info", "exchange", "auto_craft"],
+			proximity: true,
+		},
+		trickortreat: {
+			title: "Trick or Treat",
+			article: "event-trickortreat",
+			icon: "phelmet",
+			summary: "Knock on this door during Halloween for a treat or a fright.",
+			functions: ["knock"],
+			proximity: true,
+			season: "halloween",
+		},
 		anniversary: {
 			title: "Mira's Anniversary Workshop",
 			article: "event-anniversary",
@@ -664,7 +682,7 @@ docs = {
 			secondhands: "markets",
 			standmerchant: "markets",
 			transporter: "travel",
-			witch: "crafting",
+			witch: "witchcipher",
 		},
 		npc_roles: {
 			cavalry: "cavalry",
@@ -716,7 +734,7 @@ docs = {
 			tease: "inactive",
 			thesearch: "travel",
 			transport: "travel",
-			witch: "crafting",
+			witch: "witchcipher",
 		},
 		quirks: {
 			comic: "decorative",
@@ -726,6 +744,7 @@ docs = {
 			goldenbot_info: "goldenbot",
 			info: "travel",
 			invisible_statue: "special",
+			knock: "trickortreat",
 			list_pvp: "pvp",
 			log: "decorative",
 			mainframe: "mainframe",
@@ -799,6 +818,10 @@ docs = {
 				["cute-bee", "Cute Bee", "cute bee,bee,mainland,fun token", "#F2C14E"],
 				["golden-bot", "Golden Bot", "golden bot,targetron,spark bot,underground hills,golden power glove", "#D9A93B"],
 				["cave-of-many-dreams", "Cave of Many Dreams", "cave,party,vote,roguelike,doors", "#B7A083"],
+				["event-witchcipher", "Witch's Cipher", "witch,cipher,brew,cauldron,parcel,ingredient,daily", "#AF6AE2"],
+				["event-horseman", "Headless Horseman", "halloween,horseman,boss,jack-o walker,pumpkin", "#E8742A"],
+				["event-graveyard", "Graveyard Rising", "halloween,zombie,ghoul,gargoyle,spooky town,waves", "#9FA3A8"],
+				["event-trickortreat", "Trick or Treat", "halloween,door,knock,treat,stamp,spooked", "#F5A05B"],
 				["cave-story", "Nell’s first cave", "cave,comic,story,nell,dorr,senna", "#B7A083"],
 				["event-anniversary", "Ten Years & Mira's Cakes", "anniversary,mira,cake,slice,gift,kiss,craft", "#E6AE3F"],
 				["tavern-games", "Tavern Games", "tavern,dice,slots,wheel,fortune,wager,house edge,poker,hold'em,blinds", "#C78A6B"],

@@ -456,5 +456,6 @@
 	"response.trade_swap_match": "Dat voorwerp past niet bij het aanbod",
 	"response.trade_swap_space": "Handelaar heeft geen plek",
 	"game.trade_history.traded": "- '{item}' geruild met {player} voor '{received}'",
-	"response.transport_need_items": "Nodig: {items}"
+	"response.transport_need_items": "Nodig: {items}",
+	"combat.emote.hehehe": "HEHEHE"
 }

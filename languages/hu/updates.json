@@ -865,7 +865,17 @@
 	"update.06_10_26.anniversary_crafting.title": "Évfordulós tárgykészítés",
 	"update.06_10_26.anniversary_crafting.seasonal_flags": "A CODE mostantól a server.status.event_flags segítségével is kiolvashatja a szezonális események jelzőit.",
 	"update.06_10_26.anniversary_crafting.update_button_image": "Visszaállítottuk a hiányzó képet a FRISSÍTÉS gombon.",
-	"update.08_10_26.broadcast.title": "Steam-közvetítés",
-	"update.08_10_26.broadcast.broadcast_info": "A Steam-közvetítés mostantól megmutatja a szörnyek INFO paneljét, zsákmányukat, a tárgyakat és az aktuális eseményeket.",
-	"update.08_10_26.broadcast.mainframe_spookytown": "Javítottuk a MAINFRAME smart_move() elakadását a Spooky Town elhagyásakor."
+	"update.08_10_26.halloween.mainframe_spookytown": "Javítottuk a MAINFRAME smart_move() elakadását a Spooky Town elhagyásakor.",
+	"update.08_10_26.halloween.broadcast_info": "A Steam-közvetítés mostantól megmutatja a szörnyek INFO paneljét, zsákmányukat, a tárgyakat és az aktuális eseményeket.",
+	"update.08_10_26.halloween": "Fejtsd meg A Witch titkos receptjét minden nap új tárgyakért és receptekért. A Halloween elhozza a Headless Horseman, a Temetői feltámadás és a Csokit vagy csalunk eseményeket. Az új Események ablak megmutatja, mi következik.",
+	"update.08_10_26.halloween.title": "A Witch titkos receptje, Halloween és Események",
+	"update.08_10_26.halloween.witchcipher": "Minden nap 18:00-kor, a világ ideje szerint a Witch Spooky Forest területén elfelejti a receptjét. Csatlakozz az eseményhez, gyűjts négy hozzávalót a szörnyektől, majd főzd meg őket a Witchnél vagy a brew() használatával, hogy kipróbáld a sorrendjüket. Minden keverék két nyomot ad, amelyeket az egész világ közösen használ. Szerezz Witch's Parcels csomagokat, amelyeket kinyithatsz vagy felhasználhatsz a Witch receptjeihez egész évben.",
+	"update.08_10_26.halloween.witchcipher.title": "Új napi esemény: A Witch titkos receptje!",
+	"update.08_10_26.halloween.halloween": "A Headless Horseman minden éjjel 00:00-kor, a világ ideje szerint kilovagol Spooky Forest temetőjéből. Zombies és Ghouls kétóránként feltámadnak Spooky Town temetőjében, majd megjelenik egy Gargoyle. Kopogj be hét ajtón édességért, tréfákért és minden 10 pecsét után járó jutalmakért. A Halloween utolsó napja november 2., de Xyn utána is beváltja a Candy és Pumpkin Stems tárgyakat, a Halloween-receptek pedig továbbra is használhatók.",
+	"update.08_10_26.halloween.halloween.title": "Headless Horseman, Temetői feltámadás és Csokit vagy csalunk!",
+	"update.08_10_26.halloween.events": "Kattints a csevegés feletti ESEMÉNYEK feliratra az aktív szezonok, a közelgő főellenfelek, a mai tevékenységek és a következő hét nap eseményeinek megtekintéséhez. Válthatsz a saját időd és a világ ideje között. Válaszd az EMLÉKEZTETŐ gombot, hogy 10 perccel egy esemény előtt üzenetet kapj a játéknaplóban. Az egy órán belül kezdődő események a csevegés felett is megjelennek, a karakterválasztó képernyő pedig mutatja a következő eseményt.",
+	"update.08_10_26.halloween.events.title": "Új Események ablak!",
+	"update.08_10_26.halloween.event_schedule": "Az események időpontjai most hét nappal előre rögzítve vannak, és szerver-újraindítás után sem változnak.",
+	"update.08_10_26.halloween.map_halloween": "Spooky Forest két ajtaján most már bekopoghatsz a Csokit vagy csalunk eseményben.",
+	"update.08_10_26.halloween.map_spookytown": "Spooky Town öt ajtaján most már bekopoghatsz a Csokit vagy csalunk eseményben."
 }

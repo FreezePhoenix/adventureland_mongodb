@@ -399,5 +399,21 @@
   "server.game_log.offered_for": "Menawarkan {item} untuk ditukar dengan {want}",
   "server.game_log.offered_for_or_higher": "Menawarkan {item} untuk ditukar dengan {want} atau lebih tinggi",
   "server.game_log.traded_for": "Menukar {item} dengan {player} untuk {received}",
-	"server.mail.friend_token_welcome": "Kerana berhubung dengan {name} dalam Adventure Land!"
+	"server.mail.friend_token_welcome": "Kerana berhubung dengan {name} dalam Adventure Land!",
+  "server.server_message.season_ended.halloween": "Halloween sudah tamat! Xyn masih menukar Candy dan Pumpkin Stems, resipi Halloween masih boleh digunakan, dan Sandi Witch diteruskan setiap hari.",
+  "server.witchcipher.started": "Sandi Witch telah bermula! Sertai sekarang dan kumpulkan bahan daripada raksasa di empat wilayah.",
+  "server.witchcipher.gathering_over": "Bahan tidak lagi jatuh! Tinggal 8 minit untuk membancuh di Witch.",
+  "server.witchcipher.cracked": "{player} telah memecahkan rahsia resipi Witch! Jawapannya ada pada papan petunjuk untuk semua orang.",
+  "server.witchcipher.over": "Sandi Witch sudah tamat! Kawah kembali senyap sehingga esok.",
+  "server.witchcipher.over_uncracked": "Tiada siapa berjaya memecahkan rahsia resipi Witch! Resipinya ialah {recipe}.",
+  "server.witchcipher.claimed_by": "{name} sudah menyertai Sandi Witch hari ini.",
+  "server.witchcipher.claimed_elsewhere": "Akaun anda sudah menyertai Sandi Witch di {server} hari ini.",
+  "server.graveyard.started": "Kebangkitan Kubur! Zombies dan Ghouls sedang keluar dari kubur Spooky Town!",
+  "server.graveyard.wave": "Gelombang {wave} daripada {waves} bangkit dari kubur!",
+  "server.graveyard.gargoyle": "Gargoyle terjaga di tugu tanah perkuburan!",
+  "server.graveyard.defeated": "Gargoyle hancur berkecai! Tanah perkuburan kembali sunyi.",
+  "server.graveyard.over": "Mayat kembali bersemadi di dalam kubur.",
+  "server.floating.treat": "Hadiah!",
+  "server.floating.boo": "Boo!",
+  "server.trickortreat.laugh": "40 cop! Witch memberikan anda CX Jar yang mengandungi emote Ketawa Jahat!"
 }

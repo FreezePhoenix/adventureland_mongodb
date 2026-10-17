@@ -402,5 +402,21 @@
   "server.game_log.offered_for": "Proposition de {item} en échange de {want}",
   "server.game_log.offered_for_or_higher": "Proposition de {item} en échange de {want} ou supérieur",
   "server.game_log.traded_for": "Échange de {item} avec {player} contre {received}",
-	"server.mail.friend_token_welcome": "Pour t'être lié à {name} dans Adventure Land !"
+	"server.mail.friend_token_welcome": "Pour t'être lié à {name} dans Adventure Land !",
+  "server.server_message.season_ended.halloween": "Halloween est terminé ! Xyn échange toujours Candy et Pumpkin Stems, les recettes d'Halloween restent utilisables et l'Énigme de la Witch continue chaque jour.",
+  "server.witchcipher.started": "L'Énigme de la Witch a commencé ! Rejoignez l'événement et récoltez des ingrédients sur les monstres de quatre régions.",
+  "server.witchcipher.gathering_over": "Les ingrédients ne tombent plus ! Il reste 8 minutes pour préparer vos mélanges auprès de la Witch.",
+  "server.witchcipher.cracked": "{player} a trouvé la recette de la Witch ! La solution est visible sur le tableau d'indices pour tous.",
+  "server.witchcipher.over": "L'Énigme de la Witch est terminée ! Le chaudron se tait jusqu'à demain.",
+  "server.witchcipher.over_uncracked": "Personne n'a trouvé la recette de la Witch ! C'était {recipe}.",
+  "server.witchcipher.claimed_by": "{name} a déjà rejoint l'Énigme de la Witch aujourd'hui.",
+  "server.witchcipher.claimed_elsewhere": "Votre compte a déjà rejoint l'Énigme de la Witch sur {server} aujourd'hui.",
+  "server.graveyard.started": "Le Réveil du cimetière ! Des Zombies et des Ghouls sortent des tombes de Spooky Town !",
+  "server.graveyard.wave": "La vague {wave} sur {waves} sort des tombes !",
+  "server.graveyard.gargoyle": "Le Gargoyle s'éveille près du monument du cimetière !",
+  "server.graveyard.defeated": "Le Gargoyle tombe en poussière ! Le cimetière retrouve son calme.",
+  "server.graveyard.over": "Les morts regagnent leurs tombes.",
+  "server.floating.treat": "Friandise !",
+  "server.floating.boo": "Bouh !",
+  "server.trickortreat.laugh": "40 tampons ! La Witch vous donne un CX Jar contenant l'émote Rire sinistre !"
 }

@@ -402,5 +402,21 @@
   "server.game_log.offered_for": "Предложи {item} за размяна срещу {want}",
   "server.game_log.offered_for_or_higher": "Предложи {item} за размяна срещу {want} или по-високо",
   "server.game_log.traded_for": "Размени {item} с {player} срещу {received}",
-	"server.mail.friend_token_welcome": "За свързването с {name} в Adventure Land!"
+	"server.mail.friend_token_welcome": "За свързването с {name} в Adventure Land!",
+  "server.server_message.season_ended.halloween": "Хелоуин приключи! Xyn все още обменя Candy и Pumpkin Stems, рецептите за Хелоуин остават използваеми, а Шифърът на вещицата продължава всеки ден.",
+  "server.witchcipher.started": "Шифърът на вещицата започна! Включи се сега и събирай съставки от чудовища в четири региона.",
+  "server.witchcipher.gathering_over": "Съставките спряха да падат! Остават 8 минути за приготвяне на отвари при Witch.",
+  "server.witchcipher.cracked": "{player} разгада рецептата на Witch! Отговорът е на таблото с подсказки за всички.",
+  "server.witchcipher.over": "Шифърът на вещицата приключи! Котелът утихва до утре.",
+  "server.witchcipher.over_uncracked": "Никой не разгада рецептата на Witch! Тя беше {recipe}.",
+  "server.witchcipher.claimed_by": "{name} вече се е включил в Шифъра на вещицата днес.",
+  "server.witchcipher.claimed_elsewhere": "Акаунтът ти вече се е включил в Шифъра на вещицата на {server} днес.",
+  "server.graveyard.started": "Въздигане от гробовете! Zombies и Ghouls изпълзяват от гробовете в Spooky Town!",
+  "server.graveyard.wave": "Вълна {wave} от {waves} се надига от гробовете!",
+  "server.graveyard.gargoyle": "Gargoyle се събужда при паметника в гробището!",
+  "server.graveyard.defeated": "Gargoyle се разпада! Гробището отново утихва.",
+  "server.graveyard.over": "Мъртвите се връщат спокойно в гробовете си.",
+  "server.floating.treat": "Лакомство!",
+  "server.floating.boo": "Бу!",
+  "server.trickortreat.laugh": "40 печата! Witch ти дава CX Jar, съдържащ емота Зловещ смях!"
 }

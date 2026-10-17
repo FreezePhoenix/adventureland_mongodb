@@ -402,5 +402,21 @@
   "server.game_log.offered_for": "Ofereceste {item} em troca de {want}",
   "server.game_log.offered_for_or_higher": "Ofereceste {item} em troca de {want} ou superior",
   "server.game_log.traded_for": "Trocaste {item} com {player} por {received}",
-	"server.mail.friend_token_welcome": "Por te ligares a {name} no Adventure Land!"
+	"server.mail.friend_token_welcome": "Por te ligares a {name} no Adventure Land!",
+  "server.server_message.season_ended.halloween": "O Halloween terminou! Xyn continua a trocar Candy e Pumpkin Stems, as receitas de Halloween continuam a poder ser usadas e o Enigma da Witch prossegue todos os dias.",
+  "server.witchcipher.started": "O Enigma da Witch começou! Participa agora e recolhe ingredientes dos monstros de quatro regiões.",
+  "server.witchcipher.gathering_over": "Os ingredientes deixaram de cair! Restam 8 minutos para preparar misturas junto da Witch.",
+  "server.witchcipher.cracked": "{player} decifrou a receita da Witch! A resposta está no quadro de pistas para todos.",
+  "server.witchcipher.over": "O Enigma da Witch terminou! O caldeirão fica em silêncio até amanhã.",
+  "server.witchcipher.over_uncracked": "Ninguém decifrou a receita da Witch! Era {recipe}.",
+  "server.witchcipher.claimed_by": "{name} já participou no Enigma da Witch hoje.",
+  "server.witchcipher.claimed_elsewhere": "A tua conta já participou no Enigma da Witch em {server} hoje.",
+  "server.graveyard.started": "Ressurreição no Cemitério! Zombies e Ghouls estão a sair das sepulturas de Spooky Town!",
+  "server.graveyard.wave": "A vaga {wave} de {waves} sai das sepulturas!",
+  "server.graveyard.gargoyle": "O Gargoyle desperta junto ao monumento do cemitério!",
+  "server.graveyard.defeated": "O Gargoyle desfaz-se em pedaços! O cemitério volta a ficar tranquilo.",
+  "server.graveyard.over": "Os mortos regressam às suas sepulturas.",
+  "server.floating.treat": "Doçura!",
+  "server.floating.boo": "Buu!",
+  "server.trickortreat.laugh": "40 carimbos! A Witch dá-te um CX Jar com o emote Riso Sinistro!"
 }

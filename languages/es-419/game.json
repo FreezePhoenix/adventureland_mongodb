@@ -456,5 +456,6 @@
 	"response.trade_swap_match": "Ese objeto no coincide con la oferta",
 	"response.trade_swap_space": "El mercader no tiene espacio",
 	"game.trade_history.traded": "- Intercambiaste '{item}' con {player} por '{received}'",
-	"response.transport_need_items": "Necesitas: {items}"
+	"response.transport_need_items": "Necesitas: {items}",
+	"combat.emote.hehehe": "JEJEJE"
 }

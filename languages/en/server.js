@@ -853,3 +853,51 @@ module.exports["server.cave.amber_limit"] = "All {amount} Cave Amber for this vi
 
 // Login refused because the character has a poker hand on a different live server. Reconnect there or wait for that hand to end.
 module.exports["server.game_error.poker_hand_active"] = "Your poker hand is still running on another server. Wait for it to finish, or reconnect there.";
+
+// Server message to everyone when Halloween ends after its last day, November 2 (design/event_flags.js). Candy, Pumpkin Stems and every Halloween recipe stay usable, Xyn still exchanges candy, and the Witch's Cipher continues every day. Keep Halloween, Xyn, the Witch and Witch's Cipher unchanged.
+module.exports["server.server_message.season_ended.halloween"] = "Halloween is over! Xyn still exchanges Candy and Pumpkin Stems, Halloween recipes remain usable, and the Witch's Cipher continues daily.";
+
+// Server message to everyone when today's Witch's Cipher starts at the Witch in Spooky Forest (18:00 on the realm clock). Players join, collect ingredients for 20 minutes and brew. Keep the Witch, Witch's Cipher and Spooky Forest unchanged.
+module.exports["server.witchcipher.started"] = "The Witch's Cipher has begun! Join now and gather ingredients from monsters across four regions.";
+
+// Server message when the 20-minute gathering ends: ingredients stop dropping, brewing stays open for 8 more minutes.
+module.exports["server.witchcipher.gathering_over"] = "Ingredients have stopped dropping! 8 minutes left to brew at the Witch.";
+
+// Server message when someone brews the Witch's exact recipe first. {player} is a character name. The recipe now shows on the clue board for everyone.
+module.exports["server.witchcipher.cracked"] = "{player} cracked the Witch's recipe! The answer is on the clue board for everyone.";
+
+// Server message when the Witch's Cipher ends after the recipe was cracked.
+module.exports["server.witchcipher.over"] = "The Witch's Cipher is over! The cauldron goes quiet until tomorrow.";
+
+// Server message when the Witch's Cipher ends and nobody found the recipe. {recipe} lists the four ingredient names in order.
+module.exports["server.witchcipher.over_uncracked"] = "Nobody cracked the Witch's recipe! It was {recipe}.";
+
+// Join refused: another character of the same account already took part in today's Witch's Cipher. {name} is that character.
+module.exports["server.witchcipher.claimed_by"] = "{name} already joined the Witch's Cipher today.";
+
+// Join refused: the account took part today on another realm. {server} is that realm, like EUII.
+module.exports["server.witchcipher.claimed_elsewhere"] = "Your account already joined the Witch's Cipher on {server} today.";
+
+// Server message when Graveyard Rising starts in Spooky Town's graveyard (every 2 hours during Halloween). Keep Graveyard Rising and Spooky Town unchanged.
+module.exports["server.graveyard.started"] = "Graveyard Rising! Zombies and Ghouls are climbing out of Spooky Town's graves!";
+
+// Game log for players in Spooky Town when a new wave of Zombies and Ghouls rises. {wave} and {waves} are numbers.
+module.exports["server.graveyard.wave"] = "Wave {wave} of {waves} rises from the graves!";
+
+// Server message when the waves end and the Gargoyle on the graveyard monument wakes. Gargoyle is a monster name.
+module.exports["server.graveyard.gargoyle"] = "The Gargoyle awakens at the graveyard monument!";
+
+// Server message when the Gargoyle is defeated and Graveyard Rising ends.
+module.exports["server.graveyard.defeated"] = "The Gargoyle crumbles! The graveyard is quiet again.";
+
+// Server message when Graveyard Rising ends without the Gargoyle being defeated.
+module.exports["server.graveyard.over"] = "The dead settle back into their graves.";
+
+// Floating text over a character who got a treat from a Trick or Treat door. Very short.
+module.exports["server.floating.treat"] = "Treat!";
+
+// Floating text over a character who got a trick (Spooked!) from a Trick or Treat door. Very short.
+module.exports["server.floating.boo"] = "Boo!";
+
+// Game log on the account's 40th Trick or Treat knock: the reward is a CX Jar holding the Sinister Laugh emote. Keep Sinister Laugh and CX Jar unchanged.
+module.exports["server.trickortreat.laugh"] = "40 stamps! The Witch gives you a CX Jar containing the Sinister Laugh emote!";

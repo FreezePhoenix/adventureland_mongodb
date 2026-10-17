@@ -399,5 +399,21 @@
   "server.game_log.offered_for": "{item}を{want}との交換に出しました",
   "server.game_log.offered_for_or_higher": "{item}を{want}以上との交換に出しました",
   "server.game_log.traded_for": "{player}と{item}を{received}に交換しました",
-	"server.mail.friend_token_welcome": "Adventure Landで{name}とつながった記念に！"
+	"server.mail.friend_token_welcome": "Adventure Landで{name}とつながった記念に！",
+  "server.server_message.season_ended.halloween": "ハロウィン終了！Xynでは引き続きCandyとPumpkin Stemsを交換でき、ハロウィンのレシピも使えます。魔女の暗号も毎日開催されます。",
+  "server.witchcipher.started": "魔女の暗号が始まりました！今すぐ参加して、4つの地域のモンスターから素材を集めましょう。",
+  "server.witchcipher.gathering_over": "素材のドロップが終了しました！Witchでの調合は残り8分です。",
+  "server.witchcipher.cracked": "{player}がWitchのレシピを解明しました！答えは全員が見られる手がかり掲示板に表示されています。",
+  "server.witchcipher.over": "魔女の暗号が終了しました！大釜は明日まで静かになります。",
+  "server.witchcipher.over_uncracked": "Witchのレシピを解明した人はいませんでした！正解は{recipe}でした。",
+  "server.witchcipher.claimed_by": "{name}が今日すでに魔女の暗号に参加しています。",
+  "server.witchcipher.claimed_elsewhere": "このアカウントは今日、{server}で魔女の暗号に参加済みです。",
+  "server.graveyard.started": "墓地の復活！Spooky Townの墓からZombiesとGhoulsが這い出してきた！",
+  "server.graveyard.wave": "ウェーブ {wave}/{waves} が墓から蘇る！",
+  "server.graveyard.gargoyle": "墓地の記念碑でGargoyleが目覚めた！",
+  "server.graveyard.defeated": "Gargoyleが崩れ落ちた！墓地に再び静けさが戻った。",
+  "server.graveyard.over": "死者たちは再び墓の中へと戻っていった。",
+  "server.floating.treat": "お菓子！",
+  "server.floating.boo": "ばあっ！",
+  "server.trickortreat.laugh": "スタンプ40個！Witchから不気味な笑いのエモート入りCX Jarをもらった！"
 }

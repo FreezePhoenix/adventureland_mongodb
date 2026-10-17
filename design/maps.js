@@ -1347,8 +1347,9 @@ var maps = {
 			[-560, -1004, 28, 32, "mforest", 0, 5],
 		],
 		quirks: [
-			[-228, -178, 32, 40, "log", "Locked but there are noises coming from inside"],
-			[331, -210, 32, 40, "log", "Locked"],
+			// Trick or Treat doors during Halloween (G.events.trickortreat.doors); otherwise they read as before.
+			[-228, -178, 32, 40, "knock", "Locked but there are noises coming from inside"],
+			[331, -210, 32, 40, "knock", "Locked"],
 			[128, -251, 20, 16, "sign", "Beware! Don't fall down!"],
 		],
 		//"filter":"halloween",
@@ -1386,7 +1387,15 @@ var maps = {
 			[34, 1449, 80, 30, "halloween", 2, 1],
 			[240, -181, 48, 32, "level2", 5, 2],
 		],
-		quirks: [[-63, -44, 30, 24, "invisible_statue"]],
+		quirks: [
+			[-63, -44, 30, 24, "invisible_statue"],
+			// Trick or Treat doors during Halloween (G.events.trickortreat.doors).
+			[-130, -60, 32, 40, "knock", "Locked"],
+			[70, -103, 32, 40, "knock", "Locked"],
+			[217, -27, 32, 40, "knock", "Locked"],
+			[-170, 180, 32, 40, "knock", "Locked"],
+			[117, 133, 32, 40, "knock", "Locked"],
+		],
 		ref: {
 			poof: { map: "spookytown", in: "spookytown", x: -63, y: -44 },
 		},

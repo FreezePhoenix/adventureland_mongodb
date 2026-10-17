@@ -865,7 +865,17 @@
 	"update.06_10_26.anniversary_crafting.title": "Creații aniversare",
 	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE poate acum citi indicatorii sezonieri prin server.status.event_flags.",
 	"update.06_10_26.anniversary_crafting.update_button_image": "A fost restabilită imaginea lipsă de pe butonul NOUTĂȚI.",
-	"update.08_10_26.broadcast.title": "Transmisiune pe Steam",
-	"update.08_10_26.broadcast.broadcast_info": "Transmisiunea pe Steam arată acum INFO despre monștri, prada lor, obiecte și evenimentele actuale.",
-	"update.08_10_26.broadcast.mainframe_spookytown": "S-a remediat blocarea smart_move() în MAINFRAME la ieșirea din Spooky Town."
+	"update.08_10_26.halloween.mainframe_spookytown": "S-a remediat blocarea smart_move() în MAINFRAME la ieșirea din Spooky Town.",
+	"update.08_10_26.halloween.broadcast_info": "Transmisiunea pe Steam arată acum INFO despre monștri, prada lor, obiecte și evenimentele actuale.",
+	"update.08_10_26.halloween": "Descifrează zilnic Cifrul vrăjitoarei pentru obiecte și rețete noi. Halloween aduce Headless Horseman, Morții se ridică și Ne dați ori nu ne dați?. Noua fereastră Evenimente arată ce urmează.",
+	"update.08_10_26.halloween.title": "Cifrul vrăjitoarei, Halloween și Evenimente",
+	"update.08_10_26.halloween.witchcipher": "În fiecare zi, la ora 18:00 după ceasul tărâmului, Witch din Spooky Forest își uită rețeta. Alătură-te evenimentului, adună patru ingrediente de la monștri și prepară-le la Witch sau cu brew(), ca să le testezi ordinea. Fiecare amestec oferă două indicii comune întregului tărâm. Câștigă Witch's Parcels pe care le poți deschide sau folosi în rețetele lui Witch, tot anul.",
+	"update.08_10_26.halloween.witchcipher.title": "Eveniment zilnic nou: Cifrul vrăjitoarei!",
+	"update.08_10_26.halloween.halloween": "Headless Horseman pornește călare din cimitirul din Spooky Forest în fiecare noapte, la ora 00:00 după ceasul tărâmului. Zombies și Ghouls se ridică din cimitirul din Spooky Town la fiecare două ore, urmați de un Gargoyle. Bate la șapte uși pentru daruri, farse și recompense la fiecare 10 ștampile. Ultima zi de Halloween este 2 noiembrie, dar Xyn continuă să schimbe Candy și Pumpkin Stems după aceea, iar rețetele de Halloween rămân utilizabile.",
+	"update.08_10_26.halloween.halloween.title": "Headless Horseman, Morții se ridică și Ne dați ori nu ne dați?!",
+	"update.08_10_26.halloween.events": "Apasă pe EVENIMENTE deasupra chatului pentru a vedea sezoanele active, șefii care urmează, activitățile de astăzi și evenimentele din următoarele șapte zile. Comută între ora ta și ora tărâmului. Alege AMINTEȘTE ca să primești un mesaj în jurnalul jocului cu 10 minute înainte de un eveniment. Evenimentele care încep în următoarea oră apar și deasupra chatului, iar ecranul personajului tău arată următorul eveniment.",
+	"update.08_10_26.halloween.events.title": "Fereastră Evenimente nouă!",
+	"update.08_10_26.halloween.event_schedule": "Orele evenimentelor sunt acum stabilite cu șapte zile înainte și rămân neschimbate după repornirea serverelor.",
+	"update.08_10_26.halloween.map_halloween": "Două uși din Spooky Forest îți permit acum să bați pentru Ne dați ori nu ne dați?.",
+	"update.08_10_26.halloween.map_spookytown": "Cinci uși din Spooky Town îți permit acum să bați pentru Ne dați ori nu ne dați?."
 }

@@ -865,7 +865,17 @@
 	"update.06_10_26.anniversary_crafting.title": "Jubileumstillverkning",
 	"update.06_10_26.anniversary_crafting.seasonal_flags": "CODE kan nu läsa säsongsflaggor via server.status.event_flags.",
 	"update.06_10_26.anniversary_crafting.update_button_image": "Den saknade bilden på knappen NYHETER har återställts.",
-	"update.08_10_26.broadcast.title": "Steam-sändning",
-	"update.08_10_26.broadcast.broadcast_info": "Steam-sändningen visar nu monster-INFO, byte, föremål och aktuella evenemang.",
-	"update.08_10_26.broadcast.mainframe_spookytown": "Åtgärdat att smart_move() i MAINFRAME fastnade när karaktären lämnade Spooky Town."
+	"update.08_10_26.halloween.mainframe_spookytown": "Åtgärdat att smart_move() i MAINFRAME fastnade när karaktären lämnade Spooky Town.",
+	"update.08_10_26.halloween.broadcast_info": "Steam-sändningen visar nu monster-INFO, byte, föremål och aktuella evenemang.",
+	"update.08_10_26.halloween": "Lös Witchs chiffer varje dag för nya föremål och recept. Halloween bjuder på Headless Horseman, De dödas uppvaknande och Bus eller godis. Det nya evenemangsfönstret visar vad som väntar.",
+	"update.08_10_26.halloween.title": "Witchs chiffer, Halloween och evenemang",
+	"update.08_10_26.halloween.witchcipher": "Varje dag kl. 18:00 enligt världsklockan glömmer Witch i Spooky Forest sitt recept. Delta i evenemanget, samla fyra ingredienser från monster och brygg dem hos Witch, eller med brew(), för att testa deras ordning. Varje blandning ger två ledtrådar som delas med hela världen. Tjäna Witch's Parcels som du kan öppna eller använda i Witchs recept, året runt.",
+	"update.08_10_26.halloween.witchcipher.title": "Nytt dagligt evenemang: Witchs chiffer!",
+	"update.08_10_26.halloween.halloween": "Headless Horseman rider ut från kyrkogården i Spooky Forest varje natt kl. 00:00 enligt världsklockan. Zombies och Ghouls reser sig ur gravarna i Spooky Town varannan timme, följda av en Gargoyle. Knacka på sju dörrar för godis, bus och belöningar för var 10:e stämpel. Halloweens sista dag är den 2 november, men Xyn fortsätter att byta in Candy och Pumpkin Stems efteråt, och Halloween-recept kan fortfarande användas.",
+	"update.08_10_26.halloween.halloween.title": "Headless Horseman, De dödas uppvaknande och Bus eller godis!",
+	"update.08_10_26.halloween.events": "Klicka på EVENEMANG ovanför chatten för att se pågående säsonger, kommande bossar, dagens aktiviteter och de kommande sju dagarnas evenemang. Växla mellan din tid och världens tid. Välj PÅMINN för att få ett meddelande i spelloggen 10 minuter före ett evenemang. Evenemang som börjar inom en timme visas också ovanför chatten, och din karaktärsskärm visar nästa evenemang.",
+	"update.08_10_26.halloween.events.title": "Nytt evenemangsfönster!",
+	"update.08_10_26.halloween.event_schedule": "Evenemangstiderna bestäms nu sju dagar i förväg och ändras inte när servrar startas om.",
+	"update.08_10_26.halloween.map_halloween": "Två dörrar i Spooky Forest låter dig nu knacka på för Bus eller godis.",
+	"update.08_10_26.halloween.map_spookytown": "Fem dörrar i Spooky Town låter dig nu knacka på för Bus eller godis."
 }

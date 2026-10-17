@@ -729,6 +729,23 @@ var conditions = {
 		buff: true,
 		explanation: "Attack speed is increased by 40 for 6 seconds.",
 	},
+	// Graveyard Rising: a Zombie or Ghoul climbing out of the ground, drawn by the client.
+	rising: {
+		name: "Rising",
+		skin: "condition_bad",
+		duration: 1500,
+		ui: false,
+	},
+	// Trick or Treat: the trick half of a door knock during Halloween.
+	spooked: {
+		name: "Spooked!",
+		skin: "condition_spooked",
+		speed: 40,
+		duration: 3000,
+		ui: true,
+		buff: true,
+		explanation: "Boo! Speed increased by 40 for 3 seconds.",
+	},
 	// Hidden crumble window after a Stonegaze stone: not a buff or debuff, so Status Resistance,
 	// Purify and Cleansing Light leave it alone.
 	stonebreak: {
