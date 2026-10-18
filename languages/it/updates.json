@@ -877,5 +877,20 @@
 	"update.08_10_26.halloween.map_halloween": "Ora puoi bussare a due porte in Spooky Forest per Dolcetto o scherzetto.",
 	"update.08_10_26.halloween.map_spookytown": "Ora puoi bussare a cinque porte in Spooky Town per Dolcetto o scherzetto.",
 	"update.08_10_26.halloween.events": "Clicca sulla barra scorrevole o sull'orologio del reame sopra la chat per vedere le stagioni in corso, i prossimi boss, le attività di oggi e gli eventi dei prossimi sette giorni. Passa dalla tua ora a quella del reame. Seleziona RICORDA per ricevere un messaggio nel registro di gioco 10 minuti prima di un evento. La barra scorrevole sopra la chat fa scorrere gli eventi in corso, i prossimi tre eventi con il conto alla rovescia e le date di fine delle stagioni; passa il mouse sopra per fermare lo scorrimento o clicca per aprire EVENTI. Clicca su X,Y o sul nome del reame per mostrare invece le tue coordinate; la schermata del personaggio continua a mostrare il prossimo evento.",
-	"update.08_10_26.halloween.witchcipher": "Ogni giorno alle 06:00 e alle 18:00, ora del reame, la Witch in Spooky Forest dimentica la sua ricetta. Partecipa una sola volta per giorno UTC per entrambi i turni, raccogli quattro ingredienti dai mostri e combinali dalla Witch, oppure con brew(), per verificare il loro ordine. Ogni combinazione fornisce due indizi condivisi con il reame. Quando qualcuno decifra la ricetta, la Witch la dimentica e ne inizia una nuova. Guadagna Witch's Parcels da aprire o usare nelle ricette della Witch, tutto l'anno."
+	"update.08_10_26.halloween.witchcipher": "Ogni giorno alle 06:00 e alle 18:00, ora del reame, la Witch in Spooky Forest dimentica la sua ricetta. Partecipa una sola volta per giorno UTC per entrambi i turni, raccogli quattro ingredienti dai mostri e combinali dalla Witch, oppure con brew(), per verificare il loro ordine. Ogni combinazione fornisce due indizi condivisi con il reame. Quando qualcuno decifra la ricetta, la Witch la dimentica e ne inizia una nuova. Guadagna Witch's Parcels da aprire o usare nelle ricette della Witch, tutto l'anno.",
+	"update.08_10_26.halloween.support_40": "I mostri mantengono il bersaglio quando i danni ad area sconfiggono un altro personaggio.",
+	"update.08_10_26.halloween.support_41": "La velocità d'attacco ora include gli effetti di stato.",
+	"update.08_10_26.halloween.support_42": "I cambi d'aspetto non causano più arresti nei personaggi eseguiti senza grafica.",
+	"update.08_10_26.halloween.support_43": "La probabilità di avvelenare non viene più calcolata due volte per lo stesso colpo.",
+	"update.08_10_26.halloween.support_44": "Purifica non rimuove più l'attacco velenoso naturale di un mostro.",
+	"update.08_10_26.halloween.support_45": "I personaggi morti non possono più usare pozioni o rigenerazione.",
+	"update.08_10_26.halloween.support_46": "Corretto lo zaino mancante di Dorr.",
+	"update.08_10_26.halloween.support_47": "I destinatari possono di nuovo ritirare gli allegati della posta più vecchia.",
+	"update.08_10_26.halloween.support_48": "Le abilità possono colpire personaggi con nomi numerici.",
+	"update.08_10_26.halloween.support_49": "Trascinare l'equipaggiamento indossato su un oggetto nella borsa ora li scambia.",
+	"update.08_10_26.halloween.support_50": "I mostri ostili della caverna si svegliano quando vengono colpiti.",
+	"update.08_10_26.halloween.support_51": "La vendita non prende più un oggetto diverso spostato nello spazio selezionato.",
+	"update.08_10_26.halloween.support_52": "MAINFRAME ora accetta send_updates per aggiornare le entità visibili.",
+	"update.08_10_26.halloween.support_53": "Una risposta di accesso tardiva non copre più il gioco con la selezione del personaggio.",
+	"update.08_10_26.halloween.support_54": "Riconnettersi non porta più alla destinazione di un movimento non terminato."
 }

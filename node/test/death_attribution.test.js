@@ -256,6 +256,41 @@ function fixture({ map = "arena", pvp = false, hp = 100, splash = false, mode = 
 	return { c, p, m, packets, player, advance, blink, completeBlink, attack, state, openChest };
 }
 
+test("a landed hit wakes a sleeping hostile cave actor without removing stun", () => {
+	const h = fixture();
+	load(h.c, "node/server.js", ["target_player"]);
+	load(h.c, "node/logic/cavalry.js", ["is_cavalry"]);
+	load(h.c, "node/logic/cave_of_many_dreams.js", ["cave_hostile", "cave_accept_attack", "cave_damage"]);
+	h.m.zone_actor = { side: "enemy" };
+	h.m.target = null;
+	h.m.s.sleeping = {};
+	h.m.s.stunned = { ms: 1000 };
+	h.attack(h.p, h.m);
+	h.advance(2000);
+	assert.equal(h.m.s.sleeping, undefined);
+	assert.ok(h.m.s.stunned);
+	assert.equal(h.m.zone_actor.prey, h.p);
+	h.m.zone_actor = { side: "ally" };
+	h.m.s.sleeping = {};
+	h.c.target_player(h.m, h.p);
+	assert.ok(h.m.s.sleeping, "friendly actors are not provoked");
+});
+
+test("Purify keeps innate monster poison but removes temporary poison coatings", () => {
+	for (const innate of [true, false]) {
+		const h = fixture();
+		h.p.type = "paladin";
+		h.p.mp = 10000;
+		h.m.type = innate ? "bscorpion" : "goo";
+		h.m.hp = h.m.max_hp = 1000000;
+		h.m.s = { poisonous: { ms: 999999 }, cursed: { ms: 5000 } };
+		h.c.commence_attack(h.p, h.m, "purify");
+		h.advance(10000);
+		assert.equal(!!h.m.s.poisonous, innate);
+		assert.equal(h.m.s.cursed, undefined);
+	}
+});
+
 for (const pvp of [false, true]) {
 	test(`self-splash keeps monster death penalties on ${pvp ? "a PvP realm" : "the Arena"}`, () => {
 		const h = fixture({ map: pvp ? "level2s" : "arena", pvp, splash: true, hp: 500 });

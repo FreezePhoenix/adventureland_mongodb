@@ -2793,5 +2793,7 @@
 	"docs.articles.data-server-status.witchcipher": "<b>女巫密碼</b>：server.status.witchcipher 顯示此世界今天的活動狀態，包括共用的提示板。",
 	"docs.articles.data-server-status.graveyard": "<b>墓地復甦</b>：server.status.graveyard 顯示目前的波次、剩餘的復甦怪物數量，以及 Gargoyle 甦醒後的生命值。",
 	"docs.articles.data-server-status.event-ends": "<b>季節結束</b>：server.status.event_ends 提供各進行中季節的結束時間（若已設定），以 Unix 毫秒表示。最後一天是結束時間前一個 UTC 日期。",
-	"docs.articles.data-character.witchcipher": "<b>character.witchcipher</b> 會在此角色於當天（UTC）加入女巫密碼後，於每輪活動期間出現，顯示已使用的調製次數、mixes_left 和獲得的 parcels。每輪結束時會消失，並在當天另一輪活動中自動重新出現。<b>character.trickortreat</b> 列出此角色今天敲過的不給糖就搗蛋活動門、doors_left，以及帳號的 stamps。"
+	"docs.articles.data-character.witchcipher": "<b>character.witchcipher</b> 會在此角色於當天（UTC）加入女巫密碼後，於每輪活動期間出現，顯示已使用的調製次數、mixes_left 和獲得的 parcels。每輪結束時會消失，並在當天另一輪活動中自動重新出現。<b>character.trickortreat</b> 列出此角色今天敲過的不給糖就搗蛋活動門、doors_left，以及帳號的 stamps。",
+	"docs.functions.sell.item_changed": "如果伺服器收到請求前，另一件物品被移入所選欄位，出售會失敗。",
+	"docs.functions.get_socket.refresh": "send_updates請求可見實體的完整快照。MAINFRAME每秒允許兩次請求。傳送請求前請先監聽entities；回應沒有對應的請求ID。"
 }

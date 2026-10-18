@@ -877,5 +877,20 @@
 	"update.08_10_26.halloween.map_halloween": "Du kan nu banke på to døre i Spooky Forest for at få Slik eller ballade.",
 	"update.08_10_26.halloween.map_spookytown": "Du kan nu banke på fem døre i Spooky Town for at få Slik eller ballade.",
 	"update.08_10_26.halloween.events": "Klik på den rullende bjælke eller verdens ur over chatten for at se igangværende sæsoner, kommende bosser, dagens aktiviteter og de næste syv dages events. Skift mellem din egen tid og verdens tid. Vælg PÅMIND for at få en besked i spilloggen 10 minutter før et event. Den rullende bjælke over chatten viser igangværende events, de næste tre events med nedtællinger og datoerne for sæsonernes afslutning. Hold musen over bjælken for at sætte rulningen på pause, eller klik for at åbne EVENTS. Klik på X,Y eller verdens navn for at vise dine koordinater i stedet; din figurs skærm viser stadig det næste event.",
-	"update.08_10_26.halloween.witchcipher": "Hver dag kl. 06:00 og 18:00 efter verdens ur glemmer Witch i Spooky Forest sin opskrift. Deltag én gang pr. UTC-dag i begge runder, saml fire ingredienser fra monstre, og bryg dem hos Witch eller med brew() for at afprøve rækkefølgen. Hver blanding giver to ledetråde, som deles med hele verden. Når nogen løser opskriften, glemmer Witch den, og en ny begynder. Optjen Witch's Parcels, som du kan åbne eller bruge i Witchs opskrifter hele året."
+	"update.08_10_26.halloween.witchcipher": "Hver dag kl. 06:00 og 18:00 efter verdens ur glemmer Witch i Spooky Forest sin opskrift. Deltag én gang pr. UTC-dag i begge runder, saml fire ingredienser fra monstre, og bryg dem hos Witch eller med brew() for at afprøve rækkefølgen. Hver blanding giver to ledetråde, som deles med hele verden. Når nogen løser opskriften, glemmer Witch den, og en ny begynder. Optjen Witch's Parcels, som du kan åbne eller bruge i Witchs opskrifter hele året.",
+	"update.08_10_26.halloween.support_40": "Monstre beholder deres mål, når områdeskade besejrer en anden figur.",
+	"update.08_10_26.halloween.support_41": "Angrebshastigheden tager nu højde for tilstandseffekter.",
+	"update.08_10_26.halloween.support_42": "Udseendeændringer får ikke længere figurer uden grafik til at gå ned.",
+	"update.08_10_26.halloween.support_43": "Giftchancen beregnes ikke længere to gange for samme træffer.",
+	"update.08_10_26.halloween.support_44": "Rens fjerner ikke længere et monsters naturlige giftangreb.",
+	"update.08_10_26.halloween.support_45": "Døde figurer kan ikke længere bruge eliksirer eller regenerering.",
+	"update.08_10_26.halloween.support_46": "Dorrs manglende rygsæk er rettet.",
+	"update.08_10_26.halloween.support_47": "Modtagere kan igen hente vedhæftede genstande fra ældre post.",
+	"update.08_10_26.halloween.support_48": "Evner kan ramme figurer med navne, der består af tal.",
+	"update.08_10_26.halloween.support_49": "At trække båret udstyr over på en genstand i tasken bytter nu rundt på dem.",
+	"update.08_10_26.halloween.support_50": "Fjendtlige hulemonstre vågner, når de bliver ramt.",
+	"update.08_10_26.halloween.support_51": "Salg tager ikke længere en anden genstand, som er flyttet til den valgte plads.",
+	"update.08_10_26.halloween.support_52": "MAINFRAME accepterer nu send_updates til at opdatere synlige entiteter.",
+	"update.08_10_26.halloween.support_53": "Et forsinket loginsvar dækker ikke længere spillet med figurvalget.",
+	"update.08_10_26.halloween.support_54": "Genforbindelse springer ikke længere til målet for en ufærdig bevægelse."
 }

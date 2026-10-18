@@ -2793,5 +2793,7 @@
 	"docs.articles.data-server-status.witchcipher": "<b>魔女の暗号</b>：server.status.witchcipherには、共有の手がかり掲示板を含む、このワールドの今日のイベント情報が表示されます。",
 	"docs.articles.data-server-status.graveyard": "<b>墓地の復活</b>：server.status.graveyardには、現在のウェーブ、残っている蘇生モンスターの数、目覚めた後のGargoyleのHPが表示されます。",
 	"docs.articles.data-server-status.event-ends": "<b>シーズン終了</b>：server.status.event_endsには、設定されている場合、開催中の各シーズンの終了時刻がUnixミリ秒単位で入ります。最終日はその時刻の前日のUTC日付です。",
-	"docs.articles.data-character.witchcipher": "<b>character.witchcipher</b>は、このキャラクターがそのUTC日に魔女の暗号に参加すると、各イベントの開催中に表示されます。使用した調合回数、mixes_left、獲得したparcelsが含まれます。イベント終了時に消え、同じ日のもう一方の回で自動的に再表示されます。<b>character.trickortreat</b>には、このキャラクターが今日ノックしたトリック・オア・トリートの扉、doors_left、アカウントのstampsが含まれます。"
+	"docs.articles.data-character.witchcipher": "<b>character.witchcipher</b>は、このキャラクターがそのUTC日に魔女の暗号に参加すると、各イベントの開催中に表示されます。使用した調合回数、mixes_left、獲得したparcelsが含まれます。イベント終了時に消え、同じ日のもう一方の回で自動的に再表示されます。<b>character.trickortreat</b>には、このキャラクターが今日ノックしたトリック・オア・トリートの扉、doors_left、アカウントのstampsが含まれます。",
+	"docs.functions.sell.item_changed": "サーバーがリクエストを受信する前に選択したスロットへ別のアイテムが移動した場合、売却は失敗します。",
+	"docs.functions.get_socket.refresh": "send_updatesは見えているエンティティの完全なスナップショットを要求します。MAINFRAMEでは毎秒2回まで要求できます。送信前にentitiesのリスナーを登録してください。応答には対応するリクエストIDはありません。"
 }

@@ -877,5 +877,20 @@
 	"update.08_10_26.halloween.map_halloween": "Spooky Forest 的两扇门现在可以敲响，参加不给糖就捣蛋。",
 	"update.08_10_26.halloween.map_spookytown": "Spooky Town 的五扇门现在可以敲响，参加不给糖就捣蛋。",
 	"update.08_10_26.halloween.events": "点击聊天框上方的滚动栏或世界时钟，查看正在进行的赛季、即将出现的首领、今日活动和未来七天的活动安排。可以在你的时间与世界时间之间切换。选择提醒，即可在活动开始前10分钟收到游戏日志消息。聊天框上方的滚动栏会依次显示正在进行的活动、带倒计时的接下来三场活动以及各赛季的结束日期。将鼠标悬停在滚动栏上可暂停滚动，点击则可打开活动窗口。点击 X,Y 或世界名称可改为显示你的坐标；角色选择界面仍会显示下一个活动。",
-	"update.08_10_26.halloween.witchcipher": "每天世界时间06:00和18:00，Spooky Forest 的 Witch 都会忘记自己的配方。每个UTC日加入一次即可参加两轮活动。从怪物身上收集四种材料，然后在 Witch 那里调制，或使用 brew() 测试材料的顺序。每次调制都会给出两条线索，供整个世界共享。每当有人破解配方，Witch 就会忘记它，并开始一个新配方。获得 Witch's Parcels，可以打开它们，或留着制作 Witch 的配方物品。全年都可以这样做。"
+	"update.08_10_26.halloween.witchcipher": "每天世界时间06:00和18:00，Spooky Forest 的 Witch 都会忘记自己的配方。每个UTC日加入一次即可参加两轮活动。从怪物身上收集四种材料，然后在 Witch 那里调制，或使用 brew() 测试材料的顺序。每次调制都会给出两条线索，供整个世界共享。每当有人破解配方，Witch 就会忘记它，并开始一个新配方。获得 Witch's Parcels，可以打开它们，或留着制作 Witch 的配方物品。全年都可以这样做。",
+	"update.08_10_26.halloween.support_40": "范围伤害击败另一名角色时，怪物会保留原目标。",
+	"update.08_10_26.halloween.support_41": "攻击速度现在会计入状态效果。",
+	"update.08_10_26.halloween.support_42": "外观变化不再导致无图形模式下的角色崩溃。",
+	"update.08_10_26.halloween.support_43": "同一次命中不再进行两次中毒判定。",
+	"update.08_10_26.halloween.support_44": "净化不再移除怪物天生的毒攻击。",
+	"update.08_10_26.halloween.support_45": "死亡角色不再能使用药水或恢复技能。",
+	"update.08_10_26.halloween.support_46": "修复了Dorr背包缺失的问题。",
+	"update.08_10_26.halloween.support_47": "收件人可以再次领取旧邮件的附件。",
+	"update.08_10_26.halloween.support_48": "技能可以指定名称全为数字的角色为目标。",
+	"update.08_10_26.halloween.support_49": "将已装备的物品拖到背包物品上，现在会交换两者。",
+	"update.08_10_26.halloween.support_50": "洞窟中的敌对怪物受到攻击后会醒来。",
+	"update.08_10_26.halloween.support_51": "出售时不再卖掉后来移入所选栏位的另一件物品。",
+	"update.08_10_26.halloween.support_52": "MAINFRAME现在支持通过send_updates刷新可见实体。",
+	"update.08_10_26.halloween.support_53": "延迟的登录响应不再让角色选择界面遮住游戏。",
+	"update.08_10_26.halloween.support_54": "重新连接不再跳到尚未完成的移动目的地。"
 }

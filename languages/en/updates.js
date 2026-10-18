@@ -1,5 +1,35 @@
 // Release highlights. Dates, item/character names and CODE identifiers stay unchanged.
 module.exports = {
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_40": "Monsters keep their target when splash damage defeats another character.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_41": "Attack speed now includes condition effects.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_42": "Skin changes no longer crash characters running without graphics.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_43": "Poison is no longer rolled twice on the same hit.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_44": "Purify no longer removes a monster's natural poison attack.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_45": "Dead characters can no longer use potions or regeneration.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_46": "Fixed Dorr's missing backpack.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_47": "Recipients can claim attachments from older mail again.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_48": "Skills can target characters with numeric names.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_49": "Dragging equipped gear onto a bag item now swaps them.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_50": "Hostile Cave monsters wake when hit.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_51": "Selling no longer takes a different item that moved into the selected slot.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_52": "MAINFRAME now accepts send_updates to refresh visible entities.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_53": "A delayed sign-in response no longer covers the game with the character selector.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_54": "Reconnecting no longer jumps to an unfinished movement destination.",
 	// Summary of the [08/10/26] update post "Witch's Cipher, Halloween and Events", shown under its title and in the game log. Keep names from the game and CODE identifiers unchanged.
 	"update.08_10_26.halloween": "Solve the Witch's Cipher every day for new items and recipes. Halloween brings the Headless Horseman, Graveyard Rising and Trick or Treat. The new Events window shows what's coming up.",
 	// Title of the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.

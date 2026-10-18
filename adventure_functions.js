@@ -1096,10 +1096,18 @@ async function send_tracktrix_mail(user, name) {
 
 async function update_mail_count(user) {
 	var owner = user._id || user;
-	var unread = await db.collection("mail").find({ owner: owner, "info.receiver": owner, read: false }).project({ _id: 1 }).limit(100).toArray();
+	var receiver_ids = [owner];
+	if (/^US_\d+$/.test(owner)) receiver_ids.push(owner.slice(3));
+	var unread = await db.collection("mail").find({ owner: owner, "info.receiver": { $in: receiver_ids }, read: false }).project({ _id: 1 }).limit(100).toArray();
 	// Do not replace userdata: another request may be saving CODE or tutorial progress.
 	await db.collection("infoelement").updateOne({ _id: "IE_userdata-" + owner }, { $set: { "info.mail": unread.length }, $setOnInsert: { created: new Date() } }, { upsert: true });
 	return unread.length;
+}
+
+function mail_receiver(mail) {
+	var receiver = gf(mail, "receiver");
+	// Imported letters retain the old numeric account ID inside their info blob.
+	return typeof receiver === "string" && /^\d+$/.test(receiver) ? "US_" + receiver : receiver;
 }
 
 async function get_user_data(user_id) {
@@ -1626,6 +1634,7 @@ async function selection_info(req, user, domain) {
 	domain.servers = servers_to_client(domain, servers);
 	return {
 		type: "content",
+		screen: "selection",
 		html: nunjucks.render("htmls/contents/selection.html", {
 			user: user,
 			domain: domain,

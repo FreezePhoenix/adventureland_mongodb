@@ -3457,12 +3457,9 @@ function commence_attack(attacker, target, atype) {
 	} else if (atype == "mentalburst") {
 		attack = attacker.attack * G.skills[atype].damage_multiplier;
 	} else if (atype == "poisonarrow") {
-		info.conditions.push("poisoned");
+		if (!in_arr("poisoned", info.conditions)) info.conditions.push("poisoned");
 	} else if (attacker.is_monster && atype !== "rimeshatter") {
 		var rng = parseInt(Math.random() * 100 - 50);
-		if (attacker.s.poisonous) {
-			info.conditions.push("poisoned");
-		}
 		attacker.last.attack = future_ms(rng);
 	}
 
@@ -4059,6 +4056,8 @@ function complete_attack(attacker, target, info) {
 				}
 				if (def.purify) {
 					for (var name in target.s) {
+						if (name == "poisonous" && target.is_monster && (target.zone_stats || G.monsters[target.type]).poisonous)
+							continue;
 						if (
 							(G.conditions[name] &&
 								(G.conditions[name].buff || G.conditions[name].debuff) &&
@@ -4513,7 +4512,14 @@ function complete_attack(attacker, target, info) {
 function target_player(monster, player, no_increase) {
 	if (is_cavalry(player)) return;
 	if (monster.zone_actor) {
-		if (player && cave_hostile(monster, player)) monster.zone_actor.prey = player;
+		if (player && cave_hostile(monster, player)) {
+			monster.zone_actor.prey = player;
+			if (monster.s.sleeping) {
+				delete monster.s.sleeping;
+				monster.u = true;
+				monster.cid++;
+			}
+		}
 		return;
 	}
 	// if(Dev) console.log("target_player: "+player.name+" "+(!no_increase));
@@ -5688,7 +5694,7 @@ function init_socket_io(socket_server, server_index) {
 					var R = await tx(
 						async () => {
 							var m = await tx_get(A.mail);
-							if (!m || !m.owner || !in_arr(A.owner, m.owner) || gf(m, "receiver") !== A.owner) ex("not_owner");
+							if (!m || !m.owner || !in_arr(A.owner, m.owner) || mail_receiver(m) !== A.owner) ex("not_owner");
 							if (!m.item) ex("no_item");
 							if (m.character && m.character !== A.character) ex("wrong_character");
 							if (m.taken) ex("already_taken");
@@ -7733,7 +7739,7 @@ function init_socket_io(socket_server, server_index) {
 			}
 			var trading = data.slot && get_trade_slots(player).includes(data.slot) && !data.consume;
 			if (
-				player.s.stunned &&
+				(player.rip || player.s.stunned) &&
 				!trading &&
 				(data.consume || def.gives || ["elixir", "licence", "spawner"].includes(def.type) || item.name == "cxjar")
 			) {
@@ -8107,15 +8113,18 @@ function init_socket_io(socket_server, server_index) {
 		});
 		socket.on("sell", function (data) {
 			var player = players[socket.id];
+			if (!player || player.user) {
+				return fail_response("cant_in_bank");
+			}
 			var num = data.num;
 			var item = player.items[data.num];
 			var quantity = min(max(parseInt(data.quantity) || 0, 1), (item && item.q) || 1);
 			var can_reach = false;
-			if (!player || player.user) {
-				return fail_response("cant_in_bank");
-			}
 			if (!item) {
 				return fail_response("no_item");
+			}
+			if (data.item !== undefined && !seen_item_matches(item, data.item)) {
+				return fail_response("item_changed");
 			}
 			if (item.name == "placeholder") {
 				return fail_response("item_placeholder");
@@ -9985,7 +9994,8 @@ function init_socket_io(socket_server, server_index) {
 					return fail_response("no_target", data.name);
 				}
 				const isMonster =
-					!(gSkill.target == "player" && players[id_to_id[data.id]]) && "" + parseInt(data.id) === "" + data.id;
+					!((gSkill.target == "player" || gSkill.target === true) && players[id_to_id[data.id]]) &&
+					"" + parseInt(data.id) === "" + data.id;
 				const isPlayer = !isMonster;
 				const canTargetMonster = gSkill.target == "monster" || gSkill.target === true;
 				const canTargetPlayer = gSkill.target == "player" || gSkill.target === true;
@@ -12115,7 +12125,7 @@ function init_socket_io(socket_server, server_index) {
 			if (!player) {
 				return;
 			}
-			if (player.s.stunned) return fail_response("disabled");
+			if (player.rip || player.s.stunned) return fail_response("disabled");
 			if (data.item == "hp" || data.item == "mp") {
 				if (player.last.potion) {
 					const ms = -mssince(player.last.potion);
@@ -13219,15 +13229,8 @@ function init_socket_io(socket_server, server_index) {
 				}
 				// if(!server.live) { server_log('Ignoring the "disconnect" of '+player.name,1); return; }
 
-				try {
-					if (player.moving && distance(player, { x: player.going_x, y: player.going_y }) < 800) {
-						player.x = player.going_x;
-						player.y = player.going_y;
-					}
-				} catch (e) {
-					log_trace("#X DCERRORM", e);
-				}
-				// to not get stuck on out-of-bounds corners
+				// Save the last server position, never the client's untraveled destination.
+				player.moving = false;
 
 				try {
 					if (player.party) {

@@ -877,5 +877,20 @@
 	"update.08_10_26.halloween.map_halloween": "Dua pintu di Spooky Forest kini bisa diketuk untuk Permen atau Jahil.",
 	"update.08_10_26.halloween.map_spookytown": "Lima pintu di Spooky Town kini bisa diketuk untuk Permen atau Jahil.",
 	"update.08_10_26.halloween.events": "Klik slider atau jam dunia di atas chat untuk melihat musim yang sedang berlangsung, bos yang akan datang, aktivitas hari ini, dan jadwal acara tujuh hari ke depan. Beralihlah antara waktu lokalmu dan waktu dunia. Pilih INGATKAN untuk mendapat pesan di log permainan 10 menit sebelum acara dimulai. Slider di atas chat terus menggulir acara yang sedang berlangsung, tiga acara berikutnya beserta hitung mundurnya, dan tanggal berakhirnya setiap musim. Arahkan mouse ke slider untuk menjeda guliran, atau klik untuk membuka ACARA. Klik X,Y atau nama dunia untuk menampilkan koordinatmu sebagai gantinya; layar karaktermu tetap menampilkan acara berikutnya.",
-	"update.08_10_26.halloween.witchcipher": "Setiap hari pukul 06.00 dan 18.00 waktu dunia, Witch di Spooky Forest melupakan resepnya. Bergabunglah sekali per hari UTC untuk kedua ronde, kumpulkan empat bahan dari monster, lalu racik di Witch atau gunakan brew() untuk menguji urutannya. Setiap racikan memberikan dua petunjuk yang dibagikan ke seluruh dunia. Saat seseorang berhasil memecahkan resep, Witch melupakannya dan resep baru dimulai. Dapatkan Witch's Parcels untuk dibuka atau digunakan dalam resep Witch, sepanjang tahun."
+	"update.08_10_26.halloween.witchcipher": "Setiap hari pukul 06.00 dan 18.00 waktu dunia, Witch di Spooky Forest melupakan resepnya. Bergabunglah sekali per hari UTC untuk kedua ronde, kumpulkan empat bahan dari monster, lalu racik di Witch atau gunakan brew() untuk menguji urutannya. Setiap racikan memberikan dua petunjuk yang dibagikan ke seluruh dunia. Saat seseorang berhasil memecahkan resep, Witch melupakannya dan resep baru dimulai. Dapatkan Witch's Parcels untuk dibuka atau digunakan dalam resep Witch, sepanjang tahun.",
+	"update.08_10_26.halloween.support_40": "Monster mempertahankan targetnya saat kerusakan area mengalahkan karakter lain.",
+	"update.08_10_26.halloween.support_41": "Kecepatan serangan kini memperhitungkan efek status.",
+	"update.08_10_26.halloween.support_42": "Perubahan penampilan tidak lagi membuat karakter yang berjalan tanpa grafis mengalami crash.",
+	"update.08_10_26.halloween.support_43": "Peluang meracuni tidak lagi dihitung dua kali pada pukulan yang sama.",
+	"update.08_10_26.halloween.support_44": "Murnikan tidak lagi menghapus serangan racun alami monster.",
+	"update.08_10_26.halloween.support_45": "Karakter mati tidak lagi bisa memakai ramuan atau regenerasi.",
+	"update.08_10_26.halloween.support_46": "Ransel Dorr yang hilang telah diperbaiki.",
+	"update.08_10_26.halloween.support_47": "Penerima bisa kembali mengambil lampiran dari surat lama.",
+	"update.08_10_26.halloween.support_48": "Keahlian bisa menargetkan karakter dengan nama berupa angka.",
+	"update.08_10_26.halloween.support_49": "Menyeret perlengkapan yang dipakai ke item di tas kini menukar keduanya.",
+	"update.08_10_26.halloween.support_50": "Monster gua yang bermusuhan terbangun saat terkena pukulan.",
+	"update.08_10_26.halloween.support_51": "Penjualan tidak lagi mengambil item lain yang dipindahkan ke slot terpilih.",
+	"update.08_10_26.halloween.support_52": "MAINFRAME kini menerima send_updates untuk memperbarui entitas yang terlihat.",
+	"update.08_10_26.halloween.support_53": "Respons login yang terlambat tidak lagi menutupi permainan dengan pemilih karakter.",
+	"update.08_10_26.halloween.support_54": "Menghubungkan kembali tidak lagi melompat ke tujuan gerakan yang belum selesai."
 }

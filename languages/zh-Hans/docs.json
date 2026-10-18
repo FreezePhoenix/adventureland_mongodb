@@ -2793,5 +2793,7 @@
 	"docs.articles.data-server-status.witchcipher": "<b>女巫的密方</b>：server.status.witchcipher 显示当前世界今天的活动状态，包括共享线索板。",
 	"docs.articles.data-server-status.graveyard": "<b>墓地复苏</b>：server.status.graveyard 显示当前波次、剩余的复苏怪物数量，以及 Gargoyle 苏醒后的生命值。",
 	"docs.articles.data-server-status.event-ends": "<b>赛季结束</b>：server.status.event_ends 给出每个正在进行的赛季的结束时间（如果已设置），单位为 Unix 毫秒。赛季的最后一天是结束时间前的那个 UTC 日期。",
-	"docs.articles.data-character.witchcipher": "<b>character.witchcipher</b> 会在这个角色于当天（UTC）加入女巫的密方后，于每轮活动期间出现，显示已使用的调制次数、mixes_left 和获得的 parcels。每轮结束时会消失，并在当天另一轮活动中自动重新出现。<b>character.trickortreat</b> 列出这个角色今天敲过的不给糖就捣蛋活动门、doors_left 和账号的 stamps。"
+	"docs.articles.data-character.witchcipher": "<b>character.witchcipher</b> 会在这个角色于当天（UTC）加入女巫的密方后，于每轮活动期间出现，显示已使用的调制次数、mixes_left 和获得的 parcels。每轮结束时会消失，并在当天另一轮活动中自动重新出现。<b>character.trickortreat</b> 列出这个角色今天敲过的不给糖就捣蛋活动门、doors_left 和账号的 stamps。",
+	"docs.functions.sell.item_changed": "如果服务器收到请求前，另一件物品被移入所选栏位，出售会失败。",
+	"docs.functions.get_socket.refresh": "send_updates请求可见实体的完整快照。MAINFRAME每秒允许两次请求。发送请求前请先监听entities；响应没有对应的请求ID。"
 }

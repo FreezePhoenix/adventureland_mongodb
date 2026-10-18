@@ -1353,7 +1353,7 @@ async function read_mail_api(args) {
 	var R = await tx(
 		async () => {
 			var mail = await tx_get(A.mail_id);
-			if (mail && !mail.read && mail.owner?.includes(get_id(A.user)) && gf(mail, "receiver") === get_id(A.user)) {
+			if (mail && !mail.read && mail.owner?.includes(get_id(A.user)) && mail_receiver(mail) === get_id(A.user)) {
 				mail.read = true;
 				await tx_save(mail);
 			}
@@ -1408,7 +1408,7 @@ async function pull_mail_api(args) {
 		if (mail.item) {
 			mail_data.item = simplify_item(mail.info.item);
 			mail_data.taken = mail.taken;
-			mail_data.can_take = gf(mail, "receiver") === get_id(user);
+			mail_data.can_take = mail_receiver(mail) === get_id(user);
 		}
 		data.mail.push(mail_data);
 	}

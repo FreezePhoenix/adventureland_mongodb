@@ -877,5 +877,20 @@
 	"update.08_10_26.halloween.map_halloween": "Spooky Forestissa on nyt kaksi ovea, joihin voi koputtaa Karkki vai kepponen -tapahtumassa.",
 	"update.08_10_26.halloween.map_spookytown": "Spooky Townissa on nyt viisi ovea, joihin voi koputtaa Karkki vai kepponen -tapahtumassa.",
 	"update.08_10_26.halloween.events": "Napsauta keskustelun yläpuolella olevaa vierityspalkkia tai maailman kelloa nähdäksesi käynnissä olevat kaudet, tulevat pomot, päivän aktiviteetit ja seuraavan seitsemän päivän tapahtumat. Vaihda oman aikasi ja maailman ajan välillä. Valitse MUISTUTA saadaksesi viestin pelilokiin 10 minuuttia ennen tapahtumaa. Keskustelun yläpuolella oleva vierityspalkki näyttää vuorotellen käynnissä olevia tapahtumia, kolmea seuraavaa tapahtumaa lähtölaskentoineen sekä kausien päättymispäiviä. Vie hiiri vierityspalkin päälle pysäyttääksesi vierityksen tai napsauta sitä avataksesi TAPAHTUMAT. Napsauta X,Y:tä tai maailman nimeä näyttääksesi sen sijaan koordinaattisi; hahmonvalintanäyttö näyttää edelleen seuraavan tapahtuman.",
-	"update.08_10_26.halloween.witchcipher": "Joka päivä klo 06.00 ja 18.00 maailman aikaa Spooky Forestissa oleva Witch unohtaa reseptinsä. Liity kerran UTC-vuorokaudessa molemmille kierroksille, kerää hirviöiltä neljä ainesta ja valmista niistä keitos Witchin luona tai komennolla brew() kokeillaksesi niiden järjestystä. Jokainen sekoitus antaa kaksi vihjettä, jotka kaikki maailman pelaajat näkevät. Kun joku ratkaisee reseptin, Witch unohtaa sen ja uusi resepti alkaa. Ansaitse Witch's Parcels -palkintoja avataksesi ne tai käyttääksesi niitä Witchin resepteissä ympäri vuoden."
+	"update.08_10_26.halloween.witchcipher": "Joka päivä klo 06.00 ja 18.00 maailman aikaa Spooky Forestissa oleva Witch unohtaa reseptinsä. Liity kerran UTC-vuorokaudessa molemmille kierroksille, kerää hirviöiltä neljä ainesta ja valmista niistä keitos Witchin luona tai komennolla brew() kokeillaksesi niiden järjestystä. Jokainen sekoitus antaa kaksi vihjettä, jotka kaikki maailman pelaajat näkevät. Kun joku ratkaisee reseptin, Witch unohtaa sen ja uusi resepti alkaa. Ansaitse Witch's Parcels -palkintoja avataksesi ne tai käyttääksesi niitä Witchin resepteissä ympäri vuoden.",
+	"update.08_10_26.halloween.support_40": "Hirviöt säilyttävät kohteensa, kun aluevahinko kukistaa toisen hahmon.",
+	"update.08_10_26.halloween.support_41": "Hyökkäysnopeus huomioi nyt tilavaikutukset.",
+	"update.08_10_26.halloween.support_42": "Ulkonäön muutokset eivät enää kaada ilman grafiikkaa toimivia hahmoja.",
+	"update.08_10_26.halloween.support_43": "Myrkytyksen mahdollisuutta ei enää arvota kahdesti samalla osumalla.",
+	"update.08_10_26.halloween.support_44": "Puhdistus ei enää poista hirviön luontaista myrkkyhyökkäystä.",
+	"update.08_10_26.halloween.support_45": "Kuolleet hahmot eivät enää voi käyttää juomia tai palautumista.",
+	"update.08_10_26.halloween.support_46": "Dorrin puuttuva reppu on korjattu.",
+	"update.08_10_26.halloween.support_47": "Vastaanottajat voivat taas noutaa vanhojen viestien liitteet.",
+	"update.08_10_26.halloween.support_48": "Taidot voivat kohdistua hahmoihin, joiden nimet koostuvat numeroista.",
+	"update.08_10_26.halloween.support_49": "Käytössä olevan varusteen vetäminen laukun esineen päälle vaihtaa nyt niiden paikat.",
+	"update.08_10_26.halloween.support_50": "Vihamieliset luolahirviöt heräävät osumasta.",
+	"update.08_10_26.halloween.support_51": "Myynti ei enää vie toista esinettä, joka on siirretty valittuun paikkaan.",
+	"update.08_10_26.halloween.support_52": "MAINFRAME hyväksyy nyt send_updates-pyynnön näkyvien olioiden päivittämiseen.",
+	"update.08_10_26.halloween.support_53": "Viivästynyt kirjautumisvastaus ei enää peitä peliä hahmovalinnalla.",
+	"update.08_10_26.halloween.support_54": "Uudelleenyhdistäminen ei enää siirrä keskeneräisen liikkeen määränpäähän."
 }

@@ -1,5 +1,9 @@
 // English documentation catalog. IDs identify source meaning and usage.
 module.exports = {
+	// Raw send_updates snapshot request in browser and MAINFRAME. Keep send_updates, entities and MAINFRAME unchanged. Two requests per second is the MAINFRAME bound; no request correlation.
+	"docs.functions.get_socket.refresh": "send_updates requests a full snapshot of visible entities. MAINFRAME allows two requests per second. Listen for entities before sending the request; the response has no matching request ID.",
+	// sell() item snapshot check. Only stack quantity may change; preserve CODE identifiers.
+	"docs.functions.sell.item_changed": "The sale fails if another item moves into the selected slot before the server receives the request.",
 	// CODE server status: loaded definition flags versus the connected server's current boolean flags. Keep executable identifiers unchanged.
 	"docs.articles.data-server-status.event-flags": "<code>G.event_flags</code> lists the seasons in your loaded game data. Use <code>server.status.event_flags</code> to check which seasons are enabled on your current server. Each flag is true or false. Existing fields such as <code>server.status.holidayseason</code> still work.",
 	// Monster reference. Preserve boundary and boundaries, the two CODE data fields. Definitions do not prove current sightings.

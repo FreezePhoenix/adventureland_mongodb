@@ -877,5 +877,20 @@
 	"update.08_10_26.halloween.map_halloween": "Spooky Forest 現在有兩扇門可以敲響，參加不給糖就搗蛋。",
 	"update.08_10_26.halloween.map_spookytown": "Spooky Town 現在有五扇門可以敲響，參加不給糖就搗蛋。",
 	"update.08_10_26.halloween.events": "點擊聊天視窗上方的捲動列或世界時鐘，查看進行中的季節、即將出現的首領、今日活動及未來七天的活動。你可以切換自己的時間和世界時間。選擇「提醒」，即可在活動開始前10分鐘收到遊戲日誌訊息。聊天視窗上方的捲動列會依序顯示進行中的活動、附有倒數計時的接下來三場活動，以及各季節的結束日期。將滑鼠移到上面可暫停捲動，點擊則可開啟「活動」視窗。點擊 X,Y 或世界名稱可改為顯示你的座標；角色畫面仍會顯示下一場活動。",
-	"update.08_10_26.halloween.witchcipher": "每天世界時間06:00和18:00，Spooky Forest 的 Witch 都會忘記自己的配方。每個UTC日加入一次即可參加兩輪活動。從怪物身上收集四種材料，再到 Witch 處或使用 brew() 調製，測試材料的順序。每次調製都會提供兩個全世界共用的提示。每當有人破解配方，Witch 就會忘記它，並開始一個新配方。獲得 Witch's Parcels 後，可以打開它們，或全年用於 Witch 的配方。"
+	"update.08_10_26.halloween.witchcipher": "每天世界時間06:00和18:00，Spooky Forest 的 Witch 都會忘記自己的配方。每個UTC日加入一次即可參加兩輪活動。從怪物身上收集四種材料，再到 Witch 處或使用 brew() 調製，測試材料的順序。每次調製都會提供兩個全世界共用的提示。每當有人破解配方，Witch 就會忘記它，並開始一個新配方。獲得 Witch's Parcels 後，可以打開它們，或全年用於 Witch 的配方。",
+	"update.08_10_26.halloween.support_40": "範圍傷害擊敗另一名角色時，怪物會保留原目標。",
+	"update.08_10_26.halloween.support_41": "攻擊速度現在會計入狀態效果。",
+	"update.08_10_26.halloween.support_42": "外觀變更不再導致無圖形模式下的角色當機。",
+	"update.08_10_26.halloween.support_43": "同一次命中不再進行兩次中毒判定。",
+	"update.08_10_26.halloween.support_44": "淨化不再移除怪物天生的毒攻擊。",
+	"update.08_10_26.halloween.support_45": "死亡角色不再能使用藥水或恢復技能。",
+	"update.08_10_26.halloween.support_46": "修正了Dorr背包缺失的問題。",
+	"update.08_10_26.halloween.support_47": "收件人可以再次領取舊郵件的附件。",
+	"update.08_10_26.halloween.support_48": "技能可以指定名稱全為數字的角色為目標。",
+	"update.08_10_26.halloween.support_49": "將已裝備的物品拖曳到背包物品上，現在會交換兩者。",
+	"update.08_10_26.halloween.support_50": "洞窟中的敵對怪物受到攻擊後會醒來。",
+	"update.08_10_26.halloween.support_51": "出售時不再賣掉後來移入所選欄位的另一件物品。",
+	"update.08_10_26.halloween.support_52": "MAINFRAME現在支援透過send_updates更新可見實體。",
+	"update.08_10_26.halloween.support_53": "延遲的登入回應不再讓角色選擇介面遮住遊戲。",
+	"update.08_10_26.halloween.support_54": "重新連線不再跳到尚未完成的移動目的地。"
 }

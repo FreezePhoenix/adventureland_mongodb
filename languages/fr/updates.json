@@ -877,5 +877,20 @@
 	"update.08_10_26.halloween.map_halloween": "Deux portes de Spooky Forest permettent désormais de frapper pour jouer à « Des bonbons ou un sort ».",
 	"update.08_10_26.halloween.map_spookytown": "Cinq portes de Spooky Town permettent désormais de frapper pour jouer à « Des bonbons ou un sort ».",
 	"update.08_10_26.halloween.events": "Cliquez sur la barre ou l'horloge du monde au-dessus du chat pour voir les saisons en cours, les prochains boss, les activités du jour et les événements des sept prochains jours. Basculez entre votre heure locale et l'heure du monde. Choisissez RAPPELER pour recevoir un message dans le journal de jeu 10 minutes avant un événement. La barre au-dessus du chat fait défiler les événements en cours, les trois prochains événements avec leur compte à rebours et les dates de fin des saisons ; survolez-la pour arrêter le défilement ou cliquez dessus pour ouvrir ÉVÉNEMENTS. Cliquez sur X,Y ou sur le nom du monde pour afficher vos coordonnées à la place ; l'écran de vos personnages affiche toujours le prochain événement.",
-	"update.08_10_26.halloween.witchcipher": "Chaque jour à 6 h et à 18 h, heure du monde, la Witch de Spooky Forest oublie sa recette. Rejoignez l'événement une fois par jour UTC pour les deux manches, récupérez quatre ingrédients sur les monstres et préparez-les auprès de la Witch, ou avec brew(), pour tester leur ordre. Chaque mélange donne deux indices partagés avec tout le monde. Quand quelqu'un trouve la recette, la Witch l'oublie et une nouvelle commence. Gagnez des Witch's Parcels à ouvrir ou à utiliser dans les recettes de la Witch, toute l'année."
+	"update.08_10_26.halloween.witchcipher": "Chaque jour à 6 h et à 18 h, heure du monde, la Witch de Spooky Forest oublie sa recette. Rejoignez l'événement une fois par jour UTC pour les deux manches, récupérez quatre ingrédients sur les monstres et préparez-les auprès de la Witch, ou avec brew(), pour tester leur ordre. Chaque mélange donne deux indices partagés avec tout le monde. Quand quelqu'un trouve la recette, la Witch l'oublie et une nouvelle commence. Gagnez des Witch's Parcels à ouvrir ou à utiliser dans les recettes de la Witch, toute l'année.",
+	"update.08_10_26.halloween.support_40": "Les monstres gardent leur cible quand des dégâts de zone vainquent un autre personnage.",
+	"update.08_10_26.halloween.support_41": "La vitesse d'attaque tient désormais compte des effets d'état.",
+	"update.08_10_26.halloween.support_42": "Les changements d'apparence ne font plus planter les personnages exécutés sans graphismes.",
+	"update.08_10_26.halloween.support_43": "La chance d'empoisonner n'est plus calculée deux fois pour un même coup.",
+	"update.08_10_26.halloween.support_44": "Purification ne retire plus l'attaque empoisonnée naturelle d'un monstre.",
+	"update.08_10_26.halloween.support_45": "Les personnages morts ne peuvent plus utiliser de potions ni de régénération.",
+	"update.08_10_26.halloween.support_46": "Le sac à dos manquant de Dorr a été corrigé.",
+	"update.08_10_26.halloween.support_47": "Les destinataires peuvent à nouveau récupérer les pièces jointes des anciens courriers.",
+	"update.08_10_26.halloween.support_48": "Les compétences peuvent cibler les personnages dont le nom est composé de chiffres.",
+	"update.08_10_26.halloween.support_49": "Glisser un équipement porté sur un objet du sac les échange désormais.",
+	"update.08_10_26.halloween.support_50": "Les monstres hostiles de la grotte se réveillent quand ils sont touchés.",
+	"update.08_10_26.halloween.support_51": "La vente ne prend plus un autre objet déplacé dans l'emplacement sélectionné.",
+	"update.08_10_26.halloween.support_52": "MAINFRAME accepte désormais send_updates pour actualiser les entités visibles.",
+	"update.08_10_26.halloween.support_53": "Une réponse de connexion tardive ne recouvre plus le jeu avec le sélecteur de personnages.",
+	"update.08_10_26.halloween.support_54": "Se reconnecter ne téléporte plus à la destination d'un déplacement inachevé."
 }

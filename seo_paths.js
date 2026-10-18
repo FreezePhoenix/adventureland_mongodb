@@ -17,6 +17,8 @@ const DOCS_PATHS = [
 	"/docs/code/functions/enter",
 	"/docs/code/functions/get_nearest_monster",
 	"/docs/code/functions/buy",
+	"/docs/code/functions/sell",
+	"/docs/code/functions/get_socket",
 	"/docs/code/functions/giveaway",
 	"/docs/code/functions/trade_offer",
 	"/docs/code/functions/trade",

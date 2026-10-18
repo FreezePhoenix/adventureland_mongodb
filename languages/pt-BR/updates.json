@@ -877,5 +877,20 @@
 	"update.08_10_26.halloween.map_halloween": "Agora você pode bater em duas portas de Spooky Forest para participar de Doces ou Travessuras.",
 	"update.08_10_26.halloween.map_spookytown": "Agora você pode bater em cinco portas de Spooky Town para participar de Doces ou Travessuras.",
 	"update.08_10_26.halloween.events": "Clique na barra ou no relógio do mundo acima do chat para ver as temporadas ativas, os próximos chefes, as atividades de hoje e os eventos dos próximos sete dias. Alterne entre seu horário e o horário do mundo. Escolha LEMBRAR para receber uma mensagem no registro do jogo 10 minutos antes de um evento. A barra acima do chat exibe em sequência os eventos em andamento, os próximos três eventos com contagem regressiva e as datas de término das temporadas; passe o mouse sobre ela para pausar ou clique para abrir EVENTOS. Clique em X,Y ou no nome do mundo para mostrar suas coordenadas no lugar; a tela do personagem continua mostrando o próximo evento.",
-	"update.08_10_26.halloween.witchcipher": "Todos os dias às 06:00 e às 18:00, no horário do mundo, a Witch de Spooky Forest esquece sua receita. Participe uma vez por dia UTC para as duas rodadas, colete quatro ingredientes dos monstros e misture-os na Witch ou com brew() para testar a ordem. Cada mistura revela duas dicas compartilhadas com todo o mundo. Quando alguém decifra a receita, a Witch a esquece e uma nova começa. Ganhe Witch's Parcels para abrir ou usar nas receitas da Witch durante o ano todo."
+	"update.08_10_26.halloween.witchcipher": "Todos os dias às 06:00 e às 18:00, no horário do mundo, a Witch de Spooky Forest esquece sua receita. Participe uma vez por dia UTC para as duas rodadas, colete quatro ingredientes dos monstros e misture-os na Witch ou com brew() para testar a ordem. Cada mistura revela duas dicas compartilhadas com todo o mundo. Quando alguém decifra a receita, a Witch a esquece e uma nova começa. Ganhe Witch's Parcels para abrir ou usar nas receitas da Witch durante o ano todo.",
+	"update.08_10_26.halloween.support_40": "Monstros mantêm o alvo quando o dano em área derrota outro personagem.",
+	"update.08_10_26.halloween.support_41": "A velocidade de ataque agora inclui os efeitos de condições.",
+	"update.08_10_26.halloween.support_42": "Mudanças de aparência não causam mais falhas em personagens que funcionam sem gráficos.",
+	"update.08_10_26.halloween.support_43": "A chance de envenenar não é mais calculada duas vezes no mesmo golpe.",
+	"update.08_10_26.halloween.support_44": "Purificar não remove mais o ataque venenoso natural de um monstro.",
+	"update.08_10_26.halloween.support_45": "Personagens mortos não podem mais usar poções ou regeneração.",
+	"update.08_10_26.halloween.support_46": "Corrigida a mochila ausente de Dorr.",
+	"update.08_10_26.halloween.support_47": "Destinatários podem voltar a retirar anexos de mensagens antigas.",
+	"update.08_10_26.halloween.support_48": "Habilidades podem selecionar personagens com nomes numéricos como alvo.",
+	"update.08_10_26.halloween.support_49": "Arrastar equipamento usado sobre um item da bolsa agora troca os dois de lugar.",
+	"update.08_10_26.halloween.support_50": "Monstros hostis da caverna acordam ao serem atingidos.",
+	"update.08_10_26.halloween.support_51": "Vender não leva mais outro item que tenha sido movido para o espaço selecionado.",
+	"update.08_10_26.halloween.support_52": "MAINFRAME agora aceita send_updates para atualizar as entidades visíveis.",
+	"update.08_10_26.halloween.support_53": "Uma resposta de login atrasada não cobre mais o jogo com a seleção de personagens.",
+	"update.08_10_26.halloween.support_54": "Reconectar não leva mais ao destino de um movimento inacabado."
 }

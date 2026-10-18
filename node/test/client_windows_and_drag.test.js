@@ -78,13 +78,22 @@ test("inventory, bank and equipment drops keep their existing socket requests, i
 		[{ snum: 0 }, { cnum: 0 }, "bank", { operation: "swap", inv: 0, str: 0, pack: "items0" }],
 		[{ snum: 0 }, { strnum: 1 }, "bank", { operation: "move", a: 0, b: 1, pack: "items0" }],
 		[{ inum: 0 }, { slot: "mainhand" }, "equip", { num: 0, slot: "mainhand" }],
-		[{ sname: "mainhand" }, { cnum: 0 }, "unequip", { slot: "mainhand", position: 0 }],
+		[{ sname: "mainhand" }, { cnum: 0 }, "equip", { num: 0, slot: "mainhand" }],
 	]) {
 		const runtime = drag_runtime(source, target);
 		runtime.drop();
 		assert.deepEqual(runtime.packets, [[event, packet]]);
 		assert.deepEqual(runtime.deferred, [event]);
 	}
+});
+
+test("equipment dragged onto an occupied bag slot swaps; an empty slot still unequips", () => {
+	const h = drag_runtime({ sname: "offhand" }, { cnum: 1 });
+	h.drop();
+	assert.deepEqual(h.packets, [["equip", { num: 1, slot: "offhand" }]]);
+	h.context.character.items[1] = null;
+	h.drop();
+	assert.deepEqual(h.packets[1], ["unequip", { slot: "offhand", position: 1 }]);
 });
 
 test("trade drops still open the existing listing dialogue without moving the item", () => {
@@ -201,7 +210,7 @@ test("main and both secondary-window commands retain the native drag/drop fix an
 	assert.match(source, /async fn create_subwindow[\s\S]*?open_subwindow\(app, &state/);
 	assert.match(
 		source,
-		/async fn create_character_window[\s\S]*?open_subwindow\(app, &state, character_window_url\(&url\)\?\)/,
+		/async fn create_character_window[\s\S]*?character_window_url\(&url, compatibility_mode\(&state\)\)\?;\s*open_subwindow\(app, &state, url\)/,
 	);
 	assert.match(source, /if open_subwindows >= 4/);
 	assert.ok(

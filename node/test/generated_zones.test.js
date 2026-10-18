@@ -672,7 +672,7 @@ test("a cave gold letter can be claimed once by its assigned character", async (
 		info: { sender: p.owner, receiver: p.owner, item: JSON.stringify({ gold: 1234 }) },
 	};
 	const store = transactions(c, [mail]);
-	load(c, "adventure_functions.js", ["gf"]);
+	load(c, "adventure_functions.js", ["gf", "mail_receiver"]);
 	c.get = async (id) => clone(store.records.get(id));
 	const handler = socketHandler(c, "mail_take_item");
 	handler({ id: mail._id, request_id: "one" });
@@ -1886,9 +1886,7 @@ test("cave revival translates choices and results while keeping canonical CODE f
 	assert.equal(display(resolved.result_message), "Es wurde keine Antwort gewählt.");
 	assert.ok(resolved.summary.includes("You are back at the doorway. No Amber spent."));
 	assert.ok(
-		resolved.summary_messages.some(
-			(entry) => display(entry) === "Ihr seid wieder am Eingang. Kein Amber ausgegeben.",
-		),
+		resolved.summary_messages.some((entry) => display(entry) === "Ihr seid wieder am Eingang. Kein Amber ausgegeben."),
 	);
 	assert.equal(logs[0].message, "You are back at the doorway. No Amber spent.");
 	assert.equal(display(logs[0]), "Ihr seid wieder am Eingang. Kein Amber ausgegeben.");

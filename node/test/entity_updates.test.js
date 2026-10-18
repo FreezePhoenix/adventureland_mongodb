@@ -2,8 +2,46 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const vm = require("node:vm");
-const { read } = require("./helpers/server_vm");
+const { read, extract, socketHandler } = require("./helpers/server_vm");
 const { server, client, player, observer, send } = require("./helpers/entity_updates");
+
+test("the documented refresh example displays one full snapshot and removes its listener", () => {
+	const { EventEmitter } = require("node:events");
+	const socket = new EventEmitter(),
+		shown = [],
+		requests = [];
+	socket.on("send_updates", () => requests.push("refresh"));
+	const c = vm.createContext({ parent: { socket }, show_json: (value) => shown.push(value) });
+	vm.runInContext(extract(read("js/runner_functions.js"), "get_socket"), c);
+	const example = read("docs/functions/get_socket.html").match(
+		/<div class='code'>(var socket = get_socket\(\);[\s\S]*?)<\/div>/,
+	)[1];
+	vm.runInContext(example, c);
+	assert.deepEqual(requests, ["refresh"]);
+	socket.emit("entities", { type: "xy", players: [], monsters: [] });
+	assert.equal(shown.length, 0);
+	const full = { type: "all", players: [{ id: "Self", x: 15, y: 25 }], monsters: [] };
+	socket.emit("entities", full);
+	socket.emit("entities", full);
+	assert.deepEqual(shown, [full]);
+	assert.equal(socket.listenerCount("entities"), 0);
+});
+
+test("send_updates ignores caller identity and refreshes only the authenticated view", () => {
+	const own = { id: "authenticated" },
+		calls = [];
+	const c = vm.createContext({
+		socket: { id: "connection" },
+		players: { connection: own },
+		observers: {},
+		send_all_xy: (value) => calls.push(value),
+	});
+	socketHandler(c, "send_updates")({ id: "someone_else", x: 9000 });
+	assert.deepEqual(calls, [own]);
+	delete c.players.connection;
+	socketHandler(c, "send_updates")({ id: "authenticated" });
+	assert.equal(calls.length, 1);
+});
 
 test("movement packets retain unchanged coordinates needed by the native client", () => {
 	const c = server(),

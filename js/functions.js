@@ -3570,7 +3570,7 @@ function split(num, quantity) {
 function sell(num, quantity) {
 	if (!quantity) quantity = 1;
 	var promise = push_deferred("sell");
-	socket.emit("sell", { num: num, quantity: quantity });
+	socket.emit("sell", { num: num, quantity: quantity, item: character.items[num] || null });
 	try {
 		$(".sellnum").html(max(0, character.items[num].q - quantity));
 	} catch (e) {
@@ -4491,6 +4491,7 @@ function restore_dimensions(sprite) {
 }
 
 function set_texture(sprite, i, j) {
+	if (no_graphics) return;
 	var c = i + "" + j;
 	sprite.i = i;
 	sprite.j = j;
@@ -6908,6 +6909,7 @@ function handle_information(infs) {
 			if (inside == "message") $("#message").html(info.message);
 			else ui_success(info.message);
 		} else if (info.type == "content") {
+			if (info.screen == "selection" && inside == "game") continue;
 			$("#content").html(info.html);
 			resize();
 		} else if (info.type == "eval") {

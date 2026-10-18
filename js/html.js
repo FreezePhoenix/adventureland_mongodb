@@ -6190,9 +6190,13 @@ function on_drop(event) {
 		// drop in the same slot
 		if (is_mobile && mssince(last_drag_start) < 300) slot_click(slot);
 	} else if (cnum != undefined && sname != undefined) {
-		socket.emit("unequip", { slot: sname, position: cnum });
-		push_deferred("unequip");
-		// swap=true; #GTODO: Implement position
+		if (character.items[cnum] && !in_arr(sname, trade_slots)) {
+			socket.emit("equip", { num: cnum, slot: sname });
+			push_deferred("equip");
+		} else {
+			socket.emit("unequip", { slot: sname, position: cnum });
+			push_deferred("unequip");
+		}
 	} else if (slot != undefined && inum != undefined) {
 		if (in_arr(slot, trade_slots)) {
 			if (character.slots[slot]) return;

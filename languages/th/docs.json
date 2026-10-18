@@ -2793,5 +2793,7 @@
 	"docs.articles.data-server-status.witchcipher": "<b>ปริศนาของ Witch</b>: server.status.witchcipher แสดงกิจกรรมของวันนี้บนโลกนี้ รวมถึงกระดานเบาะแสที่ใช้ร่วมกัน",
 	"docs.articles.data-server-status.graveyard": "<b>สุสานคืนชีพ</b>: server.status.graveyard แสดงระลอกปัจจุบัน จำนวนมอนสเตอร์ที่ฟื้นขึ้นมาและยังเหลืออยู่ และพลังชีวิตของ Gargoyle หลังจากมันตื่น",
 	"docs.articles.data-server-status.event-ends": "<b>สิ้นสุดเทศกาล</b>: server.status.event_ends ให้เวลาสิ้นสุดของแต่ละเทศกาลที่กำลังดำเนินอยู่ หากมีการกำหนดไว้ โดยใช้หน่วยมิลลิวินาทีของ Unix วันสุดท้ายคือวันตาม UTC ก่อนเวลานั้น",
-	"docs.articles.data-character.witchcipher": "<b>character.witchcipher</b> จะปรากฏระหว่างรอบของปริศนาของ Witch หลังจากตัวละครนี้เข้าร่วมในวันนั้นตาม UTC โดยแสดงจำนวนครั้งที่ผสมไปแล้ว mixes_left และ parcels ที่ได้รับ ข้อมูลนี้จะหายไปเมื่อจบรอบและกลับมาโดยอัตโนมัติในอีกรอบของวันเดียวกัน <b>character.trickortreat</b> แสดงรายการประตูหลอกหรือเลี้ยงที่ตัวละครนี้เคาะในวันนี้ รวมถึง doors_left และ stamps ของบัญชี"
+	"docs.articles.data-character.witchcipher": "<b>character.witchcipher</b> จะปรากฏระหว่างรอบของปริศนาของ Witch หลังจากตัวละครนี้เข้าร่วมในวันนั้นตาม UTC โดยแสดงจำนวนครั้งที่ผสมไปแล้ว mixes_left และ parcels ที่ได้รับ ข้อมูลนี้จะหายไปเมื่อจบรอบและกลับมาโดยอัตโนมัติในอีกรอบของวันเดียวกัน <b>character.trickortreat</b> แสดงรายการประตูหลอกหรือเลี้ยงที่ตัวละครนี้เคาะในวันนี้ รวมถึง doors_left และ stamps ของบัญชี",
+	"docs.functions.sell.item_changed": "การขายจะล้มเหลวหากมีไอเทมอื่นย้ายเข้ามาในช่องที่เลือกก่อนเซิร์ฟเวอร์รับคำขอ",
+	"docs.functions.get_socket.refresh": "send_updates ขอภาพรวมสถานะทั้งหมดของเอนทิตีที่มองเห็น MAINFRAME อนุญาตสองคำขอต่อวินาที ให้ฟัง entities ก่อนส่งคำขอ คำตอบไม่มีรหัสคำขอที่จับคู่กัน"
 }

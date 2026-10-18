@@ -877,5 +877,20 @@
 	"update.08_10_26.halloween.map_halloween": "Maaari ka nang kumatok sa dalawang pinto sa Spooky Forest para sa Trick or Treat.",
 	"update.08_10_26.halloween.map_spookytown": "Maaari ka nang kumatok sa limang pinto sa Spooky Town para sa Trick or Treat.",
 	"update.08_10_26.halloween.events": "I-click ang bar o orasan ng Mundo sa itaas ng chat para makita ang mga kasalukuyang season, mga paparating na boss, mga aktibidad ngayong araw at mga kaganapan sa susunod na pitong araw. Lumipat sa pagitan ng oras mo at oras ng Mundo. Piliin ang PAALALAHANAN para makatanggap ng mensahe sa game log 10 minuto bago ang isang kaganapan. Ang bar sa itaas ng chat ay patuloy na nag-i-scroll sa mga kasalukuyang kaganapan, sa susunod na tatlong kaganapan na may countdown, at sa mga petsa ng pagtatapos ng bawat season. Itapat ang mouse dito para i-pause ang pag-scroll, o i-click para buksan ang MGA KAGANAPAN. I-click ang X,Y o ang pangalan ng Mundo para ipakita sa halip ang mga coordinate mo; ipinapakita pa rin ng screen ng karakter mo ang susunod na kaganapan.",
-	"update.08_10_26.halloween.witchcipher": "Araw-araw sa 06:00 at 18:00 ayon sa oras ng Mundo, nakakalimutan ng Witch sa Spooky Forest ang kaniyang recipe. Sumali nang isang beses kada araw sa UTC para sa parehong round, mangolekta ng apat na sangkap mula sa mga halimaw at timplahin ang mga ito sa Witch, o gamit ang brew(), para subukan ang pagkakasunod-sunod. Bawat timpla ay nagbibigay ng dalawang clue na ibinabahagi sa buong Mundo. Kapag may nakalutas ng recipe, nakakalimutan ito ng Witch at nagsisimula ang bago. Makakuha ng Witch's Parcels na maaari mong buksan o gamitin sa mga recipe ng Witch, buong taon."
+	"update.08_10_26.halloween.witchcipher": "Araw-araw sa 06:00 at 18:00 ayon sa oras ng Mundo, nakakalimutan ng Witch sa Spooky Forest ang kaniyang recipe. Sumali nang isang beses kada araw sa UTC para sa parehong round, mangolekta ng apat na sangkap mula sa mga halimaw at timplahin ang mga ito sa Witch, o gamit ang brew(), para subukan ang pagkakasunod-sunod. Bawat timpla ay nagbibigay ng dalawang clue na ibinabahagi sa buong Mundo. Kapag may nakalutas ng recipe, nakakalimutan ito ng Witch at nagsisimula ang bago. Makakuha ng Witch's Parcels na maaari mong buksan o gamitin sa mga recipe ng Witch, buong taon.",
+	"update.08_10_26.halloween.support_40": "Pinapanatili ng mga halimaw ang kanilang target kapag natalo ng pinsala sa paligid ang ibang karakter.",
+	"update.08_10_26.halloween.support_41": "Kasama na sa bilis ng pag-atake ang mga epekto ng kondisyon.",
+	"update.08_10_26.halloween.support_42": "Hindi na nagka-crash ang mga karakter na tumatakbo nang walang graphics kapag nagbago ang anyo.",
+	"update.08_10_26.halloween.support_43": "Hindi na dalawang beses kinakalkula ang tsansa ng pagkalason sa iisang tama.",
+	"update.08_10_26.halloween.support_44": "Hindi na inaalis ng Linisin ang likas na pag-atakeng may lason ng halimaw.",
+	"update.08_10_26.halloween.support_45": "Hindi na makakagamit ng potion o regeneration ang mga patay na karakter.",
+	"update.08_10_26.halloween.support_46": "Naayos ang nawawalang backpack ni Dorr.",
+	"update.08_10_26.halloween.support_47": "Makukuha na ulit ng mga tatanggap ang kalakip ng mga lumang sulat.",
+	"update.08_10_26.halloween.support_48": "Maaaring i-target ng mga kasanayan ang mga karakter na puro numero ang pangalan.",
+	"update.08_10_26.halloween.support_49": "Napagpapalit na ang suot na kagamitan at item sa bag kapag kinaladkad ang una sa ibabaw ng ikalawa.",
+	"update.08_10_26.halloween.support_50": "Nagigising ang mga kalabang halimaw sa kuweba kapag natamaan.",
+	"update.08_10_26.halloween.support_51": "Hindi na kinukuha ng pagbebenta ang ibang item na nailipat sa napiling puwesto.",
+	"update.08_10_26.halloween.support_52": "Tumatanggap na ang MAINFRAME ng send_updates para i-refresh ang mga nakikitang entidad.",
+	"update.08_10_26.halloween.support_53": "Hindi na tinatakpan ng nahuling tugon sa pag-login ang laro ng pagpili ng karakter.",
+	"update.08_10_26.halloween.support_54": "Hindi na lumulundag ang muling pagkonekta sa destinasyon ng hindi pa tapos na paggalaw."
 }

@@ -877,5 +877,20 @@
 	"update.08_10_26.halloween.map_halloween": "Hai cánh cửa ở Spooky Forest giờ có thể gõ để tham gia Cho Kẹo Hay Bị Ghẹo.",
 	"update.08_10_26.halloween.map_spookytown": "Năm cánh cửa ở Spooky Town giờ có thể gõ để tham gia Cho Kẹo Hay Bị Ghẹo.",
 	"update.08_10_26.halloween.events": "Nhấp vào thanh trượt hoặc đồng hồ thế giới phía trên khung chat để xem các mùa đang diễn ra, trùm sắp xuất hiện, hoạt động hôm nay và lịch sự kiện trong bảy ngày tới. Chuyển đổi giữa giờ của bạn và giờ thế giới. Chọn NHẮC để nhận thông báo trong nhật ký trò chơi 10 phút trước một sự kiện. Thanh trượt phía trên khung chat liên tục cuộn qua các sự kiện đang diễn ra, ba sự kiện tiếp theo kèm đồng hồ đếm ngược và ngày kết thúc của từng mùa. Di chuột lên thanh trượt để tạm dừng hoặc nhấp vào để mở SỰ KIỆN. Nhấp X,Y hoặc tên thế giới để hiển thị tọa độ của bạn thay thế; màn hình nhân vật của bạn vẫn hiển thị sự kiện tiếp theo.",
-	"update.08_10_26.halloween.witchcipher": "Mỗi ngày lúc 06:00 và 18:00 theo giờ thế giới, Witch ở Spooky Forest lại quên công thức của mình. Chỉ cần tham gia một lần mỗi ngày UTC cho cả hai lượt, thu thập bốn nguyên liệu từ quái vật rồi pha chế tại Witch hoặc dùng brew() để thử thứ tự của chúng. Mỗi lượt pha chế cho hai manh mối được chia sẻ với cả thế giới. Khi có người giải mã được công thức, Witch quên công thức đó và một công thức mới bắt đầu. Kiếm Witch's Parcels để mở hoặc dùng trong các công thức của Witch quanh năm."
+	"update.08_10_26.halloween.witchcipher": "Mỗi ngày lúc 06:00 và 18:00 theo giờ thế giới, Witch ở Spooky Forest lại quên công thức của mình. Chỉ cần tham gia một lần mỗi ngày UTC cho cả hai lượt, thu thập bốn nguyên liệu từ quái vật rồi pha chế tại Witch hoặc dùng brew() để thử thứ tự của chúng. Mỗi lượt pha chế cho hai manh mối được chia sẻ với cả thế giới. Khi có người giải mã được công thức, Witch quên công thức đó và một công thức mới bắt đầu. Kiếm Witch's Parcels để mở hoặc dùng trong các công thức của Witch quanh năm.",
+	"update.08_10_26.halloween.support_40": "Quái vật giữ mục tiêu khi sát thương diện rộng hạ gục nhân vật khác.",
+	"update.08_10_26.halloween.support_41": "Tốc độ đánh giờ tính cả hiệu ứng trạng thái.",
+	"update.08_10_26.halloween.support_42": "Thay đổi ngoại hình không còn làm nhân vật chạy không đồ họa bị lỗi dừng.",
+	"update.08_10_26.halloween.support_43": "Cơ hội gây độc không còn được tính hai lần trong cùng một đòn trúng.",
+	"update.08_10_26.halloween.support_44": "Thanh tẩy không còn xóa đòn đánh độc bẩm sinh của quái vật.",
+	"update.08_10_26.halloween.support_45": "Nhân vật đã chết không còn dùng được thuốc hay hồi phục.",
+	"update.08_10_26.halloween.support_46": "Đã sửa lỗi mất ba lô của Dorr.",
+	"update.08_10_26.halloween.support_47": "Người nhận có thể lấy lại vật phẩm đính kèm trong thư cũ.",
+	"update.08_10_26.halloween.support_48": "Kỹ năng có thể chọn nhân vật có tên toàn chữ số làm mục tiêu.",
+	"update.08_10_26.halloween.support_49": "Kéo trang bị đang mặc lên vật phẩm trong túi giờ sẽ hoán đổi hai món.",
+	"update.08_10_26.halloween.support_50": "Quái vật thù địch trong hang tỉnh dậy khi bị đánh trúng.",
+	"update.08_10_26.halloween.support_51": "Bán đồ không còn lấy nhầm món khác vừa chuyển vào ô đã chọn.",
+	"update.08_10_26.halloween.support_52": "MAINFRAME giờ chấp nhận send_updates để làm mới các thực thể nhìn thấy được.",
+	"update.08_10_26.halloween.support_53": "Phản hồi đăng nhập đến muộn không còn che trò chơi bằng màn hình chọn nhân vật.",
+	"update.08_10_26.halloween.support_54": "Kết nối lại không còn nhảy tới đích của bước di chuyển chưa hoàn tất."
 }

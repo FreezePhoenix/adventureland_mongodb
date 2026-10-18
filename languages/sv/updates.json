@@ -877,5 +877,20 @@
 	"update.08_10_26.halloween.map_halloween": "Två dörrar i Spooky Forest låter dig nu knacka på för Bus eller godis.",
 	"update.08_10_26.halloween.map_spookytown": "Fem dörrar i Spooky Town låter dig nu knacka på för Bus eller godis.",
 	"update.08_10_26.halloween.events": "Klicka på det rullande fältet eller världsklockan ovanför chatten för att se pågående säsonger, kommande bossar, dagens aktiviteter och de kommande sju dagarnas evenemang. Växla mellan din tid och världens tid. Välj PÅMINN för att få ett meddelande i spelloggen 10 minuter före ett evenemang. Det rullande fältet ovanför chatten visar pågående evenemang, de tre kommande evenemangen med nedräkningar och datumen då säsongerna slutar. Håll muspekaren över fältet för att pausa eller klicka för att öppna EVENEMANG. Klicka på X,Y eller världens namn för att visa dina koordinater i stället; din karaktärsskärm visar fortfarande nästa evenemang.",
-	"update.08_10_26.halloween.witchcipher": "Varje dag kl. 06:00 och 18:00 enligt världsklockan glömmer Witch i Spooky Forest sitt recept. Delta en gång per UTC-dag för båda omgångarna, samla fyra ingredienser från monster och brygg dem hos Witch, eller med brew(), för att testa deras ordning. Varje blandning ger två ledtrådar som delas med hela världen. När någon knäcker receptet glömmer Witch det och ett nytt börjar. Tjäna Witch's Parcels som du kan öppna eller använda i Witchs recept, året runt."
+	"update.08_10_26.halloween.witchcipher": "Varje dag kl. 06:00 och 18:00 enligt världsklockan glömmer Witch i Spooky Forest sitt recept. Delta en gång per UTC-dag för båda omgångarna, samla fyra ingredienser från monster och brygg dem hos Witch, eller med brew(), för att testa deras ordning. Varje blandning ger två ledtrådar som delas med hela världen. När någon knäcker receptet glömmer Witch det och ett nytt börjar. Tjäna Witch's Parcels som du kan öppna eller använda i Witchs recept, året runt.",
+	"update.08_10_26.halloween.support_40": "Monster behåller sitt mål när områdesskada besegrar en annan karaktär.",
+	"update.08_10_26.halloween.support_41": "Attackhastigheten tar nu hänsyn till tillståndseffekter.",
+	"update.08_10_26.halloween.support_42": "Utseendeändringar kraschar inte längre karaktärer som körs utan grafik.",
+	"update.08_10_26.halloween.support_43": "Giftchansen slås inte längre två gånger för samma träff.",
+	"update.08_10_26.halloween.support_44": "Rena tar inte längre bort ett monsters naturliga giftattack.",
+	"update.08_10_26.halloween.support_45": "Döda karaktärer kan inte längre använda drycker eller regenerering.",
+	"update.08_10_26.halloween.support_46": "Dorrs saknade ryggsäck har rättats till.",
+	"update.08_10_26.halloween.support_47": "Mottagare kan åter hämta bilagor från äldre post.",
+	"update.08_10_26.halloween.support_48": "Färdigheter kan rikta in sig på karaktärer med namn som består av siffror.",
+	"update.08_10_26.halloween.support_49": "Att dra utrustning som används till ett föremål i väskan byter nu plats på dem.",
+	"update.08_10_26.halloween.support_50": "Fientliga grottmonster vaknar när de träffas.",
+	"update.08_10_26.halloween.support_51": "Försäljning tar inte längre ett annat föremål som flyttats till den valda platsen.",
+	"update.08_10_26.halloween.support_52": "MAINFRAME accepterar nu send_updates för att uppdatera synliga entiteter.",
+	"update.08_10_26.halloween.support_53": "Ett försenat inloggningssvar täcker inte längre spelet med karaktärsväljaren.",
+	"update.08_10_26.halloween.support_54": "Återanslutning hoppar inte längre till målet för en oavslutad förflyttning."
 }

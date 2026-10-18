@@ -877,5 +877,20 @@
 	"update.08_10_26.halloween.map_halloween": "Bij twee deuren in Spooky Forest kun je nu aankloppen voor Snoep of Je Leven.",
 	"update.08_10_26.halloween.map_spookytown": "Bij vijf deuren in Spooky Town kun je nu aankloppen voor Snoep of Je Leven.",
 	"update.08_10_26.halloween.events": "Klik op de schuifbalk of de wereldklok boven de chat om actieve seizoenen, aankomende bazen, de activiteiten van vandaag en de evenementen van de komende zeven dagen te bekijken. Wissel tussen je eigen tijd en de wereldklok. Kies HERINNER om 10 minuten voor een evenement een bericht in het spellogboek te krijgen. De schuifbalk boven de chat laat afwisselend lopende evenementen, de volgende drie evenementen met aftellingen en de einddatums van seizoenen zien. Houd je muis erboven om het scrollen te pauzeren of klik erop om EVENEMENTEN te openen. Klik op X,Y of de wereldnaam om in plaats daarvan je coördinaten te tonen; je personagescherm toont nog steeds het volgende evenement.",
-	"update.08_10_26.halloween.witchcipher": "Elke dag om 06:00 en 18:00 uur volgens de wereldklok vergeet de Witch in Spooky Forest haar recept. Doe één keer per UTC-dag mee aan beide rondes, verzamel vier ingrediënten van monsters en brouw ze bij de Witch, of met brew(), om hun volgorde te testen. Elke mix geeft twee aanwijzingen die met de hele wereld worden gedeeld. Wanneer iemand het recept ontdekt, vergeet de Witch het en begint er een nieuw recept. Verdien Witch's Parcels om te openen of het hele jaar door voor de recepten van de Witch te gebruiken."
+	"update.08_10_26.halloween.witchcipher": "Elke dag om 06:00 en 18:00 uur volgens de wereldklok vergeet de Witch in Spooky Forest haar recept. Doe één keer per UTC-dag mee aan beide rondes, verzamel vier ingrediënten van monsters en brouw ze bij de Witch, of met brew(), om hun volgorde te testen. Elke mix geeft twee aanwijzingen die met de hele wereld worden gedeeld. Wanneer iemand het recept ontdekt, vergeet de Witch het en begint er een nieuw recept. Verdien Witch's Parcels om te openen of het hele jaar door voor de recepten van de Witch te gebruiken.",
+	"update.08_10_26.halloween.support_40": "Monsters behouden hun doelwit als gebiedsschade een ander personage verslaat.",
+	"update.08_10_26.halloween.support_41": "De aanvalssnelheid houdt nu rekening met statuseffecten.",
+	"update.08_10_26.halloween.support_42": "Uiterlijkveranderingen laten personages zonder grafische weergave niet meer vastlopen.",
+	"update.08_10_26.halloween.support_43": "De vergiftigingskans wordt niet meer twee keer per treffer berekend.",
+	"update.08_10_26.halloween.support_44": "Zuiveren verwijdert niet meer de natuurlijke gifaanval van een monster.",
+	"update.08_10_26.halloween.support_45": "Dode personages kunnen geen drankjes of regeneratie meer gebruiken.",
+	"update.08_10_26.halloween.support_46": "De ontbrekende rugzak van Dorr is hersteld.",
+	"update.08_10_26.halloween.support_47": "Ontvangers kunnen weer bijlagen uit oudere post ophalen.",
+	"update.08_10_26.halloween.support_48": "Vaardigheden kunnen personages met namen die uit cijfers bestaan als doelwit kiezen.",
+	"update.08_10_26.halloween.support_49": "Gedragen uitrusting naar een voorwerp in de tas slepen verwisselt ze nu.",
+	"update.08_10_26.halloween.support_50": "Vijandige grotmonsters worden wakker als ze geraakt worden.",
+	"update.08_10_26.halloween.support_51": "Verkopen neemt niet meer een ander voorwerp mee dat naar het gekozen vak is verplaatst.",
+	"update.08_10_26.halloween.support_52": "MAINFRAME accepteert nu send_updates om zichtbare entiteiten te vernieuwen.",
+	"update.08_10_26.halloween.support_53": "Een vertraagd aanmeldantwoord bedekt het spel niet meer met de personagekeuze.",
+	"update.08_10_26.halloween.support_54": "Opnieuw verbinden verplaatst je niet meer naar het doel van een onvoltooide beweging."
 }

@@ -877,5 +877,20 @@
 	"update.08_10_26.halloween.map_halloween": "Două uși din Spooky Forest îți permit acum să bați pentru Ne dați ori nu ne dați?.",
 	"update.08_10_26.halloween.map_spookytown": "Cinci uși din Spooky Town îți permit acum să bați pentru Ne dați ori nu ne dați?.",
 	"update.08_10_26.halloween.events": "Apasă pe bara sau pe ceasul tărâmului de deasupra chatului pentru a vedea sezoanele active, șefii care urmează, activitățile de astăzi și evenimentele din următoarele șapte zile. Comută între ora ta și ora tărâmului. Alege AMINTEȘTE ca să primești un mesaj în jurnalul jocului cu 10 minute înainte de un eveniment. Bara de deasupra chatului derulează evenimentele în desfășurare, următoarele trei evenimente cu numărătoare inversă și datele de încheiere a sezoanelor. Ține cursorul deasupra ei pentru a opri derularea sau apasă pe ea pentru a deschide EVENIMENTE. Apasă pe X,Y sau pe numele tărâmului pentru a afișa în schimb coordonatele tale; ecranul personajului tău arată în continuare următorul eveniment.",
-	"update.08_10_26.halloween.witchcipher": "În fiecare zi, la orele 06:00 și 18:00 după ceasul tărâmului, Witch din Spooky Forest își uită rețeta. Alătură-te o singură dată pe zi UTC pentru ambele runde, adună patru ingrediente de la monștri și prepară-le la Witch sau cu brew(), ca să le testezi ordinea. Fiecare amestec oferă două indicii comune întregului tărâm. Când cineva descifrează rețeta, Witch o uită și începe una nouă. Câștigă Witch's Parcels pe care le poți deschide sau folosi în rețetele lui Witch, tot anul."
+	"update.08_10_26.halloween.witchcipher": "În fiecare zi, la orele 06:00 și 18:00 după ceasul tărâmului, Witch din Spooky Forest își uită rețeta. Alătură-te o singură dată pe zi UTC pentru ambele runde, adună patru ingrediente de la monștri și prepară-le la Witch sau cu brew(), ca să le testezi ordinea. Fiecare amestec oferă două indicii comune întregului tărâm. Când cineva descifrează rețeta, Witch o uită și începe una nouă. Câștigă Witch's Parcels pe care le poți deschide sau folosi în rețetele lui Witch, tot anul.",
+	"update.08_10_26.halloween.support_40": "Monștrii își păstrează ținta când daunele de zonă înving un alt personaj.",
+	"update.08_10_26.halloween.support_41": "Viteza de atac include acum efectele de stare.",
+	"update.08_10_26.halloween.support_42": "Schimbările de aspect nu mai provoacă erori fatale personajelor care rulează fără grafică.",
+	"update.08_10_26.halloween.support_43": "Șansa de otrăvire nu mai este calculată de două ori pentru aceeași lovitură.",
+	"update.08_10_26.halloween.support_44": "Purificare nu mai elimină atacul otrăvitor natural al unui monstru.",
+	"update.08_10_26.halloween.support_45": "Personajele moarte nu mai pot folosi poțiuni sau regenerare.",
+	"update.08_10_26.halloween.support_46": "A fost reparat rucsacul lipsă al lui Dorr.",
+	"update.08_10_26.halloween.support_47": "Destinatarii pot ridica din nou atașamentele din mesajele vechi.",
+	"update.08_10_26.halloween.support_48": "Abilitățile pot ținti personaje cu nume formate din cifre.",
+	"update.08_10_26.halloween.support_49": "Tragerea echipamentului purtat peste un obiect din geantă le schimbă acum între ele.",
+	"update.08_10_26.halloween.support_50": "Monștrii ostili din peșteră se trezesc când sunt loviți.",
+	"update.08_10_26.halloween.support_51": "Vânzarea nu mai ia alt obiect mutat în spațiul selectat.",
+	"update.08_10_26.halloween.support_52": "MAINFRAME acceptă acum send_updates pentru actualizarea entităților vizibile.",
+	"update.08_10_26.halloween.support_53": "Un răspuns întârziat la autentificare nu mai acoperă jocul cu selectorul de personaje.",
+	"update.08_10_26.halloween.support_54": "Reconectarea nu mai sare la destinația unei deplasări neterminate."
 }

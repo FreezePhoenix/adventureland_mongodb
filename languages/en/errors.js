@@ -1,5 +1,7 @@
 // Human-readable API errors. The original reason codes remain unchanged in CODE.
 module.exports = {
+	// A sale was refused because its selected item changed before receipt.
+	"error.item_changed": "Item changed. Try again.",
 	// Account/API error unexpected; shown after a failed manual action, never used as a protocol value.
 	"error.unexpected": "Something went wrong. Please try again.",
 	// Account/API error invalid_call; shown after a failed manual action, never used as a protocol value.

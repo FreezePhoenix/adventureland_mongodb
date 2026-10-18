@@ -62,7 +62,7 @@ function fixture() {
 	});
 	const source = read("node/server_functions.js");
 	vm.runInContext(source.match(/var item_p_ignore = \{[\s\S]*?\};/)[0], c);
-	load(c, "node/server_functions.js", ["cache_item", "is_same"]);
+	load(c, "node/server_functions.js", ["cache_item", "is_same", "seen_item_matches"]);
 	load(c, "js/old_common_functions.js", ["can_stack", "can_add_item", "can_add_items", "distance", "simple_distance"]);
 	load(c, "node/server.js", [
 		"create_new_item",
@@ -82,6 +82,32 @@ function fixture() {
 	}
 	return { c, player, receiver, put, run, failures, successes, effects };
 }
+
+test("a queued sale cannot sell a replacement item; current and legacy sales still work", () => {
+	for (const actual of [
+		{ name: "firestars", level: 7 },
+		{ name: "blade", level: 7 },
+		{ name: "blade", level: 0, p: "shiny" },
+	]) {
+		const h = fixture();
+		h.player.items[0] = actual;
+		h.run("sell", { num: 0, quantity: 1, item: { name: "blade", level: 0 } });
+		assert.equal(h.failures[0].reason, "item_changed");
+		assert.deepEqual(h.player.items[0], actual);
+		assert.equal(h.player.gold, 1000);
+	}
+	for (const seen of [undefined, { name: "hpot0", q: 10 }]) {
+		const h = fixture();
+		h.c.G.maps.main.merchants = [{ x: 0, y: 0 }];
+		h.c.calculate_item_value = () => 10;
+		h.c.secondhands_logic = () => {};
+		h.player.items[0] = { name: "hpot0", q: 8 };
+		h.run("sell", { num: 0, quantity: 2, item: seen });
+		assert.equal(h.failures.length, 0);
+		assert.equal(h.player.items[0].q, 6);
+		assert.equal(h.player.gold, 1020);
+	}
+});
 
 test("throw rejects distant or non-finite coordinates without consuming items or sending effects", () => {
 	for (const target of [

@@ -15,8 +15,8 @@ function mail(id, receiver = "US_reader", sender = "US_sender") {
 	};
 }
 
-function fixture(mails, beforeCommit) {
-	const user = { _id: "US_reader" };
+function fixture(mails, beforeCommit, owner = "US_reader") {
+	const user = { _id: owner };
 	const userdata = {
 		_id: "IE_userdata-US_reader",
 		info: { mail: 99, tutorial_step: 8, code_list: { 1: ["main", 3] } },
@@ -32,6 +32,7 @@ function fixture(mails, beforeCommit) {
 				if (!document._id.startsWith("ML_")) return false;
 				return Object.entries(query).every(([key, value]) => {
 					const actual = getField(document, key);
+					if (value && value.$in) return value.$in.includes(actual);
 					return Array.isArray(actual) ? actual.includes(value) : actual === value;
 				});
 			});
@@ -89,7 +90,7 @@ function fixture(mails, beforeCommit) {
 	});
 	context.get = async (id) => structuredClone(store.records.get(id));
 	context.remove = async (document) => store.records.delete(document._id);
-	load(context, "adventure_functions.js", ["gf", "simplify_item", "update_mail_count"]);
+	load(context, "adventure_functions.js", ["gf", "mail_receiver", "simplify_item", "update_mail_count"]);
 	load(context, "api.js", ["read_mail_api", "pull_mail_api", "delete_mail_api"]);
 	return {
 		...store,
@@ -102,6 +103,23 @@ function fixture(mails, beforeCommit) {
 	};
 }
 
+test("legacy numeric recipients can read and collect old mail, but senders cannot", async () => {
+	const letter = parcel("legacy", "12345", "67890");
+	letter.owner = ["US_67890", "US_12345"];
+	const h = fixture([letter], undefined, "US_12345");
+	const inbox = await h.call("pull_mail");
+	assert.equal(inbox.unread, 1);
+	assert.equal(inbox.infs.find((info) => info.type === "mail").mail[0].can_take, true);
+	assert.equal((await h.call("read_mail", { mail: letter._id })).unread, 0);
+	const character = claimCharacters(h);
+	const sender = character("Sender", "US_67890"),
+		receiver = character("Receiver", "US_12345");
+	assert.equal((await sender.claim(letter._id)).reason, "not_owner");
+	assert.equal((await receiver.claim(letter._id)).success, true);
+	assert.equal(receiver.player.items.length, 1);
+	assert.equal((await receiver.claim(letter._id)).reason, "already_taken");
+});
+
 function parcel(id, receiver = "US_reader", sender = "US_sender", extra = {}) {
 	const letter = Object.assign(mail(id, receiver, sender), { item: true, taken: false }, extra);
 	letter.info.item = JSON.stringify({ name: "sword", level: 12 });
@@ -112,7 +130,9 @@ function claimCharacters(h) {
 	const c = h.context;
 	let serial = 0;
 	Object.assign(c, {
-		players: {}, mode: {}, G: { items: { sword: {} } },
+		players: {},
+		mode: {},
+		G: { items: { sword: {} } },
 		randomStr: () => "claim-" + ++serial,
 		can_add_item: (player) => !player.full,
 		add_item: (player, item) => player.items.push(item),
@@ -129,7 +149,7 @@ function claimCharacters(h) {
 				pending.delete(data.request_id);
 			},
 		};
-		const player = c.players[id] = { owner, real_id: "CH_" + id, items: [] };
+		const player = (c.players[id] = { owner, real_id: "CH_" + id, items: [] });
 		const handler = socketHandler(c, "mail_take_item");
 		return {
 			player,
@@ -339,7 +359,10 @@ test("deleting either mailbox copy preserves the other copy and its attachment",
 		assert.equal(h.records.get(gift._id).info.item, gift.info.item);
 		assert.equal(h.records.get(gift._id).taken, false);
 		const page = (await h.call("pull_mail", { user: { _id: second } })).infs[0];
-		assert.deepEqual(Array.from(page.mail, (entry) => entry.id), [gift._id]);
+		assert.deepEqual(
+			Array.from(page.mail, (entry) => entry.id),
+			[gift._id],
+		);
 		assert.equal((await h.call("pull_mail", { user: { _id: first } })).infs[0].mail.length, 0);
 		await h.call("delete_mail", { mid: gift._id, user: { _id: second } });
 		assert.deepEqual(h.records.get(gift._id).owner, [], "keep the record so deleting a reward cannot recreate it");
@@ -359,7 +382,9 @@ test("delete accepts only visible mail IDs and cannot delete other records", asy
 
 test("concurrent deletions hide both copies and self-mail removes every matching owner", async () => {
 	const h = fixture([mail("one"), mail("self", "US_reader", "US_reader")]);
-	const results = await Promise.all(["US_sender", "US_reader"].map((_id) => h.call("delete_mail", { mid: "ML_one", user: { _id } })));
+	const results = await Promise.all(
+		["US_sender", "US_reader"].map((_id) => h.call("delete_mail", { mid: "ML_one", user: { _id } })),
+	);
 	assert(results.every((response) => response.result.success));
 	assert.deepEqual(h.records.get("ML_one").owner, []);
 	await h.call("delete_mail", { mid: "ML_self" });
@@ -369,10 +394,17 @@ test("concurrent deletions hide both copies and self-mail removes every matching
 });
 
 test("only the receiving account can claim ordinary mail, giveaway prizes and system gifts", async () => {
-	for (const extra of [{}, { fro: "Giveaway from Sender" }, { tracktrix_gift: true }, { cave_award: true, character: "CH_reader" }]) {
+	for (const extra of [
+		{},
+		{ fro: "Giveaway from Sender" },
+		{ tracktrix_gift: true },
+		{ cave_award: true, character: "CH_reader" },
+	]) {
 		const gift = parcel("gift", "US_reader", "US_sender", extra);
 		const h = fixture([gift]);
-		const character = claimCharacters(h), sender = character("sender", "US_sender"), reader = character("reader");
+		const character = claimCharacters(h),
+			sender = character("sender", "US_sender"),
+			reader = character("reader");
 		assert.equal((await sender.claim(gift._id)).reason, "not_owner");
 		assert.equal(h.records.get(gift._id).taken, false);
 		if (gift.character) assert.equal((await character("alternate").claim(gift._id)).reason, "wrong_character");
@@ -384,22 +416,27 @@ test("only the receiving account can claim ordinary mail, giveaway prizes and sy
 });
 
 test("self-mail and legacy receiver fields work, but a missing recipient cannot authorize a claim", async () => {
-	const self = parcel("self", "US_reader", "US_reader"), legacy = parcel("legacy"), missing = parcel("missing");
+	const self = parcel("self", "US_reader", "US_reader"),
+		legacy = parcel("legacy"),
+		missing = parcel("missing");
 	legacy.receiver = legacy.info.receiver;
 	delete legacy.info.receiver;
 	delete missing.info.receiver;
-	const h = fixture([self, legacy, missing]), reader = claimCharacters(h)("reader");
+	const h = fixture([self, legacy, missing]),
+		reader = claimCharacters(h)("reader");
 	assert.equal((await reader.claim(self._id)).success, true);
 	assert.equal((await reader.claim(legacy._id)).success, true);
 	assert.equal((await reader.claim(missing._id)).reason, "not_owner");
 	assert.equal(reader.player.items.length, 2);
-	for (const id of [null, { $ne: null }, "CH_reader"])
-		assert.equal((await reader.claim(id)).reason, "invalid_mail");
+	for (const id of [null, { $ne: null }, "CH_reader"]) assert.equal((await reader.claim(id)).reason, "invalid_mail");
 });
 
 test("concurrent claims deliver one item; sender and duplicate claims cannot collect it", async () => {
-	const h = fixture([parcel("race")]), character = claimCharacters(h);
-	const sender = character("sender", "US_sender"), first = character("first"), second = character("second");
+	const h = fixture([parcel("race")]),
+		character = claimCharacters(h);
+	const sender = character("sender", "US_sender"),
+		first = character("first"),
+		second = character("second");
 	const results = await Promise.all([sender.claim("ML_race"), first.claim("ML_race"), second.claim("ML_race")]);
 	assert.equal(results[0].reason, "not_owner");
 	assert.equal(results.filter((result) => result.success).length, 1);
@@ -413,11 +450,14 @@ test("a sender deleting mail during claim or settlement cannot steal or duplicat
 		let deleted = false;
 		const h = fixture([parcel("race")], async ({ session }) => {
 			const pending = session.pending.get("ML_race");
-			if (deleted || !pending || (phase === "claim" ? typeof pending.taken !== "string" : pending.taken !== true)) return;
+			if (deleted || !pending || (phase === "claim" ? typeof pending.taken !== "string" : pending.taken !== true))
+				return;
 			deleted = true;
 			await h.call("delete_mail", { mid: "ML_race", user: { _id: "US_sender" } });
 		});
-		const character = claimCharacters(h), reader = character("reader"), sender = character("sender", "US_sender");
+		const character = claimCharacters(h),
+			reader = character("reader"),
+			sender = character("sender", "US_sender");
 		assert.equal((await reader.claim("ML_race")).success, true);
 		assert(deleted);
 		assert.deepEqual(h.records.get("ML_race").owner, ["US_reader"]);
@@ -435,7 +475,9 @@ test("deleting the recipient copy before claim commit cancels delivery without g
 		deleted = true;
 		await h.call("delete_mail", { mid: "ML_race" });
 	});
-	const character = claimCharacters(h), reader = character("reader"), sender = character("sender", "US_sender");
+	const character = claimCharacters(h),
+		reader = character("reader"),
+		sender = character("sender", "US_sender");
 	assert.equal((await reader.claim("ML_race")).reason, "not_owner");
 	assert.equal((await sender.claim("ML_race")).reason, "not_owner");
 	assert.equal(reader.player.items.length + sender.player.items.length, 0);
@@ -443,10 +485,18 @@ test("deleting the recipient copy before claim commit cancels delivery without g
 });
 
 test("the mailbox and its actual renderer offer TAKE only to the recipient", async () => {
-	const h = fixture([parcel("gift")]), c = h.context;
+	const h = fixture([parcel("gift")]),
+		c = h.context;
 	let html;
-	Object.assign(c, { G: { items: { sword: {} } }, window: {}, html_escape: (value) => value, item_container: () => "<item>", show_modal: (value) => html = value, api_call() {} });
-	vm.runInContext('String.prototype.replace_all = function(a,b) { return this.split(a).join(b); };', c);
+	Object.assign(c, {
+		G: { items: { sword: {} } },
+		window: {},
+		html_escape: (value) => value,
+		item_container: () => "<item>",
+		show_modal: (value) => (html = value),
+		api_call() {},
+	});
+	vm.runInContext("String.prototype.replace_all = function(a,b) { return this.split(a).join(b); };", c);
 	load(c, "js/html.js", ["render_mail"]);
 	for (const owner of ["US_sender", "US_reader"]) {
 		const entry = (await h.call("pull_mail", { user: { _id: owner } })).infs[0].mail[0];

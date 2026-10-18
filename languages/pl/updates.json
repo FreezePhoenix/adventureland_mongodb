@@ -877,5 +877,20 @@
 	"update.08_10_26.halloween.map_halloween": "Do dwóch drzwi w Spooky Forest można teraz zapukać w ramach wydarzenia Cukierek albo psikus.",
 	"update.08_10_26.halloween.map_spookytown": "Do pięciu drzwi w Spooky Town można teraz zapukać w ramach wydarzenia Cukierek albo psikus.",
 	"update.08_10_26.halloween.events": "Kliknij pasek lub zegar świata nad czatem, aby zobaczyć trwające sezony, nadchodzących bossów, dzisiejsze aktywności i wydarzenia z następnych siedmiu dni. Przełączaj się między swoim czasem a czasem świata. Wybierz PRZYPOMNIJ, aby otrzymać wiadomość w dzienniku gry 10 minut przed wydarzeniem. Pasek nad czatem przewija trwające wydarzenia, trzy najbliższe wydarzenia z odliczaniem oraz daty zakończenia sezonów. Najedź na niego kursorem, aby zatrzymać przewijanie, lub kliknij, aby otworzyć WYDARZENIA. Kliknij X,Y lub nazwę świata, aby zamiast tego wyświetlić swoje współrzędne; ekran postaci nadal pokazuje następne wydarzenie.",
-	"update.08_10_26.halloween.witchcipher": "Codziennie o 06:00 i 18:00 czasu świata Witch w Spooky Forest zapomina swoją recepturę. Dołącz raz dziennie według UTC do obu rund, zbierz cztery składniki z potworów i uwarz je u Witch lub za pomocą brew(), aby sprawdzić ich kolejność. Każda mieszanka daje dwie wskazówki, które widzą wszyscy w świecie. Gdy ktoś rozszyfruje recepturę, Witch ją zapomina i pojawia się nowa. Zdobywaj Witch's Parcels, aby je otwierać lub wykorzystywać w recepturach Witch przez cały rok."
+	"update.08_10_26.halloween.witchcipher": "Codziennie o 06:00 i 18:00 czasu świata Witch w Spooky Forest zapomina swoją recepturę. Dołącz raz dziennie według UTC do obu rund, zbierz cztery składniki z potworów i uwarz je u Witch lub za pomocą brew(), aby sprawdzić ich kolejność. Każda mieszanka daje dwie wskazówki, które widzą wszyscy w świecie. Gdy ktoś rozszyfruje recepturę, Witch ją zapomina i pojawia się nowa. Zdobywaj Witch's Parcels, aby je otwierać lub wykorzystywać w recepturach Witch przez cały rok.",
+	"update.08_10_26.halloween.support_40": "Potwory zachowują cel, gdy obrażenia obszarowe pokonają inną postać.",
+	"update.08_10_26.halloween.support_41": "Szybkość ataku uwzględnia teraz efekty stanów.",
+	"update.08_10_26.halloween.support_42": "Zmiany wyglądu nie powodują już awarii postaci działających bez grafiki.",
+	"update.08_10_26.halloween.support_43": "Szansa na zatrucie nie jest już losowana dwa razy przy jednym trafieniu.",
+	"update.08_10_26.halloween.support_44": "Oczyszczenie nie usuwa już naturalnego trującego ataku potwora.",
+	"update.08_10_26.halloween.support_45": "Martwe postacie nie mogą już używać mikstur ani regeneracji.",
+	"update.08_10_26.halloween.support_46": "Naprawiono brakujący plecak Dorr.",
+	"update.08_10_26.halloween.support_47": "Odbiorcy znów mogą odbierać załączniki ze starszej poczty.",
+	"update.08_10_26.halloween.support_48": "Umiejętności mogą obierać za cel postacie o nazwach złożonych z cyfr.",
+	"update.08_10_26.halloween.support_49": "Przeciągnięcie założonego wyposażenia na przedmiot w torbie zamienia je teraz miejscami.",
+	"update.08_10_26.halloween.support_50": "Wrogie potwory w jaskini budzą się po trafieniu.",
+	"update.08_10_26.halloween.support_51": "Sprzedaż nie zabiera już innego przedmiotu przeniesionego na wybrane miejsce.",
+	"update.08_10_26.halloween.support_52": "MAINFRAME obsługuje teraz send_updates do odświeżania widocznych obiektów.",
+	"update.08_10_26.halloween.support_53": "Opóźniona odpowiedź logowania nie zasłania już gry ekranem wyboru postaci.",
+	"update.08_10_26.halloween.support_54": "Ponowne połączenie nie przenosi już do celu niedokończonego ruchu."
 }
