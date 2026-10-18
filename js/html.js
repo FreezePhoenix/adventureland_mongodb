@@ -4175,17 +4175,36 @@ function guide_monster_views(name) {
 		.join("");
 }
 
-// A monster's numbers as its INFO window shows them, for guides that explain a fight
+// A monster's numbers as its INFO window shows them, in the tooltip's black box, for guides that explain a fight
 function guide_monster_stats(names) {
 	return (
 		"<div class='guide-stats'>" +
 		names
 			.map(function (name) {
-				return render_item("html", { item: G.monsters[name], prop: G.monsters[name], monster: name });
+				return "<div class='buyitem'>" + render_item("html", { pure: true, item: G.monsters[name], prop: G.monsters[name], monster: name }) + "</div>";
 			})
 			.join("") +
 		"</div>"
 	);
+}
+
+// Each monster's own drops beside its tile, so a fight with several monsters shows which one drops what
+function guide_monster_drops(names) {
+	return names
+		.map(function (name) {
+			return (
+				"<div class='guide-drop-group'>" +
+				guide_monster_tile(name, 0) +
+				"<div>" +
+				(G.drops.monsters[name] || [])
+					.map(function (drop) {
+						return render_drop(drop, 1, "#858B8E");
+					})
+					.join("") +
+				"</div></div>"
+			);
+		})
+		.join("");
 }
 
 // A health bar filled to the given percent, like the party list's, with the number beside it

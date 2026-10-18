@@ -1065,7 +1065,8 @@ function update_overlays() {
 		if (topright_npc == "character" && !cached("chcid", character.cid)) render_character_sheet();
 	}
 
-	var c = new Date(),
+	// The realm clock runs on server time, like the event countdowns
+	var c = new Date(typeof schedule_now == "function" ? schedule_now() : Date.now()),
 		h = c.getUTCHours(),
 		m = c.getUTCMinutes();
 	if (S.schedule && S.schedule.time_offset) h = (24 + S.schedule.time_offset + h) % 24;

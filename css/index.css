@@ -838,6 +838,24 @@ canvas { display:block; } /*replaces the overflow: hidden solution [07/07/16] */
 	align-items: flex-start;
 	margin-top: 10px;
 }
+/* The tooltip's box and white text, since the guide page itself is light */
+.guide-article .guide-stats .buyitem{
+	background-color: black;
+	border: 5px solid gray;
+	color: white;
+	font-size: 24px;
+	line-height: 24px;
+	padding: 20px;
+	max-width: 240px;
+	text-align: left;
+}
+/* A monster's tile with its own drops beside it */
+.guide-article .guide-drop-group{
+	display: flex;
+	gap: 12px;
+	align-items: flex-start;
+	margin-top: 10px;
+}
 .guide-article .guide-hp{
 	display: inline-block;
 	width: 54px;

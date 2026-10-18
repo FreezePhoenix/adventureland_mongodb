@@ -213,16 +213,22 @@ function trick_or_treat_door(player, index) {
 	return best && best.index;
 }
 
+// Today's knocks and the season's stamps are account-wide (Mongo); this keeps the latest numbers seen here,
+// so every character of the account online on this realm shows the same stamps and knocks left.
+var trick_or_treat_accounts = {};
+
 // What the character sees about today's knocks (character.trickortreat in CODE).
 function trick_or_treat_status(player) {
 	var rules = G.events.trickortreat,
 		today = trick_or_treat_day(Date.now()),
-		record = player.p.trickortreat;
-	var doors = record && record.day === today ? record.doors : [];
+		record = player.p.trickortreat,
+		account = trick_or_treat_accounts[player.owner];
+	var doors = record && record.day === today ? record.doors : [],
+		knocks_left = account && account.day === today ? Math.max(0, rules.knocks - account.knocks) : rules.knocks;
 	return {
 		doors: doors.slice(),
-		doors_left: rules.doors.length - doors.length,
-		stamps: (record && record.stamps) || 0,
+		doors_left: Math.min(rules.doors.length - doors.length, knocks_left),
+		stamps: Math.max((record && record.stamps) || 0, (account && account.stamps) || 0),
 	};
 }
 
@@ -267,13 +273,25 @@ async function trick_or_treat_knock(player, data) {
 async function trick_or_treat_settle(player, rules, record, door, now, today) {
 	var collection = db.collection("TrickOrTreat"),
 		daily = "knocks:" + player.owner + ":" + today;
+	var knocked;
 	try {
-		await collection.updateOne({ _id: daily, count: { $lt: rules.knocks } }, { $inc: { count: 1 } }, { upsert: true });
+		knocked = await collection.findOneAndUpdate(
+			{ _id: daily, count: { $lt: rules.knocks } },
+			{ $inc: { count: 1 } },
+			{ upsert: true, returnDocument: "after" },
+		);
 	} catch (error) {
 		record.doors.splice(record.doors.indexOf(door), 1);
-		if (error.code === 11000) return { failed: true, reason: "trickortreat_limit" };
+		if (error.code === 11000) {
+			trick_or_treat_accounts[player.owner] = Object.assign({}, trick_or_treat_accounts[player.owner], {
+				day: today,
+				knocks: rules.knocks,
+			});
+			return { failed: true, reason: "trickortreat_limit" };
+		}
 		throw error;
 	}
+	var knocks = ((knocked && (knocked.value || knocked)) || {}).count || 1;
 	var stamps_id = "stamps:" + player.owner + ":" + new Date(now).getUTCFullYear();
 	var season = await collection.findOneAndUpdate(
 		{ _id: stamps_id },
@@ -282,6 +300,14 @@ async function trick_or_treat_settle(player, rules, record, door, now, today) {
 	);
 	var stamps = ((season && (season.value || season)) || {}).stamps || 1;
 	record.stamps = stamps;
+	trick_or_treat_accounts[player.owner] = { day: today, knocks: knocks, stamps: stamps };
+	// The account's other characters here see the same stamps and knocks left
+	for (var id in players) {
+		var other = players[id];
+		if (other === player || other.owner !== player.owner || other.npc || !other.trickortreat) continue;
+		other.trickortreat = trick_or_treat_status(other);
+		resend(other, "u+cid+nc");
+	}
 	var helmet = player.slots.helmet && player.slots.helmet.name,
 		treat_chance = rules.costumes.includes(helmet) ? rules.costume_treat : rules.treat,
 		result = { success: true, door: door, stamps: stamps };

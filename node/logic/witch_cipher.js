@@ -2,7 +2,8 @@
 // clock, published by the event schedule). For the first 20 minutes, kills in four regions drop
 // four ingredients; until the end, players brew four-ingredient mixes in her cauldron. Every mix is
 // scored against the Witch's secret recipe and the realm shares one clue board. Mixes pay Witch's
-// Parcels. One character per account joins each UTC day, on one realm; the account's claim lives in
+// Parcels. Whenever someone cracks the recipe she forgets it at once: a new recipe starts on a clean
+// board, so every mix stays a deduction instead of a copy of a known answer. One character per account joins each UTC day, on one realm; the account's claim lives in
 // the WitchCipher collection so another realm cannot repeat the day.
 
 var witch_cipher = null; // the live round, mirrored in S.witchcipher
@@ -77,16 +78,25 @@ function witch_cipher_public() {
 		board: round.history.slice(-rules.board).map(function (entry) {
 			return { mix: entry.mix.slice(), right: entry.right, moved: entry.moved };
 		}),
-		possible: round.cracked ? 1 : witch_cipher_candidates(round.history).length,
+		possible: witch_cipher_candidates(round.history).length,
 		mixes: round.history.length,
+		cracks: round.cracks.length,
 	};
-	if (round.cracked) data.cracked = { by: round.cracked.by, recipe: round.secret.slice() };
+	// The last cracked recipe, shown above the new board
+	if (round.cracked) data.cracked = { by: round.cracked.by, recipe: round.cracked.recipe.slice() };
 	return data;
 }
 
 function witch_cipher_publish() {
 	E.witchcipher = witch_cipher_public();
 	broadcast_e();
+}
+
+function witch_cipher_secret() {
+	var names = witch_cipher_ingredients();
+	return [0, 1, 2, 3].map(function () {
+		return random_one(names);
+	});
 }
 
 function witch_cipher_start(occurrence) {
@@ -99,10 +109,9 @@ function witch_cipher_start(occurrence) {
 		start: now,
 		gather_end: now + rules.gathering * 1000,
 		end: now + rules.duration * 1000,
-		secret: [0, 1, 2, 3].map(function () {
-			return random_one(names);
-		}),
+		secret: witch_cipher_secret(),
 		history: [],
+		cracks: [],
 		cracked: null,
 	};
 	witch_cipher_claims = {};
@@ -118,6 +127,16 @@ function witch_cipher_restore() {
 	if (!S.witchcipher) return;
 	witch_cipher = S.witchcipher;
 	delete witch_cipher.claims; // older snapshots carried claims; Mongo is the record
+	// Older snapshots kept one cracked recipe as the live secret
+	if (!witch_cipher.cracks) {
+		witch_cipher.cracks = [];
+		if (witch_cipher.cracked) {
+			witch_cipher.cracked.recipe = witch_cipher.secret.slice();
+			witch_cipher.cracks.push(witch_cipher.cracked);
+			witch_cipher.secret = witch_cipher_secret();
+			witch_cipher.history = [];
+		}
+	}
 	witch_cipher_claims = {};
 	witch_cipher_drops = {};
 	if (Date.now() >= witch_cipher.end) return witch_cipher_finish();
@@ -128,7 +147,7 @@ function witch_cipher_restore() {
 function witch_cipher_finish() {
 	var round = witch_cipher;
 	events.witchcipher = false;
-	if (round && !round.cracked)
+	if (round && !round.cracks.length)
 		broadcast(
 			"server_message",
 			localization.message(
@@ -237,6 +256,10 @@ function witch_cipher_reload(player) {
 // join("witchcipher"): this character takes part today. Idempotent for the same character.
 async function witch_cipher_join(player) {
 	if (!witch_cipher || Date.now() >= witch_cipher.end) return { failed: true, reason: "witchcipher_not_live" };
+	// The same rules as join(), for the Witch's own JOIN request too
+	if (player.type == "merchant") return { failed: true, reason: "no_merchants" };
+	if (player.s.hopsickness) return { failed: true, reason: "cant_when_sick" };
+	if (player.user) return { failed: true, reason: "cant_in_bank" };
 	var claim = await witch_cipher_claim(player, true);
 	if (!claim) return { failed: true, reason: "invalid" };
 	if (claim.character !== player.real_id)
@@ -318,25 +341,30 @@ function witch_cipher_brew(player, names) {
 		tried = round.history.some((entry) => entry.mix.join(",") === key),
 		score = witch_cipher_score(round.secret, names),
 		informative = !tried && witch_cipher_candidates(round.history).some((recipe) => recipe.join(",") === key),
-		cracked_now = !round.cracked && score.right === 4,
+		cracked_now = score.right === 4,
 		pay = rules.payout,
-		parcels;
-	if (cracked_now) parcels = pay.exact + pay.crack;
-	else if (round.cracked) parcels = score.right === 4 ? pay.exact : pay.other;
-	else parcels = informative ? pay.informative : pay.other;
-	if (!tried) round.history.push({ mix: names.slice(), right: score.right, moved: score.moved, by: player.name });
+		parcels = cracked_now ? pay.exact + pay.crack : informative ? pay.informative : pay.other;
+	// Two cracks in one day must not lift an account past the daily Parcels
+	parcels = Math.max(0, Math.min(parcels, rules.max_parcels - claim.parcels));
 	if (cracked_now) {
-		round.cracked = { by: player.name, at: now };
+		// She forgets it at once: the next recipe starts on a clean board
+		round.cracked = { by: player.name, at: now, recipe: round.secret.slice() };
+		round.cracks.push(round.cracked);
+		round.secret = witch_cipher_secret();
+		round.history = [];
 		broadcast(
 			"server_message",
 			localization.message("server.witchcipher.cracked", { player: String(player.name) }, { color: "#F59A3C" }),
 		);
-	}
+	} else if (!tried)
+		round.history.push({ mix: names.slice(), right: score.right, moved: score.moved, by: player.name });
 	claim.mixes += 1;
 	claim.parcels += parcels;
-	var reward = create_new_item("witchparcel", parcels);
-	add_item(player, reward, { announce: false });
-	player.socket.emit("game_log", item_message("server.item.received", reward, {}, { color: "#AF6AE2" }));
+	if (parcels) {
+		var reward = create_new_item("witchparcel", parcels);
+		add_item(player, reward, { announce: false });
+		player.socket.emit("game_log", item_message("server.item.received", reward, {}, { color: "#AF6AE2" }));
+	}
 	player.witchcipher = witch_cipher_status(claim);
 	resend(player, "reopen+nc+inv+u+cid");
 	witch_cipher_save_claim(player.owner, claim, 0);

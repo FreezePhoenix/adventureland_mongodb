@@ -44,6 +44,6 @@ graveyard_rising().catch(show_json);</div>
 		$(".graveyard-waves").html(html + "<span class='guide-arrow'></span>" + guide_monster_tile("gargoyle", 0));
 		$(".gargoyle-views").html(guide_monster_views("gargoyle"));
 		$(".graveyard-stats").html(guide_monster_stats(["zombie", "ghoul", "gargoyle"]));
-		$(".graveyard-drops").html(G.drops.monsters.gargoyle.concat(G.drops.monsters.ghoul, G.drops.monsters.zombie).map(function(drop) { return render_drop(drop, 1, "#858B8E"); }).join(""));
+		$(".graveyard-drops").html(guide_monster_drops(["gargoyle", "ghoul", "zombie"]));
 	})();
 </script>

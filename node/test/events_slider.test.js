@@ -185,3 +185,43 @@ test("reduced motion rests the text at its start, also when switched on while it
 	media.listeners.forEach((f) => f());
 	assert.equal(frames.length, 1, "it slides again when reduced motion is turned off");
 });
+
+test("an old schedule packet read again when a window opens does not move the clock back", () => {
+	const { c } = setup();
+	vm.runInContext("var __now = 1000; Date.now = function () { return __now; };", c);
+	vm.runInContext("schedule_now = function () { return Date.now() + schedule_offset; };", c);
+	c.S.schedule.server_time = 5000;
+	c.schedule_sync();
+	assert.equal(c.schedule_now(), 5000);
+	vm.runInContext("__now = 301000;", c);
+	c.schedule_sync(); // the Events window opening five minutes later, with no new packet
+	assert.equal(c.schedule_now(), 305000);
+	c.S.schedule.server_time = 306000; // a fresh packet syncs again
+	c.schedule_sync();
+	assert.equal(c.schedule_now(), 306000);
+});
+
+test("reminder cleanup forgets only this realm's old reminders, at most once a minute", () => {
+	const { c } = setup();
+	const store = new Map([
+		["event_reminder:USII:gone", "1"],
+		["event_reminder:USII:b", "1"],
+		["event_reminder:EUI:gone", "1"],
+		["unrelated", "1"],
+	]);
+	c.localStorage = {
+		get length() {
+			return store.size;
+		},
+		key: (i) => [...store.keys()][i],
+		getItem: (k) => (store.has(k) ? store.get(k) : null),
+		setItem: (k, v) => store.set(k, v),
+		removeItem: (k) => store.delete(k),
+	};
+	c.S.schedule.realm = "USII";
+	c.events_reminder_tick();
+	assert.deepEqual([...store.keys()].sort(), ["event_reminder:EUI:gone", "event_reminder:USII:b", "unrelated"]);
+	store.set("event_reminder:USII:gone", "1");
+	c.events_reminder_tick();
+	assert(store.has("event_reminder:USII:gone"), "not again within the minute");
+});

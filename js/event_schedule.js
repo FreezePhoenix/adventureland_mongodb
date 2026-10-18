@@ -5,11 +5,16 @@
 var schedule_offset = 0,
 	events_time_mode = "local",
 	events_period = "next",
-	events_reminded = {};
+	events_reminded = {},
+	events_reminders_swept = 0;
 
-// Server time, so countdowns don't depend on the player's clock.
+// Server time, so countdowns don't depend on the player's clock. Synced once per packet: an older packet
+// read again later (when a window opens) must not move the clock back.
+var schedule_synced = null;
 function schedule_sync() {
-	if (typeof S != "undefined" && S && S.schedule && S.schedule.server_time) schedule_offset = S.schedule.server_time - Date.now();
+	if (typeof S == "undefined" || !S || !S.schedule || !S.schedule.server_time || S.schedule.server_time === schedule_synced) return;
+	schedule_synced = S.schedule.server_time;
+	schedule_offset = S.schedule.server_time - Date.now();
 }
 
 function schedule_now() {
@@ -507,11 +512,15 @@ function events_reminder_tick() {
 			);
 		}
 	});
+	// Once a minute, forget this realm's reminders for events that are no longer scheduled; other realms keep theirs
+	if (now - events_reminders_swept < 60000) return;
+	events_reminders_swept = now;
+	var prefix = "event_reminder:" + ((S && S.schedule && S.schedule.realm) || "") + ":";
 	try {
 		for (var i = localStorage.length - 1; i >= 0; i--) {
 			var key = localStorage.key(i);
-			if (!key || key.indexOf("event_reminder:") !== 0) continue;
-			var id = key.split(":").slice(2).join(":");
+			if (!key || key.indexOf(prefix) !== 0) continue;
+			var id = key.slice(prefix.length);
 			if (!schedule_list().some((o) => o.id == id && o.status == "scheduled")) localStorage.removeItem(key);
 		}
 	} catch (e) {}

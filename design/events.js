@@ -201,7 +201,9 @@ var events={
 		"drop_cooldown":20,
 		"mixes":5,
 		"board":12,
+		// The cracking mix pays exact + crack; then the Witch forgets the recipe again and a new one starts
 		"payout":{"informative":2,"other":1,"crack":2,"exact":2},
+		"max_parcels":12,
 		"join":true,
 		"type":"daily",
 	},

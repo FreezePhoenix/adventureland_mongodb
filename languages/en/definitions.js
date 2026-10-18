@@ -3003,6 +3003,16 @@ module.exports = {
 	"stat.explosion.name": "Explosion",
 	// Shared stat display label in item tooltips, class details, cosmetic and equipment slots. Never translate its internal identifier. Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
 	"stat.for.name": "Fortitude",
+	// Stat name in achievement lists and stat references; the same short label as the item tooltip (interface.item.poison_res).
+	"stat.pnresistance.name": "Poison Res.",
+	// Stat name in achievement lists and stat references; the same short label as the item tooltip (interface.item.fire_res).
+	"stat.firesistance.name": "Fire Res.",
+	// Stat name in achievement lists and stat references; the same short label as the item tooltip (interface.item.freeze_res).
+	"stat.fzresistance.name": "Freeze Res.",
+	// Stat name in achievement lists and stat references; the same short label as the item tooltip (interface.item.impact_res).
+	"stat.phresistance.name": "Impact Res.",
+	// Stat name in achievement lists and stat references; the same short label as the item tooltip (interface.item.status_res).
+	"stat.stresistance.name": "Status Res.",
 	// Shared stat display label in item tooltips, class details, cosmetic and equipment slots. Never translate its internal identifier. Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
 	"stat.frequency.name": "Attack Speed",
 	// Shared stat display label in item tooltips, class details, cosmetic and equipment slots. Never translate its internal identifier. Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.

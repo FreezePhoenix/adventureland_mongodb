@@ -48,6 +48,8 @@ function memory_db() {
 				},
 				async findOneAndUpdate(filter, update, options = {}) {
 					let doc = [...docs.values()].find((d) => matches(d, filter));
+					// Like Mongo: an upsert whose filter misses an existing _id is a duplicate key
+					if (!doc && options.upsert && docs.has(filter._id)) throw duplicate();
 					if (!doc && options.upsert) docs.set(filter._id, (doc = { _id: filter._id }));
 					return doc ? plain(apply(doc, update)) : null;
 				},
@@ -187,7 +189,7 @@ test("one character per account joins a day, on one realm", async () => {
 	assert.deepEqual([info.joined, info.name, info.server, info.mixes_left], [true, "Witchling", "USII", 5]);
 });
 
-test("a useful mix pays like the answer, the crack pays a bonus, and five mixes end the day", async () => {
+test("a useful mix pays like the answer, a crack pays a bonus and starts a new recipe, and five mixes end the day", async () => {
 	const c = context();
 	c.witch_cipher_start({ id: "occurrence" });
 	c.witch_cipher.secret = ["frostscale", "gloomfeather", "gloomfeather", "embercoal"];
@@ -201,25 +203,104 @@ test("a useful mix pays like the answer, the crack pays a bonus, and five mixes 
 	const crack = brew(["frostscale", "gloomfeather", "gloomfeather", "embercoal"]);
 	assert.deepEqual([crack.cracked, crack.parcels], [true, 4]);
 	assert(c.sent.some(([name, data]) => name == "server_message" && data.phrase == "server.witchcipher.cracked"));
-	assert.deepEqual(plain(c.E.witchcipher.cracked), { by: "Witchling", recipe: c.witch_cipher.secret });
-	assert.equal(
-		brew(["frostscale", "gloomfeather", "gloomfeather", "embercoal"]).parcels,
-		2,
-		"after the crack the recipe pays 2",
+	// She forgets it at once: the cracked recipe shows above a clean board for a new one
+	assert.deepEqual(plain(c.E.witchcipher.cracked), {
+		by: "Witchling",
+		recipe: ["frostscale", "gloomfeather", "gloomfeather", "embercoal"],
+	});
+	assert.deepEqual([c.E.witchcipher.board.length, c.E.witchcipher.possible, c.E.witchcipher.cracks], [0, 256, 1]);
+	assert.equal(c.witch_cipher.history.length, 0);
+	c.witch_cipher.secret = ["verdantspore", "embercoal", "embercoal", "gloomfeather"];
+	const again = brew(["frostscale", "gloomfeather", "gloomfeather", "embercoal"]);
+	assert.deepEqual(
+		[again.cracked, again.informative, again.parcels],
+		[false, true, 2],
+		"the old answer is just a first guess now",
 	);
-	assert.equal(brew(["gloomfeather", "gloomfeather", "gloomfeather", "gloomfeather"]).parcels, 1);
+	assert.equal(brew(["frostscale", "frostscale", "frostscale", "frostscale"]).parcels, 1, "ruled out by the new clue");
 	assert.equal(brew(NAMES).reason, "witchcipher_no_mixes");
 	const parcels = p.items.filter((item) => item && item.name == "witchparcel").reduce((sum, item) => sum + item.q, 0);
 	assert.equal(parcels, 10);
 	assert.equal(
 		p.items.find((item) => item && item.name == "frostscale").q,
-		10 - 2 - 1 - 1,
+		10 - 2 - 1 - 1 - 4,
 		"each mix consumed its ingredients",
 	);
 	await new Promise((resolve) => setImmediate(resolve));
 	const saved = await c.db.collection("WitchCipher").findOne({ owner: "US_owner" });
 	assert.deepEqual([saved.mixes, saved.parcels], [5, 10]);
-	assert.equal(c.witch_cipher.history.length, 4, "a repeated mix adds no new clue");
+	assert.equal(c.witch_cipher.history.length, 2, "the new recipe's board has its two clues");
+});
+
+test("cracking more than once still pays at most 12 Witch's Parcels a day", async () => {
+	const c = context();
+	c.witch_cipher_start({ id: "occurrence" });
+	const p = player("Witchling", { items: NAMES.map((name) => ({ name, q: 20 })) });
+	await c.witch_cipher_join(p);
+	const pays = [];
+	for (let i = 0; i < 5; i++) {
+		const mix = [NAMES[i % 4], NAMES[(i + 1) % 4], NAMES[(i + 2) % 4], NAMES[(i + 3) % 4]];
+		if (i < 3) c.witch_cipher.secret = mix.slice(); // three cracks in a row
+		pays.push(plain(c.witch_cipher_brew(p, mix)).parcels);
+	}
+	assert.deepEqual(pays, [4, 4, 4, 0, 0]);
+	assert.equal(c.witch_cipher.cracks.length, 3);
+	const parcels = p.items.filter((item) => item && item.name == "witchparcel").reduce((sum, item) => sum + item.q, 0);
+	assert.equal(parcels, 12);
+});
+
+test("a round saved before recipes changed after a crack keeps its cracked recipe and gets a new one", () => {
+	const c = context();
+	c.witch_cipher_start({ id: "occurrence" });
+	const old = ["frostscale", "gloomfeather", "gloomfeather", "embercoal"];
+	Object.assign(c.witch_cipher, {
+		secret: old.slice(),
+		cracked: { by: "Witchling", at: Date.now() },
+		history: [{ mix: old.slice(), right: 4, moved: 0, by: "Witchling" }],
+	});
+	delete c.witch_cipher.cracks;
+	c.S.witchcipher = c.witch_cipher;
+	c.witch_cipher_restore();
+	assert.deepEqual(plain(c.witch_cipher.cracks.map((crack) => crack.recipe)), [old]);
+	assert.deepEqual(plain(c.E.witchcipher.cracked.recipe), old);
+	assert.equal(c.witch_cipher.history.length, 0);
+});
+
+test("the Witch's own JOIN request follows join()'s rules for merchants, Hop Sickness and the bank", async () => {
+	const c = context();
+	c.witch_cipher_start({ id: "occurrence" });
+	assert.equal(
+		(await c.witch_cipher_join(player("Merchantly", { type: "merchant", real_id: "CH_M" }))).reason,
+		"no_merchants",
+	);
+	assert.equal(
+		(await c.witch_cipher_join(player("Hopper", { s: { hopsickness: { ms: 1000 } } }))).reason,
+		"cant_when_sick",
+	);
+	assert.equal((await c.witch_cipher_join(player("Banker", { user: {} }))).reason, "cant_in_bank");
+	assert.equal((await c.witch_cipher_join(player("Witchling"))).joined, true);
+});
+
+test("an account's characters share Trick or Treat stamps, and doors left stop at the account's knocks", async () => {
+	const c = context({ Math: Object.assign(Object.create(Math), { random: () => 0 }) });
+	const doors = design.events.trickortreat.doors;
+	const p = player("Witchling", { map: doors[0][0], x: doors[0][1], y: doors[0][2] + 20 });
+	const alt = player("Alt", { real_id: "CH_Alt", trickortreat: { doors: [], doors_left: 7, stamps: 0 } });
+	c.players = { witchling: p, alt };
+	await c.trick_or_treat_knock(p, {});
+	assert.equal(alt.trickortreat.stamps, 1, "the other online character sees the account's stamp");
+	assert(
+		c.resent.some(([who]) => who === "Alt"),
+		"and is told",
+	);
+	// 13 more knocks on other characters use up the account's day; the doors this character hasn't knocked stay closed.
+	await c.db
+		.collection("TrickOrTreat")
+		.updateOne({ _id: "knocks:US_owner:" + new Date().toISOString().slice(0, 10) }, { $set: { count: 13 } });
+	Object.assign(p, { map: doors[1][0], x: doors[1][1], y: doors[1][2] + 20 });
+	await c.trick_or_treat_knock(p, {});
+	assert.equal(c.trick_or_treat_status(p).doors_left, 0, "14 knocks: nothing left today");
+	assert.equal(c.trick_or_treat_status(alt).doors_left, 0);
 });
 
 test("a join answered from an older read keeps the mixes already spent", async () => {

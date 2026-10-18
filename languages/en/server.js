@@ -863,8 +863,8 @@ module.exports["server.witchcipher.started"] = "The Witch's Cipher has begun! Jo
 // Server message when the 20-minute gathering ends: ingredients stop dropping, brewing stays open for 8 more minutes.
 module.exports["server.witchcipher.gathering_over"] = "Ingredients have stopped dropping! 8 minutes left to brew at the Witch.";
 
-// Server message when someone brews the Witch's exact recipe first. {player} is a character name. The recipe now shows on the clue board for everyone.
-module.exports["server.witchcipher.cracked"] = "{player} cracked the Witch's recipe! The answer is on the clue board for everyone.";
+// Server message when someone cracks the Witch's recipe. {player} is a character name. The cracked recipe stays above the clue board and a new secret recipe starts at once.
+module.exports["server.witchcipher.cracked"] = "{player} cracked the Witch's recipe! The Witch forgot it, and a new recipe has begun.";
 
 // Server message when the Witch's Cipher ends after the recipe was cracked.
 module.exports["server.witchcipher.over"] = "The Witch's Cipher is over! The cauldron goes quiet until tomorrow.";

@@ -2856,6 +2856,9 @@ function issue_monster_award(monster, award) {
 			if (!current) {
 				return;
 			}
+			// A party member fighting nearby gets the Witch's Cipher roll too (one per account, on its own cooldown)
+			if (current != player && current.map == monster.map && simple_distance(current, monster) < 600)
+				witch_cipher_kill(current, monster);
 			current.socket.emit("kill_credit", {
 				mtype: monster.type,
 			});

@@ -152,14 +152,15 @@ function witch_board_html() {
 	var cipher = S.witchcipher || {},
 		html = "<div style='background-color: black; border: 5px solid gray; padding: 12px 14px; font-size: 24px; text-align: left; min-width: 250px'>";
 	html += "<div style='color:#AF6AE2'>" + phrase.html("interface.witch.board") + "</div>";
+	// The last cracked recipe stays above the new one's board
 	if (cipher.cracked) {
 		html += "<div class='mt5' style='color:#F59A3C'>" + phrase.html("interface.witch.cracked_by", { name: cipher.cracked.by }) + "</div><div>";
 		cipher.cracked.recipe.forEach(function (name) {
 			html += witch_icon(name, { size: 20, space: 1, margin: 1 });
 		});
 		html += "</div>";
-	} else if (cipher.board && cipher.board.length)
-		html += "<div style='color:#9B9B9B'>" + phrase.html("interface.witch.possible", { count: cipher.possible }) + "</div>";
+	}
+	if (cipher.board && cipher.board.length) html += "<div style='color:#9B9B9B'>" + phrase.html("interface.witch.possible", { count: cipher.possible }) + "</div>";
 	if (!cipher.board || !cipher.board.length) html += "<div style='color:#9B9B9B'>" + phrase.html("interface.witch.board_empty") + "</div>";
 	(cipher.board || []).slice().reverse().forEach(function (entry) {
 		html += "<div style='white-space:nowrap'>";
@@ -246,16 +247,23 @@ function witch_mix_reset() {
 	render_witch_cauldron();
 }
 
+// One brew at a time: a second click while the first is on its way would spend another of the day's mixes
+var witch_brewing = false;
 function witch_brew_click() {
+	if (witch_brewing) return;
 	if (witch_mix.indexOf(null) != -1) return add_log(phrase.html("interface.witch.fill_slots"), "gray");
 	var mix = witch_mix.slice();
+	witch_brewing = true;
 	witch_request("brew", { items: mix })
 		.then(function (data) {
 			witch_result = data;
 			witch_mix = [null, null, null, null];
 			if ($("#witch-cauldron").length) render_witch_cauldron();
 		})
-		.catch(witch_failure);
+		.catch(witch_failure)
+		.finally(function () {
+			witch_brewing = false;
+		});
 }
 
 // The board follows server.status.witchcipher while the cauldron is open.

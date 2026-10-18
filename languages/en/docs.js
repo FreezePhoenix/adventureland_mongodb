@@ -6432,20 +6432,21 @@ module.exports["docs.guide.event-witchcipher.cauldron"] = "The cauldron";
 // Witch's Cipher guide: how clues work. right and moved are the clue labels shown in the cauldron.
 module.exports["docs.guide.event-witchcipher.clues"] = "Each mix gives two clues: right counts ingredients in the correct position, and moved counts correct ingredients in another position. Ingredients can repeat, making 256 possible recipes. The board shows the realm's last 12 mixes and how many recipes still match every clue.";
 
+// Witch's Cipher guide, under the clue explanation: what happens when someone cracks the recipe. Keep the Witch.
+module.exports["docs.guide.event-witchcipher.again"] = "When someone cracks the recipe, the Witch forgets it at once. A new secret recipe starts and the clue board clears. The cracked recipe and who cracked it stay shown above the new board. The realm can crack several recipes in one evening.";
+
 // Witch's Cipher guide section title above the payout rows (Witch's Parcel icons with amounts).
 module.exports["docs.guide.event-witchcipher.payout"] = "Witch's Parcel rewards";
 
-// Payout row: before anyone cracks it, a mix the board hasn't seen that fits every clue so far (the server checks it).
-module.exports["docs.guide.event-witchcipher.pay_informative"] = "Before the crack: a new mix that fits every clue so far";
+// Payout row (2 Parcels): a mix the board hasn't seen that fits every clue on the current recipe's board (the server checks it).
+module.exports["docs.guide.event-witchcipher.pay_informative"] = "A new mix that fits every clue on the current board";
 
-// Payout row: a repeat, or a mix the clues already rule out; also any wrong mix after the crack.
+// Payout row (1 Parcel): a repeat, or a mix the clues already rule out.
 module.exports["docs.guide.event-witchcipher.pay_other"] = "Any other mix";
 
-// Payout row: the first exact recipe; everyone in the realm gets a message.
-module.exports["docs.guide.event-witchcipher.pay_crack"] = "First to crack the recipe (2 Parcels + 2 bonus)";
+// Payout row (4 Parcels): the exact recipe; everyone in the realm gets a message and a new recipe starts.
+module.exports["docs.guide.event-witchcipher.pay_crack"] = "Crack the recipe (2 Parcels + 2 bonus)";
 
-// Payout row: after the crack, brewing the exact recipe.
-module.exports["docs.guide.event-witchcipher.pay_exact"] = "After the crack: the exact recipe";
 
 // Witch's Cipher guide: the daily limit. 5 mixes and 12 Parcels are exact.
 module.exports["docs.guide.event-witchcipher.pay_limit"] = "5 mixes per account per UTC day, on one realm. Up to 12 Witch's Parcels a day.";
@@ -6499,7 +6500,7 @@ module.exports["docs.guide.event-graveyard.code"] = "join(\"graveyard\") takes y
 module.exports["docs.guide.event-trickortreat.intro"] = "During Halloween, knock on seven Trick or Treat doors: two in Spooky Forest and five in Spooky Town. Each character can knock on each door once per UTC day, up to 14 knocks per account per UTC day.";
 
 // Trick or Treat guide: what a knock gives and the pumpkin helmet bonus. The icons above show treats, the Spooked! condition and the helmets.
-module.exports["docs.guide.event-trickortreat.odds"] = "Each knock has a 70% chance of a treat and a 30% chance of a trick. A trick gives Spooked! (+40 speed for 3 seconds). Wear Pumpkin Head, Gold Pumpkin Head or Horseman's Pumpkin to raise your treat chance to 85%.";
+module.exports["docs.guide.event-trickortreat.odds"] = "Each knock has a 70% chance of a treat and a 30% chance of a trick. A trick gives Spooked! (+40 speed for 3 seconds). Wear Pumpkin Head, Green Pumpkin Head or Horseman's Pumpkin to raise your treat chance to 85%.";
 
 // Trick or Treat guide: stamps. Every knock counts for the whole account. Keep Witch's Parcel and Sinister Laugh unchanged.
 module.exports["docs.guide.event-trickortreat.stamps"] = "Every knock earns one stamp for your account. Every 10th stamp gives a Witch's Parcel. Your 40th stamp also gives a CX Jar containing the Sinister Laugh emote.";

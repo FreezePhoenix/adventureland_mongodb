@@ -12,7 +12,7 @@ module.exports = [
 			{
 				key: "witchcipher",
 				title: "New Daily Event: Witch's Cipher!",
-				note: "Every day at 18:00 realm time, the Witch in Spooky Forest forgets her recipe. Join the event, collect four ingredients from monsters and brew them at the Witch, or with brew(), to test their order. Each mix gives two clues shared with the realm. Earn Witch's Parcels to open or use in the Witch's recipes, all year.",
+				note: "Every day at 18:00 realm time, the Witch in Spooky Forest forgets her recipe. Join the event, collect four ingredients from monsters and brew them at the Witch, or with brew(), to test their order. Each mix gives two clues shared with the realm. When someone cracks the recipe, the Witch forgets it and a new one starts. Earn Witch's Parcels to open or use in the Witch's recipes, all year.",
 				show: ["item:witchparcel", "item:cipherdraught", "item:crookedkey", "item:patchbuckler", "item:blackcatbell", "item:nightmarketsash", "item:hexweavegloves", "item:candleboots", "item:witchlightmantle", "item:laughingbook"],
 			},
 			{

@@ -45,5 +45,5 @@ ride_with_the_horseman().catch(show_json);</div>
 				.join(""),
 	);
 	$(".horseman-stats").html(guide_monster_stats(["horseman", "jackowalker"]));
-	$(".horseman-drops").html(G.drops.monsters.horseman.concat(G.drops.monsters.jackowalker).map(function(drop) { return render_drop(drop, 1, "#858B8E"); }).join(""));
+	$(".horseman-drops").html(guide_monster_drops(["horseman", "jackowalker"]));
 </script>

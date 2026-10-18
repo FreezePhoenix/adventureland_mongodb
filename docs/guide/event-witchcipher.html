@@ -9,6 +9,7 @@
 <div class="title">{{ phrase("docs.guide.event-witchcipher.cauldron") }}</div>
 <div class="witch-example"></div>
 <p>{{ phrase("docs.guide.event-witchcipher.clues") }}</p>
+<p>{{ phrase("docs.guide.event-witchcipher.again") }}</p>
 <div class="divider"></div>
 <div class="title">{{ phrase("docs.guide.event-witchcipher.payout") }}</div>
 <div class="witch-payout"></div>
@@ -37,9 +38,8 @@ function clue(recipe, mix) {
     return right + "/" + moved;
 }
 
-// The cracked recipe, or the first recipe that fits every clue on the board.
+// The first recipe that fits every clue on the board (after a crack the board starts over).
 function next_mix(cipher) {
-    if (cipher.cracked) return cipher.cracked.recipe;
     for (var n = 0; n &lt; 256; n++) {
         var mix = [0, 1, 2, 3].map(function (i) { return NAMES[Math.floor(n / Math.pow(4, i)) % 4]; });
         if (cipher.board.every(function (c) { return clue(mix, c.mix) == c.right + "/" + c.moved; })) return mix;
@@ -98,10 +98,10 @@ witch_cipher_day().catch(show_json);</div>
 			[pay.informative, "{{ phrase('docs.guide.event-witchcipher.pay_informative') }}"],
 			[pay.other, "{{ phrase('docs.guide.event-witchcipher.pay_other') }}"],
 			[pay.exact + pay.crack, "{{ phrase('docs.guide.event-witchcipher.pay_crack') }}"],
-			[pay.exact, "{{ phrase('docs.guide.event-witchcipher.pay_exact') }}"],
 		].map(function (row) { return "<div class='witch-row'>" + icon("witchparcel", row[0]) + "<span class='witch-text'>" + row[1] + "</span></div>"; }).join(""));
 		$(".witch-parcel-title").text(G.items.witchparcel.name);
-		$(".witchparcel-drops").html(G.drops.witchparcel.map(function (drop) { return render_drop(drop, 100, "#858B8E"); }).join(""));
+		// The "open" row divides each weight by the table's total, like opening the Parcel
+		$(".witchparcel-drops").html(render_drop([1, "open", "witchparcel"], 1, "#858B8E"));
 		$(".witch-recipes").html(["witchparcel", "cipherdraught", "crookedkey", "patchbuckler", "blackcatbell", "nightmarketsash", "hexweavegloves", "candleboots", "witchlightmantle", "laughingbook"].map(function (name) {
 			var recipe = G.craft[name];
 			return "<div class='witch-row'>" + icon(name) + "<span class='guide-arrow' style='transform: scaleX(-1)'></span>" + recipe.items.map(function (part) { return icon(part[1], part[0]); }).join("") + "<span class='witch-text'>+ " + to_pretty_num(recipe.cost) + "</span></div>";
