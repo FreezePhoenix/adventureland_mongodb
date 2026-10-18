@@ -5038,7 +5038,11 @@ function render_item(selector, args) {
 			}
 		}
 		if (prop.spawns) {
+			// Each spawned monster once, even when it spawns at several times or HP thresholds
+			var spawned = [];
 			prop.spawns.forEach(function (s) {
+				if (spawned.indexOf(s[1]) != -1) return;
+				spawned.push(s[1]);
 				html += info_line({ name: phrase.html("interface.item.spawns"), color: "#237B2A", value: G.monsters[s[1]].name, onclick: "render_monster_info('" + s[1] + "')" });
 			});
 		}

@@ -25,7 +25,7 @@ module.exports = [
 				key: "events",
 				title: "New Events Window!",
 				note: "Click the slider or realm clock above chat to see active seasons, upcoming bosses, today's activities and the next seven days of events. Switch between your time and realm time. Choose REMIND to get a game-log message 10 minutes before an event. The slider above chat scrolls through live events, the next three events with countdowns and season end dates; hover to pause, or click to open EVENTS. Click X,Y or the realm name to show your coordinates instead; your character screen still shows the next event.",
-				image: { src: "/images/updates/events/window.png?v=1", width: 600, height: 505, localized: true },
+				image: { src: "/images/updates/events/window.png?v=2", width: 600, height: 505, localized: true },
 			},
 		],
 		changes: [

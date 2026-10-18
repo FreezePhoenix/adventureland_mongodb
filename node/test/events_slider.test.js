@@ -85,6 +85,9 @@ function run(frames, times) {
 
 test("the slider lists live events, the next three events and season ends, escaped and in order", () => {
 	const { c, track } = setup();
+	// Realm time on a UTC-5 realm, so the season's end is shown at 19:00 the day before UTC midnight
+	c.events_time_mode = "realm";
+	c.S.schedule.time_offset = -5;
 	c.events_ticker_update();
 	const text = track.html.replace(/<[^>]+>/g, "");
 	const order = [
@@ -92,7 +95,7 @@ test("the slider lists live events, the next three events and season ends, escap
 		"Graveyard Rising · in 25m",
 		"Giga Crab · in 2h 0m",
 		"Franky · in 5h 0m",
-		"Halloween ends November 2",
+		"Halloween ends November 2 at 19:00",
 	].map((s) => text.indexOf(s));
 	assert.ok(
 		order.every((at, i) => at >= 0 && (i == 0 || at > order[i - 1])),

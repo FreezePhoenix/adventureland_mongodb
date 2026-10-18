@@ -23,11 +23,12 @@
     if (character.map != "halloween") return await join("horseman");
     var horseman = get_nearest_monster({ type: "horseman" });
     if (!horseman) return await smart_move({ map: "halloween", x: ride.x, y: ride.y });
+    if (!is_in_range(horseman)) return await move(character.x + (horseman.x - character.x) / 2, character.y + (horseman.y - character.y) / 2);
     if (can_attack(horseman)) return await attack(horseman);
 }
 
 ride_with_the_horseman().catch(show_json);</div>
-<p><a href="/docs/code/functions/join" target="_blank">join</a> · <a href="/docs/code/functions/get_nearest_monster" target="_blank">get_nearest_monster</a> · <a href="/docs/code/functions/smart_move" target="_blank">smart_move</a> · <a href="/docs/code/functions/can_attack" target="_blank">can_attack</a> · <a href="/docs/code/functions/attack" target="_blank">attack</a> · <a href="/docs/code/server/status" target="_blank">server.status</a></p>
+<p><a href="/docs/code/functions/join" target="_blank">join</a> · <a href="/docs/code/functions/get_nearest_monster" target="_blank">get_nearest_monster</a> · <a href="/docs/code/functions/smart_move" target="_blank">smart_move</a> · <a href="/docs/code/functions/is_in_range" target="_blank">is_in_range</a> · <a href="/docs/code/functions/move" target="_blank">move</a> · <a href="/docs/code/functions/can_attack" target="_blank">can_attack</a> · <a href="/docs/code/functions/attack" target="_blank">attack</a> · <a href="/docs/code/server/status" target="_blank">server.status</a></p>
 <style>
 	.title { color: #467956; font-size: 36px; margin-top: 15px; }
 	.divider { margin: 15px -26px 0; height: 5px; background-color: #a2a2a2; }

@@ -20,13 +20,14 @@
 <div class="code" id="graveyard-code">async function graveyard_rising() {
     var rising = server.status.graveyard;
     if (!rising || !rising.live) return;
-    if (character.map != "spookytown") return await join("graveyard");
     var target = get_nearest_monster({ type: "gargoyle" }) || get_nearest_monster({ type: "ghoul" }) || get_nearest_monster({ type: "zombie" });
-    if (target &amp;&amp; can_attack(target)) return await attack(target);
+    if (character.map != "spookytown" || !target) return await join("graveyard");
+    if (!is_in_range(target)) return await move(character.x + (target.x - character.x) / 2, character.y + (target.y - character.y) / 2);
+    if (can_attack(target)) return await attack(target);
 }
 
 graveyard_rising().catch(show_json);</div>
-<p><a href="/docs/code/functions/join" target="_blank">join</a> · <a href="/docs/code/functions/get_nearest_monster" target="_blank">get_nearest_monster</a> · <a href="/docs/code/functions/can_attack" target="_blank">can_attack</a> · <a href="/docs/code/functions/attack" target="_blank">attack</a> · <a href="/docs/code/server/status" target="_blank">server.status</a></p>
+<p><a href="/docs/code/functions/join" target="_blank">join</a> · <a href="/docs/code/functions/get_nearest_monster" target="_blank">get_nearest_monster</a> · <a href="/docs/code/functions/is_in_range" target="_blank">is_in_range</a> · <a href="/docs/code/functions/move" target="_blank">move</a> · <a href="/docs/code/functions/can_attack" target="_blank">can_attack</a> · <a href="/docs/code/functions/attack" target="_blank">attack</a> · <a href="/docs/code/server/status" target="_blank">server.status</a></p>
 <style>
 	.title { color: #467956; font-size: 36px; margin-top: 15px; }
 	.divider { margin: 15px -26px 0; height: 5px; background-color: #a2a2a2; }
@@ -43,7 +44,7 @@ graveyard_rising().catch(show_json);</div>
 		});
 		$(".graveyard-waves").html(html + "<span class='guide-arrow'></span>" + guide_monster_tile("gargoyle", 0));
 		$(".gargoyle-views").html(guide_monster_views("gargoyle"));
-		$(".graveyard-stats").html(guide_monster_stats(["zombie", "ghoul", "gargoyle"]));
+		$(".graveyard-stats").html(guide_monster_stats(["zombie", "ghoul", "gargoyle", "mummy"]));
 		$(".graveyard-drops").html(guide_monster_drops(["gargoyle", "ghoul", "zombie"]));
 	})();
 </script>

@@ -38,11 +38,13 @@ function clue(recipe, mix) {
     return right + "/" + moved;
 }
 
-// The first recipe that fits every clue on the board (after a crack the board starts over).
+// The first recipe your ingredients can make that fits every clue on the board.
+// After a crack the board starts over.
 function next_mix(cipher) {
     for (var n = 0; n &lt; 256; n++) {
         var mix = [0, 1, 2, 3].map(function (i) { return NAMES[Math.floor(n / Math.pow(4, i)) % 4]; });
-        if (cipher.board.every(function (c) { return clue(mix, c.mix) == c.right + "/" + c.moved; })) return mix;
+        var have = NAMES.every(function (name) { return quantity(name) &gt;= mix.filter(function (m) { return m == name; }).length; });
+        if (have &amp;&amp; cipher.board.every(function (c) { return clue(mix, c.mix) == c.right + "/" + c.moved; })) return mix;
     }
 }
 
@@ -50,13 +52,14 @@ async function witch_cipher_day() {
     var cipher = server.status.witchcipher;
     if (!cipher || !cipher.live) return;
     if (!character.witchcipher) return await join("witchcipher");
-    if (!character.witchcipher.mixes_left) return;
+    if (!character.witchcipher.mixes_left || !next_mix(cipher)) return;
     await smart_move({ map: "halloween", x: 858, y: -120 });
-    return await brew(next_mix(server.status.witchcipher));
+    var mix = next_mix(server.status.witchcipher);
+    if (mix) return await brew(mix);
 }
 
 witch_cipher_day().catch(show_json);</div>
-<p><a href="/docs/code/functions/join" target="_blank">join</a> · <a href="/docs/code/functions/brew" target="_blank">brew</a> · <a href="/docs/code/functions/witch_cipher_info" target="_blank">witch_cipher_info</a> · <a href="/docs/code/functions/smart_move" target="_blank">smart_move</a> · <a href="/docs/code/functions/exchange" target="_blank">exchange</a> · <a href="/docs/code/functions/auto_craft" target="_blank">auto_craft</a> · <a href="/docs/code/server/status" target="_blank">server.status</a></p>
+<p><a href="/docs/code/functions/join" target="_blank">join</a> · <a href="/docs/code/functions/brew" target="_blank">brew</a> · <a href="/docs/code/functions/witch_cipher_info" target="_blank">witch_cipher_info</a> · <a href="/docs/code/functions/smart_move" target="_blank">smart_move</a> · <a href="/docs/code/functions/quantity" target="_blank">quantity</a> · <a href="/docs/code/functions/exchange" target="_blank">exchange</a> · <a href="/docs/code/functions/auto_craft" target="_blank">auto_craft</a> · <a href="/docs/code/server/status" target="_blank">server.status</a></p>
 <style>
 	.title { color: #467956; font-size: 36px; margin-top: 15px; }
 	.divider { margin: 15px -26px 0; height: 5px; background-color: #a2a2a2; }

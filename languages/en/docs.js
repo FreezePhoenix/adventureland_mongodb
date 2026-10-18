@@ -6417,8 +6417,8 @@ module.exports["docs.functions.knock.about"] = "Knocks on a nearby Trick or Trea
 // knock() result. Keep the CODE field names (treat, trick, stamps, parcel, laugh) and failure reasons unchanged; "spooked" is a CODE value.
 module.exports["docs.functions.knock.returns"] = "Returns a Promise with treat (the item and quantity) or trick (\"spooked\"), plus your account's stamps. parcel and laugh are true when a knock awards a Witch's Parcel or Sinister Laugh. Rejects with trickortreat_season, trickortreat_door, trickortreat_knocked or trickortreat_limit.";
 
-// Witch's Cipher guide intro. 18:00 is on the realm clock. Keep the Witch, Spooky Forest, Witch's Cipher and Witch's Parcel unchanged.
-module.exports["docs.guide.event-witchcipher.intro"] = "Every day at 18:00 on the realm clock, the Witch in Spooky Forest forgets her recipe. Join with one character per account, gather ingredients for 20 minutes, then spend the last 8 minutes brewing. Each mix uses four ingredients in order and earns Witch's Parcels. Everyone on the realm shares the clues.";
+// Witch's Cipher guide intro. 18:00 is on the realm clock; ingredients drop for the first 20 minutes and brewing is open for all 28. Keep the Witch, Spooky Forest, Witch's Cipher and Witch's Parcel unchanged.
+module.exports["docs.guide.event-witchcipher.intro"] = "Every day at 18:00 on the realm clock, the Witch in Spooky Forest forgets her recipe. Join with one character per account, gather ingredients for the first 20 minutes, and brew throughout the 28-minute event. When ingredients stop dropping, you have 8 minutes left to finish your mixes. Each mix uses four ingredients in order and earns Witch's Parcels. Everyone on the realm shares the clues.";
 
 // Witch's Cipher guide section title above the ingredient rows (monsters that drop each ingredient).
 module.exports["docs.guide.event-witchcipher.ingredients"] = "Ingredients";
@@ -6457,11 +6457,11 @@ module.exports["docs.guide.event-witchcipher.parcels"] = "Open Witch's Parcels a
 // Witch's Cipher guide section title above the Witch's recipe rows.
 module.exports["docs.guide.event-witchcipher.recipes"] = "The Witch's recipes";
 
-// Witch's Cipher guide CODE intro. Keep join, brew, character.witchcipher and server.status.witchcipher unchanged.
-module.exports["docs.guide.event-witchcipher.code"] = "Join, go to the Witch and brew a mix that fits the clues. character.witchcipher shows your mixes left; server.status.witchcipher shows the shared clue board.";
+// Witch's Cipher guide CODE intro: what brew() needs and that the example does one step per call. Keep join, brew(), character.witchcipher and server.status.witchcipher unchanged.
+module.exports["docs.guide.event-witchcipher.code"] = "Join, go to the Witch and brew a mix that fits the clues. brew() takes four ingredient names in order. You must have all four ingredients in your inventory and be at the Witch. Each call does one step, so run it again to continue. character.witchcipher shows your mixes left; server.status.witchcipher shows the shared clue board.";
 
-// Headless Horseman guide intro. 00:00 is on the realm clock; 40 minutes is his longest ride. Keep Headless Horseman, Halloween and Spooky Forest unchanged.
-module.exports["docs.guide.event-horseman.intro"] = "Every night at 00:00 realm time during Halloween, the Headless Horseman rides out of Spooky Forest's north graveyard. He stays for up to 40 minutes. Everyone who fights him shares the reward.";
+// Headless Horseman guide intro. 00:00 is on the realm clock; after 40 minutes he leaves only once nobody has attacked him for 20 seconds. Keep Headless Horseman, Halloween and Spooky Forest unchanged.
+module.exports["docs.guide.event-horseman.intro"] = "Every night at 00:00 realm time during Halloween, the Headless Horseman rides out of Spooky Forest's north graveyard. After 40 minutes, he leaves once nobody has attacked him for 20 seconds. Keep fighting and he stays. Everyone who fights him shares the reward.";
 
 // Headless Horseman guide: minions. Jack-o Walker is a monster name; 75% and 25% are his health.
 module.exports["docs.guide.event-horseman.walkers"] = "At 75% health, four Jack-o Walkers join him. Four more arrive at 25%.";
@@ -6475,8 +6475,8 @@ module.exports["docs.guide.event-horseman.fight"] = "The Headless Horseman hits 
 // Headless Horseman guide: his rare helmet. Keep Horseman's Pumpkin unchanged.
 module.exports["docs.guide.event-horseman.helmet"] = "His Horseman's Pumpkin is a rare drop. The more you help, the better your chance.";
 
-// Headless Horseman guide CODE intro. Keep join("horseman") and server.status.horseman unchanged.
-module.exports["docs.guide.event-horseman.code"] = "join(\"horseman\") takes you to Spooky Forest while he rides. server.status.horseman shows where he is.";
+// Headless Horseman guide CODE intro: the example does one step per call. Keep join("horseman") and server.status.horseman unchanged.
+module.exports["docs.guide.event-horseman.code"] = "join(\"horseman\") takes you to Spooky Forest while he rides. server.status.horseman shows where he is. The example does one step per call: join if needed, find him, walk halfway if he is out of range, or attack when ready. Run it again as the fight changes.";
 
 // Graveyard Rising guide intro. The times are on the realm clock. Keep Graveyard Rising, Spooky Town, Zombie, Ghoul and Gargoyle unchanged.
 module.exports["docs.guide.event-graveyard.intro"] = "During Halloween, Graveyard Rising begins every two hours at 1:30, 3:30, 5:30 and so on, on the realm clock. Three waves of Zombies and Ghouls rise from Spooky Town's graveyard, three minutes apart. After the waves, the Gargoyle wakes at the monument.";
@@ -6487,14 +6487,14 @@ module.exports["docs.guide.event-graveyard.shared"] = "Everyone who fights share
 // Graveyard Rising guide: section title above the monsters' stat cards and how the round plays out.
 module.exports["docs.guide.event-graveyard.fight-title"] = "How the Fight Works";
 
-// Graveyard Rising guide: how a round plays out. Keep Zombie, Ghoul and Gargoyle unchanged; 3 and 6 minutes are after the start, 9 minutes is the latest the Gargoyle wakes.
-module.exports["docs.guide.event-graveyard.waves"] = "The round starts with 12 Zombies rising from the graves. More Zombies and Ghouls rise after 3 and 6 minutes. The Gargoyle wakes at the monument when all wave monsters are defeated, or after 9 minutes at the latest, and you have 10 minutes to defeat it.";
+// Graveyard Rising guide: how a round plays out. Keep Zombie, Ghoul and Gargoyle unchanged; 3 and 6 minutes are after the start, 9 minutes is the latest the Gargoyle wakes, and ten minutes after waking it leaves only once nobody has attacked it for 20 seconds.
+module.exports["docs.guide.event-graveyard.waves"] = "The round starts with 12 Zombies rising from the graves. More Zombies and Ghouls rise after 3 and 6 minutes. The Gargoyle wakes at the monument when all wave monsters are defeated after the third wave, or after 9 minutes at the latest. Ten minutes after it wakes, it leaves once nobody has attacked it for 20 seconds. Keep fighting and it stays.";
 
-// Graveyard Rising guide, beside the Zombie, Ghoul and Gargoyle stat cards: how each fights and what helps. Keep the monster names unchanged.
-module.exports["docs.guide.event-graveyard.monsters"] = "Zombies walk slowly and attack anyone who comes near. Ghouls hit harder and charge faster than most characters can run. The Gargoyle has 6 million HP, hits hard at close range and usually resists stuns, but ranged characters can stay out of its reach. Magic deals about twice as much damage to the Gargoyle as physical attacks, while armor and evasion help against all three monsters.";
+// Graveyard Rising guide, beside the Zombie, Ghoul, Gargoyle and Mummy stat cards: how each fights, the graveyard's own Mummies, and what helps. Keep the monster names unchanged.
+module.exports["docs.guide.event-graveyard.monsters"] = "Zombies walk slowly and attack anyone who comes near. Ghouls hit harder and charge faster than most characters can run. The graveyard also has 9 Mummies that keep roaming during the event, attack anyone nearby for 420 physical damage, charge quickly and raise more Mummies when half are down. The Gargoyle has 6 million HP, hits hard at close range and usually resists stuns, but ranged characters can stay out of its reach. Magic deals about twice as much damage to the Gargoyle as physical attacks, while armor and evasion help against all these monsters.";
 
-// Graveyard Rising guide CODE intro. Keep join("graveyard") and server.status.graveyard unchanged.
-module.exports["docs.guide.event-graveyard.code"] = "join(\"graveyard\") takes you to the graveyard. server.status.graveyard shows the current wave.";
+// Graveyard Rising guide CODE intro: the example does one step per call. Keep join("graveyard") and server.status.graveyard unchanged.
+module.exports["docs.guide.event-graveyard.code"] = "join(\"graveyard\") takes you to the graveyard. server.status.graveyard shows the current wave. The example does one step per call: join if needed, find the monster, walk halfway if it is out of range, or attack when ready. Run it again as the fight changes.";
 
 // Trick or Treat guide intro. 14 is the account's daily knock limit. Keep Trick or Treat, Halloween, Spooky Forest and Spooky Town unchanged.
 module.exports["docs.guide.event-trickortreat.intro"] = "During Halloween, knock on seven Trick or Treat doors: two in Spooky Forest and five in Spooky Town. Each character can knock on each door once per UTC day, up to 14 knocks per account per UTC day.";

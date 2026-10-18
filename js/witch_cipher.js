@@ -204,7 +204,8 @@ function render_witch_cauldron() {
 			"</span> <span style='color:#E6AE3F'>" +
 			phrase.html("interface.witch.moved", { count: witch_result.moved }) +
 			"</span> <span style='color:#AF6AE2'>" +
-			phrase.html("interface.witch.parcels_paid", { count: witch_result.parcels }) +
+			// Every mix pays at least one Parcel, so none means the account reached today's limit
+			(witch_result.parcels ? phrase.html("interface.witch.parcels_paid", { count: witch_result.parcels }) : phrase.html("interface.witch.parcels_limit")) +
 			"</span></div>";
 	html +=
 		"<div><div class='gamebutton clickable' onclick='witch_mix_reset()'>" +

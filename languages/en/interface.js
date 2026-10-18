@@ -2033,8 +2033,8 @@ module.exports = {
 	"interface.events.in_days": "in {d}d {h}h",
 	// Events window: a season with no set end date is active.
 	"interface.events.season_running": "Running now",
-	// Events window: the season's last day. {date} is a localized date like Mon, November 2; {left} is a countdown like in 15d 4h. This line must make the end date obvious.
-	"interface.events.season_ends": "Last day: {date} · ends {left}",
+	// Events window: the exact moment the season ends, in the time chosen in the window. {date} is a localized date and time like Mon, November 2 at 19:00; {left} is a countdown that already includes its word, like in 15d 4h.
+	"interface.events.season_ends": "Ends {date} · {left}",
 	// Small uppercase tag under the season's end date in the Events window.
 	"interface.events.ends": "ENDS",
 	// Events window: Graveyard Rising is running; which wave of Zombies and Ghouls is up. Numbers only.
@@ -2089,7 +2089,7 @@ module.exports = {
 	"interface.events.next_in": "{name} · {left}",
 	// Character selection card heading, after the realm name. Uppercase.
 	"interface.events.next_event": "NEXT EVENT",
-	// Character selection card: a season's last day, like Halloween ends November 2.
+	// Character selection card and the slider above chat: when a season ends, like Halloween ends November 2 at 19:00. {date} is a localized date and time.
 	"interface.events.selection_season_ends": "{name} ends {date}",
 	// Character selection card: the next event's start in the player's time; clicking opens the Events window.
 	"interface.events.selection_time": "{time} your time · SCHEDULE >",
@@ -2153,6 +2153,8 @@ module.exports = {
 	"interface.witch.parcels_paid": "+{count} Parcels",
 	// Singular form of the phrase above.
 	"interface.witch.parcels_paid.one": "+{count} Parcel",
+	// Cauldron result in place of "+0 Parcels": this mix paid nothing because the account already earned today's Witch's Parcel limit (12). Short.
+	"interface.witch.parcels_limit": "Daily Parcel limit reached",
 	// Game log when BREW is pressed with an empty slot.
 	"interface.witch.fill_slots": "Fill all four ingredient slots first.",
 	// Game log: join or brew outside the event.

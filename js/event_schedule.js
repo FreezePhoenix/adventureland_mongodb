@@ -146,7 +146,12 @@ function events_row(args) {
 	);
 }
 
-// Each running season and its last day. A season with an end time says so in its accent color.
+// The exact moment a season ends, in the Events window's chosen time (your time or realm time)
+function schedule_end_text(ms, weekday) {
+	return schedule_format(ms, Object.assign(weekday ? { weekday: "short" } : {}, { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit", hour12: false }));
+}
+
+// Each running season and when it ends. A season with an end time says so in its accent color.
 function events_seasons_html() {
 	var html = "",
 		now = schedule_now(),
@@ -159,12 +164,11 @@ function events_seasons_html() {
 			meta = phrase.html("interface.events.season_running"),
 			tag = "";
 		if (ends[season]) {
-			var last_day = new Intl.DateTimeFormat(phrase.language || "en", { weekday: "short", day: "numeric", month: "long", timeZone: "UTC" }).format(ends[season] - 1);
-			meta = phrase.html("interface.events.season_ends", { date: last_day, left: schedule_countdown(ends[season] - now) });
+			meta = phrase.html("interface.events.season_ends", { date: schedule_end_text(ends[season], true), left: schedule_countdown(ends[season] - now) });
 			tag = phrase.html("interface.events.ends");
 		}
 		html += events_row({
-			time: ends[season] ? new Intl.DateTimeFormat(phrase.language || "en", { day: "numeric", month: "short", timeZone: "UTC" }).format(ends[season] - 1) : "",
+			time: ends[season] ? schedule_format(ends[season], { day: "numeric", month: "short" }) : "",
 			tag: tag,
 			icon: schedule_icon(season),
 			name: html_escape(schedule_event_name(season)),
@@ -443,7 +447,7 @@ function events_ticker_items() {
 	for (var season in ends)
 		if (S[season])
 			items.push(
-				events_ticker_phrase("interface.events.selection_season_ends", season, { date: new Intl.DateTimeFormat(phrase.language || "en", { day: "numeric", month: "long", timeZone: "UTC" }).format(ends[season] - 1) }, "#F5A05B") +
+				events_ticker_phrase("interface.events.selection_season_ends", season, { date: schedule_end_text(ends[season]) }, "#F5A05B") +
 					events_ticker_note(season),
 			);
 	return items;
@@ -541,7 +545,7 @@ function events_selection_card_html() {
 				"<span class='events-season-end'>" +
 				phrase.html("interface.events.selection_season_ends", {
 					name: html_escape(schedule_event_name(season)),
-					date: new Intl.DateTimeFormat(phrase.language || "en", { day: "numeric", month: "long", timeZone: "UTC" }).format(ends[season] - 1),
+					date: schedule_end_text(ends[season]),
 				}) +
 				"</span>";
 	if (next && next.status != "live") html += "<span>" + phrase.html("interface.events.selection_time", { time: schedule_time_text(next.at) }) + "</span>";
