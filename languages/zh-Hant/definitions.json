@@ -2290,7 +2290,7 @@
 	"map.spookytown.quirks.4.5": "已上鎖",
 	"map.spookytown.quirks.5.5": "已上鎖",
 	"interaction.witchcipher.title": "女巫密碼",
-	"interaction.witchcipher.summary": "每天世界時間18:00，收集材料並調製 Witch 遺失的配方。",
+	"interaction.witchcipher.summary": "每天世界時間06:00和18:00，收集材料並調製 Witch 遺失的配方。",
 	"interaction.trickortreat.title": "不給糖就搗蛋",
 	"interaction.trickortreat.summary": "萬聖節期間敲敲這扇門，可能拿到糖果，也可能被嚇一跳。"
 }

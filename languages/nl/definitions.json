@@ -2290,7 +2290,7 @@
 	"map.spookytown.quirks.4.5": "Op slot",
 	"map.spookytown.quirks.5.5": "Op slot",
 	"interaction.witchcipher.title": "Het Heksenraadsel",
-	"interaction.witchcipher.summary": "Verzamel elke dag om 18:00 uur volgens de wereldklok ingrediënten en brouw het verloren recept van de Witch.",
+	"interaction.witchcipher.summary": "Verzamel elke dag om 06:00 en 18:00 uur volgens de wereldklok ingrediënten en brouw het verloren recept van de Witch.",
 	"interaction.trickortreat.title": "Snoep of Je Leven",
 	"interaction.trickortreat.summary": "Klop tijdens Halloween op deze deur voor iets lekkers of iets engs."
 }

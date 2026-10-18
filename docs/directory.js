@@ -384,7 +384,7 @@ docs = {
 			title: "Witch's Cipher",
 			article: "event-witchcipher",
 			skin: "brewingwitch",
-			summary: "Every day at 18:00 realm time, gather ingredients and brew the Witch's lost recipe.",
+			summary: "Every day at 06:00 and 18:00 realm time, gather ingredients and brew the Witch's lost recipe.",
 			functions: ["join", "brew", "witch_cipher_info", "exchange", "auto_craft"],
 			proximity: true,
 		},

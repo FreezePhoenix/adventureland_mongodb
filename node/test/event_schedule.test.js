@@ -3,7 +3,7 @@
 const assert = require("node:assert/strict");
 const test = require("node:test");
 const vm = require("node:vm");
-const { create_schedule, HOUR, DAY } = require("../logic/event_schedule");
+const { create_schedule, SLOTS, HOUR, DAY } = require("../logic/event_schedule");
 const { read, extract } = require("./helpers/server_vm");
 
 // 2026-10-20 10:00 UTC is 11:00 on the EU realm clock (offset +1).
@@ -11,7 +11,7 @@ const T0 = Date.UTC(2026, 9, 20, 10, 0, 0);
 const END = Date.UTC(2026, 10, 3, 0, 0, 0);
 const at_realm = (day, hour, minute = 0) => Date.UTC(2026, 9, day, hour - 1, minute);
 
-function make(saved, now, open = { halloween: true }) {
+function make(saved, now, open = { halloween: true }, slots = SLOTS) {
 	return create_schedule({
 		saved,
 		offset: 1,
@@ -19,6 +19,7 @@ function make(saved, now, open = { halloween: true }) {
 		realm: "EUI",
 		season_open: (season, when) => !!open[season] && when < END,
 		now: () => now,
+		slots,
 	});
 }
 
@@ -37,10 +38,11 @@ test("publishes seven days on the realm clock and rotates the daily and nightly 
 		["goobrawl", "2026-10-20T19:00:00.000Z"],
 		["icegolem", "2026-10-20T22:00:00.000Z"],
 		["horseman", "2026-10-20T23:00:00.000Z"],
-		["abtesting", "2026-10-21T12:00:00.000Z"],
+		["witchcipher", "2026-10-21T05:00:00.000Z"],
 	]);
 	assert(events.every((o) => o.at <= T0 + 7 * DAY));
-	assert.equal(events.filter((o) => o.event === "witchcipher").length, 7);
+	// Twice a day, at 06:00 and 18:00 on the realm clock
+	assert.equal(events.filter((o) => o.event === "witchcipher").length, 14);
 	// Graveyard Rising is one line with its cadence, not twelve rows a day.
 	assert.equal(
 		events.some((o) => o.event === "graveyard"),
@@ -62,6 +64,43 @@ test("a restart keeps the published lineup and the queue order", () => {
 	assert.deepEqual(
 		again.publish(T0 + 5 * 60000).events.map((o) => o.id),
 		before,
+	);
+});
+
+test("a slot added in an update reaches a saved lineup at once, and the rotations continue as published", () => {
+	const before = SLOTS.map((slot) => (slot.event === "witchcipher" ? Object.assign({}, slot, { hours: [18] }) : slot));
+	const first = make(undefined, T0, undefined, before);
+	first.tick(T0);
+	// The 13:00 daily is running when the update restarts the server
+	const daily = at_realm(20, 13);
+	const [started] = first.tick(daily + 60000);
+	const rotation = (schedule, t) =>
+		schedule
+			.publish(t)
+			.events.filter((o) => o.at > t && ["crabxx", "goobrawl", "abtesting", "icegolem", "franky"].includes(o.event))
+			.map((o) => o.id);
+	const published = rotation(first, daily + 5 * 60000);
+	assert.equal(first.publish(daily).events.filter((o) => o.event === "witchcipher").length, 7);
+	const updated = make(JSON.parse(JSON.stringify(first.state())), daily + 5 * 60000);
+	assert.deepEqual(updated.tick(daily + 5 * 60000), [], "nothing starts twice");
+	const lineup = updated.publish(daily + 5 * 60000).events;
+	assert.equal(lineup.find((o) => o.id === started.id).status, "live", "the running daily stays");
+	assert.equal(lineup.filter((o) => o.id === started.id).length, 1);
+	assert.deepEqual(
+		lineup
+			.filter((o) => o.event === "witchcipher")
+			.map((o) => new Date(o.at).getUTCHours())
+			.slice(0, 4),
+		[17, 5, 17, 5],
+		"the new 06:00 round is in the lineup",
+	);
+	assert.deepEqual(rotation(updated, daily + 5 * 60000), published, "the same rotation picks on the same days");
+	// The next restart keeps it as it is
+	const again = make(JSON.parse(JSON.stringify(updated.state())), daily + 10 * 60000);
+	again.tick(daily + 10 * 60000);
+	assert.deepEqual(
+		again.publish(daily + 10 * 60000).events.map((o) => o.id),
+		updated.publish(daily + 10 * 60000).events.map((o) => o.id),
 	);
 });
 

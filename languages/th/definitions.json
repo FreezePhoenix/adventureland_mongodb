@@ -2290,7 +2290,7 @@
 	"map.spookytown.quirks.4.5": "ล็อกอยู่",
 	"map.spookytown.quirks.5.5": "ล็อกอยู่",
 	"interaction.witchcipher.title": "ปริศนาของ Witch",
-	"interaction.witchcipher.summary": "ทุกวันเวลา 18:00 ตามเวลาโลก รวบรวมวัตถุดิบและปรุงสูตรลับที่ Witch ทำหาย",
+	"interaction.witchcipher.summary": "ทุกวันเวลา 06:00 และ 18:00 ตามเวลาโลก รวบรวมวัตถุดิบและปรุงสูตรลับที่ Witch ทำหาย",
 	"interaction.trickortreat.title": "หลอกหรือเลี้ยง",
 	"interaction.trickortreat.summary": "เคาะประตูนี้ในช่วงฮาโลวีนเพื่อลุ้นรับของหรือเจอเรื่องหลอน"
 }

@@ -2290,7 +2290,7 @@
 	"map.spookytown.quirks.4.5": "Verrouillé",
 	"map.spookytown.quirks.5.5": "Verrouillé",
 	"interaction.witchcipher.title": "L'Énigme de la Witch",
-	"interaction.witchcipher.summary": "Chaque jour à 18 h, heure du monde, rassemblez des ingrédients et préparez la recette perdue de la Witch.",
+	"interaction.witchcipher.summary": "Chaque jour à 6 h et à 18 h, heure du monde, rassemblez des ingrédients et préparez la recette perdue de la Witch.",
 	"interaction.trickortreat.title": "Des bonbons ou un sort",
 	"interaction.trickortreat.summary": "Frappez à cette porte pendant Halloween pour recevoir une friandise ou une frayeur."
 }

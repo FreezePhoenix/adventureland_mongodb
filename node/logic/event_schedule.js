@@ -19,7 +19,8 @@ const KEEP = 6 * HOUR;
 const SLOTS = [
 	{ hours: [13, 20], pool: "dailies" },
 	{ hours: [23], pool: "nightlies" },
-	{ hours: [18], event: "witchcipher" },
+	// Two rounds twelve hours apart, so other time zones can play; one daily limit covers both
+	{ hours: [6, 18], event: "witchcipher" },
 	{ hours: [0], event: "horseman", season: "halloween" },
 	{
 		hours: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23],
@@ -48,6 +49,24 @@ function create_schedule({ saved, offset, pools, realm, season_open, now = Date.
 			o.status = "missed";
 			o.ended = o.started || o.at;
 		}
+	// The slots changed since this lineup was saved: what lies ahead is built again, so an added or
+	// removed slot applies at once. Its rotation picks go back to the front of their queues, latest
+	// first, so the rotations continue as published. What already started stays.
+	const shape = JSON.stringify(slots);
+	if (state.slots !== shape && state.until !== null) {
+		const t = now(),
+			ahead = state.occurrences.filter((o) => o.status === "scheduled" && o.at > t).sort((a, b) => b.at - a.at);
+		for (const o of ahead) {
+			const pool = o.pool || Object.keys(state.queues).find((name) => state.queues[name].includes(o.event));
+			const queue = state.queues[pool];
+			if (!queue || !queue.includes(o.event)) continue;
+			queue.splice(queue.lastIndexOf(o.event), 1);
+			queue.unshift(o.event);
+		}
+		state.occurrences = state.occurrences.filter((o) => !ahead.includes(o));
+		state.until = t;
+	}
+	state.slots = shape;
 	// Keep the saved order for known events, add new pool members at the end and drop removed ones.
 	for (const name in pools) {
 		const kept = (state.queues[name] || []).filter((event) => pools[name].includes(event));
@@ -101,6 +120,7 @@ function create_schedule({ saved, offset, pools, realm, season_open, now = Date.
 				queue.push(event);
 			}
 			const occurrence = { id: slot_id(event, at), event, at, status: "scheduled" };
+			if (slot.pool) occurrence.pool = slot.pool;
 			if (slot.season) occurrence.season = slot.season;
 			if (slot.repeat) occurrence.repeat = true;
 			if (slot.late) occurrence.late = slot.late;

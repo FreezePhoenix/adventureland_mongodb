@@ -2290,7 +2290,7 @@
 	"map.spookytown.quirks.4.5": "Zamknięte",
 	"map.spookytown.quirks.5.5": "Zamknięte",
 	"interaction.witchcipher.title": "Szyfr Witch",
-	"interaction.witchcipher.summary": "Codziennie o 18:00 czasu realmu zbieraj składniki i uwarz zaginioną recepturę Witch.",
+	"interaction.witchcipher.summary": "Codziennie o 06:00 i 18:00 czasu świata zbieraj składniki i uwarz zaginioną recepturę Witch.",
 	"interaction.trickortreat.title": "Cukierek albo psikus",
 	"interaction.trickortreat.summary": "Zapukaj do tych drzwi podczas Halloween, żeby dostać cukierek lub przeżyć chwilę grozy."
 }

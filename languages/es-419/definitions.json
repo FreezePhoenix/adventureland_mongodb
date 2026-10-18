@@ -2290,7 +2290,7 @@
 	"map.spookytown.quirks.4.5": "Cerrada con llave",
 	"map.spookytown.quirks.5.5": "Cerrada con llave",
 	"interaction.witchcipher.title": "El código de la bruja",
-	"interaction.witchcipher.summary": "Todos los días a las 18:00, hora del mundo, reúne ingredientes y prepara la receta perdida de la Witch.",
+	"interaction.witchcipher.summary": "Todos los días a las 06:00 y a las 18:00, hora del mundo, reúne ingredientes y prepara la receta perdida de la Witch.",
 	"interaction.trickortreat.title": "Dulce o truco",
 	"interaction.trickortreat.summary": "Toca esta puerta durante Halloween para recibir un dulce o un susto."
 }

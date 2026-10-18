@@ -442,7 +442,8 @@ var drops = {
 		],
 		gargoyle: [
 			[100, "candy1", 6],
-			[2, "witchparcel", 2],
+			// Weight 10, like Mr. Pumpkin's helmet: with the extra table roll per 10 fighters, each fighter averages a Parcel at any crowd size
+			[10, "witchparcel"],
 			[2, "essenceofether", 3],
 			[0.6, "bcandle"],
 		],

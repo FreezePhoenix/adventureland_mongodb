@@ -2290,7 +2290,7 @@
 	"map.spookytown.quirks.4.5": "Verschlossen",
 	"map.spookytown.quirks.5.5": "Verschlossen",
 	"interaction.witchcipher.title": "Hexenrätsel",
-	"interaction.witchcipher.summary": "Sammle jeden Tag um 18:00 Uhr nach der Weltuhr Zutaten und braue das verlorene Rezept der Witch.",
+	"interaction.witchcipher.summary": "Sammle jeden Tag um 06:00 und 18:00 Uhr nach der Weltuhr Zutaten und braue das verlorene Rezept der Witch.",
 	"interaction.trickortreat.title": "Süßes oder Saures",
 	"interaction.trickortreat.summary": "Klopfe während Halloween an diese Tür und bekomme etwas Süßes oder einen Schreck."
 }

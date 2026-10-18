@@ -15,6 +15,7 @@ function memory_db() {
 	const matches = (doc, filter) =>
 		Object.entries(filter).every(([key, value]) => {
 			if (value && typeof value === "object" && "$lt" in value) return doc[key] < value.$lt;
+			if (value && typeof value === "object" && "$in" in value) return value.$in.includes(doc[key]);
 			if (value && typeof value === "object" && "$regex" in value) return new RegExp(value.$regex).test(doc[key]);
 			return doc[key] === value;
 		});
@@ -37,6 +38,9 @@ function memory_db() {
 				async findOne(filter) {
 					const doc = [...docs.values()].find((d) => matches(d, filter));
 					return doc ? plain(doc) : null;
+				},
+				find(filter) {
+					return { toArray: async () => [...docs.values()].filter((d) => matches(d, filter)).map(plain) };
 				},
 				async updateOne(filter, update, options = {}) {
 					const doc = [...docs.values()].find((d) => matches(d, filter));
@@ -406,6 +410,85 @@ test("ingredients drop only for the joined character, during gathering, at most 
 	c.witch_cipher.gather_end = Date.now() - 1;
 	c.witch_cipher_kill(p, { type: "arcticbee" });
 	assert.equal(p.items.length, 1, "nothing drops while brewing");
+});
+
+test("one join covers both of the day's rounds, with the mixes left from the first", async () => {
+	const c = context();
+	const p = player("Witchling", { items: NAMES.map((name) => ({ name, q: 10 })) }),
+		alt = player("Alt", { real_id: "CH_Alt" }),
+		visitor = player("Visitor", { owner: "US_visitor", real_id: "CH_Visitor" });
+	Object.assign(c.players, { Witchling: p, Alt: alt, Visitor: visitor });
+	c.witch_cipher_start({ id: "morning" });
+	await c.witch_cipher_join(p);
+	c.witch_cipher_brew(p, NAMES);
+	c.witch_cipher_brew(p, ["frostscale", "verdantspore", "embercoal", "gloomfeather"]);
+	// The visitor joined on another realm this morning
+	await c.db.collection("WitchCipher").insertOne({
+		_id: "claim:US_visitor:" + c.witch_cipher.day,
+		owner: "US_visitor",
+		day: c.witch_cipher.day,
+		character: "CH_Visitor",
+		name: "Visitor",
+		server: "SR_EUI",
+		mixes: 1,
+		parcels: 2,
+	});
+	c.witch_cipher.end = Date.now() - 1;
+	c.witch_cipher_tick();
+	assert.equal(p.witchcipher, null, "between the rounds nobody is joined");
+	c.witch_cipher_start({ id: "evening" });
+	await new Promise((resolve) => setImmediate(resolve));
+	assert.equal(p.witchcipher.mixes_left, 3, "joined again, with three mixes left");
+	assert.equal(alt.witchcipher, undefined, "the account's other character did not join");
+	assert.equal(visitor.witchcipher, undefined, "a join on another realm stays there");
+	assert.equal(c.witch_cipher_brew(p, ["gloomfeather", "embercoal", "frostscale", "verdantspore"]).mixes_left, 2);
+	// A restart between the rounds: this server forgot the claim, Mongo still has it
+	await new Promise((resolve) => setImmediate(resolve));
+	const restarted = context({ db: c.db });
+	const back = player("Witchling");
+	restarted.players.Witchling = back;
+	restarted.witch_cipher_start({ id: "next" });
+	await new Promise((resolve) => setImmediate(resolve));
+	assert.equal(back.witchcipher.mixes_left, 2);
+});
+
+test("a day gives 60 ingredients at most, however the account splits them between the rounds", async () => {
+	const c = context({ Math: Object.assign(Object.create(Math), { random: () => 0.1 }) });
+	const logs = [];
+	const p = player("Witchling", { socket: { emit: (name, data) => logs.push(data && data.phrase) } });
+	c.players.Witchling = p;
+	const gather = (kills) => {
+		for (let i = 0; i < kills; i++) {
+			delete c.witch_cipher_drops[p.owner];
+			c.witch_cipher_kill(p, { type: "goo" });
+		}
+	};
+	c.witch_cipher_start({ id: "morning" });
+	await c.witch_cipher_join(p);
+	gather(40);
+	assert.equal(p.items.length, 40);
+	c.witch_cipher.end = Date.now() - 1;
+	c.witch_cipher_tick();
+	c.witch_cipher_start({ id: "evening" });
+	await new Promise((resolve) => setImmediate(resolve));
+	gather(30);
+	assert.equal(p.items.length, 60, "20 more, then none");
+	assert.equal(logs.filter((phrase) => phrase === "server.witchcipher.ingredients_done").length, 1, "told once");
+	await new Promise((resolve) => setImmediate(resolve));
+	assert.equal(
+		(await c.db.collection("WitchCipher").findOne({ owner: "US_owner" })).found,
+		60,
+		"saved, so a restart cannot reset it",
+	);
+});
+
+test("a round that runs past UTC midnight keeps its day for joins", async () => {
+	const c = context();
+	c.witch_cipher_start({ id: "late" });
+	c.witch_cipher.day = "2026-10-17";
+	const p = player("Witchling");
+	assert.equal((await c.witch_cipher_join(p)).joined, true);
+	assert.equal((await c.db.collection("WitchCipher").findOne({ owner: "US_owner" }))._id, "claim:US_owner:2026-10-17");
 });
 
 test("a round survives a restart and finishes once it is over", () => {

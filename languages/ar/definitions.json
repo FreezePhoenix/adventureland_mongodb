@@ -2290,7 +2290,7 @@
 	"map.spookytown.quirks.4.5": "مقفل",
 	"map.spookytown.quirks.5.5": "مقفل",
 	"interaction.witchcipher.title": "شفرة الساحرة",
-	"interaction.witchcipher.summary": "اجمع المكونات يوميًا الساعة 18:00 بتوقيت العالم، وحضّر وصفة Witch المفقودة.",
+	"interaction.witchcipher.summary": "اجمع المكونات يوميًا الساعة 06:00 و18:00 بتوقيت العالم، وحضّر وصفة Witch المفقودة.",
 	"interaction.trickortreat.title": "حلوى أم خدعة",
 	"interaction.trickortreat.summary": "اطرق هذا الباب خلال الهالوين لتحصل على حلوى أو تتعرض لفزعة."
 }

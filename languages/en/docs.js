@@ -6417,14 +6417,14 @@ module.exports["docs.functions.knock.about"] = "Knocks on a nearby Trick or Trea
 // knock() result. Keep the CODE field names (treat, trick, stamps, parcel, laugh) and failure reasons unchanged; "spooked" is a CODE value.
 module.exports["docs.functions.knock.returns"] = "Returns a Promise with treat (the item and quantity) or trick (\"spooked\"), plus your account's stamps. parcel and laugh are true when a knock awards a Witch's Parcel or Sinister Laugh. Rejects with trickortreat_season, trickortreat_door, trickortreat_knocked or trickortreat_limit.";
 
-// Witch's Cipher guide intro. 18:00 is on the realm clock; ingredients drop for the first 20 minutes and brewing is open for all 28. Keep the Witch, Spooky Forest, Witch's Cipher and Witch's Parcel unchanged.
-module.exports["docs.guide.event-witchcipher.intro"] = "Every day at 18:00 on the realm clock, the Witch in Spooky Forest forgets her recipe. Join with one character per account, gather ingredients for the first 20 minutes, and brew throughout the 28-minute event. When ingredients stop dropping, you have 8 minutes left to finish your mixes. Each mix uses four ingredients in order and earns Witch's Parcels. Everyone on the realm shares the clues.";
+// Witch's Cipher guide intro. 06:00 and 18:00 are on the realm clock; each round lasts 28 minutes, ingredients drop for the first 20 and brewing is open for all 28. One join per account per UTC day covers both rounds. Keep the Witch, Spooky Forest, Witch's Cipher and Witch's Parcel unchanged.
+module.exports["docs.guide.event-witchcipher.intro"] = "Every day at 06:00 and 18:00 on the realm clock, the Witch in Spooky Forest forgets her recipe. Join with one character per account, gather ingredients for the first 20 minutes, and brew throughout each 28-minute event. When ingredients stop dropping, you have 8 minutes left to finish your mixes. Each mix uses four ingredients in order and earns Witch's Parcels. Everyone on the realm shares the clues. Joining once counts for both rounds that UTC day; your character joins the other round automatically.";
 
 // Witch's Cipher guide section title above the ingredient rows (monsters that drop each ingredient).
 module.exports["docs.guide.event-witchcipher.ingredients"] = "Ingredients";
 
-// Witch's Cipher guide: how ingredients drop. 65% and 20 seconds are exact. Only the account's joined character receives them.
-module.exports["docs.guide.event-witchcipher.gathering"] = "Only your joined character gets these drops. During the first 20 minutes, each kill of the listed monsters has a 65% chance to drop an ingredient, at most once every 20 seconds. Luck and party size make no difference. You can trade, bank and keep the ingredients.";
+// Witch's Cipher guide: how ingredients drop. 65%, 20 seconds and 60 a day are exact. Only the account's joined character receives them; the 60 cover both rounds of the UTC day.
+module.exports["docs.guide.event-witchcipher.gathering"] = "Only your joined character gets these drops. During the first 20 minutes, each kill of the listed monsters has a 65% chance to drop an ingredient, at most once every 20 seconds. You can get up to 60 ingredients per account per UTC day across both rounds. Luck and party size make no difference. You can trade, bank and keep the ingredients.";
 
 // Witch's Cipher guide section title above a sample clue board.
 module.exports["docs.guide.event-witchcipher.cauldron"] = "The cauldron";
@@ -6433,7 +6433,7 @@ module.exports["docs.guide.event-witchcipher.cauldron"] = "The cauldron";
 module.exports["docs.guide.event-witchcipher.clues"] = "Each mix gives two clues: right counts ingredients in the correct position, and moved counts correct ingredients in another position. Ingredients can repeat, making 256 possible recipes. The board shows the realm's last 12 mixes and how many recipes still match every clue.";
 
 // Witch's Cipher guide, under the clue explanation: what happens when someone cracks the recipe. Keep the Witch.
-module.exports["docs.guide.event-witchcipher.again"] = "When someone cracks the recipe, the Witch forgets it at once. A new secret recipe starts and the clue board clears. The cracked recipe and who cracked it stay shown above the new board. The realm can crack several recipes in one evening.";
+module.exports["docs.guide.event-witchcipher.again"] = "When someone cracks the recipe, the Witch forgets it at once. A new secret recipe starts and the clue board clears. The cracked recipe and who cracked it stay shown above the new board. The realm can crack several recipes in one round.";
 
 // Witch's Cipher guide section title above the payout rows (Witch's Parcel icons with amounts).
 module.exports["docs.guide.event-witchcipher.payout"] = "Witch's Parcel rewards";
@@ -6448,8 +6448,8 @@ module.exports["docs.guide.event-witchcipher.pay_other"] = "Any other mix";
 module.exports["docs.guide.event-witchcipher.pay_crack"] = "Crack the recipe (2 Parcels + 2 bonus)";
 
 
-// Witch's Cipher guide: the daily limit. 5 mixes and 12 Parcels are exact.
-module.exports["docs.guide.event-witchcipher.pay_limit"] = "5 mixes per account per UTC day, on one realm. Up to 12 Witch's Parcels a day.";
+// Witch's Cipher guide: the daily limit. 5 mixes and 12 Parcels are exact and cover both rounds of the UTC day.
+module.exports["docs.guide.event-witchcipher.pay_limit"] = "5 mixes per account per UTC day across both rounds, on one realm. Up to 12 Witch's Parcels a day.";
 
 // Witch's Cipher guide: what to do with Witch's Parcels. PARCELS is the Witch's button label.
 module.exports["docs.guide.event-witchcipher.parcels"] = "Open Witch's Parcels at the Witch (PARCELS), or save them for her recipes. Her recipes are available all year.";
@@ -6481,8 +6481,8 @@ module.exports["docs.guide.event-horseman.code"] = "join(\"horseman\") takes you
 // Graveyard Rising guide intro. The times are on the realm clock. Keep Graveyard Rising, Spooky Town, Zombie, Ghoul and Gargoyle unchanged.
 module.exports["docs.guide.event-graveyard.intro"] = "During Halloween, Graveyard Rising begins every two hours at 1:30, 3:30, 5:30 and so on, on the realm clock. Three waves of Zombies and Ghouls rise from Spooky Town's graveyard, three minutes apart. After the waves, the Gargoyle wakes at the monument.";
 
-// Graveyard Rising guide: shared rewards. Points earned on the waves carry over to the Gargoyle's reward.
-module.exports["docs.guide.event-graveyard.shared"] = "Everyone who fights shares the rewards. Your contribution against the waves also counts toward the Gargoyle's reward.";
+// Graveyard Rising guide: shared rewards. Points earned on the waves carry over to the Gargoyle's reward. Each fighter's Parcel chance is ten times their share of the fight, rolled once more for every 10 fighters, so fighters average about one Parcel per Gargoyle at any crowd size.
+module.exports["docs.guide.event-graveyard.shared"] = "Everyone who fights shares the rewards. Your contribution against the waves also counts toward the Gargoyle's reward. Each fighter gets about one Witch's Parcel per Gargoyle on average, with a better chance for those who contribute more.";
 
 // Graveyard Rising guide: section title above the monsters' stat cards and how the round plays out.
 module.exports["docs.guide.event-graveyard.fight-title"] = "How the Fight Works";
@@ -6538,5 +6538,5 @@ module.exports["docs.articles.data-server-status.graveyard"] = "<b>Graveyard Ris
 // server.status reference: season end times. Keep server.status.event_ends unchanged. The last day is the UTC day before the end time.
 module.exports["docs.articles.data-server-status.event-ends"] = "<b>Season ends</b>: server.status.event_ends gives each running season's end time, when set, in Unix milliseconds. Its last day is the UTC day before that time.";
 
-// character reference: the two event fields. Keep character.witchcipher, character.trickortreat and the field names unchanged.
-module.exports["docs.articles.data-character.witchcipher"] = "<b>character.witchcipher</b> appears after this character joins today's Witch's Cipher. It shows mixes used, mixes_left and parcels earned. <b>character.trickortreat</b> lists the Trick or Treat doors this character has knocked on today, doors_left and the account's stamps.";
+// character reference: the two event fields. Keep character.witchcipher, character.trickortreat and the field names unchanged. character.witchcipher exists only while a round runs and comes back by itself in the day's other round.
+module.exports["docs.articles.data-character.witchcipher"] = "<b>character.witchcipher</b> appears during a Witch's Cipher round after this character joins that UTC day. It shows mixes used, mixes_left and parcels earned. It clears when the round ends and returns automatically for the day's other round. <b>character.trickortreat</b> lists the Trick or Treat doors this character has knocked on today, doors_left and the account's stamps.";

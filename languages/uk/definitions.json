@@ -2290,7 +2290,7 @@
 	"map.spookytown.quirks.4.5": "Замкнено",
 	"map.spookytown.quirks.5.5": "Замкнено",
 	"interaction.witchcipher.title": "Шифр відьми",
-	"interaction.witchcipher.summary": "Щодня о 18:00 за часом світу збирайте інгредієнти й готуйте загублений рецепт Witch.",
+	"interaction.witchcipher.summary": "Щодня о 06:00 та 18:00 за часом світу збирайте інгредієнти й готуйте загублений рецепт Witch.",
 	"interaction.trickortreat.title": "Солодощі чи капості",
 	"interaction.trickortreat.summary": "Постукайте в ці двері під час Гелловіну, щоб отримати ласощі або переляк."
 }

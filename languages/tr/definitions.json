@@ -2290,7 +2290,7 @@
 	"map.spookytown.quirks.4.5": "Kilitli",
 	"map.spookytown.quirks.5.5": "Kilitli",
 	"interaction.witchcipher.title": "Cadının Şifresi",
-	"interaction.witchcipher.summary": "Her gün diyar saatiyle 18:00'de malzemeleri topla ve Witch'in kayıp tarifini hazırla.",
+	"interaction.witchcipher.summary": "Her gün diyar saatiyle 06:00 ve 18:00'de malzemeleri topla ve Witch'in kayıp tarifini hazırla.",
 	"interaction.trickortreat.title": "Şeker mi Şaka mı",
 	"interaction.trickortreat.summary": "Cadılar Bayramı'nda ödül veya korku dolu bir sürpriz için bu kapıyı çal."
 }

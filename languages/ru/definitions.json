@@ -2290,7 +2290,7 @@
 	"map.spookytown.quirks.4.5": "Заперто",
 	"map.spookytown.quirks.5.5": "Заперто",
 	"interaction.witchcipher.title": "Шифр ведьмы",
-	"interaction.witchcipher.summary": "Каждый день в 18:00 по времени мира собирайте ингредиенты и варите зелье по забытому рецепту Witch.",
+	"interaction.witchcipher.summary": "Каждый день в 06:00 и 18:00 по времени мира собирайте ингредиенты и варите зелье по забытому рецепту Witch.",
 	"interaction.trickortreat.title": "Сладость или гадость",
 	"interaction.trickortreat.summary": "Постучите в эту дверь во время Хэллоуина, чтобы получить угощение или испугаться."
 }

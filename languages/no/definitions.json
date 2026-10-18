@@ -2290,7 +2290,7 @@
 	"map.spookytown.quirks.4.5": "Låst",
 	"map.spookytown.quirks.5.5": "Låst",
 	"interaction.witchcipher.title": "Witchs gåte",
-	"interaction.witchcipher.summary": "Samle ingredienser hver dag kl. 18:00 etter klokken i verdenen, og brygg den tapte oppskriften til Witch.",
+	"interaction.witchcipher.summary": "Samle ingredienser hver dag kl. 06:00 og 18:00 etter klokken i verdenen, og brygg den tapte oppskriften til Witch.",
 	"interaction.trickortreat.title": "Knask eller knep",
 	"interaction.trickortreat.summary": "Bank på denne døren under Halloween for å få noe godt eller en skrekkopplevelse."
 }

@@ -2290,7 +2290,7 @@
 	"map.spookytown.quirks.4.5": "Berkunci",
 	"map.spookytown.quirks.5.5": "Berkunci",
 	"interaction.witchcipher.title": "Sandi Witch",
-	"interaction.witchcipher.summary": "Setiap hari pada pukul 18:00 waktu alam, kumpulkan bahan dan bancuh resipi Witch yang hilang.",
+	"interaction.witchcipher.summary": "Setiap hari pada pukul 06:00 dan 18:00 waktu alam, kumpulkan bahan dan bancuh resipi Witch yang hilang.",
 	"interaction.trickortreat.title": "Gula-gula atau Kenakan",
 	"interaction.trickortreat.summary": "Ketuk pintu ini semasa Halloween untuk mendapat hadiah atau kejutan menakutkan."
 }

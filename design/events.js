@@ -204,6 +204,8 @@ var events={
 		// The cracking mix pays exact + crack; then the Witch forgets the recipe again and a new one starts
 		"payout":{"informative":2,"other":1,"crack":2,"exact":2},
 		"max_parcels":12,
+		// Ingredients a day: one gathering's worth (20 minutes at one per 20 seconds), however the account splits it between the two rounds
+		"max_ingredients":60,
 		"join":true,
 		"type":"daily",
 	},

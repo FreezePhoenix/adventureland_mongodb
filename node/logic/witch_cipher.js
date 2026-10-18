@@ -1,10 +1,12 @@
-// The Witch's Cipher: a daily event at the Witch in Spooky Forest, all year (18:00 on the realm
-// clock, published by the event schedule). For the first 20 minutes, kills in four regions drop
-// four ingredients; until the end, players brew four-ingredient mixes in her cauldron. Every mix is
-// scored against the Witch's secret recipe and the realm shares one clue board. Mixes pay Witch's
-// Parcels. Whenever someone cracks the recipe she forgets it at once: a new recipe starts on a clean
-// board, so every mix stays a deduction instead of a copy of a known answer. One character per account joins each UTC day, on one realm; the account's claim lives in
-// the WitchCipher collection so another realm cannot repeat the day.
+// The Witch's Cipher: an event at the Witch in Spooky Forest twice a day, all year (06:00 and 18:00
+// on the realm clock, published by the event schedule). For the first 20 minutes, kills in four
+// regions drop four ingredients; until the end, players brew four-ingredient mixes in her cauldron.
+// Every mix is scored against the Witch's secret recipe and the realm shares one clue board. Mixes
+// pay Witch's Parcels. Whenever someone cracks the recipe she forgets it at once: a new recipe starts
+// on a clean board, so every mix stays a deduction instead of a copy of a known answer. One character
+// per account joins each UTC day, on one realm, and the join covers both rounds: mixes, Parcels and
+// ingredients are limited per day. The account's claim lives in the WitchCipher collection so
+// another realm cannot repeat the day.
 
 var witch_cipher = null; // the live round, mirrored in S.witchcipher
 // Today's account claims (loaded from the WitchCipher collection) and drop cooldowns. Memory only:
@@ -101,11 +103,11 @@ function witch_cipher_secret() {
 
 function witch_cipher_start(occurrence) {
 	var rules = witch_cipher_rules(),
-		names = witch_cipher_ingredients(),
-		now = Date.now();
+		now = Date.now(),
+		day = witch_cipher_day(now);
 	witch_cipher = S.witchcipher = {
 		id: occurrence.id,
-		day: witch_cipher_day(now),
+		day: day,
 		start: now,
 		gather_end: now + rules.gathering * 1000,
 		end: now + rules.duration * 1000,
@@ -114,12 +116,41 @@ function witch_cipher_start(occurrence) {
 		cracks: [],
 		cracked: null,
 	};
-	witch_cipher_claims = {};
+	// Today's claims stay for the day's other round; older ones go
+	for (var owner in witch_cipher_claims) if (witch_cipher_claims[owner].day !== day) delete witch_cipher_claims[owner];
 	witch_cipher_drops = {};
 	events.witchcipher = true;
 	broadcast("server_message", localization.message("server.witchcipher.started", {}, { color: "#AF6AE2" }));
 	broadcast("game_event", { name: "witchcipher", map: "halloween", x: G.quests.witch.x, y: G.quests.witch.y });
 	witch_cipher_publish();
+	witch_cipher_rejoin();
+}
+
+// A character that joined the day's earlier round is joined again, with what it has left. One query
+// reads the day's claims of everyone online, also after a restart between the rounds.
+function witch_cipher_rejoin() {
+	var round = witch_cipher,
+		ids = {};
+	for (var id in players) if (!players[id].npc) ids["claim:" + players[id].owner + ":" + round.day] = true;
+	if (!Object.keys(ids).length) return;
+	db.collection("WitchCipher")
+		.find({ _id: { $in: Object.keys(ids) } })
+		.toArray()
+		.then(function (claims) {
+			if (witch_cipher !== round || Date.now() >= round.end) return;
+			claims.forEach(function (claim) {
+				if (claim.day !== round.day || claim.server !== server_id) return;
+				var live = witch_cipher_remember(claim);
+				for (var id in players) {
+					var player = players[id];
+					if (player.real_id !== claim.character || player.owner !== claim.owner || player.dc || player.witchcipher)
+						continue;
+					player.witchcipher = witch_cipher_status(live);
+					resend(player, "u+cid+nc");
+				}
+			});
+		})
+		.catch((error) => log_trace("witchcipher rejoin", error));
 }
 
 // Restores a round after a restart; a round that ended while the server was down just finishes.
@@ -187,8 +218,9 @@ function witch_cipher_status(claim) {
 }
 
 async function witch_cipher_claim(player, create) {
+	// A round belongs to the day it started on, also when it runs past UTC midnight
 	var collection = db.collection("WitchCipher"),
-		day = witch_cipher_day(Date.now()),
+		day = witch_cipher && Date.now() < witch_cipher.end ? witch_cipher.day : witch_cipher_day(Date.now()),
 		id = "claim:" + player.owner + ":" + day;
 	if (create) {
 		try {
@@ -201,6 +233,7 @@ async function witch_cipher_claim(player, create) {
 				server: server_id,
 				mixes: 0,
 				parcels: 0,
+				found: 0,
 				created: new Date(),
 			});
 		} catch (error) {
@@ -214,7 +247,10 @@ async function witch_cipher_claim(player, create) {
 // write is retried, because after a restart the claim is read back from Mongo.
 function witch_cipher_save_claim(owner, claim, tries) {
 	db.collection("WitchCipher")
-		.updateOne({ _id: "claim:" + owner + ":" + claim.day }, { $max: { mixes: claim.mixes, parcels: claim.parcels } })
+		.updateOne(
+			{ _id: "claim:" + owner + ":" + claim.day },
+			{ $max: { mixes: claim.mixes, parcels: claim.parcels, found: claim.found || 0 } },
+		)
 		.catch(function (error) {
 			log_trace("witchcipher save", error);
 			if (tries < 20) setTimeout(() => witch_cipher_save_claim(owner, claim, tries + 1), 3000);
@@ -227,6 +263,7 @@ function witch_cipher_remember(claim) {
 	if (live && live.character === claim.character && live.day === claim.day) {
 		live.mixes = Math.max(live.mixes, claim.mixes);
 		live.parcels = Math.max(live.parcels, claim.parcels);
+		live.found = Math.max(live.found || 0, claim.found || 0);
 		return live;
 	}
 	return (witch_cipher_claims[claim.owner] = {
@@ -235,6 +272,7 @@ function witch_cipher_remember(claim) {
 		day: claim.day,
 		mixes: claim.mixes,
 		parcels: claim.parcels,
+		found: claim.found || 0,
 	});
 }
 
@@ -383,6 +421,7 @@ function witch_cipher_brew(player, names) {
 
 // A fixed 65% roll on a kill in one of the four regions, at most once every 20 seconds, only for
 // the account's joined character during gathering. Luck, party size and drop multipliers don't apply.
+// A day gives at most one gathering's worth, however the account splits it between the two rounds.
 function witch_cipher_kill(player, monster) {
 	var round = witch_cipher,
 		now = Date.now();
@@ -392,13 +431,21 @@ function witch_cipher_kill(player, monster) {
 	var rules = witch_cipher_rules(),
 		entry = rules.ingredients.find((pair) => pair[1].includes(monster.type));
 	var last = witch_cipher_drops[player.owner];
-	if (!entry || (last && now - last < rules.drop_cooldown * 1000)) return;
+	if (!entry || (last && now - last < rules.drop_cooldown * 1000) || (claim.found || 0) >= rules.max_ingredients)
+		return;
 	if (Math.random() >= rules.drop) return;
 	witch_cipher_drops[player.owner] = now;
+	claim.found = (claim.found || 0) + 1;
 	var item = create_new_item(entry[0]);
 	add_item(player, item, { announce: false });
 	player.socket.emit("game_log", item_message("server.item.found", item, {}, { color: "#AF6AE2" }));
+	if (claim.found >= rules.max_ingredients)
+		player.socket.emit(
+			"game_log",
+			localization.message("server.witchcipher.ingredients_done", {}, { color: "#AF6AE2" }),
+		);
 	resend(player, "reopen+nc+inv");
+	witch_cipher_save_claim(player.owner, claim, 0);
 }
 
 async function witch_cipher_interaction(player, data) {

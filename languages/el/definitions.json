@@ -2290,7 +2290,7 @@
 	"map.spookytown.quirks.4.5": "Κλειδωμένη",
 	"map.spookytown.quirks.5.5": "Κλειδωμένη",
 	"interaction.witchcipher.title": "Ο Γρίφος της Witch",
-	"interaction.witchcipher.summary": "Κάθε μέρα στις 18:00, ώρα του Κόσμου, μάζεψε υλικά και ετοίμασε τη χαμένη συνταγή της Witch.",
+	"interaction.witchcipher.summary": "Κάθε μέρα στις 06:00 και στις 18:00, ώρα του Κόσμου, μάζεψε υλικά και ετοίμασε τη χαμένη συνταγή της Witch.",
 	"interaction.trickortreat.title": "Φάρσα ή Κέρασμα",
 	"interaction.trickortreat.summary": "Χτύπα αυτή την πόρτα κατά τη διάρκεια του Halloween για κέρασμα ή τρομάρα."
 }

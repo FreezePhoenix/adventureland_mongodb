@@ -2290,7 +2290,7 @@
 	"map.spookytown.quirks.4.5": "Zamčeno",
 	"map.spookytown.quirks.5.5": "Zamčeno",
 	"interaction.witchcipher.title": "Šifra čarodějnice",
-	"interaction.witchcipher.summary": "Každý den v 18:00 času světa sbírejte přísady a uvařte ztracený recept Witch.",
+	"interaction.witchcipher.summary": "Každý den v 06:00 a 18:00 času světa sbírejte přísady a uvařte ztracený recept Witch.",
 	"interaction.trickortreat.title": "Koledu, nebo zlobu",
 	"interaction.trickortreat.summary": "Během Halloween zaklepejte na tyto dveře pro sladkost nebo pořádné leknutí."
 }

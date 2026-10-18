@@ -2290,7 +2290,7 @@
 	"map.spookytown.quirks.4.5": "Заключено",
 	"map.spookytown.quirks.5.5": "Заключено",
 	"interaction.witchcipher.title": "Шифърът на вещицата",
-	"interaction.witchcipher.summary": "Всеки ден в 18:00 часа по часовника на света събирай съставки и приготвяй изгубената рецепта на Witch.",
+	"interaction.witchcipher.summary": "Всеки ден в 06:00 и 18:00 часа по часовника на света събирай съставки и приготвяй изгубената рецепта на Witch.",
 	"interaction.trickortreat.title": "Пакост или лакомство",
 	"interaction.trickortreat.summary": "Почукай на тази врата по време на Хелоуин за лакомство или уплаха."
 }

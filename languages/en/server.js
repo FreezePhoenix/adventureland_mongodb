@@ -857,7 +857,7 @@ module.exports["server.game_error.poker_hand_active"] = "Your poker hand is stil
 // Server message to everyone when Halloween ends after its last day, November 2 (design/event_flags.js). Candy, Pumpkin Stems and every Halloween recipe stay usable, Xyn still exchanges candy, and the Witch's Cipher continues every day. Keep Halloween, Xyn, the Witch and Witch's Cipher unchanged.
 module.exports["server.server_message.season_ended.halloween"] = "Halloween is over! Xyn still exchanges Candy and Pumpkin Stems, Halloween recipes remain usable, and the Witch's Cipher continues daily.";
 
-// Server message to everyone when today's Witch's Cipher starts at the Witch in Spooky Forest (18:00 on the realm clock). Players join, collect ingredients for 20 minutes and brew. Keep the Witch, Witch's Cipher and Spooky Forest unchanged.
+// Server message to everyone when a Witch's Cipher round starts at the Witch in Spooky Forest (06:00 or 18:00 on the realm clock). Players join, collect ingredients for 20 minutes and brew. Keep the Witch, Witch's Cipher and Spooky Forest unchanged.
 module.exports["server.witchcipher.started"] = "The Witch's Cipher has begun! Join now and gather ingredients from monsters across four regions.";
 
 // Server message when the 20-minute gathering ends: ingredients stop dropping, brewing stays open for 8 more minutes.
@@ -866,8 +866,10 @@ module.exports["server.witchcipher.gathering_over"] = "Ingredients have stopped 
 // Server message when someone cracks the Witch's recipe. {player} is a character name. The cracked recipe stays above the clue board and a new secret recipe starts at once.
 module.exports["server.witchcipher.cracked"] = "{player} cracked the Witch's recipe! The Witch forgot it, and a new recipe has begun.";
 
-// Server message when the Witch's Cipher ends after the recipe was cracked.
-module.exports["server.witchcipher.over"] = "The Witch's Cipher is over! The cauldron goes quiet until tomorrow.";
+// Server message when a Witch's Cipher round ends after the recipe was cracked. The next round is twelve hours later, so not necessarily tomorrow.
+module.exports["server.witchcipher.over"] = "The Witch's Cipher is over! The cauldron goes quiet until the next round.";
+// Game log line to the joined character right after its 60th Witch's Cipher ingredient of the UTC day. Nothing more drops for it until the next UTC day, but it can still brew. Keep 60 and UTC.
+module.exports["server.witchcipher.ingredients_done"] = "You've collected 60 ingredients today. No more will drop for you until the next UTC day. You can still brew.";
 
 // Server message when the Witch's Cipher ends and nobody found the recipe. {recipe} lists the four ingredient names in order.
 module.exports["server.witchcipher.over_uncracked"] = "Nobody cracked the Witch's recipe! It was {recipe}.";

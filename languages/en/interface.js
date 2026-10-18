@@ -2113,7 +2113,7 @@ module.exports = {
 	"interface.witch.greeting_live": "Oh dearie, I've forgotten my recipe again! Will you help me brew it?",
 	// The Witch's greeting while the Witch's Cipher runs and this character has joined. Choices follow: BREW, RECIPES, PARCELS, INFO.
 	"interface.witch.greeting_joined": "Four ingredients, in the right order. Stir carefully, dearie.",
-	// The Witch's greeting outside the event. {time} is the next start on the realm clock (the clock above chat), like 18:00.
+	// The Witch's greeting outside the event. {time} is the next start on the realm clock (the clock above chat), like 06:00 or 18:00.
 	"interface.witch.greeting_closed": "My cauldron boils again at {time} realm time. Come back then, dearie.",
 	// The Witch's greeting when no Witch's Cipher is scheduled.
 	"interface.witch.greeting_idle": "My cauldron is cold today, dearie.",

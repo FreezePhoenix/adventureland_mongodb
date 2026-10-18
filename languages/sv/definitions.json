@@ -2290,7 +2290,7 @@
 	"map.spookytown.quirks.4.5": "Låst",
 	"map.spookytown.quirks.5.5": "Låst",
 	"interaction.witchcipher.title": "Witchs chiffer",
-	"interaction.witchcipher.summary": "Samla ingredienser och brygg Witchs förlorade recept varje dag kl. 18:00 enligt världsklockan.",
+	"interaction.witchcipher.summary": "Samla ingredienser och brygg Witchs förlorade recept varje dag kl. 06:00 och 18:00 enligt världsklockan.",
 	"interaction.trickortreat.title": "Bus eller godis",
 	"interaction.trickortreat.summary": "Knacka på den här dörren under Halloween för att få godis eller bli skrämd."
 }
