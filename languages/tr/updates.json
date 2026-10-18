@@ -876,5 +876,6 @@
 	"update.08_10_26.halloween.events.title": "Yeni Etkinlikler Penceresi!",
 	"update.08_10_26.halloween.event_schedule": "Etkinlik saatleri artık yedi gün önceden belirleniyor ve sunucu yeniden başlatıldığında değişmiyor.",
 	"update.08_10_26.halloween.map_halloween": "Spooky Forest'taki iki kapıyı artık Şeker mi Şaka mı için çalabilirsin.",
-	"update.08_10_26.halloween.map_spookytown": "Spooky Town'daki beş kapıyı artık Şeker mi Şaka mı için çalabilirsin."
+	"update.08_10_26.halloween.map_spookytown": "Spooky Town'daki beş kapıyı artık Şeker mi Şaka mı için çalabilirsin.",
+	"update.08_10_26.halloween.events": "Aktif sezonları, yaklaşan boss'ları, bugünkü etkinlikleri ve önümüzdeki yedi günün etkinliklerini görmek için sohbetin üzerindeki çubuğa veya diyar saatine tıkla. Kendi saatinle diyar saati arasında geçiş yap. Bir etkinlikten 10 dakika önce oyun günlüğüne mesaj almak için HATIRLAT'ı seç. Sohbetin üzerindeki çubuk, devam eden etkinlikleri, geri sayımlarıyla birlikte sıradaki üç etkinliği ve sezonların bitiş tarihlerini sırayla gösterir; durdurmak için fareyi üzerine getir veya ETKİNLİKLER'i açmak için tıkla. Bunun yerine koordinatlarını görmek için X,Y'ye veya diyar adına tıkla; karakter ekranın sıradaki etkinliği göstermeye devam eder."
 }

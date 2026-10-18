@@ -876,5 +876,6 @@
 	"update.08_10_26.halloween.events.title": "Nowe okno wydarzeń!",
 	"update.08_10_26.halloween.event_schedule": "Godziny wydarzeń są teraz ustalane na siedem dni naprzód i nie zmieniają się po ponownym uruchomieniu serwera.",
 	"update.08_10_26.halloween.map_halloween": "Do dwóch drzwi w Spooky Forest można teraz zapukać w ramach wydarzenia Cukierek albo psikus.",
-	"update.08_10_26.halloween.map_spookytown": "Do pięciu drzwi w Spooky Town można teraz zapukać w ramach wydarzenia Cukierek albo psikus."
+	"update.08_10_26.halloween.map_spookytown": "Do pięciu drzwi w Spooky Town można teraz zapukać w ramach wydarzenia Cukierek albo psikus.",
+	"update.08_10_26.halloween.events": "Kliknij pasek lub zegar świata nad czatem, aby zobaczyć trwające sezony, nadchodzących bossów, dzisiejsze aktywności i wydarzenia z następnych siedmiu dni. Przełączaj się między swoim czasem a czasem świata. Wybierz PRZYPOMNIJ, aby otrzymać wiadomość w dzienniku gry 10 minut przed wydarzeniem. Pasek nad czatem przewija trwające wydarzenia, trzy najbliższe wydarzenia z odliczaniem oraz daty zakończenia sezonów. Najedź na niego kursorem, aby zatrzymać przewijanie, lub kliknij, aby otworzyć WYDARZENIA. Kliknij X,Y lub nazwę świata, aby zamiast tego wyświetlić swoje współrzędne; ekran postaci nadal pokazuje następne wydarzenie."
 }

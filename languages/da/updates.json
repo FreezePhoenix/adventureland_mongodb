@@ -876,5 +876,6 @@
 	"update.08_10_26.halloween.events.title": "Nyt eventvindue!",
 	"update.08_10_26.halloween.event_schedule": "Eventtider fastsættes nu syv dage frem og ændres ikke efter genstart af serveren.",
 	"update.08_10_26.halloween.map_halloween": "Du kan nu banke på to døre i Spooky Forest for at få Slik eller ballade.",
-	"update.08_10_26.halloween.map_spookytown": "Du kan nu banke på fem døre i Spooky Town for at få Slik eller ballade."
+	"update.08_10_26.halloween.map_spookytown": "Du kan nu banke på fem døre i Spooky Town for at få Slik eller ballade.",
+	"update.08_10_26.halloween.events": "Klik på den rullende bjælke eller verdens ur over chatten for at se igangværende sæsoner, kommende bosser, dagens aktiviteter og de næste syv dages events. Skift mellem din egen tid og verdens tid. Vælg PÅMIND for at få en besked i spilloggen 10 minutter før et event. Den rullende bjælke over chatten viser igangværende events, de næste tre events med nedtællinger og datoerne for sæsonernes afslutning. Hold musen over bjælken for at sætte rulningen på pause, eller klik for at åbne EVENTS. Klik på X,Y eller verdens navn for at vise dine koordinater i stedet; din figurs skærm viser stadig det næste event."
 }

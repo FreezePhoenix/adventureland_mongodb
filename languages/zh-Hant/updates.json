@@ -876,5 +876,6 @@
 	"update.08_10_26.halloween.events.title": "全新活動視窗！",
 	"update.08_10_26.halloween.event_schedule": "現在會提前七天排定活動時間，伺服器重新啟動後也不會改變。",
 	"update.08_10_26.halloween.map_halloween": "Spooky Forest 現在有兩扇門可以敲響，參加不給糖就搗蛋。",
-	"update.08_10_26.halloween.map_spookytown": "Spooky Town 現在有五扇門可以敲響，參加不給糖就搗蛋。"
+	"update.08_10_26.halloween.map_spookytown": "Spooky Town 現在有五扇門可以敲響，參加不給糖就搗蛋。",
+	"update.08_10_26.halloween.events": "點擊聊天視窗上方的捲動列或世界時鐘，查看進行中的季節、即將出現的首領、今日活動及未來七天的活動。你可以切換自己的時間和世界時間。選擇「提醒」，即可在活動開始前10分鐘收到遊戲日誌訊息。聊天視窗上方的捲動列會依序顯示進行中的活動、附有倒數計時的接下來三場活動，以及各季節的結束日期。將滑鼠移到上面可暫停捲動，點擊則可開啟「活動」視窗。點擊 X,Y 或世界名稱可改為顯示你的座標；角色畫面仍會顯示下一場活動。"
 }

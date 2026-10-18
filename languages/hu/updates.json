@@ -876,5 +876,6 @@
 	"update.08_10_26.halloween.events.title": "Új Események ablak!",
 	"update.08_10_26.halloween.event_schedule": "Az események időpontjai most hét nappal előre rögzítve vannak, és szerver-újraindítás után sem változnak.",
 	"update.08_10_26.halloween.map_halloween": "Spooky Forest két ajtaján most már bekopoghatsz a Csokit vagy csalunk eseményben.",
-	"update.08_10_26.halloween.map_spookytown": "Spooky Town öt ajtaján most már bekopoghatsz a Csokit vagy csalunk eseményben."
+	"update.08_10_26.halloween.map_spookytown": "Spooky Town öt ajtaján most már bekopoghatsz a Csokit vagy csalunk eseményben.",
+	"update.08_10_26.halloween.events": "Kattints a csevegés feletti csúszkára vagy a világ órájára az aktív szezonok, a közelgő főellenfelek, a mai tevékenységek és a következő hét nap eseményeinek megtekintéséhez. Válthatsz a saját időd és a világ ideje között. Válaszd az EMLÉKEZTETŐ gombot, hogy 10 perccel egy esemény előtt üzenetet kapj a játéknaplóban. A csevegés feletti csúszka folyamatosan görgeti a zajló eseményeket, a következő három eseményt visszaszámlálással és a szezonok zárónapjait. Vidd fölé az egeret a görgetés megállításához, vagy kattints rá az ESEMÉNYEK megnyitásához. Kattints az X,Y feliratra vagy a világ nevére, hogy helyettük a koordinátáid jelenjenek meg; a karakterválasztó képernyő továbbra is mutatja a következő eseményt."
 }
