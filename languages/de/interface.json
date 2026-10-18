@@ -993,7 +993,6 @@
 	"interface.anniversary.visit_crafter": "{name} besuchen",
 	"interface.anniversary.crafter_distance": "Bleib zum Herstellen in der Nähe von {name}, sofern du keinen Zugriff auf Computer hast.",
 	"interface.anniversary.offseason_crafting": "Während des Events stellt Mira Gegenstände nach den Jubiläumsrezepten her. Nach ihrer Abreise übernimmt Cole. Kuchen und Anniversary Gifts lassen sich weiterhin bei Xyn öffnen.",
-	"interface.events.clock": "EVENTS {time}",
 	"interface.events.title": "EVENTS",
 	"interface.events.your_realm": "Deine Welt",
 	"interface.events.unavailable": "Nicht verbunden. Die Ereigniszeiten erscheinen, sobald die Welt antwortet.",

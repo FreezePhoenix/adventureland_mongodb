@@ -876,6 +876,5 @@
 	"update.08_10_26.halloween.events.title": "Nytt evenemangsfönster!",
 	"update.08_10_26.halloween.event_schedule": "Evenemangstiderna bestäms nu sju dagar i förväg och ändras inte när servrar startas om.",
 	"update.08_10_26.halloween.map_halloween": "Två dörrar i Spooky Forest låter dig nu knacka på för Bus eller godis.",
-	"update.08_10_26.halloween.map_spookytown": "Fem dörrar i Spooky Town låter dig nu knacka på för Bus eller godis.",
-	"update.08_10_26.halloween.events": "Klicka på EVENEMANG ovanför chatten för att se pågående säsonger, kommande bossar, dagens aktiviteter och de kommande sju dagarnas evenemang. Växla mellan din tid och världens tid. Välj PÅMINN för att få ett meddelande i spelloggen 10 minuter före ett evenemang. Fältet ovanför chatten rullar genom pågående evenemang, de tre kommande evenemangen med nedräkningar och datumen då säsongerna slutar. Håll muspekaren över fältet för att pausa eller klicka för att öppna EVENEMANG. Klicka på X,Y eller världens namn för att visa dina koordinater i stället; din karaktärsskärm visar fortfarande nästa evenemang."
+	"update.08_10_26.halloween.map_spookytown": "Fem dörrar i Spooky Town låter dig nu knacka på för Bus eller godis."
 }

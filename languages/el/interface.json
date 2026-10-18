@@ -993,7 +993,6 @@
 	"interface.anniversary.visit_crafter": "Επίσκεψη: {name}",
 	"interface.anniversary.crafter_distance": "Μείνε κοντά στον χαρακτήρα {name} για κατασκευή, εκτός αν έχεις πρόσβαση σε Computer.",
 	"interface.anniversary.offseason_crafting": "Η Mira φτιάχνει τις επετειακές συνταγές κατά τη διάρκεια της εκδήλωσης. Όταν φύγει, αναλαμβάνει ο Cole. Οι τούρτες και τα Anniversary Gifts εξακολουθούν να ανοίγουν στον Xyn.",
-	"interface.events.clock": "ΕΚΔΗΛΩΣΕΙΣ {time}",
 	"interface.events.title": "ΕΚΔΗΛΩΣΕΙΣ",
 	"interface.events.your_realm": "Ο Κόσμος σου",
 	"interface.events.unavailable": "Δεν υπάρχει σύνδεση. Οι ώρες των εκδηλώσεων θα εμφανιστούν όταν απαντήσει ο Κόσμος.",

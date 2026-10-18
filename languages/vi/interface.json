@@ -992,7 +992,6 @@
 	"interface.anniversary.visit_crafter": "Đến gặp {name}",
 	"interface.anniversary.crafter_distance": "Ở gần {name} để chế tạo, trừ khi bạn có quyền dùng Computer.",
 	"interface.anniversary.offseason_crafting": "Mira chế tạo theo các công thức kỷ niệm trong sự kiện. Sau khi cô ấy rời đi, Cole sẽ thay thế. Bạn vẫn có thể mở bánh và Anniversary Gifts tại Xyn.",
-	"interface.events.clock": "SỰ KIỆN {time}",
 	"interface.events.title": "SỰ KIỆN",
 	"interface.events.your_realm": "Thế giới của bạn",
 	"interface.events.unavailable": "Chưa kết nối. Thời gian sự kiện sẽ xuất hiện khi thế giới phản hồi.",

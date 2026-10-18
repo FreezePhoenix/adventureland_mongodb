@@ -993,7 +993,6 @@
 	"interface.anniversary.visit_crafter": "Besök {name}",
 	"interface.anniversary.crafter_distance": "Håll dig nära {name} för att tillverka föremål, om du inte har tillgång till Computer.",
 	"interface.anniversary.offseason_crafting": "Mira tillverkar jubileumsrecepten under evenemanget. När hon lämnar tar Cole över. Tårtor och Anniversary Gifts kan fortfarande öppnas hos Xyn.",
-	"interface.events.clock": "EVENEMANG {time}",
 	"interface.events.title": "EVENEMANG",
 	"interface.events.your_realm": "Din värld",
 	"interface.events.unavailable": "Inte ansluten. Evenemangstider visas när världen svarar.",

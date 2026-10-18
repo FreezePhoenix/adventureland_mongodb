@@ -876,6 +876,5 @@
 	"update.08_10_26.halloween.events.title": "Nova Janela de Eventos!",
 	"update.08_10_26.halloween.event_schedule": "Os horários dos eventos agora são definidos com sete dias de antecedência e não mudam após reinicializações do servidor.",
 	"update.08_10_26.halloween.map_halloween": "Agora você pode bater em duas portas de Spooky Forest para participar de Doces ou Travessuras.",
-	"update.08_10_26.halloween.map_spookytown": "Agora você pode bater em cinco portas de Spooky Town para participar de Doces ou Travessuras.",
-	"update.08_10_26.halloween.events": "Clique em EVENTOS acima do chat para ver as temporadas ativas, os próximos chefes, as atividades de hoje e os eventos dos próximos sete dias. Alterne entre seu horário e o horário do mundo. Escolha LEMBRAR para receber uma mensagem no registro do jogo 10 minutos antes de um evento. A barra acima do chat exibe em sequência os eventos em andamento, os próximos três eventos com contagem regressiva e as datas de término das temporadas; passe o mouse sobre ela para pausar ou clique para abrir EVENTOS. Clique em X,Y ou no nome do mundo para mostrar suas coordenadas no lugar; a tela do personagem continua mostrando o próximo evento."
+	"update.08_10_26.halloween.map_spookytown": "Agora você pode bater em cinco portas de Spooky Town para participar de Doces ou Travessuras."
 }

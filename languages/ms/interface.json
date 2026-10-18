@@ -992,7 +992,6 @@
 	"interface.anniversary.visit_crafter": "Lawati {name}",
 	"interface.anniversary.crafter_distance": "Kekal dekat dengan {name} untuk membuat item, kecuali jika kamu mempunyai akses kepada Computer.",
 	"interface.anniversary.offseason_crafting": "Mira membuat resipi ulang tahun semasa acara. Selepas dia pergi, Cole mengambil alih. Kek dan Anniversary Gifts masih boleh dibuka di Xyn.",
-	"interface.events.clock": "ACARA {time}",
 	"interface.events.title": "ACARA",
 	"interface.events.your_realm": "Alam anda",
 	"interface.events.unavailable": "Tidak bersambung. Waktu acara akan muncul apabila alam memberikan respons.",

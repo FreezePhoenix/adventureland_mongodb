@@ -1005,7 +1005,6 @@
 	"interface.anniversary.visit_crafter": "Odwiedź: {name}",
 	"interface.anniversary.crafter_distance": "Aby wytwarzać przedmioty, pozostań blisko postaci {name}, chyba że masz dostęp do Computer.",
 	"interface.anniversary.offseason_crafting": "Podczas wydarzenia Mira wytwarza przedmioty z rocznicowych receptur. Po jej odejściu zastępuje ją Cole. Ciasta i Anniversary Gifts nadal można otwierać u Xyn.",
-	"interface.events.clock": "WYDARZENIA {time}",
 	"interface.events.title": "WYDARZENIA",
 	"interface.events.your_realm": "Twój realm",
 	"interface.events.unavailable": "Brak połączenia. Godziny wydarzeń pojawią się, gdy realm odpowie.",

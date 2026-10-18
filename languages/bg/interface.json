@@ -993,7 +993,6 @@
 	"interface.anniversary.visit_crafter": "Посети {name}",
 	"interface.anniversary.crafter_distance": "Стой близо до {name}, за да изработваш, освен ако имаш достъп до Computer.",
 	"interface.anniversary.offseason_crafting": "Mira изработва юбилейните рецепти по време на събитието. След като си тръгне, Cole ги изработва вместо нея. Тортите и Anniversary Gifts все още могат да се отварят при Xyn.",
-	"interface.events.clock": "СЪБИТИЯ {time}",
 	"interface.events.title": "СЪБИТИЯ",
 	"interface.events.your_realm": "Твоят свят",
 	"interface.events.unavailable": "Няма връзка. Часовете на събитията ще се появят, когато светът отговори.",

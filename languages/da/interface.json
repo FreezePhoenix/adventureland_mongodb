@@ -993,7 +993,6 @@
 	"interface.anniversary.visit_crafter": "Besøg {name}",
 	"interface.anniversary.crafter_distance": "Bliv i nærheden af {name} for at fremstille ting, medmindre du har adgang til Computer.",
 	"interface.anniversary.offseason_crafting": "Mira fremstiller ting efter jubilæumsopskrifterne under begivenheden. Når hun rejser, overtager Cole. Kager og Anniversary Gifts kan stadig åbnes hos Xyn.",
-	"interface.events.clock": "EVENTS {time}",
 	"interface.events.title": "EVENTS",
 	"interface.events.your_realm": "Din verden",
 	"interface.events.unavailable": "Ikke forbundet. Eventtiderne vises, når verden svarer.",

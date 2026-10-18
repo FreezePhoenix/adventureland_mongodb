@@ -876,6 +876,5 @@
 	"update.08_10_26.halloween.events.title": "Uusi Tapahtumat-ikkuna!",
 	"update.08_10_26.halloween.event_schedule": "Tapahtumien ajat määritetään nyt seitsemäksi päiväksi eteenpäin, eivätkä ne muutu palvelimen uudelleenkäynnistyksen jälkeen.",
 	"update.08_10_26.halloween.map_halloween": "Spooky Forestissa on nyt kaksi ovea, joihin voi koputtaa Karkki vai kepponen -tapahtumassa.",
-	"update.08_10_26.halloween.map_spookytown": "Spooky Townissa on nyt viisi ovea, joihin voi koputtaa Karkki vai kepponen -tapahtumassa.",
-	"update.08_10_26.halloween.events": "Napsauta keskustelun yläpuolella olevaa TAPAHTUMAT-painiketta nähdäksesi käynnissä olevat kaudet, tulevat pomot, päivän aktiviteetit ja seuraavan seitsemän päivän tapahtumat. Vaihda oman aikasi ja maailman ajan välillä. Valitse MUISTUTA saadaksesi viestin pelilokiin 10 minuuttia ennen tapahtumaa. Keskustelun yläpuolella oleva palkki vierittää käynnissä olevia tapahtumia, kolmea seuraavaa tapahtumaa lähtölaskentoineen sekä kausien päättymispäiviä. Vie hiiri palkin päälle pysäyttääksesi vierityksen tai napsauta sitä avataksesi TAPAHTUMAT. Napsauta X,Y:tä tai maailman nimeä näyttääksesi sen sijaan koordinaattisi; hahmonvalintanäyttö näyttää edelleen seuraavan tapahtuman."
+	"update.08_10_26.halloween.map_spookytown": "Spooky Townissa on nyt viisi ovea, joihin voi koputtaa Karkki vai kepponen -tapahtumassa."
 }

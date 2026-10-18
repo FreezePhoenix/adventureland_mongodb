@@ -992,7 +992,6 @@
 	"interface.anniversary.visit_crafter": "{name} ile görüş",
 	"interface.anniversary.crafter_distance": "Computer erişimin yoksa üretim yapmak için {name} yakınında kal.",
 	"interface.anniversary.offseason_crafting": "Etkinlik sırasında yıl dönümü tariflerini Mira üretir. O ayrıldıktan sonra üretimi Cole devralır. Pastalar ve Anniversary Gifts hâlâ Xyn'de açılabilir.",
-	"interface.events.clock": "ETKİNLİKLER {time}",
 	"interface.events.title": "ETKİNLİKLER",
 	"interface.events.your_realm": "Bulunduğun diyar",
 	"interface.events.unavailable": "Bağlantı yok. Diyardan yanıt geldiğinde etkinlik saatleri görünecek.",

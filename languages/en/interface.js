@@ -1997,8 +1997,6 @@ module.exports = {
 	"interface.item.empty_description": "Nothing, nada, zilch.",
 	// js/html.js render_server; compact label below an active boss/event icon, opening that event's guide. This is an event label, not a proper event name. Keep brief and emphatic.
 	"interface.server.event": "EVENT!",
-	// Label of the realm clock above chat; clicking it opens the Events window. {time} is the realm clock, e.g. 19:42. Keep EVENTS short and uppercase.
-	"interface.events.clock": "EVENTS {time}",
 	// Title of the Events window (js/event_schedule.js). Short uppercase heading.
 	"interface.events.title": "EVENTS",
 	// Events window header, after the realm name (e.g. Europas I · Your realm): the schedule shown belongs to the realm you are connected to.

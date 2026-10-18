@@ -992,7 +992,6 @@
 	"interface.anniversary.visit_crafter": "زيارة {name}",
 	"interface.anniversary.crafter_distance": "ابقَ قرب {name} للصنع، إلا إذا كان لديك وصول إلى Computer.",
 	"interface.anniversary.offseason_crafting": "تصنع Mira وصفات الذكرى السنوية أثناء الفعالية. بعد رحيلها، يتولى Cole صنعها. ويمكنك الاستمرار في فتح الكعكات وAnniversary Gifts لدى Xyn.",
-	"interface.events.clock": "الفعاليات {time}",
 	"interface.events.title": "الفعاليات",
 	"interface.events.your_realm": "عالمك",
 	"interface.events.unavailable": "غير متصل. ستظهر مواعيد الفعاليات عندما يستجيب العالم.",

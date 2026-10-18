@@ -4175,6 +4175,24 @@ function guide_monster_views(name) {
 		.join("");
 }
 
+// A monster's numbers as its INFO window shows them, for guides that explain a fight
+function guide_monster_stats(names) {
+	return (
+		"<div class='guide-stats'>" +
+		names
+			.map(function (name) {
+				return render_item("html", { item: G.monsters[name], prop: G.monsters[name], monster: name });
+			})
+			.join("") +
+		"</div>"
+	);
+}
+
+// A health bar filled to the given percent, like the party list's, with the number beside it
+function guide_hp_bar(percent) {
+	return "<span class='guide-hp'><span style='width:" + percent + "%;background:" + colors.hp + "'></span></span><span class='guide-label'>" + percent + "%</span>";
+}
+
 function render_all_monsters() {
 	var html = "";
 	html += "<div style='width: 480px'>";

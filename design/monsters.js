@@ -808,23 +808,29 @@ var monsters={
 		"phresistance":60,"special":true,"cooperative":true,"announce":"#E8742A",
 		"cbuff":[[60,"halloween0"],[70,"halloween1"],[200,"halloween2"]],
 		"spawns":[["hp:0.75","jackowalker",4],["hp:0.25","jackowalker",4]],
+		"achievements":[[1,"stat","hp",20],[10,"stat","mp",20],[30,"stat","vit",1]],
 	},
 	"jackowalker":{
 		"name":"Jack-o Walker","speed":30,"charge":60,"hp":60000,"xp":40000,"attack":700,"damage_type":"magical",
 		"respawn":-1,"gold":2000,"range":40,"frequency":1,"aggro":1,"rage":1,"resistance":200,
+		"achievements":[[1,"stat","mp",10],[100,"stat","resistance",5]],
 	},
 	"zombie":{
 		"name":"Zombie","speed":14,"hp":9000,"xp":9000,"attack":260,"damage_type":"physical",
 		"respawn":-1,"gold":400,"range":30,"frequency":1,"aggro":1,"rage":1,"cooperative":true,
+		"achievements":[[10,"stat","hp",10],[100,"stat","mp",10],[1000,"stat","vit",1]],
 	},
 	"ghoul":{
 		"name":"Ghoul","speed":24,"charge":60,"hp":32000,"xp":30000,"attack":540,"damage_type":"physical",
 		"respawn":-1,"gold":1200,"range":34,"frequency":1.2,"aggro":1,"rage":1,"armor":160,"cooperative":true,
+		"achievements":[[1,"stat","hp",10],[100,"stat","armor",5],[1000,"stat","for",1]],
 	},
 	"gargoyle":{
 		"name":"Gargoyle","speed":18,"hp":6000000,"xp":8000000,"attack":1200,"damage_type":"physical",
 		"respawn":-1,"gold":10000,"range":50,"frequency":0.8,"aggro":1,"rage":1,"armor":700,"resistance":200,
 		"phresistance":80,"special":true,"cooperative":true,"announce":"#8C9196",
+		// About a dozen rounds a day during Halloween: the last tier takes a dedicated season or two.
+		"achievements":[[1,"stat","hp",20],[10,"stat","armor",5],[25,"stat","resistance",5],[50,"stat","phresistance",1]],
 	},
 	"greenjr":{
 		"name":"Green Jr.","speed":60,"charge":120,"hp":4200,"xp":120000,"attack":30,"damage_type":"physical",

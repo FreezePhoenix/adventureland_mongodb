@@ -876,6 +876,5 @@
 	"update.08_10_26.halloween.events.title": "Nouvelle fenêtre Événements !",
 	"update.08_10_26.halloween.event_schedule": "Les horaires des événements sont désormais fixés sept jours à l'avance et ne changent plus après les redémarrages du serveur.",
 	"update.08_10_26.halloween.map_halloween": "Deux portes de Spooky Forest permettent désormais de frapper pour jouer à « Des bonbons ou un sort ».",
-	"update.08_10_26.halloween.map_spookytown": "Cinq portes de Spooky Town permettent désormais de frapper pour jouer à « Des bonbons ou un sort ».",
-	"update.08_10_26.halloween.events": "Cliquez sur ÉVÉNEMENTS au-dessus du chat pour voir les saisons en cours, les prochains boss, les activités du jour et les événements des sept prochains jours. Basculez entre votre heure locale et l'heure du monde. Choisissez RAPPELER pour recevoir un message dans le journal de jeu 10 minutes avant un événement. La barre au-dessus du chat fait défiler les événements en cours, les trois prochains événements avec leur compte à rebours et les dates de fin des saisons ; survolez-la pour arrêter le défilement ou cliquez dessus pour ouvrir ÉVÉNEMENTS. Cliquez sur X,Y ou sur le nom du monde pour afficher vos coordonnées à la place ; l'écran de vos personnages affiche toujours le prochain événement."
+	"update.08_10_26.halloween.map_spookytown": "Cinq portes de Spooky Town permettent désormais de frapper pour jouer à « Des bonbons ou un sort »."
 }

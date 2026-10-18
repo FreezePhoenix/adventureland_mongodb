@@ -4756,7 +4756,7 @@ module.exports = {
 		'References: <span class="rlabel" onclick="render_function_reference($(this).html())">join</span>, <span class="rlabel" onclick="render_function_reference($(this).html())">smart_move</span>, <span class="rlabel" onclick="render_function_reference($(this).html())">set_home</span>, <span class="rlabel" onclick="render_function_reference($(this).html())">bless_server</span>.',
 	// docs/guide/events-and-home.html:7; Documentation div prose block. Keep Adventure Land, CODE symbols, and item/NPC/map/monster names unchanged. Fixed HTML: preserve every tag, attribute, handler and URL exactly; translate visible prose only.
 	"docs.guide.events-and-home.schedule-open-the-clock-to-inspect-planned-events":
-		"<span class=\"guide-card-icon events-tracker\"></span><b>Schedule</b>Click EVENTS above chat to see the next seven days of events, when each season ends and what you can still do today.",
+		"<span class=\"guide-card-icon events-tracker\"></span><b>Schedule</b>Click the slider or realm clock above chat to see the next seven days of events, when each season ends and what you can still do today.",
 	// docs/guide/events-and-home.html:27; Documentation div prose block. Keep Adventure Land, CODE symbols, and item/NPC/map/monster names unchanged. Fixed HTML: preserve every tag, attribute, handler and URL exactly; translate visible prose only.
 	"docs.guide.events-and-home.scheduled-window-the-clock-can-announce-an-event":
 		"<b>Scheduled window</b>The Events window can show an event before it starts. Check its guide and current status before joining.",
@@ -6465,6 +6465,12 @@ module.exports["docs.guide.event-horseman.intro"] = "Every night at 00:00 realm 
 // Headless Horseman guide: minions. Jack-o Walker is a monster name; 75% and 25% are his health.
 module.exports["docs.guide.event-horseman.walkers"] = "At 75% health, four Jack-o Walkers join him. Four more arrive at 25%.";
 
+// Headless Horseman guide: section title above his and the Jack-o Walkers' stat cards.
+module.exports["docs.guide.event-horseman.fight-title"] = "How the Fight Works";
+
+// Headless Horseman guide, beside his and the Jack-o Walkers' stat cards: how they fight, what helps and the Halloween Spirit buff. Keep Headless Horseman, Jack-o Walker and Halloween Spirit unchanged; 75% and 25% are his health.
+module.exports["docs.guide.event-horseman.fight"] = "The Headless Horseman hits for 1,600 physical damage every second and runs too fast to escape, so armor and evasion help. He resists most stuns, and both physical and magical attacks deal about 30% less damage to him. Four Jack-o Walkers join at 75% HP and four more at 25%; they charge quickly and deal magical damage, so resistance helps against them. Everyone who helps defeat him gets Halloween Spirit for extra XP, luck and gold, with a stronger, longer buff for lower-level characters.";
+
 // Headless Horseman guide: his rare helmet. Keep Horseman's Pumpkin unchanged.
 module.exports["docs.guide.event-horseman.helmet"] = "His Horseman's Pumpkin is a rare drop. The more you help, the better your chance.";
 
@@ -6476,6 +6482,15 @@ module.exports["docs.guide.event-graveyard.intro"] = "During Halloween, Graveyar
 
 // Graveyard Rising guide: shared rewards. Points earned on the waves carry over to the Gargoyle's reward.
 module.exports["docs.guide.event-graveyard.shared"] = "Everyone who fights shares the rewards. Your contribution against the waves also counts toward the Gargoyle's reward.";
+
+// Graveyard Rising guide: section title above the monsters' stat cards and how the round plays out.
+module.exports["docs.guide.event-graveyard.fight-title"] = "How the Fight Works";
+
+// Graveyard Rising guide: how a round plays out. Keep Zombie, Ghoul and Gargoyle unchanged; 3 and 6 minutes are after the start, 9 minutes is the latest the Gargoyle wakes.
+module.exports["docs.guide.event-graveyard.waves"] = "The round starts with 12 Zombies rising from the graves. More Zombies and Ghouls rise after 3 and 6 minutes. The Gargoyle wakes at the monument when all wave monsters are defeated, or after 9 minutes at the latest, and you have 10 minutes to defeat it.";
+
+// Graveyard Rising guide, beside the Zombie, Ghoul and Gargoyle stat cards: how each fights and what helps. Keep the monster names unchanged.
+module.exports["docs.guide.event-graveyard.monsters"] = "Zombies walk slowly and attack anyone who comes near. Ghouls hit harder and charge faster than most characters can run. The Gargoyle has 6 million HP, hits hard at close range and usually resists stuns, but ranged characters can stay out of its reach. Magic deals about twice as much damage to the Gargoyle as physical attacks, while armor and evasion help against all three monsters.";
 
 // Graveyard Rising guide CODE intro. Keep join("graveyard") and server.status.graveyard unchanged.
 module.exports["docs.guide.event-graveyard.code"] = "join(\"graveyard\") takes you to the graveyard. server.status.graveyard shows the current wave.";
@@ -6492,11 +6507,11 @@ module.exports["docs.guide.event-trickortreat.stamps"] = "Every knock earns one 
 // Trick or Treat guide CODE intro. Keep knock and character.trickortreat unchanged.
 module.exports["docs.guide.event-trickortreat.code"] = "Walk up to a door and use knock(). character.trickortreat shows today's doors and your account's stamps.";
 
-// Events & Home guide: section title for the Events window opened from the EVENTS clock above chat.
+// Events & Home guide: section title for the Events window opened from the slider or realm clock above chat.
 module.exports["docs.guide.events-and-home.events-window-title"] = "The Events Window";
 
-// Events & Home guide: what the Events window shows. EVENTS is the clock label. Keep Witch's Cipher, Cave of Many Dreams, Trick or Treat and Graveyard Rising as their translated event names.
-module.exports["docs.guide.events-and-home.events-window"] = "Click EVENTS above chat, or the next-event card in the menu. The Events window shows running seasons and their last days, the next Graveyard Rising, expected seasonal boss respawns, today's activities (Witch's Cipher, Cave of Many Dreams and Trick or Treat doors) and the next seven days of scheduled events. Switch between your time and the realm clock.";
+// Events & Home guide: what the Events window shows. The slider and the realm clock are the line above chat. Keep Witch's Cipher, Cave of Many Dreams, Trick or Treat and Graveyard Rising as their translated event names.
+module.exports["docs.guide.events-and-home.events-window"] = "Click the slider or realm clock above chat, or the next-event card in the menu. The Events window shows running seasons and their last days, the next Graveyard Rising, expected seasonal boss respawns, today's activities (Witch's Cipher, Cave of Many Dreams and Trick or Treat doors) and the next seven days of scheduled events. Switch between your time and the realm clock.";
 
 // Events & Home guide: reminders. REMIND is the Events window button. Reminders stay in this browser and only fire while the game is open on that realm.
 module.exports["docs.guide.events-and-home.events-window-remind"] = "Click REMIND to get a game log message 10 minutes before an event starts. Reminders are saved in this browser and only work while the game is open on that realm.";

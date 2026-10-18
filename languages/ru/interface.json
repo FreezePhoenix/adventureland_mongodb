@@ -1005,7 +1005,6 @@
 	"interface.anniversary.visit_crafter": "Посетить: {name}",
 	"interface.anniversary.crafter_distance": "Для изготовления оставайся рядом с {name}, если у тебя нет доступа к Computer.",
 	"interface.anniversary.offseason_crafting": "Во время события Mira изготавливает предметы по юбилейным рецептам. После её ухода этим занимается Cole. Торты и Anniversary Gifts по-прежнему можно открывать у Xyn.",
-	"interface.events.clock": "СОБЫТИЯ {time}",
 	"interface.events.title": "СОБЫТИЯ",
 	"interface.events.your_realm": "Ваш мир",
 	"interface.events.unavailable": "Нет подключения. Время событий появится после ответа мира.",

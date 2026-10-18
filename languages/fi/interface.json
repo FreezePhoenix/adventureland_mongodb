@@ -992,7 +992,6 @@
 	"interface.anniversary.visit_crafter": "Käy hahmon {name} luona",
 	"interface.anniversary.crafter_distance": "Pysy hahmon {name} lähellä valmistaessasi esineitä, ellei sinulla ole Computer käytössäsi.",
 	"interface.anniversary.offseason_crafting": "Mira valmistaa vuosipäiväreseptejä tapahtuman aikana. Hänen lähdettyään Cole jatkaa niiden valmistamista. Kakkuja ja Anniversary Gifts -lahjoja voi yhä avata Xynin luona.",
-	"interface.events.clock": "TAPAHTUMAT {time}",
 	"interface.events.title": "TAPAHTUMAT",
 	"interface.events.your_realm": "Oma maailmasi",
 	"interface.events.unavailable": "Ei yhteyttä. Tapahtumien ajat näkyvät, kun maailma vastaa.",

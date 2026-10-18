@@ -992,7 +992,6 @@
 	"interface.anniversary.visit_crafter": "Puntahan si {name}",
 	"interface.anniversary.crafter_distance": "Manatili malapit kay {name} para gumawa, maliban kung may access ka sa Computer.",
 	"interface.anniversary.offseason_crafting": "Si Mira ang gumagawa ng mga recipe ng anibersaryo habang may event. Pagkaalis niya, si Cole na ang gagawa ng mga ito. Maaari pa ring magbukas ng mga cake at Anniversary Gifts kay Xyn.",
-	"interface.events.clock": "MGA KAGANAPAN {time}",
 	"interface.events.title": "MGA KAGANAPAN",
 	"interface.events.your_realm": "Mundo mo",
 	"interface.events.unavailable": "Hindi nakakonekta. Lalabas ang mga oras ng kaganapan kapag sumagot ang Mundo.",

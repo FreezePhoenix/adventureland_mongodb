@@ -992,7 +992,6 @@
 	"interface.anniversary.visit_crafter": "Kunjungi {name}",
 	"interface.anniversary.crafter_distance": "Tetap dekat {name} untuk membuat barang, kecuali kamu memiliki akses ke Computer.",
 	"interface.anniversary.offseason_crafting": "Mira membuat resep ulang tahun selama acara. Setelah dia pergi, Cole menggantikannya. Kue dan Anniversary Gifts tetap bisa dibuka di Xyn.",
-	"interface.events.clock": "ACARA {time}",
 	"interface.events.title": "ACARA",
 	"interface.events.your_realm": "Duniamu",
 	"interface.events.unavailable": "Tidak terhubung. Waktu acara akan muncul saat dunia merespons.",

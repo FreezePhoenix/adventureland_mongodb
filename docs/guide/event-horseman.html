@@ -6,6 +6,10 @@
 <p>{{ phrase("docs.guide.event-horseman.walkers") }}</p>
 <div style="overflow-x:auto"><div style="position:relative;width:360px;height:260px;margin:10px auto 0"><img src="/images/guide/horseman-ride.webp?v=63ac3b91" width="360" height="260" alt="Spooky Forest" style="image-rendering:pixelated;display:block"><svg width="360" height="260" style="position:absolute;left:0;top:0"><rect x="150.0" y="100.0" width="55.0" height="60.0" fill="none" stroke="#73FFAC" stroke-width="2"/></svg></div></div>
 <div class="divider"></div>
+<div class="title">{{ phrase("docs.guide.event-horseman.fight-title") }}</div>
+<div class="horseman-stats"></div>
+<p>{{ phrase("docs.guide.event-horseman.fight") }}</p>
+<div class="divider"></div>
 <div class="title">{{ phrase("interface.monster_info.drops") }}</div>
 <div class="guide-drops horseman-drops"></div>
 <p>{{ phrase("docs.guide.event-horseman.helmet") }}</p>
@@ -31,6 +35,15 @@ ride_with_the_horseman().catch(show_json);</div>
 </style>
 <script>
 	$(".horseman-views").html(guide_monster_views("horseman"));
-	$(".horseman-spawn").html(guide_monster_tile("horseman", 1) + "<span class='guide-label'>75% · 25%</span><span class='guide-arrow'></span>" + guide_monster_tile("jackowalker", 0) + "<span class='guide-count'>×4</span>");
+	// The Horseman's health when each group of Jack-o Walkers joins him
+	$(".horseman-spawn").html(
+		guide_monster_tile("horseman", 1) +
+			G.monsters.horseman.spawns
+				.map(function (spawn) {
+					return guide_hp_bar(Math.round(parseFloat(spawn[0].split(":")[1]) * 100)) + "<span class='guide-arrow'></span>" + guide_monster_tile(spawn[1], 0) + "<span class='guide-count'>×" + spawn[2] + "</span>";
+				})
+				.join(""),
+	);
+	$(".horseman-stats").html(guide_monster_stats(["horseman", "jackowalker"]));
 	$(".horseman-drops").html(G.drops.monsters.horseman.concat(G.drops.monsters.jackowalker).map(function(drop) { return render_drop(drop, 1, "#858B8E"); }).join(""));
 </script>

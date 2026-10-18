@@ -993,7 +993,6 @@
 	"interface.anniversary.visit_crafter": "Bezoek {name}",
 	"interface.anniversary.crafter_distance": "Blijf in de buurt van {name} om voorwerpen te maken, tenzij je toegang hebt tot Computer.",
 	"interface.anniversary.offseason_crafting": "Mira maakt de jubileumrecepten tijdens het evenement. Na haar vertrek neemt Cole het over. Taarten en Anniversary Gifts kun je nog steeds bij Xyn openen.",
-	"interface.events.clock": "EVENEMENTEN {time}",
 	"interface.events.title": "EVENEMENTEN",
 	"interface.events.your_realm": "Jouw wereld",
 	"interface.events.unavailable": "Niet verbonden. De evenementtijden verschijnen zodra de wereld reageert.",

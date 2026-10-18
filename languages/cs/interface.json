@@ -1001,7 +1001,6 @@
 	"interface.anniversary.visit_crafter": "Navštívit {name}",
 	"interface.anniversary.crafter_distance": "Při výrobě zůstaň poblíž postavy {name}, pokud nemáš přístup ke Computer.",
 	"interface.anniversary.offseason_crafting": "Mira během akce vyrábí podle výročních receptů. Po jejím odchodu ji zastoupí Cole. Dorty a Anniversary Gifts lze i nadále otevírat u Xyn.",
-	"interface.events.clock": "UDÁLOSTI {time}",
 	"interface.events.title": "UDÁLOSTI",
 	"interface.events.your_realm": "Váš svět",
 	"interface.events.unavailable": "Nepřipojeno. Časy událostí se zobrazí, až svět odpoví.",

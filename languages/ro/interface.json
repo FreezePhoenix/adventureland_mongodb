@@ -997,7 +997,6 @@
 	"interface.anniversary.visit_crafter": "Vizitează: {name}",
 	"interface.anniversary.crafter_distance": "Stai lângă {name} pentru a crea obiecte, dacă nu ai acces la Computer.",
 	"interface.anniversary.offseason_crafting": "Mira realizează rețetele aniversare în timpul evenimentului. După plecarea ei, Cole îi ia locul. Torturile și Anniversary Gifts pot fi deschise în continuare la Xyn.",
-	"interface.events.clock": "EVENIMENTE {time}",
 	"interface.events.title": "EVENIMENTE",
 	"interface.events.your_realm": "Tărâmul tău",
 	"interface.events.unavailable": "Nu ești conectat. Orele evenimentelor vor apărea când tărâmul răspunde.",

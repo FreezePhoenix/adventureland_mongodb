@@ -992,7 +992,6 @@
 	"interface.anniversary.visit_crafter": "{name}を訪ねる",
 	"interface.anniversary.crafter_distance": "Computerを利用できない場合は、{name}の近くで製作してください。",
 	"interface.anniversary.offseason_crafting": "イベント中はMiraが周年レシピの製作を担当します。Miraが去った後は、Coleが代わりに製作します。ケーキとAnniversary Giftsは、引き続きXynで開けられます。",
-	"interface.events.clock": "イベント {time}",
 	"interface.events.title": "イベント",
 	"interface.events.your_realm": "接続中のワールド",
 	"interface.events.unavailable": "未接続です。ワールドから応答があるとイベント時刻が表示されます。",

@@ -6,6 +6,11 @@
 <p>{{ phrase("docs.guide.event-graveyard.shared") }}</p>
 <div class="guide-views gargoyle-views"></div>
 <div class="divider"></div>
+<div class="title">{{ phrase("docs.guide.event-graveyard.fight-title") }}</div>
+<p>{{ phrase("docs.guide.event-graveyard.waves") }}</p>
+<div class="graveyard-stats"></div>
+<p>{{ phrase("docs.guide.event-graveyard.monsters") }}</p>
+<div class="divider"></div>
 <div class="title">{{ phrase("interface.monster_info.drops") }}</div>
 <div class="guide-drops graveyard-drops"></div>
 <div class="divider"></div>
@@ -30,12 +35,15 @@ graveyard_rising().catch(show_json);</div>
 <script>
 	(function () {
 		var waves = G.events.graveyard.waves, html = "";
+		// Each wave at its minute of the round
 		waves.forEach(function (wave, i) {
 			if (i) html += "<span class='guide-arrow'></span>";
+			html += "<span class='guide-label'>" + Math.floor(wave[0] / 60) + ":" + ("0" + (wave[0] % 60)).slice(-2) + "</span>";
 			for (var type in wave[1]) html += guide_monster_tile(type, 0) + "<span class='guide-count'>×" + wave[1][type] + "</span>";
 		});
 		$(".graveyard-waves").html(html + "<span class='guide-arrow'></span>" + guide_monster_tile("gargoyle", 0));
 		$(".gargoyle-views").html(guide_monster_views("gargoyle"));
+		$(".graveyard-stats").html(guide_monster_stats(["zombie", "ghoul", "gargoyle"]));
 		$(".graveyard-drops").html(G.drops.monsters.gargoyle.concat(G.drops.monsters.ghoul, G.drops.monsters.zombie).map(function(drop) { return render_drop(drop, 1, "#858B8E"); }).join(""));
 	})();
 </script>

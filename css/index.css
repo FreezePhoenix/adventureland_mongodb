@@ -830,6 +830,26 @@ canvas { display:block; } /*replaces the overflow: hidden solution [07/07/16] */
 	letter-spacing: 2px;
 	color: #62727E;
 }
+/* A fight's monsters as stat cards side by side, and a health bar marking when something happens */
+.guide-article .guide-stats{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	align-items: flex-start;
+	margin-top: 10px;
+}
+.guide-article .guide-hp{
+	display: inline-block;
+	width: 54px;
+	height: 8px;
+	border: 2px solid #9F9FB0;
+	background: #3C3C3C;
+	margin: 0 2px 0 8px;
+}
+.guide-article .guide-hp > span{
+	display: block;
+	height: 100%;
+}
 .guide-article .guide-count{
 	color: #467956;
 	margin: 0 4px 0 6px;

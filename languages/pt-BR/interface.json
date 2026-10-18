@@ -994,7 +994,6 @@
 	"interface.anniversary.visit_crafter": "Visitar {name}",
 	"interface.anniversary.crafter_distance": "Fique perto de {name} para fabricar, a menos que tenha acesso a Computer.",
 	"interface.anniversary.offseason_crafting": "Mira fabrica as receitas de aniversário durante o evento. Depois que ela vai embora, Cole assume seu lugar. Bolos e Anniversary Gifts ainda podem ser abertos com Xyn.",
-	"interface.events.clock": "EVENTOS {time}",
 	"interface.events.title": "EVENTOS",
 	"interface.events.your_realm": "Seu mundo",
 	"interface.events.unavailable": "Desconectado. Os horários dos eventos aparecerão quando o mundo responder.",

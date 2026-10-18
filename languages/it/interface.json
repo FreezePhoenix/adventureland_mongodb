@@ -997,7 +997,6 @@
 	"interface.anniversary.visit_crafter": "Visita {name}",
 	"interface.anniversary.crafter_distance": "Resta vicino a {name} per creare oggetti, a meno che tu non abbia accesso a Computer.",
 	"interface.anniversary.offseason_crafting": "Mira realizza le ricette dell’anniversario durante l’evento. Dopo la sua partenza, ci pensa Cole. Puoi ancora aprire torte e Anniversary Gifts da Xyn.",
-	"interface.events.clock": "EVENTI {time}",
 	"interface.events.title": "EVENTI",
 	"interface.events.your_realm": "Il tuo reame",
 	"interface.events.unavailable": "Non connesso. Gli orari degli eventi appariranno quando il reame risponderà.",

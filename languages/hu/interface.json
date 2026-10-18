@@ -992,7 +992,6 @@
 	"interface.anniversary.visit_crafter": "{name} felkeresése",
 	"interface.anniversary.crafter_distance": "Maradj {name} közelében a készítéshez, kivéve, ha van hozzáférésed a Computer tárgyhoz.",
 	"interface.anniversary.offseason_crafting": "Az esemény alatt Mira készíti el az évfordulós recepteket. Miután távozik, Cole veszi át a helyét. A tortákat és az Anniversary Gifts ajándékokat továbbra is Xyn nyitja ki.",
-	"interface.events.clock": "ESEMÉNYEK {time}",
 	"interface.events.title": "ESEMÉNYEK",
 	"interface.events.your_realm": "A világod",
 	"interface.events.unavailable": "Nincs kapcsolat. Az események időpontjai akkor jelennek meg, ha a világ válaszol.",

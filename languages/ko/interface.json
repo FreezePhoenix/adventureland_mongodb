@@ -992,7 +992,6 @@
 	"interface.anniversary.visit_crafter": "{name} 찾아가기",
 	"interface.anniversary.crafter_distance": "Computer를 사용할 수 없다면 {name} 근처에서 제작하세요.",
 	"interface.anniversary.offseason_crafting": "이벤트 중에는 Mira가 기념일 제작법으로 아이템을 만듭니다. Mira가 떠나면 Cole이 대신 제작합니다. 케이크와 Anniversary Gifts는 계속 Xyn에게서 열 수 있습니다.",
-	"interface.events.clock": "이벤트 {time}",
 	"interface.events.title": "이벤트",
 	"interface.events.your_realm": "접속 중인 월드",
 	"interface.events.unavailable": "연결되지 않았습니다. 월드에서 응답하면 이벤트 시간이 표시됩니다.",

@@ -993,7 +993,6 @@
 	"interface.anniversary.visit_crafter": "Besøk {name}",
 	"interface.anniversary.crafter_distance": "Hold deg nær {name} for å lage gjenstander, med mindre du har tilgang til Computer.",
 	"interface.anniversary.offseason_crafting": "Mira lager jubileumsoppskriftene under arrangementet. Etter at hun drar, tar Cole over. Kaker og Anniversary Gifts kan fortsatt åpnes hos Xyn.",
-	"interface.events.clock": "HENDELSER {time}",
 	"interface.events.title": "HENDELSER",
 	"interface.events.your_realm": "Din verden",
 	"interface.events.unavailable": "Ikke tilkoblet. Hendelsestidene vises når verdenen svarer.",

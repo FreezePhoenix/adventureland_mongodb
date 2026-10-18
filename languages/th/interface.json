@@ -992,7 +992,6 @@
 	"interface.anniversary.visit_crafter": "ไปหา {name}",
 	"interface.anniversary.crafter_distance": "อยู่ใกล้ {name} เพื่อคราฟต์ เว้นแต่คุณจะใช้งาน Computer ได้",
 	"interface.anniversary.offseason_crafting": "Mira จะคราฟต์ตามสูตรฉลองครบรอบในช่วงกิจกรรม หลังจากเธอจากไป Cole จะคราฟต์แทน คุณยังเปิดเค้กและ Anniversary Gifts ได้ที่ Xyn",
-	"interface.events.clock": "กิจกรรม {time}",
 	"interface.events.title": "กิจกรรม",
 	"interface.events.your_realm": "โลกของคุณ",
 	"interface.events.unavailable": "ยังไม่เชื่อมต่อ เวลากิจกรรมจะปรากฏเมื่อโลกตอบสนอง",

@@ -992,7 +992,6 @@
 	"interface.anniversary.visit_crafter": "拜访{name}",
 	"interface.anniversary.crafter_distance": "请在{name}附近制作，除非你能使用Computer。",
 	"interface.anniversary.offseason_crafting": "活动期间由Mira制作周年配方。她离开后，Cole会接手。蛋糕和Anniversary Gifts仍可在Xyn处开启。",
-	"interface.events.clock": "活动 {time}",
 	"interface.events.title": "活动",
 	"interface.events.your_realm": "你的世界",
 	"interface.events.unavailable": "未连接。世界响应后将显示活动时间。",

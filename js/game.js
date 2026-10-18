@@ -1070,7 +1070,7 @@ function update_overlays() {
 		m = c.getUTCMinutes();
 	if (S.schedule && S.schedule.time_offset) h = (24 + S.schedule.time_offset + h) % 24;
 	if (!cached("time", ("0" + h).slice(-2) + ":" + ("0" + m).slice(-2))) {
-		$(".timeui").html(phrase.html("interface.events.clock", { time: ("0" + h).slice(-2) + ":" + ("0" + m).slice(-2) }));
+		$(".timeui").html(("0" + h).slice(-2) + ":" + ("0" + m).slice(-2));
 		light_logic();
 	}
 	if (!cached("events_clock", Math.floor(Date.now() / 1000))) events_clock_tick();
