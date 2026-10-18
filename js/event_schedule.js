@@ -1,5 +1,5 @@
 // The Events window: the realm's published lineup (server.status.schedule), each season's last day,
-// today's attractions and reminders. Opened from the realm clock, the next-event line above chat and
+// today's attractions and reminders. Opened from the realm clock, the event slider above chat and
 // the card on character selection. Server rules: node/logic/event_schedule.js.
 
 var schedule_offset = 0,
@@ -363,7 +363,7 @@ function events_window_refresh() {
 	if (!no_html && $("#events-window").length) $("#events-window").replaceWith(events_window_html());
 }
 
-// The next event for the clock line and the selection card: live first, then the soonest start.
+// The next event for the character-selection card: live first, then the soonest start.
 function events_next() {
 	var now = schedule_now(),
 		list = schedule_list().concat((S && S.schedule && S.schedule.repeats) || []),
@@ -383,18 +383,111 @@ function events_next_text() {
 	return phrase.html("interface.events.next_in", { name: html_escape(schedule_event_name(next.event)), left: schedule_countdown(next.at - schedule_now()) });
 }
 
-// The clock above chat reads EVENTS hh:mm; the line under it names the next event within an hour.
+// Once a second: the slider above chat, then reminders.
 function events_clock_tick() {
 	if (no_html) return;
 	if (!character) return render_event_announcements();
-	var next = events_next(),
-		line = next && (next.status == "live" || next.at - schedule_now() < 3600000) ? events_next_text() : "";
-	if ($("#next-event-line").data("text") !== line) {
-		$("#next-event-line").data("text", line).html(line);
-		if (line) ($("#next-event-line").show(), $("#chatlog").addClass("with-next-event"));
-		else ($("#next-event-line").hide(), $("#chatlog").removeClass("with-next-event"));
-	}
+	events_ticker_update();
 	events_reminder_tick();
+}
+
+// The slider between X,Y and EVENTS hh:mm above chat: live events, the next events and each season's last day
+// slide by like a market ticker. One animation-frame callback moves the track by whole pixels and stops while
+// X,Y shows the coordinates; the text and its width only change when an item does.
+var events_ticker = { html: null, width: 0, offset: 0, last: 0, x: null, frame: null, hover: false },
+	events_coords_on = false,
+	// With reduced motion the text rests at its start; the setting can change while the game runs
+	events_ticker_still = typeof matchMedia == "function" && matchMedia("(prefers-reduced-motion: reduce)");
+if (events_ticker_still && events_ticker_still.addEventListener) events_ticker_still.addEventListener("change", () => events_ticker_start());
+
+// A phrase with the event name in the event's own colour and the rest in the item's colour.
+function events_ticker_phrase(id, event, parameters, color) {
+	var def = G.events[event] || {},
+		text = html_escape(phrase(id, Object.assign({ name: "\u0001" }, parameters)));
+	return "<span style='color:" + color + "'>" + text.replace("\u0001", "<span style='color:" + ((def.announcement && def.announcement.color) || "#FFFFFF") + "'>" + html_escape(schedule_event_name(event)) + "</span>") + "</span>";
+}
+
+// What the event asks of players, from its announcement.
+function events_ticker_note(event) {
+	var def = G.events[event] || {};
+	if (!def.announcement || !def.announcement.text) return "";
+	return " · <span style='color:#C8C8C8'>" + html_escape(phrase.definition("event", event, "announcement.text", def.announcement.text)) + "</span>";
+}
+
+function events_ticker_items() {
+	var now = schedule_now(),
+		list = schedule_list().concat((S && S.schedule && S.schedule.repeats) || []),
+		ends = (S && S.event_ends) || {},
+		items = [],
+		seen = {},
+		upcoming = 0;
+	list.forEach(function (o) {
+		if (o.status != "live" || seen[o.event]) return;
+		seen[o.event] = true;
+		items.push(events_ticker_phrase("interface.events.next_live", o.event, {}, "#E8C878") + events_ticker_note(o.event));
+	});
+	list
+		.filter((o) => o.status == "scheduled" && o.at > now)
+		.sort((a, b) => a.at - b.at)
+		.forEach(function (o) {
+			if (seen[o.event] || upcoming >= 3) return;
+			seen[o.event] = true;
+			upcoming++;
+			items.push(events_ticker_phrase("interface.events.next_in", o.event, { left: schedule_countdown(o.at - now) }, o.at - now < 3600000 ? "#E8C878" : "#AAAAAA"));
+		});
+	for (var season in ends)
+		if (S[season])
+			items.push(
+				events_ticker_phrase("interface.events.selection_season_ends", season, { date: new Intl.DateTimeFormat(phrase.language || "en", { day: "numeric", month: "long", timeZone: "UTC" }).format(ends[season] - 1) }, "#F5A05B") +
+					events_ticker_note(season),
+			);
+	return items;
+}
+
+function events_ticker_update() {
+	var track = document.getElementById("events-ticker-track");
+	if (!track) return;
+	var dot = "<span class='ticker-dot'>•</span>",
+		items = events_ticker_items(),
+		html = items.length ? "<span><span class='ticker-item'>" + items.join("</span>" + dot + "<span class='ticker-item'>") + "</span>" + dot + "</span>" : "";
+	// Measured again until the bar is on screen
+	if (html === events_ticker.html && (events_ticker.width || !html)) return;
+	events_ticker.html = html;
+	track.innerHTML = html;
+	// Enough copies to keep the box full while the first one slides out
+	events_ticker.width = html ? track.firstChild.offsetWidth : 0;
+	events_ticker.rtl = typeof getComputedStyle == "function" && getComputedStyle(track).direction == "rtl";
+	if (events_ticker.width) track.innerHTML = html.repeat(Math.ceil(track.parentNode.clientWidth / events_ticker.width) + 1);
+	events_ticker_start();
+}
+
+function events_ticker_start() {
+	if (events_ticker.frame || !events_ticker.width || events_coords_on) return;
+	events_ticker.last = 0;
+	events_ticker.frame = requestAnimationFrame(events_ticker_frame);
+}
+
+// 40 pixels a second, to the right for right-to-left text; paused under the mouse so an item can be read and clicked
+function events_ticker_frame(now) {
+	var t = events_ticker,
+		still = events_ticker_still && events_ticker_still.matches;
+	t.frame = null;
+	if (!t.width || events_coords_on) return;
+	if (still) t.offset = 0;
+	else if (t.last && !t.hover) t.offset = (t.offset + Math.min(now - t.last, 100) * 0.04) % t.width;
+	t.last = now;
+	if (t.x !== (t.rtl ? 1 : -1) * Math.floor(t.offset)) {
+		t.x = (t.rtl ? 1 : -1) * Math.floor(t.offset);
+		document.getElementById("events-ticker-track").style.transform = "translate3d(" + t.x + "px,0,0)";
+	}
+	if (!still) t.frame = requestAnimationFrame(events_ticker_frame);
+}
+
+// X,Y and the realm box swap the slider for the character's coordinates, centered.
+function events_toggle_coords() {
+	events_coords_on = !events_coords_on;
+	$("#events-bar").toggleClass("coords-on", events_coords_on);
+	events_ticker_start();
 }
 
 // Reminders are local to this browser and realm: one game log line ten minutes before the start.

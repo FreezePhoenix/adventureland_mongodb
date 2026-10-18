@@ -32,7 +32,7 @@ Seasonal flags (October 7): the CODE reference paragraph and release note are tr
 
 UPDATE button image (October 7): the fix note is translated and proofread in all 32 languages, using each language's existing button label.
 
-Witching Season (October 18): all 206 new phrases for the Witch's Cipher, Graveyard Rising, Trick or Treat, the Headless Horseman, the Events window, the new items, conditions and emote, their guides and CODE references, and the release post are translated in all 32 languages and proofread. Each language keeps its catalog's own word for the realm and its usual form of address; realm time never uses a term that reads as UTC. Placeholders, plural forms, countdown sentences, fixed names and CODE identifiers were checked on 2026-10-18.
+Witching Season (October 18): all 206 new phrases for the Witch's Cipher, Graveyard Rising, Trick or Treat, the Headless Horseman, the Events window, the new items, conditions and emote, their guides and CODE references, and the release post are translated in all 32 languages and proofread. Each language keeps its catalog's own word for the realm and its usual form of address; realm time never uses a term that reads as UTC. Placeholders, plural forms, countdown sentences, fixed names and CODE identifiers were checked on 2026-10-18. Later that day the release post's Events window section was rewritten for the slider above chat (X,Y, live and upcoming events, season ends); its new ending is translated in all 31 languages, keeping each catalog's EVENTS label and realm word.
 
 ## Runtime
 

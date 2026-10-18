@@ -35,7 +35,7 @@ A release, with parts of real ones:
 			key: "cave",                  // or phrase: "update.14_09_26.cave" to reuse an existing phrase
 			title: "Cave of Many Dreams",
 			note: "A new dungeon for your party of up to 3. ...",
-			image: { src: "/images/comics/cave/1.png?v=4", width: 480, height: 270, localized: true },
+			image: { src: "/images/comics/cave/1.png?v=4", width: 480, height: 270, localized: true },   // localized: <folder>/<code>/<file> per language, same width; the height may differ
 		},
 		{
 			key: "rime_djinn",

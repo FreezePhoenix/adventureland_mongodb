@@ -24,8 +24,8 @@ module.exports = [
 			{
 				key: "events",
 				title: "New Events Window!",
-				note: "Click EVENTS above chat to see active seasons, upcoming bosses, today's activities and the next seven days of events. Switch between your time and realm time. Choose REMIND to get a game-log message 10 minutes before an event. Events starting within the hour also appear above chat, and your character screen shows the next event.",
-				show: ["article:events-and-home"],
+				note: "Click EVENTS above chat to see active seasons, upcoming bosses, today's activities and the next seven days of events. Switch between your time and realm time. Choose REMIND to get a game-log message 10 minutes before an event. The bar above chat scrolls through live events, the next three events with countdowns and season end dates; hover to pause, or click to open EVENTS. Click X,Y or the realm name to show your coordinates instead; your character screen still shows the next event.",
+				image: { src: "/images/updates/events/window.png?v=1", width: 600, height: 505, localized: true },
 			},
 		],
 		changes: [
@@ -68,6 +68,7 @@ module.exports = [
 			{ new: "code:witch_cipher_info" },
 			{ changed: "map:halloween", note: "Two doors in Spooky Forest now let you knock for Trick or Treat.", fields: { quirks: [[[-228, -178, 32, 40, "log", "Locked but there are noises coming from inside"], [331, -210, 32, 40, "log", "Locked"], [128, -251, 20, 16, "sign", "Beware! Don't fall down!"]], [[-228, -178, 32, 40, "knock", "Locked but there are noises coming from inside"], [331, -210, 32, 40, "knock", "Locked"], [128, -251, 20, 16, "sign", "Beware! Don't fall down!"]]] } },
 			{ changed: "map:spookytown", note: "Five doors in Spooky Town now let you knock for Trick or Treat.", fields: { quirks: [[[-63, -44, 30, 24, "invisible_statue"]], [[-63, -44, 30, 24, "invisible_statue"], [-130, -60, 32, 40, "knock", "Locked"], [70, -103, 32, 40, "knock", "Locked"], [217, -27, 32, 40, "knock", "Locked"], [-170, 180, 32, 40, "knock", "Locked"], [117, 133, 32, 40, "knock", "Locked"]]] } },
+			{ new: "set:crookedkeys" },
 		],
 	},
 	{

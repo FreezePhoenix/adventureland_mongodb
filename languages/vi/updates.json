@@ -873,9 +873,9 @@
 	"update.08_10_26.halloween.witchcipher.title": "Sự Kiện Hằng Ngày Mới: Mật Mã Phù Thủy!",
 	"update.08_10_26.halloween.halloween": "Headless Horseman cưỡi ngựa ra khỏi nghĩa địa Spooky Forest mỗi đêm lúc 00:00 theo giờ thế giới. Zombies và Ghouls trỗi dậy từ nghĩa địa Spooky Town mỗi hai giờ, sau đó Gargoyle xuất hiện. Gõ bảy cánh cửa để nhận quà, bị ghẹo và nhận phần thưởng sau mỗi 10 con dấu. Ngày cuối cùng của Halloween là 2 tháng 11, nhưng sau đó Xyn vẫn đổi Candy và Pumpkin Stems, và các công thức Halloween vẫn dùng được.",
 	"update.08_10_26.halloween.halloween.title": "Headless Horseman, Nghĩa Địa Trỗi Dậy và Cho Kẹo Hay Bị Ghẹo!",
-	"update.08_10_26.halloween.events": "Nhấp SỰ KIỆN phía trên khung chat để xem các mùa đang diễn ra, trùm sắp xuất hiện, hoạt động hôm nay và lịch sự kiện trong bảy ngày tới. Chuyển đổi giữa giờ của bạn và giờ thế giới. Chọn NHẮC để nhận thông báo trong nhật ký trò chơi 10 phút trước một sự kiện. Những sự kiện bắt đầu trong vòng một giờ tới cũng xuất hiện phía trên khung chat, và màn hình nhân vật của bạn hiển thị sự kiện tiếp theo.",
 	"update.08_10_26.halloween.events.title": "Cửa Sổ Sự Kiện Mới!",
 	"update.08_10_26.halloween.event_schedule": "Giờ sự kiện hiện được ấn định trước bảy ngày và không thay đổi sau khi máy chủ khởi động lại.",
 	"update.08_10_26.halloween.map_halloween": "Hai cánh cửa ở Spooky Forest giờ có thể gõ để tham gia Cho Kẹo Hay Bị Ghẹo.",
-	"update.08_10_26.halloween.map_spookytown": "Năm cánh cửa ở Spooky Town giờ có thể gõ để tham gia Cho Kẹo Hay Bị Ghẹo."
+	"update.08_10_26.halloween.map_spookytown": "Năm cánh cửa ở Spooky Town giờ có thể gõ để tham gia Cho Kẹo Hay Bị Ghẹo.",
+	"update.08_10_26.halloween.events": "Nhấp SỰ KIỆN phía trên khung chat để xem các mùa đang diễn ra, trùm sắp xuất hiện, hoạt động hôm nay và lịch sự kiện trong bảy ngày tới. Chuyển đổi giữa giờ của bạn và giờ thế giới. Chọn NHẮC để nhận thông báo trong nhật ký trò chơi 10 phút trước một sự kiện. Thanh phía trên khung chat liên tục cuộn qua các sự kiện đang diễn ra, ba sự kiện tiếp theo kèm đồng hồ đếm ngược và ngày kết thúc của từng mùa. Di chuột lên thanh để tạm dừng hoặc nhấp vào để mở SỰ KIỆN. Nhấp X,Y hoặc tên thế giới để hiển thị tọa độ của bạn thay thế; màn hình nhân vật của bạn vẫn hiển thị sự kiện tiếp theo."
 }

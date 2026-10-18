@@ -873,9 +873,9 @@
 	"update.08_10_26.halloween.witchcipher.title": "Nová denní událost: Šifra čarodějnice!",
 	"update.08_10_26.halloween.halloween": "Headless Horseman vyjíždí ze hřbitova ve Spooky Forest každou noc v 00:00 času světa. Zombies a Ghouls povstávají ze hřbitova ve Spooky Town každé dvě hodiny a po nich přichází Gargoyle. Zaklepejte na sedm dveří pro sladkosti, žerty a odměny za každých 10 razítek. Posledním dnem Halloween je 2. listopad, ale Xyn i poté směňuje Candy a Pumpkin Stems a halloweenské recepty zůstávají použitelné.",
 	"update.08_10_26.halloween.halloween.title": "Headless Horseman, Povstání z hrobů a Koledu, nebo zlobu!",
-	"update.08_10_26.halloween.events": "Kliknutím na UDÁLOSTI nad chatem zobrazíte probíhající sezóny, nadcházející bossy, dnešní aktivity a události na příštích sedm dní. Přepínejte mezi svým časem a časem světa. Zvolte PŘIPOMENOUT a 10 minut před událostí dostanete zprávu do herního záznamu. Události začínající během příští hodiny se zobrazují také nad chatem a obrazovka postav ukazuje nejbližší událost.",
 	"update.08_10_26.halloween.events.title": "Nové okno událostí!",
 	"update.08_10_26.halloween.event_schedule": "Časy událostí se nyní plánují na sedm dní dopředu a po restartu serveru se nemění.",
 	"update.08_10_26.halloween.map_halloween": "Na dvoje dveře ve Spooky Forest nyní můžete zaklepat v rámci události Koledu, nebo zlobu.",
-	"update.08_10_26.halloween.map_spookytown": "Na patery dveře ve Spooky Town nyní můžete zaklepat v rámci události Koledu, nebo zlobu."
+	"update.08_10_26.halloween.map_spookytown": "Na patery dveře ve Spooky Town nyní můžete zaklepat v rámci události Koledu, nebo zlobu.",
+	"update.08_10_26.halloween.events": "Kliknutím na UDÁLOSTI nad chatem zobrazíte probíhající sezóny, nadcházející bossy, dnešní aktivity a události na příštích sedm dní. Přepínejte mezi svým časem a časem světa. Zvolte PŘIPOMENOUT a 10 minut před událostí dostanete zprávu do herního záznamu. Lišta nad chatem postupně zobrazuje probíhající události, tři nejbližší události s odpočtem a data konce sezón. Najetím myší posouvání pozastavíte, kliknutím otevřete UDÁLOSTI. Kliknutím na X,Y nebo název světa místo toho zobrazíte své souřadnice; obrazovka postav nadále ukazuje nejbližší událost."
 }

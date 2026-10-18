@@ -873,9 +873,9 @@
 	"update.08_10_26.halloween.witchcipher.title": "새로운 일일 이벤트: Witch의 암호!",
 	"update.08_10_26.halloween.halloween": "Headless Horseman은 매일 밤 월드 시간 00:00에 Spooky Forest의 묘지에서 말을 타고 나타납니다. Spooky Town의 묘지에서는 두 시간마다 Zombies와 Ghouls가 깨어나고, 이어서 Gargoyle이 등장합니다. 일곱 개의 문을 두드려 간식이나 장난을 만나고, 도장 10개마다 보상을 받으세요. 핼러윈 마지막 날은 11월 2일이지만, 그 후에도 Xyn은 Candy와 Pumpkin Stems를 교환해 주며 핼러윈 제조법도 계속 사용할 수 있습니다.",
 	"update.08_10_26.halloween.halloween.title": "Headless Horseman, 묘지의 부활, 사탕 아니면 장난!",
-	"update.08_10_26.halloween.events": "채팅 위의 이벤트를 클릭하면 진행 중인 시즌, 곧 등장할 보스, 오늘의 활동, 앞으로 7일간의 이벤트를 볼 수 있습니다. 내 시간과 월드 시간을 전환할 수 있습니다. 알림을 선택하면 이벤트 시작 10분 전에 게임 로그 메시지를 받습니다. 한 시간 이내에 시작하는 이벤트는 채팅 위에도 표시되며, 캐릭터 선택 화면에서는 다음 이벤트를 확인할 수 있습니다.",
 	"update.08_10_26.halloween.events.title": "새로운 이벤트 창!",
 	"update.08_10_26.halloween.event_schedule": "이벤트 일정이 이제 7일 전부터 확정되며, 서버가 재시작되어도 변경되지 않습니다.",
 	"update.08_10_26.halloween.map_halloween": "이제 Spooky Forest의 문 두 개를 두드려 사탕 아니면 장난에 참여할 수 있습니다.",
-	"update.08_10_26.halloween.map_spookytown": "이제 Spooky Town의 문 다섯 개를 두드려 사탕 아니면 장난에 참여할 수 있습니다."
+	"update.08_10_26.halloween.map_spookytown": "이제 Spooky Town의 문 다섯 개를 두드려 사탕 아니면 장난에 참여할 수 있습니다.",
+	"update.08_10_26.halloween.events": "채팅 위의 이벤트를 클릭하면 진행 중인 시즌, 곧 등장할 보스, 오늘의 활동, 앞으로 7일간의 이벤트를 볼 수 있습니다. 내 시간과 월드 시간을 전환할 수 있습니다. 알림을 선택하면 이벤트 시작 10분 전에 게임 로그 메시지를 받습니다. 채팅 위의 표시줄에는 진행 중인 이벤트, 카운트다운이 표시된 다음 이벤트 3개, 각 시즌의 종료 날짜가 차례로 지나갑니다. 마우스를 올리면 멈추고 클릭하면 이벤트 창이 열립니다. X,Y 또는 월드 이름을 클릭하면 대신 내 좌표가 표시됩니다. 캐릭터 선택 화면에는 계속 다음 이벤트가 표시됩니다."
 }

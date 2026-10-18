@@ -169,10 +169,12 @@ function chat_title_click(type, id) {
 	if (in_arr(cid, docked)) toggle_chat_window(type, id);
 }
 
+// Docked windows sit behind the chat box with their title bars stacked above it, so they follow its measured height.
 function redock() {
+	var corner = $("#bottomleftcorner2").is(":visible") && $("#bottomleftcorner2").outerHeight();
 	for (var i = 0; i < docked.length; i++) {
 		var cid = docked[i];
-		$("#chatw" + cid).css("bottom", 15 + i * 32);
+		$("#chatw" + cid).css("bottom", corner ? corner + 34 + i * 32 - $("#chatw" + cid).outerHeight() : 15 + i * 32);
 		$("#chatw" + cid).css("z-index", 70 - i);
 	}
 }

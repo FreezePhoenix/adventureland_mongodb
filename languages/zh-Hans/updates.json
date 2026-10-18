@@ -873,9 +873,9 @@
 	"update.08_10_26.halloween.witchcipher.title": "全新每日活动：女巫的密方！",
 	"update.08_10_26.halloween.halloween": "每天世界时间00:00，Headless Horseman 会从 Spooky Forest 的墓地策马而出。每两小时，Zombies 和 Ghouls 会从 Spooky Town 的墓地爬出来，随后 Gargoyle 登场。敲响七扇门，获得糖果、遭遇恶作剧，并且每累计10枚印章就能领取奖励。万圣节的最后一天是11月2日，但之后 Xyn 仍会兑换 Candy 和 Pumpkin Stems，万圣节配方也仍可使用。",
 	"update.08_10_26.halloween.halloween.title": "Headless Horseman、墓地复苏与不给糖就捣蛋！",
-	"update.08_10_26.halloween.events": "点击聊天框上方的活动，查看正在进行的赛季、即将出现的首领、今日活动和未来七天的活动安排。可以在你的时间与世界时间之间切换。选择提醒，即可在活动开始前10分钟收到游戏日志消息。一小时内即将开始的活动也会显示在聊天框上方，角色选择界面则会显示下一个活动。",
 	"update.08_10_26.halloween.events.title": "全新活动窗口！",
 	"update.08_10_26.halloween.event_schedule": "活动时间现在会提前七天确定，服务器重启后也不会改变。",
 	"update.08_10_26.halloween.map_halloween": "Spooky Forest 的两扇门现在可以敲响，参加不给糖就捣蛋。",
-	"update.08_10_26.halloween.map_spookytown": "Spooky Town 的五扇门现在可以敲响，参加不给糖就捣蛋。"
+	"update.08_10_26.halloween.map_spookytown": "Spooky Town 的五扇门现在可以敲响，参加不给糖就捣蛋。",
+	"update.08_10_26.halloween.events": "点击聊天框上方的活动，查看正在进行的赛季、即将出现的首领、今日活动和未来七天的活动安排。可以在你的时间与世界时间之间切换。选择提醒，即可在活动开始前10分钟收到游戏日志消息。聊天框上方的滚动栏会依次显示正在进行的活动、带倒计时的接下来三场活动以及各赛季的结束日期。将鼠标悬停在滚动栏上可暂停滚动，点击则可打开活动窗口。点击 X,Y 或世界名称可改为显示你的坐标；角色选择界面仍会显示下一个活动。"
 }
