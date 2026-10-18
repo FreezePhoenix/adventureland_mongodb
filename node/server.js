@@ -1649,16 +1649,6 @@ function calculate_player_stats(player) {
 		max(player.dex - 160, 0) / 925.0 +
 		player.int / 1575.0; // 120 635 1275 is the original mix
 	// player.frequency=9000;
-	player.attack_ms = round(1000.0 / player.frequency);
-	if (player.last_attack_ms && player.attack_ms != player.last_attack_ms) {
-		// server_log("skill_timeout_correction: "+player.last_attack_ms+" to "+player.attack_ms+" timeout: "+(player.attack_ms-mssince(player.last.attack)))
-		player.socket.emit("skill_timeout", {
-			name: "attack",
-			ms: player.attack_ms - mssince(player.last.attack),
-			reason: "attack_ms",
-		});
-	}
-	player.last_attack_ms = player.attack_ms;
 	player.mp_cost +=
 		min(player.level, 80) * (player.mp_cost / 10.0) +
 		player.a_mp_cost +
@@ -1738,7 +1728,20 @@ function calculate_player_stats(player) {
 	if (player.s.dash) {
 		player.speed = 500;
 	}
+
 	calculate_common_stats(player);
+
+	player.attack_ms = round(1000.0 / player.frequency);
+	if (player.last_attack_ms && player.attack_ms != player.last_attack_ms) {
+		// server_log("skill_timeout_correction: "+player.last_attack_ms+" to "+player.attack_ms+" timeout: "+(player.attack_ms-mssince(player.last.attack)))
+		player.socket.emit("skill_timeout", {
+			name: "attack",
+			ms: player.attack_ms - mssince(player.last.attack),
+			reason: "attack_ms",
+		});
+	}
+
+	player.last_attack_ms = player.attack_ms;
 
 	player.tax =
 		(player.level > 80 && 0.01) ||
@@ -14092,7 +14095,11 @@ function defeated_by_a_monster(attacker, player) {
 		player.socket.emit("game_log", localization.message("server.game_log.lost_1_level", {}));
 	}
 	player.socket.emit("game_response", { response: "defeated_by_a_monster", xp: lost_xp, monster: attacker.type });
-	if (attacker.target) {
+	// Only drop pursuit when the dead player was the monster's target.
+	// Splash / packed kills of bystanders used to clear tank aggro via
+	// `if (attacker.target)` — e.g. mrpumpkin targeting a priest, killing a
+	// stacked merchant, then stop_pursuit(defeat) → priest lost aggro.
+	if (attacker.target === player.name) {
 		stop_pursuit(attacker, { force: true, cause: "defeat" });
 	}
 	rip(player);
