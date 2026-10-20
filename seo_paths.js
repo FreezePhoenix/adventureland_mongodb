@@ -11,6 +11,8 @@ const DOCS_PATHS = [
 	"/docs/code/functions/bank_retrieve",
 	"/docs/code/functions/bank_deposit",
 	"/docs/code/functions/bank_withdraw",
+	"/docs/code/functions/exchange",
+	"/docs/code/functions/find_npc",
 	"/docs/code/functions/auto_craft",
 	"/docs/code/functions/compound",
 	"/docs/code/functions/upgrade",
