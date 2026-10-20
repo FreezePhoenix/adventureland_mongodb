@@ -2027,14 +2027,14 @@ function add_item(player, new_item, args) {
 		new_item = create_new_item(new_item, args.q || 1);
 	}
 	if (args.p) {
-		new_item.p = args.p;
+		add_item_property(new_item, args.p);
 	}
 	if (
 		(args.m || args.r) &&
 		((G.items[new_item.name].upgrade && Math.random() < 1.0 / 500) ||
 			(G.items[new_item.name].compound && Math.random() < 1.0 / 20000))
 	) {
-		new_item.p = "shiny";
+		add_item_property(new_item, "shiny");
 		a = true;
 	}
 	if (G.items[new_item.name].s) {
@@ -7281,7 +7281,7 @@ function init_socket_io(socket_server, server_index) {
 						};
 
 						if (result <= chance) {
-							item.p = "shiny";
+							add_item_property(item, "shiny");
 							player.p.u_item = item;
 						} else {
 							player.p.u_item = item;
