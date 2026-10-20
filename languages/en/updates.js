@@ -59,8 +59,6 @@ module.exports = {
 	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
 	"update.08_10_26.halloween.support_44": "Purify no longer removes a monster's natural poison attack.",
 	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
-	"update.08_10_26.halloween.support_45": "Dead characters can no longer use potions or regeneration.",
-	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
 	"update.08_10_26.halloween.support_46": "Fixed Dorr's missing backpack.",
 	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
 	"update.08_10_26.halloween.support_47": "Recipients can claim attachments from older mail again.",

@@ -883,7 +883,6 @@
 	"update.08_10_26.halloween.support_42": "Los cambios de apariencia ya no provocan fallos en personajes que funcionan sin gráficos.",
 	"update.08_10_26.halloween.support_43": "La probabilidad de envenenar ya no se calcula dos veces en un mismo golpe.",
 	"update.08_10_26.halloween.support_44": "Purificar ya no elimina el ataque venenoso natural de un monstruo.",
-	"update.08_10_26.halloween.support_45": "Los personajes muertos ya no pueden usar pociones ni regeneración.",
 	"update.08_10_26.halloween.support_46": "Corregida la mochila que le faltaba a Dorr.",
 	"update.08_10_26.halloween.support_47": "Los destinatarios pueden volver a recoger los adjuntos de correos antiguos.",
 	"update.08_10_26.halloween.support_48": "Las habilidades pueden seleccionar personajes con nombres numéricos como objetivo.",

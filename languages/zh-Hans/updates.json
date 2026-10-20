@@ -883,7 +883,6 @@
 	"update.08_10_26.halloween.support_42": "外观变化不再导致无图形模式下的角色崩溃。",
 	"update.08_10_26.halloween.support_43": "同一次命中不再进行两次中毒判定。",
 	"update.08_10_26.halloween.support_44": "净化不再移除怪物天生的毒攻击。",
-	"update.08_10_26.halloween.support_45": "死亡角色不再能使用药水或恢复技能。",
 	"update.08_10_26.halloween.support_46": "修复了Dorr背包缺失的问题。",
 	"update.08_10_26.halloween.support_47": "收件人可以再次领取旧邮件的附件。",
 	"update.08_10_26.halloween.support_48": "技能可以指定名称全为数字的角色为目标。",

@@ -56,7 +56,6 @@ module.exports = [
 			{ fixed: "support_42", note: "Skin changes no longer crash characters running without graphics." },
 			{ fixed: "support_43", note: "Poison is no longer rolled twice on the same hit." },
 			{ fixed: "support_44", note: "Purify no longer removes a monster's natural poison attack." },
-			{ fixed: "support_45", note: "Dead characters can no longer use potions or regeneration." },
 			{ fixed: "support_46", note: "Fixed Dorr's missing backpack." },
 			{ fixed: "support_47", note: "Recipients can claim attachments from older mail again." },
 			{ fixed: "support_48", note: "Skills can target characters with numeric names." },

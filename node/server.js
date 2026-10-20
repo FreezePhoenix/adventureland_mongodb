@@ -7753,7 +7753,7 @@ function init_socket_io(socket_server, server_index) {
 			}
 			var trading = data.slot && get_trade_slots(player).includes(data.slot) && !data.consume;
 			if (
-				(player.rip || player.s.stunned) &&
+				player.s.stunned &&
 				!trading &&
 				(data.consume || def.gives || ["elixir", "licence", "spawner"].includes(def.type) || item.name == "cxjar")
 			) {
@@ -12142,7 +12142,7 @@ function init_socket_io(socket_server, server_index) {
 			if (!player) {
 				return;
 			}
-			if (player.rip || player.s.stunned) return fail_response("disabled");
+			if (player.s.stunned) return fail_response("disabled");
 			if (data.item == "hp" || data.item == "mp") {
 				if (player.last.potion) {
 					const ms = -mssince(player.last.potion);

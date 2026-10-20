@@ -196,7 +196,7 @@ test("Snake Oil still cleanses poison after stun expires", () => {
 	assert(target.last.potion > new Date());
 });
 
-test("dead characters cannot recover or consume potions and elixirs", () => {
+test("dead characters can recover and consume potions and elixirs without reviving", () => {
 	for (const [event, data, name] of [
 		["use", { item: "hp" }],
 		["use", { item: "mp" }],
@@ -208,11 +208,21 @@ test("dead characters cannot recover or consume potions and elixirs", () => {
 		target.s = {};
 		target.rip = true;
 		target.hp = 0;
+		target.mp = 0;
 		if (name) target.items[0] = { name, q: 2 };
 		const before = snapshot(target);
 		run(event, target, data);
-		assert.deepEqual(replies, [{ failed: true, reason: "disabled" }]);
-		assert.equal(snapshot(target), before);
+		assert.equal(
+			replies.some((reply) => reply.failed),
+			false,
+		);
+		assert.notEqual(snapshot(target), before);
+		assert.equal(target.rip, true);
+		if (event === "use" || name === "hpot0" || name === "snakeoil") {
+			assert(target.last.potion > new Date());
+			assert((data.item === "mp" ? target.mp : target.hp) > 0);
+		}
+		if (name) assert.equal(target.items[0].q, 1);
 	}
 });
 

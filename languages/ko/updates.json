@@ -883,7 +883,6 @@
 	"update.08_10_26.halloween.support_42": "그래픽 없이 실행 중인 캐릭터가 외형 변경으로 중단되지 않습니다.",
 	"update.08_10_26.halloween.support_43": "한 번의 타격에 독 판정을 두 번 하지 않습니다.",
 	"update.08_10_26.halloween.support_44": "정화가 몬스터의 고유 독 공격을 제거하지 않습니다.",
-	"update.08_10_26.halloween.support_45": "죽은 캐릭터는 물약이나 재생을 사용할 수 없습니다.",
 	"update.08_10_26.halloween.support_46": "Dorr의 배낭이 표시되지 않던 문제를 수정했습니다.",
 	"update.08_10_26.halloween.support_47": "수신자가 오래된 우편의 첨부 아이템을 다시 받을 수 있습니다.",
 	"update.08_10_26.halloween.support_48": "숫자로 된 이름의 캐릭터를 스킬 대상으로 지정할 수 있습니다.",
