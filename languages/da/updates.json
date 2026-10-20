@@ -892,5 +892,15 @@
 	"update.08_10_26.halloween.support_51": "Salg tager ikke længere en anden genstand, som er flyttet til den valgte plads.",
 	"update.08_10_26.halloween.support_52": "MAINFRAME accepterer nu send_updates til at opdatere synlige entiteter.",
 	"update.08_10_26.halloween.support_53": "Et forsinket loginsvar dækker ikke længere spillet med figurvalget.",
-	"update.08_10_26.halloween.support_54": "Genforbindelse springer ikke længere til målet for en ufærdig bevægelse."
+	"update.08_10_26.halloween.support_54": "Genforbindelse springer ikke længere til målet for en ufærdig bevægelse.",
+	"update.08_10_26.halloween.support_65": "Byttehandler i CODE afsluttes nu eller melder, at ventetiden er udløbet.",
+	"update.08_10_26.halloween.support_66": "Valg i hulens butik vises nu som gennemført, også uden et køb.",
+	"update.08_10_26.halloween.support_67": "Glitch-byttehandler giver nu begge Glitch, når der trækkes to.",
+	"update.08_10_26.halloween.support_68": "Låste og forseglede genstande kan ikke længere skilles ad.",
+	"update.08_10_26.halloween.support_69": "Købmandsbonusser ændrer ikke længere den angivne plads til byttet.",
+	"update.08_10_26.halloween.support_70": "Belønninger fra kuverter inde i kister beholder titlen Lucky.",
+	"update.08_10_26.halloween.support_71": "Ugyldige smart_move-anmodninger fortsætter ikke længere den tidligere rute.",
+	"update.08_10_26.halloween.support_72": "Fremstilling i MAINFRAME springer nu låste og blokerede genstande samt genstande til udlodning over.",
+	"update.08_10_26.halloween.support_73": "Våben og projektilers glød opdateres nu, når du skifter udstyr.",
+	"update.08_10_26.halloween.support_74": "find_npc finder nu omvandrende NPC'er."
 }

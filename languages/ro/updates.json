@@ -892,5 +892,15 @@
 	"update.08_10_26.halloween.support_51": "Vânzarea nu mai ia alt obiect mutat în spațiul selectat.",
 	"update.08_10_26.halloween.support_52": "MAINFRAME acceptă acum send_updates pentru actualizarea entităților vizibile.",
 	"update.08_10_26.halloween.support_53": "Un răspuns întârziat la autentificare nu mai acoperă jocul cu selectorul de personaje.",
-	"update.08_10_26.halloween.support_54": "Reconectarea nu mai sare la destinația unei deplasări neterminate."
+	"update.08_10_26.halloween.support_54": "Reconectarea nu mai sare la destinația unei deplasări neterminate.",
+	"update.08_10_26.halloween.support_65": "Schimburile din CODE se încheie acum sau raportează expirarea timpului de așteptare.",
+	"update.08_10_26.halloween.support_66": "Alegerile din magazinul peșterii apar acum ca încheiate chiar și fără o cumpărătură.",
+	"update.08_10_26.halloween.support_67": "Schimburile Glitch acordă acum ambele Glitch când sunt extrase două.",
+	"update.08_10_26.halloween.support_68": "Obiectele încuiate și sigilate nu mai pot fi dezmembrate.",
+	"update.08_10_26.halloween.support_69": "Bonusurile negustorului nu mai modifică locul din inventar raportat pentru pradă.",
+	"update.08_10_26.halloween.support_70": "Recompensele din plicurile aflate în cufere își păstrează titlul Lucky.",
+	"update.08_10_26.halloween.support_71": "Cererile smart_move nevalide nu mai continuă traseul anterior.",
+	"update.08_10_26.halloween.support_72": "Fabricarea în MAINFRAME omite acum obiectele încuiate, blocate și oferite la tombolă.",
+	"update.08_10_26.halloween.support_73": "Strălucirea armelor și a proiectilelor se actualizează acum când schimbi echipamentul.",
+	"update.08_10_26.halloween.support_74": "find_npc găsește acum NPC-urile care se deplasează."
 }

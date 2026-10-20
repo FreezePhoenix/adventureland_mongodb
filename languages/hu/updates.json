@@ -892,5 +892,15 @@
 	"update.08_10_26.halloween.support_51": "Az eladás már nem visz el másik tárgyat, amely a kiválasztott helyre került.",
 	"update.08_10_26.halloween.support_52": "A MAINFRAME már fogadja a send_updates kérést a látható entitások frissítéséhez.",
 	"update.08_10_26.halloween.support_53": "Egy késői bejelentkezési válasz már nem takarja el a játékot a karakterválasztóval.",
-	"update.08_10_26.halloween.support_54": "Az újracsatlakozás már nem ugrat a befejezetlen mozgás céljához."
+	"update.08_10_26.halloween.support_54": "Az újracsatlakozás már nem ugrat a befejezetlen mozgás céljához.",
+	"update.08_10_26.halloween.support_65": "A CODE-cserék most már befejeződnek, vagy jelzik a várakozási idő lejártát.",
+	"update.08_10_26.halloween.support_66": "A barlangi boltban hozott döntések most már vásárlás nélkül is teljesítettként jelennek meg.",
+	"update.08_10_26.halloween.support_67": "A Glitch-cserék most már mindkét Glitch tárgyat odaadják, ha kettőt sorsolnak ki.",
+	"update.08_10_26.halloween.support_68": "A zárolt és lepecsételt tárgyakat többé nem lehet szétszerelni.",
+	"update.08_10_26.halloween.support_69": "A kereskedő bónuszai többé nem módosítják a zsákmány jelzett helyét.",
+	"update.08_10_26.halloween.support_70": "A ládákban lévő borítékok jutalmai megtartják a Lucky címet.",
+	"update.08_10_26.halloween.support_71": "Az érvénytelen smart_move kérések többé nem folytatják az előző útvonalat.",
+	"update.08_10_26.halloween.support_72": "A MAINFRAME tárgykészítése most már kihagyja a zárolt, tiltott és sorsolásra felajánlott tárgyakat.",
+	"update.08_10_26.halloween.support_73": "Felszerelésváltáskor most már frissül a fegyverek és lövedékek ragyogása.",
+	"update.08_10_26.halloween.support_74": "A find_npc most már a vándorló NPC-ket is megtalálja."
 }

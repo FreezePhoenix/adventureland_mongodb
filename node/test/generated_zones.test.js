@@ -2166,3 +2166,16 @@ test("cave loot updates the purse and published balance after an encounter speak
 	assert.equal(c.cave_open_chest(p, chest, "reward").failed, true);
 	assert.equal(run.cave.amber, before.amber + 3, "a repeated claim cannot duplicate the reward");
 });
+
+test("Cave shop objectives complete after a choice without requiring a purchase", () => {
+	const definition = G.events.dreams.encounters.find((e) => e.id === "e46");
+	for (const option of definition.options.filter((o) => ["inspect", "leave"].includes(o.effect))) {
+		const { c, p, run, room } = encounterFixture(definition);
+		room.required = true;
+		assert.equal(!!c.cave_snapshot(run, p).objectives.find((o) => o.id === room.id).done, false);
+		c.cave_apply(run, room, option);
+		assert.equal(room.done, true);
+		assert.equal(room.stock.sold, false);
+		assert.equal(c.cave_snapshot(run, p).objectives.find((o) => o.id === room.id).done, true);
+	}
+});

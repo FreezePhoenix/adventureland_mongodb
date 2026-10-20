@@ -1,5 +1,9 @@
 // English documentation catalog. IDs identify source meaning and usage.
 module.exports = {
+	// Roaming NPC lookup returns the first configured waypoint, not a live sighting. Preserve find_npc.
+	"docs.functions.find_npc.roaming": "For roaming NPCs, find_npc returns the first point on their route, not their current position.",
+	// CODE exchange acknowledgement and completion deadlines. Preserve exchange(), character.q.exchange, 10 and 30. Timeout does not cancel an accepted exchange.
+	"docs.functions.exchange.timeout": "exchange() waits up to 10 seconds for the server to accept or reject the request, then up to 30 seconds for the reward. A timeout does not cancel an exchange already accepted by the server. Check character.q.exchange and your inventory before trying again.",
 	// Raw send_updates snapshot request in browser and MAINFRAME. Keep send_updates, entities and MAINFRAME unchanged. Two requests per second is the MAINFRAME bound; no request correlation.
 	"docs.functions.get_socket.refresh": "send_updates requests a full snapshot of visible entities. MAINFRAME allows two requests per second. Listen for entities before sending the request; the response has no matching request ID.",
 	// sell() item snapshot check. Only stack quantity may change; preserve CODE identifiers.

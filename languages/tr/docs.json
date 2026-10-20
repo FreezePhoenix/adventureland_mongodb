@@ -2795,5 +2795,7 @@
 	"docs.articles.data-server-status.event-ends": "<b>Sezon bitişleri</b>: server.status.event_ends, belirtilmişse devam eden her sezonun bitiş zamanını Unix milisaniyesi cinsinden verir. Son günü, bu zamandan önceki UTC günüdür.",
 	"docs.articles.data-character.witchcipher": "<b>character.witchcipher</b>, bu karakter o UTC gününde Cadının Şifresi'ne katıldıktan sonra etkinliğin her turunda görünür. Kullanılan karışım haklarını, mixes_left ve kazanılan parcels bilgilerini gösterir. Tur bittiğinde kaybolur ve günün diğer turunda otomatik olarak yeniden görünür. <b>character.trickortreat</b>, karakterin bugün çaldığı Şeker mi Şaka mı kapılarını, doors_left ve hesabın stamps bilgisini listeler.",
 	"docs.functions.sell.item_changed": "İstek sunucuya ulaşmadan seçilen yuvaya başka bir eşya taşınırsa satış başarısız olur.",
-	"docs.functions.get_socket.refresh": "send_updates, görünür varlıkların tam durumunu ister. MAINFRAME saniyede iki isteğe izin verir. İsteği göndermeden önce entities olayını dinleyin; yanıtın eşleşen bir istek kimliği yoktur."
+	"docs.functions.get_socket.refresh": "send_updates, görünür varlıkların tam durumunu ister. MAINFRAME saniyede iki isteğe izin verir. İsteği göndermeden önce entities olayını dinleyin; yanıtın eşleşen bir istek kimliği yoktur.",
+	"docs.functions.exchange.timeout": "exchange(), sunucunun isteği kabul veya reddetmesi için en fazla 10 saniye, ardından ödül için en fazla 30 saniye bekler. Zaman aşımı, sunucunun zaten kabul ettiği bir takası iptal etmez. Yeniden denemeden önce character.q.exchange değerini ve envanterini kontrol et.",
+	"docs.functions.find_npc.roaming": "Dolaşan NPC'ler için find_npc, bulundukları konumu değil, rotalarındaki ilk noktayı döndürür."
 }

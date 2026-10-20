@@ -2795,5 +2795,7 @@
 	"docs.articles.data-server-status.event-ends": "<b>انتهاء المواسم</b>: يوفر server.status.event_ends وقت انتهاء كل موسم جارٍ، إن كان محددًا، بالمللي ثانية وفق توقيت Unix. يومه الأخير هو اليوم حسب UTC الذي يسبق وقت الانتهاء.",
 	"docs.articles.data-character.witchcipher": "يظهر <b>character.witchcipher</b> خلال جولة من شفرة الساحرة بعد انضمام هذه الشخصية في يوم UTC نفسه. ويعرض عدد المزائج المستخدمة وmixes_left وparcels المكتسبة. ويختفي عند انتهاء الجولة ويعود تلقائيًا في الجولة الأخرى من اليوم نفسه. يسرد <b>character.trickortreat</b> أبواب حلوى أم خدعة التي طرقتها هذه الشخصية اليوم، وdoors_left وstamps الخاصة بالحساب.",
 	"docs.functions.sell.item_changed": "تفشل عملية البيع إذا نُقل عنصر آخر إلى الخانة المحددة قبل وصول الطلب إلى الخادم.",
-	"docs.functions.get_socket.refresh": "يطلب send_updates لقطة كاملة للكيانات المرئية. يسمح MAINFRAME بطلبين في الثانية. استمع إلى entities قبل إرسال الطلب؛ فالاستجابة لا تحتوي على معرّف طلب مطابق."
+	"docs.functions.get_socket.refresh": "يطلب send_updates لقطة كاملة للكيانات المرئية. يسمح MAINFRAME بطلبين في الثانية. استمع إلى entities قبل إرسال الطلب؛ فالاستجابة لا تحتوي على معرّف طلب مطابق.",
+	"docs.functions.exchange.timeout": "تنتظر exchange() حتى 10 ثوانٍ ليقبل الخادم الطلب أو يرفضه، ثم حتى 30 ثانية للحصول على المكافأة. انتهاء المهلة لا يلغي مبادلة قبلها الخادم بالفعل. تحقّق من character.q.exchange وحقيبتك قبل المحاولة مجددًا.",
+	"docs.functions.find_npc.roaming": "للشخصيات غير اللاعبة المتجوّلة، تُرجع find_npc أول نقطة في مسارها، وليس موقعها الحالي."
 }

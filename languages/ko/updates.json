@@ -892,5 +892,15 @@
 	"update.08_10_26.halloween.support_51": "판매할 때 선택한 칸으로 이동한 다른 아이템을 가져가지 않습니다.",
 	"update.08_10_26.halloween.support_52": "MAINFRAME에서 send_updates로 보이는 개체를 갱신할 수 있습니다.",
 	"update.08_10_26.halloween.support_53": "늦게 도착한 로그인 응답이 캐릭터 선택 화면으로 게임을 가리지 않습니다.",
-	"update.08_10_26.halloween.support_54": "재접속해도 아직 도착하지 않은 이동 목적지로 뛰어넘지 않습니다."
+	"update.08_10_26.halloween.support_54": "재접속해도 아직 도착하지 않은 이동 목적지로 뛰어넘지 않습니다.",
+	"update.08_10_26.halloween.support_65": "CODE의 교환이 이제 완료되거나 시간 초과를 알립니다.",
+	"update.08_10_26.halloween.support_66": "동굴 상점에서 구매하지 않아도 선택을 마치면 완료로 표시됩니다.",
+	"update.08_10_26.halloween.support_67": "Glitch 교환에서 두 개가 당첨되면 이제 Glitch 두 개를 모두 받습니다.",
+	"update.08_10_26.halloween.support_68": "잠기거나 봉인된 아이템은 더 이상 분해할 수 없습니다.",
+	"update.08_10_26.halloween.support_69": "상인 보너스가 더 이상 보고되는 전리품 슬롯을 바꾸지 않습니다.",
+	"update.08_10_26.halloween.support_70": "상자 안의 봉투 보상이 Lucky 칭호를 유지합니다.",
+	"update.08_10_26.halloween.support_71": "잘못된 smart_move 요청 후에는 이전 경로를 계속 따라가지 않습니다.",
+	"update.08_10_26.halloween.support_72": "MAINFRAME 제작은 이제 잠김, 사용 제한, 나눔 추첨 등록 상태의 아이템을 제외합니다.",
+	"update.08_10_26.halloween.support_73": "장비를 바꾸면 이제 무기와 투사체의 빛이 갱신됩니다.",
+	"update.08_10_26.halloween.support_74": "find_npc가 이제 돌아다니는 NPC도 찾습니다."
 }

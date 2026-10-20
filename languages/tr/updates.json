@@ -892,5 +892,15 @@
 	"update.08_10_26.halloween.support_51": "Satış artık seçilen yuvaya sonradan taşınan başka bir eşyayı almıyor.",
 	"update.08_10_26.halloween.support_52": "MAINFRAME artık görünür varlıkları yenilemek için send_updates kabul ediyor.",
 	"update.08_10_26.halloween.support_53": "Geciken giriş yanıtı artık karakter seçim ekranını oyunun üzerine açmıyor.",
-	"update.08_10_26.halloween.support_54": "Yeniden bağlanmak artık tamamlanmamış hareketin hedefine atlatmıyor."
+	"update.08_10_26.halloween.support_54": "Yeniden bağlanmak artık tamamlanmamış hareketin hedefine atlatmıyor.",
+	"update.08_10_26.halloween.support_65": "CODE ile yapılan takaslar artık tamamlanıyor veya zaman aşımı bildiriyor.",
+	"update.08_10_26.halloween.support_66": "Mağara dükkânında verilen kararlar artık alışveriş yapmadan da tamamlanmış görünüyor.",
+	"update.08_10_26.halloween.support_67": "Glitch takasında iki Glitch çıktığında artık ikisi de veriliyor.",
+	"update.08_10_26.halloween.support_68": "Kilitli ve mühürlü eşyalar artık parçalanamıyor.",
+	"update.08_10_26.halloween.support_69": "Tüccar bonusları artık bildirilen ganimet yuvasını değiştirmiyor.",
+	"update.08_10_26.halloween.support_70": "Sandıkların içindeki zarf ödülleri Lucky unvanını koruyor.",
+	"update.08_10_26.halloween.support_71": "Geçersiz smart_move istekleri artık önceki rotayı sürdürmüyor.",
+	"update.08_10_26.halloween.support_72": "MAINFRAME üretimi artık kilitli, engellenmiş ve çekilişe konmuş eşyaları atlıyor.",
+	"update.08_10_26.halloween.support_73": "Silah değiştirdiğinde silah ve mermi parıltısı artık güncelleniyor.",
+	"update.08_10_26.halloween.support_74": "find_npc artık dolaşan NPC'leri de buluyor."
 }

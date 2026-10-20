@@ -892,5 +892,15 @@
 	"update.08_10_26.halloween.support_51": "Vender ya no se lleva otro objeto que haya pasado a la casilla seleccionada.",
 	"update.08_10_26.halloween.support_52": "MAINFRAME ahora acepta send_updates para actualizar las entidades visibles.",
 	"update.08_10_26.halloween.support_53": "Una respuesta de inicio de sesión tardía ya no tapa el juego con el selector de personajes.",
-	"update.08_10_26.halloween.support_54": "Reconectar ya no transporta al destino de un movimiento sin terminar."
+	"update.08_10_26.halloween.support_54": "Reconectar ya no transporta al destino de un movimiento sin terminar.",
+	"update.08_10_26.halloween.support_65": "Los intercambios en CODE ahora terminan o notifican que se ha agotado el tiempo de espera.",
+	"update.08_10_26.halloween.support_66": "Las decisiones en la tienda de la cueva ahora aparecen completadas sin necesidad de comprar.",
+	"update.08_10_26.halloween.support_67": "Los intercambios de Glitch ahora entregan ambos Glitch cuando salen dos.",
+	"update.08_10_26.halloween.support_68": "Los objetos bloqueados y sellados ya no se pueden desmantelar.",
+	"update.08_10_26.halloween.support_69": "Los bonus del mercader ya no cambian la casilla de botín indicada.",
+	"update.08_10_26.halloween.support_70": "Las recompensas de sobres dentro de cofres conservan el título Lucky.",
+	"update.08_10_26.halloween.support_71": "Las solicitudes de smart_move con destinos no válidos ya no continúan la ruta anterior.",
+	"update.08_10_26.halloween.support_72": "La fabricación en MAINFRAME ahora omite los objetos bloqueados, restringidos y destinados a sorteos.",
+	"update.08_10_26.halloween.support_73": "El brillo de las armas y los proyectiles ahora se actualiza al cambiar de equipo.",
+	"update.08_10_26.halloween.support_74": "find_npc ahora encuentra a los NPC que se desplazan."
 }

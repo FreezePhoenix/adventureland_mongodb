@@ -2795,5 +2795,7 @@
 	"docs.articles.data-server-status.event-ends": "<b>Konec sezón</b>: server.status.event_ends uvádí nastavený čas konce každé probíhající sezóny v unixových milisekundách. Jejím posledním dnem je UTC den před tímto časem.",
 	"docs.articles.data-character.witchcipher": "<b>character.witchcipher</b> se objeví během kola Šifry čarodějnice, jakmile se tato postava připojí k události v daný den UTC. Ukazuje počet použitých kombinací, mixes_left a získané parcels. Po skončení kola zmizí a automaticky se vrátí v druhém kole daného dne. <b>character.trickortreat</b> uvádí dveře události Koledu, nebo zlobu, na které tato postava dnes zaklepala, doors_left a stamps účtu.",
 	"docs.functions.sell.item_changed": "Prodej selže, pokud se na vybrané místo přesune jiný předmět dříve, než server obdrží požadavek.",
-	"docs.functions.get_socket.refresh": "send_updates žádá úplný snímek viditelných entit. MAINFRAME povoluje dva požadavky za sekundu. Začni naslouchat entities před odesláním požadavku; odpověď nemá odpovídající ID požadavku."
+	"docs.functions.get_socket.refresh": "send_updates žádá úplný snímek viditelných entit. MAINFRAME povoluje dva požadavky za sekundu. Začni naslouchat entities před odesláním požadavku; odpověď nemá odpovídající ID požadavku.",
+	"docs.functions.exchange.timeout": "exchange() čeká až 10 sekund, než server požadavek přijme nebo odmítne, a poté až 30 sekund na odměnu. Vypršení časového limitu nezruší výměnu, kterou server již přijal. Před dalším pokusem zkontrolujte character.q.exchange a svůj inventář.",
+	"docs.functions.find_npc.roaming": "U pohybujících se NPC vrací find_npc první bod jejich trasy, nikoli aktuální polohu."
 }

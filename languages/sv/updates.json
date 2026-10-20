@@ -892,5 +892,15 @@
 	"update.08_10_26.halloween.support_51": "Försäljning tar inte längre ett annat föremål som flyttats till den valda platsen.",
 	"update.08_10_26.halloween.support_52": "MAINFRAME accepterar nu send_updates för att uppdatera synliga entiteter.",
 	"update.08_10_26.halloween.support_53": "Ett försenat inloggningssvar täcker inte längre spelet med karaktärsväljaren.",
-	"update.08_10_26.halloween.support_54": "Återanslutning hoppar inte längre till målet för en oavslutad förflyttning."
+	"update.08_10_26.halloween.support_54": "Återanslutning hoppar inte längre till målet för en oavslutad förflyttning.",
+	"update.08_10_26.halloween.support_65": "Byten i CODE slutförs nu eller meddelar att väntetiden har gått ut.",
+	"update.08_10_26.halloween.support_66": "Val i grottans butik visas nu som slutförda även utan köp.",
+	"update.08_10_26.halloween.support_67": "Glitch-byten ger nu båda Glitch när två lottas fram.",
+	"update.08_10_26.halloween.support_68": "Låsta och förseglade föremål kan inte längre plockas isär.",
+	"update.08_10_26.halloween.support_69": "Handlarbonusar ändrar inte längre den rapporterade platsen för bytet.",
+	"update.08_10_26.halloween.support_70": "Belöningar från kuvert i kistor behåller titeln Lucky.",
+	"update.08_10_26.halloween.support_71": "Ogiltiga smart_move-anrop fortsätter inte längre längs den föregående rutten.",
+	"update.08_10_26.halloween.support_72": "Tillverkning i MAINFRAME hoppar nu över låsta och blockerade föremål samt föremål som lagts upp för utlottning.",
+	"update.08_10_26.halloween.support_73": "Vapnens och projektilernas glöd uppdateras nu när du byter utrustning.",
+	"update.08_10_26.halloween.support_74": "find_npc hittar nu kringvandrande NPC:er."
 }

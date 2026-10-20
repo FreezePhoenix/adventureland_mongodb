@@ -2118,9 +2118,16 @@ function add_item(player, new_item, args) {
 		if (new_item.data) {
 			item.data = new_item.data;
 		} // "cxjar"
-		var num = add_item(mr, item, { m: 1 });
+		var merchant_num = add_item(mr, item, { m: 1 });
 		mr.socket.emit("game_log", item_message("server.item.found", item, {}, { color: "#64B867" }));
-		xy_emit(mr, "ui", { type: "+M", name: mr.name, item: cache_item(item), num: num, cevent: "mluck", event: "mluck" });
+		xy_emit(mr, "ui", {
+			type: "+M",
+			name: mr.name,
+			item: cache_item(item),
+			num: merchant_num,
+			cevent: "mluck",
+			event: "mluck",
+		});
 		resend(mr, "reopen+nc+inv");
 	}
 	if (args.announce !== false && (a || (a_score[new_item.name] || 0) < G.items[new_item.name].a) && !player.stealth) {
@@ -6504,6 +6511,8 @@ function init_socket_io(socket_server, server_index) {
 			}
 			// if(player.esize<=0) return socket.emit("game_response","inventory_full");
 			var item = player.items[data.num];
+			if (item && item.l) return fail_response("item_locked");
+			if (item && item.b) return fail_response("item_blocked");
 			if (item && item.level && G.items[item.name].compound) {
 				var cost = min(50000000, calculate_item_value(item) * 10);
 				if (player.gold < cost) {
@@ -6537,12 +6546,6 @@ function init_socket_io(socket_server, server_index) {
 			}
 			if (!item || !G.dismantle[item.name]) {
 				return fail_response("dismantle_cant");
-			}
-			if (item.l) {
-				return fail_response("item_locked");
-			}
-			if (item.b) {
-				return fail_response("item_blocked");
 			}
 			if (player.gold < G.dismantle[item.name].cost) {
 				return fail_response("gold_not_enough");
@@ -6668,41 +6671,43 @@ function init_socket_io(socket_server, server_index) {
 			success_response("craft", { num: i, name: crafted.name, cevent: true });
 		});
 		socket.on("exchange", function (data) {
+			data = data || {};
+			const fail = (reason) => fail_response(reason, { request_id: data.request_id });
 			const player = players[socket.id];
 			if (!player) {
-				return fail_response("invalid");
+				return fail("invalid");
 			}
 			if (player.q.exchange) {
-				return fail_response("exchange_existing");
+				return fail("exchange_existing");
 			}
 			if (player.user) {
-				return fail_response("cant_in_bank");
+				return fail("cant_in_bank");
 			}
 
 			const item = player.items[data.item_num];
 			if (!item) {
-				return fail_response("invalid");
+				return fail("invalid");
 			}
 			if (item.l) {
-				return fail_response("item_locked");
+				return fail("item_locked");
 			}
 			const def = G.items[item.name];
 			const suffix = def && (def.compound || def.upgrade) ? item.level || 0 : "";
 			const dropId = item.name + suffix;
 			if (!def || !def.e || !D.drops[dropId]) {
-				return fail_response("invalid");
+				return fail("invalid");
 			}
 			if (player.esize <= 0 && (item.q || 1) != def.e) {
-				return fail_response("inventory_full");
+				return fail("inventory_full");
 			}
 			if (!player.computer) {
 				const dist = distance(player, def.quest ? G.quests[def.quest] : G.maps.main.exchange);
 				if (dist > B.sell_dist) {
-					return fail_response("distance");
+					return fail("distance");
 				}
 			}
 			if (def.e > 1 && item.q < def.e) {
-				return fail_response("exchange_notenough");
+				return fail("exchange_notenough");
 			}
 			player.p.stats.exchanges[dropId] = (player.p.stats.exchanges[dropId] || 0) + 1;
 			consume(player, data.item_num, def.e);
@@ -6729,7 +6734,7 @@ function init_socket_io(socket_server, server_index) {
 				player.q.exchange.qs = def.quest;
 			}
 			resend(player, "reopen+nc+inv");
-			success_response({ success: false, in_progress: true, num: num });
+			success_response({ success: false, in_progress: true, num: num, request_id: data.request_id });
 		});
 		socket.on("exchange_buy", function (data) {
 			//console.log(JSON.stringify(data));

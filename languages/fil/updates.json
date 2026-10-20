@@ -892,5 +892,15 @@
 	"update.08_10_26.halloween.support_51": "Hindi na kinukuha ng pagbebenta ang ibang item na nailipat sa napiling puwesto.",
 	"update.08_10_26.halloween.support_52": "Tumatanggap na ang MAINFRAME ng send_updates para i-refresh ang mga nakikitang entidad.",
 	"update.08_10_26.halloween.support_53": "Hindi na tinatakpan ng nahuling tugon sa pag-login ang laro ng pagpili ng karakter.",
-	"update.08_10_26.halloween.support_54": "Hindi na lumulundag ang muling pagkonekta sa destinasyon ng hindi pa tapos na paggalaw."
+	"update.08_10_26.halloween.support_54": "Hindi na lumulundag ang muling pagkonekta sa destinasyon ng hindi pa tapos na paggalaw.",
+	"update.08_10_26.halloween.support_65": "Natatapos na ang mga palitan sa CODE o nagsasabi kapag lumampas sa oras ng paghihintay.",
+	"update.08_10_26.halloween.support_66": "Lumalabas nang tapos ang mga pagpili sa tindahan ng kuweba kahit walang binili.",
+	"update.08_10_26.halloween.support_67": "Ibinibigay na ang parehong Glitch kapag dalawang Glitch ang nabunot sa palitan.",
+	"update.08_10_26.halloween.support_68": "Hindi na maaaring baklasin ang mga naka-lock at selyadong item.",
+	"update.08_10_26.halloween.support_69": "Hindi na binabago ng mga bonus ng mangangalakal ang iniulat na puwesto ng nakuha sa imbentaryo.",
+	"update.08_10_26.halloween.support_70": "Nananatili ang titulong Lucky sa mga gantimpala mula sa mga sobre sa loob ng mga kaban.",
+	"update.08_10_26.halloween.support_71": "Hindi na ipinagpapatuloy ng mga hindi wastong smart_move request ang dating ruta.",
+	"update.08_10_26.halloween.support_72": "Nilalaktawan na ng paggawa sa MAINFRAME ang mga item na naka-lock, ipinagbabawal gamitin, at nakalaan sa pamigay.",
+	"update.08_10_26.halloween.support_73": "Nagbabago na ang kinang ng sandata at mga projectile kapag nagpapalit ng kagamitan.",
+	"update.08_10_26.halloween.support_74": "Nakakahanap na ang find_npc ng mga gumagalang NPC."
 }

@@ -892,5 +892,15 @@
 	"update.08_10_26.halloween.support_51": "出售时不再卖掉后来移入所选栏位的另一件物品。",
 	"update.08_10_26.halloween.support_52": "MAINFRAME现在支持通过send_updates刷新可见实体。",
 	"update.08_10_26.halloween.support_53": "延迟的登录响应不再让角色选择界面遮住游戏。",
-	"update.08_10_26.halloween.support_54": "重新连接不再跳到尚未完成的移动目的地。"
+	"update.08_10_26.halloween.support_54": "重新连接不再跳到尚未完成的移动目的地。",
+	"update.08_10_26.halloween.support_65": "CODE中的兑换现在会完成或报告超时。",
+	"update.08_10_26.halloween.support_66": "洞穴商店的选择现在无需购买也会显示为已完成。",
+	"update.08_10_26.halloween.support_67": "Glitch兑换抽中两个时，现在会发放两个Glitch。",
+	"update.08_10_26.halloween.support_68": "已锁定或封印的物品现在无法拆解。",
+	"update.08_10_26.halloween.support_69": "商人加成不再改变所报告的战利品栏位。",
+	"update.08_10_26.halloween.support_70": "宝箱内的信封奖励会保留Lucky称号。",
+	"update.08_10_26.halloween.support_71": "无效的smart_move请求不再继续之前的路线。",
+	"update.08_10_26.halloween.support_72": "MAINFRAME制作现在会跳过已锁定、受限或正在赠品抽奖中的物品。",
+	"update.08_10_26.halloween.support_73": "更换装备时，武器和投射物的光效现在会更新。",
+	"update.08_10_26.halloween.support_74": "find_npc现在可以找到四处走动的NPC。"
 }

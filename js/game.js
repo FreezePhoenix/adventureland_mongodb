@@ -2069,8 +2069,8 @@ function init_socket(args) {
 				if (!data.reason) data.reason = data.response;
 				if (in_arr(data.place, ["transport", "enter", "leave"])) transporting = false;
 				if (data.place === "transport" && G.maps[current_map]?.generated) cave_transport_failed(data);
-				reject_deferred(data.place, data);
-			} else if (data.place) {
+				if (!(data.place === "exchange" && data.request_id)) reject_deferred(data.place, data);
+			} else if (data.place && !(data.place === "exchange" && data.request_id)) {
 				resolve_deferred(data.place, data);
 			}
 			equipment_sound(data);
@@ -6146,7 +6146,8 @@ function cosmetics_logic(sprite) {
 	}
 
 	for (var cid in sprite.cxc)
-		if (!in_arr(cid, needed)) {
+		if (!in_arr(cid, needed) || (cid.startsWith("wea") && sprite.cxc[cid].item_level !== ((cid[4] == "2" ? sprite.slots.offhand : sprite.slots.mainhand)?.level || 0))) {
+			if (cid.startsWith("weapon")) sprite.filter_wglow = null;
 			destroy_sprite(sprite.cxc[cid]);
 			delete sprite.cxc[cid];
 		}
@@ -6244,6 +6245,7 @@ function cosmetics_logic(sprite) {
 				if (wcx.lightborder) ((bcolor = 0x666666), (bsize = 1));
 				if (wcx.border) bsize = wcx.border;
 
+				c.item_level = item.level || 0;
 				var glow_filter = item_upgrade_glow(item);
 				if (glow_filter) {
 					c.filters = [glow_filter];

@@ -892,5 +892,15 @@
 	"update.08_10_26.halloween.support_51": "Beim Verkaufen wird kein anderer Gegenstand mehr genommen, der in den gewählten Platz verschoben wurde.",
 	"update.08_10_26.halloween.support_52": "MAINFRAME akzeptiert jetzt send_updates, um sichtbare Entitäten zu aktualisieren.",
 	"update.08_10_26.halloween.support_53": "Eine verspätete Anmeldeantwort verdeckt das Spiel nicht mehr mit der Charakterauswahl.",
-	"update.08_10_26.halloween.support_54": "Erneutes Verbinden versetzt den Charakter nicht mehr ans Ziel einer unfertigen Bewegung."
+	"update.08_10_26.halloween.support_54": "Erneutes Verbinden versetzt den Charakter nicht mehr ans Ziel einer unfertigen Bewegung.",
+	"update.08_10_26.halloween.support_65": "Tauschvorgänge in CODE werden jetzt abgeschlossen oder melden eine Zeitüberschreitung.",
+	"update.08_10_26.halloween.support_66": "Entscheidungen im Höhlenladen werden jetzt auch ohne Kauf als abgeschlossen angezeigt.",
+	"update.08_10_26.halloween.support_67": "Beim Glitch-Tausch werden jetzt beide Glitch ausgegeben, wenn zwei ausgelost werden.",
+	"update.08_10_26.halloween.support_68": "Gesperrte und versiegelte Gegenstände können nicht mehr zerlegt werden.",
+	"update.08_10_26.halloween.support_69": "Händlerboni ändern nicht mehr den gemeldeten Beuteplatz.",
+	"update.08_10_26.halloween.support_70": "Umschlagbelohnungen in Truhen behalten den Titel Lucky.",
+	"update.08_10_26.halloween.support_71": "Ungültige smart_move-Anfragen setzen die vorherige Route nicht mehr fort.",
+	"update.08_10_26.halloween.support_72": "Die Herstellung in MAINFRAME überspringt jetzt gesperrte, blockierte und zur Verlosung stehende Gegenstände.",
+	"update.08_10_26.halloween.support_73": "Das Leuchten von Waffen und Geschossen wird beim Ausrüstungswechsel jetzt aktualisiert.",
+	"update.08_10_26.halloween.support_74": "find_npc findet jetzt auch umherziehende NPCs."
 }

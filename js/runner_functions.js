@@ -1322,20 +1322,29 @@ function dismantle(item_num) {
 }
 
 async function exchange(item_num) {
-	parent.e_item = item_num;
-	var call = await parent.exchange(1),
-		num = call.num,
-		name = undefined;
+	var socket = parent.socket;
+	if (!socket || socket.disconnected) return rejecting_promise({ reason: "disconnected", place: "exchange" });
+	if (!["number", "string"].includes(typeof item_num) || !/^[0-9]+$/.test(item_num) || !Number.isSafeInteger(+item_num) || !character.items[item_num])
+		return rejecting_promise({ reason: "invalid", place: "exchange" });
+	if (character.q.exchange) return rejecting_promise({ reason: "in_progress", place: "exchange" });
+	var request_id = randomStr(30);
+	var acknowledgement = wait_for_event(socket, "game_response", 10000, function (data) {
+		return data && data.place === "exchange" && data.request_id === request_id;
+	});
+	socket.emit("exchange", { item_num: +item_num, q: character.items[item_num].q, request_id: request_id });
+	var call;
+	try { call = await acknowledgement; }
+	catch (error) { call = Object.assign({ failed: true }, error); }
+	if (call.failed) return rejecting_promise(Object.assign({}, call, { place: "exchange", reason: parent.socket !== socket || socket.disconnected ? "disconnected" : call.reason }));
 	if (!call.in_progress) return call;
-	if (character.q.exchange) num = character.q.exchange.num;
-	for (var i = 0; (character.q.exchange || (character.items[num] && character.items[num].name == "placeholder")) && i < 30000; i++) {
-		if (parent.socket.disconnected) return rejecting_promise({ reason: "disconnected", place: "exchange" });
-		await sleep(1);
+	var num = call.num, deadline = Date.now() + 30000;
+	while (character.q.exchange || (character.items[num] && character.items[num].name === "placeholder")) {
+		if (parent.socket !== socket || socket.disconnected) return rejecting_promise({ reason: "disconnected", place: "exchange" });
+		if (Date.now() >= deadline) return rejecting_promise({ reason: "timeout", place: "exchange" });
+		await sleep(50);
 	}
-	if (character.q.exchange || (character.items[num] && character.items[num].name == "placeholder")) return rejecting_promise({ reason: "timeout", place: "exchange" });
-	if (character.items[num]) name = character.items[num].name;
-	else num = undefined;
-	return { success: true, reward: name, num: num };
+	if (parent.socket !== socket || socket.disconnected) return rejecting_promise({ reason: "disconnected", place: "exchange" });
+	return character.items[num] ? { success: true, reward: character.items[num].name, num: num } : { success: true, reward: undefined, num: undefined };
 }
 
 function exchange_buy(token, name) {
@@ -1434,7 +1443,8 @@ function find_npc(npc_id) {
 		}));
 		for (var i = 0; i < locations.length; i++) {
 			var npc = locations[i];
-			if (npc.id == npc_id) return { map: name, in: name, x: npc.position[0], y: npc.position[1] };
+			var position = npc.position || (npc.positions && npc.positions[0]);
+			if (npc.id == npc_id && position) return { map: name, in: name, x: position[0], y: position[1] };
 		}
 	}
 	return null;
@@ -2491,10 +2501,19 @@ function smart_move(destination, on_done) {
 	// despite the name, smart_move isn't very smart or efficient, it's up to the players to implement a better movement method [05/02/17]
 	// on_done function is an old callback function for compatibility, smart_move also returns a Promise [25/03/20]
 	if (smart.moving) smart.on_done(false, "interrupted");
+	smart.moving = false;
+	smart.plot = [];
+	smart.searching = smart.found = false;
 	smart.map = "";
 	if (is_string(destination)) destination = { to: destination };
 	if (is_number(destination)) ((destination = { x: destination, y: on_done }), (on_done = null));
+	function invalid_destination() {
+		if (typeof on_done === "function") on_done(false);
+		return rejecting_promise({ reason: "invalid", place: "smart_move" });
+	}
+	if (!destination || typeof destination !== "object") return invalid_destination();
 	if ("x" in destination) {
+		if (!Number.isFinite(destination.x) || !Number.isFinite(destination.y)) return invalid_destination();
 		smart.map = destination.map || character.map;
 		smart.x = destination.x;
 		smart.y = destination.y;
@@ -2554,7 +2573,7 @@ function smart_move(destination, on_done) {
 	}
 	if (!smart.map) {
 		game_log(parent.phrase("code.location_unknown"), "#CF5B5B");
-		return rejecting_promise({ reason: "invalid" });
+		return invalid_destination();
 	}
 	smart.moving = true;
 	smart.plot = [];

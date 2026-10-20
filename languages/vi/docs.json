@@ -2795,5 +2795,7 @@
 	"docs.articles.data-server-status.event-ends": "<b>Kết thúc mùa</b>: server.status.event_ends cung cấp thời điểm kết thúc của mỗi mùa đang diễn ra, nếu đã được đặt, tính bằng mili giây Unix. Ngày cuối cùng của mùa là ngày UTC trước thời điểm đó.",
 	"docs.articles.data-character.witchcipher": "<b>character.witchcipher</b> xuất hiện trong một lượt Mật Mã Phù Thủy sau khi nhân vật này tham gia trong ngày UTC đó. Nó hiển thị số lượt pha chế đã dùng, mixes_left và parcels kiếm được. Nó biến mất khi lượt kết thúc và tự động xuất hiện lại trong lượt còn lại của ngày. <b>character.trickortreat</b> liệt kê các cửa Cho Kẹo Hay Bị Ghẹo mà nhân vật đã gõ hôm nay, doors_left và stamps của tài khoản.",
 	"docs.functions.sell.item_changed": "Việc bán thất bại nếu vật phẩm khác được chuyển vào ô đã chọn trước khi máy chủ nhận yêu cầu.",
-	"docs.functions.get_socket.refresh": "send_updates yêu cầu ảnh chụp trạng thái đầy đủ của các thực thể nhìn thấy được. MAINFRAME cho phép hai yêu cầu mỗi giây. Hãy lắng nghe entities trước khi gửi yêu cầu; phản hồi không có mã yêu cầu tương ứng."
+	"docs.functions.get_socket.refresh": "send_updates yêu cầu ảnh chụp trạng thái đầy đủ của các thực thể nhìn thấy được. MAINFRAME cho phép hai yêu cầu mỗi giây. Hãy lắng nghe entities trước khi gửi yêu cầu; phản hồi không có mã yêu cầu tương ứng.",
+	"docs.functions.exchange.timeout": "exchange() chờ tối đa 10 giây để máy chủ chấp nhận hoặc từ chối yêu cầu, rồi chờ tối đa 30 giây để nhận phần thưởng. Hết thời gian chờ không hủy lần đổi mà máy chủ đã chấp nhận. Hãy kiểm tra character.q.exchange và túi đồ trước khi thử lại.",
+	"docs.functions.find_npc.roaming": "Với NPC đi lại, find_npc trả về điểm đầu tiên trên tuyến đường của họ, không phải vị trí hiện tại."
 }

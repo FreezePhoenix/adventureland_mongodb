@@ -1,6 +1,26 @@
 // Release highlights. Dates, item/character names and CODE identifiers stay unchanged.
 module.exports = {
 	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_74": "find_npc now finds roaming NPCs.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_73": "Weapon and projectile glow now updates when you swap gear.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_72": "MAINFRAME crafting now skips locked, blocked and giveaway items.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_71": "Invalid smart_move requests no longer continue the previous route.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_70": "Lucky envelope rewards keep their title inside chests.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_69": "Merchant bonuses no longer change the reported loot slot.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_68": "Locked and sealed items can no longer be dismantled.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_67": "Glitch exchanges now award both Glitches when two are rolled.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_66": "Cave shop choices now show as complete without a purchase.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_65": "Exchanges now finish or report a timeout in CODE.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
 	"update.08_10_26.halloween.support_40": "Monsters keep their target when splash damage defeats another character.",
 	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
 	"update.08_10_26.halloween.support_41": "Attack speed now includes condition effects.",

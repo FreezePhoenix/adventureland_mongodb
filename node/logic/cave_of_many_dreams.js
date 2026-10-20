@@ -1775,7 +1775,7 @@ function cave_snapshot(run, player) {
 				id: r.id,
 				x: r.kind === "citizen" ? (r.npc?.x ?? r.x) : r.x,
 				y: r.kind === "citizen" ? (r.npc?.y ?? r.y) : r.y,
-				done: r.encounter?.kind === "merchant" ? !!r.stock?.sold : r.done,
+				done: r.done,
 				floor: r.floor,
 				kind: r.kind,
 				required: !!r.required,

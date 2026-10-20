@@ -892,5 +892,15 @@
 	"update.08_10_26.halloween.support_51": "Sprzedaż nie zabiera już innego przedmiotu przeniesionego na wybrane miejsce.",
 	"update.08_10_26.halloween.support_52": "MAINFRAME obsługuje teraz send_updates do odświeżania widocznych obiektów.",
 	"update.08_10_26.halloween.support_53": "Opóźniona odpowiedź logowania nie zasłania już gry ekranem wyboru postaci.",
-	"update.08_10_26.halloween.support_54": "Ponowne połączenie nie przenosi już do celu niedokończonego ruchu."
+	"update.08_10_26.halloween.support_54": "Ponowne połączenie nie przenosi już do celu niedokończonego ruchu.",
+	"update.08_10_26.halloween.support_65": "Wymiany w CODE teraz kończą się lub zgłaszają przekroczenie czasu oczekiwania.",
+	"update.08_10_26.halloween.support_66": "Wybory w sklepie w jaskini są teraz oznaczane jako ukończone również bez zakupu.",
+	"update.08_10_26.halloween.support_67": "Wymiana Glitch teraz przyznaje oba Glitch, gdy wylosowano dwa.",
+	"update.08_10_26.halloween.support_68": "Zablokowanych i zapieczętowanych przedmiotów nie można już rozmontowywać.",
+	"update.08_10_26.halloween.support_69": "Bonusy kupca nie zmieniają już zgłaszanego miejsca na łup.",
+	"update.08_10_26.halloween.support_70": "Nagrody z kopert wewnątrz skrzyń zachowują tytuł Lucky.",
+	"update.08_10_26.halloween.support_71": "Nieprawidłowe żądania smart_move nie kontynuują już poprzedniej trasy.",
+	"update.08_10_26.halloween.support_72": "Wytwarzanie w MAINFRAME pomija teraz przedmioty zablokowane, objęte ograniczeniami i wystawione na losowanie.",
+	"update.08_10_26.halloween.support_73": "Blask broni i pocisków jest teraz aktualizowany przy zmianie ekwipunku.",
+	"update.08_10_26.halloween.support_74": "find_npc znajduje teraz przemieszczających się NPC."
 }

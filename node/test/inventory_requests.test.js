@@ -289,3 +289,77 @@ test("Primling preview identifies grace without consuming; applying it retains l
 	assert.equal(h.player.items[1].q, 1);
 	assert.equal(h.player.items[0].p.grace_added, 0.5);
 });
+
+test("Glitch exchanges award both unstackable copies, directly and inside chests", () => {
+	for (const chest of [false, true]) {
+		const h = fixture();
+		Object.assign(h.c, {
+			Math: Object.assign(Object.create(Math), { random: () => 0.999999 }),
+			character_slots: [],
+			colors: { server_success: "green" },
+			item_to_phrase: (item) => item.name,
+			broadcast() {},
+			to_pretty_num: String,
+		});
+		load(h.c, "node/server_functions.js", ["exchange", "chest_exchange", "add_item_property"]);
+		assert.deepEqual(plain(G.drops.glitch.at(-1)), [5, "glitch", 2]);
+		const target = chest ? { gold: 0, cash: 0, items: [] } : h.player;
+		if (chest) h.c.chest_exchange(target, "glitch");
+		else h.c.exchange(target, "glitch");
+		const items = target.items.filter((item) => item && item.name === "glitch");
+		assert.equal(items.length, 2);
+		assert.notEqual(items[0], items[1]);
+		assert(items.every((item) => !item.q));
+	}
+});
+
+test("compounded dismantling respects locked and sealed items before charging gold", () => {
+	for (const protection of [{ l: "l" }, { l: "s" }, { l: "u" }, { b: true }, {}]) {
+		const h = fixture();
+		h.c.calculate_item_value = () => 10;
+		h.player.items[0] = { name: "strring", level: 2, ...protection };
+		const before = plain(h.player.items);
+		h.run("dismantle", { num: 0 });
+		if (protection.l || protection.b) {
+			assert.equal(h.failures[0].reason, protection.l ? "item_locked" : "item_blocked");
+			assert.deepEqual(plain(h.player.items), before);
+			assert.equal(h.player.gold, 1000);
+		} else {
+			assert.equal(h.failures.length, 0);
+			assert.equal(h.player.items.filter((item) => item?.name === "strring" && item.level === 1).length, 3);
+			assert.equal(h.player.gold, 900);
+		}
+	}
+});
+
+test("merchant luck bonuses keep the original loot recipient's inventory slot", () => {
+	const h = fixture();
+	h.player.items[0] = { name: "blade", level: 0 };
+	h.player.s.mluck = { f: h.receiver.name };
+	h.c.get_player = () => h.receiver;
+	h.c.Math = Object.assign(Object.create(Math), { random: () => 0.01 });
+	h.c.colors = {};
+	const slot = h.c.add_item(h.player, { name: "hpot0", q: 1 }, { m: true });
+	assert.equal(slot, 1);
+	assert.equal(h.player.items[slot].name, "hpot0");
+	assert.equal(h.receiver.items[0].name, "hpot0");
+	const event = h.effects.find(([, event, data]) => event === "ui" && data.type === "+M");
+	assert.equal(event[2].num, 0);
+});
+
+test("nested chest exchanges retain the same Lucky property as direct envelopes", () => {
+	for (const name of ["greenenvelope", "brownenvelope"]) {
+		const h = fixture();
+		load(h.c, "node/server_functions.js", ["chest_exchange", "add_item_property"]);
+		const row = G.drops[name].findIndex((drop) => drop[4] === "lucky");
+		const roll =
+			(G.drops[name].slice(0, row).reduce((sum, drop) => sum + drop[0], 0) + G.drops[name][row][0] / 2) /
+			G.drops[name].reduce((sum, drop) => sum + drop[0], 0);
+		h.c.Math = Object.assign(Object.create(Math), { random: () => roll });
+		const chest = { gold: 0, cash: 0, items: [] };
+		h.c.chest_exchange(chest, [[1, "open", name]]);
+		assert.equal(chest.items[0].name, G.drops[name][row][1]);
+		assert.equal(chest.items[0].p, G.drops[name][row][4]);
+		assert.deepEqual(plain(chest.items[0].ps), ["lucky"]);
+	}
+});

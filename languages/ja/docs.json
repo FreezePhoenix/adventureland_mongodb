@@ -2795,5 +2795,7 @@
 	"docs.articles.data-server-status.event-ends": "<b>シーズン終了</b>：server.status.event_endsには、設定されている場合、開催中の各シーズンの終了時刻がUnixミリ秒単位で入ります。最終日はその時刻の前日のUTC日付です。",
 	"docs.articles.data-character.witchcipher": "<b>character.witchcipher</b>は、このキャラクターがそのUTC日に魔女の暗号に参加すると、各イベントの開催中に表示されます。使用した調合回数、mixes_left、獲得したparcelsが含まれます。イベント終了時に消え、同じ日のもう一方の回で自動的に再表示されます。<b>character.trickortreat</b>には、このキャラクターが今日ノックしたトリック・オア・トリートの扉、doors_left、アカウントのstampsが含まれます。",
 	"docs.functions.sell.item_changed": "サーバーがリクエストを受信する前に選択したスロットへ別のアイテムが移動した場合、売却は失敗します。",
-	"docs.functions.get_socket.refresh": "send_updatesは見えているエンティティの完全なスナップショットを要求します。MAINFRAMEでは毎秒2回まで要求できます。送信前にentitiesのリスナーを登録してください。応答には対応するリクエストIDはありません。"
+	"docs.functions.get_socket.refresh": "send_updatesは見えているエンティティの完全なスナップショットを要求します。MAINFRAMEでは毎秒2回まで要求できます。送信前にentitiesのリスナーを登録してください。応答には対応するリクエストIDはありません。",
+	"docs.functions.exchange.timeout": "exchange()は、サーバーがリクエストを承認または拒否するまで最大10秒、その後は報酬を受け取るまで最大30秒待ちます。タイムアウトしても、サーバーがすでに承認した交換は取り消されません。再試行する前にcharacter.q.exchangeとインベントリを確認してください。",
+	"docs.functions.find_npc.roaming": "移動するNPCの場合、find_npcは現在位置ではなく、移動経路の最初の地点を返します。"
 }

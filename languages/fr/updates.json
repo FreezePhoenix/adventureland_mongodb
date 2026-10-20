@@ -892,5 +892,15 @@
 	"update.08_10_26.halloween.support_51": "La vente ne prend plus un autre objet déplacé dans l'emplacement sélectionné.",
 	"update.08_10_26.halloween.support_52": "MAINFRAME accepte désormais send_updates pour actualiser les entités visibles.",
 	"update.08_10_26.halloween.support_53": "Une réponse de connexion tardive ne recouvre plus le jeu avec le sélecteur de personnages.",
-	"update.08_10_26.halloween.support_54": "Se reconnecter ne téléporte plus à la destination d'un déplacement inachevé."
+	"update.08_10_26.halloween.support_54": "Se reconnecter ne téléporte plus à la destination d'un déplacement inachevé.",
+	"update.08_10_26.halloween.support_65": "Les échanges dans CODE se terminent désormais ou signalent un délai d'attente dépassé.",
+	"update.08_10_26.halloween.support_66": "Les choix dans la boutique de la grotte sont désormais indiqués comme terminés même sans achat.",
+	"update.08_10_26.halloween.support_67": "Les échanges de Glitch donnent désormais les deux Glitch lorsque deux sont tirés.",
+	"update.08_10_26.halloween.support_68": "Les objets verrouillés et scellés ne peuvent plus être démantelés.",
+	"update.08_10_26.halloween.support_69": "Les bonus du marchand ne changent plus l'emplacement de butin indiqué.",
+	"update.08_10_26.halloween.support_70": "Les récompenses d'enveloppes dans les coffres conservent le titre Lucky.",
+	"update.08_10_26.halloween.support_71": "Les requêtes smart_move invalides ne poursuivent plus l'itinéraire précédent.",
+	"update.08_10_26.halloween.support_72": "La fabrication dans MAINFRAME ignore désormais les objets verrouillés, bloqués et mis en jeu dans un tirage au sort.",
+	"update.08_10_26.halloween.support_73": "La lueur des armes et des projectiles est désormais actualisée lors d'un changement d'équipement.",
+	"update.08_10_26.halloween.support_74": "find_npc trouve désormais les PNJ qui se déplacent."
 }

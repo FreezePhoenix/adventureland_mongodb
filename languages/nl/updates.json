@@ -892,5 +892,15 @@
 	"update.08_10_26.halloween.support_51": "Verkopen neemt niet meer een ander voorwerp mee dat naar het gekozen vak is verplaatst.",
 	"update.08_10_26.halloween.support_52": "MAINFRAME accepteert nu send_updates om zichtbare entiteiten te vernieuwen.",
 	"update.08_10_26.halloween.support_53": "Een vertraagd aanmeldantwoord bedekt het spel niet meer met de personagekeuze.",
-	"update.08_10_26.halloween.support_54": "Opnieuw verbinden verplaatst je niet meer naar het doel van een onvoltooide beweging."
+	"update.08_10_26.halloween.support_54": "Opnieuw verbinden verplaatst je niet meer naar het doel van een onvoltooide beweging.",
+	"update.08_10_26.halloween.support_65": "Uitwisselingen in CODE worden nu afgerond of melden een time-out.",
+	"update.08_10_26.halloween.support_66": "Keuzes in de grotwinkel worden nu ook zonder aankoop als voltooid weergegeven.",
+	"update.08_10_26.halloween.support_67": "Glitch-uitwisselingen geven nu beide Glitch als er twee worden getrokken.",
+	"update.08_10_26.halloween.support_68": "Vergrendelde en verzegelde voorwerpen kunnen niet meer worden ontmanteld.",
+	"update.08_10_26.halloween.support_69": "Handelaarsbonussen veranderen niet langer het gemelde inventarisvak van de buit.",
+	"update.08_10_26.halloween.support_70": "Envelopbeloningen in kisten behouden de titel Lucky.",
+	"update.08_10_26.halloween.support_71": "Ongeldige smart_move-verzoeken zetten de vorige route niet meer voort.",
+	"update.08_10_26.halloween.support_72": "Vervaardiging in MAINFRAME slaat nu vergrendelde, geblokkeerde en voor verloting aangeboden voorwerpen over.",
+	"update.08_10_26.halloween.support_73": "De gloed van wapens en projectielen wordt nu bijgewerkt als je van uitrusting wisselt.",
+	"update.08_10_26.halloween.support_74": "find_npc vindt nu rondtrekkende NPC's."
 }

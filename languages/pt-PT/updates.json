@@ -892,5 +892,15 @@
 	"update.08_10_26.halloween.support_51": "Vender já não retira outro objeto que tenha sido movido para a posição selecionada.",
 	"update.08_10_26.halloween.support_52": "MAINFRAME aceita agora send_updates para atualizar as entidades visíveis.",
 	"update.08_10_26.halloween.support_53": "Uma resposta de início de sessão atrasada já não tapa o jogo com a seleção de personagens.",
-	"update.08_10_26.halloween.support_54": "Voltar a ligar já não transporta para o destino de um movimento inacabado."
+	"update.08_10_26.halloween.support_54": "Voltar a ligar já não transporta para o destino de um movimento inacabado.",
+	"update.08_10_26.halloween.support_65": "As trocas em CODE agora terminam ou indicam que o tempo de espera expirou.",
+	"update.08_10_26.halloween.support_66": "As escolhas na loja da caverna agora aparecem como concluídas mesmo sem uma compra.",
+	"update.08_10_26.halloween.support_67": "As trocas de Glitch agora entregam os dois Glitch quando saem dois.",
+	"update.08_10_26.halloween.support_68": "Os itens bloqueados e selados já não podem ser desmontados.",
+	"update.08_10_26.halloween.support_69": "Os bónus do mercador já não alteram o espaço de saque indicado.",
+	"update.08_10_26.halloween.support_70": "As recompensas de envelopes dentro de baús mantêm o título Lucky.",
+	"update.08_10_26.halloween.support_71": "Os pedidos inválidos de smart_move já não continuam a rota anterior.",
+	"update.08_10_26.halloween.support_72": "O fabrico no MAINFRAME agora ignora itens bloqueados, restritos e colocados em sorteios.",
+	"update.08_10_26.halloween.support_73": "O brilho das armas e dos projéteis agora é atualizado ao mudar de equipamento.",
+	"update.08_10_26.halloween.support_74": "find_npc agora encontra NPCs que se deslocam."
 }

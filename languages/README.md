@@ -116,6 +116,8 @@ Tauri reads the selected Steam game language once off the UI thread, with a 750 
 
 ## Catalog status
 
+October 20 reward and CODE fixes: ten release notes and two CODE reference paragraphs are translated and proofread in all 32 languages. Glitch quantities, protected items, Cave completion, glow changes, roaming NPC positions, and exchange timeouts were checked. CODE identifiers and the 10/30-second limits are preserved.
+
 October 19 support fixes: 15 release notes, the changed-item sale error and two CODE reference paragraphs are translated and proofread in all 32 languages. Natural poison, mail ownership, numeric character names, MAINFRAME's two-request limit and the unchanged CODE identifiers were checked.
 
 MAINFRAME pathfinding (October 16): the Spooky Town fix note is translated and proofread in all 32 languages. MAINFRAME, Spooky Town and smart_move() are preserved.

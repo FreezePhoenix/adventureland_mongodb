@@ -892,5 +892,15 @@
 	"update.08_10_26.halloween.support_51": "Myynti ei enää vie toista esinettä, joka on siirretty valittuun paikkaan.",
 	"update.08_10_26.halloween.support_52": "MAINFRAME hyväksyy nyt send_updates-pyynnön näkyvien olioiden päivittämiseen.",
 	"update.08_10_26.halloween.support_53": "Viivästynyt kirjautumisvastaus ei enää peitä peliä hahmovalinnalla.",
-	"update.08_10_26.halloween.support_54": "Uudelleenyhdistäminen ei enää siirrä keskeneräisen liikkeen määränpäähän."
+	"update.08_10_26.halloween.support_54": "Uudelleenyhdistäminen ei enää siirrä keskeneräisen liikkeen määränpäähän.",
+	"update.08_10_26.halloween.support_65": "CODE-vaihdot valmistuvat nyt tai ilmoittavat aikakatkaisusta.",
+	"update.08_10_26.halloween.support_66": "Luolakaupan valinnat näkyvät nyt suoritettuina myös ilman ostosta.",
+	"update.08_10_26.halloween.support_67": "Glitch-vaihdot antavat nyt molemmat Glitch-esineet, kun arvonta antaa kaksi.",
+	"update.08_10_26.halloween.support_68": "Lukittuja ja sinetöityjä esineitä ei voi enää purkaa.",
+	"update.08_10_26.halloween.support_69": "Kauppiaan bonukset eivät enää muuta ilmoitettua saaliin inventaariopaikkaa.",
+	"update.08_10_26.halloween.support_70": "Arkuissa olevien kirjekuorten palkinnot säilyttävät Lucky-tittelin.",
+	"update.08_10_26.halloween.support_71": "Virheelliset smart_move-pyynnöt eivät enää jatka edellistä reittiä.",
+	"update.08_10_26.halloween.support_72": "MAINFRAME-valmistus ohittaa nyt lukitut, estetyt ja arvontaan asetetut esineet.",
+	"update.08_10_26.halloween.support_73": "Aseiden ja ammusten hohde päivittyy nyt varusteita vaihdettaessa.",
+	"update.08_10_26.halloween.support_74": "find_npc löytää nyt myös vaeltavat NPC-hahmot."
 }

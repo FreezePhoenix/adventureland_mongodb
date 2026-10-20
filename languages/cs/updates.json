@@ -892,5 +892,15 @@
 	"update.08_10_26.halloween.support_51": "Prodej už nevezme jiný předmět přesunutý na vybrané místo.",
 	"update.08_10_26.halloween.support_52": "MAINFRAME nyní přijímá send_updates pro obnovení viditelných entit.",
 	"update.08_10_26.halloween.support_53": "Opožděná odpověď přihlášení už nezakryje hru výběrem postavy.",
-	"update.08_10_26.halloween.support_54": "Opětovné připojení už nepřenese postavu do cíle nedokončeného pohybu."
+	"update.08_10_26.halloween.support_54": "Opětovné připojení už nepřenese postavu do cíle nedokončeného pohybu.",
+	"update.08_10_26.halloween.support_65": "Výměny v CODE se nyní dokončí nebo oznámí vypršení časového limitu.",
+	"update.08_10_26.halloween.support_66": "Volby v jeskynním obchodě se nyní zobrazují jako dokončené i bez nákupu.",
+	"update.08_10_26.halloween.support_67": "Výměny Glitch nyní vydají oba Glitch, pokud padnou dva.",
+	"update.08_10_26.halloween.support_68": "Zamčené a zapečetěné předměty už nelze rozebrat.",
+	"update.08_10_26.halloween.support_69": "Bonusy obchodníka už nemění hlášenou pozici kořisti v inventáři.",
+	"update.08_10_26.halloween.support_70": "Odměny z obálek uvnitř truhel si zachovávají titul Lucky.",
+	"update.08_10_26.halloween.support_71": "Neplatné požadavky smart_move už nepokračují po předchozí trase.",
+	"update.08_10_26.halloween.support_72": "Výroba v MAINFRAME nyní přeskakuje zamčené, blokované a do slosování vložené předměty.",
+	"update.08_10_26.halloween.support_73": "Záře zbraní a střel se nyní aktualizuje při změně vybavení.",
+	"update.08_10_26.halloween.support_74": "find_npc nyní najde i pohybující se NPC."
 }

@@ -4176,38 +4176,40 @@ function exchange(player, name, args) {
 				//}
 				exchange(player, drop[2], args);
 			} else {
-				var item = create_new_item(drop[1], drop[2]);
-				var prop = undefined;
-				if (
-					name == "glitch" &&
-					(G.items[item.name].upgrade ||
-						G.items[item.name].compound ||
-						character_slots.includes(G.items[item.name].type))
-				) {
-					add_item_property(item, "glitched");
+				for (var copy = 0; copy < (G.items[drop[1]].s ? 1 : drop[2] || 1); copy++) {
+					var item = create_new_item(drop[1], drop[2]);
+					var prop = undefined;
+					if (
+						name == "glitch" &&
+						(G.items[item.name].upgrade ||
+							G.items[item.name].compound ||
+							character_slots.includes(G.items[item.name].type))
+					) {
+						add_item_property(item, "glitched");
+					}
+					if (drop[4]) {
+						add_item_property(item, drop[4]);
+					}
+					if (name == "glitch") {
+						args.phrase = "Glitched";
+					}
+					if (args.v) {
+						item.v = args.v;
+					}
+					if (drop[1] == "cxjar") {
+						item.data = drop[3];
+					}
+					add_item(player, item, { r: 1, phrase: args.phrase });
+					var item_action = args.phrase
+						? { Fished: "fished", Mined: "mined", Glitched: "glitched" }[args.phrase]
+						: "received";
+					socket.emit(
+						"game_log",
+						item_action
+							? item_message("server.item." + item_action, item, {}, { color: colors.server_success })
+							: { message: args.phrase + " " + item_to_phrase(item), color: colors.server_success },
+					);
 				}
-				if (drop[4]) {
-					add_item_property(item, drop[4]);
-				}
-				if (name == "glitch") {
-					args.phrase = "Glitched";
-				}
-				if (args.v) {
-					item.v = args.v;
-				}
-				if (drop[1] == "cxjar") {
-					item.data = drop[3];
-				}
-				add_item(player, item, { r: 1, phrase: args.phrase });
-				var item_action = args.phrase
-					? { Fished: "fished", Mined: "mined", Glitched: "glitched" }[args.phrase]
-					: "received";
-				socket.emit(
-					"game_log",
-					item_action
-						? item_message("server.item." + item_action, item, {}, { color: colors.server_success })
-						: { message: args.phrase + " " + item_to_phrase(item), color: colors.server_success },
-				);
 			}
 		}
 	});
@@ -4247,9 +4249,12 @@ function chest_exchange(chest, name) {
 			} else if (drop[1] == "cx") {
 				chest.items.push({ name: "cxjar", q: 1, data: drop[2] });
 			} else {
-				const item = create_new_item(drop[1], drop[2]);
-				if (drop[1] === "cxjar") item.data = drop[3];
-				chest.items.push(item);
+				for (var copy = 0; copy < (G.items[drop[1]].s ? 1 : drop[2] || 1); copy++) {
+					const item = create_new_item(drop[1], drop[2]);
+					if (drop[1] === "cxjar") item.data = drop[3];
+					if (drop[4]) add_item_property(item, drop[4]);
+					chest.items.push(item);
+				}
 			}
 		}
 	});

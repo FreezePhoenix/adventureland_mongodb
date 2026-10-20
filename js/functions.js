@@ -4216,7 +4216,7 @@ function exchange(is_code) {
 	if (character.q.exchange) {
 		d_text(phrase("client.floating.wait"), character);
 		return rejecting_promise({ reason: "in_progress" });
-	} else if (!is_code && e_item == null) {
+	} else if (e_item == null || !character.items[e_item]) {
 		d_text(phrase("client.floating.invalid"), character);
 		return rejecting_promise({ reason: "invalid" });
 	} else {

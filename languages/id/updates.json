@@ -892,5 +892,15 @@
 	"update.08_10_26.halloween.support_51": "Penjualan tidak lagi mengambil item lain yang dipindahkan ke slot terpilih.",
 	"update.08_10_26.halloween.support_52": "MAINFRAME kini menerima send_updates untuk memperbarui entitas yang terlihat.",
 	"update.08_10_26.halloween.support_53": "Respons login yang terlambat tidak lagi menutupi permainan dengan pemilih karakter.",
-	"update.08_10_26.halloween.support_54": "Menghubungkan kembali tidak lagi melompat ke tujuan gerakan yang belum selesai."
+	"update.08_10_26.halloween.support_54": "Menghubungkan kembali tidak lagi melompat ke tujuan gerakan yang belum selesai.",
+	"update.08_10_26.halloween.support_65": "Penukaran di CODE kini selesai atau melaporkan bahwa waktu tunggu habis.",
+	"update.08_10_26.halloween.support_66": "Pilihan di toko gua kini ditampilkan selesai meski tanpa membeli.",
+	"update.08_10_26.halloween.support_67": "Penukaran Glitch kini memberikan kedua Glitch jika hasil undian adalah dua.",
+	"update.08_10_26.halloween.support_68": "Item yang terkunci dan tersegel tidak dapat lagi dibongkar.",
+	"update.08_10_26.halloween.support_69": "Bonus pedagang tidak lagi mengubah slot jarahan yang dilaporkan.",
+	"update.08_10_26.halloween.support_70": "Hadiah amplop di dalam peti tetap memiliki gelar Lucky.",
+	"update.08_10_26.halloween.support_71": "Permintaan smart_move yang tidak valid tidak lagi melanjutkan rute sebelumnya.",
+	"update.08_10_26.halloween.support_72": "Pembuatan item di MAINFRAME kini melewati item yang terkunci, diblokir, dan sedang dijadikan hadiah undian.",
+	"update.08_10_26.halloween.support_73": "Cahaya senjata dan proyektil kini diperbarui saat berganti perlengkapan.",
+	"update.08_10_26.halloween.support_74": "find_npc kini dapat menemukan NPC yang berkeliaran."
 }

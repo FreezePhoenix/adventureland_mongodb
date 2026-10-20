@@ -892,5 +892,15 @@
 	"update.08_10_26.halloween.support_51": "La vendita non prende più un oggetto diverso spostato nello spazio selezionato.",
 	"update.08_10_26.halloween.support_52": "MAINFRAME ora accetta send_updates per aggiornare le entità visibili.",
 	"update.08_10_26.halloween.support_53": "Una risposta di accesso tardiva non copre più il gioco con la selezione del personaggio.",
-	"update.08_10_26.halloween.support_54": "Riconnettersi non porta più alla destinazione di un movimento non terminato."
+	"update.08_10_26.halloween.support_54": "Riconnettersi non porta più alla destinazione di un movimento non terminato.",
+	"update.08_10_26.halloween.support_65": "Gli scambi in CODE ora si concludono o segnalano un tempo di attesa scaduto.",
+	"update.08_10_26.halloween.support_66": "Le scelte nel negozio della caverna ora risultano completate anche senza acquisti.",
+	"update.08_10_26.halloween.support_67": "Gli scambi di Glitch ora consegnano entrambi i Glitch quando ne vengono estratti due.",
+	"update.08_10_26.halloween.support_68": "Gli oggetti bloccati e sigillati non possono più essere smantellati.",
+	"update.08_10_26.halloween.support_69": "I bonus del mercante non cambiano più lo slot del bottino indicato.",
+	"update.08_10_26.halloween.support_70": "Le ricompense delle buste dentro i forzieri mantengono il titolo Lucky.",
+	"update.08_10_26.halloween.support_71": "Le richieste smart_move non valide non proseguono più il percorso precedente.",
+	"update.08_10_26.halloween.support_72": "La creazione in MAINFRAME ora esclude gli oggetti bloccati, soggetti a restrizioni e messi in palio.",
+	"update.08_10_26.halloween.support_73": "Il bagliore di armi e proiettili ora si aggiorna quando cambi equipaggiamento.",
+	"update.08_10_26.halloween.support_74": "find_npc ora trova i PNG che si spostano."
 }

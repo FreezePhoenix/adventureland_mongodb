@@ -892,5 +892,15 @@
 	"update.08_10_26.halloween.support_51": "Bán đồ không còn lấy nhầm món khác vừa chuyển vào ô đã chọn.",
 	"update.08_10_26.halloween.support_52": "MAINFRAME giờ chấp nhận send_updates để làm mới các thực thể nhìn thấy được.",
 	"update.08_10_26.halloween.support_53": "Phản hồi đăng nhập đến muộn không còn che trò chơi bằng màn hình chọn nhân vật.",
-	"update.08_10_26.halloween.support_54": "Kết nối lại không còn nhảy tới đích của bước di chuyển chưa hoàn tất."
+	"update.08_10_26.halloween.support_54": "Kết nối lại không còn nhảy tới đích của bước di chuyển chưa hoàn tất.",
+	"update.08_10_26.halloween.support_65": "Các lần đổi trong CODE giờ sẽ hoàn tất hoặc báo hết thời gian chờ.",
+	"update.08_10_26.halloween.support_66": "Các lựa chọn ở cửa hàng trong hang giờ hiển thị hoàn tất ngay cả khi không mua gì.",
+	"update.08_10_26.halloween.support_67": "Đổi Glitch giờ trao đủ hai Glitch khi kết quả là hai vật phẩm.",
+	"update.08_10_26.halloween.support_68": "Không còn có thể tháo dỡ vật phẩm đã khóa hoặc niêm phong.",
+	"update.08_10_26.halloween.support_69": "Phần thưởng thêm của thương nhân không còn làm đổi ô chiến lợi phẩm được báo.",
+	"update.08_10_26.halloween.support_70": "Phần thưởng từ phong bì bên trong rương giữ được danh hiệu Lucky.",
+	"update.08_10_26.halloween.support_71": "Yêu cầu smart_move không hợp lệ không còn tiếp tục tuyến đường trước đó.",
+	"update.08_10_26.halloween.support_72": "Chế tạo trong MAINFRAME giờ bỏ qua vật phẩm bị khóa, bị chặn và đang được dùng làm giải bốc thăm.",
+	"update.08_10_26.halloween.support_73": "Ánh sáng của vũ khí và đạn giờ cập nhật khi thay trang bị.",
+	"update.08_10_26.halloween.support_74": "find_npc giờ tìm được NPC đi lại."
 }
