@@ -159,7 +159,7 @@
 	"pages.contents.guide.github-our-official-github-houses-the-runner-functions": "<span style=\"color: #f4f4f4\">&gt;</span>\n\t\t\t<a href=\"https://github.com/kaansoral/adventureland_mongodb/blob/main/js/runner_functions.js\" class=\"eexternal\" target=\"_blank\" style=\"color: #469ecf; text-decoration: none\">Github:</a> Resmî Github depomuzdaki \"runner_functions.js\", tüm temel CODE fonksiyonlarını içerir.",
 	"pages.contents.guide.heal": "İyileştir",
 	"pages.contents.guide.if-anyone-is-breaking-the-rules-just-email": "<span style=\"color: #f4f4f4\">&gt;</span> Kuralları çiğneyen biri varsa ihlalin ekran görüntüsünü hello@adventure.land adresine göndermeniz yeterli.",
-	"pages.contents.guide.increases-hp-armor": "HP ve Zırhı artırır.",
+	"pages.contents.guide.increases-hp-armor": "HP, Zırh ve koşu hızını artırır.",
 	"pages.contents.guide.increases-mp-resistance": "MP ve Direnci artırır.",
 	"pages.contents.guide.intelligence": "Zekâ:",
 	"pages.contents.guide.interact": "Etkileşime Geç",

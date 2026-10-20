@@ -909,5 +909,12 @@
 	"update.08_10_26.halloween.support_78": "Los mensajes grandes de CODE ahora se contabilizan correctamente en el límite de llamadas.",
 	"update.08_10_26.halloween.support_79": "Las entradas vacías de equip_batch ahora devuelven un error.",
 	"update.08_10_26.halloween.item_bonuses": "Las descripciones de los objetos ahora muestran los valores numéricos de las bonificaciones de mapa y clase.",
-	"update.08_10_26.halloween.mp_reduction_cap": "Reducción del coste de maná ahora tiene un límite del 80%."
+	"update.08_10_26.halloween.mp_reduction_cap": "Reducción del coste de maná ahora tiene un límite del 80%.",
+	"update.08_10_26.halloween.support_80": "Los ID de los monstruos ya no coinciden con nombres numéricos de personajes.",
+	"update.08_10_26.halloween.support_81": "Corregido el fallo por el que los inicios de sesión simultáneos de una misma cuenta se rechazaban entre sí.",
+	"update.08_10_26.halloween.support_82": "town() y smart_move ahora esperan a que termine el teletransporte al pueblo.",
+	"update.08_10_26.halloween.support_84": "Las solicitudes de destrucción ya no destruyen otro objeto movido a la misma casilla de la mochila.",
+	"update.08_10_26.halloween.support_85": "La vista del banco en Hub ya no revela datos ocultos de los objetos.",
+	"update.08_10_26.halloween.support_86": "Las probabilidades exactas de botín ahora usan fracciones más sencillas, como 1/1M.",
+	"update.08_10_26.halloween.support_87": "Ya no se puede comerciar en espacios cerrados de un mercader mediante ofertas guardadas en caché."
 }

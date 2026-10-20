@@ -159,7 +159,7 @@
 	"pages.contents.guide.github-our-official-github-houses-the-runner-functions": "<span style=\"color: #f4f4f4\">&gt;</span> <a href=\"https://github.com/kaansoral/adventureland_mongodb/blob/main/js/runner_functions.js\" class=\"eexternal\" target=\"_blank\" style=\"color: #469ecf; text-decoration: none\">Github：</a> 官方 Github 上的“runner_functions.js”包含所有基础 CODE 函数。",
 	"pages.contents.guide.heal": "治疗",
 	"pages.contents.guide.if-anyone-is-breaking-the-rules-just-email": "<span style=\"color: #f4f4f4\">&gt;</span> 如果有人违规，请将违规截图发送至 hello@adventure.land。",
-	"pages.contents.guide.increases-hp-armor": "提高生命值和护甲。",
+	"pages.contents.guide.increases-hp-armor": "提高HP、护甲和移动速度。",
 	"pages.contents.guide.increases-mp-resistance": "提高法力值和抗性。",
 	"pages.contents.guide.intelligence": "智力：",
 	"pages.contents.guide.interact": "互动",

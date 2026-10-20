@@ -909,5 +909,12 @@
 	"update.08_10_26.halloween.support_78": "Große CODE-Nachrichten werden jetzt korrekt auf das Aufruflimit angerechnet.",
 	"update.08_10_26.halloween.support_79": "Leere Einträge in equip_batch geben jetzt einen Fehler zurück.",
 	"update.08_10_26.halloween.item_bonuses": "Gegenstands-Tooltips zeigen jetzt die Zahlenwerte der Karten- und Klassenboni.",
-	"update.08_10_26.halloween.mp_reduction_cap": "Manakostensenkung ist jetzt auf 80 % begrenzt."
+	"update.08_10_26.halloween.mp_reduction_cap": "Manakostensenkung ist jetzt auf 80 % begrenzt.",
+	"update.08_10_26.halloween.support_80": "Monster-IDs überschneiden sich nicht mehr mit numerischen Charakternamen.",
+	"update.08_10_26.halloween.support_81": "Gleichzeitige Anmeldungen auf demselben Konto führen nicht mehr zu gegenseitigen Ablehnungen.",
+	"update.08_10_26.halloween.support_82": "town() und smart_move warten jetzt, bis die Teleportation zur Stadt abgeschlossen ist.",
+	"update.08_10_26.halloween.support_84": "Zerstörungsanfragen zerstören keinen anderen Gegenstand mehr, der auf denselben Taschenplatz verschoben wurde.",
+	"update.08_10_26.halloween.support_85": "Die Bankansicht im Hub gibt keine versteckten Gegenstandsdaten mehr preis.",
+	"update.08_10_26.halloween.support_86": "Exakte Dropchancen werden jetzt mit einfacheren Brüchen wie 1/1M angezeigt.",
+	"update.08_10_26.halloween.support_87": "Geschlossene Handelsplätze lassen sich nicht mehr über zwischengespeicherte Angebote nutzen."
 }

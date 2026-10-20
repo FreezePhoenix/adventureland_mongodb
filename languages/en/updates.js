@@ -1,5 +1,19 @@
 // Release highlights. Dates, item/character names and CODE identifiers stay unchanged.
 module.exports = {
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_87": "Closed merchant slots can no longer be traded through cached listings.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_86": "Exact drop odds now use simpler fractions, such as 1/1M.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_85": "The Hub bank view no longer exposes hidden item data.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_84": "Destroy requests no longer destroy a different item moved into the same bag slot.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_82": "town() and smart_move now wait for town teleports to finish.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_81": "Fixed simultaneous logins on the same account rejecting each other.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_80": "Monster IDs no longer overlap with numeric character names.",
 	// Improvement listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
 	"update.08_10_26.halloween.item_bonuses": "Item tooltips now show the numbers of map and class bonuses.",
 	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.

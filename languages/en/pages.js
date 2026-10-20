@@ -364,7 +364,7 @@ module.exports = {
 	"pages.contents.guide.if-anyone-is-breaking-the-rules-just-email":
 		'<span style="color: #f4f4f4">&gt;</span> If anyone is breaking the rules, just email a screenshot of the violation to hello@adventure.land',
 	// htmls/contents/guide.html:114; Page prose. Keep Adventure Land, CODE symbols, product names, and item/NPC/map/character names unchanged.
-	"pages.contents.guide.increases-hp-armor": "Increases HP, Armor.",
+	"pages.contents.guide.increases-hp-armor": "Increases HP, Armor and run speed.",
 	// htmls/contents/guide.html:118; Page prose. Keep Adventure Land, CODE symbols, product names, and item/NPC/map/character names unchanged.
 	"pages.contents.guide.increases-mp-resistance": "Increases MP, Resistance.",
 	// htmls/contents/guide.html:118; Page span prose block. Keep Adventure Land, CODE symbols, product names, and item/NPC/map/character names unchanged.

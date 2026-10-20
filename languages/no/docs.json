@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>Eksempel:</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Promise-feil:</b> Med mindre en funksjonsspesifikk merknad sier noe annet, avvises Promise ved feil med et objekt som inneholder <span class='dlabel'>failed: true</span> og en <span class='dlabel'>reason</span>. Etter <span class='dlabel'>mode_resolve_all()</span> oppfylles Promise i stedet ved de samme feilene.",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>Returnerer:</b> Et Promise som oppfylles med {success:true} etter fullføring, eller avvises ved serverfeil, avbrudd, frakobling eller utløpt fullføringsfrist på 10 sekunder.",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Starter teleportering til byen og venter til kanaliseringen er avsluttet.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Starter teleporteringen til byen og venter på at serveren bekrefter ankomsten.",
 	"docs.functions.trade.example": "<b>Eksempel:</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "Legger en gjenstand fra inventaret ut for salg på en av kjøpmannens handelsplasser.",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Merrits besøk:</b> Hold en bod med varer åpen på samme sted i to minutter. Kontoen din kan få én pakke per time. Hold mer enn 40px avstand til stillestående NPC-er og la det være plass mellom butikkene; butikken som ble satt opp først, beholder plassen sin. <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit: fullstendige regler og byttesjanser</span>.",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "Ferdigheter",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">Fart:</span> Øker løpefarten.",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">Egenskap:</span> Blir et hovedattributt med en skriftrull.",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Styrke:</span> Øker HP og rustning. <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Styrke:</span> Øker HP, rustning og løpehastighet. <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">Vitalitet:</span> Øker HP i forhold til nivået.",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "Krigere, snikmordere, skogvoktere og paladiner gjør fysisk skade. Magikere og prester gjør magisk skade. Kjøpmenn får erfaring ved å handle med andre spillere og kan angripe med en dartpistol. Prester kan helbrede andre spillere. Angrepsstyrken deres starter på 40% av helbredelsesstyrken, før bonuser, tilstander og målets forsvar.",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">Kast ≤ 55 vinner</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "Hvis en valgt plass er tom, avvises den returnerte Promise. Håndter feilen med .catch().",
 	"docs.functions.send_cm.message_size": "Større meldinger bruker mer av grensen for kall. Hold gjentatte CODE-meldinger korte.",
 	"docs.functions.equip_batch.empty_entries": "Tomme oppføringer avviser Promise før noen forespørsel om å ta på utstyr sendes.",
-	"docs.guide.event-witchcipher.pay_fits": "En ny blanding som passer med alle ledetrådene på den gjeldende tavlen, inkludert senere løsninger samme dag"
+	"docs.guide.event-witchcipher.pay_fits": "En ny blanding som passer med alle ledetrådene på den gjeldende tavlen, inkludert senere løsninger samme dag",
+	"docs.articles.data-monster.id_namespace": "Bruk entitetens id slik spillet oppgir den. Monster-ID-er er numeriske strenger og kan ikke være identiske med karakternavn.",
+	"docs.functions.destroy.item_changed": "Avvises med item_changed hvis gjenstanden på den plassen endres før serveren behandler forespørselen.",
+	"docs.functions.trade.slot_unavailable": "Avviser med item_gone hvis handelsplassen til tilbudet ikke lenger er tilgjengelig."
 }

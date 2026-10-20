@@ -109,6 +109,52 @@ test("a queued sale cannot sell a replacement item; current and legacy sales sti
 	}
 });
 
+test("a queued destroy keeps gear moved into the slot after the client request", () => {
+	for (const actual of [
+		{ name: "fireblade", level: 8 },
+		{ name: "blade", level: 6 },
+		{ name: "blade", level: 0, p: "shiny" },
+	]) {
+		const h = fixture();
+		const packets = [];
+		h.c.character = { items: [{ name: "blade", level: 0 }] };
+		h.c.p_item = 0;
+		h.c.push_deferred = () => Promise.resolve();
+		h.c.socket = { id: h.player.id, emit: (event, data) => packets.push([event, plain(data)]) };
+		load(h.c, "js/functions.js", ["poof"]);
+		h.c.poof(1);
+		assert.deepEqual(packets[0][1].item, h.c.character.items[0]);
+		h.player.items[0] = actual;
+		h.run(...packets[0]);
+		assert.equal(h.failures[0].reason, "item_changed");
+		assert.deepEqual(h.player.items[0], actual);
+		assert.equal(h.successes.length, 0);
+		assert.equal(h.effects.length, 0);
+	}
+});
+
+test("destroy accepts matching and legacy requests while preserving item protections", () => {
+	for (const seen of [undefined, { name: "hpot0", q: 10 }]) {
+		const h = fixture();
+		h.player.items[0] = { name: "hpot0", q: 8 };
+		h.run("destroy", { num: 0, q: 2, item: seen });
+		assert.equal(h.failures.length, 0);
+		assert.equal(h.player.items[0].q, 6);
+	}
+	for (const flags of [{ l: "l" }, { b: true }]) {
+		const h = fixture();
+		h.player.items[0] = { name: "blade", level: 0, ...flags };
+		h.run("destroy", { num: 0, item: h.player.items[0] });
+		assert.equal(h.failures.length, 1);
+		assert.equal(h.player.items[0].name, "blade");
+	}
+	const h = fixture();
+	h.player.items[0] = { name: "blade", level: 0 };
+	h.run("destroy", { num: 0, item: null });
+	assert.equal(h.failures[0].reason, "item_changed");
+	assert.equal(h.player.items[0].name, "blade");
+});
+
 test("throw rejects distant or non-finite coordinates without consuming items or sending effects", () => {
 	for (const target of [
 		{ x: 31, y: 0 },

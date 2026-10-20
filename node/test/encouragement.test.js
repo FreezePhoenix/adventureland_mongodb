@@ -1168,6 +1168,19 @@ test("foreign login revokes cached bonuses before admission; missing acknowledge
 	assert.equal(await b.c.encouragement_login(second, new Date(b.now())), false);
 });
 
+test("simultaneous sibling logins wait for their shared character check", async () => {
+	const h = harness();
+	const siblings = ["First", "Second", "Third"].map((name) => h.player(name, { owner: "US_shared" }));
+	h.setRecords(siblings.map((p) => h.record(p)));
+	const results = await Promise.all(siblings.map((p) => h.c.encouragement_login(p, new Date(h.now()))));
+	assert.deepEqual(results, [true, true, true]);
+	assert.equal(h.queries.length, 3, "every login still refreshes its character group");
+	assert(
+		siblings.every((p) => !p.s.encouragement_lonewolf),
+		"siblings cannot gain Lone Wolf during admission",
+	);
+});
+
 test("login keeps one shared return window; reconnects and siblings cannot extend or erase it", async () => {
 	const h = harness(),
 		p = h.player("Return", { created: h.now() - 500 * day });

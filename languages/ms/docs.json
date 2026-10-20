@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>Contoh:</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Kegagalan Promise:</b> Melainkan nota khusus fungsi menyatakan sebaliknya, kegagalan menolak Promise dengan objek yang mengandungi <span class='dlabel'>failed: true</span> dan <span class='dlabel'>reason</span>. Selepas <span class='dlabel'>mode_resolve_all()</span>, kegagalan yang sama memenuhi Promise.",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>Pulangan:</b> Promise yang diselesaikan dengan {success:true} selepas selesai, atau ditolak apabila pelayan gagal, tindakan terganggu, sambungan terputus atau tempoh menunggu penyelesaian 10 saat tamat.",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Memulakan teleportasi bandar dan menunggu sehingga penyaluran tamat.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Memulakan teleportasi ke bandar dan menunggu pelayan mengesahkan ketibaan.",
 	"docs.functions.trade.example": "<b>Contoh:</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "Menyenaraikan item inventori dalam salah satu slot dagangan pedagang anda.",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Lawatan Merrit:</b> Pastikan gerai dibuka dan mempunyai stok di tempat yang sama selama dua minit. Akaun anda boleh menerima satu bungkusan sejam. Jaga jarak lebih daripada 40px daripada NPC yang tidak bergerak dan beri ruang antara kedai; kedai yang didirikan dahulu mengekalkan tempatnya. <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit: peraturan penuh dan peluang pertukaran</span>.",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "Kemahiran",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">Kelajuan:</span> Meningkatkan kelajuan larian.",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">Stat:</span> Menjadi atribut utama dengan skrol.",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Kekuatan:</span> Meningkatkan HP dan Perisai. <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Kekuatan:</span> Meningkatkan HP, perisai dan kelajuan larian. <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">Daya Hidup:</span> Meningkatkan HP mengikut kadar tahap.",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "Pahlawan, Penyelinap, Pemanah dan Kesateria Suci mengenakan kerosakan fizikal; Ahli Sihir dan Pendeta mengenakan kerosakan sihir. Pedagang memperoleh pengalaman dengan berdagang bersama pemain lain dan boleh menyerang dengan senapang dart. Pendeta boleh memulihkan pemain lain. Kuasa serangan awal mereka ialah 40% daripada kuasa pemulihan mereka, sebelum bonus, keadaan dan pertahanan sasaran.",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">Lontaran ≤ 55 Menang</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "Jika slot yang dipilih kosong, Promise yang dikembalikan akan ditolak. Kendalikan ralat dengan .catch().",
 	"docs.functions.send_cm.message_size": "Mesej yang lebih besar menggunakan lebih banyak kuota panggilan. Pastikan mesej CODE yang dihantar berulang kali kekal ringkas.",
 	"docs.functions.equip_batch.empty_entries": "Entri kosong menolak Promise sebelum sebarang permintaan untuk memakai kelengkapan dihantar.",
-	"docs.guide.event-witchcipher.pay_fits": "Bancuhan baharu yang sepadan dengan semua petunjuk pada papan semasa, termasuk resipi yang dipecahkan kemudian pada hari yang sama"
+	"docs.guide.event-witchcipher.pay_fits": "Bancuhan baharu yang sepadan dengan semua petunjuk pada papan semasa, termasuk resipi yang dipecahkan kemudian pada hari yang sama",
+	"docs.articles.data-monster.id_namespace": "Gunakan id entiti tepat seperti yang diberikan oleh permainan. ID raksasa ialah rentetan angka dan tidak boleh sama dengan nama watak.",
+	"docs.functions.destroy.item_changed": "Ditolak dengan item_changed jika item dalam slot tersebut berubah sebelum pelayan memproses permintaan.",
+	"docs.functions.trade.slot_unavailable": "Menolak dengan item_gone jika slot dagangan tawaran itu tidak lagi tersedia."
 }

@@ -909,5 +909,12 @@
 	"update.08_10_26.halloween.support_78": "Tama na ngayon ang pagbilang ng malalaking mensahe sa CODE sa limitasyon ng mga tawag.",
 	"update.08_10_26.halloween.support_79": "Nagbabalik na ngayon ng error ang mga bakanteng entry sa equip_batch.",
 	"update.08_10_26.halloween.item_bonuses": "Ipinapakita na ngayon ng mga tooltip ng item ang mga halaga ng bonus mula sa map at class.",
-	"update.08_10_26.halloween.mp_reduction_cap": "Limitado na ngayon sa 80% ang Bawas sa Gastos sa Mana."
+	"update.08_10_26.halloween.mp_reduction_cap": "Limitado na ngayon sa 80% ang Bawas sa Gastos sa Mana.",
+	"update.08_10_26.halloween.support_80": "Hindi na nagkakapareho ang mga monster ID at pangalan ng karakter na puro numero.",
+	"update.08_10_26.halloween.support_81": "Naayos ang sabay-sabay na pag-login sa iisang account na nagreresulta sa pagtanggi sa isa't isa.",
+	"update.08_10_26.halloween.support_82": "Naghihintay na ang town() at smart_move hanggang matapos ang teleport papunta sa bayan.",
+	"update.08_10_26.halloween.support_84": "Hindi na sinisira ng mga kahilingan sa pagsira ang ibang item na inilipat sa parehong puwesto sa bag.",
+	"update.08_10_26.halloween.support_85": "Hindi na inilalantad ng bank view sa Hub ang nakatagong data ng mga item.",
+	"update.08_10_26.halloween.support_86": "Mas simple nang mga fraction ang ginagamit sa eksaktong tsansa ng drop, gaya ng 1/1M.",
+	"update.08_10_26.halloween.support_87": "Hindi na magagamit ang mga naka-cache na alok para makipagkalakalan sa mga saradong slot ng merchant."
 }

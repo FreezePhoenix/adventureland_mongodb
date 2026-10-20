@@ -646,17 +646,56 @@ async function transport(map, spawn) {
 	return rejecting_promise({ reason: "timeout", place: "transport" });
 }
 
-async function town() {
-	var promise = parent.push_deferred("town");
-	parent.socket.emit("town");
-	var call = await promise;
-	if (call.failed) return call;
-	for (var i = 0; character.c.town && i < 10000; i++) {
-		if (parent.socket.disconnected) return rejecting_promise({ reason: "disconnected", place: "town" });
-		await sleep(1);
-	}
-	if (character.c.town) return rejecting_promise({ reason: "timeout", place: "town" });
-	return { success: true };
+function town() {
+	var socket = parent.socket;
+	return new Promise(function (resolve, reject) {
+		var acknowledged = false,
+			settled = false;
+		function finish(result) {
+			if (settled) return;
+			settled = true;
+			clearTimeout(timer);
+			socket.off("game_response", on_response);
+			socket.off("new_map", on_map);
+			socket.off("player", on_player);
+			socket.off("disconnect", on_disconnect);
+			if (result.failed && !RESOLVE_ALL) reject(result);
+			else resolve(result);
+		}
+		function fail(reason) {
+			finish({ failed: true, reason: reason, place: "town" });
+		}
+		function on_response(data) {
+			if (!data || data.place !== "town") return;
+			if (data.failed) fail(data.reason || data.response);
+			else acknowledged = true;
+		}
+		function on_map(data) {
+			// The server uses effect 1 for a completed town channel, including same-map travel.
+			if (data.effect === 1) finish({ success: true });
+			else fail("interrupted");
+		}
+		function on_player(data) {
+			// Only server updates prove cancellation; the client also counts the channel down.
+			if (data.rip || (acknowledged && data.c && !data.c.town)) fail("interrupted");
+		}
+		function on_disconnect() {
+			fail("disconnected");
+		}
+		var timer = setTimeout(function () {
+			fail("timeout");
+		}, 10000);
+		socket.on("game_response", on_response);
+		socket.on("new_map", on_map);
+		socket.on("player", on_player);
+		socket.on("disconnect", on_disconnect);
+		if (socket.disconnected) return on_disconnect();
+		try {
+			socket.emit("town");
+		} catch (error) {
+			fail(error.message || "disconnected");
+		}
+	});
 }
 
 function leave() {
@@ -2503,6 +2542,7 @@ function smart_move(destination, on_done) {
 	// on_done function is an old callback function for compatibility, smart_move also returns a Promise [25/03/20]
 	if (smart.moving) smart.on_done(false, "interrupted");
 	smart.moving = false;
+	smart.town = null;
 	smart.plot = [];
 	smart.searching = smart.found = false;
 	smart.map = "";
@@ -2783,7 +2823,7 @@ function continue_pathfinding() {
 }
 
 function smart_move_logic() {
-	if (!smart.moving) return;
+	if (!smart.moving || smart.town) return;
 	if (!smart.searching && !smart.found) {
 		start_pathfinding();
 	} else if (!smart.found) {
@@ -2823,7 +2863,16 @@ function smart_move_logic() {
 		smart.plot.splice(0, 1);
 		// game_log(JSON.stringify(current));
 		if (current.town) {
-			use("town");
+			smart.town = current;
+			var town_done = function (result) {
+				if (smart.town !== current) return;
+				smart.town = null;
+				if (smart.moving && (result.failed || result.success === false)) {
+					smart.moving = false;
+					smart.on_done(false, result.reason || "interrupted");
+				}
+			};
+			town().then(town_done, town_done);
 		} else if (current.transport) {
 			parent.push_deferred("transport");
 			parent.socket.emit("transport", { to: current.map, s: current.s });

@@ -159,7 +159,7 @@
 	"pages.contents.guide.github-our-official-github-houses-the-runner-functions": "<span style=\"color: #f4f4f4\">&gt;</span>\n\t\t\t<a href=\"https://github.com/kaansoral/adventureland_mongodb/blob/main/js/runner_functions.js\" class=\"eexternal\" target=\"_blank\" style=\"color: #469ecf; text-decoration: none\">Github:</a> A hivatalos Github-tárolónkban található a „runner_functions.js”, amely az összes alapvető CODE-függvényt tartalmazza",
 	"pages.contents.guide.heal": "Gyógyítás",
 	"pages.contents.guide.if-anyone-is-breaking-the-rules-just-email": "<span style=\"color: #f4f4f4\">&gt;</span> Ha valaki megszegi a szabályokat, küldj egy képernyőképet a szabályszegésről a hello@adventure.land címre.",
-	"pages.contents.guide.increases-hp-armor": "Növeli a HP-t és a páncélt.",
+	"pages.contents.guide.increases-hp-armor": "Növeli a HP-t, a páncélt és a futási sebességet.",
 	"pages.contents.guide.increases-mp-resistance": "Növeli az MP-t és az ellenállást.",
 	"pages.contents.guide.intelligence": "Intelligencia:",
 	"pages.contents.guide.interact": "Interakció",

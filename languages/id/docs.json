@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>Contoh:</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Kegagalan Promise:</b> Kecuali catatan khusus fungsi menyatakan lain, kegagalan membuat Promise ditolak dengan objek berisi <span class='dlabel'>failed: true</span> dan <span class='dlabel'>reason</span>. Setelah <span class='dlabel'>mode_resolve_all()</span>, kegagalan yang sama justru membuat Promise terpenuhi.",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>Nilai kembalian:</b> Promise yang terpenuhi dengan {success:true} setelah selesai, atau ditolak karena kegagalan server, gangguan, koneksi terputus, atau batas waktu penyelesaian 10 detik habis.",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Memulai teleportasi ke kota dan menunggu hingga penyalurannya berakhir.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Memulai teleportasi ke kota dan menunggu server mengonfirmasi kedatangan.",
 	"docs.functions.trade.example": "<b>Contoh:</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "Menawarkan item dalam tas di salah satu slot dagang pedagangmu.",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Kunjungan Merrit:</b> Biarkan lapak terbuka dan berisi barang di tempat yang sama selama dua menit. Akunmu dapat menerima satu paket per jam. Jaga jarak lebih dari 40px dari NPC yang diam dan beri ruang antar toko; toko yang didirikan lebih dulu tetap menempati tempatnya. <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit: aturan lengkap dan peluang penukaran</span>.",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "Kemampuan",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">Kecepatan Gerak:</span> Meningkatkan kecepatan lari.",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">Atribut:</span> Menjadi atribut utama dengan gulungan.",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Kekuatan:</span> Meningkatkan HP dan Zirah. <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Kekuatan:</span> Meningkatkan HP, zirah, dan kecepatan lari. <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">Vitalitas:</span> Meningkatkan HP sebanding dengan level.",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "Kesatria, Penyelinap, Pemanah, dan Paladin menghasilkan kerusakan fisik; Penyihir dan Pendeta menghasilkan kerusakan sihir. Pedagang memperoleh pengalaman dengan berdagang dengan pemain lain dan bisa menyerang memakai senapan panah. Pendeta bisa menyembuhkan pemain lain. Kekuatan serangan awal mereka adalah 40% dari kekuatan penyembuhan, sebelum bonus, kondisi, dan pertahanan target.",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">Hasil ≤ 55 Menang</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "Jika slot yang dipilih kosong, Promise yang dikembalikan akan ditolak. Tangani galat dengan .catch().",
 	"docs.functions.send_cm.message_size": "Pesan yang lebih besar memakai lebih banyak jatah panggilan. Buat pesan CODE yang dikirim berulang tetap singkat.",
 	"docs.functions.equip_batch.empty_entries": "Entri kosong menolak Promise sebelum permintaan pemasangan perlengkapan dikirim.",
-	"docs.guide.event-witchcipher.pay_fits": "Racikan baru yang cocok dengan semua petunjuk di papan saat ini, termasuk pemecahan resep berikutnya pada hari yang sama"
+	"docs.guide.event-witchcipher.pay_fits": "Racikan baru yang cocok dengan semua petunjuk di papan saat ini, termasuk pemecahan resep berikutnya pada hari yang sama",
+	"docs.articles.data-monster.id_namespace": "Gunakan id entitas persis seperti yang diberikan game. ID monster berupa string angka dan tidak dapat sama dengan nama karakter.",
+	"docs.functions.destroy.item_changed": "Ditolak dengan item_changed jika item di slot tersebut berubah sebelum server memproses permintaan.",
+	"docs.functions.trade.slot_unavailable": "Menolak dengan item_gone jika slot perdagangan penawaran sudah tidak tersedia."
 }

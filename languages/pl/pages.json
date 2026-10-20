@@ -159,7 +159,7 @@
 	"pages.contents.guide.github-our-official-github-houses-the-runner-functions": "<span style=\"color: #f4f4f4\">&gt;</span>\n\t\t\t<a href=\"https://github.com/kaansoral/adventureland_mongodb/blob/main/js/runner_functions.js\" class=\"eexternal\" target=\"_blank\" style=\"color: #469ecf; text-decoration: none\">Github:</a> Nasze oficjalne repozytorium zawiera „runner_functions.js”, czyli wszystkie podstawowe funkcje CODE.",
 	"pages.contents.guide.heal": "Uleczenie",
 	"pages.contents.guide.if-anyone-is-breaking-the-rules-just-email": "<span style=\"color: #f4f4f4\">&gt;</span> Jeśli ktoś łamie zasady, wyślij zrzut ekranu z naruszeniem na hello@adventure.land.",
-	"pages.contents.guide.increases-hp-armor": "Zwiększa HP i pancerz.",
+	"pages.contents.guide.increases-hp-armor": "Zwiększa HP, pancerz i szybkość biegu.",
 	"pages.contents.guide.increases-mp-resistance": "Zwiększa MP i odporność.",
 	"pages.contents.guide.intelligence": "Inteligencja:",
 	"pages.contents.guide.interact": "Interakcja",

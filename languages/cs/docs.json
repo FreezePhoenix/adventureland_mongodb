@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>Příklad:</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Selhání Promise:</b> Pokud poznámka ke konkrétní funkci neuvádí jinak, při selhání je Promise zamítnuta s objektem obsahujícím <span class='dlabel'>failed: true</span> a <span class='dlabel'>reason</span>. Po <span class='dlabel'>mode_resolve_all()</span> se při stejných selháních místo toho splní.",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>Vrací:</b> Promise, která se po dokončení splní s {success:true}, nebo je zamítnuta při selhání na serveru, přerušení, odpojení či vypršení 10sekundového limitu pro dokončení.",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Spustí teleportaci do města a počká, dokud neskončí soustředění kouzla.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Zahájí teleport do města a čeká, až server potvrdí příchod.",
 	"docs.functions.trade.example": "<b>Příklad:</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "Vystaví předmět z inventáře v jedné z tvých obchodních pozic obchodníka.",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Návštěvy NPC Merrit:</b> Nech otevřený, zásobený stánek dvě minuty na stejném místě. Tvůj účet může obdržet jeden balíček za hodinu. Drž se dál než 40px od nepohyblivých NPC a nechávej místo mezi obchody; obchod otevřený jako první si své místo ponechá. <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit: úplná pravidla a šance při výměně</span>.",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "Dovednosti",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">Rychlost pohybu:</span> Zvyšuje rychlost běhu.",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">Atribut:</span> Pomocí svitku se změní na hlavní atribut.",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Síla:</span> Zvyšuje HP a zbroj. <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Síla:</span> Zvyšuje HP, brnění a rychlost běhu. <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">Vitalita:</span> Zvyšuje HP úměrně úrovni.",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "Válečníci, zloději, hraničáři a paladinové způsobují fyzické poškození; mágové a kněží způsobují magické poškození. Obchodníci získávají zkušenosti obchodováním s ostatními hráči a mohou útočit šipkovou pistolí. Kněží mohou léčit ostatní hráče. Jejich výchozí síla útoku je 40 % jejich síly léčení, před započtením bonusů, stavů a obrany cíle.",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">Hod ≤ 55 vyhrává</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "Pokud je vybrané místo prázdné, vrácený Promise se odmítne. Chybu zpracuj pomocí .catch().",
 	"docs.functions.send_cm.message_size": "Větší zprávy spotřebují více z limitu volání. Opakované zprávy CODE udržuj krátké.",
 	"docs.functions.equip_batch.empty_entries": "Prázdné položky odmítnou Promise před odesláním jakéhokoli požadavku na nasazení výbavy.",
-	"docs.guide.event-witchcipher.pay_fits": "Nová kombinace, která odpovídá všem vodítkům na aktuální tabuli, včetně dalších rozluštění v daný den"
+	"docs.guide.event-witchcipher.pay_fits": "Nová kombinace, která odpovídá všem vodítkům na aktuální tabuli, včetně dalších rozluštění v daný den",
+	"docs.articles.data-monster.id_namespace": "Použij id entity v podobě, v jaké ho poskytuje hra. ID příšer jsou řetězce číslic a nemohou se shodovat se jmény postav.",
+	"docs.functions.destroy.item_changed": "Odmítne se s item_changed, pokud se předmět v dané pozici změní dříve, než server zpracuje požadavek.",
+	"docs.functions.trade.slot_unavailable": "Odmítne požadavek s item_gone, pokud obchodní slot nabídky už není dostupný."
 }

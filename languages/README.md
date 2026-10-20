@@ -118,6 +118,8 @@ Tauri reads the selected Steam game language once off the UI thread, with a 750 
 
 ## Catalog status
 
+October 20 support sweep: 13 new or revised phrases covering numeric monster IDs, simultaneous logins, town arrival, Strength, safe destruction, bank privacy, drop fractions and unavailable trade slots are translated and proofread in all 32 languages. CODE identifiers, probabilities and existing markup are preserved.
+
 October 20 inventory and movement fixes: five release notes and four CODE reference paragraphs are translated and proofread in all 32 languages. Unsupported upgrade levels, route recalculation, empty inventory slots, message limits and equipment batch errors were checked. CODE identifiers, Promise and .catch() are preserved.
 
 October 20 reward and CODE fixes: ten release notes and two CODE reference paragraphs are translated and proofread in all 32 languages. Glitch quantities, protected items, Cave completion, glow changes, roaming NPC positions, and exchange timeouts were checked. CODE identifiers and the 10/30-second limits are preserved.

@@ -151,6 +151,8 @@ async function encouragement_login(player, previous_online) {
 	try {
 		var identity = encouragement_identity(player),
 			group = await encouragement_load(player, previous_online);
+		// A sibling login may have started a fresh check before this continuation resumed.
+		while (group.pending) await group.pending;
 		if (group.until <= Date.now()) return false;
 		var realms = new Set();
 		for (var character of group.characters) {

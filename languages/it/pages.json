@@ -159,7 +159,7 @@
 	"pages.contents.guide.github-our-official-github-houses-the-runner-functions": "<span style=\"color: #f4f4f4\">&gt;</span>\n\t\t\t<a href=\"https://github.com/kaansoral/adventureland_mongodb/blob/main/js/runner_functions.js\" class=\"eexternal\" target=\"_blank\" style=\"color: #469ecf; text-decoration: none\">Github:</a> Il nostro\n\t\t\tGithub ufficiale ospita \"runner_functions.js\", che contiene tutte le funzioni base di CODE",
 	"pages.contents.guide.heal": "Guarisci",
 	"pages.contents.guide.if-anyone-is-breaking-the-rules-just-email": "<span style=\"color: #f4f4f4\">&gt;</span> Se qualcuno infrange le regole, invia uno screenshot della violazione a hello@adventure.land",
-	"pages.contents.guide.increases-hp-armor": "Aumenta HP e armatura.",
+	"pages.contents.guide.increases-hp-armor": "Aumenta HP, armatura e velocità di corsa.",
 	"pages.contents.guide.increases-mp-resistance": "Aumenta MP e resistenza.",
 	"pages.contents.guide.intelligence": "Intelligenza:",
 	"pages.contents.guide.interact": "Interagisci",

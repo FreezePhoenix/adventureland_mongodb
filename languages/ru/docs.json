@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>Пример:</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Ошибки Promise:</b> Если примечание к функции не говорит иначе, ошибка отклоняет Promise с объектом, содержащим <span class='dlabel'>failed: true</span> и <span class='dlabel'>reason</span>. После <span class='dlabel'>mode_resolve_all()</span> те же ошибки вместо этого успешно выполняют Promise.",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>Возвращает:</b> Promise с {success:true} после завершения; отклоняется при ошибке сервера, прерывании, отключении или 10-секундном тайм-ауте завершения.",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Начинает телепортацию в город и ждёт окончания подготовки.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Начинает телепортацию в город и ждёт подтверждения прибытия от сервера.",
 	"docs.functions.trade.example": "<b>Пример:</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "Выставляет предмет инвентаря в одном из ваших торговых слотов.",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Визиты Merrit:</b> Держите открытую лавку с товарами на одном месте две минуты. Учётная запись может получать одну посылку в час. Держитесь дальше 40px от неподвижных NPC и оставляйте место между лавками; лавка, открытая первой, сохраняет своё место. <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit: полные правила и шансы обмена</span>.",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "Умения",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">Скорость:</span> Повышает скорость передвижения.",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">Характеристика:</span> Превращается в основную характеристику с помощью свитка.",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Сила:</span> Повышает HP и броню. <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Сила:</span> Увеличивает HP, броню и скорость бега. <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">Живучесть:</span> Повышает HP пропорционально уровню.",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "Воины, разбойники, лучники и паладины наносят физический урон, а маги и жрецы — магический. Торговцы получают опыт, торгуя с другими игроками, и могут атаковать из дротикомёта. Жрецы могут лечить других игроков. Их начальная сила атаки составляет 40% силы исцеления, без учёта бонусов, эффектов состояний и защиты цели.",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">Бросок ≤ 55 — победа</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "Если выбранная ячейка пуста, возвращённый Promise отклоняется. Обработайте ошибку с помощью .catch().",
 	"docs.functions.send_cm.message_size": "Большие сообщения расходуют больше лимита вызовов. Делайте повторяющиеся сообщения CODE короткими.",
 	"docs.functions.equip_batch.empty_entries": "Пустые элементы отклоняют Promise до отправки запроса на экипировку.",
-	"docs.guide.event-witchcipher.pay_fits": "Новая смесь, соответствующая всем подсказкам на текущей доске, включая повторные разгадки в тот же день"
+	"docs.guide.event-witchcipher.pay_fits": "Новая смесь, соответствующая всем подсказкам на текущей доске, включая повторные разгадки в тот же день",
+	"docs.articles.data-monster.id_namespace": "Используйте id сущности в том виде, в котором его передаёт игра. ID монстров — числовые строки, которые не могут совпадать с именами персонажей.",
+	"docs.functions.destroy.item_changed": "Отклоняется с item_changed, если предмет в этой ячейке изменится до обработки запроса сервером.",
+	"docs.functions.trade.slot_unavailable": "Отклоняет запрос с item_gone, если торговая ячейка предложения больше недоступна."
 }

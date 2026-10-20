@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>Παράδειγμα:</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Αποτυχίες Promise:</b> Εκτός αν μια σημείωση της συγκεκριμένης συνάρτησης ορίζει διαφορετικά, οι αποτυχίες απορρίπτουν το Promise με ένα αντικείμενο που περιέχει <span class='dlabel'>failed: true</span> και ένα <span class='dlabel'>reason</span>. Μετά το <span class='dlabel'>mode_resolve_all()</span>, οι ίδιες αποτυχίες εκπληρώνουν το Promise.",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>Επιστρέφει:</b> Promise που εκπληρώνεται με {success:true} μετά την ολοκλήρωση ή απορρίπτεται σε αποτυχία διακομιστή, διακοπή, αποσύνδεση ή λήξη του χρονικού ορίου ολοκλήρωσης των 10 δευτερολέπτων.",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Ξεκινά την τηλεμεταφορά στην πόλη και περιμένει να τελειώσει η διοχέτευση.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Ξεκινά την τηλεμεταφορά στην πόλη και περιμένει να επιβεβαιώσει ο διακομιστής την άφιξη.",
 	"docs.functions.trade.example": "<b>Παράδειγμα:</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "Βάζει ένα αντικείμενο αποθέματος προς πώληση σε μία από τις εμπορικές θέσεις σου.",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Επισκέψεις του Merrit:</b> Κράτα έναν ανοιχτό πάγκο με εμπορεύματα στο ίδιο σημείο για δύο λεπτά. Ο λογαριασμός σου μπορεί να λάβει ένα δέμα ανά ώρα. Μείνε σε απόσταση μεγαλύτερη από 40px από σταθερά NPC και άφησε χώρο ανάμεσα στα καταστήματα· το κατάστημα που στήθηκε πρώτο κρατά τη θέση του. <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit: πλήρεις κανόνες και πιθανότητες ανταλλαγής</span>.",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "Ικανότητες",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">Ταχύτητα:</span> Αυξάνει την ταχύτητα κίνησης.",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">Στατιστικό:</span> Μετατρέπεται σε κύρια ιδιότητα με έναν πάπυρο.",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Δύναμη:</span> Αυξάνει τα HP και την πανοπλία. <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Δύναμη:</span> Αυξάνει τα HP, τη θωράκιση και την ταχύτητα τρεξίματος. <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">Ζωτικότητα:</span> Αυξάνει τα HP ανάλογα με το επίπεδο.",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "Οι πολεμιστές, οι κατεργάρηδες, οι τοξότες και οι παλαδίνοι προκαλούν σωματική ζημιά· οι μάγοι και οι ιερείς προκαλούν μαγική ζημιά. Οι έμποροι κερδίζουν εμπειρία κάνοντας συναλλαγές με άλλους παίκτες και μπορούν να επιτεθούν με όπλο βελών. Οι ιερείς μπορούν να θεραπεύουν άλλους παίκτες. Η αρχική ισχύς επίθεσής τους είναι το 40% της θεραπευτικής ισχύος τους, πριν συνυπολογιστούν μπόνους, καταστάσεις και άμυνες του στόχου.",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">Ζαριά ≤ 55 κερδίζει</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "Αν μια επιλεγμένη θέση είναι κενή, το Promise που επιστρέφεται απορρίπτεται. Χειριστείτε το σφάλμα με .catch().",
 	"docs.functions.send_cm.message_size": "Τα μεγαλύτερα μηνύματα καταναλώνουν περισσότερο από το όριο κλήσεων. Κρατήστε σύντομα τα επαναλαμβανόμενα μηνύματα CODE.",
 	"docs.functions.equip_batch.empty_entries": "Οι κενές εγγραφές απορρίπτουν το Promise πριν σταλεί οποιοδήποτε αίτημα εξοπλισμού.",
-	"docs.guide.event-witchcipher.pay_fits": "Ένα νέο μείγμα που ταιριάζει με όλες τις ενδείξεις του τρέχοντος πίνακα, συμπεριλαμβανομένων των επόμενων λύσεων της ίδιας ημέρας"
+	"docs.guide.event-witchcipher.pay_fits": "Ένα νέο μείγμα που ταιριάζει με όλες τις ενδείξεις του τρέχοντος πίνακα, συμπεριλαμβανομένων των επόμενων λύσεων της ίδιας ημέρας",
+	"docs.articles.data-monster.id_namespace": "Χρησιμοποίησε το id της οντότητας όπως ακριβώς το δίνει το παιχνίδι. Τα ID των τεράτων είναι συμβολοσειρές αριθμών και δεν μπορούν να συμπίπτουν με ονόματα χαρακτήρων.",
+	"docs.functions.destroy.item_changed": "Απορρίπτεται με item_changed αν το αντικείμενο σε αυτή τη θέση αλλάξει πριν ο διακομιστής επεξεργαστεί το αίτημα.",
+	"docs.functions.trade.slot_unavailable": "Απορρίπτει με item_gone αν η θέση συναλλαγής της καταχώρισης δεν είναι πλέον διαθέσιμη."
 }

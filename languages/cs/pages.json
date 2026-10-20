@@ -159,7 +159,7 @@
 	"pages.contents.guide.github-our-official-github-houses-the-runner-functions": "<span style=\"color: #f4f4f4\">&gt;</span>\n\t\t\t<a href=\"https://github.com/kaansoral/adventureland_mongodb/blob/main/js/runner_functions.js\" class=\"eexternal\" target=\"_blank\" style=\"color: #469ecf; text-decoration: none\">Github:</a> V našem oficiálním repozitáři na platformě Github najdeš \"runner_functions.js\", který obsahuje všechny základní funkce CODE.",
 	"pages.contents.guide.heal": "Vyléčit",
 	"pages.contents.guide.if-anyone-is-breaking-the-rules-just-email": "<span style=\"color: #f4f4f4\">&gt;</span> Pokud někdo porušuje pravidla, pošli snímek obrazovky zachycující porušení na hello@adventure.land.",
-	"pages.contents.guide.increases-hp-armor": "Zvyšuje HP a zbroj.",
+	"pages.contents.guide.increases-hp-armor": "Zvyšuje HP, brnění a rychlost běhu.",
 	"pages.contents.guide.increases-mp-resistance": "Zvyšuje MP a odolnost.",
 	"pages.contents.guide.intelligence": "Inteligence:",
 	"pages.contents.guide.interact": "Interakce",

@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>Eksempel:</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Promise-fejl:</b> Medmindre en bemærkning til den enkelte funktion siger andet, afvises den returnerede Promise ved fejl med et objekt, der indeholder <span class='dlabel'>failed: true</span> og en <span class='dlabel'>reason</span>. Efter <span class='dlabel'>mode_resolve_all()</span> opfyldes den i stedet ved de samme fejl.",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>Returnerer:</b> En Promise, som opfyldes med {success:true} efter fuldførelse eller afvises ved serverfejl, afbrydelse, mistet forbindelse eller timeouten på 10 sekunder for fuldførelse.",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Starter teleportering til byen og venter, indtil kanaliseringen er afsluttet.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Starter teleporteringen til byen og venter på, at serveren bekræfter ankomsten.",
 	"docs.functions.trade.example": "<b>Eksempel:</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "Sætter en genstand fra inventaret til salg på en af dine handelspladser som købmand.",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Merrits besøg:</b> Hold en bod åben med varer på samme sted i to minutter. Din konto kan modtage én pakke i timen. Hold mere end 40px afstand til stationære NPC'er, og giv plads mellem butikkerne; butikken, der blev sat op først, beholder sin plads. <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit: alle regler og udvekslingschancer</span>.",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "Evner",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">Bevægelseshastighed:</span> Øger løbehastigheden.",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">Egenskab:</span> Bliver til en hovedegenskab med en rulle.",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Styrke:</span> Øger HP og panser. <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Styrke:</span> Øger HP, rustning og løbehastighed. <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">Vitalitet:</span> Øger HP i forhold til niveauet.",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "Krigere, slyngler, skovløbere og paladiner gør fysisk skade; magikere og præster gør magisk skade. Købmænd får erfaring ved at handle med andre spillere og kan angribe med en pilepistol. Præster kan helbrede andre spillere. Deres angrebskraft er som udgangspunkt 40% af deres helbredelseskraft, før bonusser, tilstande og målets forsvar.",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">Kast ≤ 55 vinder</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "Hvis en valgt plads er tom, afvises den returnerede Promise. Håndter fejlen med .catch().",
 	"docs.functions.send_cm.message_size": "Større beskeder bruger mere af kaldsgrænsen. Hold gentagne CODE-beskeder korte.",
 	"docs.functions.equip_batch.empty_entries": "Tomme poster afviser Promise, før der sendes en anmodning om at tage udstyr på.",
-	"docs.guide.event-witchcipher.pay_fits": "En ny blanding, der passer med alle ledetråde på den aktuelle tavle, også hvis du løser flere opskrifter samme dag"
+	"docs.guide.event-witchcipher.pay_fits": "En ny blanding, der passer med alle ledetråde på den aktuelle tavle, også hvis du løser flere opskrifter samme dag",
+	"docs.articles.data-monster.id_namespace": "Brug entitetens id, som spillet angiver det. Monster-ID'er er numeriske strenge og kan ikke være identiske med karakternavne.",
+	"docs.functions.destroy.item_changed": "Afvises med item_changed, hvis genstanden på den plads ændres, før serveren behandler anmodningen.",
+	"docs.functions.trade.slot_unavailable": "Afviser med item_gone, hvis tilbuddets handelsslot ikke længere er tilgængeligt."
 }

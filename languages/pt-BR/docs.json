@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>Exemplo:</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Falhas de Promise:</b> Salvo indicação específica da função, falhas rejeitam a Promise com um objeto contendo <span class='dlabel'>failed: true</span> e um <span class='dlabel'>reason</span>. Após <span class='dlabel'>mode_resolve_all()</span>, essas mesmas falhas resolvem a Promise.",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>Retorno:</b> Promise resolvida com {success:true} após a conclusão ou rejeitada em caso de falha do servidor, interrupção, desconexão ou tempo limite de conclusão de 10 segundos.",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Inicia o teleporte para a cidade e aguarda o fim da canalização.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Inicia o teletransporte para a cidade e aguarda o servidor confirmar a chegada.",
 	"docs.functions.trade.example": "<b>Exemplo:</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "Anuncia um item do inventário em um dos seus espaços de comércio de mercador.",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Visitas de Merrit:</b> Mantenha uma banca aberta e abastecida no mesmo lugar por dois minutos. Sua conta pode receber um pacote por hora. Fique a mais de 40px dos NPCs parados e deixe espaço entre as lojas; a loja aberta primeiro mantém seu lugar. <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit: regras completas e chances de troca</span>.",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "Habilidades",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">Velocidade:</span> Aumenta a velocidade de movimento.",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">Atributo:</span> Torna-se um atributo principal com um pergaminho.",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Força:</span> Aumenta HP e Armadura. <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Força:</span> Aumenta HP, armadura e velocidade de movimento. <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">Vitalidade:</span> Aumenta HP proporcionalmente ao nível.",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "Guerreiros, ladinos, arqueiros e paladinos causam dano físico; magos e sacerdotes causam dano mágico. Mercadores ganham experiência negociando com outros jogadores e podem atacar com uma pistola de dardos. Sacerdotes podem curar outros jogadores. Seu poder de ataque inicial é 40% do seu poder de cura, antes de aplicar bônus, condições e defesas do alvo.",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">Resultado ≤ 55 Vence</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "Se um espaço selecionado estiver vazio, o Promise retornado será rejeitado. Trate o erro com .catch().",
 	"docs.functions.send_cm.message_size": "Mensagens maiores consomem mais do limite de chamadas. Mantenha curtas as mensagens repetidas de CODE.",
 	"docs.functions.equip_batch.empty_entries": "Entradas vazias rejeitam o Promise antes de enviar qualquer solicitação para equipar itens.",
-	"docs.guide.event-witchcipher.pay_fits": "Uma mistura nova que corresponde a todas as pistas do painel atual, incluindo receitas decifradas novamente no mesmo dia"
+	"docs.guide.event-witchcipher.pay_fits": "Uma mistura nova que corresponde a todas as pistas do painel atual, incluindo receitas decifradas novamente no mesmo dia",
+	"docs.articles.data-monster.id_namespace": "Use o id da entidade exatamente como o jogo o fornece. Os IDs dos monstros são strings numéricas e não podem coincidir com nomes de personagens.",
+	"docs.functions.destroy.item_changed": "É rejeitado com item_changed se o item nesse espaço mudar antes de o servidor processar o pedido.",
+	"docs.functions.trade.slot_unavailable": "Rejeita com item_gone se o espaço de negociação da oferta não estiver mais disponível."
 }

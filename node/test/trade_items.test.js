@@ -41,7 +41,7 @@ function fixture() {
 		players: { Seller: seller, Buyer: buyer },
 		socket: { id: "Seller", emit() {} },
 		id_to_id: { Seller: "Seller", Buyer: "Buyer" },
-		trade_slots: ["trade1", "trade2", "trade4"],
+		trade_slots: ["trade1", "trade2", "trade4", "trade5"],
 		B: { dist: 500 },
 		S: { gold: 0 },
 		a_score: {},
@@ -242,6 +242,53 @@ test("buy orders transfer the actual source item's properties and exact quantity
 			assert.deepEqual(h.failures, ["item_gone"]);
 			assert.deepEqual(h.snapshot(), before);
 		}
+});
+
+test("cached listing IDs cannot trade through hidden slots after a stand closes", () => {
+	for (const event of ["trade_buy", "trade_sell"])
+		for (const [slot, trades] of [
+			["trade1", false],
+			["trade5", true],
+			["trade1", true],
+		]) {
+			const h = fixture();
+			const owner = event === "trade_buy" ? h.seller : h.buyer;
+			owner.p.stand = "stand0";
+			h.put(h.seller, { name: "cake", q: 2 });
+			if (event === "trade_buy") h.run("equip", "Seller", { num: 0, slot, q: 1, price: 100 });
+			else h.run("trade_wishlist", "Buyer", { name: "cake", slot, q: 1, price: 100 });
+			assert.deepEqual(h.failures, []);
+			owner.p.stand = false;
+			owner.p.trades = trades;
+			const before = h.snapshot();
+			h.run(event, event === "trade_buy" ? "Buyer" : "Seller", {
+				id: owner.id,
+				slot,
+				q: 1,
+				rid: "listing",
+			});
+			if (trades && slot === "trade1") {
+				assert.deepEqual(h.failures, []);
+				assert.equal(h.buyer.gold, 999900);
+				assert.equal(h.seller.gold, 1000097);
+				assert.equal(quantity(h.buyer.items, "cake"), 1);
+				assert.equal(quantity(h.seller.items, "cake"), 1);
+			} else {
+				assert.deepEqual(h.failures, ["item_gone"]);
+				assert.deepEqual(h.snapshot(), before);
+			}
+		}
+});
+
+test("buy orders cannot spend a buyer's gold while its bank is mounted", () => {
+	const h = fixture();
+	h.put(h.seller, { name: "cake", q: 2 });
+	h.run("trade_wishlist", "Buyer", { name: "cake", slot: "trade1", q: 1, price: 100 });
+	h.buyer.user = {};
+	const before = h.snapshot();
+	h.run("trade_sell", "Seller", { id: "Buyer", slot: "trade1", q: 1, rid: "listing" });
+	assert.deepEqual(h.failures, ["cant_in_bank"]);
+	assert.deepEqual(h.snapshot(), before);
 });
 
 test("capacity checks distinguish properties, cosmetic payloads and stack limits before any mutation", () => {

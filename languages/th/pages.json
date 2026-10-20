@@ -159,7 +159,7 @@
 	"pages.contents.guide.github-our-official-github-houses-the-runner-functions": "<span style=\"color: #f4f4f4\">&gt;</span>\n\t\t\t<a href=\"https://github.com/kaansoral/adventureland_mongodb/blob/main/js/runner_functions.js\" class=\"eexternal\" target=\"_blank\" style=\"color: #469ecf; text-decoration: none\">Github:</a> Github ทางการของเรามี \"runner_functions.js\" ซึ่งรวมฟังก์ชัน CODE พื้นฐานทั้งหมด",
 	"pages.contents.guide.heal": "รักษา",
 	"pages.contents.guide.if-anyone-is-breaking-the-rules-just-email": "<span style=\"color: #f4f4f4\">&gt;</span> หากพบคนทำผิดกฎ เพียงส่งภาพหน้าจอของการกระทำผิดมาที่ hello@adventure.land",
-	"pages.contents.guide.increases-hp-armor": "เพิ่ม HP และเกราะ",
+	"pages.contents.guide.increases-hp-armor": "เพิ่ม HP เกราะ และความเร็วในการวิ่ง",
 	"pages.contents.guide.increases-mp-resistance": "เพิ่ม MP และต้านทานเวท",
 	"pages.contents.guide.intelligence": "สติปัญญา:",
 	"pages.contents.guide.interact": "โต้ตอบ",

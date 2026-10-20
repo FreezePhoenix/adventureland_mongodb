@@ -159,7 +159,7 @@
 	"pages.contents.guide.github-our-official-github-houses-the-runner-functions": "<span style=\"color: #f4f4f4\">&gt;</span>\n\t\t\t<a href=\"https://github.com/kaansoral/adventureland_mongodb/blob/main/js/runner_functions.js\" class=\"eexternal\" target=\"_blank\" style=\"color: #469ecf; text-decoration: none\">Github:</a> Virallisesta Githubistamme löytyy \"runner_functions.js\", joka sisältää kaikki CODEn perusfunktiot.",
 	"pages.contents.guide.heal": "Paranna",
 	"pages.contents.guide.if-anyone-is-breaking-the-rules-just-email": "<span style=\"color: #f4f4f4\">&gt;</span> Jos joku rikkoo sääntöjä, lähetä rikkomuksesta kuvakaappaus sähköpostitse osoitteeseen hello@adventure.land.",
-	"pages.contents.guide.increases-hp-armor": "Lisää HP:tä ja panssaria.",
+	"pages.contents.guide.increases-hp-armor": "Lisää HP:tä, panssaria ja juoksunopeutta.",
 	"pages.contents.guide.increases-mp-resistance": "Lisää MP:tä ja vastusta.",
 	"pages.contents.guide.intelligence": "Älykkyys:",
 	"pages.contents.guide.interact": "Vuorovaikuta",

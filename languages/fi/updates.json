@@ -909,5 +909,12 @@
 	"update.08_10_26.halloween.support_78": "Suuret CODE-viestit lasketaan nyt oikein kutsurajaan.",
 	"update.08_10_26.halloween.support_79": "Tyhjät equip_batch-alkiot palauttavat nyt virheen.",
 	"update.08_10_26.halloween.item_bonuses": "Esineiden työkaluvihjeet näyttävät nyt kartta- ja luokkabonusten lukuarvot.",
-	"update.08_10_26.halloween.mp_reduction_cap": "Manakulun vähennys on nyt rajoitettu 80 %:iin."
+	"update.08_10_26.halloween.mp_reduction_cap": "Manakulun vähennys on nyt rajoitettu 80 %:iin.",
+	"update.08_10_26.halloween.support_80": "Hirviöiden tunnukset eivät enää ole samoja kuin numeroista koostuvat hahmojen nimet.",
+	"update.08_10_26.halloween.support_81": "Korjattu saman tilin samanaikaisten kirjautumisten aiheuttamat keskinäiset hylkäykset.",
+	"update.08_10_26.halloween.support_82": "town() ja smart_move odottavat nyt, kunnes teleporttaus kaupunkiin on valmis.",
+	"update.08_10_26.halloween.support_84": "Tuhoamispyynnöt eivät enää tuhoa toista esinettä, joka on siirretty samaan laukun paikkaan.",
+	"update.08_10_26.halloween.support_85": "Hubin pankkinäkymä ei enää paljasta esineiden piilotettuja tietoja.",
+	"update.08_10_26.halloween.support_86": "Tarkat saalistodennäköisyydet esitetään nyt yksinkertaisempina murtolukuina, kuten 1/1M.",
+	"update.08_10_26.halloween.support_87": "Suljetuissa kauppapaikoissa ei voi enää käydä kauppaa välimuistiin tallennetuilla tarjouksilla."
 }

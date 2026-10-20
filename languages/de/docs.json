@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>Beispiel:</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Promise-Fehler:</b> Sofern kein funktionsspezifischer Hinweis etwas anderes sagt, lehnen Fehlschläge das Promise mit einem Objekt ab, das <span class='dlabel'>failed: true</span> und einen <span class='dlabel'>reason</span> enthält. Nach <span class='dlabel'>mode_resolve_all()</span> erfüllen dieselben Fehlschläge stattdessen das Promise.",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>Rückgabe:</b> Ein Promise, das nach Abschluss mit {success:true} erfüllt oder bei Serverfehler, Unterbrechung, Verbindungsabbruch oder Ablauf des Abschlusszeitlimits von 10 Sekunden abgelehnt wird.",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Startet die Stadtrückkehr und wartet, bis die Kanalisierung beendet ist.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Startet die Teleportation zur Stadt und wartet, bis der Server die Ankunft bestätigt.",
 	"docs.functions.trade.example": "<b>Beispiel:</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "Bietet einen Inventargegenstand auf einem deiner Händler-Handelsplätze an.",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Merrits Besuche:</b> Halte einen offenen, bestückten Stand zwei Minuten lang am selben Ort. Dein Konto kann ein Paket pro Stunde erhalten. Halte mehr als 40px Abstand zu unbeweglichen NPCs und lasse Platz zwischen den Läden; der zuerst eröffnete Laden behält seinen Platz. <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit: vollständige Regeln und Tauschchancen</span>.",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "Fähigkeiten",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">Bewegungstempo:</span> Erhöht das Lauftempo.",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">Attribut:</span> Wird mit einer Schriftrolle zu einem Hauptattribut.",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Stärke:</span> Erhöht HP und Rüstung. <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Stärke:</span> Erhöht HP, Rüstung und Laufgeschwindigkeit. <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">Vitalität:</span> Erhöht HP proportional zur Stufe.",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "Krieger, Schurken, Waldläufer und Paladine verursachen physischen Schaden; Magier und Priester verursachen magischen Schaden. Händler gewinnen Erfahrung durch Handel mit anderen Spielern und können mit einem Dartgewehr angreifen. Priester können andere Spieler heilen. Ihre anfängliche Angriffskraft beträgt 40% ihrer Heilkraft, vor Boni, Zuständen und der Verteidigung des Ziels.",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">Wurf ≤ 55 gewinnt</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "Ist ein ausgewählter Platz leer, wird das zurückgegebene Promise abgelehnt. Behandle den Fehler mit .catch().",
 	"docs.functions.send_cm.message_size": "Größere Nachrichten verbrauchen mehr vom Aufruflimit. Halte wiederholte CODE-Nachrichten kurz.",
 	"docs.functions.equip_batch.empty_entries": "Leere Einträge lehnen das Promise ab, bevor eine Ausrüstungsanfrage gesendet wird.",
-	"docs.guide.event-witchcipher.pay_fits": "Eine neue Mischung, die zu allen Hinweisen auf der aktuellen Tafel passt, auch wenn du an diesem Tag weitere Rezepte knackst"
+	"docs.guide.event-witchcipher.pay_fits": "Eine neue Mischung, die zu allen Hinweisen auf der aktuellen Tafel passt, auch wenn du an diesem Tag weitere Rezepte knackst",
+	"docs.articles.data-monster.id_namespace": "Verwende die id der Entität so, wie das Spiel sie angibt. Monster-IDs sind numerische Zeichenfolgen und können nicht mit Charakternamen übereinstimmen.",
+	"docs.functions.destroy.item_changed": "Wird mit item_changed abgelehnt, wenn sich der Gegenstand auf diesem Platz ändert, bevor der Server die Anfrage verarbeitet.",
+	"docs.functions.trade.slot_unavailable": "Lehnt mit item_gone ab, wenn der Handelsplatz des Angebots nicht mehr verfügbar ist."
 }

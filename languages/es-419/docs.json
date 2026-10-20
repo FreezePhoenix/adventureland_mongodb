@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>Ejemplo:</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Fallos de Promise:</b> Salvo que una nota específica de la función indique lo contrario, los fallos rechazan la Promise con un objeto que contiene <span class='dlabel'>failed: true</span> y un <span class='dlabel'>reason</span>. Tras <span class='dlabel'>mode_resolve_all()</span>, esos mismos fallos la cumplen en su lugar.",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>Devuelve:</b> Una Promise que se resuelve con {success:true} al terminar o se rechaza por fallo del servidor, interrupción, desconexión o al agotarse los 10 segundos de espera para completarse.",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Inicia el teletransporte de Regreso a la ciudad y espera a que termine la canalización.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Inicia el teletransporte al pueblo y espera a que el servidor confirme la llegada.",
 	"docs.functions.trade.example": "<b>Ejemplo:</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "Pone a la venta un objeto del inventario en una de tus casillas de comercio de mercader.",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Visitas de Merrit:</b> Mantén un puesto abierto y abastecido en el mismo lugar durante dos minutos. Tu cuenta puede recibir un paquete por hora. Mantente a más de 40px de los NPC fijos y deja espacio entre tiendas; la tienda que se abrió primero conserva su sitio. <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit: reglas completas y probabilidades de intercambio</span>.",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "Habilidades",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">Velocidad:</span> Aumenta la velocidad de movimiento.",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">Atributo:</span> Se convierte en un atributo principal con un pergamino.",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Fuerza:</span> Aumenta los HP y la armadura. <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Fuerza:</span> Aumenta los HP, la armadura y la velocidad de movimiento. <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">Vitalidad:</span> Aumenta los HP en proporción al nivel.",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "Los guerreros, pícaros, arqueros y paladines infligen daño físico; los magos y sacerdotes infligen daño mágico. Los mercaderes ganan experiencia comerciando con otros jugadores y pueden atacar con una pistola de dardos. Los sacerdotes pueden curar a otros jugadores. Su poder de ataque inicial es el 40% de su poder de curación, antes de aplicar bonificaciones, efectos de estado y defensas del objetivo.",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">Gana con tirada ≤ 55</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "Si una casilla seleccionada está vacía, el Promise devuelto se rechaza. Maneja el error con .catch().",
 	"docs.functions.send_cm.message_size": "Los mensajes grandes consumen más del límite de llamadas. Procura que los mensajes repetidos de CODE sean cortos.",
 	"docs.functions.equip_batch.empty_entries": "Las entradas vacías rechazan el Promise antes de enviar cualquier solicitud para equipar objetos.",
-	"docs.guide.event-witchcipher.pay_fits": "Una mezcla nueva que coincide con todas las pistas del tablero actual, incluso si vuelves a descifrar la receta ese día"
+	"docs.guide.event-witchcipher.pay_fits": "Una mezcla nueva que coincide con todas las pistas del tablero actual, incluso si vuelves a descifrar la receta ese día",
+	"docs.articles.data-monster.id_namespace": "Usa el id de la entidad tal como lo proporciona el juego. Los ID de los monstruos son cadenas numéricas y no pueden coincidir con los nombres de los personajes.",
+	"docs.functions.destroy.item_changed": "Se rechaza con item_changed si el objeto de esa casilla cambia antes de que el servidor procese la solicitud.",
+	"docs.functions.trade.slot_unavailable": "Rechaza con item_gone si el espacio de comercio de la oferta ya no está disponible."
 }

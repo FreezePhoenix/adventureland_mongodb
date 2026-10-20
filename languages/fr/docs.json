@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>Exemple :</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Échecs des Promises :</b> Sauf indication contraire propre à une fonction, les échecs rejettent la Promise avec un objet contenant <span class='dlabel'>failed: true</span> et une <span class='dlabel'>reason</span>. Après <span class='dlabel'>mode_resolve_all()</span>, la Promise est accomplie avec ces mêmes objets d’échec au lieu d’être rejetée.",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>Renvoie :</b> Une Promise résolue avec {success:true} à la fin, ou rejetée en cas d’échec du serveur, d’interruption, de déconnexion ou d’expiration du délai de 10 secondes.",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Lance la téléportation de Retour au centre et attend la fin de la canalisation.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Lance la téléportation en ville et attend que le serveur confirme l'arrivée.",
 	"docs.functions.trade.example": "<b>Exemple :</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "Met un objet de l’inventaire en vente dans l’un de tes emplacements de commerce.",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Visites de Merrit :</b> Garde un stand ouvert et approvisionné au même endroit pendant deux minutes. Ton compte peut recevoir un colis par heure. Reste à plus de 40px des PNJ immobiles et laisse de la place entre les boutiques ; la boutique ouverte en premier garde sa place. <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit : règles complètes et probabilités d’échange</span>.",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "Compétences",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">Vitesse :</span> Augmente la vitesse de déplacement.",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">Statistique :</span> Devient un attribut principal avec un parchemin.",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Force :</span> Augmente les HP et l’armure. <!--Augmente l’attaque des guerriers.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Force :</span> Augmente les HP, l'armure et la vitesse de déplacement. <!--Augmente l’attaque des guerriers.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">Vitalité :</span> Augmente les HP proportionnellement au niveau.",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "Les guerriers, voleurs, rôdeurs et paladins infligent des dégâts physiques ; les mages et prêtres infligent des dégâts magiques. Les marchands gagnent de l’expérience en commerçant avec d’autres joueurs et peuvent attaquer avec un pistolet à fléchettes. Les prêtres peuvent soigner les autres joueurs. Leur puissance d’attaque initiale vaut 40 % de leur puissance de soin, avant les bonus, états et défenses de la cible.",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">Résultat ≤ 55 gagnant</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "Si un emplacement sélectionné est vide, le Promise renvoyé est rejeté. Gérez l'erreur avec .catch().",
 	"docs.functions.send_cm.message_size": "Les gros messages consomment davantage de la limite d'appels. Gardez les messages CODE répétés courts.",
 	"docs.functions.equip_batch.empty_entries": "Les entrées vides rejettent le Promise avant l'envoi de toute demande d'équipement.",
-	"docs.guide.event-witchcipher.pay_fits": "Un nouveau mélange compatible avec tous les indices du tableau actuel, y compris les recettes trouvées ensuite le même jour"
+	"docs.guide.event-witchcipher.pay_fits": "Un nouveau mélange compatible avec tous les indices du tableau actuel, y compris les recettes trouvées ensuite le même jour",
+	"docs.articles.data-monster.id_namespace": "Utilisez l'id de l'entité tel qu'il est fourni par le jeu. Les ID des monstres sont des chaînes numériques et ne peuvent pas être identiques aux noms des personnages.",
+	"docs.functions.destroy.item_changed": "La demande est rejetée avec item_changed si l’objet de cet emplacement change avant que le serveur ne la traite.",
+	"docs.functions.trade.slot_unavailable": "Rejette avec item_gone si l'emplacement de commerce de l'offre n'est plus disponible."
 }

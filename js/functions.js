@@ -4192,16 +4192,17 @@ setInterval(function () {
 
 function poof(is_code) {
 	var delay = 2400;
+	var item = character.items[p_item] || null;
 	exchange_type = "poof";
 	if (is_code || 1) {
 		var promise = push_deferred("destroy");
-		socket.emit("destroy", { num: p_item, q: 1, statue: true });
+		socket.emit("destroy", { num: p_item, q: 1, statue: true, item: item });
 		return promise;
 	}
 	function poof_trigger(p_item) {
 		return function () {
 			if (!exchange_animations) return;
-			socket.emit("destroy", { num: p_item, q: 1, statue: true });
+			socket.emit("destroy", { num: p_item, q: 1, statue: true, item: item });
 		};
 	}
 	if (p_item == null) d_text(phrase("client.floating.invalid"), character);

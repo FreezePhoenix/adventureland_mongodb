@@ -909,5 +909,12 @@
 	"update.08_10_26.halloween.support_78": "Grote CODE-berichten tellen nu correct mee voor de aanroeplimiet.",
 	"update.08_10_26.halloween.support_79": "Lege vermeldingen in equip_batch geven nu een fout terug.",
 	"update.08_10_26.halloween.item_bonuses": "Itemtooltips tonen nu ook de waarden van kaart- en klassebonussen.",
-	"update.08_10_26.halloween.mp_reduction_cap": "Manakostenvermindering is nu beperkt tot 80%."
+	"update.08_10_26.halloween.mp_reduction_cap": "Manakostenvermindering is nu beperkt tot 80%.",
+	"update.08_10_26.halloween.support_80": "Monster-ID's overlappen niet meer met numerieke personagenamen.",
+	"update.08_10_26.halloween.support_81": "Verholpen dat gelijktijdige aanmeldingen op hetzelfde account elkaar afwezen.",
+	"update.08_10_26.halloween.support_82": "town() en smart_move wachten nu totdat de teleportatie naar de stad is voltooid.",
+	"update.08_10_26.halloween.support_84": "Vernietigingsverzoeken vernietigen geen ander voorwerp meer dat naar hetzelfde vak in de tas is verplaatst.",
+	"update.08_10_26.halloween.support_85": "De bankweergave in de Hub geeft geen verborgen itemgegevens meer vrij.",
+	"update.08_10_26.halloween.support_86": "Exacte buitkansen gebruiken nu eenvoudigere breuken, zoals 1/1M.",
+	"update.08_10_26.halloween.support_87": "Via opgeslagen aanbiedingen kan niet meer in gesloten handelsvakken worden gehandeld."
 }

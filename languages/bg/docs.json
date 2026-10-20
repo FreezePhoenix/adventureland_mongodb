@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>Пример:</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Грешки в Promise:</b> Освен ако бележка за конкретната функция не посочва друго, при грешка Promise се отхвърля с обект, съдържащ <span class='dlabel'>failed: true</span> и <span class='dlabel'>reason</span>. След <span class='dlabel'>mode_resolve_all()</span> същите грешки вместо това изпълняват Promise.",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>Връща:</b> Promise, който се изпълнява с {success:true} след завършване или се отхвърля при грешка от сървъра, прекъсване, загуба на връзка или изтичане на 10-секундния срок за завършване.",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Започва телепортацията Град и изчаква изпълнението ѝ да приключи.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Започва телепортацията до града и изчаква сървърът да потвърди пристигането.",
 	"docs.functions.trade.example": "<b>Пример:</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "Обявява предмет от инвентара в един от търговските ти слотове.",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Посещенията на Merrit:</b> Дръж отворен, зареден щанд на едно и също място за две минути. Акаунтът ти може да получава по един пакет на час. Стой на повече от 40px от неподвижни NPC и оставяй място между магазините; магазинът, поставен пръв, запазва мястото си. <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit: пълни правила и шансове при размяна</span>.",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "Умения",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">Скорост:</span> Увеличава скоростта на бягане.",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">Показател:</span> Превръща се в основна характеристика чрез свитък.",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Сила:</span> Увеличава HP и бронята. <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Сила:</span> Увеличава HP, бронята и скоростта на бягане. <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">Жизненост:</span> Увеличава HP пропорционално на нивото.",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "Воините, разбойниците, стрелците и паладините нанасят физически щети; маговете и жреците нанасят магически щети. Търговците получават опит, като търгуват с други играчи, и могат да атакуват с пистолет за стрелички. Жреците могат да лекуват други играчи. Началната им сила на атака е 40% от лечебната им сила, преди бонусите, състоянията и защитите на целта.",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">Резултат ≤ 55 печели</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "Ако избрана позиция е празна, върнатият Promise се отхвърля. Обработете грешката с .catch().",
 	"docs.functions.send_cm.message_size": "По-големите съобщения изразходват повече от лимита за извиквания. Нека повтарящите се CODE съобщения бъдат кратки.",
 	"docs.functions.equip_batch.empty_entries": "Празните елементи отхвърлят Promise, преди да бъде изпратена заявка за екипиране.",
-	"docs.guide.event-witchcipher.pay_fits": "Нова смес, която отговаря на всички подсказки на текущото табло, включително следващи разгадани рецепти през същия ден"
+	"docs.guide.event-witchcipher.pay_fits": "Нова смес, която отговаря на всички подсказки на текущото табло, включително следващи разгадани рецепти през същия ден",
+	"docs.articles.data-monster.id_namespace": "Използвайте id на обекта точно както го предоставя играта. ID на чудовищата са низове от цифри и не могат да съвпадат с имената на герои.",
+	"docs.functions.destroy.item_changed": "Отхвърля се с item_changed, ако предметът в тази клетка се промени, преди сървърът да обработи заявката.",
+	"docs.functions.trade.slot_unavailable": "Отхвърля с item_gone, ако търговският слот на обявата вече не е достъпен."
 }

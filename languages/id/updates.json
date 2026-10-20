@@ -909,5 +909,12 @@
 	"update.08_10_26.halloween.support_78": "Pesan CODE berukuran besar kini dihitung dengan benar dalam batas panggilan.",
 	"update.08_10_26.halloween.support_79": "Entri kosong pada equip_batch kini mengembalikan galat.",
 	"update.08_10_26.halloween.item_bonuses": "Tooltip item sekarang menampilkan angka bonus map dan class.",
-	"update.08_10_26.halloween.mp_reduction_cap": "Pengurangan Biaya Mana sekarang dibatasi hingga 80%."
+	"update.08_10_26.halloween.mp_reduction_cap": "Pengurangan Biaya Mana sekarang dibatasi hingga 80%.",
+	"update.08_10_26.halloween.support_80": "ID monster tidak lagi bertabrakan dengan nama karakter berupa angka.",
+	"update.08_10_26.halloween.support_81": "Memperbaiki login bersamaan pada akun yang sama yang saling menolak.",
+	"update.08_10_26.halloween.support_82": "town() dan smart_move kini menunggu sampai teleportasi ke kota selesai.",
+	"update.08_10_26.halloween.support_84": "Permintaan penghancuran tidak lagi menghancurkan item lain yang dipindahkan ke slot tas yang sama.",
+	"update.08_10_26.halloween.support_85": "Tampilan bank di Hub tidak lagi mengungkap data item tersembunyi.",
+	"update.08_10_26.halloween.support_86": "Peluang drop yang tepat kini memakai pecahan yang lebih sederhana, seperti 1/1M.",
+	"update.08_10_26.halloween.support_87": "Slot pedagang yang ditutup tidak lagi bisa dipakai berdagang melalui penawaran dalam cache."
 }

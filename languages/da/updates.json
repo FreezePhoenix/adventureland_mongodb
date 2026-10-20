@@ -909,5 +909,12 @@
 	"update.08_10_26.halloween.support_78": "Store CODE-beskeder tæller nu korrekt med i kaldsgrænsen.",
 	"update.08_10_26.halloween.support_79": "Tomme poster i equip_batch returnerer nu en fejl.",
 	"update.08_10_26.halloween.item_bonuses": "Genstandenes værktøjstip viser nu talværdierne for bonusser fra kort og klasser.",
-	"update.08_10_26.halloween.mp_reduction_cap": "Reduceret manaforbrug er nu begrænset til 80 %."
+	"update.08_10_26.halloween.mp_reduction_cap": "Reduceret manaforbrug er nu begrænset til 80 %.",
+	"update.08_10_26.halloween.support_80": "Monster-ID'er overlapper ikke længere med numeriske karakternavne.",
+	"update.08_10_26.halloween.support_81": "Rettet, at samtidige login på samme konto afviste hinanden.",
+	"update.08_10_26.halloween.support_82": "town() og smart_move venter nu, til teleporteringen til byen er færdig.",
+	"update.08_10_26.halloween.support_84": "Anmodninger om at ødelægge en genstand ødelægger ikke længere en anden genstand, der er flyttet til samme plads i tasken.",
+	"update.08_10_26.halloween.support_85": "Bankvisningen i Hub viser ikke længere skjulte genstandsdata.",
+	"update.08_10_26.halloween.support_86": "Præcise dropchancer vises nu med enklere brøker, såsom 1/1M.",
+	"update.08_10_26.halloween.support_87": "Lukkede handelsslots kan ikke længere bruges via cachelagrede tilbud."
 }

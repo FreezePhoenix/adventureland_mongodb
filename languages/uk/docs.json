@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>Приклад:</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Помилки Promise:</b> Якщо в примітці до конкретної функції не вказано інше, у разі помилки Promise відхиляється з об'єктом, що містить <span class='dlabel'>failed: true</span> і <span class='dlabel'>reason</span>. Після <span class='dlabel'>mode_resolve_all()</span> Promise натомість успішно завершується з тим самим об'єктом помилки.",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>Повертає:</b> Promise, що успішно завершується з {success:true} після завершення або відхиляється через помилку сервера, переривання, розрив з'єднання чи вичерпання 10-секундного часу очікування завершення.",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Починає телепортацію в місто й чекає, доки завершиться підготовка заклинання.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Починає телепортацію до міста й чекає підтвердження прибуття від сервера.",
 	"docs.functions.trade.example": "<b>Приклад:</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "Виставляє предмет інвентарю в одну з твоїх торгових комірок.",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Відвідини Merrit:</b> Тримай відкриту ятку з товарами на одному місці дві хвилини. Твій обліковий запис може отримувати одну посилку на годину. Тримайся далі ніж за 40px від нерухомих NPC і залишай місце між крамницями; крамниця, відкрита першою, зберігає своє місце. <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit: повні правила та шанси обміну</span>.",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "Уміння",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">Швидкість:</span> Збільшує швидкість бігу.",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">Характеристика:</span> За допомогою сувою стає основною характеристикою.",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Сила:</span> Збільшує HP та броню. <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Сила:</span> Збільшує HP, броню та швидкість бігу. <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">Живучість:</span> Збільшує HP пропорційно до рівня.",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "Воїни, пройдисвіти, лучники й паладини завдають фізичної шкоди; маги та жерці — магічної. Торговці здобувають досвід за торгівлю з іншими гравцями й можуть атакувати дротикометом. Жерці можуть зцілювати інших гравців. Їхня початкова сила атаки становить 40% сили зцілення, до врахування бонусів, станів і захисту цілі.",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">Випало ≤ 55 — виграш</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "Якщо вибрана комірка порожня, повернений Promise відхиляється. Обробіть помилку за допомогою .catch().",
 	"docs.functions.send_cm.message_size": "Великі повідомлення витрачають більше ліміту викликів. Робіть повторювані повідомлення CODE короткими.",
 	"docs.functions.equip_batch.empty_entries": "Порожні елементи відхиляють Promise до надсилання будь-якого запиту на спорядження.",
-	"docs.guide.event-witchcipher.pay_fits": "Нова суміш, яка відповідає всім підказкам на поточній дошці, включно з повторними розгадуваннями цього дня"
+	"docs.guide.event-witchcipher.pay_fits": "Нова суміш, яка відповідає всім підказкам на поточній дошці, включно з повторними розгадуваннями цього дня",
+	"docs.articles.data-monster.id_namespace": "Використовуйте id сутності в тому вигляді, у якому його надає гра. ID монстрів — числові рядки, які не можуть збігатися з іменами персонажів.",
+	"docs.functions.destroy.item_changed": "Відхиляється з item_changed, якщо предмет у цій комірці зміниться до обробки запиту сервером.",
+	"docs.functions.trade.slot_unavailable": "Відхиляє запит з item_gone, якщо торгова комірка пропозиції більше недоступна."
 }

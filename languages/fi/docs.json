@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>Esimerkki:</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Promise-virheet:</b> Ellei funktiokohtaisessa huomautuksessa sanota muuta, epäonnistuminen hylkää Promisen oliolla, joka sisältää kentät <span class='dlabel'>failed: true</span> ja <span class='dlabel'>reason</span>. Kutsun <span class='dlabel'>mode_resolve_all()</span> jälkeen samat epäonnistumiset sen sijaan täyttävät Promisen.",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>Palauttaa:</b> Promisen, joka täyttyy arvolla {success:true} toiminnon valmistuttua tai hylätään palvelinvirheen, keskeytyksen, yhteyden katkeamisen tai 10 sekunnin valmistumisaikarajan vuoksi.",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Aloittaa kaupunkiin teleporttauksen ja odottaa kanavoinnin päättymistä.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Aloittaa teleporttauksen kaupunkiin ja odottaa, että palvelin vahvistaa saapumisen.",
 	"docs.functions.trade.example": "<b>Esimerkki:</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "Asettaa repun esineen myyntiin yhteen kauppiaasi myyntipaikoista.",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Merritin vierailut:</b> Pidä avoin, tavaroilla täytetty koju samassa paikassa kaksi minuuttia. Tilisi voi saada yhden paketin tunnissa. Pysy yli 40px:n päässä paikallaan olevista NPC:istä ja jätä tilaa kauppojen väliin; ensin pystytetty kauppa pitää paikkansa. <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit: kaikki säännöt ja vaihdon todennäköisyydet</span>.",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "Taidot",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">Nopeus:</span> Lisää juoksunopeutta.",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">Ominaisuus:</span> Muuttuu pääominaisuudeksi kääröllä.",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Voima:</span> Lisää HP:tä ja panssaria. <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Voima:</span> Lisää HP:tä, panssaria ja juoksunopeutta. <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">Elinvoima:</span> Lisää HP:tä suhteessa tasoon.",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "Soturit, konnat, samoojat ja paladiinit aiheuttavat fyysistä vahinkoa; maagit ja papit aiheuttavat maagista vahinkoa. Kauppiaat saavat kokemusta käymällä kauppaa muiden pelaajien kanssa ja voivat hyökätä tikka-aseella. Papit voivat parantaa muita pelaajia. Heidän hyökkäystehonsa on aluksi 40 % parannustehosta ennen bonuksia, tilavaikutuksia ja kohteen puolustusta.",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">Heitto ≤ 55 voittaa</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "Jos valittu paikka on tyhjä, palautettu Promise hylätään. Käsittele virhe .catch()-metodilla.",
 	"docs.functions.send_cm.message_size": "Suuremmat viestit kuluttavat enemmän kutsurajasta. Pidä toistuvat CODE-viestit lyhyinä.",
 	"docs.functions.equip_batch.empty_entries": "Tyhjät alkiot hylkäävät Promisen ennen kuin yhtään varusteiden pukemispyyntöä lähetetään.",
-	"docs.guide.event-witchcipher.pay_fits": "Uusi sekoitus, joka sopii kaikkiin nykyisen taulun vihjeisiin, myös saman päivän myöhemmät ratkaisut"
+	"docs.guide.event-witchcipher.pay_fits": "Uusi sekoitus, joka sopii kaikkiin nykyisen taulun vihjeisiin, myös saman päivän myöhemmät ratkaisut",
+	"docs.articles.data-monster.id_namespace": "Käytä entiteetin id-arvoa pelin antamassa muodossa. Hirviöiden tunnukset ovat numeroista koostuvia merkkijonoja, eivätkä ne voi olla samoja kuin hahmojen nimet.",
+	"docs.functions.destroy.item_changed": "Hylätään virheellä item_changed, jos kyseisessä paikassa oleva esine muuttuu ennen kuin palvelin käsittelee pyynnön.",
+	"docs.functions.trade.slot_unavailable": "Hylkää pyynnön syyllä item_gone, jos tarjouksen kauppapaikka ei ole enää käytettävissä."
 }

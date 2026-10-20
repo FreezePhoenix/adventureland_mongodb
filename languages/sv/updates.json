@@ -909,5 +909,12 @@
 	"update.08_10_26.halloween.support_78": "Stora CODE-meddelanden räknas nu korrekt mot anropsgränsen.",
 	"update.08_10_26.halloween.support_79": "Tomma poster i equip_batch returnerar nu ett fel.",
 	"update.08_10_26.halloween.item_bonuses": "Föremålens verktygstips visar nu siffervärden för kart- och klassbonusar.",
-	"update.08_10_26.halloween.mp_reduction_cap": "Minskad manakostnad är nu begränsad till 80 %."
+	"update.08_10_26.halloween.mp_reduction_cap": "Minskad manakostnad är nu begränsad till 80 %.",
+	"update.08_10_26.halloween.support_80": "Monster-ID:n överlappar inte längre med numeriska karaktärsnamn.",
+	"update.08_10_26.halloween.support_81": "Åtgärdat att samtidiga inloggningar på samma konto avvisade varandra.",
+	"update.08_10_26.halloween.support_82": "town() och smart_move väntar nu tills teleporteringen till staden är klar.",
+	"update.08_10_26.halloween.support_84": "Förstöringsförfrågningar förstör inte längre ett annat föremål som flyttats till samma plats i väskan.",
+	"update.08_10_26.halloween.support_85": "Bankvyn i Hub visar inte längre dolda föremålsdata.",
+	"update.08_10_26.halloween.support_86": "Exakta droppchanser visas nu med enklare bråk, som 1/1M.",
+	"update.08_10_26.halloween.support_87": "Stängda handelsplatser kan inte längre användas via cachade erbjudanden."
 }

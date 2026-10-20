@@ -909,5 +909,12 @@
 	"update.08_10_26.halloween.support_78": "Büyük CODE mesajları artık çağrı sınırına doğru yansıtılıyor.",
 	"update.08_10_26.halloween.support_79": "Boş equip_batch girdileri artık hata döndürüyor.",
 	"update.08_10_26.halloween.item_bonuses": "Eşya bilgi kutuları artık harita ve sınıf bonuslarının sayısal değerlerini gösteriyor.",
-	"update.08_10_26.halloween.mp_reduction_cap": "Mana Maliyeti Azaltma artık en fazla %80 olabilir."
+	"update.08_10_26.halloween.mp_reduction_cap": "Mana Maliyeti Azaltma artık en fazla %80 olabilir.",
+	"update.08_10_26.halloween.support_80": "Canavar kimlikleri artık sayısal karakter adlarıyla çakışmıyor.",
+	"update.08_10_26.halloween.support_81": "Aynı hesaptaki eşzamanlı girişlerin birbirini reddetmesi düzeltildi.",
+	"update.08_10_26.halloween.support_82": "town() ve smart_move artık kasabaya ışınlanmanın tamamlanmasını bekliyor.",
+	"update.08_10_26.halloween.support_84": "Yok etme istekleri artık aynı çanta yuvasına taşınan farklı bir eşyayı yok etmiyor.",
+	"update.08_10_26.halloween.support_85": "Hub banka görünümü artık gizli eşya verilerini açığa çıkarmıyor.",
+	"update.08_10_26.halloween.support_86": "Tam düşme olasılıkları artık 1/1M gibi daha basit kesirlerle gösteriliyor.",
+	"update.08_10_26.halloween.support_87": "Önbellekteki ilanlar kullanılarak kapalı tüccar yuvalarından artık alışveriş yapılamıyor."
 }

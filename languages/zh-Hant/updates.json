@@ -909,5 +909,12 @@
 	"update.08_10_26.halloween.support_78": "大型 CODE 訊息現在會正確計入呼叫限額。",
 	"update.08_10_26.halloween.support_79": "equip_batch 中的空項目現在會傳回錯誤。",
 	"update.08_10_26.halloween.item_bonuses": "物品提示現在會顯示地圖和職業加成的數值。",
-	"update.08_10_26.halloween.mp_reduction_cap": "魔力消耗減免現在最高為80%。"
+	"update.08_10_26.halloween.mp_reduction_cap": "魔力消耗減免現在最高為80%。",
+	"update.08_10_26.halloween.support_80": "怪物ID不再與純數字角色名稱重複。",
+	"update.08_10_26.halloween.support_81": "修正了同一帳號同時登入多個角色時互相拒絕登入的問題。",
+	"update.08_10_26.halloween.support_82": "town()和smart_move現在會等待回城傳送完成。",
+	"update.08_10_26.halloween.support_84": "銷毀請求不再銷毀被移入同一背包欄位的其他物品。",
+	"update.08_10_26.halloween.support_85": "Hub 銀行介面不再洩露物品的隱藏資料。",
+	"update.08_10_26.halloween.support_86": "精確掉落機率現在以更簡單的分數顯示，例如 1/1M。",
+	"update.08_10_26.halloween.support_87": "無法再使用快取中的商品資訊，透過已關閉的商人欄位進行交易。"
 }

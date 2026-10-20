@@ -159,7 +159,7 @@
 	"pages.contents.guide.github-our-official-github-houses-the-runner-functions": "<span style=\"color: #f4f4f4\">&gt;</span>\n\t\t\t<a href=\"https://github.com/kaansoral/adventureland_mongodb/blob/main/js/runner_functions.js\" class=\"eexternal\" target=\"_blank\" style=\"color: #469ecf; text-decoration: none\">Github:</a> يضم مستودعنا الرسمي ملف \"runner_functions.js\" الذي يحتوي على جميع دوال CODE الأساسية",
 	"pages.contents.guide.heal": "شفاء",
 	"pages.contents.guide.if-anyone-is-breaking-the-rules-just-email": "<span style=\"color: #f4f4f4\">&gt;</span> إن خالف أحد القواعد، أرسل لقطة شاشة للمخالفة إلى hello@adventure.land",
-	"pages.contents.guide.increases-hp-armor": "يزيد HP والدرع.",
+	"pages.contents.guide.increases-hp-armor": "يزيد HP والدروع وسرعة الركض.",
 	"pages.contents.guide.increases-mp-resistance": "يزيد MP والمقاومة.",
 	"pages.contents.guide.intelligence": "الذكاء:",
 	"pages.contents.guide.interact": "تفاعل",

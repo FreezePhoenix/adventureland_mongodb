@@ -159,7 +159,7 @@
 	"pages.contents.guide.github-our-official-github-houses-the-runner-functions": "<span style=\"color: #f4f4f4\">&gt;</span>\n\t\t\t<a href=\"https://github.com/kaansoral/adventureland_mongodb/blob/main/js/runner_functions.js\" class=\"eexternal\" target=\"_blank\" style=\"color: #469ecf; text-decoration: none\">Github:</a> På vår\n\t\t\tofficiella Github finns \"runner_functions.js\", som innehåller alla grundläggande CODE-funktioner",
 	"pages.contents.guide.heal": "Hela",
 	"pages.contents.guide.if-anyone-is-breaking-the-rules-just-email": "<span style=\"color: #f4f4f4\">&gt;</span> Om någon bryter mot reglerna, mejla bara en skärmbild av överträdelsen till hello@adventure.land",
-	"pages.contents.guide.increases-hp-armor": "Ökar HP och pansar.",
+	"pages.contents.guide.increases-hp-armor": "Ökar HP, rustning och löphastighet.",
 	"pages.contents.guide.increases-mp-resistance": "Ökar MP och resistens.",
 	"pages.contents.guide.intelligence": "Intelligens:",
 	"pages.contents.guide.interact": "Interagera",

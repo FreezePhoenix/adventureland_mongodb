@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>例：</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Promiseの失敗：</b>関数固有の説明がない限り、失敗時は<span class='dlabel'>failed: true</span>と<span class='dlabel'>reason</span>を含むオブジェクトで拒否されます。<span class='dlabel'>mode_resolve_all()</span>を呼ぶと、同じ失敗でもPromiseは成功として完了します。",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>戻り値:</b> 完了後に{success:true}で解決するPromise。サーバーの失敗、中断、切断、または10秒以内に完了しなかった場合は拒否されます。",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "帰還の転移を開始し、詠唱が終わるまで待ちます。",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "町へのテレポートを開始し、サーバーが到着を確認するまで待ちます。",
 	"docs.functions.trade.example": "<b>例：</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "持ち物のアイテムを、自分の商人の取引枠に出品します。",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Merritの訪問：</b>品物を並べた露店を同じ場所で2分間開いておきます。アカウントごとに1時間に1つ荷物を受け取れます。固定NPCから40pxを超える距離を取り、店同士にも間隔を空けてください。先に開いた店がその場所を使い続けられます。<span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit：詳しいルールと交換確率</span>。",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "スキル",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">移動速度：</span>走る速さを上げます。",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">能力値：</span>巻物で主要な能力値に変えられます。",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">筋力：</span>HPと物理防御を増やします。 <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">筋力：</span> HP、防御力、移動速度が上がります。 <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">生命力：</span>レベルに比例してHPを増やします。",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "戦士、盗賊、弓使い、聖騎士は物理ダメージを、魔法使いと僧侶は魔法ダメージを与えます。商人は他のプレイヤーとの取引で経験値を得られ、dartgunで攻撃できます。僧侶は他のプレイヤーを回復できます。僧侶の基本の攻撃力は回復力の40%で、そこにボーナス、状態、対象の防御が適用されます。",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">出目が55以下なら勝ち</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "選択したスロットが空の場合、返されたPromiseは拒否されます。.catch()でエラーを処理してください。",
 	"docs.functions.send_cm.message_size": "大きなメッセージほど呼び出し上限を多く消費します。繰り返し送るCODEメッセージは短くしてください。",
 	"docs.functions.equip_batch.empty_entries": "空の要素がある場合、装備リクエストを送信する前にPromiseが拒否されます。",
-	"docs.guide.event-witchcipher.pay_fits": "現在の手がかりすべてに一致する新しい調合（その日の2回目以降のレシピ解明も含む）"
+	"docs.guide.event-witchcipher.pay_fits": "現在の手がかりすべてに一致する新しい調合（その日の2回目以降のレシピ解明も含む）",
+	"docs.articles.data-monster.id_namespace": "エンティティのidは、ゲームから渡された値をそのまま使ってください。モンスターIDは数字で構成された文字列で、キャラクター名と重複することはありません。",
+	"docs.functions.destroy.item_changed": "サーバーがリクエストを処理する前に、そのスロットのアイテムが変わると、item_changed で拒否されます。",
+	"docs.functions.trade.slot_unavailable": "出品の取引スロットが利用できなくなっている場合、item_goneで拒否します。"
 }

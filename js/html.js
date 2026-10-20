@@ -8526,7 +8526,7 @@ function to_pretty_fraction(num) {
 		[10, "10", "#909090"],
 		[1, "1", "#64C287"],
 	].forEach(function (l) {
-		if (num * l[0] > 1) html = to_pretty_float(num * l[0]) + "<span style='color:" + l[2] + "'>/" + l[1] + "</span>";
+		if (num * l[0] >= 1) html = to_pretty_float(num * l[0]) + "<span style='color:" + l[2] + "'>/" + l[1] + "</span>";
 	});
 	return html;
 }

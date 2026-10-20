@@ -909,5 +909,12 @@
 	"update.08_10_26.halloween.support_78": "Velké zprávy CODE se nyní správně započítávají do limitu volání.",
 	"update.08_10_26.halloween.support_79": "Prázdné položky equip_batch nyní vracejí chybu.",
 	"update.08_10_26.halloween.item_bonuses": "Popisky předmětů nyní zobrazují číselné hodnoty bonusů pro mapy a třídy.",
-	"update.08_10_26.halloween.mp_reduction_cap": "Snížení spotřeby many je nyní omezeno na 80 %."
+	"update.08_10_26.halloween.mp_reduction_cap": "Snížení spotřeby many je nyní omezeno na 80 %.",
+	"update.08_10_26.halloween.support_80": "ID příšer se už neshodují s číselnými jmény postav.",
+	"update.08_10_26.halloween.support_81": "Opraveno vzájemné odmítání souběžných přihlášení na stejném účtu.",
+	"update.08_10_26.halloween.support_82": "town() a smart_move nyní čekají na dokončení teleportu do města.",
+	"update.08_10_26.halloween.support_84": "Požadavky na zničení už nezničí jiný předmět přesunutý do stejné pozice v batohu.",
+	"update.08_10_26.halloween.support_85": "Zobrazení banky v Hubu už neodhaluje skrytá data předmětů.",
+	"update.08_10_26.halloween.support_86": "Přesné šance na kořist se nyní zobrazují jednoduššími zlomky, například 1/1M.",
+	"update.08_10_26.halloween.support_87": "Přes uzavřené obchodní sloty už nelze obchodovat pomocí uložených nabídek."
 }

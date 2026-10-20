@@ -909,5 +909,12 @@
 	"update.08_10_26.halloween.support_78": "Mesajele CODE mari sunt acum contorizate corect în limita de apeluri.",
 	"update.08_10_26.halloween.support_79": "Intrările goale din equip_batch returnează acum o eroare.",
 	"update.08_10_26.halloween.item_bonuses": "Descrierile obiectelor arată acum valorile bonusurilor de hartă și de clasă.",
-	"update.08_10_26.halloween.mp_reduction_cap": "Reducerea costului de mană este acum limitată la 80%."
+	"update.08_10_26.halloween.mp_reduction_cap": "Reducerea costului de mană este acum limitată la 80%.",
+	"update.08_10_26.halloween.support_80": "ID-urile monștrilor nu se mai suprapun cu numele numerice ale personajelor.",
+	"update.08_10_26.halloween.support_81": "S-a remediat respingerea reciprocă a autentificărilor simultane pe același cont.",
+	"update.08_10_26.halloween.support_82": "town() și smart_move așteaptă acum finalizarea teleportării în oraș.",
+	"update.08_10_26.halloween.support_84": "Cererile de distrugere nu mai distrug un alt obiect mutat în același loc din geantă.",
+	"update.08_10_26.halloween.support_85": "Vizualizarea băncii din Hub nu mai dezvăluie date ascunse ale obiectelor.",
+	"update.08_10_26.halloween.support_86": "Șansele exacte de pradă folosesc acum fracții mai simple, precum 1/1M.",
+	"update.08_10_26.halloween.support_87": "Nu se mai poate tranzacționa prin sloturile închise ale negustorilor folosind oferte din cache."
 }

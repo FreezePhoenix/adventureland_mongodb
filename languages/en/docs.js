@@ -1,5 +1,11 @@
 // English documentation catalog. IDs identify source meaning and usage.
 module.exports = {
+	// trade_buy and trade_sell reject unavailable listing slots. Keep item_gone unchanged.
+	"docs.functions.trade.slot_unavailable": "Rejects with item_gone if the listing's trade slot is no longer available.",
+	// destroy() rejects a changed inventory item. Keep the CODE reason item_changed unchanged.
+	"docs.functions.destroy.item_changed": "Rejects with item_changed if the item in that slot changes before the server handles the request.",
+	// Monster identifiers cannot match legal character names. Preserve the CODE property id.
+	"docs.articles.data-monster.id_namespace": "Use the entity's id as given by the game. Monster IDs are numeric strings and cannot overlap with character names.",
 	// A route recalculation continues the same journey. Preserve smart_move and Promise.
 	"docs.functions.smart_move.replan": "If the route is lost, smart_move searches again. Its Promise stays pending until the journey finishes or fails.",
 	// Empty inventory slots reject the CODE compound Promise. Preserve Promise and .catch().
@@ -3859,7 +3865,7 @@ module.exports = {
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion":
 		"<b>Returns:</b> Promise resolving with {success:true} after completion, or rejecting on server failure, interruption, disconnection, or the 10-second completion timeout.",
 	// docs/functions/town.html:2; Documentation p prose block. Keep Adventure Land, CODE symbols, and item/NPC/map/monster names unchanged.
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Starts the town teleport and waits until the channel has ended.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Starts the town teleport and waits for the server to confirm arrival.",
 	// docs/functions/trade.html:6; Documentation p prose block. Keep Adventure Land, CODE symbols, and item/NPC/map/monster names unchanged. Fixed HTML: preserve every tag, attribute, handler and URL exactly; translate visible prose only.
 	"docs.functions.trade.example": "<b>Example:</b>",
 	// docs/functions/trade.html:2; Documentation p prose block. Keep Adventure Land, CODE symbols, and item/NPC/map/monster names unchanged.
@@ -5499,7 +5505,7 @@ module.exports = {
 	// docs/guide/stats.html:13; Documentation div prose block. Keep Adventure Land, CODE symbols, and item/NPC/map/monster names unchanged. Fixed HTML: preserve every tag, attribute, handler and URL exactly; translate visible prose only.
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": '<span style="color: #3A3B3B">Stat:</span> Becomes a main attribute with a scroll.',
 	// docs/guide/stats.html:2; Documentation div prose block. Keep Adventure Land, CODE symbols, and item/NPC/map/monster names unchanged. Fixed HTML: preserve every tag, attribute, handler and URL exactly; translate visible prose only.
-	"docs.guide.stats.strength-increases-hp-armor": '<span style="color: #3A3B3B">Strength:</span> Increases HP, Armor. <!--Increases the attack of warriors.-->',
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Strength:</span> Increases HP, Armor and run speed. <!--Increases the attack of warriors.-->",
 	// docs/guide/stats.html:5; Documentation div prose block. Keep Adventure Land, CODE symbols, and item/NPC/map/monster names unchanged. Fixed HTML: preserve every tag, attribute, handler and URL exactly; translate visible prose only.
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": '<span style="color: #3A3B3B">Vitality:</span> Increases HP proportional to level.',
 	// docs/guide/stats.html:27; Class overview. Translate class names. Merchants can use dartguns and explicitly allowed skills; priest output starts at 40 but equipment and conditions can change it. Keep Adventure Land, CODE symbols, and item/NPC/map/monster names unchanged.

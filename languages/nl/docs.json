@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>Voorbeeld:</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Promise-fouten:</b> Tenzij een opmerking bij de functie anders aangeeft, wordt de Promise bij fouten afgewezen met een object met <span class='dlabel'>failed: true</span> en een <span class='dlabel'>reason</span>. Na <span class='dlabel'>mode_resolve_all()</span> wordt de Promise bij dezelfde fouten juist vervuld.",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>Retourneert:</b> Een Promise die na voltooiing wordt vervuld met {success:true}, of wordt afgewezen bij een serverfout, onderbreking, verbroken verbinding of het verstrijken van de voltooiingstime-out van 10 seconden.",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Start de teleportatie naar de stad en wacht tot het kanaliseren is afgelopen.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Start de teleportatie naar de stad en wacht totdat de server de aankomst bevestigt.",
 	"docs.functions.trade.example": "<b>Voorbeeld:</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "Biedt een voorwerp uit de inventaris aan in een van je handelsvakken als handelaar.",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Bezoeken van Merrit:</b> Houd een gevulde kraam twee minuten open op dezelfde plek. Je account kan één pakket per uur ontvangen. Blijf meer dan 40px van stilstaande NPC's en laat ruimte tussen winkels; de winkel die het eerst is opgezet, behoudt zijn plek. <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit: alle regels en ruilkansen</span>.",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "Vaardigheden",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">Bewegingssnelheid:</span> Verhoogt de loopsnelheid.",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">Eigenschap:</span> Wordt met een rol een hoofdeigenschap.",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Kracht:</span> Verhoogt HP en pantser. <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Kracht:</span> Verhoogt HP, pantser en loopsnelheid. <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">Vitaliteit:</span> Verhoogt HP evenredig met het niveau.",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "Krijgers, sluipers, boogschutters en paladijnen brengen fysieke schade toe; magiërs en priesters brengen magische schade toe. Handelaren verdienen ervaring door met andere spelers te handelen en kunnen met een dartgun aanvallen. Priesters kunnen andere spelers genezen. Hun aanvalskracht begint op 40% van hun genezingskracht, vóór bonussen, toestanden en de verdediging van het doelwit.",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">Worp ≤ 55 wint</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "Als een geselecteerd vak leeg is, wordt de teruggegeven Promise afgewezen. Handel de fout af met .catch().",
 	"docs.functions.send_cm.message_size": "Grotere berichten verbruiken meer van de aanroeplimiet. Houd herhaalde CODE-berichten kort.",
 	"docs.functions.equip_batch.empty_entries": "Lege vermeldingen wijzen de Promise af voordat er een verzoek om uitrusting te dragen wordt verzonden.",
-	"docs.guide.event-witchcipher.pay_fits": "Een nieuwe mix die aan alle aanwijzingen op het huidige bord voldoet, ook als je later die dag opnieuw een recept ontdekt"
+	"docs.guide.event-witchcipher.pay_fits": "Een nieuwe mix die aan alle aanwijzingen op het huidige bord voldoet, ook als je later die dag opnieuw een recept ontdekt",
+	"docs.articles.data-monster.id_namespace": "Gebruik de id van de entiteit zoals het spel die aanlevert. Monster-ID's zijn numerieke tekenreeksen en kunnen niet overeenkomen met personagenamen.",
+	"docs.functions.destroy.item_changed": "Wordt afgewezen met item_changed als het voorwerp in dat vak verandert voordat de server het verzoek verwerkt.",
+	"docs.functions.trade.slot_unavailable": "Wijst af met item_gone als het handelsvak van de aanbieding niet meer beschikbaar is."
 }

@@ -909,5 +909,12 @@
 	"update.08_10_26.halloween.support_78": "大型 CODE 消息现在会正确计入调用限额。",
 	"update.08_10_26.halloween.support_79": "equip_batch 中的空条目现在会返回错误。",
 	"update.08_10_26.halloween.item_bonuses": "物品提示现在会显示地图和职业加成的具体数值。",
-	"update.08_10_26.halloween.mp_reduction_cap": "法力消耗减免现在最高为80%。"
+	"update.08_10_26.halloween.mp_reduction_cap": "法力消耗减免现在最高为80%。",
+	"update.08_10_26.halloween.support_80": "怪物ID不再与纯数字角色名重叠。",
+	"update.08_10_26.halloween.support_81": "修复了同一账号同时登录多个角色时互相拒绝登录的问题。",
+	"update.08_10_26.halloween.support_82": "town()和smart_move现在会等待回城传送完成。",
+	"update.08_10_26.halloween.support_84": "销毁请求不再销毁被移入同一背包栏位的其他物品。",
+	"update.08_10_26.halloween.support_85": "Hub 银行界面不再泄露物品的隐藏数据。",
+	"update.08_10_26.halloween.support_86": "精确掉落概率现在使用更简单的分数显示，例如 1/1M。",
+	"update.08_10_26.halloween.support_87": "无法再使用缓存的商品信息通过已关闭的商人栏位进行交易。"
 }

@@ -159,7 +159,7 @@
 	"pages.contents.guide.github-our-official-github-houses-the-runner-functions": "<span style=\"color: #f4f4f4\">&gt;</span>\n\t\t\t<a href=\"https://github.com/kaansoral/adventureland_mongodb/blob/main/js/runner_functions.js\" class=\"eexternal\" target=\"_blank\" style=\"color: #469ecf; text-decoration: none\">Github:</a> Github\n\t\t\tresmi kami menyimpan \"runner_functions.js\" yang berisi semua fungsi dasar CODE",
 	"pages.contents.guide.heal": "Sembuhkan",
 	"pages.contents.guide.if-anyone-is-breaking-the-rules-just-email": "<span style=\"color: #f4f4f4\">&gt;</span> Jika ada yang melanggar aturan, kirim tangkapan layar pelanggarannya ke hello@adventure.land",
-	"pages.contents.guide.increases-hp-armor": "Meningkatkan HP dan Zirah.",
+	"pages.contents.guide.increases-hp-armor": "Meningkatkan HP, zirah, dan kecepatan lari.",
 	"pages.contents.guide.increases-mp-resistance": "Meningkatkan MP dan Resistansi.",
 	"pages.contents.guide.intelligence": "Kecerdasan:",
 	"pages.contents.guide.interact": "Berinteraksi",

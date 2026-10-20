@@ -909,5 +909,12 @@
 	"update.08_10_26.halloween.support_78": "Mesej CODE yang besar kini dikira dengan betul dalam had panggilan.",
 	"update.08_10_26.halloween.support_79": "Entri kosong dalam equip_batch kini mengembalikan ralat.",
 	"update.08_10_26.halloween.item_bonuses": "Petua alat item kini menunjukkan nilai bonus peta dan kelas.",
-	"update.08_10_26.halloween.mp_reduction_cap": "Pengurangan Kos Mana kini dihadkan kepada 80%."
+	"update.08_10_26.halloween.mp_reduction_cap": "Pengurangan Kos Mana kini dihadkan kepada 80%.",
+	"update.08_10_26.halloween.support_80": "ID raksasa tidak lagi bertindih dengan nama watak yang terdiri daripada nombor.",
+	"update.08_10_26.halloween.support_81": "Masalah log masuk serentak pada akaun yang sama saling menolak telah dibetulkan.",
+	"update.08_10_26.halloween.support_82": "town() dan smart_move kini menunggu sehingga teleportasi ke bandar selesai.",
+	"update.08_10_26.halloween.support_84": "Permintaan pemusnahan tidak lagi memusnahkan item lain yang dipindahkan ke slot beg yang sama.",
+	"update.08_10_26.halloween.support_85": "Paparan bank dalam Hub tidak lagi mendedahkan data item tersembunyi.",
+	"update.08_10_26.halloween.support_86": "Kebarangkalian drop yang tepat kini menggunakan pecahan lebih ringkas, seperti 1/1M.",
+	"update.08_10_26.halloween.support_87": "Slot pedagang yang ditutup tidak lagi boleh digunakan untuk berdagang melalui tawaran dalam cache."
 }

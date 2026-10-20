@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>示例：</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Promise失败：</b>除非函数另有说明，失败时会以包含<span class='dlabel'>failed: true</span>和<span class='dlabel'>reason</span>的对象拒绝。调用<span class='dlabel'>mode_resolve_all()</span>后，同样的失败结果会改为兑现。",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>返回：</b>Promise，完成后以{success:true}兑现；服务器失败、中断、断线或超过10秒完成时限时拒绝。",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "开始返回中心传送，并等待引导结束。",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "开始回城传送，并等待服务器确认到达。",
 	"docs.functions.trade.example": "<b>示例：</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "将背包物品上架到你的一个商人交易栏位。",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Merrit来访：</b>在同一位置保持摊位开放且有货两分钟。每个账号每小时可收到一个包裹。与固定NPC保持超过40px的距离，并在摊位之间留出空间；先开张的摊位保留原位。<span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit：完整规则与兑换概率</span>。",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "技能",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">移动速度：</span>提高奔跑速度。",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">属性：</span>使用卷轴可转为一项主要属性。",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">力量：</span>提高HP和护甲。 <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">力量：</span> 提高HP、护甲和移动速度。 <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">体力：</span>按等级比例提高HP。",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "战士、盗贼、游侠和圣骑士造成物理伤害；法师和牧师造成魔法伤害。商人通过与其他玩家交易获得经验，也可用飞镖枪攻击。牧师可以治疗其他玩家。在计入加成、状态和目标防御前，其初始攻击威力为治疗威力的40%。",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">掷出≤55即获胜</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "如果选中的栏位为空，返回的 Promise 会被拒绝。请用 .catch() 处理错误。",
 	"docs.functions.send_cm.message_size": "消息越大，占用的调用限额越多。请尽量缩短重复发送的 CODE 消息。",
 	"docs.functions.equip_batch.empty_entries": "空条目会在发送任何装备请求之前使 Promise 被拒绝。",
-	"docs.guide.event-witchcipher.pay_fits": "符合当前线索板所有线索的新组合，包括当天后续破解配方的组合"
+	"docs.guide.event-witchcipher.pay_fits": "符合当前线索板所有线索的新组合，包括当天后续破解配方的组合",
+	"docs.articles.data-monster.id_namespace": "请直接使用游戏提供的实体id。怪物ID是由数字组成的字符串，不会与角色名重叠。",
+	"docs.functions.destroy.item_changed": "如果服务器处理请求前，该栏位中的物品发生变化，请求会被拒绝，并返回 item_changed。",
+	"docs.functions.trade.slot_unavailable": "如果商品所在的交易栏位已不可用，则以 item_gone 拒绝请求。"
 }

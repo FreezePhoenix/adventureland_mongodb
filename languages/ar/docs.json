@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>مثال:</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>حالات فشل Promise:</b> ما لم تنص ملاحظة خاصة بالدالة على خلاف ذلك، تؤدي حالات الفشل إلى رفض Promise بكائن يحتوي على <span class='dlabel'>failed: true</span> و<span class='dlabel'>reason</span>. بعد <span class='dlabel'>mode_resolve_all()</span>، تؤدي حالات الفشل نفسها إلى الوفاء بـ Promise بدلا من رفضه.",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>القيمة المعادة:</b> Promise يتم الوفاء به مع {success:true} بعد الاكتمال، أو يرفض عند فشل الخادم، أو المقاطعة، أو انقطاع الاتصال، أو انتهاء مهلة الاكتمال البالغة 10 ثوان.",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "يبدأ الانتقال إلى البلدة وينتظر حتى تنتهي فترة التحضير.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "يبدأ الانتقال إلى المدينة وينتظر تأكيد الوصول من الخادم.",
 	"docs.functions.trade.example": "<b>مثال:</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "يعرض غرضا من الحقيبة في إحدى خانات التجارة لدى تاجرك.",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>زيارات Merrit:</b> أبقِ بسطة متجرك مفتوحة وبها بضاعة في المكان نفسه لدقيقتين. يمكن لحسابك تلقي طرد واحد كل ساعة. ابتعد أكثر من 40px عن الشخصيات غير اللاعبة الثابتة واترك مساحة بين المتاجر؛ المتجر الذي أُقيم أولًا يحتفظ بمكانه. <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit: القواعد الكاملة واحتمالات التبادل</span>.",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "المهارات",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">سرعة الحركة:</span> تزيد سرعة الركض.",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">سمة:</span> تتحول إلى خاصية رئيسية باستخدام لفافة.",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">قوة:</span> تزيد HP والدرع. <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">قوة:</span> يزيد HP والدروع وسرعة الركض. <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">حيوية:</span> تزيد HP بما يتناسب مع المستوى.",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "يلحق المحاربون والمحتالون والرماة والفرسان المقدسون ضررًا جسديًا؛ ويلحق السحرة والكهنة ضررًا سحريًا. يكتسب التجار الخبرة بالتجارة مع اللاعبين الآخرين، ويمكنهم الهجوم ببندقية سهام. يستطيع الكهنة شفاء اللاعبين الآخرين. تبدأ قوة هجومهم عند 40% من قوة علاجهم، قبل المكافآت والحالات ودفاعات الهدف.",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">نتيجة الرمية ≤ 55 تفوز</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "إذا كانت خانة محددة فارغة، يُرفض Promise المُعاد. عالج الخطأ باستخدام .catch().",
 	"docs.functions.send_cm.message_size": "تستهلك الرسائل الأكبر حصة أكبر من حد الاستدعاءات. اجعل رسائل CODE المتكررة قصيرة.",
 	"docs.functions.equip_batch.empty_entries": "تتسبب العناصر الفارغة في رفض Promise قبل إرسال أي طلب لتجهيز العتاد.",
-	"docs.guide.event-witchcipher.pay_fits": "مزيج جديد يطابق جميع الأدلة على اللوحة الحالية، بما في ذلك كشف وصفات أخرى لاحقًا في اليوم نفسه"
+	"docs.guide.event-witchcipher.pay_fits": "مزيج جديد يطابق جميع الأدلة على اللوحة الحالية، بما في ذلك كشف وصفات أخرى لاحقًا في اليوم نفسه",
+	"docs.articles.data-monster.id_namespace": "استخدم قيمة id للكيان كما تقدّمها اللعبة. معرّفات الوحوش سلاسل نصية مكوّنة من أرقام ولا يمكن أن تتطابق مع أسماء الشخصيات.",
+	"docs.functions.destroy.item_changed": "يُرفض الطلب مع item_changed إذا تغيّر العنصر في تلك الخانة قبل أن يعالج الخادم الطلب.",
+	"docs.functions.trade.slot_unavailable": "يُرفض الطلب مع item_gone إذا لم تعد خانة التداول الخاصة بالقائمة متاحة."
 }

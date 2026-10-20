@@ -909,5 +909,12 @@
 	"update.08_10_26.halloween.support_78": "Tin nhắn CODE lớn giờ được tính đúng vào giới hạn lượt gọi.",
 	"update.08_10_26.halloween.support_79": "Các phần tử trống trong equip_batch giờ trả về lỗi.",
 	"update.08_10_26.halloween.item_bonuses": "Chú giải vật phẩm giờ hiển thị giá trị cụ thể của các chỉ số cộng thêm theo bản đồ và lớp nhân vật.",
-	"update.08_10_26.halloween.mp_reduction_cap": "Giảm mana tiêu hao giờ được giới hạn ở mức 80%."
+	"update.08_10_26.halloween.mp_reduction_cap": "Giảm mana tiêu hao giờ được giới hạn ở mức 80%.",
+	"update.08_10_26.halloween.support_80": "ID quái vật không còn trùng với tên nhân vật chỉ gồm chữ số.",
+	"update.08_10_26.halloween.support_81": "Đã sửa lỗi các lần đăng nhập đồng thời trên cùng tài khoản từ chối lẫn nhau.",
+	"update.08_10_26.halloween.support_82": "town() và smart_move giờ chờ dịch chuyển về thị trấn hoàn tất.",
+	"update.08_10_26.halloween.support_84": "Yêu cầu phá hủy không còn phá hủy vật phẩm khác được chuyển vào cùng ô túi.",
+	"update.08_10_26.halloween.support_85": "Giao diện ngân hàng trong Hub không còn để lộ dữ liệu ẩn của vật phẩm.",
+	"update.08_10_26.halloween.support_86": "Tỉ lệ rơi chính xác nay được hiển thị bằng phân số đơn giản hơn, như 1/1M.",
+	"update.08_10_26.halloween.support_87": "Không thể giao dịch qua ô bán hàng đã đóng bằng danh sách lưu trong bộ nhớ đệm nữa."
 }

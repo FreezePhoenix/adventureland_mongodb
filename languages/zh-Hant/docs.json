@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>範例：</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Promise失敗：</b>除非函式另有說明，失敗時會以包含<span class='dlabel'>failed: true</span>和<span class='dlabel'>reason</span>的物件拒絕。呼叫<span class='dlabel'>mode_resolve_all()</span>後，同樣的失敗結果會改為兌現。",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>回傳：</b>Promise，完成後以{success:true}兌現；伺服器失敗、中斷、斷線或超過10秒完成時限時拒絕。",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "開始返回中心傳送，並等待引導結束。",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "開始回城傳送，並等待伺服器確認抵達。",
 	"docs.functions.trade.example": "<b>範例：</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "將背包物品上架到你的一個商人交易欄位。",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Merrit來訪：</b>在同一位置保持攤位開放且有貨兩分鐘。每個帳號每小時可收到一個包裹。與固定NPC保持超過40px的距離，並在攤位之間留出空間；先開張的攤位保留原位。<span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit：完整規則與兌換機率</span>。",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "技能",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">移動速度：</span>提高奔跑速度。",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">屬性：</span>使用捲軸可轉為一項主要屬性。",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">力量：</span>提高HP和護甲。 <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">力量：</span> 提高HP、護甲和移動速度。 <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">體力：</span>按等級比例提高HP。",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "戰士、盜賊、遊俠和聖騎士造成物理傷害；法師和牧師造成魔法傷害。商人透過與其他玩家交易獲得經驗，也可用飛鏢槍攻擊。牧師可以治療其他玩家。在計入加成、狀態和目標防禦前，其初始攻擊威力為治療威力的40%。",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">擲出≤55即獲勝</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "如果選取的欄位是空的，傳回的 Promise 會被拒絕。請用 .catch() 處理錯誤。",
 	"docs.functions.send_cm.message_size": "訊息越大，占用的呼叫限額越多。請盡量縮短重複傳送的 CODE 訊息。",
 	"docs.functions.equip_batch.empty_entries": "空項目會在送出任何裝備請求之前使 Promise 被拒絕。",
-	"docs.guide.event-witchcipher.pay_fits": "符合目前提示板所有提示、且尚未出現過的新組合，包括當天之後再次破解配方的組合"
+	"docs.guide.event-witchcipher.pay_fits": "符合目前提示板所有提示、且尚未出現過的新組合，包括當天之後再次破解配方的組合",
+	"docs.articles.data-monster.id_namespace": "請直接使用遊戲提供的實體id。怪物ID是由數字組成的字串，不會與角色名稱重複。",
+	"docs.functions.destroy.item_changed": "如果伺服器處理請求前，該欄位中的物品發生變化，請求會被拒絕，並傳回 item_changed。",
+	"docs.functions.trade.slot_unavailable": "如果商品所在的交易欄位已無法使用，則以 item_gone 拒絕請求。"
 }

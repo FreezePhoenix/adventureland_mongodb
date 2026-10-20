@@ -8779,6 +8779,9 @@ function init_socket_io(socket_server, server_index) {
 			}
 			var item = player.items[data.num];
 			var name = player.items[data.num].name;
+			if (data.item !== undefined && !seen_item_matches(item, data.item)) {
+				return fail_response("item_changed", { num: data.num });
+			}
 			data.q = min(max(parseInt(data.q) || 0, 1), (item && item.q) || 1);
 			if (item.name == "placeholder") {
 				return fail_response("item_placeholder", { num: data.num });
@@ -8931,7 +8934,7 @@ function init_socket_io(socket_server, server_index) {
 			if (!buyer || buyer.npc || is_invis(buyer)) {
 				return fail_response("buyer_gone");
 			}
-			if (player.user) {
+			if (buyer.user) {
 				return fail_response("cant_in_bank");
 			}
 			if (distance(buyer, player, true) > B.dist) {
@@ -8941,7 +8944,7 @@ function init_socket_io(socket_server, server_index) {
 				return fail_response("hmm");
 			}
 			var item = buyer.slots[data.slot];
-			if (!item || (data.rid && item.rid != data.rid)) {
+			if (!item || (data.rid && item.rid != data.rid) || !get_trade_slots(buyer).includes(data.slot)) {
 				return fail_response("item_gone");
 			}
 			if (item.name == "placeholder") {
@@ -9070,7 +9073,7 @@ function init_socket_io(socket_server, server_index) {
 				return fail_response("hmm");
 			}
 			var item = seller.slots[data.slot];
-			if (!item || (data.rid && item.rid != data.rid)) {
+			if (!item || (data.rid && item.rid != data.rid) || !get_trade_slots(seller).includes(data.slot)) {
 				return fail_response("item_gone");
 			}
 			if (item.name == "placeholder") {
@@ -13566,7 +13569,8 @@ function new_monster(instance, map_def, args) {
 		args = {};
 	}
 	var monster = {};
-	var id = ++total_monsters + "";
+	// Character names are at most 12 characters; keep numeric monster IDs outside that namespace.
+	var id = 1000000000000 + ++total_monsters + "";
 	var name = map_def.type;
 	monster.id = id;
 	monster.cid = 1;

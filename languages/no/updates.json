@@ -909,5 +909,12 @@
 	"update.08_10_26.halloween.support_78": "Store CODE-meldinger teller nå riktig mot grensen for kall.",
 	"update.08_10_26.halloween.support_79": "Tomme oppføringer i equip_batch returnerer nå en feil.",
 	"update.08_10_26.halloween.item_bonuses": "Verktøytips for gjenstander viser nå tallene for kart- og klassebonuser.",
-	"update.08_10_26.halloween.mp_reduction_cap": "Redusert manakostnad er nå begrenset til 80 %."
+	"update.08_10_26.halloween.mp_reduction_cap": "Redusert manakostnad er nå begrenset til 80 %.",
+	"update.08_10_26.halloween.support_80": "Monster-ID-er overlapper ikke lenger med numeriske karakternavn.",
+	"update.08_10_26.halloween.support_81": "Rettet at samtidige innlogginger på samme konto avviste hverandre.",
+	"update.08_10_26.halloween.support_82": "town() og smart_move venter nå til teleporteringen til byen er ferdig.",
+	"update.08_10_26.halloween.support_84": "Forespørsler om å ødelegge en gjenstand ødelegger ikke lenger en annen gjenstand som er flyttet til samme plass i vesken.",
+	"update.08_10_26.halloween.support_85": "Bankvisningen i Hub viser ikke lenger skjulte gjenstandsdata.",
+	"update.08_10_26.halloween.support_86": "Nøyaktige dropprater vises nå med enklere brøker, som 1/1M.",
+	"update.08_10_26.halloween.support_87": "Lukkede handelsplasser kan ikke lenger brukes via mellomlagrede tilbud."
 }

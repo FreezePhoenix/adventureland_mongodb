@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>Ví dụ:</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Promise khi thất bại:</b> Trừ khi ghi chú riêng của hàm nói khác, thất bại khiến Promise bị từ chối với một đối tượng chứa <span class='dlabel'>failed: true</span> và <span class='dlabel'>reason</span>. Sau <span class='dlabel'>mode_resolve_all()</span>, chính các thất bại đó sẽ khiến Promise hoàn tất thay vì bị từ chối.",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>Trả về:</b> Promise hoàn tất với {success:true} sau khi xong, hoặc bị từ chối do lỗi máy chủ, bị ngắt, mất kết nối hay hết thời gian chờ hoàn tất 10 giây.",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Bắt đầu dịch chuyển về thị trấn và chờ đến khi kết thúc niệm phép.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Bắt đầu dịch chuyển về thị trấn và chờ máy chủ xác nhận đã đến nơi.",
 	"docs.functions.trade.example": "<b>Ví dụ:</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "Đăng bán vật phẩm trong túi đồ vào một ô giao dịch thương nhân của bạn.",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Những chuyến ghé thăm của Merrit:</b> Giữ gian hàng mở, có hàng và ở nguyên một chỗ trong hai phút. Tài khoản của bạn có thể nhận một bưu kiện mỗi giờ. Đứng cách NPC cố định hơn 40px và chừa khoảng trống giữa các gian hàng; gian hàng dựng trước được giữ chỗ. <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit: đầy đủ quy tắc và tỉ lệ trao đổi</span>.",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "Kỹ năng",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">Tốc độ di chuyển:</span> Tăng tốc độ chạy.",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">Chỉ số:</span> Dùng cuộn giấy để chuyển thành một thuộc tính chính.",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Sức mạnh:</span> Tăng HP và giáp. <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Sức mạnh:</span> Tăng HP, giáp và tốc độ chạy. <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">Thể lực:</span> Tăng HP theo tỉ lệ với cấp.",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "Chiến binh, đạo tặc, cung thủ và thánh kỵ sĩ gây sát thương vật lý; pháp sư và giáo sĩ gây sát thương phép thuật. Thương nhân nhận kinh nghiệm qua giao dịch với người chơi khác và có thể tấn công bằng súng phi tiêu. Giáo sĩ có thể hồi máu cho người chơi khác. Sức tấn công ban đầu của họ bằng 40% sức hồi máu, trước khi tính các mức cộng thêm, trạng thái và phòng thủ của mục tiêu.",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">Đổ ≤ 55 là thắng</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "Nếu một ô được chọn đang trống, Promise trả về sẽ bị từ chối. Hãy xử lý lỗi bằng .catch().",
 	"docs.functions.send_cm.message_size": "Tin nhắn lớn hơn dùng nhiều hạn mức lượt gọi hơn. Hãy giữ các tin nhắn CODE lặp lại thật ngắn.",
 	"docs.functions.equip_batch.empty_entries": "Các phần tử trống khiến Promise bị từ chối trước khi gửi bất kỳ yêu cầu trang bị nào.",
-	"docs.guide.event-witchcipher.pay_fits": "Một lượt pha chế mới phù hợp với mọi manh mối trên bảng hiện tại, kể cả những lần giải mã tiếp theo trong ngày"
+	"docs.guide.event-witchcipher.pay_fits": "Một lượt pha chế mới phù hợp với mọi manh mối trên bảng hiện tại, kể cả những lần giải mã tiếp theo trong ngày",
+	"docs.articles.data-monster.id_namespace": "Dùng id của thực thể đúng như trò chơi cung cấp. ID quái vật là chuỗi chữ số và không thể trùng với tên nhân vật.",
+	"docs.functions.destroy.item_changed": "Bị từ chối với item_changed nếu vật phẩm trong ô đó thay đổi trước khi máy chủ xử lý yêu cầu.",
+	"docs.functions.trade.slot_unavailable": "Từ chối với item_gone nếu ô giao dịch của mặt hàng không còn khả dụng."
 }

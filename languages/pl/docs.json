@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>Przykład:</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Błędy Promise:</b> Jeśli opis danej funkcji nie mówi inaczej, błąd odrzuca Promise z obiektem zawierającym <span class='dlabel'>failed: true</span> i <span class='dlabel'>reason</span>. Po wywołaniu <span class='dlabel'>mode_resolve_all()</span> te same błędy zamiast tego spełniają Promise.",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>Zwraca:</b> Promise spełniane wartością {success:true} po zakończeniu lub odrzucane przy błędzie serwera, przerwaniu, rozłączeniu albo upływie 10-sekundowego limitu zakończenia.",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Rozpoczyna teleportację Powrót do centrum i czeka na zakończenie jej przygotowania.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Rozpoczyna teleportację do miasta i czeka na potwierdzenie przybycia przez serwer.",
 	"docs.functions.trade.example": "<b>Przykład:</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "Wystawia przedmiot z ekwipunku w jednym z twoich miejsc handlowych kupca.",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Wizyty Merrit:</b> Utrzymuj otwarte, zaopatrzone stoisko w tym samym miejscu przez dwie minuty. Konto może otrzymać jedną paczkę na godzinę. Zachowaj ponad 40px odstępu od nieruchomych NPC i zostaw miejsce między sklepami; sklep otwarty jako pierwszy zachowuje swoje miejsce. <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit: pełne zasady i szanse wymiany</span>.",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "Umiejętności",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">Szybkość ruchu:</span> Zwiększa szybkość biegu.",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">Statystyka:</span> Po użyciu zwoju staje się głównym atrybutem.",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Siła:</span> Zwiększa HP i pancerz. <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Siła:</span> Zwiększa HP, pancerz i szybkość biegu. <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">Witalność:</span> Zwiększa HP proporcjonalnie do poziomu.",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "Wojownicy, łotrzy, łowcy i paladyni zadają obrażenia fizyczne; magowie i kapłani — magiczne. Kupcy zdobywają doświadczenie przez handel z innymi graczami i mogą atakować pistoletem na strzałki. Kapłani mogą leczyć innych graczy. Ich początkowa siła ataku wynosi 40% siły leczenia, przed premiami, stanami i obroną celu.",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">Wynik ≤ 55 wygrywa</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "Jeśli wybrane pole jest puste, zwrócony Promise zostaje odrzucony. Obsłuż błąd za pomocą .catch().",
 	"docs.functions.send_cm.message_size": "Większe wiadomości zużywają więcej limitu wywołań. Powtarzane wiadomości CODE powinny być krótkie.",
 	"docs.functions.equip_batch.empty_entries": "Puste wpisy odrzucają Promise przed wysłaniem jakiegokolwiek żądania założenia wyposażenia.",
-	"docs.guide.event-witchcipher.pay_fits": "Nowa mieszanka pasująca do wszystkich wskazówek na bieżącej tablicy, w tym kolejne rozszyfrowania tego dnia"
+	"docs.guide.event-witchcipher.pay_fits": "Nowa mieszanka pasująca do wszystkich wskazówek na bieżącej tablicy, w tym kolejne rozszyfrowania tego dnia",
+	"docs.articles.data-monster.id_namespace": "Używaj id obiektu dokładnie w postaci podanej przez grę. ID potworów są ciągami znaków złożonymi z cyfr i nie mogą pokrywać się z nazwami postaci.",
+	"docs.functions.destroy.item_changed": "Odrzuca z item_changed, jeśli przedmiot w tym miejscu zmieni się, zanim serwer przetworzy żądanie.",
+	"docs.functions.trade.slot_unavailable": "Odrzuca z item_gone, jeśli pole handlowe oferty nie jest już dostępne."
 }

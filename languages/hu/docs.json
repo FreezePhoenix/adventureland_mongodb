@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>Példa:</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Promise-hibák:</b> Ha a függvény megjegyzése másként nem rendelkezik, hiba esetén a Promise elutasított állapotba kerül egy <span class='dlabel'>failed: true</span> mezőt és egy <span class='dlabel'>reason</span> értéket tartalmazó objektummal. A <span class='dlabel'>mode_resolve_all()</span> hívása után ugyanezek a hibák ehelyett teljesült állapotot eredményeznek.",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>Visszatérés:</b> Promise, amely befejezés után {success:true} értékkel teljesül, vagy szerverhiba, megszakítás, kapcsolatbontás, illetve a 10 másodperces befejezési időkorlát lejárta esetén elutasított állapotba kerül.",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Elindítja a városba teleportálást, és megvárja a varázslás végét.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Elindítja a városba teleportálást, és megvárja, amíg a szerver megerősíti a megérkezést.",
 	"docs.functions.trade.example": "<b>Példa:</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "Eladásra kínál egy tárgyat a táskádból az egyik kereskedőhelyeden.",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Merrit látogatásai:</b> Tarts egy nyitott, áruval feltöltött standot ugyanazon a helyen két percig. A fiókod óránként egy csomagot kaphat. Maradj több mint 40px-re a helyben álló NPC-ktől, és hagyj helyet a boltok között; az előbb felállított bolt megtartja a helyét. <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit: teljes szabályok és csereesélyek</span>.",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "Képességek",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">Mozgási sebesség:</span> Növeli a futás sebességét.",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">Érték:</span> Tekercs segítségével fő tulajdonsággá alakítható.",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Erő:</span> Növeli a HP-t és a páncélt. <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Erő:</span> Növeli a HP-t, a páncélt és a futási sebességet. <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">Vitalitás:</span> A szinttel arányosan növeli a HP-t.",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "A harcosok, orgyilkosok, íjászok és lovagok fizikai sebzést okoznak; a mágusok és papok mágikus sebzést. A kereskedők más játékosokkal kereskedve szereznek tapasztalatot, és dartgun fegyverrel támadhatnak. A papok gyógyíthatnak más játékosokat. Kiinduló támadóerejük a gyógyítóerejük 40%-a, a bónuszok, állapotok és a célpont védelme előtt.",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">Dobás ≤ 55: nyer</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "Ha egy kiválasztott hely üres, a visszaadott Promise elutasításra kerül. Kezeld a hibát a .catch() segítségével.",
 	"docs.functions.send_cm.message_size": "A nagyobb üzenetek többet használnak fel a hívási keretből. Az ismétlődő CODE-üzenetek legyenek rövidek.",
 	"docs.functions.equip_batch.empty_entries": "Az üres elemek elutasítják a Promise-t, mielőtt bármilyen felszerelési kérés elküldésre kerülne.",
-	"docs.guide.event-witchcipher.pay_fits": "Egy új keverék, amely megfelel az aktuális tábla összes nyomának, beleértve az aznapi további megfejtéseket is"
+	"docs.guide.event-witchcipher.pay_fits": "Egy új keverék, amely megfelel az aktuális tábla összes nyomának, beleértve az aznapi további megfejtéseket is",
+	"docs.articles.data-monster.id_namespace": "Az entitás id értékét a játék által megadott formában használd. A szörnyek azonosítói számjegyekből álló karakterláncok, és nem egyezhetnek meg a karakternevekkel.",
+	"docs.functions.destroy.item_changed": "item_changed hibával elutasítja a kérést, ha az adott helyen lévő tárgy megváltozik, mielőtt a szerver feldolgozná a kérést.",
+	"docs.functions.trade.slot_unavailable": "item_gone hibával elutasítja a kérést, ha az ajánlat kereskedési helye már nem érhető el."
 }

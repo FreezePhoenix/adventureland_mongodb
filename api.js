@@ -77,7 +77,10 @@ function load_bank_api(args) {
 		packs = {};
 	for (var i = 0; i < 48; i++) {
 		var pack = "items" + i;
-		if (Array.isArray(bank[pack])) packs[pack] = bank[pack].slice(0, 42);
+		if (Array.isArray(bank[pack]))
+			packs[pack] = bank[pack].slice(0, 42).map(function (item) {
+				return item ? simplify_item(Object.assign({}, item)) : null;
+			});
 	}
 	return { success: true, gold: bank.gold, packs: packs };
 }

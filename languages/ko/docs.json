@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>예시:</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Promise 실패:</b> 함수별 설명에 따로 명시하지 않았다면, 실패 시 <span class='dlabel'>failed: true</span>와 <span class='dlabel'>reason</span>이 담긴 객체로 거부돼요. <span class='dlabel'>mode_resolve_all()</span>을 호출한 뒤에는 같은 실패도 이행으로 처리돼요.",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>반환값:</b> 완료 후 {success:true}로 이행되는 Promise. 서버 실패, 중단, 연결 끊김 또는 10초의 완료 제한시간 초과 시 거부돼요.",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "중앙 귀환을 시작하고 시전이 끝날 때까지 기다려요.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "마을 순간이동을 시작하고 서버가 도착을 확인할 때까지 기다립니다.",
 	"docs.functions.trade.example": "<b>예시:</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "가방 아이템을 상인의 거래 슬롯 하나에 등록해요.",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Merrit의 방문:</b> 같은 자리에서 물건이 등록된 가판대를 2분간 열어두세요. 계정당 1시간에 소포 하나를 받을 수 있어요. 고정 NPC와 40px 넘게 떨어지고 상점 사이에도 공간을 남겨두세요. 먼저 연 상점이 자리를 유지해요. <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit: 전체 규칙과 교환 확률</span>.",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "스킬",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">이동 속도:</span> 달리는 속도를 높여요.",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">능력치:</span> 주문서로 주 능력치로 바뀌어요.",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">힘:</span> HP와 방어력을 높여요. <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">힘:</span> HP, 방어력, 이동 속도가 증가합니다. <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">활력:</span> 레벨에 비례해 HP를 높여요.",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "전사, 도적, 궁수, 성기사는 물리 피해를 주고 마법사와 사제는 마법 피해를 줘요. 상인은 다른 플레이어와 거래해 경험치를 얻고 다트총으로 공격할 수 있어요. 사제는 다른 플레이어를 치유할 수 있어요. 보너스, 상태, 대상 방어를 적용하기 전 사제의 기본 공격 위력은 치유 위력의 40%예요.",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">결과 ≤ 55이면 승리</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "선택한 슬롯이 비어 있으면 반환된 Promise가 거부됩니다. .catch()로 오류를 처리하세요.",
 	"docs.functions.send_cm.message_size": "메시지가 클수록 호출 한도를 더 많이 사용합니다. 반복해서 보내는 CODE 메시지는 짧게 유지하세요.",
 	"docs.functions.equip_batch.empty_entries": "빈 항목이 있으면 장비 장착 요청을 보내기 전에 Promise가 거부됩니다.",
-	"docs.guide.event-witchcipher.pay_fits": "현재 단서판의 모든 단서에 부합하는 새로운 조합 (그날 이후에 제조법을 알아낸 경우도 포함)"
+	"docs.guide.event-witchcipher.pay_fits": "현재 단서판의 모든 단서에 부합하는 새로운 조합 (그날 이후에 제조법을 알아낸 경우도 포함)",
+	"docs.articles.data-monster.id_namespace": "개체의 id는 게임에서 제공한 값 그대로 사용하세요. 몬스터 ID는 숫자로 구성된 문자열이며 캐릭터 이름과 겹칠 수 없습니다.",
+	"docs.functions.destroy.item_changed": "서버가 요청을 처리하기 전에 해당 칸의 아이템이 바뀌면 item_changed로 거부됩니다.",
+	"docs.functions.trade.slot_unavailable": "해당 거래 슬롯을 더 이상 사용할 수 없으면 item_gone으로 거부합니다."
 }

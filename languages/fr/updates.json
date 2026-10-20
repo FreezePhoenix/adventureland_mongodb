@@ -909,5 +909,12 @@
 	"update.08_10_26.halloween.support_78": "Les gros messages CODE sont désormais correctement comptés dans la limite d'appels.",
 	"update.08_10_26.halloween.support_79": "Les entrées vides d'equip_batch renvoient désormais une erreur.",
 	"update.08_10_26.halloween.item_bonuses": "Les infobulles des objets affichent désormais les valeurs des bonus de carte et de classe.",
-	"update.08_10_26.halloween.mp_reduction_cap": "La Réduction du coût en mana est désormais limitée à 80 %."
+	"update.08_10_26.halloween.mp_reduction_cap": "La Réduction du coût en mana est désormais limitée à 80 %.",
+	"update.08_10_26.halloween.support_80": "Les ID des monstres ne peuvent plus être identiques aux noms numériques des personnages.",
+	"update.08_10_26.halloween.support_81": "Correction des connexions simultanées sur un même compte qui se rejetaient mutuellement.",
+	"update.08_10_26.halloween.support_82": "town() et smart_move attendent désormais la fin de la téléportation en ville.",
+	"update.08_10_26.halloween.support_84": "Les demandes de destruction ne détruisent plus un autre objet déplacé dans le même emplacement du sac.",
+	"update.08_10_26.halloween.support_85": "La vue de la banque dans le Hub ne révèle plus les données cachées des objets.",
+	"update.08_10_26.halloween.support_86": "Les probabilités exactes de butin utilisent désormais des fractions plus simples, comme 1/1M.",
+	"update.08_10_26.halloween.support_87": "Les emplacements de marchand fermés ne permettent plus de transactions via des offres en cache."
 }

@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>Örnek:</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Promise hataları:</b> Fonksiyona özel not aksini söylemedikçe hatalar <span class='dlabel'>failed: true</span> ve <span class='dlabel'>reason</span> içeren nesneyle reddedilir. <span class='dlabel'>mode_resolve_all()</span> sonrasında aynı hatalar başarı yolundan döner.",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>Döndürür:</b> Tamamlandıktan sonra {success:true} ile sonuçlanan; sunucu hatası, kesilme, bağlantı kopması veya 10 saniyelik tamamlanma zaman aşımında reddedilen Promise.",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Kasabaya ışınlanmayı başlatır ve kanal süresi bitene kadar bekler.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Kasabaya ışınlanmayı başlatır ve sunucunun varışı doğrulamasını bekler.",
 	"docs.functions.trade.example": "<b>Örnek:</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "Envanter eşyasını tüccar ticaret yuvalarından birinde listeler.",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Merrit'in ziyaretleri:</b> Açık, stoklu tezgâhını iki dakika aynı yerde tut. Hesabın saatte bir paket alabilir. Sabit NPC'lerden 40px'ten fazla uzakta dur ve dükkânlar arasında yer bırak; önce açılan dükkân yerini korur. <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit: tüm kurallar ve takas olasılıkları</span>.",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "Yetenekler",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">Hız:</span> Koşu hızını artırır.",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">Nitelik:</span> Parşömenle ana niteliğe dönüşür.",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Güç:</span> HP ve Zırhı artırır. <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Güç:</span> HP, Zırh ve koşu hızını artırır. <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">Canlılık:</span> Seviyeyle orantılı HP artırır.",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "Savaşçılar, suikastçılar, okçular ve paladinler fiziksel; büyücüler ve rahipler büyülü hasar verir. Tüccarlar diğer oyuncularla ticaret yaparak deneyim kazanır ve dart tabancasıyla saldırabilir. Rahipler diğer oyuncuları iyileştirebilir. Başlangıçtaki saldırı güçleri, bonuslar, durum etkileri ve hedefin savunmaları hesaba katılmadan önce iyileştirme güçlerinin %40'ıdır.",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">Atış ≤ 55 Kazanır</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "Seçilen bir yuva boşsa döndürülen Promise reddedilir. Hatayı .catch() ile ele al.",
 	"docs.functions.send_cm.message_size": "Büyük mesajlar çağrı sınırından daha fazla harcar. Tekrarlanan CODE mesajlarını kısa tut.",
 	"docs.functions.equip_batch.empty_entries": "Boş girdiler, herhangi bir kuşanma isteği gönderilmeden Promise'ın reddedilmesine neden olur.",
-	"docs.guide.event-witchcipher.pay_fits": "Mevcut tahtadaki tüm ipuçlarına uyan yeni bir karışım; aynı gün sonraki şifre çözümleri de dahil"
+	"docs.guide.event-witchcipher.pay_fits": "Mevcut tahtadaki tüm ipuçlarına uyan yeni bir karışım; aynı gün sonraki şifre çözümleri de dahil",
+	"docs.articles.data-monster.id_namespace": "Varlığın id değerini oyunun verdiği biçimde kullan. Canavar kimlikleri sayısal dizelerdir ve karakter adlarıyla çakışamaz.",
+	"docs.functions.destroy.item_changed": "Sunucu isteği işlemeden önce o yuvadaki eşya değişirse item_changed ile reddedilir.",
+	"docs.functions.trade.slot_unavailable": "İlanın ticaret yuvası artık kullanılamıyorsa item_gone ile reddeder."
 }

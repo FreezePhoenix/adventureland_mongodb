@@ -29,6 +29,13 @@ module.exports = [
 			},
 		],
 		changes: [
+			{ fixed: "support_87", note: "Closed merchant slots can no longer be traded through cached listings." },
+			{ fixed: "support_86", note: "Exact drop odds now use simpler fractions, such as 1/1M." },
+			{ fixed: "support_85", note: "The Hub bank view no longer exposes hidden item data." },
+			{ fixed: "support_84", note: "Destroy requests no longer destroy a different item moved into the same bag slot." },
+			{ fixed: "support_82", note: "town() and smart_move now wait for town teleports to finish." },
+			{ fixed: "support_81", note: "Fixed simultaneous logins on the same account rejecting each other." },
+			{ fixed: "support_80", note: "Monster IDs no longer overlap with numeric character names." },
 			{ fixed: "support_79", note: "Empty equip_batch entries now return an error." },
 			{ fixed: "support_78", note: "Large CODE messages now count correctly toward the call limit." },
 			{ fixed: "support_77", note: "Compounding an empty slot no longer throws in CODE." },

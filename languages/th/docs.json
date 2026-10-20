@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>ตัวอย่าง:</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>เมื่อ Promise ล้มเหลว:</b> เว้นแต่หมายเหตุของฟังก์ชันจะระบุไว้ต่างออกไป เมื่อเกิดความล้มเหลว Promise จะ reject พร้อมออบเจ็กต์ที่มี <span class='dlabel'>failed: true</span> และ <span class='dlabel'>reason</span> หลังเรียก <span class='dlabel'>mode_resolve_all()</span> ความล้มเหลวแบบเดียวกันจะทำให้ Promise fulfill แทน",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>ค่าที่คืน:</b> Promise ที่ resolve พร้อม {success:true} หลังเสร็จสิ้น หรือ reject เมื่อเซิร์ฟเวอร์ล้มเหลว ถูกขัดจังหวะ ขาดการเชื่อมต่อ หรือรอให้เสร็จเกิน 10 วินาที",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "เริ่มเคลื่อนย้ายกลับเมืองและรอจนการร่ายสิ้นสุด",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "เริ่มวาร์ปกลับเมืองและรอให้เซิร์ฟเวอร์ยืนยันว่าถึงแล้ว",
 	"docs.functions.trade.example": "<b>ตัวอย่าง:</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "ลงขายไอเทมในกระเป๋าผ่านช่องค้าขายของพ่อค้าช่องหนึ่งของคุณ",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>การเยี่ยมของ Merrit:</b> เปิดแผงขายที่มีสินค้าในจุดเดิมเป็นเวลาสองนาที บัญชีของคุณรับพัสดุได้หนึ่งชิ้นต่อชั่วโมง อยู่ห่างจาก NPC ที่อยู่ประจำที่มากกว่า 40px และเว้นที่ว่างระหว่างร้าน ร้านที่เปิดก่อนจะได้อยู่ที่เดิม <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit: กติกาฉบับเต็มและโอกาสแลกเปลี่ยน</span>",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "ทักษะ",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">ความเร็วเคลื่อนที่:</span> เพิ่มความเร็วในการวิ่ง",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">ค่าสถานะ:</span> เปลี่ยนเป็นคุณลักษณะหลักได้ด้วยคัมภีร์",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">พละกำลัง:</span> เพิ่ม HP และเกราะ <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">พละกำลัง:</span> เพิ่ม HP เกราะ และความเร็วในการวิ่ง <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">พลังกาย:</span> เพิ่ม HP ตามสัดส่วนเลเวล",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "นักรบ โจร นักธนู และอัศวินศักดิ์สิทธิ์ทำความเสียหายกายภาพ ส่วนนักเวทและนักบวชทำความเสียหายเวท พ่อค้าได้รับค่าประสบการณ์จากการซื้อขายกับผู้เล่นอื่นและโจมตีด้วยปืนลูกดอกได้ นักบวชรักษาผู้เล่นอื่นได้ พลังโจมตีเริ่มต้นของนักบวชเท่ากับ 40% ของพลังรักษา ก่อนคิดโบนัส สถานะเงื่อนไข และการป้องกันของเป้าหมาย",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">ทอยได้ ≤ 55 ชนะ</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "หากช่องที่เลือกว่างอยู่ Promise ที่ส่งคืนจะถูกปฏิเสธ ให้จัดการข้อผิดพลาดด้วย .catch()",
 	"docs.functions.send_cm.message_size": "ข้อความที่ใหญ่กว่าจะใช้โควตาการเรียกมากกว่า ควรส่งข้อความ CODE ที่ต้องส่งซ้ำให้สั้น",
 	"docs.functions.equip_batch.empty_entries": "รายการว่างจะทำให้ Promise ถูกปฏิเสธก่อนส่งคำขอสวมใส่อุปกรณ์ใด ๆ",
-	"docs.guide.event-witchcipher.pay_fits": "การผสมใหม่ที่ตรงกับทุกเบาะแสบนกระดานปัจจุบัน รวมถึงการไขสูตรสำเร็จครั้งต่อ ๆ ไปในวันเดียวกัน"
+	"docs.guide.event-witchcipher.pay_fits": "การผสมใหม่ที่ตรงกับทุกเบาะแสบนกระดานปัจจุบัน รวมถึงการไขสูตรสำเร็จครั้งต่อ ๆ ไปในวันเดียวกัน",
+	"docs.articles.data-monster.id_namespace": "ใช้ id ของเอนทิตีตามค่าที่เกมให้มา ID มอนสเตอร์เป็นสตริงตัวเลขและไม่สามารถซ้ำกับชื่อตัวละครได้",
+	"docs.functions.destroy.item_changed": "คำขอจะถูกปฏิเสธด้วย item_changed หากไอเทมในช่องนั้นเปลี่ยนไปก่อนที่เซิร์ฟเวอร์จะประมวลผลคำขอ",
+	"docs.functions.trade.slot_unavailable": "ปฏิเสธด้วย item_gone หากช่องซื้อขายของรายการนั้นไม่พร้อมใช้งานแล้ว"
 }

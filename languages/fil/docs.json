@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>Halimbawa:</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Mga pagkabigo ng Promise:</b> Maliban kung iba ang sinasabi ng tala para sa partikular na function, kapag nabigo ang operasyon, nagrereject ang Promise na may object na naglalaman ng <span class='dlabel'>failed: true</span> at <span class='dlabel'>reason</span>. Pagkatapos ng <span class='dlabel'>mode_resolve_all()</span>, natutupad sa halip ang Promise kahit sa parehong mga pagkabigong ito.",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>Ibinabalik:</b> Promise na nagre-resolve kasama ang {success:true} matapos makumpleto, o nagre-reject kapag nabigo ang server, naputol ang operasyon, naputol ang koneksyon, o lumampas sa takdang 10 segundo para makumpleto.",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Sinisimulan ang pagteleport sa bayan at naghihintay hanggang matapos ang paghahanda nito.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Sinisimulan ang teleport papunta sa bayan at hinihintay ang kumpirmasyon ng server na nakarating na.",
 	"docs.functions.trade.example": "<b>Halimbawa:</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "Inilalagay ang isang gamit sa imbentaryo sa isa sa iyong mga puwesto sa kalakalan ng mangangalakal.",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Mga pagbisita ni Merrit:</b> Panatilihing bukas at may paninda ang puwesto sa iisang lugar sa loob ng dalawang minuto. Maaaring makatanggap ang iyong account ng isang pakete bawat oras. Lumayo nang higit sa 40px mula sa mga nakapirming NPC at mag-iwan ng puwang sa pagitan ng mga tindahan; ang tindahang unang itinayo ang mananatili sa puwesto nito. <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit: buong tuntunin at mga tsansa sa palitan</span>.",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "Mga Kasanayan",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">Bilis:</span> Pinapataas ang bilis ng pagtakbo.",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">Katangian:</span> Nagiging pangunahing katangian sa tulong ng isang balumbon.",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Lakas:</span> Pinapataas ang HP at Baluti. <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Lakas:</span> Nagpapataas ng HP, armor at bilis ng pagtakbo. <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">Sigla:</span> Pinapataas ang HP nang proporsiyonal sa antas.",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "Pisikal na pinsala ang idinudulot ng mga Mandirigma, Tampalasan, Mamamana at Paladin; mahikal na pinsala naman ang sa mga Mago at Pari. Nagkakamit ng karanasan ang mga Mangangalakal sa pakikipagkalakalan sa ibang manlalaro at maaari silang umatake gamit ang dartgun. Nakakapagpagaling ng ibang manlalaro ang mga Pari. Nagsisimula ang lakas ng kanilang atake sa 40% ng lakas ng kanilang pagpapagaling, bago isama ang mga bonus, kondisyon at depensa ng target.",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">Panalo Kapag ≤ 55 ang Hagis</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "Kung bakante ang napiling slot, tatanggihan ang ibinalik na Promise. Pangasiwaan ang error gamit ang .catch().",
 	"docs.functions.send_cm.message_size": "Mas malaking bahagi ng limitasyon ng mga tawag ang ginagamit ng malalaking mensahe. Panatilihing maikli ang paulit-ulit na mensahe sa CODE.",
 	"docs.functions.equip_batch.empty_entries": "Tinatanggihan ng mga bakanteng entry ang Promise bago magpadala ng anumang kahilingang magsuot ng kagamitan.",
-	"docs.guide.event-witchcipher.pay_fits": "Bagong timpla na tumutugma sa lahat ng clue sa kasalukuyang board, kasama ang mga susunod pang paglutas sa araw na iyon"
+	"docs.guide.event-witchcipher.pay_fits": "Bagong timpla na tumutugma sa lahat ng clue sa kasalukuyang board, kasama ang mga susunod pang paglutas sa araw na iyon",
+	"docs.articles.data-monster.id_namespace": "Gamitin ang id ng entity nang eksakto sa ibinigay ng laro. Ang mga monster ID ay mga string ng numero at hindi maaaring kapareho ng pangalan ng karakter.",
+	"docs.functions.destroy.item_changed": "Tinatanggihan na may item_changed kung magbago ang item sa puwestong iyon bago iproseso ng server ang kahilingan.",
+	"docs.functions.trade.slot_unavailable": "Tinatanggihan gamit ang item_gone kung hindi na magagamit ang trade slot ng alok."
 }

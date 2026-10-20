@@ -909,5 +909,12 @@
 	"update.08_10_26.halloween.support_78": "大きなCODEメッセージが呼び出し上限に正しく計上されるようになりました。",
 	"update.08_10_26.halloween.support_79": "equip_batchの空の要素がエラーを返すようになりました。",
 	"update.08_10_26.halloween.item_bonuses": "アイテムのツールチップに、マップとクラスのボーナスの数値が表示されるようになりました。",
-	"update.08_10_26.halloween.mp_reduction_cap": "消費MP軽減の上限が80%になりました。"
+	"update.08_10_26.halloween.mp_reduction_cap": "消費MP軽減の上限が80%になりました。",
+	"update.08_10_26.halloween.support_80": "モンスターIDが数字だけのキャラクター名と重複しなくなりました。",
+	"update.08_10_26.halloween.support_81": "同じアカウントで同時にログインすると、互いのログインが拒否される問題を修正しました。",
+	"update.08_10_26.halloween.support_82": "town()とsmart_moveが町へのテレポート完了を待つようになりました。",
+	"update.08_10_26.halloween.support_84": "破棄リクエストで、同じバッグスロットに移動された別のアイテムが破棄されなくなりました。",
+	"update.08_10_26.halloween.support_85": "Hubの銀行表示でアイテムの非公開データが露出しなくなりました。",
+	"update.08_10_26.halloween.support_86": "正確なドロップ確率を1/1Mなどのより簡単な分数で表示するようになりました。",
+	"update.08_10_26.halloween.support_87": "キャッシュされた出品情報を使って、閉じた商人のスロットで取引できなくなりました。"
 }

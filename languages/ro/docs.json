@@ -1458,7 +1458,7 @@
 	"docs.functions.town.example": "<b>Exemplu:</b>",
 	"docs.functions.town.promise-failures-unless-a-function-specific-note-says": "<b>Eșecuri Promise:</b> Dacă o notă specifică funcției nu precizează altfel, eșecurile resping promisiunea cu un obiect care conține <span class='dlabel'>failed: true</span> și un câmp <span class='dlabel'>reason</span>. După <span class='dlabel'>mode_resolve_all()</span>, aceleași eșecuri îndeplinesc promisiunea.",
 	"docs.functions.town.returns-promise-resolving-with-success-true-after-completion": "<b>Returnează:</b> O promisiune îndeplinită cu {success:true} după finalizare sau respinsă în caz de eșec al serverului, întrerupere, deconectare ori expirarea limitei de 10 secunde pentru finalizare.",
-	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Pornește teleportarea în oraș și așteaptă încheierea canalizării.",
+	"docs.functions.town.starts-the-town-teleport-and-waits-until-the": "Pornește teleportarea în oraș și așteaptă confirmarea sosirii de la server.",
 	"docs.functions.trade.example": "<b>Exemplu:</b>",
 	"docs.functions.trade.lists-an-inventory-item-in-one-of-your": "Pune la vânzare un obiect din inventar într-unul dintre sloturile tale comerciale de negustor.",
 	"docs.functions.trade.merrit-s-visits-keep-an-open-stocked-stand": "<b>Vizitele lui Merrit:</b> Ține o tarabă deschisă, cu marfă, în același loc timp de două minute. Contul tău poate primi un colet pe oră. Păstrează o distanță mai mare de 40px față de NPC-urile staționare și lasă spațiu între magazine; magazinul instalat primul își păstrează locul. <span class=\"rlabel\" onclick=\"render_merrit_info()\">Merrit: toate regulile și șansele schimburilor</span>.",
@@ -2124,7 +2124,7 @@
 	"docs.guide.stats.skills": "Abilități",
 	"docs.guide.stats.speed-increases-the-run-speed": "<span style=\"color: #3A3B3B\">Viteză:</span> Mărește viteza de deplasare.",
 	"docs.guide.stats.stat-becomes-a-main-attribute-with-a-scroll": "<span style=\"color: #3A3B3B\">Atribut:</span> Devine un atribut principal cu ajutorul unui pergament.",
-	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Forță:</span> Mărește HP și armura. <!--Increases the attack of warriors.-->",
+	"docs.guide.stats.strength-increases-hp-armor": "<span style=\"color: #3A3B3B\">Forță:</span> Crește HP, armura și viteza de alergare. <!--Increases the attack of warriors.-->",
 	"docs.guide.stats.vitality-increases-hp-proportional-to-level": "<span style=\"color: #3A3B3B\">Vitalitate:</span> Mărește HP proporțional cu nivelul.",
 	"docs.guide.stats.warriors-rogues-and-rangers-deal-physical-damage-while": "Războinicii, pungașii, arcașii și paladinii provoacă daune fizice; magii și preoții provoacă daune magice. Negustorii câștigă experiență făcând comerț cu alți jucători și pot ataca folosind un pistol cu săgeți. Preoții pot vindeca alți jucători. Puterea lor de atac inițială este 40% din puterea de vindecare, înainte de bonusuri, efecte și apărarea țintei.",
 	"docs.guide.tavern-games.42-roll-55-wins": "<span class=\"guide-flow-icon tavern-roll\">42</span><span class=\"guide-flow-label\">Rezultat ≤ 55: câștigi</span>",
@@ -2800,5 +2800,8 @@
 	"docs.functions.compound.empty_slot": "Dacă un slot selectat este gol, obiectul Promise returnat este respins. Tratează eroarea cu .catch().",
 	"docs.functions.send_cm.message_size": "Mesajele mai mari consumă mai mult din limita de apeluri. Păstrează scurte mesajele CODE repetate.",
 	"docs.functions.equip_batch.empty_entries": "Intrările goale resping obiectul Promise înainte de trimiterea oricărei cereri de echipare.",
-	"docs.guide.event-witchcipher.pay_fits": "Un amestec nou care respectă toate indiciile de pe panoul curent, inclusiv descifrările ulterioare din aceeași zi"
+	"docs.guide.event-witchcipher.pay_fits": "Un amestec nou care respectă toate indiciile de pe panoul curent, inclusiv descifrările ulterioare din aceeași zi",
+	"docs.articles.data-monster.id_namespace": "Folosește id-ul entității exact așa cum îl furnizează jocul. ID-urile monștrilor sunt șiruri numerice și nu pot coincide cu numele personajelor.",
+	"docs.functions.destroy.item_changed": "Este respinsă cu item_changed dacă obiectul din acel loc se schimbă înainte ca serverul să proceseze cererea.",
+	"docs.functions.trade.slot_unavailable": "Respinge cu item_gone dacă slotul de tranzacționare al ofertei nu mai este disponibil."
 }

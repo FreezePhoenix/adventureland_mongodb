@@ -159,7 +159,7 @@
 	"pages.contents.guide.github-our-official-github-houses-the-runner-functions": "<span style=\"color: #f4f4f4\">&gt;</span>\n\t\t\t<a href=\"https://github.com/kaansoral/adventureland_mongodb/blob/main/js/runner_functions.js\" class=\"eexternal\" target=\"_blank\" style=\"color: #469ecf; text-decoration: none\">Github:</a> 공식 Github에서 모든 기본 CODE 함수가 담긴 \"runner_functions.js\"를 볼 수 있어요.",
 	"pages.contents.guide.heal": "치유",
 	"pages.contents.guide.if-anyone-is-breaking-the-rules-just-email": "<span style=\"color: #f4f4f4\">&gt;</span> 규칙을 어기는 사람이 있으면 위반 장면을 캡처해 hello@adventure.land로 보내 주세요.",
-	"pages.contents.guide.increases-hp-armor": "HP와 방어력을 높여요.",
+	"pages.contents.guide.increases-hp-armor": "HP, 방어력, 이동 속도가 증가합니다.",
 	"pages.contents.guide.increases-mp-resistance": "MP와 저항력을 높여요.",
 	"pages.contents.guide.intelligence": "지능:",
 	"pages.contents.guide.interact": "상호작용",
