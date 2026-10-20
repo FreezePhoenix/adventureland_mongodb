@@ -49,13 +49,11 @@ function create_schedule({ saved, offset, pools, realm, season_open, now = Date.
 			o.status = "missed";
 			o.ended = o.started || o.at;
 		}
-	// The slots changed since this lineup was saved: what lies ahead is built again, so an added or
-	// removed slot applies at once. Its rotation picks go back to the front of their queues, latest
-	// first, so the rotations continue as published. What already started stays.
-	const shape = JSON.stringify(slots);
-	if (state.slots !== shape && state.until !== null) {
-		const t = now(),
-			ahead = state.occurrences.filter((o) => o.status === "scheduled" && o.at > t).sort((a, b) => b.at - a.at);
+	// Builds what lies ahead again; what already started stays. Its rotation picks go back to the front
+	// of their queues, latest first, so the rotations continue as published.
+	function rebuild_ahead(t) {
+		if (state.until === null) return;
+		const ahead = state.occurrences.filter((o) => o.status === "scheduled" && o.at > t).sort((a, b) => b.at - a.at);
 		for (const o of ahead) {
 			const pool = o.pool || Object.keys(state.queues).find((name) => state.queues[name].includes(o.event));
 			const queue = state.queues[pool];
@@ -66,6 +64,14 @@ function create_schedule({ saved, offset, pools, realm, season_open, now = Date.
 		state.occurrences = state.occurrences.filter((o) => !ahead.includes(o));
 		state.until = t;
 	}
+	// The seasons the lineup was built with. When one opens or closes, the days ahead follow it.
+	const seasons = slots.map((slot) => slot.season).filter((season, i, all) => season && all.indexOf(season) === i);
+	function open_seasons(t) {
+		return seasons.filter((season) => season_open(season, t)).join(",");
+	}
+	// The slots changed since this lineup was saved: an added or removed slot applies at once.
+	const shape = JSON.stringify(slots);
+	if (state.slots !== shape) rebuild_ahead(now());
 	state.slots = shape;
 	// Keep the saved order for known events, add new pool members at the end and drop removed ones.
 	for (const name in pools) {
@@ -141,6 +147,9 @@ function create_schedule({ saved, offset, pools, realm, season_open, now = Date.
 		state: () => state,
 		// Occurrences that should start now. The caller starts each one; it is marked live first.
 		tick(t = now(), { can_start = true } = {}) {
+			const open = open_seasons(t);
+			if (state.seasons !== open) rebuild_ahead(t);
+			state.seasons = open;
 			extend(t);
 			prune(t);
 			const due = [];

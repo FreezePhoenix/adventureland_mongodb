@@ -308,7 +308,7 @@ function events_window_html() {
 	html += "<div class='agenda-head'><div class='agenda-title'>" + phrase.html("interface.events.title") + "</div><span class='agenda-realm'>" + html_escape(server_name) + " · " + phrase.html("interface.events.your_realm") + "</span></div>";
 	if (!S || !S.schedule || !S.schedule.events || !socket || !socket.connected) {
 		html += "<div class='agenda-section'>" + phrase.html("interface.events.unavailable") + "</div>";
-		html += "<div class='agenda-foot'>" + events_button(phrase.html("interface.events.guides"), "pcs(event); render_all_events()") + "</div></div>";
+		html += "<div class='agenda-foot'>" + events_button(phrase.html("interface.events.guides"), "pcs(event); hide_modal(); render_all_events()") + "</div></div>";
 		return html;
 	}
 	html +=
@@ -349,7 +349,7 @@ function events_window_html() {
 		"<div class='agenda-foot'>" +
 		phrase.html("interface.events.no_fixed_time") +
 		" " +
-		events_button(phrase.html("interface.events.guides"), "pcs(event); render_all_events()") +
+		events_button(phrase.html("interface.events.guides"), "pcs(event); hide_modal(); render_all_events()") +
 		" " +
 		events_button(phrase.html("interface.events.data"), "pcs(event); show_json(S,{name:\"parent.S\"})") +
 		"</div></div>";
@@ -364,12 +364,18 @@ function render_events_window() {
 		if (typeof cave_load_visit == "function") cave_load_visit();
 	}
 	var html = events_window_html();
-	if ($("#events-window").length) $("#events-window").replaceWith(html);
+	if ($("#events-window").length) events_window_replace(html);
 	else show_modal(html, { wrap: false, url: "/docs/guide/events-and-home" });
 }
 
 function events_window_refresh() {
-	if (!no_html && $("#events-window").length) $("#events-window").replaceWith(events_window_html());
+	if (!no_html && $("#events-window").length) events_window_replace(events_window_html());
+}
+
+// The modal's close button sits inside the window, so a refresh that replaces the window puts it back
+function events_window_replace(html) {
+	$("#events-window").replaceWith(html);
+	add_ui_close($("#events-window").closest(".imodal"), "modal", { frame: false });
 }
 
 // The next event for the character-selection card: live first, then the soonest start.

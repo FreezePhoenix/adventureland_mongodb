@@ -165,6 +165,39 @@ test("seasonal occurrences stop at the season's end and when it closes", () => {
 	);
 });
 
+test("a season that opens after the lineup was built gets its events at once, with the same rotation", () => {
+	const open = { halloween: false };
+	const schedule = make(undefined, T0, open);
+	schedule.tick(T0);
+	const before = schedule.publish(T0);
+	assert.equal(before.events.filter((o) => o.event === "horseman").length, 0);
+	assert.equal(before.repeats.length, 0);
+	const rotation = (lineup) =>
+		lineup.events
+			.filter((o) => ["crabxx", "goobrawl", "abtesting", "icegolem", "franky"].includes(o.event))
+			.map((o) => o.id);
+	open.halloween = true;
+	schedule.tick(T0 + 60000);
+	const after = schedule.publish(T0 + 60000);
+	assert.equal(after.events.filter((o) => o.event === "horseman").length, 7, "every night of the coming week");
+	assert.deepEqual(
+		after.repeats.map((r) => r.event),
+		["graveyard"],
+	);
+	assert.deepEqual(
+		rotation(after),
+		rotation(before).filter((id) => after.events.some((o) => o.id === id)),
+	);
+	// A lineup saved while the season was closed is fixed on the first tick after a restart
+	open.halloween = false;
+	const closed = make(undefined, T0, open);
+	closed.tick(T0);
+	open.halloween = true;
+	const restarted = make(JSON.parse(JSON.stringify(closed.state())), T0 + 120000, open);
+	restarted.tick(T0 + 120000);
+	assert.equal(restarted.publish(T0 + 120000).events.filter((o) => o.event === "horseman").length, 7);
+});
+
 test("a new pool member joins the end of the saved queue and a removed one leaves", () => {
 	const schedule = make(undefined, T0);
 	schedule.tick(T0);
