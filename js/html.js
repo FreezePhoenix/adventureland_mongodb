@@ -6203,7 +6203,7 @@ function on_drop(event) {
 		if (is_mobile && mssince(last_drag_start) < 300) slot_click(slot);
 	} else if (cnum != undefined && sname != undefined) {
 		if (character.items[cnum] && !in_arr(sname, trade_slots)) {
-			socket.emit("equip", { num: cnum, slot: sname });
+			socket.emit("equip", { num: cnum, slot: sname, swap: true });
 			push_deferred("equip");
 		} else {
 			socket.emit("unequip", { slot: sname, position: cnum });

@@ -7752,6 +7752,13 @@ function init_socket_io(socket_server, server_index) {
 				return fail_response("invalid");
 			}
 			var trading = data.slot && get_trade_slots(player).includes(data.slot) && !data.consume;
+			// Reverse dragging may only replace the occupied source slot, never use an item or choose another slot.
+			if (
+				data.swap &&
+				(data.consume || trading || !player.slots[data.slot] || can_equip_item(player, def, data.slot) !== data.slot)
+			) {
+				return fail_response("cant_equip");
+			}
 			if (
 				player.s.stunned &&
 				!trading &&

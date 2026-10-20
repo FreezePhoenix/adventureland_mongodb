@@ -4,6 +4,7 @@ const test = require("node:test");
 const vm = require("node:vm");
 const G = require("./helpers/design");
 const { read, load, socketHandler } = require("./helpers/server_vm");
+const { drag_runtime } = require("./helpers/client_drag");
 const plain = (value) => JSON.parse(JSON.stringify(value));
 
 function fixture() {
@@ -20,6 +21,16 @@ function fixture() {
 		x: 0,
 		y: 0,
 		str: 10,
+		type: "warrior",
+		level: 100,
+		hp: 100,
+		max_hp: 1000,
+		mp: 100,
+		max_mp: 1000,
+		slots: {},
+		cslots: {},
+		c: {},
+		last: {},
 		items: Array(42).fill(null),
 		citems: [],
 		isize: 42,
@@ -43,12 +54,17 @@ function fixture() {
 		min: Math.min,
 		max: Math.max,
 		round: Math.round,
+		to_number: Number,
+		trade_slots: [],
 		gameplay: "normal",
 		Dev: false,
 		B: { dist: 500, sell_dist: 500 },
 		a_score: {},
 		instances: { main: { monsters: {} } },
 		future_s: (s) => new Date(Date.now() + s * 1000),
+		future_ms: (ms) => new Date(Date.now() + ms),
+		mssince: (date) => Date.now() - +date,
+		disappearing_text: (...args) => effects.push(args),
 		fail_response: (reason, data) => failures.push({ reason, data }),
 		success_response: (...args) => successes.push(args),
 		xy_emit: (...args) => effects.push(args),
@@ -62,7 +78,7 @@ function fixture() {
 	});
 	const source = read("node/server_functions.js");
 	vm.runInContext(source.match(/var item_p_ignore = \{[\s\S]*?\};/)[0], c);
-	load(c, "node/server_functions.js", ["cache_item", "is_same", "seen_item_matches"]);
+	load(c, "node/server_functions.js", ["cache_item", "is_same", "seen_item_matches", "get_trade_slots"]);
 	load(c, "js/old_common_functions.js", ["can_stack", "can_add_item", "can_add_items", "distance", "simple_distance"]);
 	load(c, "node/server.js", [
 		"create_new_item",
@@ -71,6 +87,7 @@ function fixture() {
 		"consume_one",
 		"consume_one_by_id",
 		"add_item",
+		"can_equip_item",
 	]);
 	function put(who, item, size = 42) {
 		who.items = Array.from({ length: size }, () => ({ name: "blade", level: 0 }));
@@ -82,6 +99,254 @@ function fixture() {
 	}
 	return { c, player, receiver, put, run, failures, successes, effects };
 }
+
+function reverse_drop(h, slot, num = 0) {
+	const drag = drag_runtime({ sname: slot }, { cnum: num });
+	drag.context.character = plain({
+		items: h.player.items.map((item) => h.c.cache_item(item)),
+		slots: h.player.slots,
+		isize: h.player.isize,
+	});
+	drag.drop();
+	assert.equal(drag.packets.length, 1);
+	return drag.packets[0];
+}
+
+function native_sale(h, num, quantity) {
+	const packets = [];
+	h.c.character = { items: h.player.items.map((item) => plain(h.c.cache_item(item))) };
+	h.c.$ = () => ({ html() {} });
+	h.c.push_deferred = () => Promise.resolve();
+	h.c.socket = { id: h.player.id, emit: (event, data) => packets.push([event, plain(data)]) };
+	load(h.c, "js/functions.js", ["sell"]);
+	// The CODE wrapper delegates to the same sell function used by the manual shop UI.
+	const code = vm.createContext({ parent: h.c });
+	load(code, "js/runner_functions.js", ["sell"]);
+	code.sell(num, quantity);
+	assert.equal(packets.length, 1);
+	return packets[0];
+}
+
+test("reverse drag reaches the real equip handler and preserves both items in a full bag", () => {
+	for (const [slot, oldName, newName, type] of [
+		["mainhand", "fireblade", "blade"],
+		["offhand", "shield", "blade"],
+		["ring1", "ringsj", "strring"],
+		["ring2", "ringsj", "strring"],
+		["earring2", "strearring", "intearring"],
+		["mainhand", "staff", "rod", "merchant"],
+	]) {
+		for (const num of [0, 41]) {
+			const h = fixture();
+			if (type) h.player.type = type;
+			h.put(h.player, { name: "hpot0", q: 2 });
+			const worn = { name: oldName, level: 7, p: "shiny", l: "l", stat_type: "str" };
+			const bagged = { name: newName, level: 2, stat_type: "dex" };
+			h.player.slots[slot] = worn;
+			h.player.items[num] = bagged;
+			const before = plain(h.player.items);
+			h.run(...reverse_drop(h, slot, num));
+			assert.deepEqual(h.failures, []);
+			assert.equal(h.successes.length, 1);
+			assert.equal(h.player.items[num], worn, "the original item, including properties, returns to the target slot");
+			assert.equal(h.player.slots[slot], bagged);
+			before[num] = worn;
+			assert.deepEqual(plain(h.player.items), before, "every other bag item is unchanged");
+			assert.deepEqual(plain(h.player.cslots[slot]), bagged);
+			assert.deepEqual(plain(h.player.citems[num]), worn);
+			assert.equal(h.player.esize, 0);
+			assert.equal(h.player.gold, 1000);
+		}
+	}
+});
+
+test("reverse dragging cannot consume items, redirect equipment or bypass class and two-hand rules", () => {
+	const cases = [
+		...["hpot0", "mpot0", "elixirluck", "licence", "figurine", "cxjar"].map((name) => ({
+			slot: "mainhand",
+			item: { name, q: 2, data: "test" },
+		})),
+		{ slot: "offhand", item: { name: "helmet", level: 0 } },
+		{ slot: "offhand", item: { name: "rod", level: 0 }, type: "merchant" },
+		{ slot: "elixir", item: { name: "elixirluck", q: 2 } },
+		{ slot: "ring1", item: { name: "strearring", level: 0 } },
+		{ slot: "mainhand", item: { name: "blade", level: 0 }, type: "mage" },
+		{ slot: "mainhand", item: { name: "bow", level: 0 }, extra: { offhand: { name: "shield", level: 0 } } },
+	];
+	for (const { slot, item, type, extra } of cases) {
+		const h = fixture();
+		const wornName =
+			slot === "offhand"
+				? "shield"
+				: slot === "elixir"
+					? "elixirluck"
+					: slot === "ring1"
+						? "ringsj"
+						: type === "mage"
+							? "staff"
+							: "blade";
+		h.player.slots = { [slot]: h.c.create_new_item(wornName), ...extra };
+		h.player.items[0] = item;
+		if (type) h.player.type = type;
+		h.player.c = { town: { ms: 5000 } };
+		const before = JSON.stringify(h.player);
+		h.run(...reverse_drop(h, slot));
+		assert.equal(h.failures[0].reason, "cant_equip", item.name + " into " + slot);
+		assert.equal(JSON.stringify(h.player), before, "no item, HP, cooldown or channel change");
+		assert.equal(h.successes.length, 0);
+		assert.equal(h.effects.length, 0);
+	}
+});
+
+test("a reverse drag still refuses a potion or an empty source after the request was sent", () => {
+	for (const change of ["potion", "source"]) {
+		const h = fixture();
+		h.player.slots.mainhand = { name: "fireblade", level: 7 };
+		h.player.items[0] = { name: "blade", level: 0 };
+		const packet = reverse_drop(h, "mainhand");
+		if (change === "potion") h.player.items[0] = { name: "hpot0", q: 2 };
+		else h.player.slots.mainhand = null;
+		const before = JSON.stringify(h.player);
+		h.run(...packet);
+		assert.equal(h.failures[0].reason, "cant_equip");
+		assert.equal(JSON.stringify(h.player), before);
+	}
+});
+
+test("empty bag drops still unequip and ordinary equip still consumes potions", () => {
+	const h = fixture();
+	const worn = { name: "fireblade", level: 7 };
+	h.player.slots.mainhand = worn;
+	h.run(...reverse_drop(h, "mainhand"));
+	assert.deepEqual(h.failures, []);
+	assert.equal(h.player.slots.mainhand, null);
+	assert.equal(h.player.items[0], worn);
+	h.player.items[1] = { name: "hpot0", q: 2 };
+	h.run("equip", { num: 1 });
+	assert.deepEqual(h.failures, []);
+	assert.equal(h.player.items[1].q, 1);
+	assert.equal(h.player.hp, 100 + G.items.hpot0.gives[0][1]);
+});
+
+test("a real reverse swap before a queued CODE sale cannot sell the previously equipped weapon", () => {
+	const h = fixture();
+	h.player.slots.mainhand = { name: "fireblade", level: 8, p: "shiny" };
+	h.player.items[0] = { name: "blade", level: 0 };
+	const sale = native_sale(h, 0, 1);
+	h.run(...reverse_drop(h, "mainhand"));
+	const before = JSON.stringify(h.player);
+	h.run(...sale);
+	assert.equal(h.failures.at(-1).reason, "item_changed");
+	assert.equal(JSON.stringify(h.player), before);
+	assert.equal(h.player.items[0].name, "fireblade");
+	assert.equal(h.player.items[0].level, 8);
+	assert.equal(h.successes.length, 1, "only the swap succeeds");
+	assert.equal(h.effects.length, 0, "no sale effect");
+});
+
+test("native sales reject changed properties and malformed snapshots before any sale side effect", () => {
+	for (const change of [
+		{ name: "fireblade" },
+		{ level: 8 },
+		{ p: "shiny" },
+		{ stat_type: "dex" },
+		{ gift: 1 },
+		{ data: "changed" },
+		{ l: "l" },
+		{ m: "merchant" },
+		{ acl: true },
+		{ v: "pvp" },
+	]) {
+		const h = fixture();
+		h.player.items[0] = { name: "blade", level: 0, stat_type: "str" };
+		const sale = native_sale(h, 0, 1);
+		Object.assign(h.player.items[0], change);
+		const before = JSON.stringify(h.player);
+		h.run(...sale);
+		assert.equal(h.failures[0].reason, "item_changed");
+		assert.equal(JSON.stringify(h.player), before);
+		assert.equal(h.successes.length, 0);
+		assert.equal(h.effects.length, 0);
+	}
+	for (const item of [null, [], "blade", {}, { name: "blade", level: 0, extra: true }]) {
+		const h = fixture();
+		h.player.items[0] = { name: "blade", level: 0 };
+		const before = JSON.stringify(h.player);
+		h.run("sell", { num: 0, quantity: 1, item });
+		assert.equal(h.failures[0].reason, "item_changed");
+		assert.equal(JSON.stringify(h.player), before);
+	}
+});
+
+test("native sales tolerate stack size and hidden bookkeeping changes, with exact inventory and gold deltas", () => {
+	for (const quantity of [1, 2, 20]) {
+		for (const currentQuantity of [1, 8, 12]) {
+			const h = fixture();
+			h.c.G.maps.main.merchants = [{ x: 0, y: 0 }];
+			h.c.calculate_item_value = () => 10;
+			const secondhands = [];
+			h.c.secondhands_logic = (item, q) => secondhands.push(q);
+			h.player.items[0] = { name: "hpot0", q: 10, o: "old", grace: 1 };
+			const sale = native_sale(h, 0, quantity);
+			assert.deepEqual(sale[1].item, { name: "hpot0", q: 10 });
+			Object.assign(h.player.items[0], { q: currentQuantity, o: "new", grace: 2 });
+			h.run(...sale);
+			const sold = Math.min(quantity, currentQuantity);
+			assert.deepEqual(h.failures, []);
+			assert.equal(h.player.items[0]?.q || 0, currentQuantity - sold);
+			assert.equal(h.player.gold, 1000 + sold * 10);
+			assert.deepEqual(secondhands, [sold]);
+			assert.equal(h.successes.length, 1);
+		}
+	}
+});
+
+test("sale snapshots preserve existing lock, blocked item, empty slot, bank and distance checks", () => {
+	for (const [kind, reason] of [
+		["locked", "item_locked"],
+		["blocked", "item_blocked"],
+		["empty", "no_item"],
+		["bank", "cant_in_bank"],
+		["distance", "distance"],
+	]) {
+		const h = fixture();
+		h.player.items[0] = { name: "blade", level: 0 };
+		if (kind === "locked") h.player.items[0].l = "l";
+		if (kind === "blocked") h.player.items[0].b = true;
+		const sale = native_sale(h, 0, 1);
+		if (kind === "empty") h.player.items[0] = null;
+		if (kind === "bank") h.player.user = { items0: [] };
+		if (kind === "distance") {
+			h.player.computer = false;
+			h.c.G.maps.main.merchants = [];
+		}
+		const before = JSON.stringify(h.player);
+		h.run(...sale);
+		assert.equal(h.failures[0].reason, reason);
+		assert.equal(JSON.stringify(h.player), before);
+		assert.equal(h.successes.length, 0);
+		assert.equal(h.effects.length, 0);
+	}
+});
+
+test("matching equipment sells at its normal value, including an indistinguishable replacement", () => {
+	for (const replace of [false, true]) {
+		const h = fixture();
+		h.c.G.maps.main.merchants = [{ x: 0, y: 0 }];
+		h.c.secondhands_logic = () => {};
+		h.player.items[0] = { name: "blade", level: 2, p: "shiny", stat_type: "str" };
+		const value = h.c.calculate_item_value(h.player.items[0]);
+		assert(value > 0);
+		const sale = native_sale(h, 0, 1);
+		// Protection is based on visible properties, not a unique identity for each copy.
+		if (replace) h.player.items[0] = plain(h.player.items[0]);
+		h.run(...sale);
+		assert.deepEqual(h.failures, []);
+		assert.equal(h.player.items[0], null);
+		assert.equal(h.player.gold, 1000 + value);
+		assert.equal(h.successes.length, 1);
+	}
+});
 
 test("a queued sale cannot sell a replacement item; current and legacy sales still work", () => {
 	for (const actual of [
