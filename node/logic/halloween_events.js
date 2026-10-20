@@ -4,9 +4,7 @@
 
 // The character's own status for today's events, sent with the character when it logs in.
 function event_player_status(player) {
-	var claim = witch_cipher && witch_cipher_claims[player.owner];
-	if (claim && claim.character === player.real_id) player.witchcipher = witch_cipher_status(claim);
-	else witch_cipher_reload(player);
+	witch_cipher_reload(player);
 	if (events.halloween) player.trickortreat = trick_or_treat_status(player);
 }
 
@@ -191,8 +189,9 @@ function graveyard_tick() {
 
 // ---------- Trick or Treat ----------
 // Seven doors in Spooky Forest and Spooky Town. Each character knocks on each door once a UTC day;
-// an account knocks at most 14 times a day. 70% treat (85% in a pumpkin helmet), 30% Spooked!.
-// Every knock is a stamp: each 10th pays a Witch's Parcel, the 40th teaches the Sinister Laugh.
+// an account knocks at most 14 times a day. 70% treat (85% in a pumpkin helmet), 30% trick: Spooked!,
+// or a Ghost floats out of the door. Every knock is a stamp: each 10th pays a Witch's Parcel, the 40th
+// teaches the Sinister Laugh.
 
 function trick_or_treat_day(now) {
 	return new Date(now).toISOString().slice(0, 10);
@@ -232,10 +231,36 @@ function trick_or_treat_status(player) {
 	};
 }
 
+// Ghosts let out by tricks: [id, map, leaves at]. A Ghost nobody defeats floats away again.
+var trick_or_treat_ghosts = [];
+
+function trick_or_treat_ghost(index) {
+	var door = G.events.trickortreat.doors[index];
+	if (!instances[door[0]]) return false;
+	var ghost = new_monster(door[0], {
+		type: "ghost",
+		boundary: [door[1] - 8, door[2] + 8, door[1] + 8, door[2] + 24],
+		count: 1,
+		special: true,
+	});
+	if (!ghost) return false;
+	trick_or_treat_ghosts.push([ghost.id, door[0], Date.now() + G.events.trickortreat.ghost_time * 1000]);
+	return true;
+}
+
 // At UTC midnight every character's doors open again; refresh what CODE and the Events window read.
 var trick_or_treat_last_day = null;
 function trick_or_treat_tick() {
-	var today = trick_or_treat_day(Date.now());
+	var now = Date.now();
+	trick_or_treat_ghosts = trick_or_treat_ghosts.filter(function (entry) {
+		var instance = instances[entry[1]],
+			ghost = instance && instance.monsters[entry[0]];
+		if (!ghost || ghost.dead) return false;
+		if (now < entry[2] && events.halloween) return true;
+		remove_monster(ghost, { method: "disappear" });
+		return false;
+	});
+	var today = trick_or_treat_day(now);
 	if (today === trick_or_treat_last_day) return;
 	trick_or_treat_last_day = today;
 	if (!events.halloween) return;
@@ -245,6 +270,16 @@ function trick_or_treat_tick() {
 		player.trickortreat = trick_or_treat_status(player);
 		resend(player, "u+cid+nc");
 	}
+}
+
+// A weighted pick from [weight, ...] rows
+function trick_or_treat_pick(rows) {
+	var roll = Math.random() * rows.reduce((sum, row) => sum + row[0], 0);
+	for (var i = 0; i < rows.length; i++) {
+		roll -= rows[i][0];
+		if (roll < 0) return rows[i];
+	}
+	return rows[rows.length - 1];
 }
 
 async function trick_or_treat_knock(player, data) {
@@ -312,16 +347,7 @@ async function trick_or_treat_settle(player, rules, record, door, now, today) {
 		treat_chance = rules.costumes.includes(helmet) ? rules.costume_treat : rules.treat,
 		result = { success: true, door: door, stamps: stamps };
 	if (Math.random() * 100 < treat_chance) {
-		var total = rules.treats.reduce((sum, row) => sum + row[0], 0),
-			roll = Math.random() * total,
-			row = rules.treats[rules.treats.length - 1];
-		for (var i = 0; i < rules.treats.length; i++) {
-			roll -= rules.treats[i][0];
-			if (roll < 0) {
-				row = rules.treats[i];
-				break;
-			}
-		}
+		var row = trick_or_treat_pick(rules.treats);
 		var treat = create_new_item(row[1], row[2]);
 		add_item(player, treat, { announce: false });
 		player.socket.emit("game_log", item_message("server.item.received", treat, {}, { color: "#F5A05B" }));
@@ -331,12 +357,15 @@ async function trick_or_treat_settle(player, rules, record, door, now, today) {
 		});
 		result.treat = { name: treat.name, q: treat.q || 1 };
 	} else {
-		add_condition(player, "spooked");
+		if (trick_or_treat_pick(rules.tricks)[1] === "ghost" && trick_or_treat_ghost(door)) result.trick = "ghost";
+		else {
+			add_condition(player, "spooked");
+			result.trick = "spooked";
+		}
 		disappearing_text(player.socket, player, localization.message("server.floating.boo", {}), {
 			color: "#AD91DC",
 			size: "large",
 		});
-		result.trick = "spooked";
 	}
 	if (stamps % rules.stamps.parcel === 0) {
 		var parcel = create_new_item("witchparcel", 1);

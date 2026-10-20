@@ -2249,7 +2249,7 @@ var armor={
 		"tier":4,
 		"skin":"hexweavegloves",
 		"scroll":true,
-		"mp_reduction":10,
+		"mp_reduction":20,
 		"upgrade":{},
 		"name":"Hexweave Gloves",
 		"explanation":"A pair of gloves stitched with a little witchcraft.",
@@ -2257,15 +2257,17 @@ var armor={
 		"exclusive":true,
 		"cx":{"accent":"#E07A2E"},
 	},
-	// Candlelight shortens curses, freezes and tangles (status resistance) and turns some burns.
+	// Candlelight keeps spirits at a distance: magical and pure attackers need a bigger crowd to scare you
+	// (Mr. Pumpkin's Jrs, the Jack-o Walkers, Boo Boos). The flame turns some burns.
 	"candleboots":{
 		"type":"shoes",
 		"tier":4,
 		"skin":"candleboots",
 		"scroll":true,
 		"firesistance":15,
-		"stresistance":20,
-		"upgrade":{"stresistance":1},
+		"mcourage":3,
+		"pcourage":2,
+		"upgrade":{},
 		"name":"Candlewick Boots",
 		"explanation":"Boots with a little candlelight for dark paths.",
 		"g":9600000,
@@ -2277,10 +2279,11 @@ var armor={
 		"tier":3,
 		"skin":"horsemanpumpkin",
 		"scroll":true,
-		"reflection":2,
+		// Reflects magic: about 1 in 12 magical hits at +7
+		"reflection":5,
 		"speed":2,
 		"firesistance":10,
-		"upgrade":{"reflection":0.4},
+		"upgrade":{"reflection":0.5},
 		"name":"Horseman's Pumpkin",
 		"explanation":"The Headless Horseman's rare helmet. Still grinning!",
 		"g":4800000,
@@ -8115,7 +8118,8 @@ var sets={
 		"1":{
 
 		},
-		"2":{"apiercing":40,"rpiercing":40},
+		// A pair pierces 120/120 at +0: worth it from about 260 armor for a Warrior and 180 resistance for a Mage
+		"2":{"apiercing":80,"rpiercing":80},
 	},
 	"watchers":{
 		"name":"Watcher's Eyes",
@@ -9128,7 +9132,7 @@ var witch_items={
 	"embercoal":{"type":"material","skin":"embercoal","name":"Ember Coal","explanation":"Still warm! Toss it into the Witch's cauldron.","s":9999,"g":1200,"exclusive":true},
 	"gloomfeather":{"type":"material","skin":"gloomfeather","name":"Gloom Feather","explanation":"A spooky feather. Just what the Witch needs.","s":9999,"g":1200,"exclusive":true},
 	"witchparcel":{"type":"gem","skin":"witchparcel","name":"Witch's Parcel","explanation":"What's inside? Open it at the Witch, or save it for her recipes.","s":9999,"g":100,"e":1,"quest":"witch","exclusive":true,"cx":{"accent":"#9B6BC9"}},
-	"cipherdraught":{"type":"elixir","skin":"cipherdraught","skin_a":"cipherdraught","name":"Cipher Draught","explanation":"A lucky brew for two hours of better adventures.","luck":10,"gold":4,"xp":4,"speed":2,"duration":2,"s":9999,"g":60000,"exclusive":true},
+	"cipherdraught":{"type":"elixir","skin":"cipherdraught","skin_a":"cipherdraught","name":"Cipher Draught","explanation":"A lucky brew for two hours of better adventures.","luck":25,"gold":10,"xp":10,"speed":2,"duration":2,"s":9999,"g":60000,"exclusive":true},
 	"crookedkey":{
 		"type":"earring",
 		"tier":3,
@@ -9169,8 +9173,8 @@ var witch_items={
 		"skin":"blackcatbell",
 		"name":"Black Cat's Bell",
 		"explanation":"A little bell that rings when no cat is near.",
-		// Quick as a cat: the attack speed orb for every class (Sapstone is the Rogue's).
-		"frequency":6,
+		// Quick as a cat: the attack speed orb for every class (Sapstone is the Rogue's), best for Priests and Paladins.
+		"frequency":10,
 		"compound":{"frequency":2},
 		"grades":[0,0,6,7],
 		"g":2400000,
@@ -9221,8 +9225,8 @@ var witch_items={
 		// Laughter heals (more INT for Priests); Mages get the punchline (crit).
 		"int":22,
 		"mp":200,
-		"priest":{"int":12},
-		"mage":{"crit":3,"critdamage":20},
+		"priest":{"int":20},
+		"mage":{"crit":4,"critdamage":25},
 		"compound":{"int":5,"mp":50},
 		"grades":[0,2,6,7],
 		"g":12400000,

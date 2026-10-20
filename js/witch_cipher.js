@@ -1,7 +1,7 @@
-// The Witch in Spooky Forest: a short greeting with her services, the four-slot cauldron of the
-// Witch's Cipher and the realm's clue board. Rules: node/logic/witch_cipher.js.
+// The Witch in Spooky Forest: a short greeting with her services, the cauldron of the Witch's Cipher
+// and the realm's clue board. Rules: node/logic/witch_cipher.js.
 
-var witch_mix = [null, null, null, null],
+var witch_mix = [],
 	witch_day = null,
 	witch_result = null,
 	witch_timer = null;
@@ -41,18 +41,22 @@ function witch_cipher_live() {
 	return !!(typeof S != "undefined" && S.witchcipher && S.witchcipher.live && S.witchcipher.end > schedule_now());
 }
 
-function witch_joined() {
-	return !!(character && character.witchcipher);
+// One slot per ingredient of the recipe, filled from the left
+function witch_slots() {
+	var slots = G.events.witchcipher.slots;
+	while (witch_mix.length < slots) witch_mix.push(null);
+	witch_mix.length = slots;
+	return slots;
 }
 
 function witch_failure(data) {
 	if (no_graphics || !data) return;
 	if (data.phrase) return add_log(phrase.message(data), "gray");
-	var known = ["witchcipher_not_live", "witchcipher_join", "witchcipher_no_mixes", "witchcipher_ingredients", "witchcipher_claimed", "witchcipher_elsewhere", "distance", "no_merchants", "cant_when_sick", "cant_in_bank"];
+	var known = ["witchcipher_not_live", "witchcipher_no_mixes", "witchcipher_ingredients", "witchcipher_elsewhere", "distance", "cant_in_bank"];
 	if (known.includes(data.reason)) add_log(phrase.html("interface.witch.fail." + data.reason, { item: data.item ? G.items[data.item].name : "" }), "gray");
 }
 
-// The account's day (who took part and how many mixes are left), for the greeting and Events.
+// The account's day (mixes left, the realm and the Parcels earned), for Events.
 function witch_day_refresh() {
 	if (!character || !socket) return Promise.resolve(null);
 	return witch_request("info")
@@ -78,7 +82,7 @@ function witch_buttons(list) {
 	);
 }
 
-// The greeting: JOIN or BREW while her cauldron boils, then RECIPES, PARCELS and INFO.
+// The greeting: BREW while her cauldron boils, then RECIPES, PARCELS and INFO.
 function render_witch(service) {
 	if (no_graphics || !character) return;
 	if (service == "recipes") {
@@ -89,32 +93,21 @@ function render_witch(service) {
 	if (service == "parcels") return render_exchange_shrine("witchparcel");
 	if (service == "brew") return render_witch_cauldron();
 	var live = witch_cipher_live(),
-		joined = witch_joined(),
 		message,
 		buttons = [];
-	if (live && joined) message = phrase.html("interface.witch.greeting_joined");
-	else if (live) message = phrase.html("interface.witch.greeting_live");
+	if (live) message = phrase.html("interface.witch.greeting_live");
 	else {
 		var next = schedule_next("witchcipher");
 		message = next
 			? phrase.html("interface.witch.greeting_closed", { time: schedule_time_text(next.at, "realm") })
 			: phrase.html("interface.witch.greeting_idle");
 	}
-	if (live && joined) buttons.push([phrase.html("interface.witch.brew"), "render_witch(\"brew\")"]);
-	else if (live) buttons.push([phrase.html("interface.witch.join"), "witch_join_click()"]);
+	if (live) buttons.push([phrase.html("interface.witch.brew"), "render_witch(\"brew\")"]);
 	buttons.push([phrase.html("interface.witch.recipes"), "render_witch(\"recipes\")"]);
 	buttons.push([phrase.html("interface.witch.parcels"), "render_witch(\"parcels\")"]);
 	buttons.push([phrase.html("interface.item.info"), "open_guide(\"event-witchcipher\",\"/docs/guide/event-witchcipher\")"]);
 	render_interaction({ auto: true, skin: "brewingwitch", message: "<div style='font-size:24px'>" + message + "</div>" });
 	$("#topleftcornerui > div").append(witch_buttons(buttons));
-}
-
-function witch_join_click() {
-	join("witchcipher")
-		.then(function () {
-			render_witch("brew");
-		})
-		.catch(witch_failure);
 }
 
 function witch_count(name) {
@@ -167,18 +160,28 @@ function witch_board_html() {
 		entry.mix.forEach(function (name) {
 			html += witch_icon(name, { size: 20, space: 1, margin: 1 });
 		});
-		html +=
-			" <span style='vertical-align: top; line-height: 26px'><span style='color:#85C76B'>" +
-			phrase.html("interface.witch.right", { count: entry.right }) +
-			"</span> <span style='color:#E6AE3F'>" +
-			phrase.html("interface.witch.moved", { count: entry.moved }) +
-			"</span></span></div>";
+		html += " <span style='vertical-align: top; line-height: 26px; color:#85C76B'>" + phrase.html("interface.witch.right", { count: entry.right }) + "</span></div>";
 	});
 	return html + "</div>";
 }
 
-// The cauldron: four slots in a row, because the order matters. Click an ingredient below or in
-// the inventory to fill the next slot; click a filled slot to empty it.
+// Whether a full mix fits every clue on the board, scored the way the server scores it. Unknown when
+// the board no longer shows every mix of the current recipe.
+function witch_mix_fits(mix) {
+	var cipher = S.witchcipher || {},
+		board = cipher.board || [];
+	if (cipher.mixes > board.length) return null;
+	var key = mix.join(",");
+	if (board.some(function (entry) { return entry.mix.join(",") == key; })) return "tried";
+	return board.every(function (entry) {
+		var right = 0;
+		for (var i = 0; i < mix.length; i++) if (mix[i] == entry.mix[i]) right++;
+		return right == entry.right;
+	});
+}
+
+// The cauldron: one slot per ingredient of the recipe, in a row, because the order matters. Click an
+// ingredient below or in the inventory to fill the next slot; click a filled slot to empty it.
 function render_witch_cauldron() {
 	if (no_graphics || !character) return;
 	reset_inventory(1);
@@ -186,7 +189,7 @@ function render_witch_cauldron() {
 	rendered_target = topleft_npc;
 	var html = "<div id='witch-cauldron' style='background-color: black; border: 5px solid gray; padding: 20px; font-size: 24px; display: inline-block; vertical-align: top; text-align: center'>";
 	html += "<div>";
-	for (var i = 0; i < 4; i++) {
+	for (var i = 0; i < witch_slots(); i++) {
 		if (witch_mix[i]) html += witch_icon(witch_mix[i], { cid: "witchslot" + i, onclick: "witch_mix_remove(" + i + ")" });
 		else html += item_container({ shade: "cipherdraught", cid: "witchslot" + i, s_op: 0.36, draggable: false });
 	}
@@ -201,12 +204,16 @@ function render_witch_cauldron() {
 		html +=
 			"<div class='mb5' style='font-size: 20px'><span style='color:#85C76B'>" +
 			phrase.html("interface.witch.right", { count: witch_result.right }) +
-			"</span> <span style='color:#E6AE3F'>" +
-			phrase.html("interface.witch.moved", { count: witch_result.moved }) +
 			"</span> <span style='color:#AF6AE2'>" +
-			// Every mix pays at least one Parcel, so none means the account reached today's limit
-			(witch_result.parcels ? phrase.html("interface.witch.parcels_paid", { count: witch_result.parcels }) : phrase.html("interface.witch.parcels_limit")) +
+			(witch_result.parcels ? phrase.html("interface.witch.parcels_paid", { count: witch_result.parcels }) : phrase.html("interface.witch.parcels_none")) +
 			"</span></div>";
+	else if (witch_mix.indexOf(null) == -1) {
+		// Before brewing: does this mix fit the clues, so it pays a Parcel?
+		var fits = witch_mix_fits(witch_mix);
+		if (fits === true) html += "<div class='mb5' style='font-size: 20px; color:#85C76B'>" + phrase.html("interface.witch.fits") + "</div>";
+		else if (fits === false) html += "<div class='mb5' style='font-size: 20px; color:#9B9B9B'>" + phrase.html("interface.witch.fits_not") + "</div>";
+		else if (fits == "tried") html += "<div class='mb5' style='font-size: 20px; color:#9B9B9B'>" + phrase.html("interface.witch.fits_tried") + "</div>";
+	}
 	html +=
 		"<div><div class='gamebutton clickable' onclick='witch_mix_reset()'>" +
 		phrase.html("interface.craftsman.reset") +
@@ -230,6 +237,7 @@ function render_witch_cauldron() {
 
 function witch_mix_add(name) {
 	if (!witch_ingredients().includes(name) || witch_count(name) < 1) return;
+	witch_slots();
 	var slot = witch_mix.indexOf(null);
 	if (slot == -1) return;
 	witch_mix[slot] = name;
@@ -239,11 +247,12 @@ function witch_mix_add(name) {
 
 function witch_mix_remove(slot) {
 	witch_mix[slot] = null;
+	witch_result = null;
 	render_witch_cauldron();
 }
 
 function witch_mix_reset() {
-	witch_mix = [null, null, null, null];
+	witch_mix = [];
 	witch_result = null;
 	render_witch_cauldron();
 }
@@ -252,13 +261,14 @@ function witch_mix_reset() {
 var witch_brewing = false;
 function witch_brew_click() {
 	if (witch_brewing) return;
-	if (witch_mix.indexOf(null) != -1) return add_log(phrase.html("interface.witch.fill_slots"), "gray");
+	witch_slots();
+	if (witch_mix.indexOf(null) != -1) return add_log(phrase.html("interface.witch.fill_slots", { count: witch_mix.length }), "gray");
 	var mix = witch_mix.slice();
 	witch_brewing = true;
 	witch_request("brew", { items: mix })
 		.then(function (data) {
 			witch_result = data;
-			witch_mix = [null, null, null, null];
+			witch_mix = [];
 			if ($("#witch-cauldron").length) render_witch_cauldron();
 		})
 		.catch(witch_failure)

@@ -867,7 +867,7 @@
 	"update.06_10_26.anniversary_crafting.update_button_image": "Obnoven chybějící obrázek na tlačítku NOVINKY.",
 	"update.08_10_26.halloween.mainframe_spookytown": "Opraveno zasekávání smart_move() v MAINFRAME při odchodu ze Spooky Town.",
 	"update.08_10_26.halloween.broadcast_info": "Vysílání na Steamu nyní ukazuje INFO o příšerách, jejich kořist, předměty a aktuální události.",
-	"update.08_10_26.halloween": "Každý den luštěte Šifru čarodějnice a získávejte nové předměty a recepty. Halloween přináší Headless Horseman, Povstání z hrobů a Koledu, nebo zlobu. Nové okno událostí ukazuje, co vás čeká.",
+	"update.08_10_26.halloween": "Během Halloweenu luštěte Šifru čarodějnice dvakrát denně, po zbytek roku se střídá s dalšími denními událostmi. Halloween také přináší Headless Horseman, Povstání z hrobů a Koledu, nebo zlobu s novými žerty s Ghost a odměnami Witch's Parcel. Nové okno událostí ukazuje, co vás čeká.",
 	"update.08_10_26.halloween.title": "Šifra čarodějnice, Halloween a události",
 	"update.08_10_26.halloween.witchcipher.title": "Nová denní událost: Šifra čarodějnice!",
 	"update.08_10_26.halloween.halloween": "Headless Horseman vyjíždí ze hřbitova ve Spooky Forest každou noc v 00:00 času světa. Zombies a Ghouls povstávají ze hřbitova ve Spooky Town každé dvě hodiny a po nich přichází Gargoyle. Zaklepejte na sedm dveří pro sladkosti, žerty a odměny za každých 10 razítek. Posledním dnem Halloween je 2. listopad, ale Xyn i poté směňuje Candy a Pumpkin Stems a halloweenské recepty zůstávají použitelné.",
@@ -877,7 +877,7 @@
 	"update.08_10_26.halloween.map_halloween": "Na dvoje dveře ve Spooky Forest nyní můžete zaklepat v rámci události Koledu, nebo zlobu.",
 	"update.08_10_26.halloween.map_spookytown": "Na patery dveře ve Spooky Town nyní můžete zaklepat v rámci události Koledu, nebo zlobu.",
 	"update.08_10_26.halloween.events": "Kliknutím na posuvnou lištu nebo hodiny světa nad chatem zobrazíte probíhající sezóny, nadcházející bossy, dnešní aktivity a události na příštích sedm dní. Přepínejte mezi svým časem a časem světa. Zvolte PŘIPOMENOUT a 10 minut před událostí dostanete zprávu do herního záznamu. Posuvná lišta nad chatem postupně zobrazuje probíhající události, tři nejbližší události s odpočtem a data konce sezón. Najetím myší posouvání pozastavíte, kliknutím otevřete UDÁLOSTI. Kliknutím na X,Y nebo název světa místo toho zobrazíte své souřadnice; obrazovka postav nadále ukazuje nejbližší událost.",
-	"update.08_10_26.halloween.witchcipher": "Každý den v 06:00 a 18:00 času světa zapomene Witch ve Spooky Forest svůj recept. Připojte se jednou za den UTC pro obě kola, nasbírejte čtyři přísady z monster a uvařte je u Witch nebo pomocí brew(), abyste vyzkoušeli jejich pořadí. Každá kombinace dá dvě vodítka sdílená s celým světem. Když někdo recept rozluští, Witch ho zapomene a začne nový. Získávejte Witch's Parcels, které můžete otevírat nebo používat v receptech Witch po celý rok.",
+	"update.08_10_26.halloween.witchcipher": "Během Halloweenu probíhá Šifra čarodějnice dvakrát denně, v 06:00 a 18:00 času světa. Po zbytek roku se střídá s Giga Crab, Rvačkou s Goo a A/B testováním ve 13:00 nebo 20:00. Prvních 20 minut sbírejte přísady z monster ve čtyřech oblastech a během 28minutového kola je vařte u Witch ve Spooky Forest. Není třeba se připojovat. Každá kombinace používá pět přísad v daném pořadí a dá jedno vodítko: kolik přísad je na správném místě. Celý svět sdílí tabuli s vodítky a před vařením můžete vidět, zda jim vaše kombinace odpovídá. Nová kombinace, která odpovídá všem vodítkům, přinese Witch's Parcel. Za první rozluštění receptu v daný den UTC získáte pět balíčků. Když někdo recept rozluští, Witch ho zapomene a začne nový. Máte pět kombinací na účet za den UTC v jednom světě. Přísady si můžete ponechat a Witch's Parcels otevírat nebo používat k výrobě předmětů podle receptů Witch.",
 	"update.08_10_26.halloween.support_40": "Monstra si ponechají cíl, když plošné poškození porazí jinou postavu.",
 	"update.08_10_26.halloween.support_41": "Rychlost útoku nyní zohledňuje stavové efekty.",
 	"update.08_10_26.halloween.support_42": "Změny vzhledu už nezpůsobují pád postav spuštěných bez grafiky.",
@@ -907,5 +907,6 @@
 	"update.08_10_26.halloween.support_76": "smart_move dál čeká, zatímco hledá novou trasu.",
 	"update.08_10_26.halloween.support_77": "Pokus o sloučení z prázdného místa už v CODE nevyvolá výjimku.",
 	"update.08_10_26.halloween.support_78": "Velké zprávy CODE se nyní správně započítávají do limitu volání.",
-	"update.08_10_26.halloween.support_79": "Prázdné položky equip_batch nyní vracejí chybu."
+	"update.08_10_26.halloween.support_79": "Prázdné položky equip_batch nyní vracejí chybu.",
+	"update.08_10_26.halloween.item_bonuses": "Popisky předmětů nyní zobrazují číselné hodnoty bonusů pro mapy a třídy."
 }

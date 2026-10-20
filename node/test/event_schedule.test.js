@@ -11,11 +11,14 @@ const T0 = Date.UTC(2026, 9, 20, 10, 0, 0);
 const END = Date.UTC(2026, 10, 3, 0, 0, 0);
 const at_realm = (day, hour, minute = 0) => Date.UTC(2026, 9, day, hour - 1, minute);
 
+// The server's pools: the Witch's Cipher is a daily outside Halloween (node/server.js)
+const POOLS = { dailies: ["crabxx", "goobrawl", "abtesting", "witchcipher"], nightlies: ["icegolem", "franky"] };
+
 function make(saved, now, open = { halloween: true }, slots = SLOTS) {
 	return create_schedule({
 		saved,
 		offset: 1,
-		pools: { dailies: ["crabxx", "goobrawl", "abtesting"], nightlies: ["icegolem", "franky"] },
+		pools: POOLS,
 		realm: "EUI",
 		season_open: (season, when) => !!open[season] && when < END,
 		now: () => now,
@@ -149,7 +152,7 @@ test("seasonal occurrences stop at the season's end and when it closes", () => {
 	const closing = create_schedule({
 		saved: JSON.parse(JSON.stringify(schedule.state())),
 		offset: 1,
-		pools: { dailies: ["crabxx", "goobrawl", "abtesting"], nightlies: ["icegolem", "franky"] },
+		pools: POOLS,
 		realm: "EUI",
 		season_open: (season, when) => !!open[season] && when < END,
 		now: () => Date.UTC(2026, 9, 30, 11),
@@ -160,8 +163,8 @@ test("seasonal occurrences stop at the season's end and when it closes", () => {
 	assert.equal(published.events.filter((o) => o.event === "horseman" && o.status === "scheduled").length, 0);
 	assert.equal(published.repeats.length, 0);
 	assert(
-		published.events.some((o) => o.event === "witchcipher"),
-		"the Witch's Cipher runs all year",
+		published.events.some((o) => o.event === "witchcipher" && o.status === "scheduled"),
+		"the Witch's Cipher goes on as a daily",
 	);
 });
 
@@ -172,10 +175,7 @@ test("a season that opens after the lineup was built gets its events at once, wi
 	const before = schedule.publish(T0);
 	assert.equal(before.events.filter((o) => o.event === "horseman").length, 0);
 	assert.equal(before.repeats.length, 0);
-	const rotation = (lineup) =>
-		lineup.events
-			.filter((o) => ["crabxx", "goobrawl", "abtesting", "icegolem", "franky"].includes(o.event))
-			.map((o) => o.id);
+	const rotation = (lineup, names) => lineup.events.filter((o) => names.includes(o.event)).map((o) => o.id);
 	open.halloween = true;
 	schedule.tick(T0 + 60000);
 	const after = schedule.publish(T0 + 60000);
@@ -185,9 +185,19 @@ test("a season that opens after the lineup was built gets its events at once, wi
 		["graveyard"],
 	);
 	assert.deepEqual(
-		rotation(after),
-		rotation(before).filter((id) => after.events.some((o) => o.id === id)),
+		rotation(after, ["icegolem", "franky"]),
+		rotation(before, ["icegolem", "franky"]),
+		"the nightlies stay",
 	);
+	// The dailies published before the Witch's turn stay; her daily turns go to the others, as she has her own rounds now
+	const dailies = ["crabxx", "goobrawl", "abtesting", "witchcipher"];
+	const daily_slot = (id) => /-(13|20)00-/.test(id);
+	const was = rotation(before, dailies).filter(daily_slot),
+		now = rotation(after, dailies).filter(daily_slot);
+	const cut = was.findIndex((id) => id.endsWith("witchcipher"));
+	assert(cut > 0);
+	assert.deepEqual(now.slice(0, cut), was.slice(0, cut));
+	assert(!now.some((id) => /-(13|20)00-witchcipher$/.test(id)));
 	// A lineup saved while the season was closed is fixed on the first tick after a restart
 	open.halloween = false;
 	const closed = make(undefined, T0, open);
@@ -196,6 +206,47 @@ test("a season that opens after the lineup was built gets its events at once, wi
 	const restarted = make(JSON.parse(JSON.stringify(closed.state())), T0 + 120000, open);
 	restarted.tick(T0 + 120000);
 	assert.equal(restarted.publish(T0 + 120000).events.filter((o) => o.event === "horseman").length, 7);
+});
+
+test("the Witch's Cipher runs twice a day during Halloween and takes its turn among the dailies the rest of the year", () => {
+	const week = (open) => {
+		const schedule = make(undefined, T0, open);
+		schedule.tick(T0);
+		return schedule.publish(T0).events.filter((o) => o.at > T0);
+	};
+	const hours = (list) => [...new Set(list.map((o) => new Date(o.at + HOUR).getUTCHours()))].sort((a, b) => a - b);
+	const halloween = week({ halloween: true });
+	const witch = halloween.filter((o) => o.event === "witchcipher");
+	assert.equal(witch.length, 14);
+	assert.deepEqual(hours(witch), [6, 18], "only its own two rounds, never a daily slot");
+	const dailies = halloween.filter((o) => ["crabxx", "goobrawl", "abtesting"].includes(o.event));
+	assert.equal(dailies.length, 14, "the daily slots go to the other dailies");
+	const year = week({});
+	const everyday = year.filter((o) => hours([o])[0] === 13 || hours([o])[0] === 20);
+	assert.equal(everyday.length, 14);
+	const turns = {};
+	for (const o of everyday) turns[o.event] = (turns[o.event] || 0) + 1;
+	assert.deepEqual(Object.keys(turns).sort(), ["abtesting", "crabxx", "goobrawl", "witchcipher"]);
+	assert(
+		Object.values(turns).every((n) => n === 3 || n === 4),
+		JSON.stringify(turns),
+	);
+	assert.deepEqual(hours(year.filter((o) => o.event === "witchcipher")), [13, 20]);
+});
+
+test("when Halloween closes, the days ahead give the Witch's Cipher its daily turns", () => {
+	const open = { halloween: true };
+	const schedule = make(undefined, T0, open);
+	schedule.tick(T0);
+	open.halloween = false;
+	const later = T0 + HOUR;
+	schedule.tick(later);
+	const ahead = schedule.publish(later).events.filter((o) => o.at > later && o.event === "witchcipher");
+	assert(ahead.length >= 3);
+	assert(
+		ahead.every((o) => [13, 20].includes(new Date(o.at + HOUR).getUTCHours())),
+		"in daily slots only",
+	);
 });
 
 test("a new pool member joins the end of the saved queue and a removed one leaves", () => {

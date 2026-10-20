@@ -332,7 +332,8 @@ var events = Object.assign(
 	},
 	get_event_flags(),
 );
-var dailies = ["crabxx", "goobrawl", "abtesting"];
+// The Witch's Cipher has its own two daily rounds during Halloween (node/logic/event_schedule.js)
+var dailies = ["crabxx", "goobrawl", "abtesting", "witchcipher"];
 shuffle(dailies);
 var nightlies = ["icegolem", "franky"];
 shuffle(nightlies);
@@ -2823,7 +2824,6 @@ function issue_monster_award(monster, award) {
 	// if(gameplay=="test" && player.level<80) player.level+=1;
 	stats.kills[monster.type]++;
 	if (!award || award.drop !== false) drop_something(player, monster);
-	witch_cipher_kill(player, monster);
 	if (!player.party && !award?.members) {
 		player.socket.emit("kill_credit", {
 			mtype: monster.type,
@@ -2866,9 +2866,6 @@ function issue_monster_award(monster, award) {
 			if (!current) {
 				return;
 			}
-			// A party member fighting nearby gets the Witch's Cipher roll too (one per account, on its own cooldown)
-			if (current != player && current.map == monster.map && simple_distance(current, monster) < 600)
-				witch_cipher_kill(current, monster);
 			current.socket.emit("kill_credit", {
 				mtype: monster.type,
 			});
@@ -12776,29 +12773,10 @@ function init_socket_io(socket_server, server_index) {
 					transport_player_to(player, "halloween", [-405, -1560, 0, 40]);
 				}
 			} else if (data.name == "graveyard" && events.graveyard) {
-				if (simple_distance(player, { map: "spookytown", x: 255, y: -1240 }) > 200) {
-					transport_player_to(player, "spookytown", [255, -1240, 0, 40]);
+				// Below the graveyard's stairs, out of the Mummies' reach
+				if (simple_distance(player, { map: "spookytown", x: 255, y: -1030 }) > 200) {
+					transport_player_to(player, "spookytown", [255, -1030, 0, 30]);
 				}
-			} else if (data.name == "witchcipher") {
-				// Joining takes part without moving: ingredients drop in four regions.
-				witch_cipher_join(player)
-					.then((result) =>
-						socket.emit(
-							"game_response",
-							Object.assign({ response: "data", place: "join", name: "witchcipher" }, result),
-						),
-					)
-					.catch((error) => {
-						log_trace("witchcipher join", error);
-						socket.emit("game_response", {
-							response: "data",
-							place: "join",
-							name: "witchcipher",
-							failed: true,
-							reason: "invalid",
-						});
-					});
-				return;
 			} else if (data.name == "abtesting" && E.abtesting) {
 				if (player.map != "abtesting" || !player.team) {
 					if (

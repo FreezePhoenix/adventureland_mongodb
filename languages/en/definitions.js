@@ -4682,8 +4682,8 @@ module.exports["map.spookytown.quirks.5.5"] = "Locked";
 // Title of the INFO button near the Witch in Spooky Forest; opens the Witch's Cipher guide. Descriptive event name; translate.
 module.exports["interaction.witchcipher.title"] = "Witch's Cipher";
 
-// Tooltip of the INFO button near the Witch; opens the Witch's Cipher guide. 06:00 and 18:00 are on the realm clock.
-module.exports["interaction.witchcipher.summary"] = "Every day at 06:00 and 18:00 realm time, gather ingredients and brew the Witch's lost recipe.";
+// Tooltip of the INFO button near the Witch; opens the Witch's Cipher guide. 06:00 and 18:00 (during Halloween) and 13:00 or 20:00 (the rest of the year) are on the realm clock.
+module.exports["interaction.witchcipher.summary"] = "During Halloween, brew at 06:00 and 18:00 realm time; the rest of the year, the Witch's Cipher takes turns with other daily events at 13:00 or 20:00.";
 
 // Title of the INFO button near a Trick or Treat door during Halloween; opens the Trick or Treat guide.
 module.exports["interaction.trickortreat.title"] = "Trick or Treat";

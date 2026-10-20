@@ -2290,7 +2290,7 @@
 	"map.spookytown.quirks.4.5": "Lukittu",
 	"map.spookytown.quirks.5.5": "Lukittu",
 	"interaction.witchcipher.title": "Witchin salakirjoitus",
-	"interaction.witchcipher.summary": "Kerää joka päivä klo 06.00 ja 18.00 maailman aikaa aineksia ja valmista Witchin kadonnut resepti.",
+	"interaction.witchcipher.summary": "Halloweenin aikana valmista sekoituksia klo 06.00 ja 18.00 Maailma-aikaa. Muina aikoina Witchin salakirjoitus vuorottelee muiden päivittäisten tapahtumien kanssa klo 13.00 tai 20.00.",
 	"interaction.trickortreat.title": "Karkki vai kepponen",
 	"interaction.trickortreat.summary": "Koputa tähän oveen Halloweenin aikana saadaksesi herkun tai säikähdyksen."
 }

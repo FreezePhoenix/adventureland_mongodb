@@ -420,13 +420,17 @@ var drops = {
 			[100, "candy0"],
 			[100, "candy1"],
 		],
-		// Halloween events. Cooperative rows are per share of the fight, like Mr. Pumpkin's.
+		// Halloween events. Cooperative rows are per share of the fight, like Mr. Pumpkin's: with one extra table
+		// pass per 10 fighters, a row of weight w hands a crowd about w x Luck copies a fight, capped at one a fighter.
 		horseman: [
 			[100, "candy0", 5],
 			[100, "candy1", 10],
-			[4, "witchparcel", 3],
+			// Weight 10: each fighter averages five Parcels a night at any crowd size
+			[10, "witchparcel", 5],
 			[4, "pstem", 25],
-			[0.1, "horsemanpumpkin"],
+			// About one Horseman's Pumpkin a night for a usual crowd, one Burning Candle every other night
+			[0.5, "horsemanpumpkin"],
+			[0.25, "bcandle"],
 		],
 		jackowalker: [
 			[1, "pstem"],
@@ -440,12 +444,14 @@ var drops = {
 			[0.06, "bandages"],
 			[0.0015, "ectoplasm"],
 		],
+		// Twelve rounds a day: the scarce materials come about once a realm-day
 		gargoyle: [
 			[100, "candy1", 6],
 			// Weight 10, like Mr. Pumpkin's helmet: with the extra table roll per 10 fighters, each fighter averages a Parcel at any crowd size
 			[10, "witchparcel"],
-			[2, "essenceofether", 3],
-			[0.6, "bcandle"],
+			[1, "essenceofether", 2],
+			[0.05, "ectoplasm"],
+			[0.04, "bcandle"],
 		],
 		bbpompom: [
 			[0.0004, "essenceoffrost"],
@@ -1188,9 +1194,10 @@ var drops = {
 		[12, "cscroll0", 4],
 		[12, "scroll1", 2],
 		[12, "cscroll1"],
-		[11.75, "cipherdraught"],
-		[10, "hpot1", 10],
-		[10, "mpot1", 10],
+		// The Draught is a strong two-hour elixir now: fewer of them, more potions
+		[8, "cipherdraught"],
+		[12, "hpot1", 10],
+		[11.75, "mpot1", 10],
 		[9, "gemfragment", 3],
 		[8, "goldnugget"],
 		[7, "funtoken", 4],

@@ -91,10 +91,14 @@ function context(extra = {}) {
 		G: {
 			events: design.events,
 			items: design.items,
+			monsters: design.monsters,
 			conditions: design.conditions,
 			quests: { witch: { map: "halloween", in: "halloween", x: 858, y: -160 } },
 		},
 		B: { sell_dist: 400 },
+		D: { drops: { monsters: plain(design.drops.monsters), maps: {} } },
+		instances: {},
+		is_array: Array.isArray,
 		E: {},
 		S: {},
 		events: { halloween: true },
@@ -131,129 +135,275 @@ function context(extra = {}) {
 	return c;
 }
 
-test("clues count duplicates like the cauldron and the board narrows the recipes", () => {
+const FIVE = ["frostscale", "gloomfeather", "gloomfeather", "embercoal", "verdantspore"];
+const stock = (q) => NAMES.map((name) => ({ name, q }));
+const settle = () => new Promise((resolve) => setImmediate(resolve));
+
+test("a clue counts the ingredients in the right place and the board narrows the recipes", () => {
 	const c = context();
-	const score = (secret, mix) => plain(c.witch_cipher_score(secret, mix));
-	assert.deepEqual(
-		score(
-			["frostscale", "gloomfeather", "gloomfeather", "embercoal"],
-			["verdantspore", "verdantspore", "frostscale", "frostscale"],
-		),
-		{ right: 0, moved: 1 },
+	const right = (secret, mix) => c.witch_cipher_score(secret, mix).right;
+	assert.equal(right(FIVE, ["verdantspore", "verdantspore", "frostscale", "frostscale", "verdantspore"]), 1);
+	assert.equal(
+		right(FIVE, ["frostscale", "gloomfeather", "embercoal", "gloomfeather", "verdantspore"]),
+		3,
+		"an ingredient in another place does not count",
 	);
-	assert.deepEqual(
-		score(
-			["frostscale", "gloomfeather", "gloomfeather", "embercoal"],
-			["frostscale", "gloomfeather", "embercoal", "gloomfeather"],
-		),
-		{ right: 2, moved: 2 },
-	);
-	assert.deepEqual(
-		score(
-			["gloomfeather", "gloomfeather", "gloomfeather", "gloomfeather"],
-			["gloomfeather", "frostscale", "frostscale", "frostscale"],
-		),
-		{ right: 1, moved: 0 },
-	);
-	assert.equal(c.witch_cipher_candidates([]).length, 256);
-	const secret = ["frostscale", "gloomfeather", "gloomfeather", "embercoal"];
+	assert.equal(right(FIVE, FIVE), 5);
+	assert.equal(c.witch_cipher_candidates([]).length, 1024);
 	const history = [];
 	for (const mix of [
-		["verdantspore", "verdantspore", "frostscale", "frostscale"],
-		["frostscale", "embercoal", "gloomfeather", "gloomfeather"],
+		["verdantspore", "verdantspore", "frostscale", "frostscale", "verdantspore"],
+		["frostscale", "embercoal", "gloomfeather", "gloomfeather", "embercoal"],
 	]) {
-		history.push(Object.assign({ mix }, c.witch_cipher_score(secret, mix)));
+		history.push({ mix, right: right(FIVE, mix) });
 		const left = c.witch_cipher_candidates(history);
 		assert(
-			left.some((recipe) => recipe.join() === secret.join()),
+			left.some((recipe) => recipe.join() === FIVE.join()),
 			"the secret always fits",
 		);
-		assert(left.length < 256);
+		assert(left.length < 1024);
 	}
 });
 
-test("one character per account joins a day, on one realm", async () => {
-	const c = context();
+test("while gathering lasts, the four regions drop the ingredients through their usual loot, by HP", () => {
+	let roll = 0.01;
+	const c = context({ Math: Object.assign(Object.create(Math), { random: () => roll }) });
+	const usual = plain(c.D.drops.monsters.ghost);
+	const row = (type) => (c.D.drops.monsters[type] || []).find((entry) => NAMES.includes(entry[1]));
+	assert.equal(row("ghost"), undefined, "nothing before the round");
 	c.witch_cipher_start({ id: "occurrence" });
-	assert.equal(c.events.witchcipher, true);
-	assert.equal(c.E.witchcipher.phase, "gathering");
-	assert.equal(c.sent[0][1].phrase, "server.witchcipher.started");
-	const first = player("Witchling");
-	assert.equal((await c.witch_cipher_join(first)).joined, true);
-	assert.equal((await c.witch_cipher_join(first)).mixes_left, 5, "joining again is harmless");
-	const alt = player("Alt", { real_id: "CH_Alt" });
-	const refused = await c.witch_cipher_join(alt);
-	assert.equal(refused.reason, "witchcipher_claimed");
-	assert.equal(refused.phrase, "server.witchcipher.claimed_by");
-	// The same account on another realm finds today's claim already taken.
+	const rate = design.events.witchcipher.loot;
+	for (const [name, types] of design.events.witchcipher.ingredients)
+		for (const type of types) {
+			assert.equal(row(type)[1], name, type);
+			assert(Math.abs(row(type)[0] - (rate * design.monsters[type].hp) / 1000) < 1e-12, type);
+		}
+	assert.deepEqual(plain(c.D.drops.monsters.ghost.slice(0, usual.length)), usual, "the usual loot stays");
+	assert.equal(row("bat"), undefined, "bats are not on the list");
+	// The kill's own roll drops them into the chest: share, Luck, level and the table pass all apply
+	vm.runInContext(extract(read("node/server.js"), "roll_monster_drops"), c);
+	Object.assign(c, {
+		mode: {},
+		is_in_pvp: () => false,
+		has_home_server_bonus: () => false,
+		drop_item_logic: (drop, item) => drop.items.push(item[1]),
+	});
+	Object.assign(c.B, { drop_table_multiplier: 1, global_drops: false });
+	const kill = (luckm) => {
+		const drop = { items: [] };
+		c.roll_monster_drops(
+			{ luckm, tskin: "" },
+			{ type: "ghost", map: "halloween", level: 1, mult: 1, max_hp: 12000, luckx: 1 },
+			drop,
+			1,
+		);
+		return drop.items;
+	};
+	roll = 0.04;
+	assert(!kill(1).includes("gloomfeather"), "a Ghost's chance is 3.6%");
+	assert(kill(2).includes("gloomfeather"), "and Luck raises it");
+	c.witch_cipher.gather_end = Date.now() - 1;
+	c.witch_cipher_tick();
+	assert.equal(row("ghost"), undefined, "nothing drops while brewing");
+	assert.deepEqual(plain(c.D.drops.monsters.ghost), usual);
+	for (const [, types] of design.events.witchcipher.ingredients)
+		for (const type of types)
+			assert.deepEqual(plain(c.D.drops.monsters[type]), plain(design.drops.monsters[type]), type);
+});
+
+test("anyone brews without joining; an account's characters share its mixes on one realm", async () => {
+	const c = context();
+	const p = player("Witchling", { items: stock(10) }),
+		alt = player("Alt", { real_id: "CH_Alt", items: stock(10) });
+	Object.assign(c.players, { Witchling: p, Alt: alt });
+	c.witch_cipher_start({ id: "occurrence" });
+	assert.deepEqual(plain(alt.witchcipher), { mixes: 0, mixes_left: 5, parcels: 0 }, "every character sees the day");
+	assert.equal((await c.witch_cipher_brew(p, FIVE)).mixes_left, 4);
+	assert.equal(alt.witchcipher.mixes_left, 4, "the account's other character sees the mix");
+	assert.equal((await c.witch_cipher_brew(alt, FIVE)).mixes_left, 3, "and brews from the same five");
+	const merchant = player("Merchantly", { owner: "US_merchant", real_id: "CH_M", type: "merchant", items: stock(5) });
+	assert.equal((await c.witch_cipher_brew(merchant, FIVE)).success, true, "merchants brew too");
+	// The same account on another realm finds today's mixes taken here
 	const elsewhere = context({ db: c.db, server_id: "SR_EUI" });
 	elsewhere.witch_cipher_start({ id: "eu" });
-	assert.equal((await elsewhere.witch_cipher_join(player("Witchling"))).reason, "witchcipher_elsewhere");
+	const there = player("Witchling", { items: stock(10) });
+	const refused = await elsewhere.witch_cipher_brew(there, FIVE);
+	assert.deepEqual([refused.reason, refused.phrase], ["witchcipher_elsewhere", "server.witchcipher.claimed_elsewhere"]);
+	assert.equal(there.items[0].q, 10, "a refused mix keeps its ingredients");
 	const info = await c.witch_cipher_info(alt);
-	assert.deepEqual([info.joined, info.name, info.server, info.mixes_left], [true, "Witchling", "USII", 5]);
+	assert.deepEqual([info.server, info.mixes_left], ["USII", 3]);
 });
 
-test("a useful mix pays like the answer, a crack pays a bonus and starts a new recipe, and five mixes end the day", async () => {
+test("a new mix that fits every clue pays a Parcel; the crack pays a bonus once a day and starts a new recipe", async () => {
 	const c = context();
 	c.witch_cipher_start({ id: "occurrence" });
-	c.witch_cipher.secret = ["frostscale", "gloomfeather", "gloomfeather", "embercoal"];
-	const p = player("Witchling", { items: NAMES.map((name) => ({ name, q: 10 })) });
-	await c.witch_cipher_join(p);
-	const brew = (mix) => plain(c.witch_cipher_brew(p, mix));
-	const first = brew(["verdantspore", "verdantspore", "frostscale", "frostscale"]);
-	assert.deepEqual([first.right, first.moved, first.informative, first.parcels], [0, 1, true, 2]);
-	const ruled_out = brew(["embercoal", "embercoal", "embercoal", "embercoal"]);
-	assert.deepEqual([ruled_out.informative, ruled_out.parcels], [false, 1], "the clues already rule this out");
-	const crack = brew(["frostscale", "gloomfeather", "gloomfeather", "embercoal"]);
-	assert.deepEqual([crack.cracked, crack.parcels], [true, 4]);
+	c.witch_cipher.secret = FIVE.slice();
+	const p = player("Witchling", { items: stock(20) });
+	const brew = async (mix) => plain(await c.witch_cipher_brew(p, mix));
+	const first = await brew(["verdantspore", "verdantspore", "frostscale", "frostscale", "verdantspore"]);
+	assert.deepEqual([first.right, first.fits, first.parcels], [1, true, 1]);
+	const ruled_out = await brew(["embercoal", "embercoal", "embercoal", "embercoal", "embercoal"]);
+	assert.deepEqual([ruled_out.fits, ruled_out.parcels], [false, 0], "the first clue already rules this out");
+	const crack = await brew(FIVE);
+	assert.deepEqual([crack.cracked, crack.parcels], [true, 5]);
 	assert(c.sent.some(([name, data]) => name == "server_message" && data.phrase == "server.witchcipher.cracked"));
 	// She forgets it at once: the cracked recipe shows above a clean board for a new one
-	assert.deepEqual(plain(c.E.witchcipher.cracked), {
-		by: "Witchling",
-		recipe: ["frostscale", "gloomfeather", "gloomfeather", "embercoal"],
-	});
-	assert.deepEqual([c.E.witchcipher.board.length, c.E.witchcipher.possible, c.E.witchcipher.cracks], [0, 256, 1]);
-	assert.equal(c.witch_cipher.history.length, 0);
-	c.witch_cipher.secret = ["verdantspore", "embercoal", "embercoal", "gloomfeather"];
-	const again = brew(["frostscale", "gloomfeather", "gloomfeather", "embercoal"]);
-	assert.deepEqual(
-		[again.cracked, again.informative, again.parcels],
-		[false, true, 2],
-		"the old answer is just a first guess now",
-	);
-	assert.equal(brew(["frostscale", "frostscale", "frostscale", "frostscale"]).parcels, 1, "ruled out by the new clue");
-	assert.equal(brew(NAMES).reason, "witchcipher_no_mixes");
+	assert.deepEqual(plain(c.E.witchcipher.cracked), { by: "Witchling", recipe: FIVE });
+	assert.deepEqual([c.E.witchcipher.board.length, c.E.witchcipher.possible, c.E.witchcipher.cracks], [0, 1024, 1]);
+	c.witch_cipher.secret = ["embercoal", "embercoal", "frostscale", "verdantspore", "gloomfeather"];
+	const again = await brew(FIVE);
+	assert.deepEqual([again.cracked, again.fits, again.parcels], [false, true, 1], "the old answer is a first guess now");
+	const second = await brew(["embercoal", "embercoal", "frostscale", "verdantspore", "gloomfeather"]);
+	assert.deepEqual([second.cracked, second.parcels], [true, 1], "the bonus came with the day's first crack");
+	assert.equal((await brew(FIVE)).reason, "witchcipher_no_mixes");
 	const parcels = p.items.filter((item) => item && item.name == "witchparcel").reduce((sum, item) => sum + item.q, 0);
-	assert.equal(parcels, 10);
-	assert.equal(
-		p.items.find((item) => item && item.name == "frostscale").q,
-		10 - 2 - 1 - 1 - 4,
-		"each mix consumed its ingredients",
-	);
-	await new Promise((resolve) => setImmediate(resolve));
+	assert.equal(parcels, 8);
+	assert.equal(p.items.find((item) => item && item.name == "verdantspore").q, 20 - 3 - 0 - 1 - 1 - 1);
+	await settle();
 	const saved = await c.db.collection("WitchCipher").findOne({ owner: "US_owner" });
-	assert.deepEqual([saved.mixes, saved.parcels], [5, 10]);
-	assert.equal(c.witch_cipher.history.length, 2, "the new recipe's board has its two clues");
+	assert.deepEqual([saved.mixes, saved.parcels, saved.cracks], [5, 8, 2]);
 });
 
-test("cracking more than once still pays at most 12 Witch's Parcels a day", async () => {
+test("a mix already on the board teaches nothing and pays nothing", async () => {
 	const c = context();
 	c.witch_cipher_start({ id: "occurrence" });
-	const p = player("Witchling", { items: NAMES.map((name) => ({ name, q: 20 })) });
-	await c.witch_cipher_join(p);
-	const pays = [];
-	for (let i = 0; i < 5; i++) {
-		const mix = [NAMES[i % 4], NAMES[(i + 1) % 4], NAMES[(i + 2) % 4], NAMES[(i + 3) % 4]];
-		if (i < 3) c.witch_cipher.secret = mix.slice(); // three cracks in a row
-		pays.push(plain(c.witch_cipher_brew(p, mix)).parcels);
-	}
-	assert.deepEqual(pays, [4, 4, 4, 0, 0]);
-	assert.equal(c.witch_cipher.cracks.length, 3);
-	const parcels = p.items.filter((item) => item && item.name == "witchparcel").reduce((sum, item) => sum + item.q, 0);
-	assert.equal(parcels, 12);
+	c.witch_cipher.secret = FIVE.slice();
+	const p = player("Witchling", { items: stock(10) });
+	const mix = ["verdantspore", "verdantspore", "frostscale", "frostscale", "verdantspore"];
+	assert.equal((await c.witch_cipher_brew(p, mix)).parcels, 1);
+	const twice = plain(await c.witch_cipher_brew(p, mix));
+	assert.deepEqual([twice.fits, twice.parcels, c.witch_cipher.history.length], [false, 0, 1]);
 });
 
-test("a round saved before recipes changed after a crack keeps its cracked recipe and gets a new one", () => {
+test("a failed claim write is retried", async () => {
+	const c = context();
+	c.witch_cipher_start({ id: "occurrence" });
+	const p = player("Witchling", { items: stock(10) });
+	await c.witch_cipher_brew(p, FIVE);
+	await settle();
+	const collection = c.db.collection;
+	let failures = 1;
+	c.db.collection = (name) => {
+		const real = collection.call(c.db, name);
+		return Object.assign({}, real, {
+			updateOne: (...args) => (failures-- > 0 ? Promise.reject(new Error("write failed")) : real.updateOne(...args)),
+		});
+	};
+	c.log_trace = () => {};
+	await c.witch_cipher_brew(p, FIVE);
+	await settle();
+	assert.equal((await collection.call(c.db, "WitchCipher").findOne({ owner: "US_owner" })).mixes, 1);
+	c.run_later();
+	await settle();
+	assert.equal((await collection.call(c.db, "WitchCipher").findOne({ owner: "US_owner" })).mixes, 2);
+});
+
+test("after a restart a character finds its account's day in Mongo, not in the snapshot", async () => {
+	const c = context();
+	c.witch_cipher_start({ id: "occurrence" });
+	const p = player("Witchling", { items: stock(10) });
+	await c.witch_cipher_brew(p, FIVE);
+	await settle();
+	const restarted = context({ db: c.db, S: { witchcipher: plain(c.S.witchcipher) } });
+	restarted.witch_cipher_restore();
+	assert.equal(restarted.S.witchcipher.claims, undefined, "claims are not part of the saved round");
+	const back = player("Alt", { real_id: "CH_Alt", items: stock(10) });
+	restarted.event_player_status(back);
+	assert.equal(back.witchcipher.mixes_left, 5, "shown at once");
+	await new Promise((resolve) => setTimeout(resolve, 5));
+	assert.equal(back.witchcipher.mixes_left, 4, "then read back");
+	assert.equal((await restarted.witch_cipher_brew(back, FIVE)).mixes_left, 3);
+});
+
+test("brewing needs the ingredients and the Witch nearby", async () => {
+	const c = context();
+	c.witch_cipher_start({ id: "occurrence" });
+	const p = player("Witchling", { items: [{ name: "verdantspore", q: 4 }] });
+	const all = Array(5).fill("verdantspore");
+	assert.equal((await c.witch_cipher_brew(p, all)).reason, "witchcipher_ingredients");
+	assert.equal((await c.witch_cipher_brew(p, all.slice(0, 4))).reason, "invalid", "five ingredients");
+	assert.equal((await c.witch_cipher_brew(p, ["candy1", ...all.slice(1)])).reason, "invalid");
+	p.items = [{ name: "verdantspore", q: 5 }];
+	p.map = "main";
+	assert.equal((await c.witch_cipher_brew(p, all)).reason, "distance");
+	p.map = "halloween";
+	p.user = {};
+	assert.equal((await c.witch_cipher_brew(p, all)).reason, "cant_in_bank");
+	assert.equal(p.items[0].q, 5, "a refused mix keeps the ingredients");
+	assert.equal(await c.db.collection("WitchCipher").findOne({ owner: "US_owner" }), null, "and opens no claim");
+});
+
+test("the day's other round shows each account what it has left, here or on another realm", async () => {
+	const c = context();
+	const p = player("Witchling", { items: stock(10) }),
+		alt = player("Alt", { real_id: "CH_Alt" }),
+		visitor = player("Visitor", { owner: "US_visitor", real_id: "CH_Visitor" });
+	Object.assign(c.players, { Witchling: p, Alt: alt, Visitor: visitor });
+	c.witch_cipher_start({ id: "morning" });
+	await c.witch_cipher_brew(p, FIVE);
+	await c.witch_cipher_brew(p, ["frostscale", "verdantspore", "embercoal", "gloomfeather", "gloomfeather"]);
+	// The visitor brewed on another realm this morning
+	await c.db.collection("WitchCipher").insertOne({
+		_id: "claim:US_visitor:" + c.witch_cipher.day,
+		owner: "US_visitor",
+		day: c.witch_cipher.day,
+		name: "Visitor",
+		server: "SR_EUI",
+		mixes: 1,
+		parcels: 1,
+		cracks: 0,
+	});
+	c.witch_cipher.end = Date.now() - 1;
+	c.witch_cipher_tick();
+	assert.equal(p.witchcipher, null, "nothing between the rounds");
+	c.witch_cipher_start({ id: "evening" });
+	assert.equal(p.witchcipher.mixes_left, 3);
+	assert.equal(alt.witchcipher.mixes_left, 3);
+	await settle();
+	assert.deepEqual([visitor.witchcipher.mixes_left, visitor.witchcipher.server], [0, "EUI"], "its mixes are on EU I");
+	assert.equal(
+		(await c.witch_cipher_brew(p, ["gloomfeather", "embercoal", "frostscale", "verdantspore", "verdantspore"]))
+			.mixes_left,
+		2,
+	);
+	// A restart between the rounds: this server forgot the claim, Mongo still has it
+	await settle();
+	const restarted = context({ db: c.db });
+	const back = player("Witchling");
+	restarted.players.Witchling = back;
+	restarted.witch_cipher_start({ id: "next" });
+	await settle();
+	assert.equal(back.witchcipher.mixes_left, 2);
+});
+
+test("a round that runs past UTC midnight keeps its day", async () => {
+	const c = context();
+	c.witch_cipher_start({ id: "late" });
+	c.witch_cipher.day = "2026-10-17";
+	await c.witch_cipher_brew(player("Witchling", { items: stock(5) }), FIVE);
+	assert.equal((await c.db.collection("WitchCipher").findOne({ owner: "US_owner" }))._id, "claim:US_owner:2026-10-17");
+});
+
+test("a round survives a restart, keeps dropping ingredients while it gathers, and finishes once it is over", () => {
+	const c = context();
+	c.witch_cipher_start({ id: "occurrence" });
+	const saved = plain(c.S.witchcipher);
+	const restarted = context({ S: { witchcipher: saved } });
+	restarted.witch_cipher_restore();
+	assert.equal(restarted.events.witchcipher, true);
+	assert.equal(restarted.E.witchcipher.id, "occurrence");
+	assert(restarted.D.drops.monsters.ghost.some((row) => row[1] == "gloomfeather"));
+	const brewing = context({ S: { witchcipher: Object.assign(plain(saved), { gather_end: Date.now() - 1 }) } });
+	brewing.witch_cipher_restore();
+	assert(!brewing.D.drops.monsters.ghost.some((row) => row[1] == "gloomfeather"), "not once gathering is over");
+	const late = context({ S: { witchcipher: Object.assign(plain(saved), { end: Date.now() - 1 }) } });
+	late.witch_cipher_restore();
+	assert.equal(late.events.witchcipher, false);
+	assert.equal(late.S.witchcipher, null);
+	assert(late.sent.some(([, data]) => data.phrase == "server.witchcipher.over_uncracked"));
+});
+
+test("a round saved under older rules keeps its cracked recipe and starts a five-ingredient one", () => {
 	const c = context();
 	c.witch_cipher_start({ id: "occurrence" });
 	const old = ["frostscale", "gloomfeather", "gloomfeather", "embercoal"];
@@ -267,243 +417,18 @@ test("a round saved before recipes changed after a crack keeps its cracked recip
 	c.witch_cipher_restore();
 	assert.deepEqual(plain(c.witch_cipher.cracks.map((crack) => crack.recipe)), [old]);
 	assert.deepEqual(plain(c.E.witchcipher.cracked.recipe), old);
-	assert.equal(c.witch_cipher.history.length, 0);
-});
-
-test("the Witch's own JOIN request follows join()'s rules for merchants, Hop Sickness and the bank", async () => {
-	const c = context();
-	c.witch_cipher_start({ id: "occurrence" });
-	assert.equal(
-		(await c.witch_cipher_join(player("Merchantly", { type: "merchant", real_id: "CH_M" }))).reason,
-		"no_merchants",
-	);
-	assert.equal(
-		(await c.witch_cipher_join(player("Hopper", { s: { hopsickness: { ms: 1000 } } }))).reason,
-		"cant_when_sick",
-	);
-	assert.equal((await c.witch_cipher_join(player("Banker", { user: {} }))).reason, "cant_in_bank");
-	assert.equal((await c.witch_cipher_join(player("Witchling"))).joined, true);
-});
-
-test("an account's characters share Trick or Treat stamps, and doors left stop at the account's knocks", async () => {
-	const c = context({ Math: Object.assign(Object.create(Math), { random: () => 0 }) });
-	const doors = design.events.trickortreat.doors;
-	const p = player("Witchling", { map: doors[0][0], x: doors[0][1], y: doors[0][2] + 20 });
-	const alt = player("Alt", { real_id: "CH_Alt", trickortreat: { doors: [], doors_left: 7, stamps: 0 } });
-	c.players = { witchling: p, alt };
-	await c.trick_or_treat_knock(p, {});
-	assert.equal(alt.trickortreat.stamps, 1, "the other online character sees the account's stamp");
-	assert(
-		c.resent.some(([who]) => who === "Alt"),
-		"and is told",
-	);
-	// 13 more knocks on other characters use up the account's day; the doors this character hasn't knocked stay closed.
-	await c.db
-		.collection("TrickOrTreat")
-		.updateOne({ _id: "knocks:US_owner:" + new Date().toISOString().slice(0, 10) }, { $set: { count: 13 } });
-	Object.assign(p, { map: doors[1][0], x: doors[1][1], y: doors[1][2] + 20 });
-	await c.trick_or_treat_knock(p, {});
-	assert.equal(c.trick_or_treat_status(p).doors_left, 0, "14 knocks: nothing left today");
-	assert.equal(c.trick_or_treat_status(alt).doors_left, 0);
-});
-
-test("a join answered from an older read keeps the mixes already spent", async () => {
-	const c = context();
-	c.witch_cipher_start({ id: "occurrence" });
-	c.witch_cipher.secret = ["frostscale", "gloomfeather", "gloomfeather", "embercoal"];
-	const p = player("Witchling", { items: NAMES.map((name) => ({ name, q: 10 })) });
-	await c.witch_cipher_join(p);
-	c.witch_cipher_brew(p, ["verdantspore", "verdantspore", "frostscale", "frostscale"]);
-	await new Promise((resolve) => setImmediate(resolve));
-	// The second join read the claim before the brew was saved.
-	await c.db.collection("WitchCipher").updateOne({ owner: "US_owner" }, { $set: { mixes: 0, parcels: 0 } });
-	const again = await c.witch_cipher_join(p);
-	assert.deepEqual([again.mixes_left, again.parcels], [4, 2]);
-	assert.equal(c.witch_cipher_brew(p, NAMES).mixes_left, 3);
-});
-
-test("a failed claim write is retried", async () => {
-	const c = context();
-	c.witch_cipher_start({ id: "occurrence" });
-	const p = player("Witchling", { items: NAMES.map((name) => ({ name, q: 10 })) });
-	await c.witch_cipher_join(p);
-	const collection = c.db.collection;
-	let failures = 1;
-	c.db.collection = (name) => {
-		const real = collection.call(c.db, name);
-		return Object.assign({}, real, {
-			updateOne: (...args) => (failures-- > 0 ? Promise.reject(new Error("write failed")) : real.updateOne(...args)),
-		});
-	};
-	c.log_trace = () => {};
-	c.witch_cipher_brew(p, NAMES);
-	await new Promise((resolve) => setImmediate(resolve));
-	assert.equal((await collection.call(c.db, "WitchCipher").findOne({ owner: "US_owner" })).mixes, 0);
-	c.run_later();
-	await new Promise((resolve) => setImmediate(resolve));
-	assert.equal((await collection.call(c.db, "WitchCipher").findOne({ owner: "US_owner" })).mixes, 1);
-});
-
-test("after a restart the joined character finds today's claim in Mongo, not in the snapshot", async () => {
-	const c = context();
-	c.witch_cipher_start({ id: "occurrence" });
-	const p = player("Witchling", { items: NAMES.map((name) => ({ name, q: 10 })) });
-	await c.witch_cipher_join(p);
-	c.witch_cipher_brew(p, NAMES);
-	await new Promise((resolve) => setImmediate(resolve));
-	const restarted = context({ db: c.db, S: { witchcipher: plain(c.S.witchcipher) } });
-	restarted.witch_cipher_restore();
-	assert.equal(restarted.S.witchcipher.claims, undefined, "claims are not part of the saved round");
-	const back = player("Witchling", { items: NAMES.map((name) => ({ name, q: 10 })) });
-	assert.equal(restarted.witch_cipher_brew(back, NAMES).reason, "witchcipher_join", "not until the claim is read");
-	restarted.event_player_status(back);
-	await new Promise((resolve) => setTimeout(resolve, 5));
-	assert.equal(back.witchcipher.mixes_left, 4);
-	assert.equal(restarted.witch_cipher_brew(back, NAMES).mixes_left, 3);
-	const alt = player("Alt", { real_id: "CH_Alt" });
-	restarted.event_player_status(alt);
-	await new Promise((resolve) => setTimeout(resolve, 5));
-	assert.equal(alt.witchcipher, undefined, "another character of the account did not join");
-});
-
-test("brewing needs the joined character, the ingredients and the Witch nearby", async () => {
-	const c = context();
-	c.witch_cipher_start({ id: "occurrence" });
-	const p = player("Witchling", { items: [{ name: "verdantspore", q: 3 }] });
-	assert.equal(c.witch_cipher_brew(p, NAMES).reason, "witchcipher_join");
-	await c.witch_cipher_join(p);
-	assert.equal(
-		c.witch_cipher_brew(p, ["verdantspore", "verdantspore", "verdantspore", "verdantspore"]).reason,
-		"witchcipher_ingredients",
-	);
-	assert.equal(c.witch_cipher_brew(p, ["verdantspore", "candy1", "frostscale", "frostscale"]).reason, "invalid");
-	p.items = [{ name: "verdantspore", q: 4 }];
-	p.map = "main";
-	assert.equal(
-		c.witch_cipher_brew(p, ["verdantspore", "verdantspore", "verdantspore", "verdantspore"]).reason,
-		"distance",
-	);
-	assert.equal(p.items[0].q, 4, "a refused mix keeps the ingredients");
-});
-
-test("ingredients drop only for the joined character, during gathering, at most every 20 seconds", async () => {
-	let roll = 0.1;
-	const c = context({ Math: Object.assign(Object.create(Math), { random: () => roll }) });
-	c.witch_cipher_start({ id: "occurrence" });
-	const p = player("Witchling"),
-		other = player("Other", { owner: "US_other", real_id: "CH_Other" });
-	c.witch_cipher_kill(p, { type: "goo" });
-	assert.equal(p.items.length, 0, "not joined yet");
-	await c.witch_cipher_join(p);
-	c.witch_cipher_kill(p, { type: "goo" });
-	c.witch_cipher_kill(p, { type: "arcticbee" });
-	c.witch_cipher_kill(other, { type: "goo" });
-	assert.deepEqual(plain(p.items.map((item) => item.name)), ["verdantspore"], "one ingredient per 20 seconds");
-	assert.equal(other.items.length, 0);
-	c.witch_cipher_drops[p.owner] -= 20000;
-	c.witch_cipher_kill(p, { type: "bat" });
-	assert.equal(p.items.length, 1, "bats are not on the list");
-	roll = 0.7;
-	c.witch_cipher_kill(p, { type: "arcticbee" });
-	assert.equal(p.items.length, 1, "a 65% roll");
-	roll = 0.1;
-	c.witch_cipher.gather_end = Date.now() - 1;
-	c.witch_cipher_kill(p, { type: "arcticbee" });
-	assert.equal(p.items.length, 1, "nothing drops while brewing");
-});
-
-test("one join covers both of the day's rounds, with the mixes left from the first", async () => {
-	const c = context();
-	const p = player("Witchling", { items: NAMES.map((name) => ({ name, q: 10 })) }),
-		alt = player("Alt", { real_id: "CH_Alt" }),
-		visitor = player("Visitor", { owner: "US_visitor", real_id: "CH_Visitor" });
-	Object.assign(c.players, { Witchling: p, Alt: alt, Visitor: visitor });
-	c.witch_cipher_start({ id: "morning" });
-	await c.witch_cipher_join(p);
-	c.witch_cipher_brew(p, NAMES);
-	c.witch_cipher_brew(p, ["frostscale", "verdantspore", "embercoal", "gloomfeather"]);
-	// The visitor joined on another realm this morning
-	await c.db.collection("WitchCipher").insertOne({
-		_id: "claim:US_visitor:" + c.witch_cipher.day,
-		owner: "US_visitor",
-		day: c.witch_cipher.day,
-		character: "CH_Visitor",
-		name: "Visitor",
-		server: "SR_EUI",
-		mixes: 1,
-		parcels: 2,
+	assert.deepEqual([c.witch_cipher.secret.length, c.witch_cipher.history.length], [5, 0]);
+	const four = context({
+		S: {
+			witchcipher: Object.assign(plain(c.S.witchcipher), {
+				cracks: [],
+				secret: old.slice(),
+				history: [{ mix: old, right: 1 }],
+			}),
+		},
 	});
-	c.witch_cipher.end = Date.now() - 1;
-	c.witch_cipher_tick();
-	assert.equal(p.witchcipher, null, "between the rounds nobody is joined");
-	c.witch_cipher_start({ id: "evening" });
-	await new Promise((resolve) => setImmediate(resolve));
-	assert.equal(p.witchcipher.mixes_left, 3, "joined again, with three mixes left");
-	assert.equal(alt.witchcipher, undefined, "the account's other character did not join");
-	assert.equal(visitor.witchcipher, undefined, "a join on another realm stays there");
-	assert.equal(c.witch_cipher_brew(p, ["gloomfeather", "embercoal", "frostscale", "verdantspore"]).mixes_left, 2);
-	// A restart between the rounds: this server forgot the claim, Mongo still has it
-	await new Promise((resolve) => setImmediate(resolve));
-	const restarted = context({ db: c.db });
-	const back = player("Witchling");
-	restarted.players.Witchling = back;
-	restarted.witch_cipher_start({ id: "next" });
-	await new Promise((resolve) => setImmediate(resolve));
-	assert.equal(back.witchcipher.mixes_left, 2);
-});
-
-test("a day gives 60 ingredients at most, however the account splits them between the rounds", async () => {
-	const c = context({ Math: Object.assign(Object.create(Math), { random: () => 0.1 }) });
-	const logs = [];
-	const p = player("Witchling", { socket: { emit: (name, data) => logs.push(data && data.phrase) } });
-	c.players.Witchling = p;
-	const gather = (kills) => {
-		for (let i = 0; i < kills; i++) {
-			delete c.witch_cipher_drops[p.owner];
-			c.witch_cipher_kill(p, { type: "goo" });
-		}
-	};
-	c.witch_cipher_start({ id: "morning" });
-	await c.witch_cipher_join(p);
-	gather(40);
-	assert.equal(p.items.length, 40);
-	c.witch_cipher.end = Date.now() - 1;
-	c.witch_cipher_tick();
-	c.witch_cipher_start({ id: "evening" });
-	await new Promise((resolve) => setImmediate(resolve));
-	gather(30);
-	assert.equal(p.items.length, 60, "20 more, then none");
-	assert.equal(logs.filter((phrase) => phrase === "server.witchcipher.ingredients_done").length, 1, "told once");
-	await new Promise((resolve) => setImmediate(resolve));
-	assert.equal(
-		(await c.db.collection("WitchCipher").findOne({ owner: "US_owner" })).found,
-		60,
-		"saved, so a restart cannot reset it",
-	);
-});
-
-test("a round that runs past UTC midnight keeps its day for joins", async () => {
-	const c = context();
-	c.witch_cipher_start({ id: "late" });
-	c.witch_cipher.day = "2026-10-17";
-	const p = player("Witchling");
-	assert.equal((await c.witch_cipher_join(p)).joined, true);
-	assert.equal((await c.db.collection("WitchCipher").findOne({ owner: "US_owner" }))._id, "claim:US_owner:2026-10-17");
-});
-
-test("a round survives a restart and finishes once it is over", () => {
-	const c = context();
-	c.witch_cipher_start({ id: "occurrence" });
-	const saved = plain(c.S.witchcipher);
-	const restarted = context({ S: { witchcipher: saved } });
-	restarted.witch_cipher_restore();
-	assert.equal(restarted.events.witchcipher, true);
-	assert.equal(restarted.E.witchcipher.id, "occurrence");
-	const late = context({ S: { witchcipher: Object.assign(plain(saved), { end: Date.now() - 1 }) } });
-	late.witch_cipher_restore();
-	assert.equal(late.events.witchcipher, false);
-	assert.equal(late.S.witchcipher, null);
-	assert(late.sent.some(([, data]) => data.phrase == "server.witchcipher.over_uncracked"));
+	four.witch_cipher_restore();
+	assert.deepEqual([four.witch_cipher.secret.length, four.witch_cipher.history.length], [5, 0]);
 });
 
 test("doors open once a day per character, 14 times per account, and stamps pay Parcels and the laugh", async () => {
@@ -634,6 +559,57 @@ test("a pumpkin on your head gets more treats", async () => {
 	});
 	assert.equal((await c.trick_or_treat_knock(plain_head, {})).trick, "spooked", "80 is above the 70% treat chance");
 	assert.ok((await c.trick_or_treat_knock(pumpkin, {})).treat, "but below 85% in a pumpkin helmet");
+});
+
+test("a trick can let a Ghost out of the door; it floats away after two minutes or when Halloween ends", async () => {
+	const rolls = [0.9, 0.9]; // a trick, then the Ghost
+	const halloween = { players: {}, monsters: {} };
+	const spawned = [];
+	const c = context({
+		Math: Object.assign(Object.create(Math), { random: () => (rolls.length ? rolls.shift() : 0) }),
+		instances: { halloween },
+		new_monster(map, def) {
+			const m = { id: "ghost" + spawned.length, type: def.type, map, x: def.boundary[0], y: def.boundary[1], s: {} };
+			halloween.monsters[m.id] = m;
+			spawned.push([map, def]);
+			return m;
+		},
+		remove_monster: (m) => delete halloween.monsters[m.id],
+	});
+	const door = design.events.trickortreat.doors[0];
+	const p = player("Witchling", { map: door[0], x: door[1], y: door[2] + 20 });
+	const result = await c.trick_or_treat_knock(p, {});
+	assert.equal(result.trick, "ghost");
+	assert.equal(p.s.spooked, undefined);
+	assert.deepEqual(
+		spawned.map(([map, def]) => [map, def.type, def.special]),
+		[["halloween", "ghost", true]],
+	);
+	const [, def] = spawned[0];
+	assert(def.boundary[0] < door[1] && door[1] < def.boundary[2] && def.boundary[1] > door[2], "in front of the door");
+	c.trick_or_treat_tick();
+	assert.equal(Object.keys(halloween.monsters).length, 1, "it stays a while");
+	c.trick_or_treat_ghosts[0][2] = Date.now() - 1;
+	c.trick_or_treat_tick();
+	assert.deepEqual(Object.keys(halloween.monsters), [], "then floats away");
+	assert.deepEqual(plain(c.trick_or_treat_ghosts), []);
+	// Halloween ends: a Ghost still out leaves at once
+	rolls.push(0.9, 0.9);
+	const alt = player("Alt", { real_id: "CH_Alt", map: door[0], x: door[1], y: door[2] + 20 });
+	assert.equal((await c.trick_or_treat_knock(alt, {})).trick, "ghost");
+	c.events.halloween = false;
+	c.trick_or_treat_tick();
+	assert.deepEqual(Object.keys(halloween.monsters), []);
+});
+
+test("treats include the Witch's ingredients and her Parcels", () => {
+	const treats = design.events.trickortreat.treats;
+	const names = treats.map((row) => row[1]);
+	for (const name of [...NAMES, "witchparcel", "candy0", "candy1"]) assert(names.includes(name), name);
+	assert.equal(
+		treats.reduce((sum, row) => sum + row[0], 0),
+		100,
+	);
 });
 
 test("everything done to the waves counts toward the Gargoyle", () => {

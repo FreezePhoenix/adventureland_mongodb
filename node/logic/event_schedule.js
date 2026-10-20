@@ -16,11 +16,13 @@ const KEEP = 6 * HOUR;
 
 // hours/minute are on the realm clock. pool: a rotation queue; event: a fixed event.
 // season: only while that season runs (and before its end). repeat: frequent, shown as one line.
+// A pool skips an event while that event's own seasonal slot is open.
 const SLOTS = [
 	{ hours: [13, 20], pool: "dailies" },
 	{ hours: [23], pool: "nightlies" },
-	// Two rounds twelve hours apart, so other time zones can play; one daily limit covers both
-	{ hours: [6, 18], event: "witchcipher" },
+	// During Halloween: two rounds twelve hours apart, so other time zones can play; one daily limit covers both.
+	// The rest of the year the Witch's Cipher is one of the dailies.
+	{ hours: [6, 18], event: "witchcipher", season: "halloween" },
 	{ hours: [0], event: "horseman", season: "halloween" },
 	{
 		hours: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23],
@@ -112,6 +114,15 @@ function create_schedule({ saved, offset, pools, realm, season_open, now = Date.
 				}
 		return list.sort((a, b) => a.at - b.at);
 	}
+	function hour_of(at) {
+		return new Date(at + offset * HOUR).getUTCHours();
+	}
+	// The realm hour of an event's latest occurrence before at, if any
+	function last_hour(event, at) {
+		let latest = null;
+		for (const o of state.occurrences) if (o.event === event && o.at < at && (!latest || o.at > latest.at)) latest = o;
+		return latest ? hour_of(latest.at) : null;
+	}
 	function extend(t) {
 		const horizon = t + days * DAY;
 		// A new lineup starts with the slot in progress, so a restart inside a slot hour still runs it.
@@ -120,9 +131,17 @@ function create_schedule({ saved, offset, pools, realm, season_open, now = Date.
 			if (slot.season && !season_open(slot.season, at)) continue;
 			let event = slot.event;
 			if (slot.pool) {
-				const queue = state.queues[slot.pool];
-				if (!queue || !queue.length) continue;
-				event = queue.shift();
+				const queue = state.queues[slot.pool] || [];
+				const own = slots.filter((s) => s.event && s.season && season_open(s.season, at)).map((s) => s.event);
+				const eligible = (from) => queue.findIndex((name, i) => i >= from && !own.includes(name));
+				let pick = eligible(0);
+				if (pick < 0) continue;
+				// An event that ran at this hour last time trades places with the next in line when that one
+				// ran at another hour, so an even pool still moves every event between the slot hours.
+				const next = eligible(pick + 1);
+				if (next >= 0 && last_hour(queue[pick], at) === hour_of(at) && last_hour(queue[next], at) !== hour_of(at))
+					pick = next;
+				event = queue.splice(pick, 1)[0];
 				queue.push(event);
 			}
 			const occurrence = { id: slot_id(event, at), event, at, status: "scheduled" };

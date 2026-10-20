@@ -867,7 +867,7 @@
 	"update.06_10_26.anniversary_crafting.update_button_image": "修正了新動態按鈕上圖片遺失的問題。",
 	"update.08_10_26.halloween.mainframe_spookytown": "修正了 MAINFRAME 中 smart_move() 在離開 Spooky Town 時卡住的問題。",
 	"update.08_10_26.halloween.broadcast_info": "Steam 直播現在會展示怪物 INFO、掉落、物品和目前的活動。",
-	"update.08_10_26.halloween": "每天破解女巫密碼，獲得新物品和配方。萬聖節帶來 Headless Horseman、墓地復甦和不給糖就搗蛋。新的活動視窗會顯示接下來的活動。",
+	"update.08_10_26.halloween": "萬聖節期間每天可破解兩次女巫密碼，其餘時間則全年與輪替的每日活動一同舉行。萬聖節還帶來 Headless Horseman、墓地復甦和不給糖就搗蛋，新增 Ghost 惡作劇和 Witch's Parcel 獎勵。新的活動視窗會顯示接下來的活動。",
 	"update.08_10_26.halloween.title": "女巫密碼、萬聖節與活動",
 	"update.08_10_26.halloween.witchcipher.title": "全新每日活動：女巫密碼！",
 	"update.08_10_26.halloween.halloween": "Headless Horseman 每晚世界時間00:00從 Spooky Forest 的墓地騎出。Zombies 和 Ghouls 每兩小時從 Spooky Town 的墓地爬出，隨後還會出現 Gargoyle。敲響七扇門，可獲得糖果、遇上惡作劇，並且每累積10枚印章就能獲得獎勵。萬聖節最後一天是11月2日，但結束後 Xyn 仍可兌換 Candy 和 Pumpkin Stems，萬聖節配方也仍可使用。",
@@ -877,7 +877,7 @@
 	"update.08_10_26.halloween.map_halloween": "Spooky Forest 現在有兩扇門可以敲響，參加不給糖就搗蛋。",
 	"update.08_10_26.halloween.map_spookytown": "Spooky Town 現在有五扇門可以敲響，參加不給糖就搗蛋。",
 	"update.08_10_26.halloween.events": "點擊聊天視窗上方的捲動列或世界時鐘，查看進行中的季節、即將出現的首領、今日活動及未來七天的活動。你可以切換自己的時間和世界時間。選擇「提醒」，即可在活動開始前10分鐘收到遊戲日誌訊息。聊天視窗上方的捲動列會依序顯示進行中的活動、附有倒數計時的接下來三場活動，以及各季節的結束日期。將滑鼠移到上面可暫停捲動，點擊則可開啟「活動」視窗。點擊 X,Y 或世界名稱可改為顯示你的座標；角色畫面仍會顯示下一場活動。",
-	"update.08_10_26.halloween.witchcipher": "每天世界時間06:00和18:00，Spooky Forest 的 Witch 都會忘記自己的配方。每個UTC日加入一次即可參加兩輪活動。從怪物身上收集四種材料，再到 Witch 處或使用 brew() 調製，測試材料的順序。每次調製都會提供兩個全世界共用的提示。每當有人破解配方，Witch 就會忘記它，並開始一個新配方。獲得 Witch's Parcels 後，可以打開它們，或全年用於 Witch 的配方。",
+	"update.08_10_26.halloween.witchcipher": "萬聖節期間，女巫密碼每天於世界時間06:00和18:00舉行兩次。其餘時間則與 Giga Crab、Goo大亂鬥和 A/B Testing 輪流於13:00或20:00舉行。前20分鐘從四個地區的怪物身上收集材料，並在28分鐘的活動期間到 Spooky Forest 的 Witch 處調製。無需加入活動。每次依序使用五份材料調製，並獲得一個提示：有多少份材料位於正確的位置。整個世界共用提示板，你可以在調製前查看組合是否符合提示。符合所有提示的新組合可獲得一個 Witch's Parcel。在該UTC日首次破解配方，可獲得五個包裹。每當有人破解配方，Witch 就會忘記它，並開始一個新配方。每個帳號每個UTC日可在一個世界調製五次。材料可以保留，Witch's Parcels 則可以打開，或用於 Witch 的配方製作物品。",
 	"update.08_10_26.halloween.support_40": "範圍傷害擊敗另一名角色時，怪物會保留原目標。",
 	"update.08_10_26.halloween.support_41": "攻擊速度現在會計入狀態效果。",
 	"update.08_10_26.halloween.support_42": "外觀變更不再導致無圖形模式下的角色當機。",
@@ -907,5 +907,6 @@
 	"update.08_10_26.halloween.support_76": "smart_move 尋找新路線時會繼續等待。",
 	"update.08_10_26.halloween.support_77": "嘗試從空欄位進行合成，不再讓 CODE 擲出例外。",
 	"update.08_10_26.halloween.support_78": "大型 CODE 訊息現在會正確計入呼叫限額。",
-	"update.08_10_26.halloween.support_79": "equip_batch 中的空項目現在會傳回錯誤。"
+	"update.08_10_26.halloween.support_79": "equip_batch 中的空項目現在會傳回錯誤。",
+	"update.08_10_26.halloween.item_bonuses": "物品提示現在會顯示地圖和職業加成的數值。"
 }

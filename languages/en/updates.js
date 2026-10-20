@@ -1,5 +1,7 @@
 // Release highlights. Dates, item/character names and CODE identifiers stay unchanged.
 module.exports = {
+	// Improvement listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.item_bonuses": "Item tooltips now show the numbers of map and class bonuses.",
 	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
 	"update.08_10_26.halloween.support_79": "Empty equip_batch entries now return an error.",
 	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
@@ -61,11 +63,11 @@ module.exports = {
 	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
 	"update.08_10_26.halloween.support_54": "Reconnecting no longer jumps to an unfinished movement destination.",
 	// Summary of the [08/10/26] update post "Witch's Cipher, Halloween and Events", shown under its title and in the game log. Keep names from the game and CODE identifiers unchanged.
-	"update.08_10_26.halloween": "Solve the Witch's Cipher every day for new items and recipes. Halloween brings the Headless Horseman, Graveyard Rising and Trick or Treat. The new Events window shows what's coming up.",
+	"update.08_10_26.halloween": "Solve the Witch's Cipher twice a day during Halloween, then alongside the rotating daily events all year. Halloween also brings the Headless Horseman, Graveyard Rising and Trick or Treat, with new Ghost tricks and Witch's Parcel rewards. The new Events window shows what's coming up.",
 	// Title of the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
 	"update.08_10_26.halloween.title": "Witch's Cipher, Halloween and Events",
 	// Section text in the [08/10/26] update post "Witch's Cipher, Halloween and Events", under sprites of: item:witchparcel, item:cipherdraught, item:crookedkey, item:patchbuckler, item:blackcatbell, item:nightmarketsash, item:hexweavegloves, item:candleboots, item:witchlightmantle, item:laughingbook. Keep names from the game and CODE identifiers unchanged.
-	"update.08_10_26.halloween.witchcipher": "Every day at 06:00 and 18:00 realm time, the Witch in Spooky Forest forgets her recipe. Join once per UTC day for both rounds, collect four ingredients from monsters and brew them at the Witch, or with brew(), to test their order. Each mix gives two clues shared with the realm. When someone cracks the recipe, the Witch forgets it and a new one starts. Earn Witch's Parcels to open or use in the Witch's recipes, all year.",
+	"update.08_10_26.halloween.witchcipher": "During Halloween, the Witch's Cipher runs twice a day, at 06:00 and 18:00 realm time. The rest of the year, it takes turns with Giga Crab, Goo Brawl and A/B Testing at 13:00 or 20:00. Gather ingredients from monsters in four regions during the first 20 minutes, then brew at the Witch in Spooky Forest during the 28-minute round. No need to join. Each mix uses five ingredients in order and gives one clue: how many are in the right place. The realm shares a board of clues, and you can see whether your mix fits before brewing. A new mix that fits every clue earns a Witch's Parcel. Crack the recipe for the first time that UTC day and earn five Parcels. When someone cracks it, the Witch forgets the recipe and starts another. You get five mixes per account per UTC day, on one realm. Keep your ingredients and use your Witch's Parcels to open or craft items in the Witch's recipes.",
 	// Section heading in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
 	"update.08_10_26.halloween.witchcipher.title": "New Daily Event: Witch's Cipher!",
 	// Section text in the [08/10/26] update post "Witch's Cipher, Halloween and Events", under sprites of: monster:horseman, monster:gargoyle, item:horsemanpumpkin, skill:sinisterlaugh. Keep names from the game and CODE identifiers unchanged.

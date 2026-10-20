@@ -2290,7 +2290,7 @@
 	"map.spookytown.quirks.4.5": "Încuiată",
 	"map.spookytown.quirks.5.5": "Încuiată",
 	"interaction.witchcipher.title": "Cifrul vrăjitoarei",
-	"interaction.witchcipher.summary": "În fiecare zi, la orele 06:00 și 18:00 după ceasul tărâmului, adună ingrediente și prepară rețeta pierdută a lui Witch.",
+	"interaction.witchcipher.summary": "În timpul Halloween, prepară amestecuri la 06:00 și 18:00, ora Tărâmului; în restul anului, Cifrul vrăjitoarei alternează cu alte evenimente zilnice la 13:00 sau 20:00.",
 	"interaction.trickortreat.title": "Ne dați ori nu ne dați?",
 	"interaction.trickortreat.summary": "Bate la această ușă de Halloween ca să primești un dar sau o sperietură."
 }

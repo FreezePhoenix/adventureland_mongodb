@@ -2053,12 +2053,10 @@ module.exports = {
 	"interface.events.join": "JOIN",
 	// Events window: the account used all of today's Witch's Cipher mixes; {count} Witch's Parcels earned today.
 	"interface.events.cipher_done": "Done today · {count} Parcels earned",
-	// Events window: which of the account's characters takes part in today's Witch's Cipher, and its mixes left. {name} is a character name.
-	"interface.events.cipher_joined": "{name} joined · {count} mixes left",
+	// Events window: Witch's Cipher mixes the account has left today ({count}).
+	"interface.events.cipher_ready": "{count} mixes left today",
 	// Singular form of the phrase above.
-	"interface.events.cipher_joined.one": "{name} joined · {count} mix left",
-	// Events window: the account hasn't joined today's Witch's Cipher yet; it can brew {count} mixes.
-	"interface.events.cipher_ready": "{count} mixes available today",
+	"interface.events.cipher_ready.one": "{count} mix left today",
 	// Events window: the player has an unfinished Cave of Many Dreams run to return to.
 	"interface.events.cave_resume": "Your run is still open",
 	// Events window: today's Cave of Many Dreams visit is still available.
@@ -2109,18 +2107,14 @@ module.exports = {
 	"interface.events.about.horseman": "Halloween boss",
 	// Events window: what Graveyard Rising is.
 	"interface.events.about.graveyard": "Halloween monster waves",
-	// The Witch's greeting while today's Witch's Cipher is running and this account hasn't joined. Choices follow: JOIN, RECIPES, PARCELS, INFO.
+	// The Witch's greeting while the Witch's Cipher runs. Choices follow: BREW, RECIPES, PARCELS, INFO.
 	"interface.witch.greeting_live": "Oh dearie, I've forgotten my recipe again! Will you help me brew it?",
-	// The Witch's greeting while the Witch's Cipher runs and this character has joined. Choices follow: BREW, RECIPES, PARCELS, INFO.
-	"interface.witch.greeting_joined": "Four ingredients, in the right order. Stir carefully, dearie.",
 	// The Witch's greeting outside the event. {time} is the next start on the realm clock (the clock above chat), like 06:00 or 18:00.
 	"interface.witch.greeting_closed": "My cauldron boils again at {time} realm time. Come back then, dearie.",
 	// The Witch's greeting when no Witch's Cipher is scheduled.
 	"interface.witch.greeting_idle": "My cauldron is cold today, dearie.",
-	// Button: open the Witch's cauldron, or brew the four ingredients in it. Uppercase.
+	// Button: open the Witch's cauldron, or brew the five ingredients in it. Uppercase.
 	"interface.witch.brew": "BREW",
-	// Button: take part in today's Witch's Cipher with this character. Uppercase.
-	"interface.witch.join": "JOIN",
 	// Button: open the Witch's recipe window. Uppercase.
 	"interface.witch.recipes": "RECIPES",
 	// Button: open the window where Witch's Parcels are opened. Uppercase.
@@ -2147,35 +2141,31 @@ module.exports = {
 	"interface.witch.board_empty": "No mixes yet.",
 	// Clue: ingredients in the right place. Compact.
 	"interface.witch.right": "{count} right",
-	// Clue: right ingredients in the wrong place. Compact.
-	"interface.witch.moved": "{count} moved",
 	// After a mix: Witch's Parcels received.
 	"interface.witch.parcels_paid": "+{count} Parcels",
 	// Singular form of the phrase above.
 	"interface.witch.parcels_paid.one": "+{count} Parcel",
-	// Cauldron result in place of "+0 Parcels": this mix paid nothing because the account already earned today's Witch's Parcel limit (12). Short.
-	"interface.witch.parcels_limit": "Daily Parcel limit reached",
-	// Game log when BREW is pressed with an empty slot.
-	"interface.witch.fill_slots": "Fill all four ingredient slots first.",
-	// Game log: join or brew outside the event.
+	// Cauldron result next to the clue when the mix paid no Witch's Parcel: the clues had already ruled it out, or it was already on the board. Short.
+	"interface.witch.parcels_none": "No Parcel",
+	// Cauldron, under a full mix before brewing: it fits every clue on the board, so it pays a Witch's Parcel. Short.
+	"interface.witch.fits": "Fits every clue. Earns 1 Witch's Parcel.",
+	// Cauldron, same place: the board's clues already rule this mix out, so it pays nothing. Short.
+	"interface.witch.fits_not": "Ruled out by the clues. No Parcel.",
+	// Cauldron, same place: this exact mix is already on the board, so it pays nothing. Short.
+	"interface.witch.fits_tried": "Already on the board. No Parcel.",
+	// Game log when BREW is pressed with an empty slot. The cauldron has five slots.
+	"interface.witch.fill_slots": "Fill all five ingredient slots first.",
+	// Game log: brewing outside the event.
 	"interface.witch.fail.witchcipher_not_live": "The Witch's Cipher isn't running right now.",
-	// Game log: brewing before this character joined.
-	"interface.witch.fail.witchcipher_join": "Join today's Witch's Cipher first.",
 	// Game log: the account used all of today's mixes.
 	"interface.witch.fail.witchcipher_no_mixes": "No mixes left today.",
 	// Game log: not enough of an ingredient for the mix. {item} is an ingredient name.
 	"interface.witch.fail.witchcipher_ingredients": "You need more {item}.",
-	// Game log fallback: the account already took part with a different character today.
-	"interface.witch.fail.witchcipher_claimed": "Another of your characters already joined today.",
-	// Game log fallback: the account's claim for today is on another realm.
-	"interface.witch.fail.witchcipher_elsewhere": "Your account already joined on another realm today.",
+	// Game log fallback: the account brewed its first mix today on another realm.
+	"interface.witch.fail.witchcipher_elsewhere": "Your account already brewed on another realm today.",
 	// Game log: too far from the Witch to brew.
 	"interface.witch.fail.distance": "Get closer to the Witch.",
-	// Game log: merchants can't join the Witch's Cipher.
-	"interface.witch.fail.no_merchants": "Merchants can't join events.",
-	// Game log: Hop Sickness blocks joining.
-	"interface.witch.fail.cant_when_sick": "Wait for Hop Sickness to wear off.",
-	// Game log: can't join or brew from the bank.
+	// Game log: can't brew from the bank.
 	"interface.witch.fail.cant_in_bank": "Leave the bank first.",
 	// Game log: the player clicked a Trick or Treat door from too far away.
 	"interface.trickortreat.closer": "Get closer to the door to knock.",

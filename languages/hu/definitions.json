@@ -2290,7 +2290,7 @@
 	"map.spookytown.quirks.4.5": "Zárva",
 	"map.spookytown.quirks.5.5": "Zárva",
 	"interaction.witchcipher.title": "A Witch titkos receptje",
-	"interaction.witchcipher.summary": "Minden nap 06:00-kor és 18:00-kor, a világ ideje szerint gyűjts hozzávalókat, és főzd meg a Witch elveszett receptjét.",
+	"interaction.witchcipher.summary": "Halloween alatt 06:00-kor és 18:00-kor főzhetsz, a Világ ideje szerint. Az év többi részében a Witch titkos receptje más napi eseményekkel váltakozik, 13:00-kor vagy 20:00-kor.",
 	"interaction.trickortreat.title": "Csokit vagy csalunk",
 	"interaction.trickortreat.summary": "Halloween alatt kopogj be ezen az ajtón édességért vagy egy kis ijesztgetésért."
 }

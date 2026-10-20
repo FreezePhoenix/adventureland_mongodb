@@ -867,7 +867,7 @@
 	"update.06_10_26.anniversary_crafting.update_button_image": "Przywrócono brakujący obrazek na przycisku NOWOŚĆ.",
 	"update.08_10_26.halloween.mainframe_spookytown": "Naprawiono blokowanie się smart_move() w MAINFRAME podczas opuszczania Spooky Town.",
 	"update.08_10_26.halloween.broadcast_info": "Transmisja na Steam pokazuje teraz INFO o potworach, ich łupy, przedmioty i bieżące wydarzenia.",
-	"update.08_10_26.halloween": "Codziennie rozwiązuj Szyfr Witch, aby zdobywać nowe przedmioty i receptury. Halloween przynosi Headless Horseman, Powstanie z grobów i Cukierek albo psikus. Nowe okno wydarzeń pokazuje, co nadchodzi.",
+	"update.08_10_26.halloween": "Rozwiązuj Szyfr Witch dwa razy dziennie podczas Halloween, a przez resztę roku w ramach rotacji codziennych wydarzeń. Halloween przynosi też Headless Horseman, Powstanie z grobów i Cukierek albo psikus, z nowymi psikusami wypuszczającymi Ghost i nagrodami Witch's Parcel. Nowe okno wydarzeń pokazuje, co nadchodzi.",
 	"update.08_10_26.halloween.title": "Szyfr Witch, Halloween i wydarzenia",
 	"update.08_10_26.halloween.witchcipher.title": "Nowe codzienne wydarzenie: Szyfr Witch!",
 	"update.08_10_26.halloween.halloween": "Headless Horseman wyjeżdża z cmentarza w Spooky Forest każdej nocy o 00:00 czasu realmu. Zombies i Ghouls powstają z grobów w Spooky Town co dwie godziny, a po nich pojawia się Gargoyle. Zapukaj do siedmiu drzwi, aby zdobywać cukierki, trafiać na psikusy i otrzymywać nagrody za każde 10 pieczątek. Ostatnim dniem Halloween jest 2 listopada, ale Xyn nadal potem wymienia Candy i Pumpkin Stems, a receptury Halloween pozostają dostępne.",
@@ -877,7 +877,7 @@
 	"update.08_10_26.halloween.map_halloween": "Do dwóch drzwi w Spooky Forest można teraz zapukać w ramach wydarzenia Cukierek albo psikus.",
 	"update.08_10_26.halloween.map_spookytown": "Do pięciu drzwi w Spooky Town można teraz zapukać w ramach wydarzenia Cukierek albo psikus.",
 	"update.08_10_26.halloween.events": "Kliknij pasek lub zegar świata nad czatem, aby zobaczyć trwające sezony, nadchodzących bossów, dzisiejsze aktywności i wydarzenia z następnych siedmiu dni. Przełączaj się między swoim czasem a czasem świata. Wybierz PRZYPOMNIJ, aby otrzymać wiadomość w dzienniku gry 10 minut przed wydarzeniem. Pasek nad czatem przewija trwające wydarzenia, trzy najbliższe wydarzenia z odliczaniem oraz daty zakończenia sezonów. Najedź na niego kursorem, aby zatrzymać przewijanie, lub kliknij, aby otworzyć WYDARZENIA. Kliknij X,Y lub nazwę świata, aby zamiast tego wyświetlić swoje współrzędne; ekran postaci nadal pokazuje następne wydarzenie.",
-	"update.08_10_26.halloween.witchcipher": "Codziennie o 06:00 i 18:00 czasu świata Witch w Spooky Forest zapomina swoją recepturę. Dołącz raz dziennie według UTC do obu rund, zbierz cztery składniki z potworów i uwarz je u Witch lub za pomocą brew(), aby sprawdzić ich kolejność. Każda mieszanka daje dwie wskazówki, które widzą wszyscy w świecie. Gdy ktoś rozszyfruje recepturę, Witch ją zapomina i pojawia się nowa. Zdobywaj Witch's Parcels, aby je otwierać lub wykorzystywać w recepturach Witch przez cały rok.",
+	"update.08_10_26.halloween.witchcipher": "Podczas Halloween Szyfr Witch odbywa się dwa razy dziennie, o 06:00 i 18:00 czasu Świata. Przez resztę roku występuje na zmianę z Giga Crab, Bójką z Goo i A/B Testing o 13:00 lub 20:00. Zbieraj składniki z potworów w czterech regionach przez pierwsze 20 minut, a następnie warz mikstury u Witch w Spooky Forest podczas 28-minutowej rundy. Nie musisz dołączać do wydarzenia. Każda mieszanka wymaga pięciu składników w odpowiedniej kolejności i daje jedną wskazówkę: ile z nich jest na właściwym miejscu. Wszyscy w Świecie dzielą się tablicą wskazówek, a przed warzeniem możesz sprawdzić, czy twoja mieszanka do nich pasuje. Nowa mieszanka pasująca do wszystkich wskazówek daje Witch's Parcel. Za pierwsze rozszyfrowanie receptury tego dnia UTC otrzymasz pięć paczek. Gdy ktoś rozszyfruje recepturę, Witch ją zapomina i zaczyna nową. Masz pięć prób na konto dziennie według UTC, w jednym Świecie. Zachowaj składniki i wykorzystuj Witch's Parcels do otwierania lub tworzenia przedmiotów według receptur Witch.",
 	"update.08_10_26.halloween.support_40": "Potwory zachowują cel, gdy obrażenia obszarowe pokonają inną postać.",
 	"update.08_10_26.halloween.support_41": "Szybkość ataku uwzględnia teraz efekty stanów.",
 	"update.08_10_26.halloween.support_42": "Zmiany wyglądu nie powodują już awarii postaci działających bez grafiki.",
@@ -907,5 +907,6 @@
 	"update.08_10_26.halloween.support_76": "smart_move nadal czeka podczas szukania nowej trasy.",
 	"update.08_10_26.halloween.support_77": "Próba łączenia z pustego pola nie rzuca już wyjątku w CODE.",
 	"update.08_10_26.halloween.support_78": "Duże wiadomości CODE są teraz prawidłowo wliczane do limitu wywołań.",
-	"update.08_10_26.halloween.support_79": "Puste wpisy equip_batch zwracają teraz błąd."
+	"update.08_10_26.halloween.support_79": "Puste wpisy equip_batch zwracają teraz błąd.",
+	"update.08_10_26.halloween.item_bonuses": "Podpowiedzi przedmiotów pokazują teraz wartości bonusów map i klas."
 }

@@ -2290,7 +2290,7 @@
 	"map.spookytown.quirks.4.5": "Chiusa a chiave",
 	"map.spookytown.quirks.5.5": "Chiusa a chiave",
 	"interaction.witchcipher.title": "Il cifrario della Witch",
-	"interaction.witchcipher.summary": "Ogni giorno alle 06:00 e alle 18:00, ora del reame, raccogli ingredienti e prepara la ricetta perduta della Witch.",
+	"interaction.witchcipher.summary": "Durante Halloween, prepara le combinazioni alle 06:00 e alle 18:00, ora del reame. Nel resto dell'anno, il cifrario della Witch si alterna con gli altri eventi giornalieri alle 13:00 o alle 20:00.",
 	"interaction.trickortreat.title": "Dolcetto o scherzetto",
 	"interaction.trickortreat.summary": "Bussa a questa porta durante Halloween per ricevere un dolcetto o uno spavento."
 }

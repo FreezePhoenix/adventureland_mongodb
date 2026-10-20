@@ -96,7 +96,6 @@ function events_join_action(event) {
 
 // A live scheduled event the player can join right now.
 function events_joinable(event) {
-	if (event == "witchcipher") return witch_cipher_live() && !witch_joined();
 	return !!(S && S[event] && G.events[event] && G.events[event].join && (S[event].live !== false));
 }
 
@@ -221,21 +220,18 @@ function events_today_html() {
 			meta,
 			tag = "",
 			buttons = "";
-		if (character && character.witchcipher) day = Object.assign({}, day, character.witchcipher, { joined: true });
-		if (day.joined && !day.mixes_left) meta = phrase.html("interface.events.cipher_done", { count: day.parcels || 0 });
-		else if (day.joined) meta = phrase.html("interface.events.cipher_joined", { name: html_escape(day.name || ""), count: day.mixes_left });
-		else meta = phrase.html("interface.events.cipher_ready", { count: G.events.witchcipher.mixes });
-		if (live) {
-			tag = phrase.html("interface.events.live");
-			if (!day.joined) buttons += events_button(phrase.html("interface.events.join"), events_join_action("witchcipher"));
-		}
+		if (character && character.witchcipher) day = Object.assign({}, day, character.witchcipher);
+		var left = day.mixes_left === undefined ? G.events.witchcipher.mixes : day.mixes_left;
+		if (!left) meta = phrase.html("interface.events.cipher_done", { count: day.parcels || 0 });
+		else meta = phrase.html("interface.events.cipher_ready", { count: left });
+		if (live) tag = phrase.html("interface.events.live");
 		html += events_row({
 			time: live ? schedule_time_text(S.witchcipher.start) : next ? schedule_time_text(next.at) : "",
 			tag: tag,
 			icon: schedule_icon("witchcipher"),
 			name: html_escape(schedule_event_name("witchcipher")),
 			meta: meta,
-			meta_color: day.joined && !day.mixes_left ? "#9B9B9B" : "#AF6AE2",
+			meta_color: !left ? "#9B9B9B" : "#AF6AE2",
 			buttons: buttons + events_button(phrase.html("interface.item.info"), events_guide_action("witchcipher")),
 		});
 	}

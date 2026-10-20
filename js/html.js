@@ -4881,6 +4881,75 @@ function render_wishlist(num, page, offer, typing) {
 	if (typing && input) (input.focus(), input.setSelectionRange(input.value.length, input.value.length));
 }
 
+// The stat lines of an item tooltip. Map and class bonuses use it too, with an empty def, so only their numbers show.
+function render_prop_lines(prop, item, args) {
+	var html = "";
+	if (prop.gold) html += bold_prop_line(phrase.html("interface.item.gold"), ((prop.gold > 0 && "+") || "") + prop.gold + "%", "gold");
+	if (prop.luck) html += bold_prop_line(phrase.html("interface.item.luck"), ((prop.luck > 0 && "+") || "") + prop.luck + "%", "#5DE376");
+	if (prop.xp) html += bold_prop_line(phrase.html("stat.xp.name"), ((!args.monster && prop.xp > 0 && "+") || "") + prop.xp + ((!args.monster && "%") || ""), "#1E73DE");
+	if (prop.lifesteal) html += bold_prop_line(phrase.html("interface.item.lifesteal"), to_pretty_float(prop.lifesteal) + "%", colors.lifesteal);
+	if (prop.manasteal) html += bold_prop_line(phrase.html("interface.item.manasteal"), to_pretty_float(prop.manasteal) + "%", colors.manasteal);
+	if (item.goldsteal) html += bold_prop_line(phrase.html("interface.item.goldsteal"), phrase.html("interface.item.dynamic"), "gold");
+	if (prop.evasion) html += bold_prop_line(phrase.html("interface.item.evasion"), to_pretty_float(prop.evasion) + "%", "#7AC0F5");
+	if (prop.avoidance) html += bold_prop_line(phrase.html("interface.item.avoidance"), to_pretty_float(prop.avoidance) + "%", "#7AC0F5");
+	if (prop.miss && item.type != "elixir") html += bold_prop_line(phrase.html("interface.item.miss"), prop.miss + "%", "#F36C6E");
+	if (prop.reflection) html += bold_prop_line(phrase.html("interface.item.reflection"), to_pretty_float(prop.reflection) + "%", "#B484E5");
+	if (prop.dreturn) html += bold_prop_line(phrase.html("interface.item.d_return"), to_pretty_float(prop.dreturn) + "%", "#E94959");
+	if (prop.crit) html += bold_prop_line(phrase.html("interface.item.crit"), to_pretty_float(prop.crit) + "%", "#E52967");
+	if (prop.critdamage) html += bold_prop_line(phrase.html("interface.item.crit_damage"), "+" + to_pretty_float(prop.critdamage) + "%", "#A8214E");
+	if (prop.attack) html += bold_prop_line(phrase.html("interface.item.damage"), prop.attack, colors.attack);
+	if (item.damage_type) {
+		if (item.damage_type == "pure") html += bold_prop_line(phrase.html("interface.item.type"), phrase.html("interface.item.pure"), "#AA9B55");
+		else if (item.damage_type == "magical") html += bold_prop_line(phrase.html("interface.item.type"), phrase.html("interface.item.magical"), "#8998AA");
+		else if (item.damage_type == "physical") html += bold_prop_line(phrase.html("interface.item.type"), phrase.html("interface.item.physical"), "#93AB98");
+	}
+	if (prop.range) html += bold_prop_line(phrase.html("interface.item.range"), ((!args.monster && "+") || "") + prop.range, colors.range);
+	if (prop.hp) html += bold_prop_line(phrase.html("stat.hp.name"), prop.hp, colors.hp);
+	if (prop.str) html += bold_prop_line(phrase.html("interface.item.strength"), prop.str, colors.str);
+	if (prop["int"]) html += bold_prop_line(phrase.html("interface.item.intelligence"), prop["int"], colors["int"]);
+	if (prop.dex) html += bold_prop_line(phrase.html("interface.item.dexterity"), prop.dex, colors.dex);
+	if (prop.vit) html += bold_prop_line(phrase.html("interface.item.vitality"), prop.vit, colors.hp);
+	if (prop["for"]) html += bold_prop_line(phrase.html("interface.item.fortitude"), prop["for"], colors["for"]);
+	if (prop.mp) html += bold_prop_line(phrase.html("stat.mp.name"), prop.mp, colors.mp);
+	if (prop.mp_cost > 0) html += bold_prop_line(phrase.html("interface.item.attack_mp_cost"), "+" + prop.mp_cost, colors.mp);
+	else if (prop.mp_cost) html += bold_prop_line(phrase.html("interface.item.attack_mp_cost"), prop.mp_cost, colors.mp);
+	if (prop.mp_reduction > 0) html += bold_prop_line(phrase.html("interface.item.skill_mp_reduction"), "%" + prop.mp_reduction, colors.mp);
+	else if (prop.mp_reduction) html += bold_prop_line(phrase.html("interface.item.skill_mp_increase"), "%" + -prop.mp_reduction, colors.mp);
+	if (prop.stat) html += bold_prop_line(phrase.html("interface.item.stat"), prop.stat);
+	if (prop.armor) html += bold_prop_line(phrase.html("interface.item.armor"), prop.armor, colors.armor);
+	if (prop.apiercing) html += bold_prop_line(phrase.html("interface.item.a_piercing"), prop.apiercing, colors.armor);
+	if (prop.rpiercing) html += bold_prop_line(phrase.html("interface.item.r_piercing"), prop.rpiercing, colors.resistance);
+	if (prop.resistance) html += bold_prop_line(phrase.html("interface.item.resistance"), prop.resistance, colors.resistance);
+	if (prop.pnresistance) html += bold_prop_line(phrase.html("interface.item.poison_res"), prop.pnresistance, "#68B84B");
+	if (prop.firesistance) html += bold_prop_line(phrase.html("interface.item.fire_res"), prop.firesistance, "#B42B22");
+	if (prop.fzresistance) html += bold_prop_line(phrase.html("interface.item.freeze_res"), prop.fzresistance, "#69B1B6");
+	if (prop.phresistance) html += bold_prop_line(phrase.html("interface.item.impact_res"), prop.phresistance, "#69B1B6");
+	if (prop.stresistance) html += bold_prop_line(phrase.html("interface.item.status_res"), prop.stresistance, "#9FA7B6");
+	if (item.wspeed) html += bold_prop_line(phrase.html("interface.item.speed"), phrase.definition("speed", item.wspeed, "name", item.wspeed.toTitleCase()), "gray");
+	if (prop.speed)
+		html += bold_prop_line(
+			(item.wtype && phrase.html("interface.item.run_speed")) || phrase.html("interface.item.speed"),
+			((!args.monster && prop.speed > 0 && "+") || "") + prop.speed,
+			colors.speed,
+		);
+	if (prop.frequency || args.monster) html += bold_prop_line(phrase.html("interface.item.a_speed"), (prop.frequency || 1) * ((args.monster && 100) || 1), "#3BE681");
+	if (prop.output) html += bold_prop_line(phrase.html("interface.item.damage_output"), ((prop.output > 0 && "+") || "") + prop.output + "%", "#D93319");
+	if (prop.incdmgamp) html += bold_prop_line(phrase.html("interface.item.incoming_damage"), prop.incdmgamp + "%", "#D93319");
+	if (prop.stun) html += bold_prop_line(phrase.html("interface.item.stun"), prop.stun + "%", "#784224");
+	if (prop.explosion) html += bold_prop_line(phrase.html("interface.item.explosion"), prop.explosion + "%", "#782D33");
+	if (prop.blast) html += bold_prop_line(phrase.html("interface.item.blast"), prop.blast + "%", "#685079");
+	if (prop.breaks && prop.breaks > 0) html += bold_prop_line(phrase.html("interface.item.breaks"), to_pretty_float(prop.breaks) + "%", "#782D33");
+	if (prop.charisma) html += bold_prop_line(phrase.html("interface.item.charisma"), prop.charisma, "#4DB174");
+	if (prop.awesomeness) html += bold_prop_line(phrase.html("interface.item.awesomeness"), prop.awesomeness, "#FFDE2F");
+	if (prop.bling) html += bold_prop_line(phrase.html("interface.item.bling"), prop.bling, "#A4E6FF");
+	if (prop.cuteness) html += bold_prop_line(phrase.html("interface.item.cuteness"), prop.cuteness, "#FD82F0");
+	if (prop.intensity) html += bold_prop_line(phrase.html("interface.item.intensity"), prop.intensity, "#786D6A");
+	if (prop.courage) html += bold_prop_line(phrase.html("interface.item.courage"), prop.courage, "#9E1813");
+	if (prop.mcourage) html += bold_prop_line(phrase.html("interface.item.m_courage"), prop.mcourage, "#4628A0");
+	if (prop.pcourage) html += bold_prop_line(phrase.html("interface.item.p_courage"), prop.pcourage, "#D19D32");
+	return html;
+}
+
 var last_selector = "";
 function render_item(selector, args) {
 	if (args && args.actual) args.name = args.actual.name;
@@ -4894,7 +4963,8 @@ function render_item(selector, args) {
 	var actual = args && args.actual;
 	if (selector && selector != "html") last_selector = selector;
 	else if (selector != "html") selector = last_selector;
-	var prop = args.prop || calculate_item_properties(actual || {}, { def: item, class: window.character && character.ctype, map: window.character && character.map }),
+	// The item's own stats; map and class bonuses are listed with their numbers below them
+	var prop = args.prop || calculate_item_properties(actual || {}, { def: item }),
 		grade = calculate_item_grade(item, actual || {});
 	var html = "";
 	if (!args.pure)
@@ -4955,69 +5025,7 @@ function render_item(selector, args) {
 				bold_prop_line(phrase.html("interface.item.find"), "<span style='color:" + colors.string + ";'>\"" + args.monster + '"</span>', "#7AD963") +
 				"</span>";
 		}
-		if (prop.gold) html += bold_prop_line(phrase.html("interface.item.gold"), ((prop.gold > 0 && "+") || "") + prop.gold + "%", "gold");
-		if (prop.luck) html += bold_prop_line(phrase.html("interface.item.luck"), ((prop.luck > 0 && "+") || "") + prop.luck + "%", "#5DE376");
-		if (prop.xp) html += bold_prop_line(phrase.html("stat.xp.name"), ((!args.monster && prop.xp > 0 && "+") || "") + prop.xp + ((!args.monster && "%") || ""), "#1E73DE");
-		if (prop.lifesteal) html += bold_prop_line(phrase.html("interface.item.lifesteal"), to_pretty_float(prop.lifesteal) + "%", colors.lifesteal);
-		if (prop.manasteal) html += bold_prop_line(phrase.html("interface.item.manasteal"), to_pretty_float(prop.manasteal) + "%", colors.manasteal);
-		if (item.goldsteal) html += bold_prop_line(phrase.html("interface.item.goldsteal"), phrase.html("interface.item.dynamic"), "gold");
-		if (prop.evasion) html += bold_prop_line(phrase.html("interface.item.evasion"), to_pretty_float(prop.evasion) + "%", "#7AC0F5");
-		if (prop.avoidance) html += bold_prop_line(phrase.html("interface.item.avoidance"), to_pretty_float(prop.avoidance) + "%", "#7AC0F5");
-		if (prop.miss && item.type != "elixir") html += bold_prop_line(phrase.html("interface.item.miss"), prop.miss + "%", "#F36C6E");
-		if (prop.reflection) html += bold_prop_line(phrase.html("interface.item.reflection"), to_pretty_float(prop.reflection) + "%", "#B484E5");
-		if (prop.dreturn) html += bold_prop_line(phrase.html("interface.item.d_return"), to_pretty_float(prop.dreturn) + "%", "#E94959");
-		if (prop.crit) html += bold_prop_line(phrase.html("interface.item.crit"), to_pretty_float(prop.crit) + "%", "#E52967");
-		if (prop.critdamage) html += bold_prop_line(phrase.html("interface.item.crit_damage"), "+" + to_pretty_float(prop.critdamage) + "%", "#A8214E");
-		if (prop.attack) html += bold_prop_line(phrase.html("interface.item.damage"), prop.attack, colors.attack);
-		if (item.damage_type) {
-			if (item.damage_type == "pure") html += bold_prop_line(phrase.html("interface.item.type"), phrase.html("interface.item.pure"), "#AA9B55");
-			else if (item.damage_type == "magical") html += bold_prop_line(phrase.html("interface.item.type"), phrase.html("interface.item.magical"), "#8998AA");
-			else if (item.damage_type == "physical") html += bold_prop_line(phrase.html("interface.item.type"), phrase.html("interface.item.physical"), "#93AB98");
-		}
-		if (prop.range) html += bold_prop_line(phrase.html("interface.item.range"), ((!args.monster && "+") || "") + prop.range, colors.range);
-		if (prop.hp) html += bold_prop_line(phrase.html("stat.hp.name"), prop.hp, colors.hp);
-		if (prop.str) html += bold_prop_line(phrase.html("interface.item.strength"), prop.str, colors.str);
-		if (prop["int"]) html += bold_prop_line(phrase.html("interface.item.intelligence"), prop["int"], colors["int"]);
-		if (prop.dex) html += bold_prop_line(phrase.html("interface.item.dexterity"), prop.dex, colors.dex);
-		if (prop.vit) html += bold_prop_line(phrase.html("interface.item.vitality"), prop.vit, colors.hp);
-		if (prop["for"]) html += bold_prop_line(phrase.html("interface.item.fortitude"), prop["for"], colors["for"]);
-		if (prop.mp) html += bold_prop_line(phrase.html("stat.mp.name"), prop.mp, colors.mp);
-		if (prop.mp_cost > 0) html += bold_prop_line(phrase.html("interface.item.attack_mp_cost"), "+" + prop.mp_cost, colors.mp);
-		else if (prop.mp_cost) html += bold_prop_line(phrase.html("interface.item.attack_mp_cost"), prop.mp_cost, colors.mp);
-		if (prop.mp_reduction > 0) html += bold_prop_line(phrase.html("interface.item.skill_mp_reduction"), "%" + prop.mp_reduction, colors.mp);
-		else if (prop.mp_reduction) html += bold_prop_line(phrase.html("interface.item.skill_mp_increase"), "%" + -prop.mp_reduction, colors.mp);
-		if (prop.stat) html += bold_prop_line(phrase.html("interface.item.stat"), prop.stat);
-		if (prop.armor) html += bold_prop_line(phrase.html("interface.item.armor"), prop.armor, colors.armor);
-		if (prop.apiercing) html += bold_prop_line(phrase.html("interface.item.a_piercing"), prop.apiercing, colors.armor);
-		if (prop.rpiercing) html += bold_prop_line(phrase.html("interface.item.r_piercing"), prop.rpiercing, colors.resistance);
-		if (prop.resistance) html += bold_prop_line(phrase.html("interface.item.resistance"), prop.resistance, colors.resistance);
-		if (prop.pnresistance) html += bold_prop_line(phrase.html("interface.item.poison_res"), prop.pnresistance, "#68B84B");
-		if (prop.firesistance) html += bold_prop_line(phrase.html("interface.item.fire_res"), prop.firesistance, "#B42B22");
-		if (prop.fzresistance) html += bold_prop_line(phrase.html("interface.item.freeze_res"), prop.fzresistance, "#69B1B6");
-		if (prop.phresistance) html += bold_prop_line(phrase.html("interface.item.impact_res"), prop.phresistance, "#69B1B6");
-		if (prop.stresistance) html += bold_prop_line(phrase.html("interface.item.status_res"), prop.stresistance, "#9FA7B6");
-		if (item.wspeed) html += bold_prop_line(phrase.html("interface.item.speed"), phrase.definition("speed", item.wspeed, "name", item.wspeed.toTitleCase()), "gray");
-		if (prop.speed)
-			html += bold_prop_line(
-				(item.wtype && phrase.html("interface.item.run_speed")) || phrase.html("interface.item.speed"),
-				((!args.monster && prop.speed > 0 && "+") || "") + prop.speed,
-				colors.speed,
-			);
-		if (prop.frequency || args.monster) html += bold_prop_line(phrase.html("interface.item.a_speed"), (prop.frequency || 1) * ((args.monster && 100) || 1), "#3BE681");
-		if (prop.output) html += bold_prop_line(phrase.html("interface.item.damage_output"), ((prop.output > 0 && "+") || "") + prop.output + "%", "#D93319");
-		if (prop.incdmgamp) html += bold_prop_line(phrase.html("interface.item.incoming_damage"), prop.incdmgamp + "%", "#D93319");
-		if (prop.stun) html += bold_prop_line(phrase.html("interface.item.stun"), prop.stun + "%", "#784224");
-		if (prop.explosion) html += bold_prop_line(phrase.html("interface.item.explosion"), prop.explosion + "%", "#782D33");
-		if (prop.blast) html += bold_prop_line(phrase.html("interface.item.blast"), prop.blast + "%", "#685079");
-		if (prop.breaks && prop.breaks > 0) html += bold_prop_line(phrase.html("interface.item.breaks"), to_pretty_float(prop.breaks) + "%", "#782D33");
-		if (prop.charisma) html += bold_prop_line(phrase.html("interface.item.charisma"), prop.charisma, "#4DB174");
-		if (prop.awesomeness) html += bold_prop_line(phrase.html("interface.item.awesomeness"), prop.awesomeness, "#FFDE2F");
-		if (prop.bling) html += bold_prop_line(phrase.html("interface.item.bling"), prop.bling, "#A4E6FF");
-		if (prop.cuteness) html += bold_prop_line(phrase.html("interface.item.cuteness"), prop.cuteness, "#FD82F0");
-		if (prop.intensity) html += bold_prop_line(phrase.html("interface.item.intensity"), prop.intensity, "#786D6A");
-		if (prop.courage) html += bold_prop_line(phrase.html("interface.item.courage"), prop.courage, "#9E1813");
-		if (prop.mcourage) html += bold_prop_line(phrase.html("interface.item.m_courage"), prop.mcourage, "#4628A0");
-		if (prop.pcourage) html += bold_prop_line(phrase.html("interface.item.p_courage"), prop.pcourage, "#D19D32");
+		html += render_prop_lines(prop, item, args);
 		if (grade == 1 && item.type != "booster") html += bold_prop_line(phrase.html("interface.item.grade"), phrase.html("interface.item.high"), "#696354");
 		if (grade == 2 && item.type != "booster") html += bold_prop_line(phrase.html("interface.item.grade"), phrase.html("interface.item.rare"), "#6668AC");
 		if (grade == 3 && item.type != "booster") html += bold_prop_line(phrase.html("interface.item.grade"), phrase.html("interface.item.legendary"), "#39A868");
@@ -5046,28 +5054,32 @@ function render_item(selector, args) {
 				html += info_line({ name: phrase.html("interface.item.spawns"), color: "#237B2A", value: G.monsters[s[1]].name, onclick: "render_monster_info('" + s[1] + "')" });
 			});
 		}
-		for (var mname in G.maps)
-			if (item[mname]) {
-				html +=
-					"<div><span style='color: #7738E8;'>" +
+		// Map and class bonuses with their numbers at this item's level. Maps or classes with the same bonus share one list.
+		var bonuses = [];
+		var add_bonus = function (label, block, extra) {
+			var full = calculate_item_properties(actual || {}, Object.assign({ def: item }, extra)),
+				bonus = {};
+			for (var p in full) if (typeof full[p] == "number" && full[p] !== prop[p]) bonus[p] = full[p] - prop[p];
+			var key = JSON.stringify(bonus),
+				group = bonuses.filter(function (g) {
+					return g.key == key;
+				})[0];
+			if (!group) bonuses.push((group = { key: key, prop: bonus, labels: [] }));
+			group.labels.push(
+				"<div><span style='color: #7738E8;'>" +
 					phrase.html("interface.item.bonus") +
 					"</span>: <span class='clickable' onclick='stpr(event); show_json(" +
-					JSON.stringify(item[mname]) +
+					JSON.stringify(block) +
 					")'>" +
-					phrase.html("interface.item.only", { map: G.maps[mname].name }) +
-					"</span></div>";
-			}
-		for (var cname in G.classes)
-			if (item[cname]) {
-				html +=
-					"<div><span style='color: #7738E8;'>" +
-					phrase.html("interface.item.bonus") +
-					"</span>: <span class='clickable' onclick='stpr(event); show_json(" +
-					JSON.stringify(item[cname]) +
-					")'>" +
-					phrase.html("interface.item.only_2", { value: phrase.definition("class", cname, "name", cname.toTitleCase()) }) +
-					"</span></div>";
-			}
+					label +
+					"</span></div>",
+			);
+		};
+		for (var mname in G.maps) if (item[mname]) add_bonus(phrase.html("interface.item.only", { map: G.maps[mname].name }), item[mname], { map: mname });
+		for (var cname in G.classes) if (item[cname]) add_bonus(phrase.html("interface.item.only_2", { value: phrase.definition("class", cname, "name", cname.toTitleCase()) }), item[cname], { class: cname });
+		bonuses.forEach(function (group) {
+			html += "<div style='border-left: 2px solid #7738E8; padding-left: 6px; margin: 2px 0'>" + group.labels.join("") + render_prop_lines(group.prop, {}, {}) + "</div>";
+		});
 		if (args.count) html += bold_prop_line(phrase.html("interface.item.kills"), to_pretty_num(args.count), "#7D0C15");
 		if (args.score) html += bold_prop_line(phrase.html("interface.item.score"), to_pretty_num(args.score), "#C38737");
 		if (args.mcount) html += bold_prop_line(phrase.html("interface.item.max_score"), to_pretty_num(args.mcount) + " <span class='gray'>[" + args.mowner + "]</span>", "#DCC343");

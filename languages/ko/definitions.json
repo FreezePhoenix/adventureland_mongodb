@@ -2290,7 +2290,7 @@
 	"map.spookytown.quirks.4.5": "잠김",
 	"map.spookytown.quirks.5.5": "잠김",
 	"interaction.witchcipher.title": "Witch의 암호",
-	"interaction.witchcipher.summary": "매일 월드 시간 06:00과 18:00에 재료를 모아 Witch가 잊어버린 제조법대로 물약을 만드세요.",
+	"interaction.witchcipher.summary": "핼러윈 기간에는 월드 시간 06:00과 18:00에 조합하세요. 나머지 기간에는 Witch의 암호가 13:00 또는 20:00에 다른 일일 이벤트와 번갈아 진행됩니다.",
 	"interaction.trickortreat.title": "사탕 아니면 장난",
 	"interaction.trickortreat.summary": "핼러윈 동안 이 문을 두드려 간식이나 깜짝 놀랄 일을 만나 보세요."
 }

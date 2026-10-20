@@ -35,7 +35,8 @@ trick_or_treat().catch(show_json);</div>
 		var rules = G.events.trickortreat;
 		var icon = function (name, q) { return item_container({ skin: G.items[name].skin, draggable: false, onclick: "render_item_info('" + name + "')" }, { name: name, q: q }); };
 		$(".trick-treats").html("<span class='guide-label'>" + rules.treat + "%</span>" + rules.treats.map(function (row) { return icon(row[1], row[2] > 1 ? row[2] : undefined); }).join(""));
-		$(".trick-tricks").html("<span class='guide-label'>" + (100 - rules.treat) + "%</span>" + item_container({ skin: G.conditions.spooked.skin, draggable: false }) + "<span class='guide-label'>" + html_escape(phrase.definition("condition", "spooked", "name", G.conditions.spooked.name)) + "</span>");
+		// A trick: Spooked!, or a Ghost floats out of the door
+		$(".trick-tricks").html("<span class='guide-label'>" + (100 - rules.treat) + "%</span>" + item_container({ skin: G.conditions.spooked.skin, draggable: false }) + "<span class='guide-label'>" + html_escape(phrase.definition("condition", "spooked", "name", G.conditions.spooked.name)) + "</span>" + guide_monster_tile("ghost", 0) + "<span class='guide-label'>" + html_escape(phrase.definition("monster", "ghost", "name", G.monsters.ghost.name)) + "</span>");
 		$(".trick-costumes").html(rules.costumes.map(function (name) { return icon(name); }).join("") + "<span class='guide-arrow'></span><span class='guide-label'>" + rules.costume_treat + "%</span>");
 		$(".trick-stamps").html("<span class='guide-label'>×" + rules.stamps.parcel + "</span>" + icon("witchparcel") + "<span class='guide-label'>×" + rules.stamps.laugh + "</span>" + item_container({ skin: G.skills.sinisterlaugh.skin, draggable: false }));
 	})();

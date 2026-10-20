@@ -2290,7 +2290,7 @@
 	"map.spookytown.quirks.4.5": "施錠中",
 	"map.spookytown.quirks.5.5": "施錠中",
 	"interaction.witchcipher.title": "魔女の暗号",
-	"interaction.witchcipher.summary": "毎日、ワールド時間06:00と18:00に素材を集め、Witchが忘れたレシピを調合しよう。",
+	"interaction.witchcipher.summary": "ハロウィン期間中はワールド時間06:00と18:00に調合できます。それ以外の期間は、魔女の暗号が13:00または20:00に他の日替わりイベントと交代で開催されます。",
 	"interaction.trickortreat.title": "トリック・オア・トリート",
 	"interaction.trickortreat.summary": "ハロウィン中にこの扉をノックすると、お菓子か恐怖が待っている。"
 }

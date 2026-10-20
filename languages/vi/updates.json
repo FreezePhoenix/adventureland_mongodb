@@ -867,7 +867,7 @@
 	"update.06_10_26.anniversary_crafting.update_button_image": "Đã khắc phục lỗi thiếu hình ảnh trên nút TIN MỚI.",
 	"update.08_10_26.halloween.mainframe_spookytown": "Đã sửa lỗi smart_move() trong MAINFRAME bị kẹt khi rời Spooky Town.",
 	"update.08_10_26.halloween.broadcast_info": "Buổi phát sóng trên Steam giờ hiển thị INFO về quái vật, vật phẩm rơi ra, thông tin vật phẩm và các sự kiện hiện tại.",
-	"update.08_10_26.halloween": "Giải Mật Mã Phù Thủy mỗi ngày để nhận vật phẩm và công thức mới. Halloween mang đến Headless Horseman, Nghĩa Địa Trỗi Dậy và Cho Kẹo Hay Bị Ghẹo. Cửa sổ Sự kiện mới cho biết những gì sắp diễn ra.",
+	"update.08_10_26.halloween": "Giải Mật Mã Phù Thủy hai lần mỗi ngày trong Halloween, sau đó cùng các sự kiện hằng ngày luân phiên quanh năm. Halloween còn mang đến Headless Horseman, Nghĩa Địa Trỗi Dậy và Cho Kẹo Hay Bị Ghẹo, với trò ghẹo Ghost mới và phần thưởng Witch's Parcel. Cửa sổ Sự kiện mới cho biết những gì sắp diễn ra.",
 	"update.08_10_26.halloween.title": "Mật Mã Phù Thủy, Halloween và Sự Kiện",
 	"update.08_10_26.halloween.witchcipher.title": "Sự Kiện Hằng Ngày Mới: Mật Mã Phù Thủy!",
 	"update.08_10_26.halloween.halloween": "Headless Horseman cưỡi ngựa ra khỏi nghĩa địa Spooky Forest mỗi đêm lúc 00:00 theo giờ thế giới. Zombies và Ghouls trỗi dậy từ nghĩa địa Spooky Town mỗi hai giờ, sau đó Gargoyle xuất hiện. Gõ bảy cánh cửa để nhận quà, bị ghẹo và nhận phần thưởng sau mỗi 10 con dấu. Ngày cuối cùng của Halloween là 2 tháng 11, nhưng sau đó Xyn vẫn đổi Candy và Pumpkin Stems, và các công thức Halloween vẫn dùng được.",
@@ -877,7 +877,7 @@
 	"update.08_10_26.halloween.map_halloween": "Hai cánh cửa ở Spooky Forest giờ có thể gõ để tham gia Cho Kẹo Hay Bị Ghẹo.",
 	"update.08_10_26.halloween.map_spookytown": "Năm cánh cửa ở Spooky Town giờ có thể gõ để tham gia Cho Kẹo Hay Bị Ghẹo.",
 	"update.08_10_26.halloween.events": "Nhấp vào thanh trượt hoặc đồng hồ thế giới phía trên khung chat để xem các mùa đang diễn ra, trùm sắp xuất hiện, hoạt động hôm nay và lịch sự kiện trong bảy ngày tới. Chuyển đổi giữa giờ của bạn và giờ thế giới. Chọn NHẮC để nhận thông báo trong nhật ký trò chơi 10 phút trước một sự kiện. Thanh trượt phía trên khung chat liên tục cuộn qua các sự kiện đang diễn ra, ba sự kiện tiếp theo kèm đồng hồ đếm ngược và ngày kết thúc của từng mùa. Di chuột lên thanh trượt để tạm dừng hoặc nhấp vào để mở SỰ KIỆN. Nhấp X,Y hoặc tên thế giới để hiển thị tọa độ của bạn thay thế; màn hình nhân vật của bạn vẫn hiển thị sự kiện tiếp theo.",
-	"update.08_10_26.halloween.witchcipher": "Mỗi ngày lúc 06:00 và 18:00 theo giờ thế giới, Witch ở Spooky Forest lại quên công thức của mình. Chỉ cần tham gia một lần mỗi ngày UTC cho cả hai lượt, thu thập bốn nguyên liệu từ quái vật rồi pha chế tại Witch hoặc dùng brew() để thử thứ tự của chúng. Mỗi lượt pha chế cho hai manh mối được chia sẻ với cả thế giới. Khi có người giải mã được công thức, Witch quên công thức đó và một công thức mới bắt đầu. Kiếm Witch's Parcels để mở hoặc dùng trong các công thức của Witch quanh năm.",
+	"update.08_10_26.halloween.witchcipher": "Trong Halloween, Mật Mã Phù Thủy diễn ra hai lần mỗi ngày, lúc 06:00 và 18:00 theo giờ Thế giới. Thời gian còn lại trong năm, sự kiện luân phiên với Giga Crab, Hỗn chiến Goo và A/B Testing lúc 13:00 hoặc 20:00. Thu thập nguyên liệu từ quái vật ở bốn khu vực trong 20 phút đầu, sau đó pha chế tại Witch ở Spooky Forest trong lượt kéo dài 28 phút. Không cần tham gia. Mỗi lượt pha chế dùng năm nguyên liệu theo thứ tự và cho một manh mối: có bao nhiêu nguyên liệu đúng vị trí. Cả Thế giới cùng chia sẻ bảng manh mối, và bạn có thể xem tổ hợp của mình có phù hợp hay không trước khi pha chế. Một lượt pha chế mới phù hợp với mọi manh mối sẽ nhận được một Witch's Parcel. Giải mã công thức lần đầu trong ngày UTC để nhận năm Parcels. Khi có người giải mã được, Witch quên công thức đó và bắt đầu công thức khác. Mỗi tài khoản có năm lượt pha chế mỗi ngày UTC, trên một Thế giới. Bạn có thể giữ lại nguyên liệu và dùng Witch's Parcels để mở lấy vật phẩm hoặc chế tạo vật phẩm theo công thức của Witch.",
 	"update.08_10_26.halloween.support_40": "Quái vật giữ mục tiêu khi sát thương diện rộng hạ gục nhân vật khác.",
 	"update.08_10_26.halloween.support_41": "Tốc độ đánh giờ tính cả hiệu ứng trạng thái.",
 	"update.08_10_26.halloween.support_42": "Thay đổi ngoại hình không còn làm nhân vật chạy không đồ họa bị lỗi dừng.",
@@ -907,5 +907,6 @@
 	"update.08_10_26.halloween.support_76": "smart_move tiếp tục chờ trong khi tìm đường mới.",
 	"update.08_10_26.halloween.support_77": "Thử ghép từ ô trống không còn gây ngoại lệ trong CODE.",
 	"update.08_10_26.halloween.support_78": "Tin nhắn CODE lớn giờ được tính đúng vào giới hạn lượt gọi.",
-	"update.08_10_26.halloween.support_79": "Các phần tử trống trong equip_batch giờ trả về lỗi."
+	"update.08_10_26.halloween.support_79": "Các phần tử trống trong equip_batch giờ trả về lỗi.",
+	"update.08_10_26.halloween.item_bonuses": "Chú giải vật phẩm giờ hiển thị giá trị cụ thể của các chỉ số cộng thêm theo bản đồ và lớp nhân vật."
 }

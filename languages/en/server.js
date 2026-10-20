@@ -854,11 +854,11 @@ module.exports["server.cave.amber_limit"] = "All {amount} Cave Amber for this vi
 // Login refused because the character has a poker hand on a different live server. Reconnect there or wait for that hand to end.
 module.exports["server.game_error.poker_hand_active"] = "Your poker hand is still running on another server. Wait for it to finish, or reconnect there.";
 
-// Server message to everyone when Halloween ends after its last day, November 2 (design/event_flags.js). Candy, Pumpkin Stems and every Halloween recipe stay usable, Xyn still exchanges candy, and the Witch's Cipher continues every day. Keep Halloween, Xyn, the Witch and Witch's Cipher unchanged.
-module.exports["server.server_message.season_ended.halloween"] = "Halloween is over! Xyn still exchanges Candy and Pumpkin Stems, Halloween recipes remain usable, and the Witch's Cipher continues daily.";
+// Server message to everyone when Halloween ends after its last day, November 2 (design/event_flags.js). Candy, Pumpkin Stems and every Halloween recipe stay usable, Xyn still exchanges candy, and the Witch's Cipher goes on as one of the rotating daily events. Keep Halloween, Xyn, the Witch and Witch's Cipher unchanged.
+module.exports["server.server_message.season_ended.halloween"] = "Halloween is over! Candy, Pumpkin Stems and all Halloween recipes remain usable. Xyn still exchanges Candy, and the Witch's Cipher continues as a rotating daily event.";
 
-// Server message to everyone when a Witch's Cipher round starts at the Witch in Spooky Forest (06:00 or 18:00 on the realm clock). Players join, collect ingredients for 20 minutes and brew. Keep the Witch, Witch's Cipher and Spooky Forest unchanged.
-module.exports["server.witchcipher.started"] = "The Witch's Cipher has begun! Join now and gather ingredients from monsters across four regions.";
+// Server message to everyone when a Witch's Cipher round starts at the Witch in Spooky Forest. Ingredients drop from monsters in four regions for 20 minutes; anyone can brew, nobody joins. Keep the Witch, Witch's Cipher and Spooky Forest unchanged.
+module.exports["server.witchcipher.started"] = "The Witch's Cipher has begun! Gather ingredients from monsters across four regions and brew at the Witch in Spooky Forest.";
 
 // Server message when the 20-minute gathering ends: ingredients stop dropping, brewing stays open for 8 more minutes.
 module.exports["server.witchcipher.gathering_over"] = "Ingredients have stopped dropping! 8 minutes left to brew at the Witch.";
@@ -868,17 +868,12 @@ module.exports["server.witchcipher.cracked"] = "{player} cracked the Witch's rec
 
 // Server message when a Witch's Cipher round ends after the recipe was cracked. The next round is twelve hours later, so not necessarily tomorrow.
 module.exports["server.witchcipher.over"] = "The Witch's Cipher is over! The cauldron goes quiet until the next round.";
-// Game log line to the joined character right after its 60th Witch's Cipher ingredient of the UTC day. Nothing more drops for it until the next UTC day, but it can still brew. Keep 60 and UTC.
-module.exports["server.witchcipher.ingredients_done"] = "You've collected 60 ingredients today. No more will drop for you until the next UTC day. You can still brew.";
 
-// Server message when the Witch's Cipher ends and nobody found the recipe. {recipe} lists the four ingredient names in order.
+// Server message when the Witch's Cipher ends and nobody found the recipe. {recipe} lists the five ingredient names in order.
 module.exports["server.witchcipher.over_uncracked"] = "Nobody cracked the Witch's recipe! It was {recipe}.";
 
-// Join refused: another character of the same account already took part in today's Witch's Cipher. {name} is that character.
-module.exports["server.witchcipher.claimed_by"] = "{name} already joined the Witch's Cipher today.";
-
-// Join refused: the account took part today on another realm. {server} is that realm, like EUII.
-module.exports["server.witchcipher.claimed_elsewhere"] = "Your account already joined the Witch's Cipher on {server} today.";
+// Brew refused: the account brewed its first mix today on another realm. {server} is that realm, like EUII.
+module.exports["server.witchcipher.claimed_elsewhere"] = "Your account already brewed in the Witch's Cipher on {server} today.";
 
 // Server message when Graveyard Rising starts in Spooky Town's graveyard (every 2 hours during Halloween). Keep Graveyard Rising and Spooky Town unchanged.
 module.exports["server.graveyard.started"] = "Graveyard Rising! Zombies and Ghouls are climbing out of Spooky Town's graves!";

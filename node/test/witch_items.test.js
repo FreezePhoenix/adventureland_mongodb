@@ -1,6 +1,6 @@
-// The Witch's recipe items each have their own identity: a pair set, courage, attack speed, gold,
-// mana cost, status resistance, haunted-map evasion and class bonuses. Checked through the server's
-// real calculate_player_stats with the loaded definitions.
+// The Witch's recipe items each have their own identity: a pair set, courage against crowds, attack
+// speed, gold, mana cost, courage against spirits, haunted-map evasion and class bonuses. Checked through
+// the server's real calculate_player_stats with the loaded definitions.
 const assert = require("node:assert/strict");
 const test = require("node:test");
 const vm = require("node:vm");
@@ -98,7 +98,7 @@ test("Luck stays only on the Cipher Draught", () => {
 		for (const block of ["upgrade", "compound", "halloween", "spookytown", "merchant", "priest", "mage"])
 			assert.equal((def[block] || {}).luck, undefined, name + " " + block);
 	}
-	assert.equal(G.items.cipherdraught.luck, 10);
+	assert.equal(G.items.cipherdraught.luck, 25);
 });
 
 test("one Crooked Key pierces a little; two open the Skeleton Keys set", () => {
@@ -111,8 +111,8 @@ test("one Crooked Key pierces a little; two open the Skeleton Keys set", () => {
 	assert.deepEqual(one, { apiercing: base.apiercing + 20, rpiercing: base.rpiercing + 20 });
 	assert.equal(two.sets.crookedkeys, 2);
 	assert.deepEqual(pick(two, ["apiercing", "rpiercing"]), {
-		apiercing: base.apiercing + 80,
-		rpiercing: base.rpiercing + 80,
+		apiercing: base.apiercing + 120,
+		rpiercing: base.rpiercing + 120,
 	});
 	assert.equal(G.sets.crookedkeys.name, "Skeleton Keys");
 });
@@ -133,12 +133,9 @@ test("the Patchwork Buckler adds courage of every kind, more as it is upgraded",
 test("the Black Cat's Bell is an attack speed orb for every class", () => {
 	for (const type of ["warrior", "mage", "priest", "merchant"]) {
 		const base = stats(type, {}).p.frequency;
+		assert.ok(Math.abs(stats(type, { orb: { name: "blackcatbell", level: 0 } }).p.frequency - base - 0.1) < 1e-9, type);
 		assert.ok(
-			Math.abs(stats(type, { orb: { name: "blackcatbell", level: 0 } }).p.frequency - base - 0.06) < 1e-9,
-			type,
-		);
-		assert.ok(
-			Math.abs(stats(type, { orb: { name: "blackcatbell", level: 3 } }).p.frequency - base - 0.12) < 1e-9,
+			Math.abs(stats(type, { orb: { name: "blackcatbell", level: 3 } }).p.frequency - base - 0.16) < 1e-9,
 			type,
 		);
 	}
@@ -153,7 +150,7 @@ test("the Nightmarket Sash finds gold, twice as much for merchants", () => {
 test("Hexweave Gloves keep a flat mana cost reduction on top of Tier 4 glove defenses", () => {
 	for (const level of [0, 5, 10]) {
 		const worn = stats("mage", { gloves: { name: "hexweavegloves", level, stat_type: "int" } }).p;
-		assert.equal(worn.mp_reduction - stats("mage", {}).p.mp_reduction, 10, "level " + level);
+		assert.equal(worn.mp_reduction - stats("mage", {}).p.mp_reduction, 20, "level " + level);
 	}
 	// The Tier 4 loop's glove defenses: 36/18 at +0, 7.5 more of each a level (INT adds its own resistance on top)
 	const { c } = fixture();
@@ -165,13 +162,19 @@ test("Hexweave Gloves keep a flat mana cost reduction on top of Tier 4 glove def
 	assert.deepEqual(defenses(7), [90, 72, 12]);
 });
 
-test("Candlewick Boots shorten debuffs with status resistance and keep a flat fire resistance", () => {
-	const at = (level) => stats("warrior", { shoes: { name: "candleboots", level, stat_type: "str" } }).p;
-	const base = stats("warrior", {}).p;
-	assert.equal(at(0).stresistance - base.stresistance, 20);
-	assert.equal(at(7).stresistance - base.stresistance, 27);
-	assert.equal(at(0).firesistance - base.firesistance, 15);
-	assert.equal(at(7).firesistance - base.firesistance, 15);
+test("Candlewick Boots keep spirits at a distance with magic and pure courage, and a flat fire resistance", () => {
+	const at = (level) => stats("rogue", { shoes: { name: "candleboots", level, stat_type: "dex" } }).p;
+	const base = stats("rogue", {}).p;
+	for (const level of [0, 7]) {
+		const worn = at(level);
+		assert.deepEqual(
+			[worn.courage - base.courage, worn.mcourage - base.mcourage, worn.pcourage - base.pcourage],
+			[0, 3, 2],
+			"level " + level,
+		);
+		assert.equal(worn.firesistance - base.firesistance, 15);
+		assert.equal(worn.stresistance, base.stresistance, "no status resistance");
+	}
 });
 
 test("the Witchlight Mantle gives evasion in Spooky Forest and Spooky Town and nowhere else", () => {
@@ -191,11 +194,30 @@ test("the Witchlight Mantle gives evasion in Spooky Forest and Spooky Town and n
 test("the Laughing Grimoire gives Priests more INT and Mages crit", () => {
 	const book = { offhand: { name: "laughingbook", level: 0 } };
 	const gain = (type, stat) => stats(type, book).p[stat] - stats(type, {}).p[stat];
-	assert.equal(gain("priest", "int"), 34);
+	assert.equal(gain("priest", "int"), 42);
 	assert.equal(gain("mage", "int"), 22);
 	assert.equal(gain("paladin", "int"), 22);
-	assert.equal(gain("mage", "crit"), 3);
-	assert.equal(gain("mage", "critdamage"), 20);
+	assert.equal(gain("mage", "crit"), 4);
+	assert.equal(gain("mage", "critdamage"), 25);
 	assert.equal(gain("priest", "crit"), 0);
 	assert.equal(gain("paladin", "critdamage"), 0);
+});
+
+test("the Horseman's Pumpkin reflects magic, more as it is upgraded", () => {
+	const reflection = (level) =>
+		stats("priest", { helmet: { name: "horsemanpumpkin", level, stat_type: "int" } }).p.reflection -
+		stats("priest", {}).p.reflection;
+	assert.ok(Math.abs(reflection(0) - 5) < 1e-9);
+	assert.ok(reflection(7) > 8.4 && reflection(7) < 8.7, String(reflection(7)));
+});
+
+test("the Witch's recipes cost Parcels, a Gold Ingot and a Halloween material", () => {
+	for (const name of WITCH_ITEMS) {
+		const recipe = G.craft[name];
+		const parcels = recipe.items.find((part) => part[1] == "witchparcel")[0];
+		assert.ok(parcels >= 30 && parcels <= 50, name);
+		assert.deepEqual([...recipe.items.filter((part) => part[1] == "goldingot").map((part) => part[0])], [1], name);
+		assert.equal(recipe.items.length, 3, name);
+		assert.equal(recipe.quest, "witch", name);
+	}
 });

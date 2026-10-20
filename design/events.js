@@ -182,8 +182,11 @@ var events={
 		//"join":true,
 		"type":"seasonal",
 	},
-	// A daily event at the Witch in Spooky Forest, all year. Ingredient drops are a fixed roll,
-	// unaffected by Luck or party size; only the account's joined character receives them.
+	// At the Witch in Spooky Forest: twice a day during Halloween, one of the daily events the rest of the
+	// year (node/logic/event_schedule.js). While gathering lasts, the regions' monsters drop the ingredients
+	// through their usual loot: loot is the chance per 1,000 HP of the monster, so a 12,000 HP Ghost has 12
+	// times a 1,000 HP monster's chance, before Luck. A mix is five ingredients in order; the clue is how
+	// many sit in the right place.
 	"witchcipher":{
 		"name":"Witch's Cipher",
 		"modal":"event-witchcipher",
@@ -197,16 +200,12 @@ var events={
 			["embercoal",["plantoid","porcupine","fireroamer","gscorpion"]],
 			["gloomfeather",["snake","osnake","minimush","ghost"]],
 		],
-		"drop":0.65,
-		"drop_cooldown":20,
+		"loot":0.003,
+		"slots":5,
 		"mixes":5,
-		"board":12,
-		// The cracking mix pays exact + crack; then the Witch forgets the recipe again and a new one starts
-		"payout":{"informative":2,"other":1,"crack":2,"exact":2},
-		"max_parcels":12,
-		// Ingredients a day: one gathering's worth (20 minutes at one per 20 seconds), however the account splits it between the two rounds
-		"max_ingredients":60,
-		"join":true,
+		"board":30,
+		// A new mix that fits every clue pays; the crack bonus comes once per account a day
+		"payout":{"fits":1,"crack":4},
 		"type":"daily",
 	},
 	"horseman":{
@@ -243,7 +242,11 @@ var events={
 		"treat":70,
 		"costume_treat":85,
 		"costumes":["phelmet","gphelmet","horsemanpumpkin"],
-		"treats":[[60,"candy1",1],[18,"hpot1",4],[18,"mpot1",4],[4,"candy0",1]],
+		// A treat: candy, two of the Witch's ingredients or a Witch's Parcel
+		"treats":[[50,"candy1",3],[20,"candy0",1],[5,"verdantspore",2],[5,"frostscale",2],[5,"embercoal",2],[5,"gloomfeather",2],[10,"witchparcel",1]],
+		// A trick: Spooked!, or a Ghost floats out of the door and stays for two minutes
+		"tricks":[[1,"spooked"],[1,"ghost"]],
+		"ghost_time":120,
 		// Account-wide stamps: every 10th knock pays a Witch's Parcel, the 40th a Sinister Laugh jar.
 		"stamps":{"parcel":10,"laugh":40},
 		"type":"seasonal",

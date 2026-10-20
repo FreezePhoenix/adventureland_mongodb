@@ -867,7 +867,7 @@
 	"update.06_10_26.anniversary_crafting.update_button_image": "Den saknade bilden på knappen NYHETER har återställts.",
 	"update.08_10_26.halloween.mainframe_spookytown": "Åtgärdat att smart_move() i MAINFRAME fastnade när karaktären lämnade Spooky Town.",
 	"update.08_10_26.halloween.broadcast_info": "Steam-sändningen visar nu monster-INFO, byte, föremål och aktuella evenemang.",
-	"update.08_10_26.halloween": "Lös Witchs chiffer varje dag för nya föremål och recept. Halloween bjuder på Headless Horseman, De dödas uppvaknande och Bus eller godis. Det nya evenemangsfönstret visar vad som väntar.",
+	"update.08_10_26.halloween": "Lös Witchs chiffer två gånger om dagen under Halloween och sedan tillsammans med de roterande dagliga evenemangen året runt. Halloween bjuder också på Headless Horseman, De dödas uppvaknande och Bus eller godis, med nya bus som släpper ut Ghost och belöningar i form av Witch's Parcels. Det nya evenemangsfönstret visar vad som väntar.",
 	"update.08_10_26.halloween.title": "Witchs chiffer, Halloween och evenemang",
 	"update.08_10_26.halloween.witchcipher.title": "Nytt dagligt evenemang: Witchs chiffer!",
 	"update.08_10_26.halloween.halloween": "Headless Horseman rider ut från kyrkogården i Spooky Forest varje natt kl. 00:00 enligt världsklockan. Zombies och Ghouls reser sig ur gravarna i Spooky Town varannan timme, följda av en Gargoyle. Knacka på sju dörrar för godis, bus och belöningar för var 10:e stämpel. Halloweens sista dag är den 2 november, men Xyn fortsätter att byta in Candy och Pumpkin Stems efteråt, och Halloween-recept kan fortfarande användas.",
@@ -877,7 +877,7 @@
 	"update.08_10_26.halloween.map_halloween": "Två dörrar i Spooky Forest låter dig nu knacka på för Bus eller godis.",
 	"update.08_10_26.halloween.map_spookytown": "Fem dörrar i Spooky Town låter dig nu knacka på för Bus eller godis.",
 	"update.08_10_26.halloween.events": "Klicka på det rullande fältet eller världsklockan ovanför chatten för att se pågående säsonger, kommande bossar, dagens aktiviteter och de kommande sju dagarnas evenemang. Växla mellan din tid och världens tid. Välj PÅMINN för att få ett meddelande i spelloggen 10 minuter före ett evenemang. Det rullande fältet ovanför chatten visar pågående evenemang, de tre kommande evenemangen med nedräkningar och datumen då säsongerna slutar. Håll muspekaren över fältet för att pausa eller klicka för att öppna EVENEMANG. Klicka på X,Y eller världens namn för att visa dina koordinater i stället; din karaktärsskärm visar fortfarande nästa evenemang.",
-	"update.08_10_26.halloween.witchcipher": "Varje dag kl. 06:00 och 18:00 enligt världsklockan glömmer Witch i Spooky Forest sitt recept. Delta en gång per UTC-dag för båda omgångarna, samla fyra ingredienser från monster och brygg dem hos Witch, eller med brew(), för att testa deras ordning. Varje blandning ger två ledtrådar som delas med hela världen. När någon knäcker receptet glömmer Witch det och ett nytt börjar. Tjäna Witch's Parcels som du kan öppna eller använda i Witchs recept, året runt.",
+	"update.08_10_26.halloween.witchcipher": "Under Halloween pågår Witchs chiffer två gånger om dagen, kl. 06:00 och 18:00 enligt Världsklockan. Resten av året turas det om med Giga Crab, Goo-slagsmålet och A/B-testning kl. 13:00 eller 20:00. Samla ingredienser från monster i fyra regioner under de första 20 minuterna och brygg sedan hos Witch i Spooky Forest under den 28 minuter långa omgången. Du behöver inte delta i förväg. Varje blandning använder fem ingredienser i ordning och ger en ledtråd: hur många som är på rätt plats. Hela världen delar en ledtrådstavla, och du kan se om din blandning stämmer innan du brygger. En ny blandning som stämmer med alla ledtrådar ger en Witch's Parcel. Knäck receptet för första gången den UTC-dagen och få fem Witch's Parcels. När någon knäcker receptet glömmer Witch det och börjar med ett nytt. Du får fem blandningar per konto och UTC-dag, i en värld. Behåll dina ingredienser och använd dina Witch's Parcels för att öppna dem eller tillverka föremål med Witchs recept.",
 	"update.08_10_26.halloween.support_40": "Monster behåller sitt mål när områdesskada besegrar en annan karaktär.",
 	"update.08_10_26.halloween.support_41": "Attackhastigheten tar nu hänsyn till tillståndseffekter.",
 	"update.08_10_26.halloween.support_42": "Utseendeändringar kraschar inte längre karaktärer som körs utan grafik.",
@@ -907,5 +907,6 @@
 	"update.08_10_26.halloween.support_76": "smart_move fortsätter att vänta medan en ny rutt söks.",
 	"update.08_10_26.halloween.support_77": "Ett försök att kombinera från en tom plats kastar inte längre ett undantag i CODE.",
 	"update.08_10_26.halloween.support_78": "Stora CODE-meddelanden räknas nu korrekt mot anropsgränsen.",
-	"update.08_10_26.halloween.support_79": "Tomma poster i equip_batch returnerar nu ett fel."
+	"update.08_10_26.halloween.support_79": "Tomma poster i equip_batch returnerar nu ett fel.",
+	"update.08_10_26.halloween.item_bonuses": "Föremålens verktygstips visar nu siffervärden för kart- och klassbonusar."
 }
