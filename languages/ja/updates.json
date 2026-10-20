@@ -902,5 +902,10 @@
 	"update.08_10_26.halloween.support_71": "無効なsmart_moveのリクエスト後に、以前の経路を進み続けなくなりました。",
 	"update.08_10_26.halloween.support_72": "MAINFRAMEの製作で、ロック中、使用制限中、抽選出品中のアイテムを除外するようになりました。",
 	"update.08_10_26.halloween.support_73": "装備を替えると、武器と投射物の輝きが更新されるようになりました。",
-	"update.08_10_26.halloween.support_74": "find_npcで移動するNPCも見つけられるようになりました。"
+	"update.08_10_26.halloween.support_74": "find_npcで移動するNPCも見つけられるようになりました。",
+	"update.08_10_26.halloween.support_75": "未対応の強化や合成で素材が消費されなくなりました。",
+	"update.08_10_26.halloween.support_76": "smart_moveは新しい経路を探している間も待機を続けます。",
+	"update.08_10_26.halloween.support_77": "空のスロットを合成しようとしても、CODEで例外が発生しなくなりました。",
+	"update.08_10_26.halloween.support_78": "大きなCODEメッセージが呼び出し上限に正しく計上されるようになりました。",
+	"update.08_10_26.halloween.support_79": "equip_batchの空の要素がエラーを返すようになりました。"
 }

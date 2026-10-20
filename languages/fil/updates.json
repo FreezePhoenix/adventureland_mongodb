@@ -902,5 +902,10 @@
 	"update.08_10_26.halloween.support_71": "Hindi na ipinagpapatuloy ng mga hindi wastong smart_move request ang dating ruta.",
 	"update.08_10_26.halloween.support_72": "Nilalaktawan na ng paggawa sa MAINFRAME ang mga item na naka-lock, ipinagbabawal gamitin, at nakalaan sa pamigay.",
 	"update.08_10_26.halloween.support_73": "Nagbabago na ang kinang ng sandata at mga projectile kapag nagpapalit ng kagamitan.",
-	"update.08_10_26.halloween.support_74": "Nakakahanap na ang find_npc ng mga gumagalang NPC."
+	"update.08_10_26.halloween.support_74": "Nakakahanap na ang find_npc ng mga gumagalang NPC.",
+	"update.08_10_26.halloween.support_75": "Hindi na kumokonsumo ng materyales ang mga hindi suportadong pag-upgrade at pagsasama.",
+	"update.08_10_26.halloween.support_76": "Patuloy na naghihintay ang smart_move habang naghahanap ng bagong ruta.",
+	"update.08_10_26.halloween.support_77": "Hindi na naghahagis ng exception sa CODE ang pagsubok na magsama mula sa bakanteng slot.",
+	"update.08_10_26.halloween.support_78": "Tama na ngayon ang pagbilang ng malalaking mensahe sa CODE sa limitasyon ng mga tawag.",
+	"update.08_10_26.halloween.support_79": "Nagbabalik na ngayon ng error ang mga bakanteng entry sa equip_batch."
 }

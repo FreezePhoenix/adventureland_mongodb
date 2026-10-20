@@ -902,5 +902,10 @@
 	"update.08_10_26.halloween.support_71": "Les requêtes smart_move invalides ne poursuivent plus l'itinéraire précédent.",
 	"update.08_10_26.halloween.support_72": "La fabrication dans MAINFRAME ignore désormais les objets verrouillés, bloqués et mis en jeu dans un tirage au sort.",
 	"update.08_10_26.halloween.support_73": "La lueur des armes et des projectiles est désormais actualisée lors d'un changement d'équipement.",
-	"update.08_10_26.halloween.support_74": "find_npc trouve désormais les PNJ qui se déplacent."
+	"update.08_10_26.halloween.support_74": "find_npc trouve désormais les PNJ qui se déplacent.",
+	"update.08_10_26.halloween.support_75": "Les améliorations et combinaisons non prises en charge ne consomment plus de matériaux.",
+	"update.08_10_26.halloween.support_76": "smart_move continue d'attendre pendant la recherche d'un nouvel itinéraire.",
+	"update.08_10_26.halloween.support_77": "Tenter une combinaison depuis un emplacement vide ne lève plus d'exception dans CODE.",
+	"update.08_10_26.halloween.support_78": "Les gros messages CODE sont désormais correctement comptés dans la limite d'appels.",
+	"update.08_10_26.halloween.support_79": "Les entrées vides d'equip_batch renvoient désormais une erreur."
 }

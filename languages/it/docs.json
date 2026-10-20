@@ -2797,5 +2797,9 @@
 	"docs.functions.sell.item_changed": "La vendita fallisce se un altro oggetto viene spostato nello spazio selezionato prima che il server riceva la richiesta.",
 	"docs.functions.get_socket.refresh": "send_updates richiede un'istantanea completa delle entità visibili. MAINFRAME consente due richieste al secondo. Ascolta entities prima di inviare la richiesta; la risposta non ha un ID di richiesta corrispondente.",
 	"docs.functions.exchange.timeout": "exchange() attende fino a 10 secondi che il server accetti o rifiuti la richiesta, poi fino a 30 secondi per la ricompensa. La scadenza dell'attesa non annulla uno scambio già accettato dal server. Controlla character.q.exchange e il tuo inventario prima di riprovare.",
-	"docs.functions.find_npc.roaming": "Per i PNG che si spostano, find_npc restituisce il primo punto del loro percorso, non la posizione attuale."
+	"docs.functions.find_npc.roaming": "Per i PNG che si spostano, find_npc restituisce il primo punto del loro percorso, non la posizione attuale.",
+	"docs.functions.smart_move.replan": "Se il percorso viene perso, smart_move lo cerca di nuovo. Il suo Promise resta in attesa finché il viaggio non termina o fallisce.",
+	"docs.functions.compound.empty_slot": "Se uno slot selezionato è vuoto, il Promise restituito viene rifiutato. Gestisci l'errore con .catch().",
+	"docs.functions.send_cm.message_size": "I messaggi più grandi consumano una quota maggiore del limite di chiamate. Mantieni brevi i messaggi CODE ripetuti.",
+	"docs.functions.equip_batch.empty_entries": "Le voci vuote rifiutano il Promise prima di inviare qualsiasi richiesta di equipaggiamento."
 }

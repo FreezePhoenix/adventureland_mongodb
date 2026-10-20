@@ -2797,5 +2797,9 @@
 	"docs.functions.sell.item_changed": "Jualan gagal jika item lain dipindahkan ke slot pilihan sebelum pelayan menerima permintaan.",
 	"docs.functions.get_socket.refresh": "send_updates meminta petikan keadaan penuh bagi entiti yang kelihatan. MAINFRAME membenarkan dua permintaan sesaat. Dengar entities sebelum menghantar permintaan; respons tidak mempunyai ID permintaan yang sepadan.",
 	"docs.functions.exchange.timeout": "exchange() menunggu sehingga 10 saat untuk pelayan menerima atau menolak permintaan, kemudian sehingga 30 saat untuk ganjaran. Tamat masa menunggu tidak membatalkan pertukaran yang telah diterima oleh pelayan. Semak character.q.exchange dan inventori anda sebelum mencuba lagi.",
-	"docs.functions.find_npc.roaming": "Bagi NPC yang berkeliaran, find_npc mengembalikan titik pertama laluan mereka, bukan kedudukan semasa."
+	"docs.functions.find_npc.roaming": "Bagi NPC yang berkeliaran, find_npc mengembalikan titik pertama laluan mereka, bukan kedudukan semasa.",
+	"docs.functions.smart_move.replan": "Jika laluan hilang, smart_move akan mencari semula. Promise kekal menunggu sehingga perjalanan selesai atau gagal.",
+	"docs.functions.compound.empty_slot": "Jika slot yang dipilih kosong, Promise yang dikembalikan akan ditolak. Kendalikan ralat dengan .catch().",
+	"docs.functions.send_cm.message_size": "Mesej yang lebih besar menggunakan lebih banyak kuota panggilan. Pastikan mesej CODE yang dihantar berulang kali kekal ringkas.",
+	"docs.functions.equip_batch.empty_entries": "Entri kosong menolak Promise sebelum sebarang permintaan untuk memakai kelengkapan dihantar."
 }

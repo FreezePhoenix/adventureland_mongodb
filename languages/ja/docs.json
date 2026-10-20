@@ -2797,5 +2797,9 @@
 	"docs.functions.sell.item_changed": "サーバーがリクエストを受信する前に選択したスロットへ別のアイテムが移動した場合、売却は失敗します。",
 	"docs.functions.get_socket.refresh": "send_updatesは見えているエンティティの完全なスナップショットを要求します。MAINFRAMEでは毎秒2回まで要求できます。送信前にentitiesのリスナーを登録してください。応答には対応するリクエストIDはありません。",
 	"docs.functions.exchange.timeout": "exchange()は、サーバーがリクエストを承認または拒否するまで最大10秒、その後は報酬を受け取るまで最大30秒待ちます。タイムアウトしても、サーバーがすでに承認した交換は取り消されません。再試行する前にcharacter.q.exchangeとインベントリを確認してください。",
-	"docs.functions.find_npc.roaming": "移動するNPCの場合、find_npcは現在位置ではなく、移動経路の最初の地点を返します。"
+	"docs.functions.find_npc.roaming": "移動するNPCの場合、find_npcは現在位置ではなく、移動経路の最初の地点を返します。",
+	"docs.functions.smart_move.replan": "経路を見失うと、smart_moveは再び経路を探します。移動が完了するか失敗するまで、Promiseは保留状態のままです。",
+	"docs.functions.compound.empty_slot": "選択したスロットが空の場合、返されたPromiseは拒否されます。.catch()でエラーを処理してください。",
+	"docs.functions.send_cm.message_size": "大きなメッセージほど呼び出し上限を多く消費します。繰り返し送るCODEメッセージは短くしてください。",
+	"docs.functions.equip_batch.empty_entries": "空の要素がある場合、装備リクエストを送信する前にPromiseが拒否されます。"
 }

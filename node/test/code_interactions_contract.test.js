@@ -371,6 +371,108 @@ test("invalid smart_move replacement stops the old route without throwing or reu
 	}
 });
 
+function movementContext() {
+	const { load } = require("./helpers/server_vm");
+	const c = runnerContext().context;
+	Object.assign(c, {
+		Dev: false,
+		deferreds: {},
+		smart: { moving: false },
+		code_settings: { log_smart_move: false },
+		game_log() {},
+		can_walk: () => true,
+		is_transporting: () => false,
+		can_move_to: () => false,
+	});
+	c.parent.phrase = (id) => id;
+	Object.assign(c.character, { real_x: 0, real_y: 0 });
+	load(c, "js/old_common_functions.js", [
+		"deferred",
+		"push_deferred",
+		"resolve_deferred",
+		"reject_deferred",
+		"resolve_deferreds",
+		"reject_deferreds",
+	]);
+	load(c, "js/runner_functions.js", ["smart_move", "smart_move_logic"]);
+	return c;
+}
+
+test("a lost smart_move path replans without interrupting its Promise or callback", async () => {
+	const c = movementContext();
+	const callbacks = [];
+	let outcome;
+	const journey = c.smart_move({ x: 100, y: 100 }, (value) => callbacks.push(value));
+	journey.then(
+		(value) => {
+			outcome = value;
+		},
+		(error) => {
+			outcome = error;
+		},
+	);
+	c.smart.found = true;
+	c.smart.plot = [{ map: "main", x: 50, y: 50 }];
+	c.smart_move_logic();
+	await Promise.resolve();
+	assert.equal(outcome, undefined, "replanning settled the original journey");
+	assert.deepEqual(callbacks, []);
+	let searches = 0;
+	c.start_pathfinding = () => {
+		searches++;
+		c.smart.found = true;
+		c.smart.plot = [{ map: "main", x: 100, y: 100 }];
+	};
+	c.can_move_to = () => true;
+	c.move = (x, y) => Object.assign(c.character, { real_x: x, real_y: y });
+	c.smart_move_logic();
+	c.smart_move_logic();
+	c.smart_move_logic();
+	assert.equal(searches, 1);
+	assert.equal((await journey).success, true);
+	assert.deepEqual(callbacks, [true]);
+	assert.equal(c.deferreds.smart_move, undefined);
+});
+
+test("the coordinate MOVE button sends numeric coordinates to smart_move", async () => {
+	const { load } = require("./helpers/server_vm");
+	const c = movementContext();
+	load(c, "js/functions.js", ["code_move"]);
+	let journey;
+	c.code_eval = (source) => {
+		journey = vm.runInContext(source, c);
+		journey.catch(() => {});
+	};
+	c.code_move("-12.5", "84");
+	assert.equal(c.smart.moving, true);
+	assert.equal(c.smart.x, -12.5);
+	assert.equal(c.smart.y, 84);
+	c.smart.moving = false;
+	c.smart.on_done(true);
+	assert.equal((await journey).success, true);
+});
+
+test("equip_batch rejects empty entries without throwing or sending an equipment request", async () => {
+	const { load } = require("./helpers/server_vm");
+	for (const data of [[null], [undefined], Array(1)]) {
+		const h = runnerContext(),
+			c = h.context;
+		c.parent.phrase = (id) => id;
+		c.game_log = () => {};
+		load(c, "js/runner_functions.js", ["equip_batch"]);
+		await assert.rejects(c.equip_batch(data), (error) => error.reason === "invalid");
+		assert.equal(h.socket.sent.length, 0);
+	}
+	const h = runnerContext();
+	load(h.context, "js/runner_functions.js", ["equip_batch"]);
+	await h.context.equip_batch([
+		{ num: 0, slot: "chest" },
+		{ num: 1, slot: "orb" },
+	]);
+	assert.equal(h.socket.sent.length, 1);
+	assert.equal(h.socket.sent[0].event, "equip_batch");
+});
+
 test("find_npc reads roaming NPC routes and preserves stationary and seasonal lookups", () => {
 	const { load } = require("./helpers/server_vm");
 	const h = runnerContext(),

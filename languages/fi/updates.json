@@ -902,5 +902,10 @@
 	"update.08_10_26.halloween.support_71": "Virheelliset smart_move-pyynnöt eivät enää jatka edellistä reittiä.",
 	"update.08_10_26.halloween.support_72": "MAINFRAME-valmistus ohittaa nyt lukitut, estetyt ja arvontaan asetetut esineet.",
 	"update.08_10_26.halloween.support_73": "Aseiden ja ammusten hohde päivittyy nyt varusteita vaihdettaessa.",
-	"update.08_10_26.halloween.support_74": "find_npc löytää nyt myös vaeltavat NPC-hahmot."
+	"update.08_10_26.halloween.support_74": "find_npc löytää nyt myös vaeltavat NPC-hahmot.",
+	"update.08_10_26.halloween.support_75": "Päivitykset ja yhdistämiset, joita ei tueta, eivät enää kuluta materiaaleja.",
+	"update.08_10_26.halloween.support_76": "smart_move jatkaa odottamista etsiessään uutta reittiä.",
+	"update.08_10_26.halloween.support_77": "Yhdistäminen tyhjästä paikasta ei enää aiheuta poikkeusta CODEssa.",
+	"update.08_10_26.halloween.support_78": "Suuret CODE-viestit lasketaan nyt oikein kutsurajaan.",
+	"update.08_10_26.halloween.support_79": "Tyhjät equip_batch-alkiot palauttavat nyt virheen."
 }

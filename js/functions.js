@@ -2543,7 +2543,7 @@ function code_eval(snippet) {
 }
 
 function code_move(x, y) {
-	code_eval("smart_move({x:'" + x + "',y:'" + y + "'})");
+	code_eval("smart_move(" + JSON.stringify({ x: Number(x), y: Number(y) }) + ")");
 }
 
 function code_travel(map) {
@@ -4002,7 +4002,7 @@ function compound(item0, item1, item2, scroll, offering, code, calculate) {
 	if (!code && (item0 == null || item1 == null || item2 == null || scroll == null)) d_text(phrase("client.floating.invalid"), character);
 	else {
 		var promise = push_deferred("compound");
-		socket.emit("compound", { items: [item0, item1, item2], scroll_num: scroll, offering_num: offering, clevel: character.items[item0].level || 0, calculate: calculate });
+		socket.emit("compound", { items: [item0, item1, item2], scroll_num: scroll, offering_num: offering, clevel: (character.items[item0] && character.items[item0].level) || 0, calculate: calculate });
 		return promise;
 	}
 }

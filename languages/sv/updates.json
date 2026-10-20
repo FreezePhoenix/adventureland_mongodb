@@ -902,5 +902,10 @@
 	"update.08_10_26.halloween.support_71": "Ogiltiga smart_move-anrop fortsätter inte längre längs den föregående rutten.",
 	"update.08_10_26.halloween.support_72": "Tillverkning i MAINFRAME hoppar nu över låsta och blockerade föremål samt föremål som lagts upp för utlottning.",
 	"update.08_10_26.halloween.support_73": "Vapnens och projektilernas glöd uppdateras nu när du byter utrustning.",
-	"update.08_10_26.halloween.support_74": "find_npc hittar nu kringvandrande NPC:er."
+	"update.08_10_26.halloween.support_74": "find_npc hittar nu kringvandrande NPC:er.",
+	"update.08_10_26.halloween.support_75": "Uppgraderingar och sammanslagningar som inte stöds förbrukar inte längre material.",
+	"update.08_10_26.halloween.support_76": "smart_move fortsätter att vänta medan en ny rutt söks.",
+	"update.08_10_26.halloween.support_77": "Ett försök att kombinera från en tom plats kastar inte längre ett undantag i CODE.",
+	"update.08_10_26.halloween.support_78": "Stora CODE-meddelanden räknas nu korrekt mot anropsgränsen.",
+	"update.08_10_26.halloween.support_79": "Tomma poster i equip_batch returnerar nu ett fel."
 }

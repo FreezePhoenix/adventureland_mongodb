@@ -2797,5 +2797,9 @@
 	"docs.functions.sell.item_changed": "Myynti epäonnistuu, jos toinen esine siirretään valittuun paikkaan ennen kuin palvelin vastaanottaa pyynnön.",
 	"docs.functions.get_socket.refresh": "send_updates pyytää täydellisen tilannekuvan näkyvistä olioista. MAINFRAME sallii kaksi pyyntöä sekunnissa. Kuuntele entities-tapahtumaa ennen pyynnön lähettämistä; vastauksella ei ole vastaavaa pyyntötunnistetta.",
 	"docs.functions.exchange.timeout": "exchange() odottaa enintään 10 sekuntia, että palvelin hyväksyy tai hylkää pyynnön, ja sen jälkeen enintään 30 sekuntia palkintoa. Aikakatkaisu ei peru palvelimen jo hyväksymää vaihtoa. Tarkista character.q.exchange ja inventaariosi ennen uutta yritystä.",
-	"docs.functions.find_npc.roaming": "Vaeltavien NPC-hahmojen kohdalla find_npc palauttaa reitin ensimmäisen pisteen, ei hahmon nykyistä sijaintia."
+	"docs.functions.find_npc.roaming": "Vaeltavien NPC-hahmojen kohdalla find_npc palauttaa reitin ensimmäisen pisteen, ei hahmon nykyistä sijaintia.",
+	"docs.functions.smart_move.replan": "Jos reitti katoaa, smart_move etsii uudelleen. Sen Promise pysyy odottamassa, kunnes matka päättyy tai epäonnistuu.",
+	"docs.functions.compound.empty_slot": "Jos valittu paikka on tyhjä, palautettu Promise hylätään. Käsittele virhe .catch()-metodilla.",
+	"docs.functions.send_cm.message_size": "Suuremmat viestit kuluttavat enemmän kutsurajasta. Pidä toistuvat CODE-viestit lyhyinä.",
+	"docs.functions.equip_batch.empty_entries": "Tyhjät alkiot hylkäävät Promisen ennen kuin yhtään varusteiden pukemispyyntöä lähetetään."
 }

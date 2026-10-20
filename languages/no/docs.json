@@ -2797,5 +2797,9 @@
 	"docs.functions.sell.item_changed": "Salget mislykkes hvis en annen gjenstand flyttes til den valgte plassen før serveren mottar forespørselen.",
 	"docs.functions.get_socket.refresh": "send_updates ber om et fullstendig øyeblikksbilde av synlige entiteter. MAINFRAME tillater to forespørsler per sekund. Lytt etter entities før du sender forespørselen; svaret har ingen samsvarende forespørsels-ID.",
 	"docs.functions.exchange.timeout": "exchange() venter opptil 10 sekunder på at serveren godtar eller avviser forespørselen, og deretter opptil 30 sekunder på belønningen. Utløpt ventetid avbryter ikke en byttehandel som serveren allerede har godtatt. Sjekk character.q.exchange og inventaret ditt før du prøver igjen.",
-	"docs.functions.find_npc.roaming": "For omvandrende NPC-er returnerer find_npc det første punktet på ruten deres, ikke den nåværende posisjonen."
+	"docs.functions.find_npc.roaming": "For omvandrende NPC-er returnerer find_npc det første punktet på ruten deres, ikke den nåværende posisjonen.",
+	"docs.functions.smart_move.replan": "Hvis ruten går tapt, søker smart_move på nytt. Dens Promise forblir ventende til reisen er fullført eller mislykkes.",
+	"docs.functions.compound.empty_slot": "Hvis en valgt plass er tom, avvises den returnerte Promise. Håndter feilen med .catch().",
+	"docs.functions.send_cm.message_size": "Større meldinger bruker mer av grensen for kall. Hold gjentatte CODE-meldinger korte.",
+	"docs.functions.equip_batch.empty_entries": "Tomme oppføringer avviser Promise før noen forespørsel om å ta på utstyr sendes."
 }

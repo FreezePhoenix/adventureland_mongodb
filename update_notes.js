@@ -29,6 +29,11 @@ module.exports = [
 			},
 		],
 		changes: [
+			{ fixed: "support_79", note: "Empty equip_batch entries now return an error." },
+			{ fixed: "support_78", note: "Large CODE messages now count correctly toward the call limit." },
+			{ fixed: "support_77", note: "Compounding an empty slot no longer throws in CODE." },
+			{ fixed: "support_76", note: "smart_move keeps waiting while it finds a new route." },
+			{ fixed: "support_75", note: "Unsupported upgrades and compounds no longer consume materials." },
 			{ fixed: "support_74", note: "find_npc now finds roaming NPCs." },
 			{ fixed: "support_73", note: "Weapon and projectile glow now updates when you swap gear." },
 			{ fixed: "support_72", note: "MAINFRAME crafting now skips locked, blocked and giveaway items." },

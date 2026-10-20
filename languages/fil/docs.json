@@ -2797,5 +2797,9 @@
 	"docs.functions.sell.item_changed": "Mabibigo ang pagbebenta kung may ibang item na mailipat sa napiling puwesto bago matanggap ng server ang kahilingan.",
 	"docs.functions.get_socket.refresh": "Humihingi ang send_updates ng kumpletong snapshot ng mga nakikitang entidad. Pinapayagan ng MAINFRAME ang dalawang kahilingan bawat segundo. Makinig sa entities bago ipadala ang kahilingan; walang katugmang request ID ang tugon.",
 	"docs.functions.exchange.timeout": "Naghihintay ang exchange() nang hanggang 10 segundo para tanggapin o tanggihan ng server ang request, at pagkatapos ay hanggang 30 segundo para sa gantimpala. Hindi kinakansela ng paglipas ng oras ng paghihintay ang palitang tinanggap na ng server. Suriin ang character.q.exchange at ang iyong imbentaryo bago subukang muli.",
-	"docs.functions.find_npc.roaming": "Para sa mga gumagalang NPC, ibinabalik ng find_npc ang unang punto ng kanilang ruta, hindi ang kasalukuyan nilang posisyon."
+	"docs.functions.find_npc.roaming": "Para sa mga gumagalang NPC, ibinabalik ng find_npc ang unang punto ng kanilang ruta, hindi ang kasalukuyan nilang posisyon.",
+	"docs.functions.smart_move.replan": "Kapag nawala ang ruta, muling naghahanap ang smart_move. Nananatiling nakabinbin ang Promise nito hanggang matapos o mabigo ang paglalakbay.",
+	"docs.functions.compound.empty_slot": "Kung bakante ang napiling slot, tatanggihan ang ibinalik na Promise. Pangasiwaan ang error gamit ang .catch().",
+	"docs.functions.send_cm.message_size": "Mas malaking bahagi ng limitasyon ng mga tawag ang ginagamit ng malalaking mensahe. Panatilihing maikli ang paulit-ulit na mensahe sa CODE.",
+	"docs.functions.equip_batch.empty_entries": "Tinatanggihan ng mga bakanteng entry ang Promise bago magpadala ng anumang kahilingang magsuot ng kagamitan."
 }

@@ -2797,5 +2797,9 @@
 	"docs.functions.sell.item_changed": "Vânzarea eșuează dacă alt obiect este mutat în spațiul selectat înainte ca serverul să primească cererea.",
 	"docs.functions.get_socket.refresh": "send_updates solicită un instantaneu complet al entităților vizibile. MAINFRAME permite două cereri pe secundă. Ascultă entities înainte de a trimite cererea; răspunsul nu are un ID de cerere corespunzător.",
 	"docs.functions.exchange.timeout": "exchange() așteaptă până la 10 secunde ca serverul să accepte sau să respingă cererea, apoi până la 30 de secunde pentru recompensă. Expirarea timpului nu anulează un schimb deja acceptat de server. Verifică character.q.exchange și inventarul înainte să încerci din nou.",
-	"docs.functions.find_npc.roaming": "Pentru NPC-urile care se deplasează, find_npc returnează primul punct al traseului lor, nu poziția actuală."
+	"docs.functions.find_npc.roaming": "Pentru NPC-urile care se deplasează, find_npc returnează primul punct al traseului lor, nu poziția actuală.",
+	"docs.functions.smart_move.replan": "Dacă traseul este pierdut, smart_move caută din nou. Obiectul Promise rămâne în așteptare până când călătoria se încheie sau eșuează.",
+	"docs.functions.compound.empty_slot": "Dacă un slot selectat este gol, obiectul Promise returnat este respins. Tratează eroarea cu .catch().",
+	"docs.functions.send_cm.message_size": "Mesajele mai mari consumă mai mult din limita de apeluri. Păstrează scurte mesajele CODE repetate.",
+	"docs.functions.equip_batch.empty_entries": "Intrările goale resping obiectul Promise înainte de trimiterea oricărei cereri de echipare."
 }

@@ -902,5 +902,10 @@
 	"update.08_10_26.halloween.support_71": "Neplatné požadavky smart_move už nepokračují po předchozí trase.",
 	"update.08_10_26.halloween.support_72": "Výroba v MAINFRAME nyní přeskakuje zamčené, blokované a do slosování vložené předměty.",
 	"update.08_10_26.halloween.support_73": "Záře zbraní a střel se nyní aktualizuje při změně vybavení.",
-	"update.08_10_26.halloween.support_74": "find_npc nyní najde i pohybující se NPC."
+	"update.08_10_26.halloween.support_74": "find_npc nyní najde i pohybující se NPC.",
+	"update.08_10_26.halloween.support_75": "Nepodporovaná vylepšení a slučování už nespotřebovávají materiály.",
+	"update.08_10_26.halloween.support_76": "smart_move dál čeká, zatímco hledá novou trasu.",
+	"update.08_10_26.halloween.support_77": "Pokus o sloučení z prázdného místa už v CODE nevyvolá výjimku.",
+	"update.08_10_26.halloween.support_78": "Velké zprávy CODE se nyní správně započítávají do limitu volání.",
+	"update.08_10_26.halloween.support_79": "Prázdné položky equip_batch nyní vracejí chybu."
 }

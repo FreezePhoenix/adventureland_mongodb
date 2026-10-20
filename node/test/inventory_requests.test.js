@@ -290,6 +290,59 @@ test("Primling preview identifies grace without consuming; applying it retains l
 	assert.equal(h.player.items[0].p.grace_added, 0.5);
 });
 
+test("unsupported upgrade and compound levels preserve items, scrolls and offerings", () => {
+	for (const [event, name, level, scroll] of [
+		["upgrade", "luckyt", 0, "scroll3"],
+		["compound", "gloampendant", 6, "cscroll3"],
+		["compound", "coal", 10, "cscroll3"],
+	]) {
+		for (const calculate of [false, true]) {
+			const h = fixture();
+			const responses = [];
+			h.player.socket.emit = (event, data) => responses.push(data);
+			h.c.server_log = () => {};
+			G.maps.main.compound ||= { map: "main", in: "main", x: 0, y: 0 };
+			G.items[name].igrade = G.calculate_item_grade(G.items[name]);
+			h.player.items[0] = { name, level, grace: 2 };
+			if (event === "compound") {
+				h.player.items[1] = { name, level, grace: 3 };
+				h.player.items[2] = { name, level, grace: 4 };
+			}
+			h.player.items[3] = { name: scroll, q: 2 };
+			h.player.items[4] = { name: "offering", q: 2 };
+			const before = plain(h.player);
+			h.run(event, { item_num: 0, items: [0, 1, 2], clevel: level, scroll_num: 3, offering_num: 4, calculate });
+			assert.deepEqual(responses, [event + "_cant"]);
+			assert.deepEqual(plain(h.player), before);
+		}
+	}
+});
+
+test("supported upgrade and compound previews still use the existing chances", () => {
+	for (const [event, name, scroll] of [
+		["upgrade", "coat", "scroll0"],
+		["compound", "strring", "cscroll0"],
+	]) {
+		const h = fixture();
+		G.maps.main.compound ||= { map: "main", in: "main", x: 0, y: 0 };
+		G.items[name].igrade = G.calculate_item_grade(G.items[name]);
+		G.items[name].igrace = 1;
+		h.player.p.ograce = 0;
+		h.player.p.ugrace = Array(20).fill(0);
+		h.c.S = { u: 0, ugrace: Array(20).fill(0) };
+		h.player.items[0] = { name, level: 0 };
+		h.player.items[1] = { name, level: 0 };
+		h.player.items[2] = { name, level: 0 };
+		h.player.items[3] = { name: scroll, q: 2 };
+		const before = plain(h.player.items);
+		h.run(event, { item_num: 0, items: [0, 1, 2], clevel: 0, scroll_num: 3, calculate: true });
+		assert.equal(h.successes[0][0], event + "_chance");
+		assert(Number.isFinite(h.successes[0][1].chance));
+		assert(h.successes[0][1].chance > 0 && h.successes[0][1].chance <= 1);
+		assert.deepEqual(plain(h.player.items), before);
+	}
+});
+
 test("Glitch exchanges award both unstackable copies, directly and inside chests", () => {
 	for (const chest of [false, true]) {
 		const h = fixture();

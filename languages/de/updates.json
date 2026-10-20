@@ -902,5 +902,10 @@
 	"update.08_10_26.halloween.support_71": "Ungültige smart_move-Anfragen setzen die vorherige Route nicht mehr fort.",
 	"update.08_10_26.halloween.support_72": "Die Herstellung in MAINFRAME überspringt jetzt gesperrte, blockierte und zur Verlosung stehende Gegenstände.",
 	"update.08_10_26.halloween.support_73": "Das Leuchten von Waffen und Geschossen wird beim Ausrüstungswechsel jetzt aktualisiert.",
-	"update.08_10_26.halloween.support_74": "find_npc findet jetzt auch umherziehende NPCs."
+	"update.08_10_26.halloween.support_74": "find_npc findet jetzt auch umherziehende NPCs.",
+	"update.08_10_26.halloween.support_75": "Nicht unterstützte Verbesserungen und Kombinationen verbrauchen keine Materialien mehr.",
+	"update.08_10_26.halloween.support_76": "smart_move wartet weiter, während eine neue Route gesucht wird.",
+	"update.08_10_26.halloween.support_77": "Ein Kombinationsversuch mit einem leeren Platz löst in CODE keine Ausnahme mehr aus.",
+	"update.08_10_26.halloween.support_78": "Große CODE-Nachrichten werden jetzt korrekt auf das Aufruflimit angerechnet.",
+	"update.08_10_26.halloween.support_79": "Leere Einträge in equip_batch geben jetzt einen Fehler zurück."
 }

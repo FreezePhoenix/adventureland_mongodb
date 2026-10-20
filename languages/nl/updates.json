@@ -902,5 +902,10 @@
 	"update.08_10_26.halloween.support_71": "Ongeldige smart_move-verzoeken zetten de vorige route niet meer voort.",
 	"update.08_10_26.halloween.support_72": "Vervaardiging in MAINFRAME slaat nu vergrendelde, geblokkeerde en voor verloting aangeboden voorwerpen over.",
 	"update.08_10_26.halloween.support_73": "De gloed van wapens en projectielen wordt nu bijgewerkt als je van uitrusting wisselt.",
-	"update.08_10_26.halloween.support_74": "find_npc vindt nu rondtrekkende NPC's."
+	"update.08_10_26.halloween.support_74": "find_npc vindt nu rondtrekkende NPC's.",
+	"update.08_10_26.halloween.support_75": "Niet-ondersteunde verbeteringen en combinaties verbruiken geen materialen meer.",
+	"update.08_10_26.halloween.support_76": "smart_move blijft wachten terwijl er een nieuwe route wordt gezocht.",
+	"update.08_10_26.halloween.support_77": "Een combinatiepoging vanuit een leeg vak veroorzaakt geen uitzondering meer in CODE.",
+	"update.08_10_26.halloween.support_78": "Grote CODE-berichten tellen nu correct mee voor de aanroeplimiet.",
+	"update.08_10_26.halloween.support_79": "Lege vermeldingen in equip_batch geven nu een fout terug."
 }

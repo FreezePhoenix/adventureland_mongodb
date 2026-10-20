@@ -4971,14 +4971,14 @@ function init_socket_io(socket_server, server_index) {
 						var add = 1;
 						var len = JSON.stringify(data.message).length;
 						var mult = 1;
-						if (len > 100) {
-							add = 2;
-						} else if (len > 1000) {
-							add = 3;
+						if (len > 50000) {
+							add = 20;
 						} else if (len > 10000) {
 							add = 10;
-						} else if (len > 50000) {
-							add = 20;
+						} else if (len > 1000) {
+							add = 3;
+						} else if (len > 100) {
+							add = 2;
 						}
 						if (!Array.isArray(data.to)) {
 							data.to = [data.to];
@@ -6987,22 +6987,25 @@ function init_socket_io(socket_server, server_index) {
 					return socket.emit("game_response", { response: "item_locked", place: "compound", failed: true });
 				}
 
+				var new_level = (item0.level || 0) + 1;
+				var igrade = def.igrade;
+				if ((item0.level || 0) >= 3) {
+					igrade = calculate_item_grade(def, { name: item0.name, level: (item0.level || 0) - 2 });
+				}
+				if (!Number.isFinite(D.compounds[igrade] && D.compounds[igrade][new_level])) {
+					return socket.emit("game_response", "compound_cant");
+				}
 				if (!data.calculate) {
 					consume_one(player, data.scroll_num);
 				}
 
-				var new_level = (item0.level || 0) + 1;
 				var probability = 1;
 				var oprobability = 1;
 				var result = 0;
 				var proc = 0;
 				var grace = 0;
-				var igrade = def.igrade;
 				var high = false;
 				var grace_bonus = 0;
-				if ((item0.level || 0) >= 3) {
-					igrade = calculate_item_grade(def, { name: item0.name, level: (item0.level || 0) - 2 });
-				}
 
 				delete player.p.c_item;
 				delete player.p.c_itemx;
@@ -7250,6 +7253,13 @@ function init_socket_io(socket_server, server_index) {
 				}
 
 				var new_level = (item.level || 0) + 1;
+				if (
+					scroll &&
+					scroll_def.type == "uscroll" &&
+					!Number.isFinite(D.upgrades[item_def.igrade] && D.upgrades[item_def.igrade][new_level])
+				) {
+					return socket.emit("game_response", "upgrade_cant");
+				}
 				var probability = 1;
 				var oprobability = 1;
 				var grace = 0;

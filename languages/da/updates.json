@@ -902,5 +902,10 @@
 	"update.08_10_26.halloween.support_71": "Ugyldige smart_move-anmodninger fortsætter ikke længere den tidligere rute.",
 	"update.08_10_26.halloween.support_72": "Fremstilling i MAINFRAME springer nu låste og blokerede genstande samt genstande til udlodning over.",
 	"update.08_10_26.halloween.support_73": "Våben og projektilers glød opdateres nu, når du skifter udstyr.",
-	"update.08_10_26.halloween.support_74": "find_npc finder nu omvandrende NPC'er."
+	"update.08_10_26.halloween.support_74": "find_npc finder nu omvandrende NPC'er.",
+	"update.08_10_26.halloween.support_75": "Opgraderinger og sammensætninger, der ikke understøttes, bruger ikke længere materialer.",
+	"update.08_10_26.halloween.support_76": "smart_move fortsætter med at vente, mens der findes en ny rute.",
+	"update.08_10_26.halloween.support_77": "Et forsøg på at kombinere fra en tom plads udløser ikke længere en undtagelse i CODE.",
+	"update.08_10_26.halloween.support_78": "Store CODE-beskeder tæller nu korrekt med i kaldsgrænsen.",
+	"update.08_10_26.halloween.support_79": "Tomme poster i equip_batch returnerer nu en fejl."
 }

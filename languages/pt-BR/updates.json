@@ -902,5 +902,10 @@
 	"update.08_10_26.halloween.support_71": "Solicitações inválidas de smart_move não continuam mais a rota anterior.",
 	"update.08_10_26.halloween.support_72": "A fabricação no MAINFRAME agora ignora itens bloqueados, restritos e colocados em sorteios.",
 	"update.08_10_26.halloween.support_73": "O brilho de armas e projéteis agora é atualizado ao trocar de equipamento.",
-	"update.08_10_26.halloween.support_74": "find_npc agora encontra NPCs que se deslocam."
+	"update.08_10_26.halloween.support_74": "find_npc agora encontra NPCs que se deslocam.",
+	"update.08_10_26.halloween.support_75": "Melhorias e combinações não suportadas não consomem mais materiais.",
+	"update.08_10_26.halloween.support_76": "smart_move continua aguardando enquanto encontra uma nova rota.",
+	"update.08_10_26.halloween.support_77": "Tentar combinar a partir de um espaço vazio não lança mais uma exceção em CODE.",
+	"update.08_10_26.halloween.support_78": "Mensagens grandes de CODE agora contam corretamente para o limite de chamadas.",
+	"update.08_10_26.halloween.support_79": "Entradas vazias de equip_batch agora retornam um erro."
 }

@@ -902,5 +902,10 @@
 	"update.08_10_26.halloween.support_71": "Az érvénytelen smart_move kérések többé nem folytatják az előző útvonalat.",
 	"update.08_10_26.halloween.support_72": "A MAINFRAME tárgykészítése most már kihagyja a zárolt, tiltott és sorsolásra felajánlott tárgyakat.",
 	"update.08_10_26.halloween.support_73": "Felszerelésváltáskor most már frissül a fegyverek és lövedékek ragyogása.",
-	"update.08_10_26.halloween.support_74": "A find_npc most már a vándorló NPC-ket is megtalálja."
+	"update.08_10_26.halloween.support_74": "A find_npc most már a vándorló NPC-ket is megtalálja.",
+	"update.08_10_26.halloween.support_75": "A nem támogatott fejlesztések és egyesítések már nem fogyasztanak alapanyagot.",
+	"update.08_10_26.halloween.support_76": "A smart_move tovább vár, amíg új útvonalat keres.",
+	"update.08_10_26.halloween.support_77": "Az üres helyről indított egyesítés már nem dob kivételt a CODE-ban.",
+	"update.08_10_26.halloween.support_78": "A nagy CODE-üzenetek mostantól megfelelően számítanak bele a hívási korlátba.",
+	"update.08_10_26.halloween.support_79": "Az equip_batch üres elemei mostantól hibát adnak vissza."
 }

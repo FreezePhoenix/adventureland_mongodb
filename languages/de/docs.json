@@ -2797,5 +2797,9 @@
 	"docs.functions.sell.item_changed": "Der Verkauf schlägt fehl, wenn ein anderer Gegenstand auf den gewählten Platz verschoben wird, bevor der Server die Anfrage erhält.",
 	"docs.functions.get_socket.refresh": "send_updates fordert eine vollständige Momentaufnahme sichtbarer Entitäten an. MAINFRAME erlaubt zwei Anfragen pro Sekunde. Registriere den Listener für entities vor dem Senden; die Antwort enthält keine zugehörige Anfrage-ID.",
 	"docs.functions.exchange.timeout": "exchange() wartet bis zu 10 Sekunden darauf, dass der Server die Anfrage annimmt oder ablehnt, und danach bis zu 30 Sekunden auf die Belohnung. Eine Zeitüberschreitung bricht einen bereits vom Server angenommenen Tausch nicht ab. Prüfe character.q.exchange und dein Inventar, bevor du es erneut versuchst.",
-	"docs.functions.find_npc.roaming": "Bei umherziehenden NPCs gibt find_npc den ersten Punkt ihrer Route zurück, nicht ihre aktuelle Position."
+	"docs.functions.find_npc.roaming": "Bei umherziehenden NPCs gibt find_npc den ersten Punkt ihrer Route zurück, nicht ihre aktuelle Position.",
+	"docs.functions.smart_move.replan": "Geht die Route verloren, sucht smart_move erneut. Sein Promise bleibt offen, bis der Weg abgeschlossen ist oder fehlschlägt.",
+	"docs.functions.compound.empty_slot": "Ist ein ausgewählter Platz leer, wird das zurückgegebene Promise abgelehnt. Behandle den Fehler mit .catch().",
+	"docs.functions.send_cm.message_size": "Größere Nachrichten verbrauchen mehr vom Aufruflimit. Halte wiederholte CODE-Nachrichten kurz.",
+	"docs.functions.equip_batch.empty_entries": "Leere Einträge lehnen das Promise ab, bevor eine Ausrüstungsanfrage gesendet wird."
 }

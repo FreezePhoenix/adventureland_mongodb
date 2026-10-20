@@ -1,6 +1,16 @@
 // Release highlights. Dates, item/character names and CODE identifiers stay unchanged.
 module.exports = {
 	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_79": "Empty equip_batch entries now return an error.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_78": "Large CODE messages now count correctly toward the call limit.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_77": "Compounding an empty slot no longer throws in CODE.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_76": "smart_move keeps waiting while it finds a new route.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_75": "Unsupported upgrades and compounds no longer consume materials.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
 	"update.08_10_26.halloween.support_74": "find_npc now finds roaming NPCs.",
 	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
 	"update.08_10_26.halloween.support_73": "Weapon and projectile glow now updates when you swap gear.",

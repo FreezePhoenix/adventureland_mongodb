@@ -902,5 +902,10 @@
 	"update.08_10_26.halloween.support_71": "잘못된 smart_move 요청 후에는 이전 경로를 계속 따라가지 않습니다.",
 	"update.08_10_26.halloween.support_72": "MAINFRAME 제작은 이제 잠김, 사용 제한, 나눔 추첨 등록 상태의 아이템을 제외합니다.",
 	"update.08_10_26.halloween.support_73": "장비를 바꾸면 이제 무기와 투사체의 빛이 갱신됩니다.",
-	"update.08_10_26.halloween.support_74": "find_npc가 이제 돌아다니는 NPC도 찾습니다."
+	"update.08_10_26.halloween.support_74": "find_npc가 이제 돌아다니는 NPC도 찾습니다.",
+	"update.08_10_26.halloween.support_75": "지원되지 않는 강화와 합성이 더 이상 재료를 소모하지 않습니다.",
+	"update.08_10_26.halloween.support_76": "smart_move가 새 경로를 찾는 동안 계속 기다립니다.",
+	"update.08_10_26.halloween.support_77": "빈 슬롯에서 합성을 시도해도 더 이상 CODE에서 예외가 발생하지 않습니다.",
+	"update.08_10_26.halloween.support_78": "큰 CODE 메시지가 이제 호출 한도에 올바르게 반영됩니다.",
+	"update.08_10_26.halloween.support_79": "equip_batch의 빈 항목이 이제 오류를 반환합니다."
 }

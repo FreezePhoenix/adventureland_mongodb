@@ -2797,5 +2797,9 @@
 	"docs.functions.sell.item_changed": "İstek sunucuya ulaşmadan seçilen yuvaya başka bir eşya taşınırsa satış başarısız olur.",
 	"docs.functions.get_socket.refresh": "send_updates, görünür varlıkların tam durumunu ister. MAINFRAME saniyede iki isteğe izin verir. İsteği göndermeden önce entities olayını dinleyin; yanıtın eşleşen bir istek kimliği yoktur.",
 	"docs.functions.exchange.timeout": "exchange(), sunucunun isteği kabul veya reddetmesi için en fazla 10 saniye, ardından ödül için en fazla 30 saniye bekler. Zaman aşımı, sunucunun zaten kabul ettiği bir takası iptal etmez. Yeniden denemeden önce character.q.exchange değerini ve envanterini kontrol et.",
-	"docs.functions.find_npc.roaming": "Dolaşan NPC'ler için find_npc, bulundukları konumu değil, rotalarındaki ilk noktayı döndürür."
+	"docs.functions.find_npc.roaming": "Dolaşan NPC'ler için find_npc, bulundukları konumu değil, rotalarındaki ilk noktayı döndürür.",
+	"docs.functions.smart_move.replan": "Rota kaybolursa smart_move yeniden arar. Yolculuk tamamlanana veya başarısız olana kadar Promise beklemede kalır.",
+	"docs.functions.compound.empty_slot": "Seçilen bir yuva boşsa döndürülen Promise reddedilir. Hatayı .catch() ile ele al.",
+	"docs.functions.send_cm.message_size": "Büyük mesajlar çağrı sınırından daha fazla harcar. Tekrarlanan CODE mesajlarını kısa tut.",
+	"docs.functions.equip_batch.empty_entries": "Boş girdiler, herhangi bir kuşanma isteği gönderilmeden Promise'ın reddedilmesine neden olur."
 }

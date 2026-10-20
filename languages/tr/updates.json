@@ -902,5 +902,10 @@
 	"update.08_10_26.halloween.support_71": "Geçersiz smart_move istekleri artık önceki rotayı sürdürmüyor.",
 	"update.08_10_26.halloween.support_72": "MAINFRAME üretimi artık kilitli, engellenmiş ve çekilişe konmuş eşyaları atlıyor.",
 	"update.08_10_26.halloween.support_73": "Silah değiştirdiğinde silah ve mermi parıltısı artık güncelleniyor.",
-	"update.08_10_26.halloween.support_74": "find_npc artık dolaşan NPC'leri de buluyor."
+	"update.08_10_26.halloween.support_74": "find_npc artık dolaşan NPC'leri de buluyor.",
+	"update.08_10_26.halloween.support_75": "Desteklenmeyen yükseltme ve birleştirme işlemleri artık malzeme tüketmiyor.",
+	"update.08_10_26.halloween.support_76": "smart_move, yeni bir rota bulurken beklemeye devam ediyor.",
+	"update.08_10_26.halloween.support_77": "Boş bir yuvayı birleştirmeye çalışmak artık CODE içinde istisna oluşturmuyor.",
+	"update.08_10_26.halloween.support_78": "Büyük CODE mesajları artık çağrı sınırına doğru yansıtılıyor.",
+	"update.08_10_26.halloween.support_79": "Boş equip_batch girdileri artık hata döndürüyor."
 }

@@ -902,5 +902,10 @@
 	"update.08_10_26.halloween.support_71": "Yêu cầu smart_move không hợp lệ không còn tiếp tục tuyến đường trước đó.",
 	"update.08_10_26.halloween.support_72": "Chế tạo trong MAINFRAME giờ bỏ qua vật phẩm bị khóa, bị chặn và đang được dùng làm giải bốc thăm.",
 	"update.08_10_26.halloween.support_73": "Ánh sáng của vũ khí và đạn giờ cập nhật khi thay trang bị.",
-	"update.08_10_26.halloween.support_74": "find_npc giờ tìm được NPC đi lại."
+	"update.08_10_26.halloween.support_74": "find_npc giờ tìm được NPC đi lại.",
+	"update.08_10_26.halloween.support_75": "Các thao tác nâng cấp và ghép không được hỗ trợ không còn tiêu hao nguyên liệu.",
+	"update.08_10_26.halloween.support_76": "smart_move tiếp tục chờ trong khi tìm đường mới.",
+	"update.08_10_26.halloween.support_77": "Thử ghép từ ô trống không còn gây ngoại lệ trong CODE.",
+	"update.08_10_26.halloween.support_78": "Tin nhắn CODE lớn giờ được tính đúng vào giới hạn lượt gọi.",
+	"update.08_10_26.halloween.support_79": "Các phần tử trống trong equip_batch giờ trả về lỗi."
 }

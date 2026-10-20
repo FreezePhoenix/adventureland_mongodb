@@ -2797,5 +2797,9 @@
 	"docs.functions.sell.item_changed": "De verkoop mislukt als een ander voorwerp naar het gekozen vak wordt verplaatst voordat de server het verzoek ontvangt.",
 	"docs.functions.get_socket.refresh": "send_updates vraagt een volledige momentopname van zichtbare entiteiten op. MAINFRAME staat twee verzoeken per seconde toe. Luister naar entities voordat je het verzoek verstuurt; het antwoord bevat geen bijbehorende verzoek-ID.",
 	"docs.functions.exchange.timeout": "exchange() wacht maximaal 10 seconden totdat de server het verzoek accepteert of weigert, en daarna maximaal 30 seconden op de beloning. Een time-out annuleert geen uitwisseling die de server al heeft geaccepteerd. Controleer character.q.exchange en je inventaris voordat je het opnieuw probeert.",
-	"docs.functions.find_npc.roaming": "Voor rondtrekkende NPC's geeft find_npc het eerste punt van hun route terug, niet hun huidige positie."
+	"docs.functions.find_npc.roaming": "Voor rondtrekkende NPC's geeft find_npc het eerste punt van hun route terug, niet hun huidige positie.",
+	"docs.functions.smart_move.replan": "Als de route verloren gaat, zoekt smart_move opnieuw. De Promise blijft wachten totdat de reis voltooid is of mislukt.",
+	"docs.functions.compound.empty_slot": "Als een geselecteerd vak leeg is, wordt de teruggegeven Promise afgewezen. Handel de fout af met .catch().",
+	"docs.functions.send_cm.message_size": "Grotere berichten verbruiken meer van de aanroeplimiet. Houd herhaalde CODE-berichten kort.",
+	"docs.functions.equip_batch.empty_entries": "Lege vermeldingen wijzen de Promise af voordat er een verzoek om uitrusting te dragen wordt verzonden."
 }

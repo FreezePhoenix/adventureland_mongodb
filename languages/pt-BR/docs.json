@@ -2797,5 +2797,9 @@
 	"docs.functions.sell.item_changed": "A venda falha se outro item for movido para o espaço selecionado antes de o servidor receber a solicitação.",
 	"docs.functions.get_socket.refresh": "send_updates solicita um retrato completo das entidades visíveis. MAINFRAME permite duas solicitações por segundo. Escute entities antes de enviar a solicitação; a resposta não tem um identificador de solicitação correspondente.",
 	"docs.functions.exchange.timeout": "exchange() espera até 10 segundos para o servidor aceitar ou rejeitar a solicitação e, depois, até 30 segundos pela recompensa. O fim do tempo de espera não cancela uma troca que o servidor já aceitou. Verifique character.q.exchange e seu inventário antes de tentar novamente.",
-	"docs.functions.find_npc.roaming": "Para NPCs que se deslocam, find_npc retorna o primeiro ponto da rota, não a posição atual."
+	"docs.functions.find_npc.roaming": "Para NPCs que se deslocam, find_npc retorna o primeiro ponto da rota, não a posição atual.",
+	"docs.functions.smart_move.replan": "Se a rota for perdida, smart_move procura novamente. Seu Promise fica pendente até a viagem terminar ou falhar.",
+	"docs.functions.compound.empty_slot": "Se um espaço selecionado estiver vazio, o Promise retornado será rejeitado. Trate o erro com .catch().",
+	"docs.functions.send_cm.message_size": "Mensagens maiores consomem mais do limite de chamadas. Mantenha curtas as mensagens repetidas de CODE.",
+	"docs.functions.equip_batch.empty_entries": "Entradas vazias rejeitam o Promise antes de enviar qualquer solicitação para equipar itens."
 }

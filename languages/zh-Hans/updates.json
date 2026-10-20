@@ -902,5 +902,10 @@
 	"update.08_10_26.halloween.support_71": "无效的smart_move请求不再继续之前的路线。",
 	"update.08_10_26.halloween.support_72": "MAINFRAME制作现在会跳过已锁定、受限或正在赠品抽奖中的物品。",
 	"update.08_10_26.halloween.support_73": "更换装备时，武器和投射物的光效现在会更新。",
-	"update.08_10_26.halloween.support_74": "find_npc现在可以找到四处走动的NPC。"
+	"update.08_10_26.halloween.support_74": "find_npc现在可以找到四处走动的NPC。",
+	"update.08_10_26.halloween.support_75": "不支持的强化和合成操作不再消耗材料。",
+	"update.08_10_26.halloween.support_76": "smart_move 在寻找新路线时会继续等待。",
+	"update.08_10_26.halloween.support_77": "尝试对空栏位中的物品进行合成不再导致 CODE 抛出异常。",
+	"update.08_10_26.halloween.support_78": "大型 CODE 消息现在会正确计入调用限额。",
+	"update.08_10_26.halloween.support_79": "equip_batch 中的空条目现在会返回错误。"
 }

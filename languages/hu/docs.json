@@ -2797,5 +2797,9 @@
 	"docs.functions.sell.item_changed": "Az eladás meghiúsul, ha másik tárgy kerül a kiválasztott helyre, mielőtt a szerver megkapja a kérést.",
 	"docs.functions.get_socket.refresh": "A send_updates teljes pillanatképet kér a látható entitásokról. A MAINFRAME másodpercenként két kérést engedélyez. A kérés elküldése előtt kezdj figyelni az entities eseményre; a válaszhoz nem tartozik egyező kérésazonosító.",
 	"docs.functions.exchange.timeout": "Az exchange() legfeljebb 10 másodpercig vár arra, hogy a szerver elfogadja vagy elutasítsa a kérést, majd legfeljebb 30 másodpercig a jutalomra. Az időkorlát lejárta nem törli a szerver által már elfogadott cserét. Újabb próbálkozás előtt ellenőrizd a character.q.exchange értékét és a leltáradat.",
-	"docs.functions.find_npc.roaming": "Vándorló NPC-knél a find_npc az útvonal első pontját adja vissza, nem a jelenlegi helyzetüket."
+	"docs.functions.find_npc.roaming": "Vándorló NPC-knél a find_npc az útvonal első pontját adja vissza, nem a jelenlegi helyzetüket.",
+	"docs.functions.smart_move.replan": "Ha az útvonal elveszik, a smart_move újat keres. A Promise függőben marad, amíg az út be nem fejeződik vagy sikertelen nem lesz.",
+	"docs.functions.compound.empty_slot": "Ha egy kiválasztott hely üres, a visszaadott Promise elutasításra kerül. Kezeld a hibát a .catch() segítségével.",
+	"docs.functions.send_cm.message_size": "A nagyobb üzenetek többet használnak fel a hívási keretből. Az ismétlődő CODE-üzenetek legyenek rövidek.",
+	"docs.functions.equip_batch.empty_entries": "Az üres elemek elutasítják a Promise-t, mielőtt bármilyen felszerelési kérés elküldésre kerülne."
 }

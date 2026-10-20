@@ -1,5 +1,13 @@
 // English documentation catalog. IDs identify source meaning and usage.
 module.exports = {
+	// A route recalculation continues the same journey. Preserve smart_move and Promise.
+	"docs.functions.smart_move.replan": "If the route is lost, smart_move searches again. Its Promise stays pending until the journey finishes or fails.",
+	// Empty inventory slots reject the CODE compound Promise. Preserve Promise and .catch().
+	"docs.functions.compound.empty_slot": "If a selected slot is empty, the returned Promise rejects. Handle the error with .catch().",
+	// CODE message size affects server call cost; avoid repeated large messages. Preserve CODE.
+	"docs.functions.send_cm.message_size": "Larger messages use more of the call limit. Keep repeated CODE messages short.",
+	// Null, undefined or missing equipment batch entries reject before sending. Preserve Promise.
+	"docs.functions.equip_batch.empty_entries": "Empty entries reject the Promise before any equipment request is sent.",
 	// Roaming NPC lookup returns the first configured waypoint, not a live sighting. Preserve find_npc.
 	"docs.functions.find_npc.roaming": "For roaming NPCs, find_npc returns the first point on their route, not their current position.",
 	// CODE exchange acknowledgement and completion deadlines. Preserve exchange(), character.q.exchange, 10 and 30. Timeout does not cancel an accepted exchange.

@@ -2797,5 +2797,9 @@
 	"docs.functions.sell.item_changed": "Sprzedaż nie powiedzie się, jeśli inny przedmiot trafi na wybrane miejsce, zanim serwer otrzyma żądanie.",
 	"docs.functions.get_socket.refresh": "send_updates żąda pełnego obrazu widocznych obiektów. MAINFRAME pozwala na dwa żądania na sekundę. Zacznij nasłuchiwać entities przed wysłaniem żądania; odpowiedź nie zawiera odpowiadającego mu identyfikatora.",
 	"docs.functions.exchange.timeout": "exchange() czeka do 10 sekund na przyjęcie lub odrzucenie żądania przez serwer, a następnie do 30 sekund na nagrodę. Przekroczenie czasu oczekiwania nie anuluje wymiany już przyjętej przez serwer. Przed ponowną próbą sprawdź character.q.exchange i swój ekwipunek.",
-	"docs.functions.find_npc.roaming": "Dla przemieszczających się NPC funkcja find_npc zwraca pierwszy punkt ich trasy, a nie aktualną pozycję."
+	"docs.functions.find_npc.roaming": "Dla przemieszczających się NPC funkcja find_npc zwraca pierwszy punkt ich trasy, a nie aktualną pozycję.",
+	"docs.functions.smart_move.replan": "Jeśli trasa zostanie utracona, smart_move szuka jej ponownie. Jego Promise pozostaje oczekujący do zakończenia podróży lub błędu.",
+	"docs.functions.compound.empty_slot": "Jeśli wybrane pole jest puste, zwrócony Promise zostaje odrzucony. Obsłuż błąd za pomocą .catch().",
+	"docs.functions.send_cm.message_size": "Większe wiadomości zużywają więcej limitu wywołań. Powtarzane wiadomości CODE powinny być krótkie.",
+	"docs.functions.equip_batch.empty_entries": "Puste wpisy odrzucają Promise przed wysłaniem jakiegokolwiek żądania założenia wyposażenia."
 }

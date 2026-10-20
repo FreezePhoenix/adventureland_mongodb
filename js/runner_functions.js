@@ -1180,6 +1180,7 @@ function equip_batch(data) {
 		return rejecting_promise({ reason: "invalid" });
 	}
 	for (let i = 0; i < data.length; i++) {
+		if (data[i] == null) return rejecting_promise({ reason: "invalid" });
 		let num = data[i].num;
 		if (num < 0) {
 			game_log(parent.phrase("code.equip_invalid", { slot: num }));
@@ -2832,7 +2833,9 @@ function smart_move_logic() {
 			move(current.x, current.y);
 		} else {
 			game_log(parent.phrase("code.path_lost"), "#CF5B5B");
-			smart_move({ map: smart.map, x: smart.x, y: smart.y }, smart.on_done);
+			smart.plot = [];
+			smart.flags = {};
+			smart.searching = smart.found = false;
 		}
 	}
 }

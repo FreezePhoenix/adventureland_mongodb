@@ -902,5 +902,10 @@
 	"update.08_10_26.halloween.support_71": "Permintaan smart_move yang tidak valid tidak lagi melanjutkan rute sebelumnya.",
 	"update.08_10_26.halloween.support_72": "Pembuatan item di MAINFRAME kini melewati item yang terkunci, diblokir, dan sedang dijadikan hadiah undian.",
 	"update.08_10_26.halloween.support_73": "Cahaya senjata dan proyektil kini diperbarui saat berganti perlengkapan.",
-	"update.08_10_26.halloween.support_74": "find_npc kini dapat menemukan NPC yang berkeliaran."
+	"update.08_10_26.halloween.support_74": "find_npc kini dapat menemukan NPC yang berkeliaran.",
+	"update.08_10_26.halloween.support_75": "Peningkatan dan penggabungan yang tidak didukung tidak lagi menghabiskan bahan.",
+	"update.08_10_26.halloween.support_76": "smart_move tetap menunggu selama mencari rute baru.",
+	"update.08_10_26.halloween.support_77": "Percobaan penggabungan dari slot kosong tidak lagi memicu pengecualian di CODE.",
+	"update.08_10_26.halloween.support_78": "Pesan CODE berukuran besar kini dihitung dengan benar dalam batas panggilan.",
+	"update.08_10_26.halloween.support_79": "Entri kosong pada equip_batch kini mengembalikan galat."
 }

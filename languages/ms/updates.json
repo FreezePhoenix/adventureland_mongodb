@@ -902,5 +902,10 @@
 	"update.08_10_26.halloween.support_71": "Permintaan smart_move yang tidak sah tidak lagi meneruskan laluan sebelumnya.",
 	"update.08_10_26.halloween.support_72": "Pembuatan dalam MAINFRAME kini melangkau item yang dikunci, disekat dan ditawarkan dalam cabutan hadiah.",
 	"update.08_10_26.halloween.support_73": "Cahaya senjata dan projektil kini dikemas kini apabila menukar kelengkapan.",
-	"update.08_10_26.halloween.support_74": "find_npc kini menemui NPC yang berkeliaran."
+	"update.08_10_26.halloween.support_74": "find_npc kini menemui NPC yang berkeliaran.",
+	"update.08_10_26.halloween.support_75": "Naik taraf dan penggabungan yang tidak disokong tidak lagi menggunakan bahan.",
+	"update.08_10_26.halloween.support_76": "smart_move terus menunggu semasa mencari laluan baharu.",
+	"update.08_10_26.halloween.support_77": "Cubaan menggabungkan dari slot kosong tidak lagi mencetuskan pengecualian dalam CODE.",
+	"update.08_10_26.halloween.support_78": "Mesej CODE yang besar kini dikira dengan betul dalam had panggilan.",
+	"update.08_10_26.halloween.support_79": "Entri kosong dalam equip_batch kini mengembalikan ralat."
 }

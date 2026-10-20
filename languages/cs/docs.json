@@ -2797,5 +2797,9 @@
 	"docs.functions.sell.item_changed": "Prodej selže, pokud se na vybrané místo přesune jiný předmět dříve, než server obdrží požadavek.",
 	"docs.functions.get_socket.refresh": "send_updates žádá úplný snímek viditelných entit. MAINFRAME povoluje dva požadavky za sekundu. Začni naslouchat entities před odesláním požadavku; odpověď nemá odpovídající ID požadavku.",
 	"docs.functions.exchange.timeout": "exchange() čeká až 10 sekund, než server požadavek přijme nebo odmítne, a poté až 30 sekund na odměnu. Vypršení časového limitu nezruší výměnu, kterou server již přijal. Před dalším pokusem zkontrolujte character.q.exchange a svůj inventář.",
-	"docs.functions.find_npc.roaming": "U pohybujících se NPC vrací find_npc první bod jejich trasy, nikoli aktuální polohu."
+	"docs.functions.find_npc.roaming": "U pohybujících se NPC vrací find_npc první bod jejich trasy, nikoli aktuální polohu.",
+	"docs.functions.smart_move.replan": "Pokud se trasa ztratí, smart_move ji hledá znovu. Jeho Promise zůstává nevyřízený, dokud cesta neskončí nebo neselže.",
+	"docs.functions.compound.empty_slot": "Pokud je vybrané místo prázdné, vrácený Promise se odmítne. Chybu zpracuj pomocí .catch().",
+	"docs.functions.send_cm.message_size": "Větší zprávy spotřebují více z limitu volání. Opakované zprávy CODE udržuj krátké.",
+	"docs.functions.equip_batch.empty_entries": "Prázdné položky odmítnou Promise před odesláním jakéhokoli požadavku na nasazení výbavy."
 }

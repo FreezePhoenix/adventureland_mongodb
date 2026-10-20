@@ -2797,5 +2797,9 @@
 	"docs.functions.sell.item_changed": "Việc bán thất bại nếu vật phẩm khác được chuyển vào ô đã chọn trước khi máy chủ nhận yêu cầu.",
 	"docs.functions.get_socket.refresh": "send_updates yêu cầu ảnh chụp trạng thái đầy đủ của các thực thể nhìn thấy được. MAINFRAME cho phép hai yêu cầu mỗi giây. Hãy lắng nghe entities trước khi gửi yêu cầu; phản hồi không có mã yêu cầu tương ứng.",
 	"docs.functions.exchange.timeout": "exchange() chờ tối đa 10 giây để máy chủ chấp nhận hoặc từ chối yêu cầu, rồi chờ tối đa 30 giây để nhận phần thưởng. Hết thời gian chờ không hủy lần đổi mà máy chủ đã chấp nhận. Hãy kiểm tra character.q.exchange và túi đồ trước khi thử lại.",
-	"docs.functions.find_npc.roaming": "Với NPC đi lại, find_npc trả về điểm đầu tiên trên tuyến đường của họ, không phải vị trí hiện tại."
+	"docs.functions.find_npc.roaming": "Với NPC đi lại, find_npc trả về điểm đầu tiên trên tuyến đường của họ, không phải vị trí hiện tại.",
+	"docs.functions.smart_move.replan": "Nếu mất đường đi, smart_move sẽ tìm lại. Promise của nó tiếp tục chờ đến khi hành trình hoàn tất hoặc thất bại.",
+	"docs.functions.compound.empty_slot": "Nếu một ô được chọn đang trống, Promise trả về sẽ bị từ chối. Hãy xử lý lỗi bằng .catch().",
+	"docs.functions.send_cm.message_size": "Tin nhắn lớn hơn dùng nhiều hạn mức lượt gọi hơn. Hãy giữ các tin nhắn CODE lặp lại thật ngắn.",
+	"docs.functions.equip_batch.empty_entries": "Các phần tử trống khiến Promise bị từ chối trước khi gửi bất kỳ yêu cầu trang bị nào."
 }

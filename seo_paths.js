@@ -28,6 +28,7 @@ const DOCS_PATHS = [
 	"/docs/code/functions/unequip",
 	"/docs/code/functions/close_stand",
 	"/docs/code/functions/equip",
+	"/docs/code/functions/equip_batch",
 	"/docs/code/functions/consume",
 	"/docs/code/functions/activate",
 	"/docs/code/functions/throw_item",

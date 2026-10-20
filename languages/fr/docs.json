@@ -2797,5 +2797,9 @@
 	"docs.functions.sell.item_changed": "La vente échoue si un autre objet est déplacé dans l'emplacement sélectionné avant que le serveur reçoive la requête.",
 	"docs.functions.get_socket.refresh": "send_updates demande un instantané complet des entités visibles. MAINFRAME autorise deux requêtes par seconde. Écoutez entities avant d'envoyer la requête ; la réponse n'a pas d'identifiant de requête correspondant.",
 	"docs.functions.exchange.timeout": "exchange() attend jusqu'à 10 secondes que le serveur accepte ou refuse la requête, puis jusqu'à 30 secondes pour la récompense. Un délai d'attente dépassé n'annule pas un échange déjà accepté par le serveur. Vérifiez character.q.exchange et votre inventaire avant de réessayer.",
-	"docs.functions.find_npc.roaming": "Pour les PNJ qui se déplacent, find_npc renvoie le premier point de leur itinéraire, et non leur position actuelle."
+	"docs.functions.find_npc.roaming": "Pour les PNJ qui se déplacent, find_npc renvoie le premier point de leur itinéraire, et non leur position actuelle.",
+	"docs.functions.smart_move.replan": "Si l'itinéraire est perdu, smart_move en cherche un nouveau. Son Promise reste en attente jusqu'à la fin ou l'échec du trajet.",
+	"docs.functions.compound.empty_slot": "Si un emplacement sélectionné est vide, le Promise renvoyé est rejeté. Gérez l'erreur avec .catch().",
+	"docs.functions.send_cm.message_size": "Les gros messages consomment davantage de la limite d'appels. Gardez les messages CODE répétés courts.",
+	"docs.functions.equip_batch.empty_entries": "Les entrées vides rejettent le Promise avant l'envoi de toute demande d'équipement."
 }

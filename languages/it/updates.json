@@ -902,5 +902,10 @@
 	"update.08_10_26.halloween.support_71": "Le richieste smart_move non valide non proseguono più il percorso precedente.",
 	"update.08_10_26.halloween.support_72": "La creazione in MAINFRAME ora esclude gli oggetti bloccati, soggetti a restrizioni e messi in palio.",
 	"update.08_10_26.halloween.support_73": "Il bagliore di armi e proiettili ora si aggiorna quando cambi equipaggiamento.",
-	"update.08_10_26.halloween.support_74": "find_npc ora trova i PNG che si spostano."
+	"update.08_10_26.halloween.support_74": "find_npc ora trova i PNG che si spostano.",
+	"update.08_10_26.halloween.support_75": "I potenziamenti e le combinazioni non supportati non consumano più materiali.",
+	"update.08_10_26.halloween.support_76": "smart_move continua ad attendere mentre cerca un nuovo percorso.",
+	"update.08_10_26.halloween.support_77": "Tentare una combinazione da uno slot vuoto non genera più un'eccezione in CODE.",
+	"update.08_10_26.halloween.support_78": "I messaggi CODE di grandi dimensioni ora contano correttamente per il limite di chiamate.",
+	"update.08_10_26.halloween.support_79": "Le voci vuote di equip_batch ora restituiscono un errore."
 }

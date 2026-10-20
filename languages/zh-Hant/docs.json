@@ -2797,5 +2797,9 @@
 	"docs.functions.sell.item_changed": "如果伺服器收到請求前，另一件物品被移入所選欄位，出售會失敗。",
 	"docs.functions.get_socket.refresh": "send_updates請求可見實體的完整快照。MAINFRAME每秒允許兩次請求。傳送請求前請先監聽entities；回應沒有對應的請求ID。",
 	"docs.functions.exchange.timeout": "exchange()會等待最多10秒，讓伺服器接受或拒絕請求，然後等待最多30秒接收獎勵。逾時不會取消伺服器已經接受的兌換。重試前請檢查character.q.exchange和背包。",
-	"docs.functions.find_npc.roaming": "對於四處走動的NPC，find_npc傳回其路線的第一個點，而非目前位置。"
+	"docs.functions.find_npc.roaming": "對於四處走動的NPC，find_npc傳回其路線的第一個點，而非目前位置。",
+	"docs.functions.smart_move.replan": "如果路線遺失，smart_move 會重新搜尋。在行程完成或失敗之前，其 Promise 會維持待定狀態。",
+	"docs.functions.compound.empty_slot": "如果選取的欄位是空的，傳回的 Promise 會被拒絕。請用 .catch() 處理錯誤。",
+	"docs.functions.send_cm.message_size": "訊息越大，占用的呼叫限額越多。請盡量縮短重複傳送的 CODE 訊息。",
+	"docs.functions.equip_batch.empty_entries": "空項目會在送出任何裝備請求之前使 Promise 被拒絕。"
 }

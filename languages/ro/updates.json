@@ -902,5 +902,10 @@
 	"update.08_10_26.halloween.support_71": "Cererile smart_move nevalide nu mai continuă traseul anterior.",
 	"update.08_10_26.halloween.support_72": "Fabricarea în MAINFRAME omite acum obiectele încuiate, blocate și oferite la tombolă.",
 	"update.08_10_26.halloween.support_73": "Strălucirea armelor și a proiectilelor se actualizează acum când schimbi echipamentul.",
-	"update.08_10_26.halloween.support_74": "find_npc găsește acum NPC-urile care se deplasează."
+	"update.08_10_26.halloween.support_74": "find_npc găsește acum NPC-urile care se deplasează.",
+	"update.08_10_26.halloween.support_75": "Îmbunătățirile și combinările neacceptate nu mai consumă materiale.",
+	"update.08_10_26.halloween.support_76": "smart_move continuă să aștepte cât timp caută un traseu nou.",
+	"update.08_10_26.halloween.support_77": "Încercarea de a combina dintr-un slot gol nu mai aruncă o excepție în CODE.",
+	"update.08_10_26.halloween.support_78": "Mesajele CODE mari sunt acum contorizate corect în limita de apeluri.",
+	"update.08_10_26.halloween.support_79": "Intrările goale din equip_batch returnează acum o eroare."
 }
