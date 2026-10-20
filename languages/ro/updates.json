@@ -892,7 +892,7 @@
 	"update.08_10_26.halloween.support_52": "MAINFRAME acceptă acum send_updates pentru actualizarea entităților vizibile.",
 	"update.08_10_26.halloween.support_53": "Un răspuns întârziat la autentificare nu mai acoperă jocul cu selectorul de personaje.",
 	"update.08_10_26.halloween.support_54": "Reconectarea nu mai sare la destinația unei deplasări neterminate.",
-	"update.08_10_26.halloween.support_65": "Schimburile din CODE se încheie acum sau raportează expirarea timpului de așteptare.",
+	"update.08_10_26.halloween.support_65": "exchange() din CODE se încheie acum corect chiar dacă începe alt schimb.",
 	"update.08_10_26.halloween.support_66": "Alegerile din magazinul peșterii apar acum ca încheiate chiar și fără o cumpărătură.",
 	"update.08_10_26.halloween.support_67": "Schimburile Glitch acordă acum ambele Glitch când sunt extrase două.",
 	"update.08_10_26.halloween.support_68": "Obiectele încuiate și sigilate nu mai pot fi dezmembrate.",
@@ -909,11 +909,17 @@
 	"update.08_10_26.halloween.support_79": "Intrările goale din equip_batch returnează acum o eroare.",
 	"update.08_10_26.halloween.item_bonuses": "Descrierile obiectelor arată acum valorile bonusurilor de hartă și de clasă.",
 	"update.08_10_26.halloween.mp_reduction_cap": "Reducerea costului de mană este acum limitată la 80%.",
-	"update.08_10_26.halloween.support_80": "ID-urile monștrilor nu se mai suprapun cu numele numerice ale personajelor.",
 	"update.08_10_26.halloween.support_81": "S-a remediat respingerea reciprocă a autentificărilor simultane pe același cont.",
 	"update.08_10_26.halloween.support_82": "town() și smart_move așteaptă acum finalizarea teleportării în oraș.",
 	"update.08_10_26.halloween.support_84": "Cererile de distrugere nu mai distrug un alt obiect mutat în același loc din geantă.",
 	"update.08_10_26.halloween.support_85": "Vizualizarea băncii din Hub nu mai dezvăluie date ascunse ale obiectelor.",
 	"update.08_10_26.halloween.support_86": "Șansele exacte de pradă folosesc acum fracții mai simple, precum 1/1M.",
-	"update.08_10_26.halloween.support_87": "Nu se mai poate tranzacționa prin sloturile închise ale negustorilor folosind oferte din cache."
+	"update.08_10_26.halloween.support_87": "Nu se mai poate tranzacționa prin sloturile închise ale negustorilor folosind oferte din cache.",
+	"update.08_10_26.halloween.numeric_names": "Numele personajelor noi și cele alese la redenumire nu pot conține doar cifre.",
+	"update.08_10_26.halloween.boss_drops": "Au fost ajustate obiectele lăsate de boșii cooperativi pe serverele de origine.",
+	"update.08_10_26.halloween.support_63": "Ridică atașamentele înainte să ștergi scrisorile primite.",
+	"update.08_10_26.halloween.support_58": "Purificare nu mai poate ținti jucători nealiați în PvE, nici măcar cu Cupid.",
+	"update.08_10_26.halloween.support_57": "Purificare păstrează acumulările pungașului și arsura de pe monștri. Acumulările adaugă până la 800 de daune.",
+	"update.08_10_26.halloween.support_56": "Dacă scrisoarea este refuzată, expeditorul păstrează obiectul și taxa poștală.",
+	"update.08_10_26.halloween.support_55": "Atașamentele poștale neridicate sunt limitate la 20 de la același cont expeditor și 200 pentru fiecare personaj destinatar. Scrisorile și atașamentele existente se păstrează. Scrisorile automate cu recompense nu se numără în aceste limite."
 }

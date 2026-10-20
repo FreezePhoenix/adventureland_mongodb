@@ -1287,7 +1287,7 @@
 	"skill.power.name": "Uy lực",
 	"skill.pure_eval.explanation": "[Nâng cao] Gán một đoạn mã để chạy trực tiếp trong trò chơi thay vì dùng CODE. (Đừng nhầm với lệnh văn bản /eval, vốn thực thi trong iframe CODE)",
 	"skill.pure_eval.name": "Thực thi trực tiếp",
-	"skill.purify.explanation": "Gây 2000 sát thương chuẩn để thanh tẩy mục tiêu, xóa mọi hiệu ứng có lợi và có hại, gây thêm 400 sát thương cho mỗi hiệu ứng. Nhận hiệu ứng Người thanh tẩy nếu hạ được mục tiêu!",
+	"skill.purify.explanation": "Gây 2000 sát thương thuần, cộng thêm 400 cho mỗi hiệu ứng có lợi hoặc bất lợi không vĩnh viễn đủ điều kiện. Các hiệu ứng này bị xóa, trừ cộng dồn của đạo tặc và thiêu đốt trên quái vật: chúng được giữ lại và vẫn tăng sát thương. Cộng dồn của đạo tặc thêm 400 cộng 1 cho mỗi tầng, tổng cộng tối đa 800 sát thương. Độc bẩm sinh và trạng thái vĩnh viễn không bị ảnh hưởng. Hạ mục tiêu sẽ nhận hiệu ứng Người thanh tẩy.",
 	"skill.purify.name": "Thanh tẩy",
 	"skill.quickpunch.explanation": "Dùng sự nhanh nhẹn để đấm nhanh đối thủ xen giữa những đòn đánh dữ dội!",
 	"skill.quickpunch.name": "Đấm nhanh",

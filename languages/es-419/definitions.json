@@ -1287,7 +1287,7 @@
 	"skill.power.name": "Poder",
 	"skill.pure_eval.explanation": "[Avanzado] Asigna un fragmento de código para ejecutarlo directamente dentro del juego, en lugar de usar CODE. (No debe confundirse con el comando de texto /eval, que evalúa dentro del iframe de CODE)",
 	"skill.pure_eval.name": "Evaluación directa",
-	"skill.purify.explanation": "¡Inflige 2000 de daño puro al purificar al objetivo, elimina todos sus efectos beneficiosos y perjudiciales e inflige 400 de daño adicional por cada uno! ¡Si el objetivo cae derrotado, recibes el efecto Purificador!",
+	"skill.purify.explanation": "Inflige 2000 de daño puro y suma 400 por cada efecto positivo o negativo no persistente que corresponda. Esos efectos se eliminan, salvo las acumulaciones de pícaro y la quemadura en monstruos, que permanecen y siguen sumando daño. Las acumulaciones de pícaro agregan 400 más 1 por acumulación, hasta un total de 800 de daño. El veneno innato y los estados persistentes no cambian. Derrotar al objetivo otorga el efecto Purificador.",
 	"skill.purify.name": "Purificar",
 	"skill.quickpunch.explanation": "¡Usa tu agilidad para dar un puñetazo rápido al rival entre tus ataques devastadores!",
 	"skill.quickpunch.name": "Puñetazo rápido",

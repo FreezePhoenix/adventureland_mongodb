@@ -1287,7 +1287,7 @@
 	"skill.power.name": "Kudret",
 	"skill.pure_eval.explanation": "[İleri] CODE yerine doğrudan oyunun içinde çalışacak bir kod parçasını tuşa atar. (Code iframe içinde değerlendirme yapan /eval metin komutuyla karıştırılmamalıdır)",
 	"skill.pure_eval.name": "Doğrudan Eval",
-	"skill.purify.explanation": "Hedefi arındırarak 2000 saf hasar verir. Tüm olumlu ve olumsuz etkileri kaldırıp her biri için 400 ek hasar verir. Hedef yenilirse Arındırıcı güçlendirmesini kazanırsın!",
+	"skill.purify.explanation": "2000 saf hasar verir; uygun her kalıcı olmayan olumlu veya olumsuz etki için 400 hasar ekler. Bu etkiler kaldırılır; Suikastçı yükleri ve canavarlardaki yanma ise kalır ve hasar eklemeye devam eder. Suikastçı yükleri, 400 hasara yük başına 1 ekler; toplam ek hasar en fazla 800 olur. Doğal zehir ve kalıcı durumlar etkilenmez. Hedefi yenmek Arındırıcı etkisini kazandırır.",
 	"skill.purify.name": "Arındır",
 	"skill.quickpunch.explanation": "Yıkıcı saldırılarının arasında çevikliğini kullanıp rakibine hızlı bir yumruk at!",
 	"skill.quickpunch.name": "Hızlı Yumruk",

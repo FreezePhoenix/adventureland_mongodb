@@ -122,6 +122,7 @@ eval("" + fs.readFileSync(path.resolve(__dirname, "logic/market_patron_runtime.j
 eval("" + fs.readFileSync(path.resolve(__dirname, "logic/encouragement.js")));
 eval("" + fs.readFileSync(path.resolve(__dirname, "logic/cavalry.js")));
 eval("" + fs.readFileSync(path.resolve(__dirname, "logic/character_sessions.js")));
+eval("" + fs.readFileSync(path.resolve(__dirname, "logic/mail.js")));
 eval("" + fs.readFileSync(path.resolve(__dirname, "logic/observer_broadcast.js")));
 eval("" + fs.readFileSync(path.resolve(__dirname, "logic/chat.js")));
 eval("" + fs.readFileSync(path.resolve(__dirname, "logic/generated_maps.js")));
@@ -3320,6 +3321,21 @@ function commence_attack(attacker, target, atype) {
 		attacker.socket.emit("game_response", { response: "attack_failed", id: target.id });
 		return { failed: true, reason: "no_pvp", place: atype, id: target.id };
 	}
+	// A healing weapon must not bypass Purify's PvE target restriction.
+	if (
+		atype === "purify" &&
+		attacker.is_player &&
+		target.is_player &&
+		!is_in_pvp(target, true) &&
+		attacker !== target &&
+		!(attacker.owner && attacker.owner === target.owner) &&
+		!(attacker.party && attacker.party === target.party) &&
+		!(attacker.team && attacker.team === target.team) &&
+		!(attacker.guild && attacker.guild === target.guild)
+	) {
+		attacker.socket.emit("game_response", { response: "attack_failed", id: target.id });
+		return { failed: true, reason: "no_pvp", place: atype, id: target.id };
+	}
 
 	// DAMAGE
 	if (G.skills[atype].damage) {
@@ -4070,11 +4086,22 @@ function complete_attack(attacker, target, info) {
 								!G.conditions[name].persistent) ||
 							target.s[name].citizens
 						) {
-							delete target.s[name];
-							attack += 400;
-							info.first_attack += 400;
-							target.cid++;
-							target.u = true;
+							var bonus = G.skills.purify.condition_damage;
+							if (name === "stack") {
+								var stacks = target.s[name].s;
+								stacks = Number.isFinite(stacks) ? max(0, min(G.skills.stack.max, floor(stacks))) : 0;
+								bonus = stacks
+									? bonus + min(stacks * G.skills.purify.stack_damage, G.skills.purify.stack_bonus_cap)
+									: 0;
+							}
+							attack += bonus;
+							info.first_attack += bonus;
+							// Rogue progress and burning monsters still contribute without being erased.
+							if (name !== "stack" && !(name === "burned" && target.is_monster)) {
+								delete target.s[name];
+								target.cid++;
+								target.u = true;
+							}
 						}
 					}
 				}
@@ -5703,7 +5730,7 @@ function init_socket_io(socket_server, server_index) {
 							if (!m || !m.owner || !in_arr(A.owner, m.owner) || mail_receiver(m) !== A.owner) ex("not_owner");
 							if (!m.item) ex("no_item");
 							if (m.character && m.character !== A.character) ex("wrong_character");
-							if (m.taken) ex("already_taken");
+							if (m.taken && m.taken !== A.claim) ex("already_taken");
 							m.taken = A.claim;
 							await tx_save(m);
 							R.item = m.info.item;
@@ -5711,12 +5738,17 @@ function init_socket_io(socket_server, server_index) {
 						},
 						{ mail: mail, owner: player_owner, character: player.real_id, claim: claim },
 						3,
-					);
+					).catch(function (error) {
+						log_trace("mail claim transaction", error);
+						return { failed: true, reason: "exception" };
+					});
+					if (R.failed && R.reason == "exception") {
+						var latest_mail = await get(data.id);
+						if (latest_mail && latest_mail.taken === claim)
+							R = { success: true, item: latest_mail.info.item, cave_award: latest_mail.cave_award === true };
+						else if (latest_mail && latest_mail.taken) R.reason = "already_taken";
+					}
 					if (R.failed) {
-						if (R.reason == "exception") {
-							var latest_mail = await get(data.id);
-							if (latest_mail && latest_mail.taken) R.reason = "already_taken";
-						}
 						if (in_arr(R.reason, ["already_taken", "no_item"])) {
 							return finish_mail_item("mail_item_already_taken", { failed: true, reason: R.reason });
 						}
@@ -5767,160 +5799,15 @@ function init_socket_io(socket_server, server_index) {
 		});
 		socket.on("mail", function (data) {
 			var player = players[socket.id];
-			if (!player) {
-				return;
-			}
-			if (mode.prevent_external) {
-				return fail_response("not_in_this_server");
-			}
-			var item = null;
-			var retries = 1;
-			function finish_mail(response, extra) {
-				if (!players[socket.id]) return;
-				socket.emit(
-					"game_response",
-					Object.assign(
-						{
-							response: response,
-							to: data.to,
-							request_id: data.request_id,
-							cevent: response,
-						},
-						extra || {},
-					),
-				);
-			}
-			if (player.gold < 48000) {
-				return fail_response("gold_not_enough");
-			}
-			if (data.item && player.items[0] && player.items[0].name != "placeholder") {
-				if (player.items[0].l) {
-					return fail_response("item_locked");
-				}
-				if (player.items[0].b || player.items[0].v) {
-					return fail_response("item_blocked");
-				}
-				if (player.gold < 360000) {
-					return fail_response("gold_not_enough");
-				}
-				player.gold -= 360000;
-				item = JSON.stringify(player.items[0]);
-				player.items[0] = player.citems[0] = null;
-				retries = 3;
-			} else {
-				player.gold -= 48000;
-			}
-			(async function () {
-				try {
-					var player = players[socket.id];
-					if (!player) return;
-					var simplified_to = data.to.toLowerCase().replace(/\s+/g, "");
-					var to_char = await db.collection("character").findOne({ name: simplified_to });
-					if (!to_char) {
-						var player = players[socket.id];
-						if (player) finish_mail("mail_failed", { reason: "nocharacter" });
-						if (player && item && player.esize) {
-							var r = JSON.parse(item);
-							add_item(player, r);
-							resend(player, "reopen");
-						} else if (item) console.log("#M unsent mail, lost item: " + item);
-						return;
-					}
-					var user2 = await get(to_char.owner);
-					var user1 = player.owner ? await get(player.owner) : null;
-					if (!user2) {
-						var player = players[socket.id];
-						if (player) finish_mail("mail_failed", { reason: "nouser" });
-						if (player && item && player.esize) {
-							var r = JSON.parse(item);
-							add_item(player, r);
-							resend(player, "reopen");
-						} else if (item) console.log("#M unsent mail, lost item: " + item);
-						return;
-					}
-					if (!user1) {
-						var player = players[socket.id];
-						if (player) finish_mail("mail_failed", { reason: "nouser" });
-						if (player && item && player.esize) {
-							var r = JSON.parse(item);
-							add_item(player, r);
-							resend(player, "reopen");
-						} else if (item) console.log("#M unsent mail, lost item: " + item);
-						return;
-					}
-					var subject = ("" + (data.subject || "")).substring(0, 74);
-					var msg = ("" + (data.message || "")).substring(0, 1000);
-					var rid = randomStr(50);
-					var R = await tx(
-						async () => {
-							var existing = await tx_get("ML_" + A.rid);
-							if (existing) {
-								R.mail = existing;
-								return;
-							}
-							R.mail = {
-								_id: "ML_" + A.rid,
-								created: new Date(),
-								read: false,
-								item: false,
-								taken: false,
-								fro: A.fro,
-								to: A.to_name,
-								type: "mail",
-								owner: [get_id(A.user1), get_id(A.user2)],
-								info: {
-									message: A.msg,
-									subject: A.subject,
-									sender: get_id(A.user1),
-									receiver: get_id(A.user2),
-								},
-								blobs: ["info"],
-							};
-							if (A.item) {
-								R.mail.item = true;
-								R.mail.info.item = A.item;
-								R.mail.taken = false;
-							}
-							await tx_save(R.mail);
-						},
-						{
-							rid: rid,
-							fro: player.name,
-							to_name: data.to,
-							user1: user1,
-							user2: user2,
-							subject: subject,
-							msg: msg,
-							item: item,
-						},
-					);
-					if (R.failed) {
-						var player = players[socket.id];
-						if (player) finish_mail("mail_failed", { reason: "unknown" });
-						if (player && item && player.esize) {
-							var r = JSON.parse(item);
-							add_item(player, r);
-							resend(player, "reopen");
-						} else if (item) console.log("#M unsent mail, lost item: " + item);
-						return;
-					}
-					try {
-						await update_mail_count(user2);
-					} catch (e) {
-						console.error("send_mail ud error", e);
-					}
-					var player = players[socket.id];
-					if (player) finish_mail("mail_sent");
-				} catch (e) {
-					console.error("send_mail error", e);
-					var player = players[socket.id];
-					if (player) finish_mail("mail_failed", { reason: "coms_failure" });
-					if (item) console.log("#M unsent mail, lost item: " + item);
-				}
-			})();
-			resend(player, "reopen");
-			success_response("mail_sending", { sucess: false, in_progress: true, received: "unknown" });
+			if (!player) return;
+			if (mode.prevent_external) return fail_response("not_in_this_server");
+			if (!data || typeof data.to !== "string" || !data.to.trim() || data.to.length > 100)
+				return fail_response("invalid");
+			if (mail_send_busy(player)) return fail_response("in_progress");
+			void send_player_mail(player, data);
+			success_response("mail_sending", { success: false, in_progress: true, received: "unknown" });
 		});
+
 		socket.on("leave", function (data) {
 			var player = players[socket.id];
 			if (!player) {
@@ -6676,6 +6563,8 @@ function init_socket_io(socket_server, server_index) {
 			if (!player) {
 				return fail("invalid");
 			}
+			if (data.request_id !== undefined && (typeof data.request_id !== "string" || data.request_id.length > 128))
+				return fail("invalid");
 			if (player.q.exchange) {
 				return fail("exchange_existing");
 			}
@@ -6715,14 +6604,13 @@ function init_socket_io(socket_server, server_index) {
 			if (player.s.massexchange) {
 				ms /= 2;
 				delete player.s.massexchange;
-				ex = "+u+cid";
 			}
 			if (player.s.massexchangepp) {
 				ms /= 10;
 				delete player.s.massexchangepp;
-				ex = "+u+cid";
 			}
 			player.q.exchange = { ms: ms, len: ms, name: item.name, id: dropId, q: def.e, num: num };
+			if (data.request_id) player.q.exchange.request_id = data.request_id;
 			if (suffix) {
 				player.q.exchange.s = suffix;
 			}
@@ -13576,8 +13464,7 @@ function new_monster(instance, map_def, args) {
 		args = {};
 	}
 	var monster = {};
-	// Character names are at most 12 characters; keep numeric monster IDs outside that namespace.
-	var id = 1000000000000 + ++total_monsters + "";
+	var id = ++total_monsters + "";
 	var name = map_def.type;
 	monster.id = id;
 	monster.cid = 1;
@@ -15015,7 +14902,12 @@ function update_instance(instance) {
 					if (player.items[ref.num] && player.items[ref.num].name == "placeholder") {
 						player.citems[ref.num] = player.items[ref.num] = null;
 					}
-					exchange(player, ref.id, { v: ref.v });
+					var outcome = exchange(player, ref.id, { v: ref.v });
+					if (ref.request_id)
+						player.hitchhikers.push([
+							"game_response",
+							Object.assign({ response: "data", place: "exchange", request_id: ref.request_id }, outcome),
+						]);
 					if (ref.qs) {
 						player.socket.emit("game_response", { response: ref.qs + "_success", suffix: ref.s || "" });
 					} else {
@@ -16295,6 +16187,7 @@ setInterval(function () {
 			players[id].pdps *= 0.8;
 			player.p.minutes++;
 			trade_slots.forEach(function (slot) {
+				if (!mode.prevent_external && mail_send_busy(player)) return;
 				if (player.slots[slot] && player.slots[slot].giveaway) {
 					player.slots[slot].giveaway--;
 					if (!player.slots[slot].giveaway) {
@@ -16311,82 +16204,12 @@ setInterval(function () {
 							player.slots[slot].giveaway = 5;
 						} else {
 							if (!mode.prevent_external) {
-								var winner = random_one(list);
 								var item = player.slots[slot];
-								player.slots[slot] = null;
-								delete item.list;
-								delete item.giveaway;
-								delete item.registry;
-								item.gf = player.name;
-								item.src = "gva";
-								var mitem = JSON.stringify(item);
-								add_to_trade_history(player, "giveaway", winner.name, cache_item(item, true));
-								xy_emit(
-									player,
-									"game_log",
-									localization.message(
-										"server.game_log.won_s_giveaway_of",
-										{ winner: String(winner.name), player: String(player.name), item: String(G.items[item.name].name) },
-										{ color: "#42A0DC", confetti: winner.name },
-									),
-								);
-								// send giveaway mail with item
-								(async function () {
-									try {
-										var simplified_to = winner.name.toLowerCase().replace(/\s+/g, "");
-										var to_char = await db.collection("character").findOne({ name: simplified_to });
-										if (!to_char) {
-											console.log("#M giveaway no char: " + winner.name);
-											return;
-										}
-										var user2 = await get(to_char.owner);
-										var user1 = player.owner ? await get(player.owner) : null;
-										var rid = randomStr(50);
-										var giveaway_msg = phrase(
-											"server.mail.giveaway_message",
-											{
-												player: player.name,
-												participants: list
-													.map(function (entry) {
-														return entry.name;
-													})
-													.join(", "),
-											},
-											localization.normalize(user2.language) || "en",
-										);
-										await insert({
-											_id: "ML_" + rid,
-											created: new Date(),
-											read: false,
-											item: true,
-											taken: false,
-											fro: player.name,
-											to: winner.name,
-											type: "mail",
-											owner: [get_id(user1), get_id(user2)],
-											info: {
-												message: giveaway_msg,
-												subject: phrase(
-													"server.mail.giveaway_subject",
-													{},
-													localization.normalize(user2.language) || "en",
-												),
-												sender: get_id(user1),
-												receiver: get_id(user2),
-												item: mitem,
-											},
-											blobs: ["info"],
-										});
-										try {
-											await update_mail_count(user2);
-										} catch (e) {
-											console.error("giveaway mail ud error", e);
-										}
-									} catch (e) {
-										console.log("#M unsent giveaway, lost item: " + mitem);
-										console.error(e);
-									}
-								})();
+								var winner = item.mail_winner || random_one(list).name;
+								// Keep the chosen winner and prize while their mailbox is full.
+								item.mail_winner = winner;
+								item.giveaway = 1;
+								send_player_mail(player, { to: winner, item: true }, slot);
 							} else {
 								var winner = random_one(list);
 								var item = player.slots[slot];
@@ -16778,6 +16601,7 @@ function sync_loop() {
 	async function mount_call(player) {
 		// player.last_sync=new Date(); - sync doesn't happen at mount - maybe it should [16/08/17] it does now [06/03/26]
 		if (
+			player.mail_sending ||
 			player.merrit_grant ||
 			player.dc ||
 			player.mount_call ||
@@ -16840,6 +16664,7 @@ function sync_loop() {
 	// unmount_call: Bank exit using tx() (following qwazy pattern)
 	async function unmount_call(player) {
 		if (
+			player.mail_sending ||
 			player.merrit_grant ||
 			player.dc ||
 			player.mount_call ||
@@ -16905,6 +16730,7 @@ function sync_loop() {
 	// sync_call: Character sync using tx() (following qwazy pattern)
 	async function sync_call(player) {
 		if (
+			player.mail_sending ||
 			player.merrit_grant ||
 			player.dc ||
 			player.mount_call ||
@@ -16964,6 +16790,7 @@ function sync_loop() {
 			player.sync_call ||
 			player.mount_call ||
 			player.unmount_call ||
+			player.mail_sending ||
 			player.merrit_grant ||
 			player.knocking // a Trick or Treat knock is settling its rewards
 		)
@@ -17042,7 +16869,9 @@ function sync_loop() {
 		try {
 			check_for_delays(player);
 
-			if (player.merrit_grant) {
+			if (player.mail_sending) {
+				recover_mail_send(player);
+			} else if (player.merrit_grant) {
 				market_patron_recover(player);
 			} else if (player.unmount_call || player.mount_call || player.sync_call || player.stop_call) {
 			} else if (!server.live) {
@@ -17066,7 +16895,9 @@ function sync_loop() {
 		try {
 			check_for_delays(player);
 
-			if (player.merrit_grant) {
+			if (player.mail_sending) {
+				recover_mail_send(player);
+			} else if (player.merrit_grant) {
 				market_patron_recover(player);
 			} else if (player.unmount_call || player.mount_call || player.sync_call || player.stop_call) {
 			} else if (!player.stop_call) {

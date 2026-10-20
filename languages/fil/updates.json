@@ -892,7 +892,7 @@
 	"update.08_10_26.halloween.support_52": "Tumatanggap na ang MAINFRAME ng send_updates para i-refresh ang mga nakikitang entidad.",
 	"update.08_10_26.halloween.support_53": "Hindi na tinatakpan ng nahuling tugon sa pag-login ang laro ng pagpili ng karakter.",
 	"update.08_10_26.halloween.support_54": "Hindi na lumulundag ang muling pagkonekta sa destinasyon ng hindi pa tapos na paggalaw.",
-	"update.08_10_26.halloween.support_65": "Natatapos na ang mga palitan sa CODE o nagsasabi kapag lumampas sa oras ng paghihintay.",
+	"update.08_10_26.halloween.support_65": "Tama nang natatapos ang exchange() sa CODE kahit magsimula ang isa pang palitan.",
 	"update.08_10_26.halloween.support_66": "Lumalabas nang tapos ang mga pagpili sa tindahan ng kuweba kahit walang binili.",
 	"update.08_10_26.halloween.support_67": "Ibinibigay na ang parehong Glitch kapag dalawang Glitch ang nabunot sa palitan.",
 	"update.08_10_26.halloween.support_68": "Hindi na maaaring baklasin ang mga naka-lock at selyadong item.",
@@ -909,11 +909,17 @@
 	"update.08_10_26.halloween.support_79": "Nagbabalik na ngayon ng error ang mga bakanteng entry sa equip_batch.",
 	"update.08_10_26.halloween.item_bonuses": "Ipinapakita na ngayon ng mga tooltip ng item ang mga halaga ng bonus mula sa map at class.",
 	"update.08_10_26.halloween.mp_reduction_cap": "Limitado na ngayon sa 80% ang Bawas sa Gastos sa Mana.",
-	"update.08_10_26.halloween.support_80": "Hindi na nagkakapareho ang mga monster ID at pangalan ng karakter na puro numero.",
 	"update.08_10_26.halloween.support_81": "Naayos ang sabay-sabay na pag-login sa iisang account na nagreresulta sa pagtanggi sa isa't isa.",
 	"update.08_10_26.halloween.support_82": "Naghihintay na ang town() at smart_move hanggang matapos ang teleport papunta sa bayan.",
 	"update.08_10_26.halloween.support_84": "Hindi na sinisira ng mga kahilingan sa pagsira ang ibang item na inilipat sa parehong puwesto sa bag.",
 	"update.08_10_26.halloween.support_85": "Hindi na inilalantad ng bank view sa Hub ang nakatagong data ng mga item.",
 	"update.08_10_26.halloween.support_86": "Mas simple nang mga fraction ang ginagamit sa eksaktong tsansa ng drop, gaya ng 1/1M.",
-	"update.08_10_26.halloween.support_87": "Hindi na magagamit ang mga naka-cache na alok para makipagkalakalan sa mga saradong slot ng merchant."
+	"update.08_10_26.halloween.support_87": "Hindi na magagamit ang mga naka-cache na alok para makipagkalakalan sa mga saradong slot ng merchant.",
+	"update.08_10_26.halloween.numeric_names": "Hindi puwedeng puro numero ang pangalan ng bagong karakter o ang bagong pangalan sa pagpapalit nito.",
+	"update.08_10_26.halloween.boss_drops": "Inayos ang mga drop ng co-op boss sa mga home server.",
+	"update.08_10_26.halloween.support_63": "Kunin ang mga kalakip bago burahin ang natanggap na mail.",
+	"update.08_10_26.halloween.support_58": "Hindi na maaaring puntiryahin ng Linisin ang mga manlalarong hindi kakampi sa PvE, kahit may Cupid.",
+	"update.08_10_26.halloween.support_57": "Pinapanatili ng Linisin ang mga stack ng Tampalasan at pagkasunog ng mga halimaw. Nagdaragdag ang mga stack ng hanggang 800 pinsala.",
+	"update.08_10_26.halloween.support_56": "Kapag tinanggihan ang mail, mananatili sa nagpadala ang item at bayad sa pagpapadala.",
+	"update.08_10_26.halloween.support_55": "Ang mga hindi pa nakukuhang kalakip sa mail ay limitado na sa 20 mula sa iisang account na nagpadala at 200 sa kabuuan bawat karakter na tumatanggap. Mananatili ang kasalukuyang mail at mga kalakip. Hindi kasama sa mga limitasyong ito ang awtomatikong mail ng gantimpala."
 }

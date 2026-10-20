@@ -892,7 +892,7 @@
 	"update.08_10_26.halloween.support_52": "MAINFRAME aceita agora send_updates para atualizar as entidades visíveis.",
 	"update.08_10_26.halloween.support_53": "Uma resposta de início de sessão atrasada já não tapa o jogo com a seleção de personagens.",
 	"update.08_10_26.halloween.support_54": "Voltar a ligar já não transporta para o destino de um movimento inacabado.",
-	"update.08_10_26.halloween.support_65": "As trocas em CODE agora terminam ou indicam que o tempo de espera expirou.",
+	"update.08_10_26.halloween.support_65": "exchange() no CODE termina agora corretamente mesmo que outra troca comece.",
 	"update.08_10_26.halloween.support_66": "As escolhas na loja da caverna agora aparecem como concluídas mesmo sem uma compra.",
 	"update.08_10_26.halloween.support_67": "As trocas de Glitch agora entregam os dois Glitch quando saem dois.",
 	"update.08_10_26.halloween.support_68": "Os itens bloqueados e selados já não podem ser desmontados.",
@@ -909,11 +909,17 @@
 	"update.08_10_26.halloween.support_79": "As entradas vazias de equip_batch passam a devolver um erro.",
 	"update.08_10_26.halloween.item_bonuses": "As descrições dos itens mostram agora os valores dos bónus de mapa e de classe.",
 	"update.08_10_26.halloween.mp_reduction_cap": "Redução do Custo de Mana está agora limitada a 80%.",
-	"update.08_10_26.halloween.support_80": "Os IDs dos monstros já não coincidem com nomes numéricos de personagens.",
 	"update.08_10_26.halloween.support_81": "Corrigido o problema em que os inícios de sessão simultâneos na mesma conta se rejeitavam mutuamente.",
 	"update.08_10_26.halloween.support_82": "town() e smart_move aguardam agora o fim do teletransporte para a cidade.",
 	"update.08_10_26.halloween.support_84": "Os pedidos de destruição já não destroem outro item movido para o mesmo espaço da mochila.",
 	"update.08_10_26.halloween.support_85": "A vista do banco no Hub já não revela dados ocultos dos itens.",
 	"update.08_10_26.halloween.support_86": "As probabilidades exatas de saque usam agora frações mais simples, como 1/1M.",
-	"update.08_10_26.halloween.support_87": "Já não é possível negociar em espaços fechados de mercadores através de ofertas em cache."
+	"update.08_10_26.halloween.support_87": "Já não é possível negociar em espaços fechados de mercadores através de ofertas em cache.",
+	"update.08_10_26.halloween.numeric_names": "Os nomes de novas personagens e os nomes escolhidos ao mudá-los não podem conter apenas números.",
+	"update.08_10_26.halloween.boss_drops": "Ajustados os objetos largados pelos chefes cooperativos nos servidores de origem.",
+	"update.08_10_26.halloween.support_63": "Recolhe os anexos antes de apagares o correio recebido.",
+	"update.08_10_26.halloween.support_58": "Purificar já não pode atingir jogadores não aliados em PvE, mesmo com Cupid.",
+	"update.08_10_26.halloween.support_57": "Purificar mantém as acumulações de ladino e a queimadura em monstros. As acumulações acrescentam até 800 de dano.",
+	"update.08_10_26.halloween.support_56": "Quando o envio é rejeitado, o objeto e os custos de envio ficam com o remetente.",
+	"update.08_10_26.halloween.support_55": "Os anexos de correio por recolher estão limitados a 20 da mesma conta remetente e a 200 por personagem destinatária. O correio e os anexos existentes são mantidos. O correio automático de recompensas não conta para estes limites."
 }

@@ -892,7 +892,7 @@
 	"update.08_10_26.halloween.support_52": "MAINFRAME accepte désormais send_updates pour actualiser les entités visibles.",
 	"update.08_10_26.halloween.support_53": "Une réponse de connexion tardive ne recouvre plus le jeu avec le sélecteur de personnages.",
 	"update.08_10_26.halloween.support_54": "Se reconnecter ne téléporte plus à la destination d'un déplacement inachevé.",
-	"update.08_10_26.halloween.support_65": "Les échanges dans CODE se terminent désormais ou signalent un délai d'attente dépassé.",
+	"update.08_10_26.halloween.support_65": "exchange() dans CODE se termine désormais correctement même si un autre échange commence.",
 	"update.08_10_26.halloween.support_66": "Les choix dans la boutique de la grotte sont désormais indiqués comme terminés même sans achat.",
 	"update.08_10_26.halloween.support_67": "Les échanges de Glitch donnent désormais les deux Glitch lorsque deux sont tirés.",
 	"update.08_10_26.halloween.support_68": "Les objets verrouillés et scellés ne peuvent plus être démantelés.",
@@ -909,11 +909,17 @@
 	"update.08_10_26.halloween.support_79": "Les entrées vides d'equip_batch renvoient désormais une erreur.",
 	"update.08_10_26.halloween.item_bonuses": "Les infobulles des objets affichent désormais les valeurs des bonus de carte et de classe.",
 	"update.08_10_26.halloween.mp_reduction_cap": "La Réduction du coût en mana est désormais limitée à 80 %.",
-	"update.08_10_26.halloween.support_80": "Les ID des monstres ne peuvent plus être identiques aux noms numériques des personnages.",
 	"update.08_10_26.halloween.support_81": "Correction des connexions simultanées sur un même compte qui se rejetaient mutuellement.",
 	"update.08_10_26.halloween.support_82": "town() et smart_move attendent désormais la fin de la téléportation en ville.",
 	"update.08_10_26.halloween.support_84": "Les demandes de destruction ne détruisent plus un autre objet déplacé dans le même emplacement du sac.",
 	"update.08_10_26.halloween.support_85": "La vue de la banque dans le Hub ne révèle plus les données cachées des objets.",
 	"update.08_10_26.halloween.support_86": "Les probabilités exactes de butin utilisent désormais des fractions plus simples, comme 1/1M.",
-	"update.08_10_26.halloween.support_87": "Les emplacements de marchand fermés ne permettent plus de transactions via des offres en cache."
+	"update.08_10_26.halloween.support_87": "Les emplacements de marchand fermés ne permettent plus de transactions via des offres en cache.",
+	"update.08_10_26.halloween.numeric_names": "Les noms de nouveaux personnages et les nouveaux noms choisis lors d’un changement ne peuvent pas contenir que des chiffres.",
+	"update.08_10_26.halloween.boss_drops": "Butin des boss coopératifs ajusté sur les serveurs d’origine.",
+	"update.08_10_26.halloween.support_63": "Récupère les pièces jointes avant de supprimer les courriers reçus.",
+	"update.08_10_26.halloween.support_58": "Purification ne peut plus cibler les joueurs non alliés en JcE, même avec Cupid.",
+	"update.08_10_26.halloween.support_57": "Purification conserve les cumuls de voleur et la brûlure sur les monstres. Les cumuls ajoutent jusqu’à 800 dégâts.",
+	"update.08_10_26.halloween.support_56": "Un envoi refusé conserve l'objet et les frais de port.",
+	"update.08_10_26.halloween.support_55": "Les pièces jointes non récupérées sont limitées à 20 par compte expéditeur et à 200 au total par personnage destinataire. Les courriers et pièces jointes existants sont conservés. Les courriers de récompense automatiques ne comptent pas dans ces limites."
 }

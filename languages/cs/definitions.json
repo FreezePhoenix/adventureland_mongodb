@@ -1287,7 +1287,7 @@
 	"skill.power.name": "Moc",
 	"skill.pure_eval.explanation": "[Pokročilé] Přiřadí úryvek kódu ke spuštění přímo ve hře, místo použití CODE. (Nezaměňuj s textovým příkazem /eval, který spouští kód v iframe CODE)",
 	"skill.pure_eval.name": "Přímé spuštění",
-	"skill.purify.explanation": "Očistí cíl a způsobí 2000 čistého poškození. Odstraní všechna posílení i oslabení a za každé způsobí dalších 400 poškození. Pokud cíl porazíš, získáš posílení Očišťovatel!",
+	"skill.purify.explanation": "Způsobí 2000 čistého poškození a dalších 400 za každý vhodný netrvalý kladný či záporný efekt. Tyto efekty se odstraní, kromě nahromadění zloděje a hoření na příšerách, které zůstanou a dál přidávají poškození. Nahromadění zloděje přidají 400 a další 1 za každé nahromadění, nejvýše celkem 800 poškození. Vrozený jed a trvalé stavy se nemění. Poražení cíle udělí efekt Očišťovatel.",
 	"skill.purify.name": "Očista",
 	"skill.quickpunch.explanation": "Využij svou hbitost a mezi svými ničivými útoky rychle udeř protivníka pěstí!",
 	"skill.quickpunch.name": "Rychlý úder",

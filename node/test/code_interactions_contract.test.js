@@ -276,74 +276,79 @@ test("all added public methods have directory entries and function pages", () =>
 	}
 });
 
-test("exchange finally runs after a matching result, failure or missing acknowledgement", async () => {
+test("exchange waits for its own completion even when its old slot and queue are reused", async () => {
 	const { load } = require("./helpers/server_vm");
-	for (const mode of ["success", "failure", "timeout"]) {
-		const h = runnerContext(),
-			c = h.context;
-		c.character.items = [{ name: "candy0", q: 1 }];
-		c.character.q = {};
-		let timer;
-		c.setTimeout = (callback) => {
-			timer = callback;
-			return 1;
-		};
-		c.clearTimeout = () => {};
-		load(c, "js/runner_functions.js", ["exchange"]);
-		const result = vm.runInContext(
-			"(async function(){try {return await exchange(0);} finally {globalThis.finally_ran=true;}})()",
-			c,
-		);
-		const request = h.socket.sent.find((r) => r.event === "exchange");
-		h.socket.emit("game_response", { place: "exchange", request_id: "unrelated", success: true });
-		await Promise.resolve();
-		assert.equal(c.finally_ran, undefined);
-		if (mode === "timeout") timer();
-		else
-			h.socket.emit("game_response", {
-				place: "exchange",
-				request_id: request.data.request_id,
-				in_progress: mode === "success",
-				num: 0,
-				failed: mode === "failure",
-				reason: "distance",
-			});
-		if (mode === "success") assert.equal((await result).reward, "candy0");
-		else await assert.rejects(result, (e) => e.reason === (mode === "timeout" ? "timeout" : "distance"));
-		assert.equal(c.finally_ran, true);
-		assert.equal(h.socket.listenerCount("game_response"), 0);
-	}
+	const h = runnerContext(),
+		c = h.context;
+	c.character.items = [{ name: "candy0", q: 1 }];
+	c.character.q = {};
+	c.setTimeout = () => {
+		throw Error("exchange must not poll or time out a completed request");
+	};
+	load(c, "js/runner_functions.js", ["exchange"]);
+	const result = vm.runInContext(
+		"(async function(){try {return await exchange(0);} finally {globalThis.finally_ran=true;}})()",
+		c,
+	);
+	const request = h.socket.sent.find((r) => r.event === "exchange");
+	h.socket.emit("game_response", { place: "exchange", request_id: request.data.request_id, in_progress: true, num: 0 });
+	h.socket.emit("game_response", { place: "exchange", request_id: "other", success: true });
+	await Promise.resolve();
+	assert.equal(c.finally_ran, undefined);
+	// A later action can occupy the same slot before a polling timer observes completion.
+	c.character.q.exchange = { num: 0, request_id: "later" };
+	c.character.items[0] = { name: "placeholder" };
+	h.socket.emit("game_response", {
+		place: "exchange",
+		request_id: request.data.request_id,
+		success: true,
+		reward: "glitch",
+		num: 5,
+	});
+	assert.deepEqual(JSON.parse(JSON.stringify(await result)), { success: true, reward: "glitch", num: 5 });
+	assert.equal(c.finally_ran, true);
+	assert.equal(h.socket.listenerCount("game_response"), 0);
+	assert.equal(h.socket.listenerCount("disconnect"), 0);
 });
 
-test("exchange completion uses elapsed time and survives a replaced socket without TypeError", async () => {
+test("exchange finally runs immediately on refusal or disconnect, before or after acceptance", async () => {
 	const { load } = require("./helpers/server_vm");
-	for (const disconnect of [false, true]) {
-		const h = runnerContext(),
-			c = h.context;
-		let now = 0,
-			sleeps = 0;
-		c.Date = { now: () => now };
-		c.character.items = [{ name: "candy0", q: 1 }];
-		c.character.q = {};
-		c.sleep = async () => {
-			sleeps++;
-			now += 10000;
-			if (disconnect) c.parent.socket = null;
-		};
-		load(c, "js/runner_functions.js", ["exchange"]);
-		const result = c.exchange(0);
-		const request = h.socket.sent.find((r) => r.event === "exchange");
-		c.character.q.exchange = { num: 0 };
-		c.character.items[0] = { name: "placeholder" };
-		h.socket.emit("game_response", {
-			place: "exchange",
-			request_id: request.data.request_id,
-			in_progress: true,
-			num: 0,
-		});
-		await assert.rejects(result, (e) => e.reason === (disconnect ? "disconnected" : "timeout"));
-		assert.equal(sleeps, disconnect ? 1 : 3);
-	}
+	for (const resolveAll of [false, true])
+		for (const accepted of [false, true])
+			for (const disconnected of [false, true]) {
+				const h = runnerContext(),
+					c = h.context;
+				c.RESOLVE_ALL = resolveAll;
+				c.character.items = [{ name: "candy0", q: 1 }];
+				c.character.q = {};
+				load(c, "js/runner_functions.js", ["exchange"]);
+				const result = vm.runInContext(
+					"(async function(){try {return await exchange(0);} finally {globalThis.finally_ran=true;}})()",
+					c,
+				);
+				const request = h.socket.sent.find((r) => r.event === "exchange");
+				if (accepted)
+					h.socket.emit("game_response", {
+						place: "exchange",
+						request_id: request.data.request_id,
+						in_progress: true,
+						num: 0,
+					});
+				const reason = disconnected ? "disconnected" : "distance";
+				if (disconnected) h.socket.emit("disconnect");
+				else
+					h.socket.emit("game_response", {
+						place: "exchange",
+						request_id: request.data.request_id,
+						failed: true,
+						response: reason,
+					});
+				if (resolveAll) assert.equal((await result).reason, reason);
+				else await assert.rejects(result, (e) => e.reason === reason);
+				assert.equal(c.finally_ran, true);
+				assert.equal(h.socket.listenerCount("game_response"), 0);
+				assert.equal(h.socket.listenerCount("disconnect"), 0);
+			}
 });
 
 test("invalid smart_move replacement stops the old route without throwing or reusing its path", async () => {
@@ -489,30 +494,4 @@ test("find_npc reads roaming NPC routes and preserves stationary and seasonal lo
 	}
 	assert(c.find_npc("newupgrade"));
 	assert.equal(c.find_npc("nonexistent_npc"), null);
-});
-
-test("exchange timeout resolves as a failure under RESOLVE_ALL and identifies disconnects", async () => {
-	const { load } = require("./helpers/server_vm");
-	for (const disconnected of [false, true]) {
-		const h = runnerContext(),
-			c = h.context;
-		c.RESOLVE_ALL = true;
-		c.rejecting_promise = (data) => Promise.resolve(Object.assign({ failed: true }, data));
-		c.character.items = [{ name: "candy0", q: 1 }];
-		c.character.q = {};
-		let timeout;
-		c.setTimeout = (callback) => {
-			timeout = callback;
-			return 1;
-		};
-		c.clearTimeout = () => {};
-		load(c, "js/runner_functions.js", ["exchange"]);
-		const pending = c.exchange(0);
-		if (disconnected) c.parent.socket = null;
-		timeout();
-		const result = await pending;
-		assert.equal(result.failed, true);
-		assert.equal(result.place, "exchange");
-		assert.equal(result.reason, disconnected ? "disconnected" : "timeout");
-	}
 });

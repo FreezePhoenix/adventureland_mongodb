@@ -1287,7 +1287,7 @@
 	"skill.power.name": "Putere",
 	"skill.pure_eval.explanation": "[Avansat] Atribuie un fragment de cod pentru a fi executat direct în joc, în loc de CODE. (A nu se confunda cu comanda text /eval, care execută codul în iframe-ul CODE)",
 	"skill.pure_eval.name": "Execuție directă",
-	"skill.purify.explanation": "Provoacă 2000 de daune pure, purificând ținta, și înlătură toate efectele pozitive și negative, provocând încă 400 de daune pentru fiecare. Dacă ținta este învinsă, primești efectul Purificator!",
+	"skill.purify.explanation": "Provoacă 2000 de daune pure, plus 400 pentru fiecare efect benefic sau negativ nepermanent eligibil. Aceste efecte sunt eliminate, cu excepția acumulărilor pungașului și a arsurii de pe monștri, care rămân și continuă să adauge daune. Acumulările pungașului adaugă 400 plus 1 pentru fiecare acumulare, până la 800 de daune în total. Otrava înnăscută și stările permanente nu sunt afectate. Înfrângerea țintei acordă efectul Purificator.",
 	"skill.purify.name": "Purificare",
 	"skill.quickpunch.explanation": "Folosește-ți agilitatea pentru a-i da rapid un pumn adversarului între atacurile tale devastatoare!",
 	"skill.quickpunch.name": "Pumn rapid",

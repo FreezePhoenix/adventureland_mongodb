@@ -1287,7 +1287,7 @@
 	"skill.power.name": "Macht",
 	"skill.pure_eval.explanation": "[Geavanceerd] Koppelt een codefragment dat rechtstreeks in het spel wordt uitgevoerd, in plaats van via CODE. (Niet te verwarren met het tekstcommando /eval, dat code binnen het CODE-iframe uitvoert)",
 	"skill.pure_eval.name": "Direct uitvoeren",
-	"skill.purify.explanation": "Brengt 2000 pure schade toe om het doelwit te zuiveren, verwijdert alle versterkingen en verzwakkingen en brengt voor elk daarvan 400 extra schade toe. Als het doelwit wordt verslagen, krijg je de versterking Zuiveraar!",
+	"skill.purify.explanation": "Doet 2000 pure schade, plus 400 voor elk toepasselijk, niet-blijvend positief of negatief effect. Deze effecten worden verwijderd, behalve de stapels van de sluiper en brand op monsters: die blijven bestaan en verhogen de schade nog steeds. De stapels van de sluiper voegen 400 plus 1 per stapel toe, tot maximaal 800 schade in totaal. Aangeboren vergif en blijvende toestanden worden niet beïnvloed. Als je het doelwit verslaat, krijg je de Zuiveraar-buff.",
 	"skill.purify.name": "Zuiveren",
 	"skill.quickpunch.explanation": "Gebruik je behendigheid om je tegenstander tussen je verwoestende aanvallen door snel een vuistslag te geven!",
 	"skill.quickpunch.name": "Snelle vuistslag",

@@ -892,7 +892,7 @@
 	"update.08_10_26.halloween.support_52": "MAINFRAME ora accetta send_updates per aggiornare le entità visibili.",
 	"update.08_10_26.halloween.support_53": "Una risposta di accesso tardiva non copre più il gioco con la selezione del personaggio.",
 	"update.08_10_26.halloween.support_54": "Riconnettersi non porta più alla destinazione di un movimento non terminato.",
-	"update.08_10_26.halloween.support_65": "Gli scambi in CODE ora si concludono o segnalano un tempo di attesa scaduto.",
+	"update.08_10_26.halloween.support_65": "exchange() in CODE ora si completa correttamente anche se inizia un altro scambio.",
 	"update.08_10_26.halloween.support_66": "Le scelte nel negozio della caverna ora risultano completate anche senza acquisti.",
 	"update.08_10_26.halloween.support_67": "Gli scambi di Glitch ora consegnano entrambi i Glitch quando ne vengono estratti due.",
 	"update.08_10_26.halloween.support_68": "Gli oggetti bloccati e sigillati non possono più essere smantellati.",
@@ -909,11 +909,17 @@
 	"update.08_10_26.halloween.support_79": "Le voci vuote di equip_batch ora restituiscono un errore.",
 	"update.08_10_26.halloween.item_bonuses": "Le descrizioni degli oggetti ora mostrano i valori numerici dei bonus di mappa e di classe.",
 	"update.08_10_26.halloween.mp_reduction_cap": "Riduzione costo in mana ora ha un limite dell'80%.",
-	"update.08_10_26.halloween.support_80": "Gli ID dei mostri non coincidono più con i nomi numerici dei personaggi.",
 	"update.08_10_26.halloween.support_81": "Risolto il problema degli accessi simultanei sullo stesso account che si rifiutavano a vicenda.",
 	"update.08_10_26.halloween.support_82": "town() e smart_move ora attendono la fine del teletrasporto in città.",
 	"update.08_10_26.halloween.support_84": "Le richieste di distruzione non distruggono più un altro oggetto spostato nello stesso spazio della borsa.",
 	"update.08_10_26.halloween.support_85": "La vista della banca nell'Hub non espone più i dati nascosti degli oggetti.",
 	"update.08_10_26.halloween.support_86": "Le probabilità esatte di bottino ora usano frazioni più semplici, come 1/1M.",
-	"update.08_10_26.halloween.support_87": "Gli slot chiusi dei mercanti non consentono più scambi tramite offerte memorizzate nella cache."
+	"update.08_10_26.halloween.support_87": "Gli slot chiusi dei mercanti non consentono più scambi tramite offerte memorizzate nella cache.",
+	"update.08_10_26.halloween.numeric_names": "I nomi dei nuovi personaggi e quelli scelti rinominandoli non possono contenere solo cifre.",
+	"update.08_10_26.halloween.boss_drops": "Modificati i bottini dei boss cooperativi sui server di origine.",
+	"update.08_10_26.halloween.support_63": "Ritira gli allegati prima di eliminare le lettere ricevute.",
+	"update.08_10_26.halloween.support_58": "Purifica non può più bersagliare giocatori non alleati in PvE, nemmeno con Cupid.",
+	"update.08_10_26.halloween.support_57": "Purifica mantiene le accumulazioni del ladro e la bruciatura sui mostri. Le accumulazioni aggiungono fino a 800 danni.",
+	"update.08_10_26.halloween.support_56": "Se l'invio viene rifiutato, conservi l'oggetto e le spese postali.",
+	"update.08_10_26.halloween.support_55": "Gli allegati non ritirati sono limitati a 20 dallo stesso account mittente e a 200 per personaggio destinatario. Lettere e allegati esistenti restano. La posta automatica con ricompense non conta per questi limiti."
 }

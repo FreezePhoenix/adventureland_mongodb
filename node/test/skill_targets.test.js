@@ -112,19 +112,3 @@ test("generic skills resolve numeric player names before interpreting a monster 
 	skill({ name: "attack", id: "1234" });
 	assert.equal(attacked, target);
 });
-
-test("generic skills can target long numeric monster IDs beside a numeric player", () => {
-	const { c, caster, target, skill } = fixture("1234");
-	const monster = { id: "1000000001234", is_monster: true, map: "main", in: "main", x: 0, y: 0, s: {} };
-	c.instances.main.monsters[monster.id] = monster;
-	let attacked;
-	c.commence_attack = (attacker, victim) => {
-		attacked = victim;
-		return {};
-	};
-	skill({ name: "attack", id: monster.id });
-	assert.equal(attacked, monster);
-	caster.last = {};
-	skill({ name: "attack", id: target.id });
-	assert.equal(attacked, target);
-});

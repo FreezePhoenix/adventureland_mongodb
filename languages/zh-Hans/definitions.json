@@ -1287,7 +1287,7 @@
 	"skill.power.name": "威能",
 	"skill.pure_eval.explanation": "[进阶] 将代码片段映射为直接在游戏环境中运行，而不通过CODE。（别与文本命令/eval混淆，后者在CODE iframe中执行。）",
 	"skill.pure_eval.name": "直接执行",
-	"skill.purify.explanation": "净化目标，造成2000点纯粹伤害，移除所有增益和减益，每移除一个额外造成400点伤害。若击败目标，你将获得净化者增益！",
+	"skill.purify.explanation": "造成2000点纯粹伤害，每个符合条件的非持久增益或减益额外增加400点。这些效果会被移除，但盗贼叠层和怪物身上的燃烧会保留，并继续计入额外伤害。盗贼叠层在400点基础上每层再增加1点，合计最多增加800点伤害。天生的毒和持久状态不受影响。击败目标后获得净化者增益。",
 	"skill.purify.name": "净化",
 	"skill.quickpunch.explanation": "凭借敏捷身手，在猛烈攻击的间隙快速给敌人一拳！",
 	"skill.quickpunch.name": "快拳",

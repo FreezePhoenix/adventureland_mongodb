@@ -1287,7 +1287,7 @@
 	"skill.power.name": "Daya",
 	"skill.pure_eval.explanation": "[Lanjutan] Memetakan cuplikan kode agar dijalankan langsung di dalam game, alih-alih melalui CODE. (Berbeda dengan perintah teks /eval yang menjalankan kode di dalam iframe CODE)",
 	"skill.pure_eval.name": "Eksekusi Langsung",
-	"skill.purify.explanation": "Memberikan 2000 kerusakan murni untuk memurnikan target, menghapus semua efek penguatan dan pelemahan dengan tambahan 400 kerusakan untuk masing-masing efek, serta memberimu efek Pemurni jika target dikalahkan!",
+	"skill.purify.explanation": "Memberikan 2000 kerusakan murni, ditambah 400 untuk setiap buff atau debuff tidak permanen yang memenuhi syarat. Efek tersebut dihapus, kecuali tumpukan Penyelinap dan efek terbakar pada monster, yang tetap ada dan menambah kerusakan. Tumpukan Penyelinap menambah 400 ditambah 1 per tumpukan, hingga total 800 kerusakan. Racun bawaan dan kondisi permanen tidak terpengaruh. Mengalahkan target memberikan buff Pemurni.",
 	"skill.purify.name": "Murnikan",
 	"skill.quickpunch.explanation": "Gunakan kelincahanmu untuk memukul lawan dengan cepat di sela-sela serangan dahsyatmu!",
 	"skill.quickpunch.name": "Pukulan Cepat",

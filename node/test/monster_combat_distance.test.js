@@ -54,38 +54,11 @@ function client(type, x = 70, y = 0) {
 	return { type: "monster", mtype: type, x, y, awidth: 60, aheight: 40, visible: true };
 }
 
-test("monster IDs cannot hide behind numeric character names", () => {
-	const { load } = require("./helpers/server_vm");
-	const { server, client: entityClient, player, observer } = require("./helpers/entity_updates");
+test("monster IDs keep the ordinary sequential numeric format", () => {
 	const c = harness();
-	load(c, "adventure_functions.js", ["is_safe_character_name"]);
-	load(c, "api.js", ["is_name_allowed", "is_name_xallowed"]);
-	c.allowed_name_characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_";
 	c.total_monsters = 1233;
-	const monster = spawn(c, "crab");
-	assert.equal(c.is_name_allowed("1234"), true);
-	assert.equal(c.is_name_xallowed(monster.id), false, "monster IDs are outside the character-name space");
-	assert.equal(String(Number(monster.id)), monster.id, "IDs remain exact positive numeric strings");
-	assert(Number.isSafeInteger(Number(monster.id)));
-	assert.notEqual(spawn(c, "crab").id, monster.id);
-	assert.equal(c.total_monsters, 1235, "the spawn counter keeps its original meaning");
-
-	const wire = server(),
-		view = entityClient(),
-		watcher = observer();
-	wire.G.monsters = view.G.monsters = c.G.monsters;
-	const peer = player({ id: "1234", name: "1234", x: 10 });
-	wire.instances.main.players[peer.id] = peer;
-	wire.instances.main.monsters[monster.id] = monster;
-	view.add_monster = (data) => ({ ...data, type: "monster", mtype: data.type, real_x: data.x, real_y: data.y });
-	wire.send_all_xy(watcher);
-	view.handle_entities(watcher.sent.at(-1)[1]);
-	view.process_entities();
-	assert.equal(view.entities[peer.id].type, "character");
-	assert.equal(view.entities[monster.id].mtype, "crab");
-	load(view, "js/functions.js", ["get_entity"]);
-	assert.equal(view.get_entity(peer.id).type, "character");
-	assert.equal(view.get_entity(monster.id).type, "monster");
+	assert.equal(spawn(c, "crab").id, "1234");
+	assert.equal(spawn(c, "crab").id, "1235");
 });
 
 test("Tiny Crab: sprite bounds admit a 30-range attack, server combat bounds reject it at 51", () => {

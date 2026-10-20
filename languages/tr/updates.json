@@ -892,7 +892,7 @@
 	"update.08_10_26.halloween.support_52": "MAINFRAME artık görünür varlıkları yenilemek için send_updates kabul ediyor.",
 	"update.08_10_26.halloween.support_53": "Geciken giriş yanıtı artık karakter seçim ekranını oyunun üzerine açmıyor.",
 	"update.08_10_26.halloween.support_54": "Yeniden bağlanmak artık tamamlanmamış hareketin hedefine atlatmıyor.",
-	"update.08_10_26.halloween.support_65": "CODE ile yapılan takaslar artık tamamlanıyor veya zaman aşımı bildiriyor.",
+	"update.08_10_26.halloween.support_65": "CODE'daki exchange(), başka bir takas başlasa bile artık doğru şekilde tamamlanır.",
 	"update.08_10_26.halloween.support_66": "Mağara dükkânında verilen kararlar artık alışveriş yapmadan da tamamlanmış görünüyor.",
 	"update.08_10_26.halloween.support_67": "Glitch takasında iki Glitch çıktığında artık ikisi de veriliyor.",
 	"update.08_10_26.halloween.support_68": "Kilitli ve mühürlü eşyalar artık parçalanamıyor.",
@@ -909,11 +909,17 @@
 	"update.08_10_26.halloween.support_79": "Boş equip_batch girdileri artık hata döndürüyor.",
 	"update.08_10_26.halloween.item_bonuses": "Eşya bilgi kutuları artık harita ve sınıf bonuslarının sayısal değerlerini gösteriyor.",
 	"update.08_10_26.halloween.mp_reduction_cap": "Mana Maliyeti Azaltma artık en fazla %80 olabilir.",
-	"update.08_10_26.halloween.support_80": "Canavar kimlikleri artık sayısal karakter adlarıyla çakışmıyor.",
 	"update.08_10_26.halloween.support_81": "Aynı hesaptaki eşzamanlı girişlerin birbirini reddetmesi düzeltildi.",
 	"update.08_10_26.halloween.support_82": "town() ve smart_move artık kasabaya ışınlanmanın tamamlanmasını bekliyor.",
 	"update.08_10_26.halloween.support_84": "Yok etme istekleri artık aynı çanta yuvasına taşınan farklı bir eşyayı yok etmiyor.",
 	"update.08_10_26.halloween.support_85": "Hub banka görünümü artık gizli eşya verilerini açığa çıkarmıyor.",
 	"update.08_10_26.halloween.support_86": "Tam düşme olasılıkları artık 1/1M gibi daha basit kesirlerle gösteriliyor.",
-	"update.08_10_26.halloween.support_87": "Önbellekteki ilanlar kullanılarak kapalı tüccar yuvalarından artık alışveriş yapılamıyor."
+	"update.08_10_26.halloween.support_87": "Önbellekteki ilanlar kullanılarak kapalı tüccar yuvalarından artık alışveriş yapılamıyor.",
+	"update.08_10_26.halloween.numeric_names": "Yeni karakter adları ve ad değiştirirken seçilen adlar yalnızca rakamlardan oluşamaz.",
+	"update.08_10_26.halloween.boss_drops": "Ana sunuculardaki ortak boss ganimetleri düzenlendi.",
+	"update.08_10_26.halloween.support_63": "Gelen postaları silmeden önce eklerini al.",
+	"update.08_10_26.halloween.support_58": "Arındır artık PvE'de Cupid ile bile dost olmayan oyuncuları hedefleyemez.",
+	"update.08_10_26.halloween.support_57": "Arındır, Suikastçı yüklerini ve canavarlardaki yanmayı korur. Suikastçı yükleri en fazla 800 hasar ekler.",
+	"update.08_10_26.halloween.support_56": "Reddedilen postanın eşyası ve posta ücreti sende kalır.",
+	"update.08_10_26.halloween.support_55": "Alınmamış posta ekleri, aynı gönderici hesaptan 20 ve alıcı karakter başına toplam 200 ile sınırlıdır. Mevcut postalar ve ekler korunur. Otomatik ödül postaları bu sınırlara dahil değildir."
 }

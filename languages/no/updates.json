@@ -892,7 +892,7 @@
 	"update.08_10_26.halloween.support_52": "MAINFRAME godtar nå send_updates for å oppdatere synlige entiteter.",
 	"update.08_10_26.halloween.support_53": "Et forsinket innloggingssvar dekker ikke lenger spillet med figurvalget.",
 	"update.08_10_26.halloween.support_54": "Ny tilkobling hopper ikke lenger til målet for en ufullført bevegelse.",
-	"update.08_10_26.halloween.support_65": "Byttehandler i CODE fullføres nå eller melder at ventetiden er utløpt.",
+	"update.08_10_26.halloween.support_65": "CODE exchange() fullføres nå riktig selv om et annet bytte starter.",
 	"update.08_10_26.halloween.support_66": "Valg i hulebutikken vises nå som fullført også uten et kjøp.",
 	"update.08_10_26.halloween.support_67": "Glitch-byttehandler gir nå begge Glitch når to trekkes ut.",
 	"update.08_10_26.halloween.support_68": "Låste og forseglede gjenstander kan ikke lenger demonteres.",
@@ -909,11 +909,17 @@
 	"update.08_10_26.halloween.support_79": "Tomme oppføringer i equip_batch returnerer nå en feil.",
 	"update.08_10_26.halloween.item_bonuses": "Verktøytips for gjenstander viser nå tallene for kart- og klassebonuser.",
 	"update.08_10_26.halloween.mp_reduction_cap": "Redusert manakostnad er nå begrenset til 80 %.",
-	"update.08_10_26.halloween.support_80": "Monster-ID-er overlapper ikke lenger med numeriske karakternavn.",
 	"update.08_10_26.halloween.support_81": "Rettet at samtidige innlogginger på samme konto avviste hverandre.",
 	"update.08_10_26.halloween.support_82": "town() og smart_move venter nå til teleporteringen til byen er ferdig.",
 	"update.08_10_26.halloween.support_84": "Forespørsler om å ødelegge en gjenstand ødelegger ikke lenger en annen gjenstand som er flyttet til samme plass i vesken.",
 	"update.08_10_26.halloween.support_85": "Bankvisningen i Hub viser ikke lenger skjulte gjenstandsdata.",
 	"update.08_10_26.halloween.support_86": "Nøyaktige dropprater vises nå med enklere brøker, som 1/1M.",
-	"update.08_10_26.halloween.support_87": "Lukkede handelsplasser kan ikke lenger brukes via mellomlagrede tilbud."
+	"update.08_10_26.halloween.support_87": "Lukkede handelsplasser kan ikke lenger brukes via mellomlagrede tilbud.",
+	"update.08_10_26.halloween.numeric_names": "Navn på nye figurer og nye navn ved navnebytte kan ikke bestå bare av tall.",
+	"update.08_10_26.halloween.boss_drops": "Byttet fra samarbeidsbosser på hjemmeservere er justert.",
+	"update.08_10_26.halloween.support_63": "Hent vedlegg før du sletter mottatt post.",
+	"update.08_10_26.halloween.support_58": "Rens kan ikke lenger brukes mot spillere som ikke er allierte i PvE, selv med Cupid.",
+	"update.08_10_26.halloween.support_57": "Rens beholder snikmorderens stabler og brann på monstre. Stablene gir opptil 800 ekstra skade.",
+	"update.08_10_26.halloween.support_56": "Ved avvist post beholder avsenderen gjenstanden og portoen.",
+	"update.08_10_26.halloween.support_55": "Uavhentede postvedlegg er begrenset til 20 fra samme avsenderkonto og 200 per mottakerfigur. Eksisterende brev og vedlegg beholdes. Automatisk belønningspost teller ikke med i disse grensene."
 }

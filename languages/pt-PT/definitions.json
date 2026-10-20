@@ -1287,7 +1287,7 @@
 	"skill.power.name": "Poder",
 	"skill.pure_eval.explanation": "[Avançado] Associa um excerto de código para ser executado diretamente dentro do jogo, em vez de usar CODE. (Não confundas com o comando de texto /eval, que executa dentro do iframe de CODE)",
 	"skill.pure_eval.name": "Execução Direta",
-	"skill.purify.explanation": "Causa 2 000 de dano puro ao purificar o alvo. Remove todos os efeitos benéficos e negativos, causando mais 400 de dano por efeito. Se o alvo for derrotado, recebes o efeito Purificador!",
+	"skill.purify.explanation": "Causa 2000 de dano puro, mais 400 por cada efeito positivo ou negativo não permanente que possa remover. Esses efeitos são removidos, exceto as acumulações de ladino e a queimadura em monstros, que permanecem e continuam a aumentar o dano. As acumulações de ladino acrescentam 400 mais 1 por acumulação, até um total de 800 de dano. O veneno inato e os estados permanentes não são afetados. Derrotar o alvo concede o efeito Purificador.",
 	"skill.purify.name": "Purificar",
 	"skill.quickpunch.explanation": "Usa a tua agilidade para dar um soco rápido no adversário entre os teus ataques devastadores!",
 	"skill.quickpunch.name": "Soco Rápido",

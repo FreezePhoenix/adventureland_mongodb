@@ -1287,7 +1287,7 @@
 	"skill.power.name": "Kraft",
 	"skill.pure_eval.explanation": "[Avanceret] Tilknytter et kodestykke, der køres direkte i spillet i stedet for gennem CODE. (Må ikke forveksles med tekstkommandoen /eval, der kører kode i CODE-iframe)",
 	"skill.pure_eval.name": "Direkte kodekørsel",
-	"skill.purify.explanation": "Renser målet med 2000 ren skade, fjerner alle positive og negative effekter og giver yderligere 400 skade for hver. Du får effekten Renser, hvis målet besejres!",
+	"skill.purify.explanation": "Giver 2000 ren skade og yderligere 400 for hver relevant, ikke-permanent positiv eller negativ effekt. Effekterne fjernes bortset fra slynglens stakke og ild på monstre, som bliver og stadig øger skaden. Slynglens stakke giver 400 plus 1 pr. stak, op til 800 ekstra skade i alt. Medfødt gift og permanente tilstande påvirkes ikke. Hvis målet besejres, får du effekten Renser.",
 	"skill.purify.name": "Rens",
 	"skill.quickpunch.explanation": "Brug din smidighed til hurtigt at slå din modstander mellem dine ødelæggende angreb!",
 	"skill.quickpunch.name": "Hurtigt slag",

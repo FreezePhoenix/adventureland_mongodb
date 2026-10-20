@@ -1361,30 +1361,31 @@ function dismantle(item_num) {
 	return parent.dismantle();
 }
 
-async function exchange(item_num) {
+function exchange(item_num) {
 	var socket = parent.socket;
 	if (!socket || socket.disconnected) return rejecting_promise({ reason: "disconnected", place: "exchange" });
-	if (!["number", "string"].includes(typeof item_num) || !/^[0-9]+$/.test(item_num) || !Number.isSafeInteger(+item_num) || !character.items[item_num])
-		return rejecting_promise({ reason: "invalid", place: "exchange" });
+	if (!["number", "string"].includes(typeof item_num) || !/^[0-9]+$/.test(item_num) || !Number.isSafeInteger(+item_num) || !character.items[item_num]) return rejecting_promise({ reason: "invalid", place: "exchange" });
 	if (character.q.exchange) return rejecting_promise({ reason: "in_progress", place: "exchange" });
 	var request_id = randomStr(30);
-	var acknowledgement = wait_for_event(socket, "game_response", 10000, function (data) {
-		return data && data.place === "exchange" && data.request_id === request_id;
+	return new Promise(function (resolve, reject) {
+		function finish(data) {
+			socket.off("game_response", response);
+			socket.off("disconnect", disconnected);
+			if (data.failed && !RESOLVE_ALL) reject(data);
+			else resolve(data);
+		}
+		function response(data) {
+			if (!data || data.place !== "exchange" || data.request_id !== request_id || data.in_progress) return;
+			if (data.failed) finish(Object.assign({}, data, { reason: data.reason || data.response }));
+			else finish({ success: true, reward: data.reward, num: data.num });
+		}
+		function disconnected() {
+			finish({ failed: true, reason: "disconnected", place: "exchange" });
+		}
+		socket.on("game_response", response);
+		socket.on("disconnect", disconnected);
+		socket.emit("exchange", { item_num: +item_num, q: character.items[item_num].q, request_id: request_id });
 	});
-	socket.emit("exchange", { item_num: +item_num, q: character.items[item_num].q, request_id: request_id });
-	var call;
-	try { call = await acknowledgement; }
-	catch (error) { call = Object.assign({ failed: true }, error); }
-	if (call.failed) return rejecting_promise(Object.assign({}, call, { place: "exchange", reason: parent.socket !== socket || socket.disconnected ? "disconnected" : call.reason }));
-	if (!call.in_progress) return call;
-	var num = call.num, deadline = Date.now() + 30000;
-	while (character.q.exchange || (character.items[num] && character.items[num].name === "placeholder")) {
-		if (parent.socket !== socket || socket.disconnected) return rejecting_promise({ reason: "disconnected", place: "exchange" });
-		if (Date.now() >= deadline) return rejecting_promise({ reason: "timeout", place: "exchange" });
-		await sleep(50);
-	}
-	if (parent.socket !== socket || socket.disconnected) return rejecting_promise({ reason: "disconnected", place: "exchange" });
-	return character.items[num] ? { success: true, reward: character.items[num].name, num: num } : { success: true, reward: undefined, num: undefined };
 }
 
 function exchange_buy(token, name) {

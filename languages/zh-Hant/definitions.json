@@ -1287,7 +1287,7 @@
 	"skill.power.name": "威能",
 	"skill.pure_eval.explanation": "[進階] 將程式碼片段綁定到按鍵，直接在遊戲環境中執行，而不透過CODE。（別與文字命令/eval混淆，後者在CODE iframe中執行。）",
 	"skill.pure_eval.name": "直接執行",
-	"skill.purify.explanation": "淨化目標，造成2000點純粹傷害，移除所有增益和減益，每移除一個額外造成400點傷害。若擊敗目標，你將獲得淨化者增益！",
+	"skill.purify.explanation": "造成2000點純粹傷害，每個符合條件的非持續性增益或減益額外增加400點。這些效果會被移除，但盜賊的疊層與怪物身上的燃燒會保留，並繼續計入額外傷害。盜賊疊層在400點基礎上每層再增加1點，合計最多增加800點傷害。天生的毒與持續性狀態不受影響。擊敗目標後獲得淨化者增益。",
 	"skill.purify.name": "淨化",
 	"skill.quickpunch.explanation": "憑藉敏捷身手，在猛烈攻擊的間隙快速給敵人一拳！",
 	"skill.quickpunch.name": "快拳",

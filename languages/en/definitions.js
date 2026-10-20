@@ -2701,8 +2701,7 @@ module.exports = {
 	// design/skills.js; pure_eval name, displayed by its existing tooltip, dialogue or announcement renderer. Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
 	"skill.pure_eval.name": "Pure Eval",
 	// design/skills.js; purify explanation, displayed by its existing tooltip, dialogue or announcement renderer. Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
-	"skill.purify.explanation":
-		"Deals 2000 pure damage purifying the target, removes all buffs and debuffs dealing additional 400 damage for each and receive the Purifier buff if the target is defeated!",
+	"skill.purify.explanation": "Deals 2000 pure damage, plus 400 for each eligible nonpersistent buff or debuff. These effects are removed, except Rogue stacks and burning on monsters. Rogue stacks add 400 plus 1 per stack, up to 800 damage in total. Innate poison and persistent conditions are unaffected. Defeating the target grants the Purifier buff.",
 	// design/skills.js; purify name, displayed by its existing tooltip, dialogue or announcement renderer. Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
 	"skill.purify.name": "Purify",
 	// design/skills.js; quickpunch explanation, displayed by its existing tooltip, dialogue or announcement renderer. Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.

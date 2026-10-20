@@ -365,47 +365,15 @@ test("stack copies retain title history without copying sale or giveaway state",
 	assert.deepEqual(source.ps, ["shiny", "glitched"]);
 });
 
-test("a titled giveaway keeps its properties through listing and one mail delivery", async () => {
-	const h = fixture(),
-		mails = [];
+test("a titled giveaway keeps its properties through listing", () => {
+	const h = fixture();
 	h.put(h.seller, glitched);
 	h.run("equip", "Seller", { num: 0, slot: "trade1", q: 2, giveaway: true, minutes: 5 });
 	assert.deepEqual(h.failures, []);
 	assert.equal(h.seller.slots.trade1.p, "glitched");
+	assert.deepEqual(h.seller.slots.trade1.ps, ["glitched"]);
+	assert.equal(h.seller.slots.trade1.q, 2);
 	assert.equal(h.seller.items[0].q, 1);
-	h.seller.slots.trade1.giveaway = 1;
-	h.seller.slots.trade1.list = ["Buyer"];
-	let tick;
-	Object.assign(h.c, {
-		mode: { prevent_external: false },
-		setInterval: (callback) => (tick = callback),
-		get_player: (name) => h.c.players[name],
-		random_one: (list) => list[0],
-		db: { collection: () => ({ findOne: async () => ({ owner: h.buyer.owner }) }) },
-		get: async (id) => ({ _id: id }),
-		get_id: (user) => user._id,
-		insert: async (mail) => mails.push(plain(mail)),
-		update_mail_count: async () => {},
-		log_trace: (...args) => {
-			throw Error(JSON.stringify(args));
-		},
-		console,
-	});
-	const source = read("node/server.js"),
-		end = source.indexOf('log_trace("#X decay loop error", e);');
-	const start = source.lastIndexOf("setInterval(function () {", end);
-	vm.runInContext(source.slice(start, source.indexOf("}, 60000);", end) + "}, 60000);".length), h.c);
-	tick();
-	await new Promise(setImmediate);
-	assert.equal(mails.length, 1);
-	const item = JSON.parse(mails[0].info.item);
-	assert.equal(item.p, "glitched");
-	assert.deepEqual(item.ps, ["glitched"]);
-	assert.equal(item.q, 2);
-	assert.equal(h.seller.slots.trade1, null);
-	tick();
-	await new Promise(setImmediate);
-	assert.equal(mails.length, 1);
 });
 
 const staff = (level, extra) => ({ name: "staff", level, ...extra });

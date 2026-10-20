@@ -1,11 +1,19 @@
 // English documentation catalog. IDs identify source meaning and usage.
 module.exports = {
+	// Manual Purify and use_skill: Rogue stack damage, monster burn, and friendly-only player targeting in PvE. Cupid is a fixed item name.
+	"docs.skills.purify_stacks": "Purify leaves Rogue stacks and burning on monsters in place. Valid Rogue stacks add 400 plus 1 per stack, up to 800 damage in total. Burning on a monster adds 400. In PvE, Purify cannot target players outside your account, party, team or guild, even with Cupid.",
+	// Player-run giveaways use both mail limits; the prize and chosen winner wait in the stand slot, retried when the host is online.
+	"docs.mail.giveaway_limits": "Player-run giveaway prizes also count toward these limits. If the winner's mailbox is full, the prize stays in the giveaway slot and is retried while the host is online.",
+	// Automatic reward deliveries are exempt from both mail attachment caps.
+	"docs.mail.automatic_rewards": "Automatic reward mail does not count toward these limits.",
+	// Manual mail and send_mail(): per-character attachment caps; one stack counts as one. No existing items are deleted.
+	"docs.mail.attachment_limits": "Each character can have up to 200 uncollected mail attachments, including at most 20 from the same sending account. Each attachment or stack counts as one. New attachments cannot be sent once either limit is reached. Existing mail and attachments stay. Letters without attachments can still be sent.",
+	// exchange() completes from its own server result; disconnect does not cancel an accepted exchange.
+	"docs.functions.exchange.completion": "exchange() resolves when the server completes your exchange, even if another exchange starts. It rejects if the server refuses the request or the connection closes. Disconnecting does not cancel an accepted exchange; check your inventory after reconnecting before trying again.",
 	// trade_buy and trade_sell reject unavailable listing slots. Keep item_gone unchanged.
 	"docs.functions.trade.slot_unavailable": "Rejects with item_gone if the listing's trade slot is no longer available.",
 	// destroy() rejects a changed inventory item. Keep the CODE reason item_changed unchanged.
 	"docs.functions.destroy.item_changed": "Rejects with item_changed if the item in that slot changes before the server handles the request.",
-	// Monster identifiers cannot match legal character names. Preserve the CODE property id.
-	"docs.articles.data-monster.id_namespace": "Use the entity's id as given by the game. Monster IDs are numeric strings and cannot overlap with character names.",
 	// A route recalculation continues the same journey. Preserve smart_move and Promise.
 	"docs.functions.smart_move.replan": "If the route is lost, smart_move searches again. Its Promise stays pending until the journey finishes or fails.",
 	// Empty inventory slots reject the CODE compound Promise. Preserve Promise and .catch().
@@ -16,8 +24,6 @@ module.exports = {
 	"docs.functions.equip_batch.empty_entries": "Empty entries reject the Promise before any equipment request is sent.",
 	// Roaming NPC lookup returns the first configured waypoint, not a live sighting. Preserve find_npc.
 	"docs.functions.find_npc.roaming": "For roaming NPCs, find_npc returns the first point on their route, not their current position.",
-	// CODE exchange acknowledgement and completion deadlines. Preserve exchange(), character.q.exchange, 10 and 30. Timeout does not cancel an accepted exchange.
-	"docs.functions.exchange.timeout": "exchange() waits up to 10 seconds for the server to accept or reject the request, then up to 30 seconds for the reward. A timeout does not cancel an exchange already accepted by the server. Check character.q.exchange and your inventory before trying again.",
 	// Raw send_updates snapshot request in browser and MAINFRAME. Keep send_updates, entities and MAINFRAME unchanged. Two requests per second is the MAINFRAME bound; no request correlation.
 	"docs.functions.get_socket.refresh": "send_updates requests a full snapshot of visible entities. MAINFRAME allows two requests per second. Listen for entities before sending the request; the response has no matching request ID.",
 	// sell() item snapshot check. Only stack quantity may change; preserve CODE identifiers.
@@ -37,7 +43,7 @@ module.exports = {
 	// Encouragement guide introduction. Existing merchants can move between realms without interrupting other characters' bonuses; normal account eligibility and character limits still apply.
 	"docs.guide.encouragement.merchant_realms": "Merchants can change realms without interrupting your other characters’ encouragement bonuses.",
 	// Mail tutorial and send_mail/take_mail_item references. Receiving account owns the attachment, including self-mail; deletion hides only the caller's copy.
-	"docs.mail.ownership": "Only the receiving account can collect an attachment. Senders cannot take it back. Deleting mail removes only your copy.",
+	"docs.mail.ownership": "Only the receiving account can collect an attachment. Senders cannot take it back, but can hide their own copy of the mail. Recipients must collect attachments before deleting mail. Deleting mail removes only your copy.",
 	// Golden Bat guide paragraph after its spawn line; the drop list with exact rates follows. Item names fixed; 24,000 exact.
 	"docs.guide.golden-bat.intro": "It flies around the cave until someone catches it. With 24,000 HP, it only sometimes attacks and never hits back.",
 	// Cute Bee guide paragraph after its spawn line; the drop list follows. Fun Token is a fixed name; 300 and 16 exact.

@@ -1287,7 +1287,7 @@
 	"skill.power.name": "Potere",
 	"skill.pure_eval.explanation": "[Avanzato] Associa un frammento di codice da eseguire direttamente nel gioco, anziché in CODE. (Da non confondere con il comando di testo /eval, che esegue nell'iframe CODE)",
 	"skill.pure_eval.name": "Esecuzione diretta",
-	"skill.purify.explanation": "Infligge 2.000 danni puri purificando il bersaglio e rimuove tutti gli effetti benefici e dannosi, infliggendo altri 400 danni per ciascuno. Se il bersaglio viene sconfitto, ottieni il beneficio Purificatore!",
+	"skill.purify.explanation": "Infligge 2000 danni puri, più 400 per ogni effetto positivo o negativo non persistente idoneo. Questi effetti vengono rimossi, tranne le accumulazioni del ladro e la bruciatura sui mostri, che restano e continuano ad aggiungere danni. Le accumulazioni del ladro aggiungono 400 più 1 per accumulazione, fino a un totale di 800 danni. Veleno innato e stati persistenti restano invariati. Sconfiggere il bersaglio conferisce l'effetto Purificatore.",
 	"skill.purify.name": "Purifica",
 	"skill.quickpunch.explanation": "Usa la tua agilità per colpire rapidamente l'avversario con un pugno tra i tuoi attacchi devastanti!",
 	"skill.quickpunch.name": "Pugno rapido",

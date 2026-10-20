@@ -4104,6 +4104,7 @@ function exchange(player, name, args) {
 	}
 	var socket = player.socket;
 	var done = false;
+	var outcome = { success: true };
 	var total = 0;
 	var current = 0;
 	var table = D.drops[name];
@@ -4124,7 +4125,7 @@ function exchange(player, name, args) {
 	table.forEach(function (drop) {
 		total += drop[0];
 	});
-	result = Math.random() * total;
+	var result = Math.random() * total;
 	table.forEach(function (drop) {
 		if (done) {
 			return;
@@ -4174,7 +4175,7 @@ function exchange(player, name, args) {
 				//		args.phrase = `Mined ${drop[2]} and got`;
 				//		break;
 				//}
-				exchange(player, drop[2], args);
+				outcome = exchange(player, drop[2], args);
 			} else {
 				for (var copy = 0; copy < (G.items[drop[1]].s ? 1 : drop[2] || 1); copy++) {
 					var item = create_new_item(drop[1], drop[2]);
@@ -4199,7 +4200,8 @@ function exchange(player, name, args) {
 					if (drop[1] == "cxjar") {
 						item.data = drop[3];
 					}
-					add_item(player, item, { r: 1, phrase: args.phrase });
+					var num = add_item(player, item, { r: 1, phrase: args.phrase });
+					if (outcome.reward === undefined) Object.assign(outcome, { reward: item.name, num: num });
 					var item_action = args.phrase
 						? { Fished: "fished", Mined: "mined", Glitched: "glitched" }[args.phrase]
 						: "received";
@@ -4218,8 +4220,12 @@ function exchange(player, name, args) {
 	}
 	if (done && bonus)
 		bonus.forEach(function (drop) {
-			if (Math.random() < drop[0]) exchange(player, [drop], { ...args, name });
+			if (Math.random() < drop[0]) {
+				var extra = exchange(player, [drop], { ...args, name });
+				if (outcome.reward === undefined && extra.reward !== undefined) outcome = extra;
+			}
 		});
+	return outcome;
 }
 
 function chest_exchange(chest, name) {

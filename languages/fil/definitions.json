@@ -1287,7 +1287,7 @@
 	"skill.power.name": "Kapangyarihan",
 	"skill.pure_eval.explanation": "[Para sa bihasa] Nagtatalaga ng piraso ng code na direktang patatakbuhin sa loob ng laro, sa halip na gumamit ng CODE. (Huwag ipagkamali sa text command na /eval, na nagpapatakbo sa loob ng Code iframe)",
 	"skill.pure_eval.name": "Direktang Pagpapatakbo",
-	"skill.purify.explanation": "Nagdudulot ng 2000 purong pinsala upang linisin ang target, inaalis ang lahat ng buff at debuff at nagdudulot ng dagdag na 400 pinsala para sa bawat isa, at ibinibigay sa iyo ang buff na Tagapaglinis kapag natalo ang target!",
+	"skill.purify.explanation": "Nagdudulot ng 2000 purong pinsala, at dagdag na 400 para sa bawat naaangkop na hindi permanenteng buff o debuff. Inaalis ang mga epektong ito, maliban sa mga stack ng Tampalasan at pagkasunog ng mga halimaw, na nananatili at nagdaragdag pa rin ng pinsala. Ang mga stack ng Tampalasan ay nagdaragdag ng 400 at 1 pa bawat stack, hanggang 800 pinsala sa kabuuan. Hindi naaapektuhan ang likas na lason at permanenteng kondisyon. Ang pagtalo sa target ay nagbibigay ng Tagapaglinis buff.",
 	"skill.purify.name": "Linisin",
 	"skill.quickpunch.explanation": "Gamitin ang iyong liksi upang mabilis na suntukin ang kalaban sa pagitan ng iyong mapaminsalang mga atake!",
 	"skill.quickpunch.name": "Mabilis na Suntok",

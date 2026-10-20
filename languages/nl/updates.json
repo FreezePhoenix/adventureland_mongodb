@@ -892,7 +892,7 @@
 	"update.08_10_26.halloween.support_52": "MAINFRAME accepteert nu send_updates om zichtbare entiteiten te vernieuwen.",
 	"update.08_10_26.halloween.support_53": "Een vertraagd aanmeldantwoord bedekt het spel niet meer met de personagekeuze.",
 	"update.08_10_26.halloween.support_54": "Opnieuw verbinden verplaatst je niet meer naar het doel van een onvoltooide beweging.",
-	"update.08_10_26.halloween.support_65": "Uitwisselingen in CODE worden nu afgerond of melden een time-out.",
+	"update.08_10_26.halloween.support_65": "CODE exchange() wordt nu correct voltooid, ook als een andere ruil begint.",
 	"update.08_10_26.halloween.support_66": "Keuzes in de grotwinkel worden nu ook zonder aankoop als voltooid weergegeven.",
 	"update.08_10_26.halloween.support_67": "Glitch-uitwisselingen geven nu beide Glitch als er twee worden getrokken.",
 	"update.08_10_26.halloween.support_68": "Vergrendelde en verzegelde voorwerpen kunnen niet meer worden ontmanteld.",
@@ -909,11 +909,17 @@
 	"update.08_10_26.halloween.support_79": "Lege vermeldingen in equip_batch geven nu een fout terug.",
 	"update.08_10_26.halloween.item_bonuses": "Itemtooltips tonen nu ook de waarden van kaart- en klassebonussen.",
 	"update.08_10_26.halloween.mp_reduction_cap": "Manakostenvermindering is nu beperkt tot 80%.",
-	"update.08_10_26.halloween.support_80": "Monster-ID's overlappen niet meer met numerieke personagenamen.",
 	"update.08_10_26.halloween.support_81": "Verholpen dat gelijktijdige aanmeldingen op hetzelfde account elkaar afwezen.",
 	"update.08_10_26.halloween.support_82": "town() en smart_move wachten nu totdat de teleportatie naar de stad is voltooid.",
 	"update.08_10_26.halloween.support_84": "Vernietigingsverzoeken vernietigen geen ander voorwerp meer dat naar hetzelfde vak in de tas is verplaatst.",
 	"update.08_10_26.halloween.support_85": "De bankweergave in de Hub geeft geen verborgen itemgegevens meer vrij.",
 	"update.08_10_26.halloween.support_86": "Exacte buitkansen gebruiken nu eenvoudigere breuken, zoals 1/1M.",
-	"update.08_10_26.halloween.support_87": "Via opgeslagen aanbiedingen kan niet meer in gesloten handelsvakken worden gehandeld."
+	"update.08_10_26.halloween.support_87": "Via opgeslagen aanbiedingen kan niet meer in gesloten handelsvakken worden gehandeld.",
+	"update.08_10_26.halloween.numeric_names": "Namen van nieuwe personages en namen die je bij het hernoemen kiest, mogen niet alleen uit cijfers bestaan.",
+	"update.08_10_26.halloween.boss_drops": "Buit van coöp-bazen op thuisservers aangepast.",
+	"update.08_10_26.halloween.support_63": "Haal bijlagen op voordat je ontvangen berichten verwijdert.",
+	"update.08_10_26.halloween.support_58": "Zuiveren kan in PvE geen niet-bevriende spelers meer als doelwit nemen, ook niet met Cupid.",
+	"update.08_10_26.halloween.support_57": "Zuiveren behoudt de stapels van de sluiper en brand op monsters. De stapels voegen maximaal 800 schade toe.",
+	"update.08_10_26.halloween.support_56": "Bij geweigerde post behoudt de afzender het voorwerp en de verzendkosten.",
+	"update.08_10_26.halloween.support_55": "Niet-opgehaalde postbijlagen zijn beperkt tot 20 van hetzelfde verzendende account en 200 per ontvangend personage. Bestaande berichten en bijlagen blijven bewaard. Automatische beloningspost telt niet mee voor deze limieten."
 }

@@ -892,7 +892,7 @@
 	"update.08_10_26.halloween.support_52": "MAINFRAMEでsend_updatesを使い、見えているエンティティを更新できるようになりました。",
 	"update.08_10_26.halloween.support_53": "ログイン応答が遅れても、キャラクター選択画面がゲームを覆わなくなりました。",
 	"update.08_10_26.halloween.support_54": "再接続時に、未完了の移動先へ飛ばされなくなりました。",
-	"update.08_10_26.halloween.support_65": "CODEでの交換が完了するか、タイムアウトを報告するようになりました。",
+	"update.08_10_26.halloween.support_65": "CODEのexchange()は、別の交換が始まっても正しく完了するようになりました。",
 	"update.08_10_26.halloween.support_66": "洞窟の店で選択を終えると、購入しなくても完了と表示されるようになりました。",
 	"update.08_10_26.halloween.support_67": "Glitchの交換で2個当たった場合、両方のGlitchを受け取れるようになりました。",
 	"update.08_10_26.halloween.support_68": "ロック中または封印中のアイテムを分解できなくなりました。",
@@ -909,11 +909,17 @@
 	"update.08_10_26.halloween.support_79": "equip_batchの空の要素がエラーを返すようになりました。",
 	"update.08_10_26.halloween.item_bonuses": "アイテムのツールチップに、マップとクラスのボーナスの数値が表示されるようになりました。",
 	"update.08_10_26.halloween.mp_reduction_cap": "消費MP軽減の上限が80%になりました。",
-	"update.08_10_26.halloween.support_80": "モンスターIDが数字だけのキャラクター名と重複しなくなりました。",
 	"update.08_10_26.halloween.support_81": "同じアカウントで同時にログインすると、互いのログインが拒否される問題を修正しました。",
 	"update.08_10_26.halloween.support_82": "town()とsmart_moveが町へのテレポート完了を待つようになりました。",
 	"update.08_10_26.halloween.support_84": "破棄リクエストで、同じバッグスロットに移動された別のアイテムが破棄されなくなりました。",
 	"update.08_10_26.halloween.support_85": "Hubの銀行表示でアイテムの非公開データが露出しなくなりました。",
 	"update.08_10_26.halloween.support_86": "正確なドロップ確率を1/1Mなどのより簡単な分数で表示するようになりました。",
-	"update.08_10_26.halloween.support_87": "キャッシュされた出品情報を使って、閉じた商人のスロットで取引できなくなりました。"
+	"update.08_10_26.halloween.support_87": "キャッシュされた出品情報を使って、閉じた商人のスロットで取引できなくなりました。",
+	"update.08_10_26.halloween.numeric_names": "新規作成時や名前変更時に、数字だけのキャラクター名は使えなくなりました。",
+	"update.08_10_26.halloween.boss_drops": "ホームサーバーでの協力型ボスのドロップを調整しました。",
+	"update.08_10_26.halloween.support_63": "受信メールを削除する前に添付を受け取ってください。",
+	"update.08_10_26.halloween.support_58": "PvEでは、Cupidを使っても、味方ではないプレイヤーを浄化の対象にできなくなりました。",
+	"update.08_10_26.halloween.support_57": "浄化は盗賊のスタックとモンスターの炎上を残します。盗賊のスタックは最大800の追加ダメージを与えます。",
+	"update.08_10_26.halloween.support_56": "メールの送信を拒否されても、アイテムと送料は手元に残ります。",
+	"update.08_10_26.halloween.support_55": "未受領のメール添付は、同じ送信元アカウントから20件、受取キャラクターごとに合計200件までです。既存のメールと添付は残ります。 自動で届く報酬メールは、この上限には数えられません。"
 }

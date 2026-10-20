@@ -727,3 +727,93 @@ test("nested chest exchanges retain the same Lucky property as direct envelopes"
 		assert.deepEqual(plain(chest.items[0].ps), ["lucky"]);
 	}
 });
+
+function exchange_fixture() {
+	const h = fixture(),
+		c = h.c,
+		p = h.player;
+	p.hitchhikers = [];
+	p.p.acx = {};
+	c.colors = { server_success: "green" };
+	c.broadcast = () => {};
+	c.to_pretty_num = String;
+	c.is_array = Array.isArray;
+	c.Math = Object.create(Math);
+	c.Math.random = () => 0.5;
+	c.D = { ...G, drops: { ...G.drops } };
+	c.add_shells = (player, amount) => {
+		player.test_shells = (player.test_shells || 0) + amount;
+	};
+	load(c, "node/server_functions.js", ["exchange", "item_to_phrase", "startswith_an"]);
+	const source = read("node/server.js"),
+		start = source.indexOf('\t\t\t\tif (name == "exchange") {');
+	assert(start > 0);
+	const end = source.indexOf('\n\t\t\t\tif (name == "compound")', start);
+	const completion = source.slice(start, end);
+	const packets = [];
+	c.resend = (player) =>
+		packets.push(
+			JSON.parse(JSON.stringify({ items: player.items, q: player.q, hitchhikers: player.hitchhikers.splice(0) })),
+		);
+	return {
+		...h,
+		packets,
+		complete() {
+			c.player = p;
+			c.ref = p.q.exchange;
+			c.name = "exchange";
+			delete p.q.exchange;
+			vm.runInContext(completion, c);
+		},
+	};
+}
+
+test("exchange sends one matching completion after rewards, including stacked and non-item rewards", () => {
+	for (const drop of [
+		[1, "hpot0", 5],
+		[1, "gold", 100],
+		[1, "shells", 10],
+		[1, "empty"],
+		[1, "open", "nested"],
+	]) {
+		const h = exchange_fixture(),
+			p = h.player;
+		h.c.D.drops.candy0 = [drop];
+		h.c.D.drops.nested = [[1, "hpot0", 5]];
+		p.items[0] = { name: "candy0", q: 1 };
+		p.items[5] = { name: "hpot0", q: 10 };
+		h.run("exchange", { item_num: 0, request_id: "first" });
+		assert.equal(p.q.exchange.request_id, "first");
+		assert.equal(p.items[0].name, "placeholder");
+		assert.equal(h.successes.at(-1)[0].in_progress, true);
+		h.complete();
+		const packet = h.packets.at(-1),
+			[event, outcome] = packet.hitchhikers[0];
+		assert.equal(packet.hitchhikers.length, 1);
+		assert.equal(event, "game_response");
+		assert.equal(outcome.request_id, "first");
+		assert.equal(outcome.success, true);
+		assert.equal(packet.q.exchange, undefined);
+		if (["hpot0", "open"].includes(drop[1])) {
+			assert.equal(outcome.reward, "hpot0");
+			assert.equal(outcome.num, 5);
+			assert.equal(packet.items[5].q, 15);
+		} else {
+			assert.equal(outcome.reward, undefined);
+			assert.equal(outcome.num, undefined);
+		}
+	}
+});
+
+test("manual exchanges retain the existing acceptance reply and award once", () => {
+	const h = exchange_fixture(),
+		p = h.player;
+	h.c.D.drops.candy0 = [[1, "hpot0", 5]];
+	p.items[0] = { name: "candy0", q: 1 };
+	h.run("exchange", { item_num: 0 });
+	assert.equal(h.successes.at(-1)[0].in_progress, true);
+	h.complete();
+	assert.equal(p.items[0].name, "hpot0");
+	assert.equal(p.items[0].q, 5);
+	assert.equal(h.packets.at(-1).hitchhikers.length, 0);
+});

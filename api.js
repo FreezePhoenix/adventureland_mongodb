@@ -23,6 +23,7 @@ function can_create_character_check(user, ip) {
 
 function is_name_allowed(name) {
 	if (!is_safe_character_name(name)) return false;
+	if (/^\d+$/.test(name)) return false;
 	if (name.length < 4) return false;
 	if (name.length > 12) return false;
 	for (var i = 0; i < name.length; i++) {
@@ -33,6 +34,7 @@ function is_name_allowed(name) {
 
 function is_name_xallowed(name) {
 	if (!is_safe_character_name(name)) return false;
+	if (/^\d+$/.test(name)) return false;
 	if (name.length < 1) return false;
 	if (name.length > 12) return false;
 	for (var i = 0; i < name.length; i++) {
@@ -1423,9 +1425,15 @@ async function pull_mail_api(args) {
 async function delete_mail_api(args) {
 	var user = args.user;
 	if (!user || typeof args.mid !== "string" || !args.mid.startsWith("ML_")) return { failed: true, reason: "cant_delete" };
-	// Each account removes its own copy. Retain the claim record even when both copies are hidden.
-	var result = await db.collection("mail").updateOne({ _id: args.mid, owner: get_id(user) }, { $pull: { owner: get_id(user) } });
-	if (!result.matchedCount) return { failed: true, reason: "cant_delete" };
+	// An untaken attachment must remain accessible, including while a claim settles.
+	var result = await tx(async () => {
+		var mail = await tx_get(A.id);
+		if (!mail || !mail.owner || !in_arr(A.owner, mail.owner)) ex("cant_delete");
+		if (mail.item && mail.taken !== true && mail_receiver(mail) === A.owner) ex("mail_item_untaken");
+		mail.owner = mail.owner.filter(function (owner) { return owner !== A.owner; });
+		await tx_save(mail);
+	}, { id: args.mid, owner: get_id(user) }, 3);
+	if (result.failed) return result;
 	args.res.infs.push({ type: "unread", count: await update_mail_count(user) });
 	args.res.infs.push({ type: "message", message: phrase_html("server.api.mail_deleted") });
 	return { success: true };

@@ -1287,7 +1287,7 @@
 	"skill.power.name": "Macht",
 	"skill.pure_eval.explanation": "[Fortgeschritten] Belegt eine Taste mit einem Codeausschnitt, der direkt im Spiel statt über CODE ausgeführt wird. (Nicht zu verwechseln mit dem Textbefehl /eval, der im CODE-iframe ausgeführt wird.)",
 	"skill.pure_eval.name": "Direkt ausführen",
-	"skill.purify.explanation": "Läutert das Ziel mit 2000 reinem Schaden. Entfernt alle Stärkungen und Schwächungen und verursacht für jede zusätzlich 400 Schaden. Wird das Ziel besiegt, erhältst du die Stärkung Läuterer!",
+	"skill.purify.explanation": "Verursacht 2000 reinen Schaden sowie 400 für jeden passenden, nicht dauerhaften positiven oder negativen Effekt. Diese Effekte werden entfernt, außer Schurkenstapeln und Brennen auf Monstern: Sie bleiben bestehen und erhöhen weiterhin den Schaden. Schurkenstapel fügen 400 plus 1 pro Stapel hinzu, bis zu insgesamt 800 Schaden. Angeborenes Gift und dauerhafte Zustände bleiben unverändert. Ein besiegtes Ziel gewährt den Effekt Läuterer.",
 	"skill.purify.name": "Läutern",
 	"skill.quickpunch.explanation": "Nutze deine Beweglichkeit, um deinem Gegner zwischen deinen verheerenden Angriffen einen schnellen Fausthieb zu verpassen!",
 	"skill.quickpunch.name": "Schneller Fausthieb",

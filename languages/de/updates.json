@@ -892,7 +892,7 @@
 	"update.08_10_26.halloween.support_52": "MAINFRAME akzeptiert jetzt send_updates, um sichtbare Entitäten zu aktualisieren.",
 	"update.08_10_26.halloween.support_53": "Eine verspätete Anmeldeantwort verdeckt das Spiel nicht mehr mit der Charakterauswahl.",
 	"update.08_10_26.halloween.support_54": "Erneutes Verbinden versetzt den Charakter nicht mehr ans Ziel einer unfertigen Bewegung.",
-	"update.08_10_26.halloween.support_65": "Tauschvorgänge in CODE werden jetzt abgeschlossen oder melden eine Zeitüberschreitung.",
+	"update.08_10_26.halloween.support_65": "CODE exchange() wird jetzt auch dann korrekt abgeschlossen, wenn ein weiterer Tausch beginnt.",
 	"update.08_10_26.halloween.support_66": "Entscheidungen im Höhlenladen werden jetzt auch ohne Kauf als abgeschlossen angezeigt.",
 	"update.08_10_26.halloween.support_67": "Beim Glitch-Tausch werden jetzt beide Glitch ausgegeben, wenn zwei ausgelost werden.",
 	"update.08_10_26.halloween.support_68": "Gesperrte und versiegelte Gegenstände können nicht mehr zerlegt werden.",
@@ -909,11 +909,17 @@
 	"update.08_10_26.halloween.support_79": "Leere Einträge in equip_batch geben jetzt einen Fehler zurück.",
 	"update.08_10_26.halloween.item_bonuses": "Gegenstands-Tooltips zeigen jetzt die Zahlenwerte der Karten- und Klassenboni.",
 	"update.08_10_26.halloween.mp_reduction_cap": "Manakostensenkung ist jetzt auf 80 % begrenzt.",
-	"update.08_10_26.halloween.support_80": "Monster-IDs überschneiden sich nicht mehr mit numerischen Charakternamen.",
 	"update.08_10_26.halloween.support_81": "Gleichzeitige Anmeldungen auf demselben Konto führen nicht mehr zu gegenseitigen Ablehnungen.",
 	"update.08_10_26.halloween.support_82": "town() und smart_move warten jetzt, bis die Teleportation zur Stadt abgeschlossen ist.",
 	"update.08_10_26.halloween.support_84": "Zerstörungsanfragen zerstören keinen anderen Gegenstand mehr, der auf denselben Taschenplatz verschoben wurde.",
 	"update.08_10_26.halloween.support_85": "Die Bankansicht im Hub gibt keine versteckten Gegenstandsdaten mehr preis.",
 	"update.08_10_26.halloween.support_86": "Exakte Dropchancen werden jetzt mit einfacheren Brüchen wie 1/1M angezeigt.",
-	"update.08_10_26.halloween.support_87": "Geschlossene Handelsplätze lassen sich nicht mehr über zwischengespeicherte Angebote nutzen."
+	"update.08_10_26.halloween.support_87": "Geschlossene Handelsplätze lassen sich nicht mehr über zwischengespeicherte Angebote nutzen.",
+	"update.08_10_26.halloween.numeric_names": "Namen neuer Charaktere und neue Namen bei Umbenennungen dürfen nicht nur aus Ziffern bestehen.",
+	"update.08_10_26.halloween.boss_drops": "Beute von Koop-Bossen auf Heimatservern angepasst.",
+	"update.08_10_26.halloween.support_63": "Hole Anhänge ab, bevor du empfangene Nachrichten löschst.",
+	"update.08_10_26.halloween.support_58": "Läutern kann im PvE keine nicht verbündeten Spieler mehr anvisieren, auch nicht mit Cupid.",
+	"update.08_10_26.halloween.support_57": "Läutern erhält Schurkenstapel und Brennen auf Monstern. Schurkenstapel fügen bis zu 800 Schaden hinzu.",
+	"update.08_10_26.halloween.support_56": "Bei abgelehnter Post behältst du den Gegenstand und das Porto.",
+	"update.08_10_26.halloween.support_55": "Nicht abgeholte Postanhänge sind auf 20 vom selben Absenderkonto und insgesamt 200 pro Empfängercharakter begrenzt. Vorhandene Nachrichten und Anhänge bleiben erhalten. Automatische Belohnungspost zählt nicht zu diesen Grenzen."
 }

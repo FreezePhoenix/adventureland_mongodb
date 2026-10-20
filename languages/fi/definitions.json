@@ -1287,7 +1287,7 @@
 	"skill.power.name": "Mahti",
 	"skill.pure_eval.explanation": "[Edistynyt] Määrittää koodikatkelman suoritettavaksi suoraan pelissä CODE-ominaisuuden sijaan. (Ei sama kuin tekstikomento /eval, joka suorittaa koodia CODE-iframessa)",
 	"skill.pure_eval.name": "Suora suoritus",
-	"skill.purify.explanation": "Puhdistaa kohteen aiheuttaen 2000 puhdasta vahinkoa ja poistaa kaikki vahvistukset ja heikennykset aiheuttaen kustakin 400 lisävahinkoa. Saat Puhdistaja-vahvistuksen, jos kohde kukistuu!",
+	"skill.purify.explanation": "Aiheuttaa 2000 puhdasta vahinkoa ja lisäksi 400 jokaista soveltuvaa, ei-pysyvää vahvistusta tai heikennystä kohti. Vaikutukset poistetaan, paitsi konnan pinot ja hirviöiden palaminen, jotka säilyvät ja lisäävät yhä vahinkoa. Konnan pinot lisäävät 400 ja lisäksi 1 jokaista pinoa kohti, yhteensä enintään 800 vahinkoa. Synnynnäinen myrkky ja pysyvät tilat säilyvät ennallaan. Kohteen voittaminen antaa Puhdistaja-vahvistuksen.",
 	"skill.purify.name": "Puhdistus",
 	"skill.quickpunch.explanation": "Hyödynnä ketteryyttäsi ja lyö vastustajaa nopeasti tuhoisien hyökkäystesi välissä!",
 	"skill.quickpunch.name": "Pikalyönti",

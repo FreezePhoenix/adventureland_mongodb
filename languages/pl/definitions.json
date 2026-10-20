@@ -1287,7 +1287,7 @@
 	"skill.power.name": "Moc",
 	"skill.pure_eval.explanation": "[Zaawansowane] Przypisuje fragment kodu do wykonania bezpośrednio w grze, zamiast przez CODE. (Nie mylić z poleceniem tekstowym /eval, które wykonuje kod w iframe CODE)",
 	"skill.pure_eval.name": "Bezpośrednie wykonanie",
-	"skill.purify.explanation": "Oczyszcza cel, zadając 2000 czystych obrażeń. Usuwa wszystkie wzmocnienia i osłabienia, zadając dodatkowe 400 obrażeń za każde. Jeśli cel zostanie pokonany, otrzymujesz wzmocnienie Oczyściciel!",
+	"skill.purify.explanation": "Zadaje 2000 czystych obrażeń oraz 400 za każdy kwalifikujący się nietrwały efekt pozytywny lub negatywny. Efekty te są usuwane, z wyjątkiem kumulacji łotra i podpalenia potworów, które pozostają i nadal dodają obrażenia. Kumulacje łotra dodają 400 oraz 1 za każdą kumulację, łącznie do 800 obrażeń. Wrodzona trucizna i trwałe stany nie zmieniają się. Pokonanie celu daje efekt Oczyściciel.",
 	"skill.purify.name": "Oczyszczenie",
 	"skill.quickpunch.explanation": "Wykorzystaj zwinność, by szybko uderzyć przeciwnika pięścią między potężnymi atakami!",
 	"skill.quickpunch.name": "Szybki cios",

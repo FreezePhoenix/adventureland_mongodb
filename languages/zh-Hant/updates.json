@@ -892,7 +892,7 @@
 	"update.08_10_26.halloween.support_52": "MAINFRAME現在支援透過send_updates更新可見實體。",
 	"update.08_10_26.halloween.support_53": "延遲的登入回應不再讓角色選擇介面遮住遊戲。",
 	"update.08_10_26.halloween.support_54": "重新連線不再跳到尚未完成的移動目的地。",
-	"update.08_10_26.halloween.support_65": "CODE中的兌換現在會完成或回報逾時。",
+	"update.08_10_26.halloween.support_65": "即使另一場兌換已經開始，CODE中的exchange()現在也能正確完成。",
 	"update.08_10_26.halloween.support_66": "洞穴商店的選擇現在無需購買也會顯示為已完成。",
 	"update.08_10_26.halloween.support_67": "Glitch兌換抽中兩個時，現在會發放兩個Glitch。",
 	"update.08_10_26.halloween.support_68": "已鎖定或封印的物品現在無法拆解。",
@@ -909,11 +909,17 @@
 	"update.08_10_26.halloween.support_79": "equip_batch 中的空項目現在會傳回錯誤。",
 	"update.08_10_26.halloween.item_bonuses": "物品提示現在會顯示地圖和職業加成的數值。",
 	"update.08_10_26.halloween.mp_reduction_cap": "魔力消耗減免現在最高為80%。",
-	"update.08_10_26.halloween.support_80": "怪物ID不再與純數字角色名稱重複。",
 	"update.08_10_26.halloween.support_81": "修正了同一帳號同時登入多個角色時互相拒絕登入的問題。",
 	"update.08_10_26.halloween.support_82": "town()和smart_move現在會等待回城傳送完成。",
 	"update.08_10_26.halloween.support_84": "銷毀請求不再銷毀被移入同一背包欄位的其他物品。",
 	"update.08_10_26.halloween.support_85": "Hub 銀行介面不再洩露物品的隱藏資料。",
 	"update.08_10_26.halloween.support_86": "精確掉落機率現在以更簡單的分數顯示，例如 1/1M。",
-	"update.08_10_26.halloween.support_87": "無法再使用快取中的商品資訊，透過已關閉的商人欄位進行交易。"
+	"update.08_10_26.halloween.support_87": "無法再使用快取中的商品資訊，透過已關閉的商人欄位進行交易。",
+	"update.08_10_26.halloween.numeric_names": "建立角色或更改名字時，不能使用全為數字的名字。",
+	"update.08_10_26.halloween.boss_drops": "調整了主伺服器上合作首領的掉落。",
+	"update.08_10_26.halloween.support_63": "刪除收到的郵件前，請先領取附件。",
+	"update.08_10_26.halloween.support_58": "在PvE中，淨化不再能以非友方玩家為目標，即使使用Cupid也不行。",
+	"update.08_10_26.halloween.support_57": "淨化會保留盜賊疊層與怪物身上的燃燒。盜賊疊層最多增加800點傷害。",
+	"update.08_10_26.halloween.support_56": "郵件寄送遭拒時，物品與郵資都會保留。",
+	"update.08_10_26.halloween.support_55": "未領取郵件附件的上限為每個寄件帳號20份、每個收件角色總共200份。既有郵件與附件都會保留。 自動獎勵郵件不計入這些限額。"
 }

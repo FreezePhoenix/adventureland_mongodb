@@ -892,7 +892,7 @@
 	"update.08_10_26.halloween.support_52": "MAINFRAME accepterar nu send_updates för att uppdatera synliga entiteter.",
 	"update.08_10_26.halloween.support_53": "Ett försenat inloggningssvar täcker inte längre spelet med karaktärsväljaren.",
 	"update.08_10_26.halloween.support_54": "Återanslutning hoppar inte längre till målet för en oavslutad förflyttning.",
-	"update.08_10_26.halloween.support_65": "Byten i CODE slutförs nu eller meddelar att väntetiden har gått ut.",
+	"update.08_10_26.halloween.support_65": "CODE exchange() slutförs nu korrekt även om ett annat byte börjar.",
 	"update.08_10_26.halloween.support_66": "Val i grottans butik visas nu som slutförda även utan köp.",
 	"update.08_10_26.halloween.support_67": "Glitch-byten ger nu båda Glitch när två lottas fram.",
 	"update.08_10_26.halloween.support_68": "Låsta och förseglade föremål kan inte längre plockas isär.",
@@ -909,11 +909,17 @@
 	"update.08_10_26.halloween.support_79": "Tomma poster i equip_batch returnerar nu ett fel.",
 	"update.08_10_26.halloween.item_bonuses": "Föremålens verktygstips visar nu siffervärden för kart- och klassbonusar.",
 	"update.08_10_26.halloween.mp_reduction_cap": "Minskad manakostnad är nu begränsad till 80 %.",
-	"update.08_10_26.halloween.support_80": "Monster-ID:n överlappar inte längre med numeriska karaktärsnamn.",
 	"update.08_10_26.halloween.support_81": "Åtgärdat att samtidiga inloggningar på samma konto avvisade varandra.",
 	"update.08_10_26.halloween.support_82": "town() och smart_move väntar nu tills teleporteringen till staden är klar.",
 	"update.08_10_26.halloween.support_84": "Förstöringsförfrågningar förstör inte längre ett annat föremål som flyttats till samma plats i väskan.",
 	"update.08_10_26.halloween.support_85": "Bankvyn i Hub visar inte längre dolda föremålsdata.",
 	"update.08_10_26.halloween.support_86": "Exakta droppchanser visas nu med enklare bråk, som 1/1M.",
-	"update.08_10_26.halloween.support_87": "Stängda handelsplatser kan inte längre användas via cachade erbjudanden."
+	"update.08_10_26.halloween.support_87": "Stängda handelsplatser kan inte längre användas via cachade erbjudanden.",
+	"update.08_10_26.halloween.numeric_names": "Namn på nya karaktärer och nya namn vid namnbyte får inte bestå enbart av siffror.",
+	"update.08_10_26.halloween.boss_drops": "Bytet från samarbetsbossar på hemservrar har justerats.",
+	"update.08_10_26.halloween.support_63": "Hämta bilagor innan du raderar mottagna brev.",
+	"update.08_10_26.halloween.support_58": "Rena kan inte längre riktas mot icke allierade spelare i PvE, inte ens med Cupid.",
+	"update.08_10_26.halloween.support_57": "Rena behåller skurkens staplar och brännskada på monster. Staplarna ger upp till 800 extra skada.",
+	"update.08_10_26.halloween.support_56": "Om ett brev nekas behåller avsändaren föremålet och portot.",
+	"update.08_10_26.halloween.support_55": "Ohämtade postbilagor begränsas till 20 från samma avsändarkonto och 200 per mottagarkaraktär. Befintliga brev och bilagor behålls. Automatisk belöningspost räknas inte in i dessa gränser."
 }

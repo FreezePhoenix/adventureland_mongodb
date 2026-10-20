@@ -1287,7 +1287,7 @@
 	"skill.power.name": "Hatalom",
 	"skill.pure_eval.explanation": "[Haladó] Egy kódrészlet közvetlenül a játékban történő futtatását rendeli hozzá, a CODE használata helyett. (Nem azonos az /eval szöveges paranccsal, amely a CODE iframe-jében futtat.)",
 	"skill.pure_eval.name": "Közvetlen futtatás",
-	"skill.purify.explanation": "2000 tiszta sebzéssel megtisztítja a célpontot. Eltávolít minden erősítést és gyengítést, egyenként további 400 sebzést okozva. Ha a célpont elesik, megkapod a Megtisztító erősítést!",
+	"skill.purify.explanation": "2000 tiszta sebzést okoz, és további 400-at minden eltávolítható, nem állandó pozitív vagy negatív hatásért. Ezeket eltávolítja, kivéve az orgyilkos halmozódó hatását és a szörnyek égését, amelyek megmaradnak és növelik a sebzést. Az orgyilkos halmozódó hatása 400-at és rétegenként további 1-et ad hozzá, összesen legfeljebb 800 sebzést. A veleszületett méreg és az állandó állapotok változatlanok. A célpont legyőzése a Megtisztító hatást adja.",
 	"skill.purify.name": "Megtisztítás",
 	"skill.quickpunch.explanation": "Fürgeségeddel gyorsan megütöd az ellenfeledet a pusztító támadásaid között!",
 	"skill.quickpunch.name": "Gyors ütés",

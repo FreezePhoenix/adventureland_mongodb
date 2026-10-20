@@ -1287,7 +1287,7 @@
 	"skill.power.name": "Puissance",
 	"skill.pure_eval.explanation": "[Avancé] Associe un extrait de code à exécuter directement dans le jeu, sans passer par CODE. (À ne pas confondre avec la commande texte /eval, qui s’exécute dans l’iframe CODE.)",
 	"skill.pure_eval.name": "Exécution directe",
-	"skill.purify.explanation": "Purifie la cible en infligeant 2 000 dégâts purs. Retire tous ses effets bénéfiques et néfastes, avec 400 dégâts supplémentaires par effet. Si la cible est vaincue, tu reçois l’effet Purification !",
+	"skill.purify.explanation": "Inflige 2000 dégâts purs, plus 400 par effet positif ou négatif non persistant admissible. Ces effets sont retirés, sauf les cumuls de voleur et la brûlure sur les monstres, qui restent et ajoutent toujours des dégâts. Les cumuls de voleur ajoutent 400 plus 1 par cumul, jusqu’à 800 dégâts au total. Le poison inné et les états persistants restent inchangés. Vaincre la cible accorde l'effet Purification.",
 	"skill.purify.name": "Purification",
 	"skill.quickpunch.explanation": "Profite de ton agilité pour glisser un coup de poing rapide entre tes attaques dévastatrices !",
 	"skill.quickpunch.name": "Coup de poing éclair",

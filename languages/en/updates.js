@@ -1,5 +1,19 @@
 // Release highlights. Dates, item/character names and CODE identifiers stay unchanged.
 module.exports = {
+	// Improvement listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_55": "Mail attachments are limited to 20 uncollected from the same sending account and 200 per recipient character. Existing mail and attachments stay. Automatic reward mail does not count toward these limits.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_56": "Rejected mail keeps the item and postage.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_57": "Purify preserves Rogue stacks and burning on monsters. Rogue stacks add up to 800 damage.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_58": "Purify can no longer target nonfriendly players in PvE, even with Cupid.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.support_63": "Collect attachments before deleting received mail.",
+	// Improvement listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.boss_drops": "Adjusted co-op boss drops on home servers.",
+	// Improvement listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.numeric_names": "New character names and renames cannot be numbers only.",
 	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
 	"update.08_10_26.halloween.support_87": "Closed merchant slots can no longer be traded through cached listings.",
 	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
@@ -12,8 +26,6 @@ module.exports = {
 	"update.08_10_26.halloween.support_82": "town() and smart_move now wait for town teleports to finish.",
 	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
 	"update.08_10_26.halloween.support_81": "Fixed simultaneous logins on the same account rejecting each other.",
-	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
-	"update.08_10_26.halloween.support_80": "Monster IDs no longer overlap with numeric character names.",
 	// Improvement listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
 	"update.08_10_26.halloween.item_bonuses": "Item tooltips now show the numbers of map and class bonuses.",
 	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
@@ -47,7 +59,7 @@ module.exports = {
 	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
 	"update.08_10_26.halloween.support_66": "Cave shop choices now show as complete without a purchase.",
 	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
-	"update.08_10_26.halloween.support_65": "Exchanges now finish or report a timeout in CODE.",
+	"update.08_10_26.halloween.support_65": "CODE exchange() now completes correctly even if another exchange starts.",
 	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
 	"update.08_10_26.halloween.support_40": "Monsters keep their target when splash damage defeats another character.",
 	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.

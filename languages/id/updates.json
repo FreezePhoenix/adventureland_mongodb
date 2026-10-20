@@ -892,7 +892,7 @@
 	"update.08_10_26.halloween.support_52": "MAINFRAME kini menerima send_updates untuk memperbarui entitas yang terlihat.",
 	"update.08_10_26.halloween.support_53": "Respons login yang terlambat tidak lagi menutupi permainan dengan pemilih karakter.",
 	"update.08_10_26.halloween.support_54": "Menghubungkan kembali tidak lagi melompat ke tujuan gerakan yang belum selesai.",
-	"update.08_10_26.halloween.support_65": "Penukaran di CODE kini selesai atau melaporkan bahwa waktu tunggu habis.",
+	"update.08_10_26.halloween.support_65": "exchange() di CODE kini selesai dengan benar meskipun penukaran lain dimulai.",
 	"update.08_10_26.halloween.support_66": "Pilihan di toko gua kini ditampilkan selesai meski tanpa membeli.",
 	"update.08_10_26.halloween.support_67": "Penukaran Glitch kini memberikan kedua Glitch jika hasil undian adalah dua.",
 	"update.08_10_26.halloween.support_68": "Item yang terkunci dan tersegel tidak dapat lagi dibongkar.",
@@ -909,11 +909,17 @@
 	"update.08_10_26.halloween.support_79": "Entri kosong pada equip_batch kini mengembalikan galat.",
 	"update.08_10_26.halloween.item_bonuses": "Tooltip item sekarang menampilkan angka bonus map dan class.",
 	"update.08_10_26.halloween.mp_reduction_cap": "Pengurangan Biaya Mana sekarang dibatasi hingga 80%.",
-	"update.08_10_26.halloween.support_80": "ID monster tidak lagi bertabrakan dengan nama karakter berupa angka.",
 	"update.08_10_26.halloween.support_81": "Memperbaiki login bersamaan pada akun yang sama yang saling menolak.",
 	"update.08_10_26.halloween.support_82": "town() dan smart_move kini menunggu sampai teleportasi ke kota selesai.",
 	"update.08_10_26.halloween.support_84": "Permintaan penghancuran tidak lagi menghancurkan item lain yang dipindahkan ke slot tas yang sama.",
 	"update.08_10_26.halloween.support_85": "Tampilan bank di Hub tidak lagi mengungkap data item tersembunyi.",
 	"update.08_10_26.halloween.support_86": "Peluang drop yang tepat kini memakai pecahan yang lebih sederhana, seperti 1/1M.",
-	"update.08_10_26.halloween.support_87": "Slot pedagang yang ditutup tidak lagi bisa dipakai berdagang melalui penawaran dalam cache."
+	"update.08_10_26.halloween.support_87": "Slot pedagang yang ditutup tidak lagi bisa dipakai berdagang melalui penawaran dalam cache.",
+	"update.08_10_26.halloween.numeric_names": "Nama karakter baru dan nama pengganti tidak boleh hanya berisi angka.",
+	"update.08_10_26.halloween.boss_drops": "Drop bos co-op di server asal telah disesuaikan.",
+	"update.08_10_26.halloween.support_63": "Ambil lampiran sebelum menghapus surat yang diterima.",
+	"update.08_10_26.halloween.support_58": "Murnikan tidak lagi dapat menargetkan pemain yang bukan sekutu dalam PvE, bahkan dengan Cupid.",
+	"update.08_10_26.halloween.support_57": "Murnikan mempertahankan tumpukan Penyelinap dan efek terbakar pada monster. Tumpukan menambah hingga 800 kerusakan.",
+	"update.08_10_26.halloween.support_56": "Jika surat ditolak, item dan ongkos kirim tetap dimiliki pengirim.",
+	"update.08_10_26.halloween.support_55": "Lampiran surat yang belum diambil dibatasi hingga 20 dari akun pengirim yang sama dan total 200 per karakter penerima. Surat dan lampiran yang sudah ada tetap tersimpan. Surat hadiah otomatis tidak dihitung dalam batas ini."
 }

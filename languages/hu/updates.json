@@ -892,7 +892,7 @@
 	"update.08_10_26.halloween.support_52": "A MAINFRAME már fogadja a send_updates kérést a látható entitások frissítéséhez.",
 	"update.08_10_26.halloween.support_53": "Egy késői bejelentkezési válasz már nem takarja el a játékot a karakterválasztóval.",
 	"update.08_10_26.halloween.support_54": "Az újracsatlakozás már nem ugrat a befejezetlen mozgás céljához.",
-	"update.08_10_26.halloween.support_65": "A CODE-cserék most már befejeződnek, vagy jelzik a várakozási idő lejártát.",
+	"update.08_10_26.halloween.support_65": "A CODE exchange() most már akkor is helyesen befejeződik, ha másik csere indul.",
 	"update.08_10_26.halloween.support_66": "A barlangi boltban hozott döntések most már vásárlás nélkül is teljesítettként jelennek meg.",
 	"update.08_10_26.halloween.support_67": "A Glitch-cserék most már mindkét Glitch tárgyat odaadják, ha kettőt sorsolnak ki.",
 	"update.08_10_26.halloween.support_68": "A zárolt és lepecsételt tárgyakat többé nem lehet szétszerelni.",
@@ -909,11 +909,17 @@
 	"update.08_10_26.halloween.support_79": "Az equip_batch üres elemei mostantól hibát adnak vissza.",
 	"update.08_10_26.halloween.item_bonuses": "A tárgyak leírása most már számszerűen mutatja a térkép- és kasztbónuszokat.",
 	"update.08_10_26.halloween.mp_reduction_cap": "A Manaköltség-csökkentés mostantól legfeljebb 80% lehet.",
-	"update.08_10_26.halloween.support_80": "A szörnyek azonosítói már nem egyezhetnek meg a számokból álló karakternevekkel.",
 	"update.08_10_26.halloween.support_81": "Javítottuk azt a hibát, amely miatt az azonos fiók egyidejű bejelentkezései elutasították egymást.",
 	"update.08_10_26.halloween.support_82": "A town() és a smart_move most már megvárja a városba teleportálás befejezését.",
 	"update.08_10_26.halloween.support_84": "A megsemmisítési kérések már nem semmisítenek meg egy másik tárgyat, amelyet a táska ugyanazon helyére mozgattak.",
 	"update.08_10_26.halloween.support_85": "A Hub banknézete már nem fedi fel a tárgyak rejtett adatait.",
 	"update.08_10_26.halloween.support_86": "A pontos zsákmányesélyek most egyszerűbb törtekkel jelennek meg, például 1/1M.",
-	"update.08_10_26.halloween.support_87": "A lezárt kereskedői helyeken már nem lehet gyorsítótárazott ajánlatokkal kereskedni."
+	"update.08_10_26.halloween.support_87": "A lezárt kereskedői helyeken már nem lehet gyorsítótárazott ajánlatokkal kereskedni.",
+	"update.08_10_26.halloween.numeric_names": "Az új karakterek neve és az átnevezéskor választott név nem állhat csak számjegyekből.",
+	"update.08_10_26.halloween.boss_drops": "Módosult a kooperatív főellenfelek zsákmánya az otthoni szervereken.",
+	"update.08_10_26.halloween.support_63": "Vedd át a mellékleteket a kapott levelek törlése előtt.",
+	"update.08_10_26.halloween.support_58": "A Megtisztítás PvE-ben már nem célozhat nem baráti játékosokat, még Cupiddal sem.",
+	"update.08_10_26.halloween.support_57": "A Megtisztítás megtartja az orgyilkos halmozódó hatását és a szörnyek égését. A rétegek legfeljebb 800 sebzést adnak hozzá.",
+	"update.08_10_26.halloween.support_56": "Elutasított levélnél a tárgy és a postaköltség a küldőnél marad.",
+	"update.08_10_26.halloween.support_55": "Legfeljebb 20 át nem vett levélmelléklet lehet ugyanattól a küldő fióktól, és összesen 200 fogadó karakterenként. A meglévő levelek és mellékletek megmaradnak. Az automatikus jutalomlevelek nem számítanak bele ezekbe a korlátokba."
 }

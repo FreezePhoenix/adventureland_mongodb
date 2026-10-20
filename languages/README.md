@@ -118,11 +118,13 @@ Tauri reads the selected Steam game language once off the UI thread, with a 750 
 
 ## Catalog status
 
+October 21: mail attachment limits, atomic delivery, attachment ownership, bounded Purify stack damage, exchange completion, numeric-only name restrictions and co-op boss drop notes are translated in all 32 languages. Obsolete monster-ID and exchange-timeout wording was removed.
+
 October 20 support sweep: 13 new or revised phrases covering numeric monster IDs, simultaneous logins, town arrival, Strength, safe destruction, bank privacy, drop fractions and unavailable trade slots are translated and proofread in all 32 languages. CODE identifiers, probabilities and existing markup are preserved.
 
 October 20 inventory and movement fixes: five release notes and four CODE reference paragraphs are translated and proofread in all 32 languages. Unsupported upgrade levels, route recalculation, empty inventory slots, message limits and equipment batch errors were checked. CODE identifiers, Promise and .catch() are preserved.
 
-October 20 reward and CODE fixes: ten release notes and two CODE reference paragraphs are translated and proofread in all 32 languages. Glitch quantities, protected items, Cave completion, glow changes, roaming NPC positions, and exchange timeouts were checked. CODE identifiers and the 10/30-second limits are preserved.
+October 20 reward and CODE fixes: ten release notes and two CODE reference paragraphs are translated and proofread in all 32 languages. Glitch quantities, protected items, Cave completion, glow changes, roaming NPC positions, and the original exchange wording were checked. October 21 replaces the timeout wording with server completion replies.
 
 October 19 support fixes: 14 retained release notes, the changed-item sale error and two CODE reference paragraphs are translated and proofread in all 32 languages. Natural poison, mail ownership, numeric character names, MAINFRAME's two-request limit and the unchanged CODE identifiers were checked. The reverted dead-character potion restriction was removed from all 32 release catalogs on October 20.
 

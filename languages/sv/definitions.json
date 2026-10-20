@@ -1287,7 +1287,7 @@
 	"skill.power.name": "Kraft",
 	"skill.pure_eval.explanation": "[Avancerat] Kopplar en kodsnutt till att köras direkt i spelet, i stället för i CODE. (Ska inte förväxlas med textkommandot /eval, som kör kod i CODE-ramen)",
 	"skill.pure_eval.name": "Direktkörning",
-	"skill.purify.explanation": "Renar målet med 2000 ren skada och tar bort alla förstärkningar och försvagningar. Varje borttagen effekt gör ytterligare 400 skada. Om målet besegras får du förstärkningen Renare!",
+	"skill.purify.explanation": "Ger 2000 ren skada, plus 400 för varje tillämplig, icke beständig positiv eller negativ effekt. Effekterna tas bort, förutom skurkens staplar och brännskada på monster, som finns kvar och fortfarande ökar skadan. Skurkens staplar ger 400 plus 1 per stapel, upp till 800 extra skada totalt. Medfött gift och beständiga tillstånd påverkas inte. Om målet besegras får du effekten Renare.",
 	"skill.purify.name": "Rena",
 	"skill.quickpunch.explanation": "Använd din smidighet för att snabbt slå din motståndare mellan dina förödande attacker!",
 	"skill.quickpunch.name": "Snabbt slag",

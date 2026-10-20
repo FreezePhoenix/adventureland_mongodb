@@ -892,7 +892,7 @@
 	"update.08_10_26.halloween.support_52": "MAINFRAME kini menerima send_updates untuk menyegarkan entiti yang kelihatan.",
 	"update.08_10_26.halloween.support_53": "Respons log masuk yang lewat tidak lagi menutup permainan dengan pemilih watak.",
 	"update.08_10_26.halloween.support_54": "Menyambung semula tidak lagi melompat ke destinasi pergerakan yang belum selesai.",
-	"update.08_10_26.halloween.support_65": "Pertukaran dalam CODE kini selesai atau melaporkan tamat masa menunggu.",
+	"update.08_10_26.halloween.support_65": "exchange() dalam CODE kini selesai dengan betul walaupun pertukaran lain bermula.",
 	"update.08_10_26.halloween.support_66": "Pilihan di kedai gua kini ditunjukkan sebagai selesai walaupun tanpa pembelian.",
 	"update.08_10_26.halloween.support_67": "Pertukaran Glitch kini memberikan kedua-dua Glitch apabila dua diperoleh dalam cabutan.",
 	"update.08_10_26.halloween.support_68": "Item yang dikunci dan dimeterai tidak lagi boleh dileraikan.",
@@ -909,11 +909,17 @@
 	"update.08_10_26.halloween.support_79": "Entri kosong dalam equip_batch kini mengembalikan ralat.",
 	"update.08_10_26.halloween.item_bonuses": "Petua alat item kini menunjukkan nilai bonus peta dan kelas.",
 	"update.08_10_26.halloween.mp_reduction_cap": "Pengurangan Kos Mana kini dihadkan kepada 80%.",
-	"update.08_10_26.halloween.support_80": "ID raksasa tidak lagi bertindih dengan nama watak yang terdiri daripada nombor.",
 	"update.08_10_26.halloween.support_81": "Masalah log masuk serentak pada akaun yang sama saling menolak telah dibetulkan.",
 	"update.08_10_26.halloween.support_82": "town() dan smart_move kini menunggu sehingga teleportasi ke bandar selesai.",
 	"update.08_10_26.halloween.support_84": "Permintaan pemusnahan tidak lagi memusnahkan item lain yang dipindahkan ke slot beg yang sama.",
 	"update.08_10_26.halloween.support_85": "Paparan bank dalam Hub tidak lagi mendedahkan data item tersembunyi.",
 	"update.08_10_26.halloween.support_86": "Kebarangkalian drop yang tepat kini menggunakan pecahan lebih ringkas, seperti 1/1M.",
-	"update.08_10_26.halloween.support_87": "Slot pedagang yang ditutup tidak lagi boleh digunakan untuk berdagang melalui tawaran dalam cache."
+	"update.08_10_26.halloween.support_87": "Slot pedagang yang ditutup tidak lagi boleh digunakan untuk berdagang melalui tawaran dalam cache.",
+	"update.08_10_26.halloween.numeric_names": "Nama watak baharu dan nama yang ditukar tidak boleh terdiri daripada nombor sahaja.",
+	"update.08_10_26.halloween.boss_drops": "Ganjaran bos koperatif di pelayan asal telah diselaraskan.",
+	"update.08_10_26.halloween.support_63": "Ambil lampiran sebelum memadamkan surat yang diterima.",
+	"update.08_10_26.halloween.support_58": "Sucikan tidak lagi boleh menyasarkan pemain bukan sekutu dalam PvE, walaupun dengan Cupid.",
+	"update.08_10_26.halloween.support_57": "Sucikan mengekalkan tindanan penyelinap dan kesan terbakar pada raksasa. Tindanan menambah sehingga 800 kerosakan.",
+	"update.08_10_26.halloween.support_56": "Jika surat ditolak, item dan bayaran pos kekal pada pengirim.",
+	"update.08_10_26.halloween.support_55": "Lampiran surat yang belum diambil dihadkan kepada 20 daripada akaun pengirim yang sama dan jumlah 200 bagi setiap watak penerima. Surat dan lampiran sedia ada dikekalkan. Surat ganjaran automatik tidak dikira dalam had ini."
 }

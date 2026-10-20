@@ -1287,7 +1287,7 @@
 	"skill.power.name": "Kuasa",
 	"skill.pure_eval.explanation": "[Lanjutan] Memetakan petikan kod untuk dijalankan terus dalam permainan, tanpa menggunakan CODE. (Jangan keliru dengan perintah teks /eval yang melaksanakan kod dalam iframe CODE)",
 	"skill.pure_eval.name": "Laksana Terus",
-	"skill.purify.explanation": "Mengenakan 2000 kerosakan tulen untuk menyucikan sasaran, membuang semua kesan penguat dan pelemah dengan tambahan 400 kerosakan bagi setiap satu, serta memberi anda kesan penguat Penyuci jika sasaran ditewaskan!",
+	"skill.purify.explanation": "Mengenakan 2000 kerosakan tulen, ditambah 400 bagi setiap kesan positif atau negatif tidak kekal yang layak. Kesan ini dibuang, kecuali tindanan penyelinap dan kesan terbakar pada raksasa, yang kekal dan masih menambah kerosakan. Tindanan penyelinap menambah 400 serta 1 bagi setiap tindanan, sehingga jumlah 800 kerosakan. Racun semula jadi dan keadaan kekal tidak terjejas. Menewaskan sasaran memberikan kesan Penyuci.",
 	"skill.purify.name": "Sucikan",
 	"skill.quickpunch.explanation": "Gunakan kelincahan anda untuk menumbuk lawan dengan pantas di celah serangan dahsyat anda!",
 	"skill.quickpunch.name": "Tumbukan Pantas",

@@ -7630,7 +7630,8 @@ function show_delete_mail(id) {
 function render_mail(id) {
 	var mail = window.mail[id];
 	var html = "<div style='font-size: 24px'>";
-	html += "<div class='clickable' style='color: #DB090A; float: right' onclick='show_delete_mail(\"" + id + "\");'>" + phrase.html("interface.mail.delete") + "</div>";
+	if (!(mail.item && mail.can_take && mail.taken !== true))
+		html += "<div class='clickable' style='color: #DB090A; float: right' onclick='show_delete_mail(\"" + id + "\");'>" + phrase.html("interface.mail.delete") + "</div>";
 	html += "<div class='mailsubject'><span style='color: gray'>" + phrase.html("interface.mail.from") + "</span> " + mail.fro + "</div>";
 	html += "<div class='mailsubject'><span style='color: gray'>" + phrase.html("interface.mail.to") + "</span> " + mail.to + "</div>";
 	html += "<div class='mailsubject'><span style='color: gray'>" + phrase.html("interface.mail.subject") + "</span> " + html_escape(phrase.message(mail.subject_message || mail.subject)) + "</div>";

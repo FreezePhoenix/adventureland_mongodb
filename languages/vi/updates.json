@@ -892,7 +892,7 @@
 	"update.08_10_26.halloween.support_52": "MAINFRAME giờ chấp nhận send_updates để làm mới các thực thể nhìn thấy được.",
 	"update.08_10_26.halloween.support_53": "Phản hồi đăng nhập đến muộn không còn che trò chơi bằng màn hình chọn nhân vật.",
 	"update.08_10_26.halloween.support_54": "Kết nối lại không còn nhảy tới đích của bước di chuyển chưa hoàn tất.",
-	"update.08_10_26.halloween.support_65": "Các lần đổi trong CODE giờ sẽ hoàn tất hoặc báo hết thời gian chờ.",
+	"update.08_10_26.halloween.support_65": "exchange() trong CODE giờ hoàn tất chính xác kể cả khi lượt đổi khác bắt đầu.",
 	"update.08_10_26.halloween.support_66": "Các lựa chọn ở cửa hàng trong hang giờ hiển thị hoàn tất ngay cả khi không mua gì.",
 	"update.08_10_26.halloween.support_67": "Đổi Glitch giờ trao đủ hai Glitch khi kết quả là hai vật phẩm.",
 	"update.08_10_26.halloween.support_68": "Không còn có thể tháo dỡ vật phẩm đã khóa hoặc niêm phong.",
@@ -909,11 +909,17 @@
 	"update.08_10_26.halloween.support_79": "Các phần tử trống trong equip_batch giờ trả về lỗi.",
 	"update.08_10_26.halloween.item_bonuses": "Chú giải vật phẩm giờ hiển thị giá trị cụ thể của các chỉ số cộng thêm theo bản đồ và lớp nhân vật.",
 	"update.08_10_26.halloween.mp_reduction_cap": "Giảm mana tiêu hao giờ được giới hạn ở mức 80%.",
-	"update.08_10_26.halloween.support_80": "ID quái vật không còn trùng với tên nhân vật chỉ gồm chữ số.",
 	"update.08_10_26.halloween.support_81": "Đã sửa lỗi các lần đăng nhập đồng thời trên cùng tài khoản từ chối lẫn nhau.",
 	"update.08_10_26.halloween.support_82": "town() và smart_move giờ chờ dịch chuyển về thị trấn hoàn tất.",
 	"update.08_10_26.halloween.support_84": "Yêu cầu phá hủy không còn phá hủy vật phẩm khác được chuyển vào cùng ô túi.",
 	"update.08_10_26.halloween.support_85": "Giao diện ngân hàng trong Hub không còn để lộ dữ liệu ẩn của vật phẩm.",
 	"update.08_10_26.halloween.support_86": "Tỉ lệ rơi chính xác nay được hiển thị bằng phân số đơn giản hơn, như 1/1M.",
-	"update.08_10_26.halloween.support_87": "Không thể giao dịch qua ô bán hàng đã đóng bằng danh sách lưu trong bộ nhớ đệm nữa."
+	"update.08_10_26.halloween.support_87": "Không thể giao dịch qua ô bán hàng đã đóng bằng danh sách lưu trong bộ nhớ đệm nữa.",
+	"update.08_10_26.halloween.numeric_names": "Tên nhân vật mới và tên được chọn khi đổi tên không được chỉ gồm chữ số.",
+	"update.08_10_26.halloween.boss_drops": "Đã điều chỉnh vật phẩm rơi từ boss hợp tác trên máy chủ nhà.",
+	"update.08_10_26.halloween.support_63": "Hãy nhận vật phẩm đính kèm trước khi xóa thư đã nhận.",
+	"update.08_10_26.halloween.support_58": "Thanh tẩy không còn có thể nhắm vào người chơi không cùng phe trong PvE, kể cả khi dùng Cupid.",
+	"update.08_10_26.halloween.support_57": "Thanh tẩy giữ lại cộng dồn của đạo tặc và thiêu đốt trên quái vật. Cộng dồn thêm tối đa 800 sát thương.",
+	"update.08_10_26.halloween.support_56": "Nếu thư bị từ chối, người gửi giữ lại vật phẩm và phí gửi.",
+	"update.08_10_26.halloween.support_55": "Thư được giới hạn ở 20 tệp đính kèm chưa nhận từ cùng một tài khoản gửi và tổng cộng 200 tệp cho mỗi nhân vật nhận. Thư và vật phẩm đính kèm hiện có vẫn được giữ nguyên. Thư phần thưởng tự động không được tính vào các giới hạn này."
 }

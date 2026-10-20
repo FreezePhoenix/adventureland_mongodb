@@ -63,9 +63,28 @@ test("creation, rename and name quotes reject prototype keys in every casing bef
 	assert.equal(f.writes(), 0);
 });
 
+test("numeric-only creation, rename and name quotes fail before writes", async () => {
+	const f = fixture();
+	for (const name of ["0", "1234", "0001", "999999999999"]) {
+		for (const result of [
+			await f.c.create_character_api({ ...f.args, name }),
+			await f.c.rename_character_api({ ...f.args, nname: name }),
+			await f.c.quote_name_api({ ...f.args, nname: name }),
+		])
+			assert.equal(result.reason, "invalid_name", name);
+	}
+	assert.equal(f.writes(), 0);
+	const existing = fixture("1234");
+	assert.equal(existing.c.is_safe_character_name("1234"), true, "existing names remain usable at login");
+	assert.equal(
+		(await existing.c.rename_character_api({ ...existing.args, nname: "Hero1234" })).reason,
+		"fixture_transaction",
+	);
+});
+
 test("name validation preserves ordinary names and the existing length and alphabet rules", () => {
 	const { c } = fixture();
-	for (const name of ["Kaan", "Safe_Name", "Hero2026", "_hero_", "abcdefghijkl"]) {
+	for (const name of ["Kaan", "Safe_Name", "Hero2026", "_hero_", "abcdefghijkl", "123Hero", "123_4"]) {
 		assert.equal(c.is_name_allowed(name), true, name);
 		assert.equal(c.is_name_xallowed(name), true, name);
 	}

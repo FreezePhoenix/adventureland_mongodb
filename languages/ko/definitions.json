@@ -1287,7 +1287,7 @@
 	"skill.power.name": "권능",
 	"skill.pure_eval.explanation": "[고급] CODE를 통하지 않고 게임 안에서 직접 실행할 코드 스니펫을 키에 지정해요. (CODE iframe 안에서 실행하는 텍스트 명령 /eval과 혼동하지 마세요.)",
 	"skill.pure_eval.name": "직접 실행",
-	"skill.purify.explanation": "순수 피해 2000으로 대상을 정화해요. 모든 버프와 디버프를 없애고 하나마다 추가 피해 400을 줘요. 대상을 처치하면 정화자 버프를 얻어요!",
+	"skill.purify.explanation": "순수 피해 2000을 주고, 해당되는 비영구 강화·약화 효과마다 400을 더해요. 이 효과들은 제거되지만 도적 중첩과 몬스터의 화상은 남아서 추가 피해에도 반영돼요. 도적 중첩은 400에 중첩당 1을 더해, 총 최대 800의 피해를 추가해요. 타고난 독과 영구 상태는 바뀌지 않아요. 대상을 쓰러뜨리면 정화자 효과를 얻어요.",
 	"skill.purify.name": "정화",
 	"skill.quickpunch.explanation": "강력한 공격 사이에 날렵하게 적에게 빠른 주먹을 날려요!",
 	"skill.quickpunch.name": "빠른 주먹",

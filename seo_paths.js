@@ -43,7 +43,7 @@ const DOCS_PATHS = [
 	"/docs/code/functions/open_stand",
 	"/docs/code/functions/require_code",
 	"/docs/code/functions/send_cm",
-	"/docs/code/functions/send_mail",
+	"/docs/code/functions/send_mail", // Per-sender and per-character attachment limits.
 	"/docs/code/functions/take_mail_item",
 	"/docs/code/functions/say",
 	"/docs/code/functions/smart_move",
@@ -71,7 +71,7 @@ const DOCS_PATHS = [
 	"/docs/guide/all/recipes",
 	"/docs/guide/all/skills_and_conditions",
 	"/docs/guide/code/X-advancedtopics/X.sub-msgpack",
-	"/docs/guide/code/7-using-skills",
+	"/docs/guide/code/7-using-skills", // Includes Purify stack damage and PvE targeting.
 	"/docs/guide/code/8-code-slots-and-files",
 	"/docs/guide/code/code-api",
 	"/docs/guide/code/4-basicmath/4.G-geometry", // Combat bounds used by CODE range checks.

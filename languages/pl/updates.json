@@ -892,7 +892,7 @@
 	"update.08_10_26.halloween.support_52": "MAINFRAME obsługuje teraz send_updates do odświeżania widocznych obiektów.",
 	"update.08_10_26.halloween.support_53": "Opóźniona odpowiedź logowania nie zasłania już gry ekranem wyboru postaci.",
 	"update.08_10_26.halloween.support_54": "Ponowne połączenie nie przenosi już do celu niedokończonego ruchu.",
-	"update.08_10_26.halloween.support_65": "Wymiany w CODE teraz kończą się lub zgłaszają przekroczenie czasu oczekiwania.",
+	"update.08_10_26.halloween.support_65": "exchange() w CODE kończy się teraz poprawnie, nawet jeśli rozpocznie się kolejna wymiana.",
 	"update.08_10_26.halloween.support_66": "Wybory w sklepie w jaskini są teraz oznaczane jako ukończone również bez zakupu.",
 	"update.08_10_26.halloween.support_67": "Wymiana Glitch teraz przyznaje oba Glitch, gdy wylosowano dwa.",
 	"update.08_10_26.halloween.support_68": "Zablokowanych i zapieczętowanych przedmiotów nie można już rozmontowywać.",
@@ -909,11 +909,17 @@
 	"update.08_10_26.halloween.support_79": "Puste wpisy equip_batch zwracają teraz błąd.",
 	"update.08_10_26.halloween.item_bonuses": "Podpowiedzi przedmiotów pokazują teraz wartości bonusów map i klas.",
 	"update.08_10_26.halloween.mp_reduction_cap": "Obniżenie kosztu many jest teraz ograniczone do 80%.",
-	"update.08_10_26.halloween.support_80": "ID potworów nie pokrywają się już z liczbowymi nazwami postaci.",
 	"update.08_10_26.halloween.support_81": "Naprawiono wzajemne odrzucanie równoczesnych logowań na tym samym koncie.",
 	"update.08_10_26.halloween.support_82": "town() i smart_move czekają teraz na zakończenie teleportacji do miasta.",
 	"update.08_10_26.halloween.support_84": "Żądania zniszczenia nie niszczą już innego przedmiotu przeniesionego do tego samego miejsca w torbie.",
 	"update.08_10_26.halloween.support_85": "Widok banku w Hub nie ujawnia już ukrytych danych przedmiotów.",
 	"update.08_10_26.halloween.support_86": "Dokładne szanse na łup są teraz wyświetlane jako prostsze ułamki, np. 1/1M.",
-	"update.08_10_26.halloween.support_87": "Nie można już handlować przez zamknięte pola kupca za pomocą ofert zapisanych w pamięci podręcznej."
+	"update.08_10_26.halloween.support_87": "Nie można już handlować przez zamknięte pola kupca za pomocą ofert zapisanych w pamięci podręcznej.",
+	"update.08_10_26.halloween.numeric_names": "Imiona nowych postaci i imiona wybierane przy zmianie nie mogą składać się wyłącznie z cyfr.",
+	"update.08_10_26.halloween.boss_drops": "Zmieniono łupy z bossów kooperacyjnych na serwerach macierzystych.",
+	"update.08_10_26.halloween.support_63": "Odbierz załączniki przed usunięciem otrzymanych wiadomości.",
+	"update.08_10_26.halloween.support_58": "Oczyszczenie nie może już celować w niesprzymierzonych graczy w PvE, nawet z Cupid.",
+	"update.08_10_26.halloween.support_57": "Oczyszczenie zachowuje kumulacje łotra i podpalenie potworów. Kumulacje dodają do 800 obrażeń.",
+	"update.08_10_26.halloween.support_56": "Odrzucone wysłanie poczty zachowuje przedmiot i opłatę pocztową.",
+	"update.08_10_26.halloween.support_55": "Limit nieodebranych załączników pocztowych wynosi 20 z jednego konta nadawcy i 200 łącznie na postać odbiorcy. Dotychczasowe wiadomości i załączniki pozostają. Automatyczne listy z nagrodami nie wliczają się do tych limitów."
 }

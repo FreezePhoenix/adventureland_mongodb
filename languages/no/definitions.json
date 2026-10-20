@@ -1287,7 +1287,7 @@
 	"skill.power.name": "Kraft",
 	"skill.pure_eval.explanation": "[Avansert] Tilordner en kodesnutt som kjøres direkte i spillet i stedet for gjennom CODE. (Må ikke forveksles med tekstkommandoen /eval, som kjører kode i CODE-iframe-en)",
 	"skill.pure_eval.name": "Direkte kjøring",
-	"skill.purify.explanation": "Påfører 2000 ren skade og renser målet. Fjerner alle positive og negative effekter og påfører 400 ekstra skade for hver. Du får effekten Renser hvis målet blir beseiret!",
+	"skill.purify.explanation": "Gir 2000 ren skade, pluss 400 for hver aktuell, ikke-varig positiv eller negativ effekt. Effektene fjernes, bortsett fra snikmorderens stabler og brann på monstre, som beholdes og fortsatt øker skaden. Snikmorderens stabler gir 400 pluss 1 per stabel, opptil 800 ekstra skade totalt. Medfødt gift og varige tilstander påvirkes ikke. Å beseire målet gir Renser-effekten.",
 	"skill.purify.name": "Rens",
 	"skill.quickpunch.explanation": "Bruk smidigheten din til å slå motstanderen raskt mellom de ødeleggende angrepene dine!",
 	"skill.quickpunch.name": "Raskt slag",
