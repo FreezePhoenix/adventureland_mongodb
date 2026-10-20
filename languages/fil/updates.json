@@ -908,5 +908,6 @@
 	"update.08_10_26.halloween.support_77": "Hindi na naghahagis ng exception sa CODE ang pagsubok na magsama mula sa bakanteng slot.",
 	"update.08_10_26.halloween.support_78": "Tama na ngayon ang pagbilang ng malalaking mensahe sa CODE sa limitasyon ng mga tawag.",
 	"update.08_10_26.halloween.support_79": "Nagbabalik na ngayon ng error ang mga bakanteng entry sa equip_batch.",
-	"update.08_10_26.halloween.item_bonuses": "Ipinapakita na ngayon ng mga tooltip ng item ang mga halaga ng bonus mula sa map at class."
+	"update.08_10_26.halloween.item_bonuses": "Ipinapakita na ngayon ng mga tooltip ng item ang mga halaga ng bonus mula sa map at class.",
+	"update.08_10_26.halloween.mp_reduction_cap": "Limitado na ngayon sa 80% ang Bawas sa Gastos sa Mana."
 }

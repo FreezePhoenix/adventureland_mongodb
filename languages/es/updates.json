@@ -908,5 +908,6 @@
 	"update.08_10_26.halloween.support_77": "Intentar combinar desde una casilla vacía ya no lanza una excepción en CODE.",
 	"update.08_10_26.halloween.support_78": "Los mensajes grandes de CODE ahora se contabilizan correctamente en el límite de llamadas.",
 	"update.08_10_26.halloween.support_79": "Las entradas vacías de equip_batch ahora devuelven un error.",
-	"update.08_10_26.halloween.item_bonuses": "Las descripciones de los objetos ahora muestran los valores numéricos de las bonificaciones de mapa y clase."
+	"update.08_10_26.halloween.item_bonuses": "Las descripciones de los objetos ahora muestran los valores numéricos de las bonificaciones de mapa y clase.",
+	"update.08_10_26.halloween.mp_reduction_cap": "Reducción del coste de maná ahora tiene un límite del 80%."
 }

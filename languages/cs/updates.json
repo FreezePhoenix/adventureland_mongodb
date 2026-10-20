@@ -908,5 +908,6 @@
 	"update.08_10_26.halloween.support_77": "Pokus o sloučení z prázdného místa už v CODE nevyvolá výjimku.",
 	"update.08_10_26.halloween.support_78": "Velké zprávy CODE se nyní správně započítávají do limitu volání.",
 	"update.08_10_26.halloween.support_79": "Prázdné položky equip_batch nyní vracejí chybu.",
-	"update.08_10_26.halloween.item_bonuses": "Popisky předmětů nyní zobrazují číselné hodnoty bonusů pro mapy a třídy."
+	"update.08_10_26.halloween.item_bonuses": "Popisky předmětů nyní zobrazují číselné hodnoty bonusů pro mapy a třídy.",
+	"update.08_10_26.halloween.mp_reduction_cap": "Snížení spotřeby many je nyní omezeno na 80 %."
 }

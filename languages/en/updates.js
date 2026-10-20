@@ -3,6 +3,8 @@ module.exports = {
 	// Improvement listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
 	"update.08_10_26.halloween.item_bonuses": "Item tooltips now show the numbers of map and class bonuses.",
 	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
+	"update.08_10_26.halloween.mp_reduction_cap": "Mana Cost Reduction now stops at 80%.",
+	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
 	"update.08_10_26.halloween.support_79": "Empty equip_batch entries now return an error.",
 	// Fixed bug listed in the [08/10/26] update post "Witch's Cipher, Halloween and Events". Keep names from the game and CODE identifiers unchanged.
 	"update.08_10_26.halloween.support_78": "Large CODE messages now count correctly toward the call limit.",

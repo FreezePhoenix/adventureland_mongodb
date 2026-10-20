@@ -908,5 +908,6 @@
 	"update.08_10_26.halloween.support_77": "Yhdistäminen tyhjästä paikasta ei enää aiheuta poikkeusta CODEssa.",
 	"update.08_10_26.halloween.support_78": "Suuret CODE-viestit lasketaan nyt oikein kutsurajaan.",
 	"update.08_10_26.halloween.support_79": "Tyhjät equip_batch-alkiot palauttavat nyt virheen.",
-	"update.08_10_26.halloween.item_bonuses": "Esineiden työkaluvihjeet näyttävät nyt kartta- ja luokkabonusten lukuarvot."
+	"update.08_10_26.halloween.item_bonuses": "Esineiden työkaluvihjeet näyttävät nyt kartta- ja luokkabonusten lukuarvot.",
+	"update.08_10_26.halloween.mp_reduction_cap": "Manakulun vähennys on nyt rajoitettu 80 %:iin."
 }

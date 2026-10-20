@@ -908,5 +908,6 @@
 	"update.08_10_26.halloween.support_77": "空のスロットを合成しようとしても、CODEで例外が発生しなくなりました。",
 	"update.08_10_26.halloween.support_78": "大きなCODEメッセージが呼び出し上限に正しく計上されるようになりました。",
 	"update.08_10_26.halloween.support_79": "equip_batchの空の要素がエラーを返すようになりました。",
-	"update.08_10_26.halloween.item_bonuses": "アイテムのツールチップに、マップとクラスのボーナスの数値が表示されるようになりました。"
+	"update.08_10_26.halloween.item_bonuses": "アイテムのツールチップに、マップとクラスのボーナスの数値が表示されるようになりました。",
+	"update.08_10_26.halloween.mp_reduction_cap": "消費MP軽減の上限が80%になりました。"
 }

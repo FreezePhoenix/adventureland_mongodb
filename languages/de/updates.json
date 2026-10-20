@@ -908,5 +908,6 @@
 	"update.08_10_26.halloween.support_77": "Ein Kombinationsversuch mit einem leeren Platz löst in CODE keine Ausnahme mehr aus.",
 	"update.08_10_26.halloween.support_78": "Große CODE-Nachrichten werden jetzt korrekt auf das Aufruflimit angerechnet.",
 	"update.08_10_26.halloween.support_79": "Leere Einträge in equip_batch geben jetzt einen Fehler zurück.",
-	"update.08_10_26.halloween.item_bonuses": "Gegenstands-Tooltips zeigen jetzt die Zahlenwerte der Karten- und Klassenboni."
+	"update.08_10_26.halloween.item_bonuses": "Gegenstands-Tooltips zeigen jetzt die Zahlenwerte der Karten- und Klassenboni.",
+	"update.08_10_26.halloween.mp_reduction_cap": "Manakostensenkung ist jetzt auf 80 % begrenzt."
 }

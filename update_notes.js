@@ -61,6 +61,7 @@ module.exports = [
 			{ fixed: "support_54", note: "Reconnecting no longer jumps to an unfinished movement destination." },
 			{ improved: "event_schedule", note: "Event times are now set seven days ahead and stay the same after server restarts." },
 			{ improved: "item_bonuses", note: "Item tooltips now show the numbers of map and class bonuses." },
+			{ fixed: "mp_reduction_cap", note: "Mana Cost Reduction now stops at 80%." },
 			{ improved: "broadcast_info", note: "The Steam broadcast now shows monster INFO, drops, items and current events." },
 			{ fixed: "mainframe_spookytown", note: "Fixed MAINFRAME smart_move() getting stuck when leaving Spooky Town." },
 			{ new: "item:hexweavegloves" },

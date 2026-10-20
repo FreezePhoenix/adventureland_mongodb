@@ -908,5 +908,6 @@
 	"update.08_10_26.halloween.support_77": "Tenter une combinaison depuis un emplacement vide ne lève plus d'exception dans CODE.",
 	"update.08_10_26.halloween.support_78": "Les gros messages CODE sont désormais correctement comptés dans la limite d'appels.",
 	"update.08_10_26.halloween.support_79": "Les entrées vides d'equip_batch renvoient désormais une erreur.",
-	"update.08_10_26.halloween.item_bonuses": "Les infobulles des objets affichent désormais les valeurs des bonus de carte et de classe."
+	"update.08_10_26.halloween.item_bonuses": "Les infobulles des objets affichent désormais les valeurs des bonus de carte et de classe.",
+	"update.08_10_26.halloween.mp_reduction_cap": "La Réduction du coût en mana est désormais limitée à 80 %."
 }

@@ -908,5 +908,6 @@
 	"update.08_10_26.halloween.support_77": "Próba łączenia z pustego pola nie rzuca już wyjątku w CODE.",
 	"update.08_10_26.halloween.support_78": "Duże wiadomości CODE są teraz prawidłowo wliczane do limitu wywołań.",
 	"update.08_10_26.halloween.support_79": "Puste wpisy equip_batch zwracają teraz błąd.",
-	"update.08_10_26.halloween.item_bonuses": "Podpowiedzi przedmiotów pokazują teraz wartości bonusów map i klas."
+	"update.08_10_26.halloween.item_bonuses": "Podpowiedzi przedmiotów pokazują teraz wartości bonusów map i klas.",
+	"update.08_10_26.halloween.mp_reduction_cap": "Obniżenie kosztu many jest teraz ograniczone do 80%."
 }

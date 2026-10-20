@@ -908,5 +908,6 @@
 	"update.08_10_26.halloween.support_77": "Et forsøk på å kombinere fra en tom plass utløser ikke lenger et unntak i CODE.",
 	"update.08_10_26.halloween.support_78": "Store CODE-meldinger teller nå riktig mot grensen for kall.",
 	"update.08_10_26.halloween.support_79": "Tomme oppføringer i equip_batch returnerer nå en feil.",
-	"update.08_10_26.halloween.item_bonuses": "Verktøytips for gjenstander viser nå tallene for kart- og klassebonuser."
+	"update.08_10_26.halloween.item_bonuses": "Verktøytips for gjenstander viser nå tallene for kart- og klassebonuser.",
+	"update.08_10_26.halloween.mp_reduction_cap": "Redusert manakostnad er nå begrenset til 80 %."
 }

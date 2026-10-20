@@ -908,5 +908,6 @@
 	"update.08_10_26.halloween.support_77": "Et forsøg på at kombinere fra en tom plads udløser ikke længere en undtagelse i CODE.",
 	"update.08_10_26.halloween.support_78": "Store CODE-beskeder tæller nu korrekt med i kaldsgrænsen.",
 	"update.08_10_26.halloween.support_79": "Tomme poster i equip_batch returnerer nu en fejl.",
-	"update.08_10_26.halloween.item_bonuses": "Genstandenes værktøjstip viser nu talværdierne for bonusser fra kort og klasser."
+	"update.08_10_26.halloween.item_bonuses": "Genstandenes værktøjstip viser nu talværdierne for bonusser fra kort og klasser.",
+	"update.08_10_26.halloween.mp_reduction_cap": "Reduceret manaforbrug er nu begrænset til 80 %."
 }

@@ -908,5 +908,6 @@
 	"update.08_10_26.halloween.support_77": "嘗試從空欄位進行合成，不再讓 CODE 擲出例外。",
 	"update.08_10_26.halloween.support_78": "大型 CODE 訊息現在會正確計入呼叫限額。",
 	"update.08_10_26.halloween.support_79": "equip_batch 中的空項目現在會傳回錯誤。",
-	"update.08_10_26.halloween.item_bonuses": "物品提示現在會顯示地圖和職業加成的數值。"
+	"update.08_10_26.halloween.item_bonuses": "物品提示現在會顯示地圖和職業加成的數值。",
+	"update.08_10_26.halloween.mp_reduction_cap": "魔力消耗減免現在最高為80%。"
 }

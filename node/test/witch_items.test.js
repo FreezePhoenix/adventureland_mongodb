@@ -162,6 +162,16 @@ test("Hexweave Gloves keep a flat mana cost reduction on top of Tier 4 glove def
 	assert.deepEqual(defenses(7), [90, 72, 12]);
 });
 
+test("Mana Cost Reduction stops at 80%, however much gear stacks", () => {
+	const gear = {
+		gloves: { name: "hexweavegloves", level: 0, stat_type: "int" },
+		belt: { name: "mpxbelt", level: 7 },
+		amulet: { name: "mpxamulet", level: 7 },
+	};
+	assert.equal(stats("mage", gear).p.mp_reduction, 80, "20 + 54 + 30 is capped");
+	assert.equal(stats("mage", { belt: gear.belt }).p.mp_reduction, 54, "below the cap nothing changes");
+});
+
 test("Candlewick Boots keep spirits at a distance with magic and pure courage, and a flat fire resistance", () => {
 	const at = (level) => stats("rogue", { shoes: { name: "candleboots", level, stat_type: "dex" } }).p;
 	const base = stats("rogue", {}).p;

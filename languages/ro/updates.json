@@ -908,5 +908,6 @@
 	"update.08_10_26.halloween.support_77": "Încercarea de a combina dintr-un slot gol nu mai aruncă o excepție în CODE.",
 	"update.08_10_26.halloween.support_78": "Mesajele CODE mari sunt acum contorizate corect în limita de apeluri.",
 	"update.08_10_26.halloween.support_79": "Intrările goale din equip_batch returnează acum o eroare.",
-	"update.08_10_26.halloween.item_bonuses": "Descrierile obiectelor arată acum valorile bonusurilor de hartă și de clasă."
+	"update.08_10_26.halloween.item_bonuses": "Descrierile obiectelor arată acum valorile bonusurilor de hartă și de clasă.",
+	"update.08_10_26.halloween.mp_reduction_cap": "Reducerea costului de mană este acum limitată la 80%."
 }

@@ -908,5 +908,6 @@
 	"update.08_10_26.halloween.support_77": "Thử ghép từ ô trống không còn gây ngoại lệ trong CODE.",
 	"update.08_10_26.halloween.support_78": "Tin nhắn CODE lớn giờ được tính đúng vào giới hạn lượt gọi.",
 	"update.08_10_26.halloween.support_79": "Các phần tử trống trong equip_batch giờ trả về lỗi.",
-	"update.08_10_26.halloween.item_bonuses": "Chú giải vật phẩm giờ hiển thị giá trị cụ thể của các chỉ số cộng thêm theo bản đồ và lớp nhân vật."
+	"update.08_10_26.halloween.item_bonuses": "Chú giải vật phẩm giờ hiển thị giá trị cụ thể của các chỉ số cộng thêm theo bản đồ và lớp nhân vật.",
+	"update.08_10_26.halloween.mp_reduction_cap": "Giảm mana tiêu hao giờ được giới hạn ở mức 80%."
 }

@@ -908,5 +908,6 @@
 	"update.08_10_26.halloween.support_77": "Een combinatiepoging vanuit een leeg vak veroorzaakt geen uitzondering meer in CODE.",
 	"update.08_10_26.halloween.support_78": "Grote CODE-berichten tellen nu correct mee voor de aanroeplimiet.",
 	"update.08_10_26.halloween.support_79": "Lege vermeldingen in equip_batch geven nu een fout terug.",
-	"update.08_10_26.halloween.item_bonuses": "Itemtooltips tonen nu ook de waarden van kaart- en klassebonussen."
+	"update.08_10_26.halloween.item_bonuses": "Itemtooltips tonen nu ook de waarden van kaart- en klassebonussen.",
+	"update.08_10_26.halloween.mp_reduction_cap": "Manakostenvermindering is nu beperkt tot 80%."
 }

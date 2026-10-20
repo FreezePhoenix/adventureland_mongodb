@@ -908,5 +908,6 @@
 	"update.08_10_26.halloween.support_77": "尝试对空栏位中的物品进行合成不再导致 CODE 抛出异常。",
 	"update.08_10_26.halloween.support_78": "大型 CODE 消息现在会正确计入调用限额。",
 	"update.08_10_26.halloween.support_79": "equip_batch 中的空条目现在会返回错误。",
-	"update.08_10_26.halloween.item_bonuses": "物品提示现在会显示地图和职业加成的具体数值。"
+	"update.08_10_26.halloween.item_bonuses": "物品提示现在会显示地图和职业加成的具体数值。",
+	"update.08_10_26.halloween.mp_reduction_cap": "法力消耗减免现在最高为80%。"
 }

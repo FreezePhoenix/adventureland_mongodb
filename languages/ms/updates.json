@@ -908,5 +908,6 @@
 	"update.08_10_26.halloween.support_77": "Cubaan menggabungkan dari slot kosong tidak lagi mencetuskan pengecualian dalam CODE.",
 	"update.08_10_26.halloween.support_78": "Mesej CODE yang besar kini dikira dengan betul dalam had panggilan.",
 	"update.08_10_26.halloween.support_79": "Entri kosong dalam equip_batch kini mengembalikan ralat.",
-	"update.08_10_26.halloween.item_bonuses": "Petua alat item kini menunjukkan nilai bonus peta dan kelas."
+	"update.08_10_26.halloween.item_bonuses": "Petua alat item kini menunjukkan nilai bonus peta dan kelas.",
+	"update.08_10_26.halloween.mp_reduction_cap": "Pengurangan Kos Mana kini dihadkan kepada 80%."
 }

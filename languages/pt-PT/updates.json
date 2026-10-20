@@ -908,5 +908,6 @@
 	"update.08_10_26.halloween.support_77": "Tentar combinar a partir de um espaço vazio já não lança uma exceção em CODE.",
 	"update.08_10_26.halloween.support_78": "As mensagens grandes de CODE passam a contar corretamente para o limite de chamadas.",
 	"update.08_10_26.halloween.support_79": "As entradas vazias de equip_batch passam a devolver um erro.",
-	"update.08_10_26.halloween.item_bonuses": "As descrições dos itens mostram agora os valores dos bónus de mapa e de classe."
+	"update.08_10_26.halloween.item_bonuses": "As descrições dos itens mostram agora os valores dos bónus de mapa e de classe.",
+	"update.08_10_26.halloween.mp_reduction_cap": "Redução do Custo de Mana está agora limitada a 80%."
 }

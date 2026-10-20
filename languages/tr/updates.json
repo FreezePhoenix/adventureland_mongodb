@@ -908,5 +908,6 @@
 	"update.08_10_26.halloween.support_77": "Boş bir yuvayı birleştirmeye çalışmak artık CODE içinde istisna oluşturmuyor.",
 	"update.08_10_26.halloween.support_78": "Büyük CODE mesajları artık çağrı sınırına doğru yansıtılıyor.",
 	"update.08_10_26.halloween.support_79": "Boş equip_batch girdileri artık hata döndürüyor.",
-	"update.08_10_26.halloween.item_bonuses": "Eşya bilgi kutuları artık harita ve sınıf bonuslarının sayısal değerlerini gösteriyor."
+	"update.08_10_26.halloween.item_bonuses": "Eşya bilgi kutuları artık harita ve sınıf bonuslarının sayısal değerlerini gösteriyor.",
+	"update.08_10_26.halloween.mp_reduction_cap": "Mana Maliyeti Azaltma artık en fazla %80 olabilir."
 }

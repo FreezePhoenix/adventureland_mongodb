@@ -908,5 +908,6 @@
 	"update.08_10_26.halloween.support_77": "Percobaan penggabungan dari slot kosong tidak lagi memicu pengecualian di CODE.",
 	"update.08_10_26.halloween.support_78": "Pesan CODE berukuran besar kini dihitung dengan benar dalam batas panggilan.",
 	"update.08_10_26.halloween.support_79": "Entri kosong pada equip_batch kini mengembalikan galat.",
-	"update.08_10_26.halloween.item_bonuses": "Tooltip item sekarang menampilkan angka bonus map dan class."
+	"update.08_10_26.halloween.item_bonuses": "Tooltip item sekarang menampilkan angka bonus map dan class.",
+	"update.08_10_26.halloween.mp_reduction_cap": "Pengurangan Biaya Mana sekarang dibatasi hingga 80%."
 }

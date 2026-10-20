@@ -908,5 +908,6 @@
 	"update.08_10_26.halloween.support_77": "빈 슬롯에서 합성을 시도해도 더 이상 CODE에서 예외가 발생하지 않습니다.",
 	"update.08_10_26.halloween.support_78": "큰 CODE 메시지가 이제 호출 한도에 올바르게 반영됩니다.",
 	"update.08_10_26.halloween.support_79": "equip_batch의 빈 항목이 이제 오류를 반환합니다.",
-	"update.08_10_26.halloween.item_bonuses": "이제 아이템 툴팁에 맵 및 클래스 보너스 수치가 표시됩니다."
+	"update.08_10_26.halloween.item_bonuses": "이제 아이템 툴팁에 맵 및 클래스 보너스 수치가 표시됩니다.",
+	"update.08_10_26.halloween.mp_reduction_cap": "마나 소모 감소가 이제 최대 80%로 제한됩니다."
 }

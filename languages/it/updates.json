@@ -908,5 +908,6 @@
 	"update.08_10_26.halloween.support_77": "Tentare una combinazione da uno slot vuoto non genera più un'eccezione in CODE.",
 	"update.08_10_26.halloween.support_78": "I messaggi CODE di grandi dimensioni ora contano correttamente per il limite di chiamate.",
 	"update.08_10_26.halloween.support_79": "Le voci vuote di equip_batch ora restituiscono un errore.",
-	"update.08_10_26.halloween.item_bonuses": "Le descrizioni degli oggetti ora mostrano i valori numerici dei bonus di mappa e di classe."
+	"update.08_10_26.halloween.item_bonuses": "Le descrizioni degli oggetti ora mostrano i valori numerici dei bonus di mappa e di classe.",
+	"update.08_10_26.halloween.mp_reduction_cap": "Riduzione costo in mana ora ha un limite dell'80%."
 }

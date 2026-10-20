@@ -1787,6 +1787,8 @@ function calculate_player_stats(player) {
 	}
 	player.evasion = min(50, player.evasion);
 	player.reflection = min((player.s.reflection && 50) || 30, player.reflection);
+	// Attacks and skills never become free: Mana Cost Reduction stops at 80%
+	player.mp_reduction = min(80, player.mp_reduction);
 	player.speed = min(player.speed, player.cruise || 200000);
 	player.speed = round(max(5, player.speed));
 	if (!player.gold && player.gold !== 0) {

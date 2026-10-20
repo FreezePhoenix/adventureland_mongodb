@@ -908,5 +908,6 @@
 	"update.08_10_26.halloween.support_77": "Az üres helyről indított egyesítés már nem dob kivételt a CODE-ban.",
 	"update.08_10_26.halloween.support_78": "A nagy CODE-üzenetek mostantól megfelelően számítanak bele a hívási korlátba.",
 	"update.08_10_26.halloween.support_79": "Az equip_batch üres elemei mostantól hibát adnak vissza.",
-	"update.08_10_26.halloween.item_bonuses": "A tárgyak leírása most már számszerűen mutatja a térkép- és kasztbónuszokat."
+	"update.08_10_26.halloween.item_bonuses": "A tárgyak leírása most már számszerűen mutatja a térkép- és kasztbónuszokat.",
+	"update.08_10_26.halloween.mp_reduction_cap": "A Manaköltség-csökkentés mostantól legfeljebb 80% lehet."
 }
